@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- White background -->
+  <rect width="400" height="400" fill="#ffffff"/>
+  <!-- DRP — large, very bold, dark navy -->
+  <text
+    x="200"
+    y="240"
+    text-anchor="middle"
+    font-family="Arial Black, Arial, sans-serif"
+    font-size="210"
+    font-weight="900"
+    fill="#1a1f36"
+    letter-spacing="-4"
+  >DRP</text>
+  <!-- BUILDLAB — bold, blue, letter-spaced -->
+  <text
+    x="200"
+    y="310"
+    text-anchor="middle"
+    font-family="Arial, sans-serif"
+    font-size="48"
+    font-weight="700"
+    fill="#4A90E2"
+    letter-spacing="10"
+  >BUILDLAB</text>
+</svg>

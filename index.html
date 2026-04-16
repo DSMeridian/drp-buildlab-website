@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRP BuildLab — Professionele website in 48 uur | Vanaf €299</title>
+<meta name="description" content="DRP BuildLab bouwt professionele websites voor lokale bedrijven in 48 uur. Vanaf €299 — de laagste prijs in België. Mobiel-klaar, SEO-geoptimaliseerd en volledig ontzorgd. Vraag gratis een demo aan.">
+<meta name="keywords" content="website laten maken België, professionele website, lokale bedrijven website, website 48 uur, goedkope website Brussel, DRP BuildLab, website bouwen, webdesign België">
+<meta name="author" content="DRP BuildLab">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://drpbuildlab.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://drpbuildlab.com/">
+<meta property="og:title" content="DRP BuildLab — Professionele website in 48 uur | Vanaf €299">
+<meta property="og:description" content="Professionele websites voor lokale bedrijven. Levering in 48 uur vanaf €299. Mobiel-klaar, SEO-klaar, volledig ontzorgd. Vraag gratis een demo aan.">
+<meta property="og:image" content="https://drpbuildlab.com/favicon.svg">
+<meta property="og:locale" content="nl_BE">
+<meta property="og:site_name" content="DRP BuildLab">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DRP BuildLab — Professionele website in 48 uur | Vanaf €299">
+<meta name="twitter:description" content="Professionele websites voor lokale bedrijven. Levering in 48 uur vanaf €299.">
+<meta name="twitter:image" content="https://drpbuildlab.com/favicon.svg">
+
+<!-- Schema.org LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "DRP BuildLab",
+  "description": "Professionele websites voor lokale bedrijven — levering in 48 uur vanaf €299.",
+  "url": "https://drpbuildlab.com",
+  "telephone": "+32473744431",
+  "email": "info@drpbuildlab.com",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Beenhouwersstraat 32/1",
+    "addressLocality": "Brussel",
+    "postalCode": "1000",
+    "addressCountry": "BE"
+  },
+  "sameAs": ["https://www.instagram.com/drp_buildlab/"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Website pakketten",
+    "itemListElement": [
+      {"@type":"Offer","name":"Starter","price":"299","priceCurrency":"EUR"},
+      {"@type":"Offer","name":"Professioneel","price":"499","priceCurrency":"EUR"},
+      {"@type":"Offer","name":"Premium","price":"899","priceCurrency":"EUR"}
+    ]
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.svg">
+<style>
+/* ─────────────────────────────────────────────
+   RESET & BASE
+───────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  background:#fff;
+  color:#1a1f36;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:400;
+  line-height:1.65;
+  overflow-x:hidden;
+  cursor:none;
+}
+a{text-decoration:none;color:inherit}
+::-webkit-scrollbar{width:2px}
+::-webkit-scrollbar-track{background:#fff}
+::-webkit-scrollbar-thumb{background:#4a90e2}
+
+/* ─────────────────────────────────────────────
+   TOKENS
+───────────────────────────────────────────── */
+:root{
+  --bg:#ffffff;
+  --bg2:#f5f7fc;
+  --bg3:#ebeff8;
+  --ink:#1a1f36;
+  --ink2:#2d3454;
+  --blue:#4a90e2;
+  --blue-d:#2e74c9;
+  --blue-l:#7ab3ed;
+  --muted:rgba(26,31,54,.44);
+  --muted2:rgba(26,31,54,.28);
+  --line:rgba(26,31,54,.09);
+  --line-b:rgba(74,144,226,.2);
+}
+
+/* ─────────────────────────────────────────────
+   SCROLL PROGRESS
+───────────────────────────────────────────── */
+#sprog{
+  position:fixed;top:0;left:0;height:2px;
+  background:var(--blue);z-index:9999;
+  width:0;transform-origin:left;
+  transition:width .05s linear;
+}
+
+/* ─────────────────────────────────────────────
+   CURSOR
+───────────────────────────────────────────── */
+#cdot{
+  position:fixed;top:0;left:0;z-index:9000;
+  width:5px;height:5px;background:var(--blue);
+  border-radius:50%;pointer-events:none;
+  transform:translate(-50%,-50%);
+}
+#cring{
+  position:fixed;top:0;left:0;z-index:8999;
+  width:32px;height:32px;
+  border:1.5px solid rgba(74,144,226,.45);
+  border-radius:50%;pointer-events:none;
+  transform:translate(-50%,-50%);
+  transition:width .3s ease,height .3s ease,border-color .3s ease;
+}
+.ch #cring{width:50px;height:50px;border-color:rgba(74,144,226,.3)}
+.ct #cring{width:60px;height:60px;border-color:transparent;background:rgba(74,144,226,.08)}
+
+/* ─────────────────────────────────────────────
+   LOADER
+───────────────────────────────────────────── */
+#loader{
+  position:fixed;inset:0;z-index:10000;
+  background:#fff;
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .6s ease .1s, visibility .6s ease .1s;
+}
+#loader.gone{opacity:0;visibility:hidden}
+.ld-inner{display:flex;flex-direction:column;align-items:center;gap:8px}
+.ld-mark{
+  width:64px;height:64px;background:var(--blue);border-radius:12px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:2px;
+  opacity:0;transform:scale(.8);
+  animation:ldPop .5s cubic-bezier(.16,1,.3,1) .2s forwards;
+}
+.ld-drp{font-size:1.4rem;font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1}
+.ld-bl{font-size:.38rem;font-weight:700;color:rgba(255,255,255,.8);letter-spacing:.12em;text-transform:uppercase}
+.ld-name{
+  font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);
+  opacity:0;animation:ldUp .4s ease .5s forwards;
+}
+.ld-bar{width:48px;height:1.5px;background:var(--bg3);border-radius:2px;overflow:hidden;opacity:0;animation:ldUp .3s ease .6s forwards;margin-top:4px}
+.ld-fill{height:100%;background:var(--blue);width:0;animation:ldFill 1.1s ease .7s forwards}
+@keyframes ldPop{to{opacity:1;transform:scale(1)}}
+@keyframes ldUp{to{opacity:1;transform:none}}
+@keyframes ldFill{to{width:100%}}
+
+/* ─────────────────────────────────────────────
+   NAV
+───────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  padding:1.4rem 5vw;
+  display:flex;justify-content:space-between;align-items:center;
+  transition:padding .4s ease, background .5s ease, box-shadow .4s ease;
+}
+nav.s{
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  padding:1rem 5vw;
+  box-shadow:0 1px 0 var(--line);
+}
+.nlogo{display:flex;align-items:center;gap:.7rem}
+.nmark{
+  width:32px;height:32px;background:var(--blue);border-radius:6px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1px;flex-shrink:0;
+}
+.nmark-drp{font-size:.72rem;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1}
+.nmark-bl{font-size:.32rem;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:.1em}
+.nname{font-size:.92rem;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.nlinks{display:flex;align-items:center;gap:2rem}
+.nlinks a{font-size:.8rem;font-weight:500;color:var(--muted);transition:color .2s;position:relative}
+.nlinks a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--blue);transition:width .3s ease}
+.nlinks a:hover{color:var(--ink)}
+.nlinks a:hover::after{width:100%}
+.ncta{
+  background:var(--blue)!important;color:#fff!important;
+  padding:.52rem 1.25rem!important;font-weight:700!important;font-size:.8rem!important;
+  border-radius:3px;box-shadow:0 4px 16px rgba(74,144,226,.28);
+  transition:all .25s!important;
+}
+.ncta:hover{background:var(--blue-d)!important;transform:translateY(-1px)!important;box-shadow:0 8px 24px rgba(74,144,226,.38)!important}
+.ncta::after{display:none!important}
+.nig svg{width:14px;height:14px}
+.nig{display:inline-flex;align-items:center;gap:.35rem}
+
+/* ─────────────────────────────────────────────
+   HERO  — split top/bottom layout (Rejouice)
+───────────────────────────────────────────── */
+.hero{
+  height:100vh;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+  padding:6.5rem 5vw 4.5rem;
+  position:relative;overflow:hidden;
+  background:var(--bg);
+}
+/* Top-fade: white veil so fixed nav always readable */
+.hero::after{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:120px;
+  background:linear-gradient(to bottom,rgba(255,255,255,.98) 0%,transparent 100%);
+  pointer-events:none;z-index:3;
+}
+.hero-bg-glow{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 55% 55% at 70% 20%, rgba(74,144,226,.1) 0%, transparent 70%),
+             radial-gradient(ellipse 35% 35% at 15% 75%, rgba(74,144,226,.07) 0%, transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:88px 88px;
+  mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 20%,transparent 100%);
+  opacity:.6;pointer-events:none;
+}
+/* Eye — top anchor, always below nav */
+.hero-eye{
+  position:relative;z-index:4;
+  display:inline-flex;align-items:center;gap:.7rem;
+  font-size:.65rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--blue);
+  opacity:0;animation:tUp .8s cubic-bezier(.16,1,.3,1) 1.6s forwards;
+}
+.hero-eye::before{content:'';display:block;width:28px;height:1.5px;background:var(--blue)}
+/* Content — bottom anchor */
+.hero-content{position:relative;z-index:2;width:100%}
+.hero-h1{
+  font-size:clamp(3.6rem,8.2vw,8.2rem);
+  font-weight:800;line-height:.9;letter-spacing:-.04em;
+  color:var(--ink);
+  transform-origin:bottom left;
+}
+.hl{
+  display:block;overflow:hidden;line-height:.92;
+  /* Padding prevents top/bottom character clipping */
+  padding:0.06em 0.06em 0.12em;
+  margin:-0.06em -0.06em -0.12em;
+}
+.hl-i{
+  display:block;transform:translateY(110%);
+  animation:none;
+}
+.hl-i.in{
+  animation:hlIn .85s cubic-bezier(.16,1,.3,1) forwards;
+}
+.hl-i.d1{animation-delay:.08s}
+.hl-i.d2{animation-delay:.18s}
+@keyframes hlIn{to{transform:translateY(0)}}
+.h-accent{color:var(--blue)}
+.h-light{font-style:italic;font-weight:300;color:var(--muted)}
+.hero-foot{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:2rem;flex-wrap:wrap;margin-top:2.5rem;
+  opacity:0;animation:tUp .8s cubic-bezier(.16,1,.3,1) 2s forwards;
+}
+.hero-sub{font-size:.97rem;color:var(--muted);max-width:400px;line-height:1.85}
+.hero-acts{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+/* Logo float — right side, vertically centered in lower half */
+.hero-logomark{
+  position:absolute;right:6vw;bottom:18%;
+  z-index:2;
+  opacity:0;animation:tUp 1s cubic-bezier(.16,1,.3,1) 1.8s forwards;
+}
+.hero-logomark svg{
+  width:130px;height:130px;
+  filter:drop-shadow(0 20px 50px rgba(74,144,226,.22));
+}
+/* Scroll hint */
+.shint{
+  position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);
+  z-index:2;display:flex;flex-direction:column;align-items:center;gap:.45rem;
+  opacity:0;animation:tUp .7s ease 2.2s forwards;
+}
+.shint span{font-size:.58rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--muted2)}
+.shint-line{width:1px;height:38px;background:linear-gradient(to bottom,var(--blue),transparent);animation:shAnim 2.2s ease-in-out infinite}
+@keyframes shAnim{
+  0%{transform:scaleY(0);transform-origin:top}
+  45%{transform:scaleY(1);transform-origin:top}
+  46%{transform-origin:bottom}
+  100%{transform:scaleY(0);transform-origin:bottom}
+}
+@keyframes tUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+
+/* ─────────────────────────────────────────────
+   ZOOM STRIP (pinned zoom section — Rejouice)
+───────────────────────────────────────────── */
+.zoom-section{
+  height:220vh; /* longer = more dwell time per stat */
+  position:relative;
+}
+.zoom-sticky{
+  position:sticky;top:0;height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;background:var(--bg2);
+}
+/* Corner editorial labels fill the empty space */
+.zoom-corner{
+  position:absolute;
+  font-size:.58rem;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--muted2);
+  pointer-events:none;
+}
+.zoom-corner-tl{top:2.2rem;left:5vw}
+.zoom-corner-tr{top:2.2rem;right:5vw;text-align:right}
+.zoom-corner-bl{bottom:2.2rem;left:5vw}
+.zoom-corner-br{
+  bottom:2.2rem;right:5vw;
+  display:flex;align-items:center;gap:.5rem;
+}
+.zoom-corner-br::after{
+  content:'';display:block;width:22px;height:1px;background:var(--muted2);
+}
+.zoom-inner{
+  text-align:center;
+  transform:scale(.55);opacity:0;
+  transition:none;
+  will-change:transform,opacity;
+}
+.zoom-tag{
+  font-size:.62rem;font-weight:700;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:2rem;
+}
+.zoom-num{
+  font-size:clamp(6rem,22vw,22rem);
+  font-weight:800;letter-spacing:-.06em;color:var(--ink);
+  line-height:.85;
+}
+.zoom-num span{color:var(--blue)}
+.zoom-lbl{
+  font-size:clamp(.9rem,1.6vw,1.4rem);color:var(--muted);
+  margin-top:1.8rem;letter-spacing:.02em;max-width:480px;
+}
+.zoom-dots{display:flex;gap:.6rem;justify-content:center;margin-top:2.5rem}
+.zoom-dot{width:6px;height:6px;border-radius:50%;background:var(--muted2);transition:background .3s,transform .3s}
+.zoom-dot.a{background:var(--blue);transform:scale(1.4)}
+
+/* ─────────────────────────────────────────────
+   MARQUEE
+───────────────────────────────────────────── */
+.mq-wrap{
+  overflow:hidden;
+  border-top:1px solid var(--line-b);border-bottom:1px solid var(--line-b);
+  padding:.95rem 0;background:var(--bg);
+}
+.mq-track{
+  display:flex;gap:4rem;width:max-content;
+  will-change:transform;
+}
+.mq-item{
+  font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);white-space:nowrap;display:flex;align-items:center;gap:1.5rem;
+}
+.mqdot{width:4px;height:4px;border-radius:50%;background:var(--blue);display:inline-block;flex-shrink:0}
+
+/* ─────────────────────────────────────────────
+   SHARED SECTION
+───────────────────────────────────────────── */
+.sec{padding:6.5rem 5vw}
+.sec-alt{background:var(--bg)}
+/* Thin rule separates sections without heavy color change */
+.sec+.sec,.sec+.sec-alt,.sec-alt+.sec,.sec-alt+.sec-alt{
+  border-top:1px solid var(--line);
+}
+.stag{display:block;font-size:.6rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);margin-bottom:.85rem}
+.sh{
+  font-size:clamp(2.6rem,5.5vw,5.5rem);
+  font-weight:800;line-height:1.0;letter-spacing:-.038em;color:var(--ink);
+  margin-bottom:1.5rem;
+}
+.sh em{font-style:italic;font-weight:300;color:var(--muted)}
+.ssub{font-size:.96rem;color:var(--muted);line-height:1.85;max-width:480px}
+
+/* ─────────────────────────────────────────────
+   REVEAL SYSTEM
+───────────────────────────────────────────── */
+.rv{opacity:0;transform:translateY(32px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.rv.vv{opacity:1;transform:none}
+.rv.fl{transform:translateX(-32px)}.rv.fl.vv{transform:none}
+.rv.fr{transform:translateX(32px)}.rv.fr.vv{transform:none}
+/* Scale-in reveal */
+.rv.si{transform:scale(.93) translateY(16px)}.rv.si.vv{transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.42s}.d5{transition-delay:.54s}
+
+/* ─────────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.88rem 2rem;font-family:inherit;font-size:.88rem;font-weight:700;
+  cursor:none;border:none;transition:all .25s;
+  position:relative;overflow:hidden;
+}
+.btn-p{background:var(--blue);color:#fff;box-shadow:0 8px 24px rgba(74,144,226,.28)}
+.btn-p:hover{background:var(--blue-d);transform:translateY(-2px);box-shadow:0 14px 36px rgba(74,144,226,.42)}
+.btn-g{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn-g:hover{border-color:var(--blue);color:var(--blue);background:rgba(74,144,226,.05)}
+
+/* ─────────────────────────────────────────────
+   PROCESS
+───────────────────────────────────────────── */
+.proc-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:5rem;flex-wrap:wrap;gap:2rem}
+.steps{display:flex;flex-direction:column}
+.srow{
+  display:grid;grid-template-columns:68px 1fr 100px;gap:2.5rem;align-items:start;
+  padding:2.4rem 0;border-bottom:1px solid var(--line);
+  position:relative;overflow:hidden;cursor:none;
+}
+.srow:first-child{border-top:1px solid var(--line)}
+.srow::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:0;
+  background:rgba(74,144,226,.05);
+  transition:width .6s cubic-bezier(.16,1,.3,1);z-index:0;
+}
+.srow:hover::before{width:100%}
+.sn{font-size:.58rem;font-weight:700;letter-spacing:.22em;color:var(--blue);text-transform:uppercase;padding-top:.3rem;position:relative;z-index:1}
+.sbody{position:relative;z-index:1}
+.stitle{font-size:clamp(1.05rem,2vw,1.5rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.45rem;color:var(--ink)}
+.stxt{font-size:.86rem;color:var(--muted);line-height:1.85;max-width:460px}
+.stime{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);opacity:.45;text-align:right;padding-top:.35rem;position:relative;z-index:1}
+
+/* ─────────────────────────────────────────────
+   ABOUT
+───────────────────────────────────────────── */
+.ab-layout{display:grid;grid-template-columns:1fr 1fr;gap:9rem;align-items:center}
+/* Smooth logo integration */
+.ab-logo-wrap{
+  margin-bottom:3rem;
+  display:inline-flex;align-items:center;gap:1.2rem;
+  padding:1.5rem 2rem;
+  background:var(--bg2);border:1px solid var(--line);
+  border-radius:12px;
+}
+.ab-logo-wrap svg{width:72px;height:72px;border-radius:10px;flex-shrink:0}
+.ab-logo-text{display:flex;flex-direction:column}
+.ab-logo-name{font-size:1.3rem;font-weight:800;letter-spacing:-.025em;color:var(--ink)}
+.ab-logo-tag{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-top:.1rem}
+.ab-quote{font-size:clamp(1.3rem,2.2vw,2.2rem);font-weight:700;line-height:1.2;letter-spacing:-.025em;margin-bottom:1.25rem;color:var(--ink)}
+.ab-quote em{font-style:italic;font-weight:300;color:var(--blue)}
+.ab-sig{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.ab-nums{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2.5rem}
+.abn{background:var(--bg);padding:1.6rem 1.8rem}
+.abn-v{font-size:2.5rem;font-weight:800;letter-spacing:-.04em;color:var(--blue);line-height:1;margin-bottom:.2rem}
+.abn-l{font-size:.68rem;color:var(--muted)}
+.ab-right p{font-size:.92rem;color:var(--muted);line-height:1.9;margin-bottom:1.35rem}
+.ab-right p strong{color:var(--ink);font-weight:700}
+.pillars{display:flex;flex-direction:column;margin-top:2rem}
+.pillar{display:flex;gap:1.4rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.pillar:first-child{border-top:1px solid var(--line)}
+.pn{font-size:.58rem;font-weight:700;color:var(--blue);letter-spacing:.1em;flex-shrink:0;padding-top:.12rem}
+.ptitle{font-weight:700;font-size:.88rem;margin-bottom:.18rem;color:var(--ink)}
+.pbody{font-size:.8rem;color:var(--muted);line-height:1.72}
+
+/* ─────────────────────────────────────────────
+   WHY
+───────────────────────────────────────────── */
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:5rem}
+.wcard{
+  background:var(--bg);padding:2.5rem;position:relative;overflow:hidden;
+  transition:background .3s;cursor:none;
+}
+.wcard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.wcard:hover{background:var(--bg2)}
+.wcard:hover::after{transform:scaleX(1)}
+.wico{width:40px;height:40px;background:rgba(74,144,226,.08);border-radius:7px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+.wico svg{width:19px;height:19px;color:var(--blue)}
+.wtitle{font-size:.96rem;font-weight:700;margin-bottom:.42rem;letter-spacing:-.01em;color:var(--ink)}
+.wbody{font-size:.82rem;color:var(--muted);line-height:1.78}
+
+/* ─────────────────────────────────────────────
+   OPPORTUNITY COST
+───────────────────────────────────────────── */
+.opp-layout{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
+.opp-box{
+  background:var(--bg2);border:1px solid var(--line-b);padding:3rem;
+  position:relative;
+}
+.opp-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent)}
+.orow{display:flex;justify-content:space-between;align-items:center;padding:.82rem 0;border-bottom:1px solid var(--line);gap:1rem}
+.orow:last-child{border-bottom:none}
+.olbl{font-size:.83rem;color:var(--muted)}
+.oval{font-size:.92rem;font-weight:700;color:var(--ink)}
+.oval.n{color:#dc2626}
+.oval.p{color:#16a34a}
+.ototl{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line-b);display:flex;justify-content:space-between;align-items:baseline}
+.otlbl{font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.otval{font-size:2rem;font-weight:800;color:var(--blue);letter-spacing:-.035em}
+.onote{margin-top:1.5rem;padding:1.15rem 1.4rem;background:var(--bg3);border-left:2.5px solid var(--blue);font-size:.82rem;color:var(--muted);line-height:1.75}
+.onote strong{color:var(--ink);font-weight:700}
+.opoints{display:flex;flex-direction:column}
+.opt{display:flex;gap:1.25rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.opt:first-child{border-top:1px solid var(--line)}
+.opt-title{font-weight:700;font-size:.88rem;margin-bottom:.18rem;color:var(--ink)}
+.opt-body{font-size:.8rem;color:var(--muted);line-height:1.7}
+.opt-marker{width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:.45rem}
+
+/* ─────────────────────────────────────────────
+   COMPETITORS
+───────────────────────────────────────────── */
+.ctbl{width:100%;margin-top:5rem;border:1px solid var(--line);overflow:hidden}
+.chd{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1.1fr;background:var(--bg2);border-bottom:1px solid var(--line)}
+.crow{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1.1fr;border-bottom:1px solid var(--line);transition:background .25s;cursor:none}
+.crow:last-child{border-bottom:none}
+.crow:hover{background:var(--bg2)}
+.crow.us{background:rgba(74,144,226,.05);border-left:2.5px solid var(--blue)}
+.crow.us:hover{background:rgba(74,144,226,.1)}
+.chc{padding:.72rem 1.1rem;font-size:.58rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);border-right:1px solid var(--line);display:flex;align-items:center}
+.chc:last-child{border-right:none}
+.cc{padding:1.1rem 1.1rem;font-size:.83rem;display:flex;align-items:center;border-right:1px solid var(--line)}
+.cc:last-child{border-right:none}
+.cnm{font-weight:700;color:var(--ink)}
+.cnm.u{color:var(--blue)}
+.cbdg{display:inline-block;background:var(--blue);color:#fff;font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.14rem .48rem;margin-left:.45rem;border-radius:2px;vertical-align:middle}
+.ck{color:#16a34a;font-weight:700}
+.cx{color:var(--muted2)}
+.cp{font-weight:700;color:var(--ink)}
+.cp.g{color:var(--blue)}
+.cp.b{color:var(--muted2)}
+.cnote{margin-top:1.5rem;padding:1.1rem 1.4rem;background:var(--bg2);border:1px solid var(--line-b);font-size:.82rem;color:var(--muted);line-height:1.78}
+.cnote strong{color:var(--ink)}
+
+/* ─────────────────────────────────────────────
+   DISCOUNT STRIP
+───────────────────────────────────────────── */
+.disc{
+  background:var(--blue);padding:6rem 5vw;
+  position:relative;overflow:hidden;
+  display:flex;gap:4rem;align-items:center;justify-content:space-between;flex-wrap:wrap;
+}
+.disc::before{content:'';position:absolute;right:-100px;top:-100px;width:380px;height:380px;background:rgba(255,255,255,.06);border-radius:50%}
+.disc::after{content:'';position:absolute;left:8%;bottom:-80px;width:260px;height:260px;background:rgba(255,255,255,.04);border-radius:50%}
+.disc-l{position:relative;z-index:1}
+.disc-tag{font-size:.6rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.55);display:block;margin-bottom:.7rem}
+.disc-h{font-size:clamp(2rem,4.5vw,3.8rem);font-weight:800;line-height:.93;letter-spacing:-.035em;color:#fff}
+.disc-sub{font-size:.9rem;color:rgba(255,255,255,.7);margin-top:.9rem;max-width:400px;line-height:1.8}
+.disc-btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:#fff;color:var(--blue);padding:.88rem 1.9rem;font-weight:700;font-size:.88rem;
+  margin-top:1.6rem;position:relative;z-index:1;
+  transition:transform .2s,box-shadow .2s;cursor:none;
+}
+.disc-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.14)}
+.disc-r{position:relative;z-index:1;display:flex;flex-direction:column;gap:1px;min-width:260px}
+.dbox{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);padding:1.3rem 1.65rem}
+.dbox-lbl{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.35rem}
+.dbox-val{font-size:1.65rem;font-weight:800;letter-spacing:-.025em;color:#fff}
+
+/* ─────────────────────────────────────────────
+   PRICING
+───────────────────────────────────────────── */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:5rem}
+.plan{background:var(--bg);padding:3rem 2.5rem;position:relative;transition:background .3s;cursor:none}
+.plan:hover{background:var(--bg2)}
+.plan.feat{background:var(--bg2);border:1px solid var(--line-b);box-shadow:0 0 50px rgba(74,144,226,.08);margin:-1px;z-index:1}
+.pbadge{display:inline-block;background:var(--blue);color:#fff;font-size:.56rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.24rem .72rem;margin-bottom:1.5rem}
+.pname{font-size:.6rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
+.pprice{font-size:3.5rem;font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:.2rem;color:var(--ink)}
+.pprice sup{font-size:1.2rem;vertical-align:super;font-weight:600}
+.pperiod{font-size:.8rem;color:var(--muted);margin-bottom:2rem;padding-bottom:1.4rem;border-bottom:1px solid var(--line)}
+.pfeats{list-style:none;margin-bottom:2rem}
+.pfeats li{font-size:.83rem;color:rgba(26,31,54,.65);padding:.4rem 0;display:flex;align-items:flex-start;gap:.6rem;border-bottom:1px solid rgba(26,31,54,.05)}
+.pfeats li::before{content:'✓';color:var(--blue);font-weight:700;flex-shrink:0}
+.pbtn{display:block;text-align:center;padding:.88rem;font-size:.84rem;font-weight:700;letter-spacing:.03em;transition:all .25s;cursor:none}
+.pbtn.f{background:var(--blue);color:#fff;box-shadow:0 6px 20px rgba(74,144,226,.26)}
+.pbtn.f:hover{background:var(--blue-d);box-shadow:0 10px 32px rgba(74,144,226,.4)}
+.pbtn.o{border:1.5px solid var(--line);color:var(--muted)}
+.pbtn.o:hover{border-color:var(--blue);color:var(--blue);background:rgba(74,144,226,.05)}
+.exgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1.4rem}
+.ex{background:var(--bg);padding:1.2rem 1.4rem;display:flex;justify-content:space-between;align-items:center;transition:background .25s;cursor:none}
+.ex:hover{background:var(--bg2)}
+.ex-n{font-size:.83rem;color:var(--muted)}
+.ex-p{font-size:.86rem;font-weight:700;color:var(--blue)}
+
+/* ─────────────────────────────────────────────
+   INSTAGRAM
+───────────────────────────────────────────── */
+.ig-sec{background:var(--bg2);padding:8rem 5vw;display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center}
+.ig-card{
+  position:relative;aspect-ratio:1;max-width:400px;
+  background:var(--blue);border-radius:18px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.4rem;overflow:hidden;
+  box-shadow:0 32px 80px rgba(74,144,226,.25);
+}
+.ig-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 35%,rgba(255,255,255,.15) 0%,transparent 65%)}
+.ig-big{font-size:6rem;font-weight:800;letter-spacing:-.04em;color:#fff;line-height:1;position:relative;z-index:1}
+.ig-sub{font-size:1rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.8);position:relative;z-index:1}
+.ig-handle{font-size:.72rem;color:rgba(255,255,255,.55);letter-spacing:.06em;margin-top:.25rem;position:relative;z-index:1}
+.ig-text p{font-size:.92rem;color:var(--muted);line-height:1.9;margin-bottom:1.3rem}
+.ig-link{
+  display:inline-flex;align-items:center;gap:.7rem;
+  border:1.5px solid var(--line-b);color:var(--ink);
+  padding:.88rem 1.7rem;font-size:.86rem;font-weight:600;
+  transition:all .25s;cursor:none;margin-top:.4rem;
+}
+.ig-link:hover{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 8px 26px rgba(74,144,226,.28)}
+.ig-link svg{width:18px;height:18px}
+
+/* ─────────────────────────────────────────────
+   CONTACT
+───────────────────────────────────────────── */
+.ct-layout{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
+.ct-lede{font-size:.92rem;color:var(--muted);line-height:1.9;margin-top:1.1rem;margin-bottom:2rem}
+.ct-items{display:flex;flex-direction:column}
+.ct-item{display:flex;gap:1.2rem;align-items:flex-start;padding:1.2rem 0;border-bottom:1px solid var(--line)}
+.ct-item:first-child{border-top:1px solid var(--line)}
+.ci-ico{color:var(--blue);flex-shrink:0;margin-top:.1rem}
+.ci-lbl{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.22rem}
+.ci-val{font-size:.88rem;color:var(--ink)}
+.ci-val a{color:var(--blue)}
+.fwrap{background:var(--bg2);border:1px solid var(--line);padding:3rem;position:relative}
+.fwrap::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue-d),var(--blue-l))}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.field{display:flex;flex-direction:column;gap:.38rem;margin-bottom:.9rem}
+.field label{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{
+  background:#fff;border:1px solid var(--line);color:var(--ink);
+  padding:.82rem 1rem;font-family:inherit;font-size:.88rem;
+  outline:none;transition:border-color .25s,box-shadow .25s;width:100%;appearance:none;
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(74,144,226,.38);box-shadow:0 0 0 3px rgba(74,144,226,.06)}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted2)}
+.field select option{background:#fff;color:var(--ink)}
+.field textarea{min-height:96px;resize:none}
+.fsubmit{
+  width:100%;margin-top:.4rem;background:var(--blue);color:#fff;border:none;
+  padding:.95rem;font-family:inherit;font-size:.88rem;font-weight:700;cursor:none;
+  letter-spacing:.04em;transition:all .25s;box-shadow:0 8px 22px rgba(74,144,226,.24);
+}
+.fsubmit:hover{background:var(--blue-d);transform:translateY(-1px);box-shadow:0 12px 34px rgba(74,144,226,.38)}
+.succ{display:none;text-align:center;padding:3rem 1rem}
+.succ.on{display:block}
+.succ-chk{font-size:2.2rem;color:var(--blue);margin-bottom:.9rem}
+.succ h3{font-size:1.4rem;font-weight:800;color:var(--ink);margin-bottom:.45rem}
+.succ p{font-size:.88rem;color:var(--muted)}
+
+/* ─────────────────────────────────────────────
+   WHATSAPP FLOAT
+───────────────────────────────────────────── */
+.wa-float{
+  position:fixed;bottom:2rem;right:2rem;z-index:800;
+  width:54px;height:54px;background:#25D366;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 22px rgba(37,211,102,.42);
+  transition:transform .22s,box-shadow .22s;cursor:none;
+}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,.58)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+
+/* ─────────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────────── */
+footer{background:var(--ink);padding:4rem 5vw 2.5rem;color:#fff}
+.ft-top{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:2.5rem}
+.ft-brand{display:flex;align-items:center;gap:.75rem;margin-bottom:.65rem}
+.ft-mark{width:40px;height:40px;background:var(--blue);border-radius:7px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;flex-shrink:0}
+.ft-mark-drp{font-size:.8rem;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1}
+.ft-mark-bl{font-size:.34rem;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.1em}
+.ft-name{font-size:1.05rem;font-weight:800;letter-spacing:-.02em;color:#fff}
+.ft-tag{font-size:.72rem;color:rgba(255,255,255,.32)}
+.ft-cols{display:flex;gap:4rem;flex-wrap:wrap}
+.ft-col h4{font-size:.58rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.9rem}
+.ft-col a{display:block;font-size:.8rem;color:rgba(255,255,255,.38);margin-bottom:.45rem;transition:color .22s}
+.ft-col a:hover{color:#fff}
+.ft-bot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.ft-copy{font-size:.7rem;color:rgba(255,255,255,.18)}
+.ft-ig{display:inline-flex;align-items:center;gap:.45rem;font-size:.76rem;color:rgba(255,255,255,.35);transition:color .22s}
+.ft-ig:hover{color:var(--blue-l)}
+.ft-ig svg{width:13px;height:13px}
+
+/* ─────────────────────────────────────────────
+   WORD REVEAL
+───────────────────────────────────────────── */
+.wr-w{
+  display:inline-block;overflow:hidden;vertical-align:bottom;
+  /* Prevent edge-character clipping (negative letter-spacing + descenders) */
+  padding:0.1em 0.08em 0.22em;
+  margin:-0.1em -0.08em -0.22em;
+}
+.wr{display:inline-block;transform:translateY(110%);transition:transform .72s cubic-bezier(.16,1,.3,1)}
+.wr.in{transform:translateY(0)}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────── */
+@media(max-width:1100px){
+  .ab-layout,.opp-layout,.ct-layout{grid-template-columns:1fr;gap:4rem}
+  .ig-sec{grid-template-columns:1fr;gap:3rem;padding:6rem 6vw}
+  .ig-card{max-width:100%;aspect-ratio:2.5/1}
+  .ig-big{font-size:4rem}
+}
+@media(max-width:768px){
+  .nlinks{display:none}
+  .sec{padding:5rem 6vw}
+  .ig-sec{padding:6rem 6vw}
+  .disc{padding:4rem 6vw}
+  .hero{padding:5.5rem 6vw 4rem}
+  .hero-logomark{display:none}
+  .hero-h1{font-size:clamp(3rem,11vw,5.5rem)}
+  .hero-foot{flex-direction:column;align-items:flex-start;gap:1.5rem}
+  .proc-head{flex-direction:column}
+  .srow{grid-template-columns:56px 1fr;gap:1.5rem}
+  .stime{display:none}
+  .wgrid{grid-template-columns:1fr 1fr}
+  .pgrid{grid-template-columns:1fr}
+  .exgrid{grid-template-columns:1fr 1fr}
+  .chd,.crow{grid-template-columns:2fr 1fr 1fr}
+  .chc:nth-child(n+4),.cc:nth-child(n+4){display:none}
+  .disc-r{min-width:unset;width:100%}
+  .ft-cols{gap:2.5rem}
+  .zoom-section{height:200vh}
+  .zoom-inner{transform:scale(.65)}
+}
+@media(max-width:480px){
+  .wgrid{grid-template-columns:1fr}
+  .exgrid{grid-template-columns:1fr}
+  .ab-nums{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="sprog"></div>
+
+<!-- CURSOR -->
+<div id="cdot"></div>
+<div id="cring"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="ld-inner">
+    <div class="ld-mark">
+      <span class="ld-drp">DRP</span>
+      <span class="ld-bl">BUILDLAB</span>
+    </div>
+    <div class="ld-name">Laden...</div>
+    <div class="ld-bar"><div class="ld-fill"></div></div>
+  </div>
+</div>
+
+<!-- ── NAV ───────────────────────────────────────── -->
+<nav id="nav">
+  <a href="#" class="nlogo">
+    <div class="nmark">
+      <span class="nmark-drp">DRP</span>
+      <span class="nmark-bl">BL</span>
+    </div>
+    <span class="nname">DRP BuildLab</span>
+  </a>
+  <div class="nlinks">
+    <a href="#hoe-het-werkt">Hoe het werkt</a>
+    <a href="#over-ons">Over ons</a>
+    <a href="#pakketten">Pakketten</a>
+    <a href="https://www.instagram.com/drp_buildlab/" target="_blank" rel="noopener" class="nig">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Instagram
+    </a>
+    <a href="#contact" class="ncta">Gratis demo →</a>
+  </div>
+</nav>
+
+<!-- ── HERO ──────────────────────────────────────── -->
+<section class="hero" id="hero">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-grid"></div>
+  <!-- Logo mark floats top-right -->
+  <div class="hero-logomark" id="hlogomark">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="200" height="200" rx="20" fill="#4A90E2"/>
+      <text x="100" y="120" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-size="90" font-weight="900" fill="white">DRP</text>
+      <text x="100" y="158" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="rgba(255,255,255,0.82)" letter-spacing="6">BUILDLAB</text>
+    </svg>
+  </div>
+  <div class="hero-eye">Professionele websites voor lokale bedrijven</div>
+  <div class="hero-content" id="heroContent">
+    <h1 class="hero-h1" id="heroH1">
+      <span class="hl"><span class="hl-i">Jouw bedrijf</span></span>
+      <span class="hl"><span class="hl-i d1">online in</span></span>
+      <span class="hl"><span class="hl-i d2"><span class="h-accent">48</span> <span class="h-light">uur.</span></span></span>
+    </h1>
+    <div class="hero-foot">
+      <p class="hero-sub">Geen website? Dan besta je niet online. DRP BuildLab bouwt professionele websites voor lokale bedrijven — snel, betaalbaar en volledig ontzorgd.</p>
+      <div class="hero-acts">
+        <a href="#contact" class="btn btn-p mag">Gratis demo aanvragen →</a>
+        <a href="#pakketten" class="btn btn-g mag">Bekijk pakketten</a>
+      </div>
+    </div>
+  </div>
+  <div class="shint">
+    <span>Scroll</span>
+    <div class="shint-line"></div>
+  </div>
+</section>
+
+<!-- ── MARQUEE ────────────────────────────────────── -->
+<div class="mq-wrap">
+  <div class="mq-track" id="mqTrack">
+    <div class="mq-item">Levering in 48 uur <span class="mqdot"></span></div>
+    <div class="mq-item">Lokale focus <span class="mqdot"></span></div>
+    <div class="mq-item">Eerlijke prijs <span class="mqdot"></span></div>
+    <div class="mq-item">Mobiel-klaar <span class="mqdot"></span></div>
+    <div class="mq-item">Google-geoptimaliseerd <span class="mqdot"></span></div>
+    <div class="mq-item">Volledig ontzorgd <span class="mqdot"></span></div>
+    <div class="mq-item">Levering in 48 uur <span class="mqdot"></span></div>
+    <div class="mq-item">Lokale focus <span class="mqdot"></span></div>
+    <div class="mq-item">Eerlijke prijs <span class="mqdot"></span></div>
+    <div class="mq-item">Mobiel-klaar <span class="mqdot"></span></div>
+    <div class="mq-item">Google-geoptimaliseerd <span class="mqdot"></span></div>
+    <div class="mq-item">Volledig ontzorgd <span class="mqdot"></span></div>
+  </div>
+</div>
+
+<!-- ── ZOOM STAT SECTION (pinned, Rejouice-style) ─── -->
+<div class="zoom-section" id="zoomSec">
+  <div class="zoom-sticky">
+    <!-- Corner labels: fill empty space with editorial context -->
+    <div class="zoom-corner zoom-corner-tl">DRP BuildLab</div>
+    <div class="zoom-corner zoom-corner-tr" id="zoomCounter">01 / 03</div>
+    <div class="zoom-corner zoom-corner-bl">Onze cijfers</div>
+    <div class="zoom-corner zoom-corner-br">Scroll verder</div>
+    <div class="zoom-inner" id="zoomInner">
+      <div class="zoom-tag" id="zoomTag">Onze belofte</div>
+      <div class="zoom-num" id="zoomNum">48<span>u</span></div>
+      <div class="zoom-lbl" id="zoomLbl">Gemiddelde levertijd van website tot live</div>
+      <div class="zoom-dots">
+        <div class="zoom-dot a" id="zd0"></div>
+        <div class="zoom-dot" id="zd1"></div>
+        <div class="zoom-dot" id="zd2"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HOW IT WORKS ───────────────────────────────── -->
+<section id="hoe-het-werkt" class="sec sec-alt">
+  <div class="proc-head">
+    <div class="rv">
+      <span class="stag">Hoe het werkt</span>
+      <h2 class="sh">Van niets naar online<br><em>in 4 stappen.</em></h2>
+    </div>
+    <div class="rv d2"><p class="ssub">Geen technische kennis nodig. Wij regelen alles van eerste gesprek tot live website.</p></div>
+  </div>
+  <div class="steps">
+    <div class="srow rv">
+      <div class="sn">01</div>
+      <div class="sbody"><div class="stitle">Eerste gesprek</div><div class="stxt">We bellen u op en tonen meteen een voorbeeld op maat. Volledig vrijblijvend.</div></div>
+      <div class="stime">Dag 1</div>
+    </div>
+    <div class="srow rv d1">
+      <div class="sn">02</div>
+      <div class="sbody"><div class="stitle">Ontwerp op maat</div><div class="stxt">Op basis van uw wensen bouwen we uw website. U hoeft zelf niets te doen.</div></div>
+      <div class="stime">Dag 1–2</div>
+    </div>
+    <div class="srow rv d2">
+      <div class="sn">03</div>
+      <div class="sbody"><div class="stitle">Preview & goedkeuring</div><div class="stxt">U krijgt een preview ter goedkeuring. Aanpassingen inbegrepen. Daarna gaat uw site live met eigen domein.</div></div>
+      <div class="stime">Dag 2</div>
+    </div>
+    <div class="srow rv d3">
+      <div class="sn">04</div>
+      <div class="sbody"><div class="stitle">Live — en wij blijven</div><div class="stxt">Na de lancering staan wij nog steeds voor u klaar. Updates, aanpassingen, vragen — wij regelen het.</div></div>
+      <div class="stime">Dag 2+</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ──────────────────────────────────────── -->
+<section id="over-ons" class="sec">
+  <div class="ab-layout">
+    <div class="rv fl">
+      <!-- One logo, integrated as a branded card -->
+      <div class="ab-logo-wrap">
+        <svg width="72" height="72" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="200" rx="20" fill="#4A90E2"/>
+          <text x="100" y="120" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-size="90" font-weight="900" fill="white">DRP</text>
+          <text x="100" y="158" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="rgba(255,255,255,0.82)" letter-spacing="6">BUILDLAB</text>
+        </svg>
+        <div class="ab-logo-text">
+          <span class="ab-logo-name">DRP BuildLab</span>
+          <span class="ab-logo-tag">Websites · 48 uur</span>
+        </div>
+      </div>
+      <div class="ab-quote">"Elke lokale zaak verdient een eerlijke kans om online <em>gevonden te worden.</em>"</div>
+      <div class="ab-sig">— De founders van DRP BuildLab</div>
+      <div class="ab-nums">
+        <div class="abn"><div class="abn-v" data-count="48" data-suffix="u">48u</div><div class="abn-l">Gemiddelde levertijd</div></div>
+        <div class="abn"><div class="abn-v" data-count="299" data-prefix="€">€299</div><div class="abn-l">Startprijs website</div></div>
+        <div class="abn"><div class="abn-v" data-count="100" data-suffix="%">100%</div><div class="abn-l">Volledig ontzorgd</div></div>
+        <div class="abn"><div class="abn-v">€0</div><div class="abn-l">Verborgen kosten</div></div>
+      </div>
+    </div>
+    <div class="ab-right rv fr d2">
+      <span class="stag">Over ons</span>
+      <h2 class="sh">Gebouwd door<br>ondernemers,<br><em>voor ondernemers.</em></h2>
+      <p>Het begon met een frustratie. We zagen hoe lokale bedrijven — de slager op de hoek, de loodgieter die altijd bereikbaar is, de kapper die al jaren dezelfde klanten knipt — volledig onzichtbaar waren online.</p>
+      <p>Grote agencies vroegen <strong>€5.000 voor een website</strong> die maanden op zich liet wachten. Dus bouwden we DRP BuildLab: een studio die gelooft dat elke lokale zaak <strong>recht heeft op een professionele online aanwezigheid</strong> — zonder de prijs of gedoe.</p>
+      <div class="pillars">
+        <div class="pillar"><div class="pn">01</div><div><div class="ptitle">Eerlijkheid boven alles</div><div class="pbody">Wat we beloven, leveren we. Geen verborgen kosten, geen vage offertes.</div></div></div>
+        <div class="pillar"><div class="pn">02</div><div><div class="ptitle">Snelheid is onze troef</div><div class="pbody">Terwijl anderen weken praten, bouwen wij. Live binnen 48 uur na goedkeuring.</div></div></div>
+        <div class="pillar"><div class="pn">03</div><div><div class="ptitle">Lokaal denken, digitaal bouwen</div><div class="pbody">Wij kennen uw regio, uw klanten en uw markt.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY ────────────────────────────────────────── -->
+<section id="waarom" class="sec sec-alt">
+  <div class="rv">
+    <span class="stag">Waarom DRP BuildLab</span>
+    <h2 class="sh">Wat maakt ons anders?</h2>
+    <p class="ssub">Gebouwd voor lokale bedrijven die online willen staan — zonder gedoe, zonder verrassingen.</p>
+  </div>
+  <div class="wgrid">
+    <div class="wcard rv si">
+      <div class="wico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="wtitle">Levering in 48 uur</div>
+      <div class="wbody">Geen weken wachten. Al na twee dagen bent u online en vindbaar voor uw klanten.</div>
+    </div>
+    <div class="wcard rv si d1">
+      <div class="wico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+      <div class="wtitle">Lokale focus</div>
+      <div class="wbody">Uw regio, uw klanten, een persoonlijk team. Wij begrijpen de lokale markt van binnenuit.</div>
+    </div>
+    <div class="wcard rv si d2">
+      <div class="wico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <div class="wtitle">Eerlijke prijs</div>
+      <div class="wbody">Geen verborgen kosten. Altijd vast op voorhand. U weet precies wat u betaalt.</div>
+    </div>
+    <div class="wcard rv si d1">
+      <div class="wico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+      <div class="wtitle">Altijd mobiel-klaar</div>
+      <div class="wbody">70%+ van uw klanten zoekt via telefoon. Elke DRP BuildLab site werkt perfect op elk apparaat.</div>
+    </div>
+    <div class="wcard rv si d2">
+      <div class="wico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+      <div class="wtitle">Google-geoptimaliseerd</div>
+      <div class="wbody">SEO ingebouwd zodat klanten u vinden. Wij zorgen dat Google u herkent en indexeert.</div>
+    </div>
+    <div class="wcard rv si d3">
+      <div class="wico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="wtitle">Levenslange partner</div>
+      <div class="wbody">Na de lancering staan wij nog voor u klaar. Geen eenmalige leverancier, maar een echte partner.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OPPORTUNITY COST ───────────────────────────── -->
+<section class="sec">
+  <div class="opp-layout">
+    <div class="rv fl">
+      <span class="stag">De verborgen kost</span>
+      <h2 class="sh">Wat kost €0<br>online aanwezigheid<br><em>écht?</em></h2>
+      <p class="ssub" style="margin-top:1rem">Geen website is niet gratis. Elke dag zonder online aanwezigheid verliest u klanten aan concurrenten die wel vindbaar zijn.</p>
+      <div class="opoints" style="margin-top:2.5rem">
+        <div class="opt"><div class="opt-marker"></div><div><div class="opt-title">78% zoekt eerst online</div><div class="opt-body">Voordat iemand een lokale zaak bezoekt, googelt hij. Staat u er niet? Dan bestaat u niet voor die klant.</div></div></div>
+        <div class="opt"><div class="opt-marker"></div><div><div class="opt-title">Elke dag is gemiste omzet</div><div class="opt-body">Klanten vinden u niet online en gaan hierdoor naar de concurrentie. Elke dag zonder website is een dag dat uw concurrent wint.</div></div></div>
+        <div class="opt"><div class="opt-marker"></div><div><div class="opt-title">Uw concurrent staat wel online</div><div class="opt-body">Terwijl u wacht, bouwt uw concurrent zijn online reputatie op. Hoe langer u wacht, hoe moeilijker in te halen.</div></div></div>
+        <div class="opt"><div class="opt-marker"></div><div><div class="opt-title">Geloofwaardigheid is omzet</div><div class="opt-body">Een professionele website geeft vertrouwen. Klanten kiezen sneller voor een bedrijf dat er serieus uitziet.</div></div></div>
+      </div>
+    </div>
+    <div class="rv fr d2">
+      <div class="opp-box">
+        <div style="font-size:.58rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem">Kostenberekening per jaar</div>
+        <div class="orow"><span class="olbl">Gemiste klanten per week (schatting)</span><span class="oval">2–5</span></div>
+        <div class="orow"><span class="olbl">Gemiddelde waarde per klant</span><span class="oval">€80</span></div>
+        <div class="orow"><span class="olbl">Gemist per jaar zonder website</span><span class="oval n">−€8.320</span></div>
+        <div class="orow"><span class="olbl">Investering DRP BuildLab (Starter)</span><span class="oval p">+€299</span></div>
+        <div class="orow"><span class="olbl">Jaarlijks beheer</span><span class="oval p">+€348</span></div>
+        <div class="ototl"><div class="otlbl">Potentieel netto-voordeel</div><div class="otval">+€7.673/jaar</div></div>
+      </div>
+      <div class="onote" style="margin-top:1.5rem"><strong>De conclusie is simpel:</strong> de kostprijs van een website is een fractie van wat u misloopt zonder er één te hebben. Wachten kost meer dan investeren.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMPETITORS ────────────────────────────────── -->
+<section class="sec sec-alt">
+  <div class="rv">
+    <span class="stag">Marktoverzicht</span>
+    <h2 class="sh">Niemand doet het<br>goedkoper <em>dan wij.</em></h2>
+    <p class="ssub" style="margin-top:1rem">We verbergen dit niet — we zijn er trots op. Kijk zelf wat vergelijkbare websites elders kosten.</p>
+  </div>
+  <div class="ctbl rv d1">
+    <div class="chd">
+      <div class="chc">Aanbieder</div><div class="chc">Startprijs</div><div class="chc">Levertijd</div><div class="chc">Mobiel</div><div class="chc">Beheer</div>
+    </div>
+    <div class="crow us">
+      <div class="cc"><span class="cnm u">DRP BuildLab<span class="cbdg">Wij</span></span></div>
+      <div class="cc"><span class="cp g">€299</span></div>
+      <div class="cc"><span class="cp g">48 uur</span></div>
+      <div class="cc"><span class="ck">✓</span></div>
+      <div class="cc"><span class="cp g">€29/m</span></div>
+    </div>
+    <div class="crow">
+      <div class="cc"><span class="cnm">Freelancer</span></div>
+      <div class="cc"><span class="cp b">€800–€2.500</span></div>
+      <div class="cc"><span class="cp b">3–8 weken</span></div>
+      <div class="cc"><span class="ck">✓</span></div>
+      <div class="cc"><span class="cx">Niet inbegrepen</span></div>
+    </div>
+    <div class="crow">
+      <div class="cc"><span class="cnm">Digitaal bureau</span></div>
+      <div class="cc"><span class="cp b">€2.500–€8.000</span></div>
+      <div class="cc"><span class="cp b">6–16 weken</span></div>
+      <div class="cc"><span class="ck">✓</span></div>
+      <div class="cc"><span class="cx">Duur extra</span></div>
+    </div>
+    <div class="crow">
+      <div class="cc"><span class="cnm">Groot agentschap</span></div>
+      <div class="cc"><span class="cp b">€8.000+</span></div>
+      <div class="cc"><span class="cp b">3–6 maanden</span></div>
+      <div class="cc"><span class="ck">✓</span></div>
+      <div class="cc"><span class="cx">Duur extra</span></div>
+    </div>
+    <div class="crow">
+      <div class="cc"><span class="cnm">Wix / Squarespace</span></div>
+      <div class="cc"><span class="cp b">€200–€500/jr</span></div>
+      <div class="cc"><span class="cp b">Zelf doen</span></div>
+      <div class="cc"><span class="ck">✓</span></div>
+      <div class="cc"><span class="cx">Zelf doen</span></div>
+    </div>
+  </div>
+  <div class="cnote rv d2"><strong>Opmerking:</strong> website builders zoals Wix zijn op jaarbasis even duur — maar u doet alles zelf, zonder professionele hulp of ondersteuning. Bij DRP BuildLab doet u niets zelf en staat er altijd iemand voor u klaar.</div>
+</section>
+
+<!-- ── DISCOUNT ───────────────────────────────────── -->
+<div class="disc rv">
+  <div class="disc-l">
+    <span class="disc-tag">Tijdelijke actie</span>
+    <div class="disc-h">Korting<br>voor nieuwe klanten.</div>
+    <p class="disc-sub">Vraag uw demo aan en ontvang een exclusieve korting op uw eerste website. Geldig voor een beperkt aantal nieuwe klanten.</p>
+    <a href="#contact" class="disc-btn mag">Vraag nu uw korting aan →</a>
+  </div>
+  <div class="disc-r">
+    <div class="dbox"><div class="dbox-lbl">Korting op Starter pakket</div><div class="dbox-val">−€50</div></div>
+    <div class="dbox"><div class="dbox-lbl">Korting op Professioneel pakket</div><div class="dbox-val">−€75</div></div>
+    <div class="dbox"><div class="dbox-lbl">Gratis maand beheer (alle pakketten)</div><div class="dbox-val">+1 maand</div></div>
+  </div>
+</div>
+
+<!-- ── PRICING ────────────────────────────────────── -->
+<section id="pakketten" class="sec">
+  <div class="rv">
+    <span class="stag">Pakketten & Prijzen</span>
+    <h2 class="sh">Transparante prijzen,<br><em>altijd.</em></h2>
+    <p class="ssub" style="margin-top:1rem">Kies het pakket dat past bij uw bedrijf. Geen verrassingen achteraf.</p>
+  </div>
+  <div class="pgrid">
+    <div class="plan rv si">
+      <div class="pname">Starter</div>
+      <div class="pprice"><sup>€</sup>299</div>
+      <div class="pperiod">eenmalig + €29/maand</div>
+      <ul class="pfeats"><li>Tot 5 pagina's op maat</li><li>Responsive (mobiel-klaar)</li><li>Contactformulier</li><li>Google Maps integratie</li><li>1 revisieronde</li><li>Levering binnen 48 uur</li></ul>
+      <a href="#contact" class="pbtn o mag">Starten →</a>
+    </div>
+    <div class="plan feat rv si d1">
+      <div class="pbadge">Meest gekozen</div>
+      <div class="pname">Professioneel</div>
+      <div class="pprice"><sup>€</sup>499</div>
+      <div class="pperiod">eenmalig + €39/maand</div>
+      <ul class="pfeats"><li>Tot 10 pagina's op maat</li><li>Responsive design</li><li>Contactformulier + WhatsApp</li><li>SEO basis-optimalisatie</li><li>Google Analytics</li><li>2 revisierondes</li><li>Levering binnen 72 uur</li><li>1 maand gratis onderhoud</li></ul>
+      <a href="#contact" class="pbtn f mag">Starten →</a>
+    </div>
+    <div class="plan rv si d2">
+      <div class="pname">Premium</div>
+      <div class="pprice"><sup>€</sup>899</div>
+      <div class="pperiod">eenmalig + €59/maand</div>
+      <ul class="pfeats"><li>Tot 15 pagina's op maat</li><li>Blog / nieuws sectie</li><li>Online reservatiefunctie</li><li>Geavanceerde SEO</li><li>Google Ads koppeling</li><li>Onbeperkte revisies</li><li>3 maanden gratis onderhoud</li></ul>
+      <a href="#contact" class="pbtn o mag">Starten →</a>
+    </div>
+  </div>
+  <div style="margin-top:3rem" class="rv d2">
+    <span class="stag">Extra diensten</span>
+    <div class="exgrid" style="margin-top:1.2rem">
+      <div class="ex"><span class="ex-n">Logo ontwerp</span><span class="ex-p">€149</span></div>
+      <div class="ex"><span class="ex-n">Extra pagina</span><span class="ex-p">€79</span></div>
+      <div class="ex"><span class="ex-n">SEO startpakket</span><span class="ex-p">€199</span></div>
+      <div class="ex"><span class="ex-n">Google Ads opzetten</span><span class="ex-p">€149</span></div>
+      <div class="ex"><span class="ex-n">Meertalige site</span><span class="ex-p">€199</span></div>
+      <div class="ex"><span class="ex-n">Webshop toevoegen</span><span class="ex-p">€499</span></div>
+      <div class="ex"><span class="ex-n">Noodreparatie (24u)</span><span class="ex-p">€99</span></div>
+      <div class="ex"><span class="ex-n">Fotografie (halve dag)</span><span class="ex-p">€199</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INSTAGRAM ──────────────────────────────────── -->
+<section class="ig-sec">
+  <div class="rv fl si">
+    <div class="ig-card">
+      <div class="ig-big">DRP</div>
+      <div class="ig-sub">BuildLab</div>
+      <div class="ig-handle">@drp_buildlab</div>
+    </div>
+  </div>
+  <div class="rv fr d2">
+    <span class="stag">Volg ons op Instagram</span>
+    <h2 class="sh" style="margin-bottom:1.5rem">Bekijk ons werk<br><em>van dichtbij.</em></h2>
+    <p class="ig-text">Volg ons op Instagram voor de nieuwste projecten, tips voor lokale ondernemers en een kijkje achter de schermen van DRP BuildLab.</p>
+    <p class="ig-text">Ziet u iets dat u aanspreekt? Stuur ons een DM — we antwoorden altijd persoonlijk.</p>
+    <a href="https://www.instagram.com/drp_buildlab/" target="_blank" rel="noopener" class="ig-link mag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      @drp_buildlab op Instagram →
+    </a>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────── -->
+<section id="contact" class="sec">
+  <div class="ct-layout">
+    <div class="rv fl">
+      <span class="stag">Gratis demo</span>
+      <h2 class="sh">Klaar om online<br><em>te gaan?</em></h2>
+      <p class="ct-lede">Vraag een gratis demo aan. We bellen u op en tonen meteen een voorbeeld op maat. Geen verplichtingen.</p>
+      <div class="ct-items">
+        <div class="ct-item">
+          <div class="ci-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.35 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.7 16z"/></svg></div>
+          <div><div class="ci-lbl">Telefoon</div><div class="ci-val"><a href="tel:+3247374431">+32 473 74 44 31</a></div></div>
+        </div>
+        <div class="ct-item">
+          <div class="ci-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="ci-lbl">E-mail</div><div class="ci-val"><a href="mailto:info@drpbuildlab.com">info@drpbuildlab.com</a></div></div>
+        </div>
+        <div class="ct-item">
+          <div class="ci-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+          <div><div class="ci-lbl">Adres</div><div class="ci-val">Beenhouwersstraat 32/1, 1000 Brussel</div></div>
+        </div>
+        <div class="ct-item">
+          <div class="ci-ico" style="color:#25D366"><svg width="15" height="15" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.782 6.86L2 30l7.347-1.758A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm6.34 19.94c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.232.348-.898 1.132-1.1 1.364-.202.232-.404.26-.752.086-.348-.174-1.468-.54-2.796-1.724-1.034-.92-1.73-2.056-1.934-2.404-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.434-.028-.608-.086-.174-.78-1.882-1.07-2.576-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.608.086-.926.434-.318.348-1.216 1.188-1.216 2.896s1.244 3.356 1.418 3.588c.174.232 2.448 3.736 5.932 5.238.83.358 1.478.572 1.982.732.832.264 1.59.226 2.188.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.204-1.656-.086-.144-.318-.232-.666-.406z"/></svg></div>
+          <div><div class="ci-lbl">WhatsApp</div><div class="ci-val"><a href="https://wa.me/32473744431" target="_blank" rel="noopener">+32 473 74 44 31</a></div></div>
+        </div>
+        <div class="ct-item">
+          <div class="ci-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+          <div><div class="ci-lbl">Instagram</div><div class="ci-val"><a href="https://www.instagram.com/drp_buildlab/" target="_blank" rel="noopener">@drp_buildlab</a></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="rv fr d2">
+      <div class="fwrap">
+        <form id="formWrap" name="demo-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="demo-aanvraag">
+          <input type="hidden" name="subject" value="Nieuwe demo aanvraag — DRP BuildLab">
+          <p style="display:none"><input name="bot-field"></p>
+          <div class="frow">
+            <div class="field"><label>Voornaam</label><input id="f-vnaam" name="voornaam" type="text" placeholder="Jan"></div>
+            <div class="field"><label>Achternaam</label><input id="f-anaam" name="achternaam" type="text" placeholder="Peeters"></div>
+          </div>
+          <div class="field"><label>Bedrijfsnaam</label><input id="f-bedrijf" name="bedrijf" type="text" placeholder="Jouw bedrijf"></div>
+          <div class="field"><label>Telefoonnummer</label><input id="f-tel" name="telefoon" type="tel" placeholder="+32 ..."></div>
+          <div class="field"><label>E-mail</label><input id="f-email" name="email" type="email" placeholder="jan@jouwbedrijf.be"></div>
+          <div class="field">
+            <label>Interessant pakket</label>
+            <select id="f-pakket" name="pakket"><option value="" disabled selected>Kies een pakket</option><option>Starter — €299</option><option>Professioneel — €499</option><option>Premium — €899</option><option>Ik weet het nog niet</option></select>
+          </div>
+          <div class="field"><label>Bericht (optioneel)</label><textarea id="f-bericht" name="bericht" placeholder="Vertel ons meer over uw project..."></textarea></div>
+          <button type="submit" class="fsubmit mag" id="fSubmitBtn">Gratis demo aanvragen →</button>
+        </form>
+        <div class="succ" id="succ">
+          <div class="succ-chk">✓</div>
+          <h3>Aanvraag ontvangen!</h3>
+          <p>We nemen contact met u op binnen 24 uur om uw gratis demo in te plannen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHATSAPP FLOAT ─────────────────────────────── -->
+<a href="https://wa.me/32473744431" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp ons">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.782 6.86L2 30l7.347-1.758A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.25-4.36 1.043 1.072-4.25-.276-.436A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.66c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.232.348-.898 1.132-1.1 1.364-.202.232-.404.26-.752.086-.348-.174-1.468-.54-2.796-1.724-1.034-.92-1.73-2.056-1.934-2.404-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.434-.028-.608-.086-.174-.78-1.882-1.07-2.576-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.608.086-.926.434-.318.348-1.216 1.188-1.216 2.896s1.244 3.356 1.418 3.588c.174.232 2.448 3.736 5.932 5.238.83.358 1.478.572 1.982.732.832.264 1.59.226 2.188.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.204-1.656-.086-.144-.318-.232-.666-.406z"/></svg>
+</a>
+
+<!-- ── FOOTER ─────────────────────────────────────── -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-brand">
+        <div class="ft-mark"><span class="ft-mark-drp">DRP</span><span class="ft-mark-bl">BUILDLAB</span></div>
+        <span class="ft-name">DRP BuildLab</span>
+      </div>
+      <div class="ft-tag">Professionele websites voor lokale bedrijven · Levering in 48 uur</div>
+    </div>
+    <div class="ft-cols">
+      <div class="ft-col">
+        <h4>Navigatie</h4>
+        <a href="#hoe-het-werkt">Hoe het werkt</a>
+        <a href="#over-ons">Over ons</a>
+        <a href="#pakketten">Pakketten</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="ft-col">
+        <h4>Contact</h4>
+        <a href="mailto:info@drpbuildlab.com">info@drpbuildlab.com</a>
+        <a href="tel:+3247374431">+32 473 74 44 31</a>
+        <a href="https://www.instagram.com/drp_buildlab/" target="_blank" rel="noopener">@drp_buildlab</a>
+        <a href="https://drpbuildlab.com">drpbuildlab.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <div class="ft-copy">© 2025 DRP BuildLab · Beenhouwersstraat 32/1, 1000 Brussel, Belgium</div>
+    <a href="https://www.instagram.com/drp_buildlab/" target="_blank" rel="noopener" class="ft-ig">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Volg ons op Instagram
+    </a>
+  </div>
+</footer>
+
+<script>
+/* ══════════════════════════════════════════
+   LOADER
+══════════════════════════════════════════ */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('gone');
+    // trigger hero line animations
+    document.querySelectorAll('.hl-i').forEach(el => el.classList.add('in'));
+    // trigger word reveals on first visible headings
+    triggerWordReveals();
+  }, 1500);
+});
+
+/* ══════════════════════════════════════════
+   CURSOR — smooth lag ring
+══════════════════════════════════════════ */
+const cdot  = document.getElementById('cdot');
+const cring = document.getElementById('cring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+(function loop(){
+  cdot.style.cssText  = `left:${mx}px;top:${my}px`;
+  rx += (mx-rx)*.1; ry += (my-ry)*.1;
+  cring.style.cssText = `left:${rx}px;top:${ry}px`;
+  requestAnimationFrame(loop);
+})();
+document.querySelectorAll('a,button,.wcard,.srow,.plan,.ex,.crow,.mag').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('ch'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('ch'));
+});
+document.querySelectorAll('input,textarea,select').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('ct'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('ct'));
+});
+
+/* ══════════════════════════════════════════
+   NAV + SCROLL PROGRESS
+══════════════════════════════════════════ */
+const nav  = document.getElementById('nav');
+const prog = document.getElementById('sprog');
+window.addEventListener('scroll', ()=>{
+  nav.classList.toggle('s', window.scrollY>50);
+  const p = window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;
+  prog.style.width = p+'%';
+},{passive:true});
+
+/* ══════════════════════════════════════════
+   REVEAL ON SCROLL
+══════════════════════════════════════════ */
+const rvIO = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('vv'); rvIO.unobserve(e.target); }});
+},{threshold:.07,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>rvIO.observe(el));
+
+/* ══════════════════════════════════════════
+   WORD REVEAL on .sh headings
+══════════════════════════════════════════ */
+function triggerWordReveals(){
+  document.querySelectorAll('.sh').forEach(el=>{
+    // Already processed?
+    if(el.dataset.wr) return;
+    el.dataset.wr='1';
+    // Split HTML preserving <br> and <em>
+    const html = el.innerHTML;
+    const parts = html.split(/(<br\s*\/?>|<em>[\s\S]*?<\/em>)/gi);
+    el.innerHTML = parts.map(p=>{
+      if(/^<br/i.test(p)) return p;
+      if(/^<em/i.test(p)){
+        // wrap inner words of em
+        const inner = p.replace(/<em>([\s\S]*?)<\/em>/i,(_,t)=>{
+          return '<em>'+wrapWords(t)+'</em>';
+        });
+        return inner;
+      }
+      return wrapWords(p);
+    }).join('');
+    // Observe
+    const wIO = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(!e.isIntersecting) return;
+        e.target.querySelectorAll('.wr').forEach((w,i)=>{
+          setTimeout(()=>w.classList.add('in'), i*60);
+        });
+        wIO.unobserve(e.target);
+      });
+    },{threshold:.18});
+    wIO.observe(el);
+  });
+}
+function wrapWords(str){
+  return str.replace(/([^\s]+)/g, w=>`<span class="wr-w"><span class="wr">${w}</span></span>`);
+}
+// Re-run after DOM ready for below-fold headings
+document.addEventListener('DOMContentLoaded', triggerWordReveals);
+
+/* ══════════════════════════════════════════
+   HERO — scale down slightly on scroll
+══════════════════════════════════════════ */
+const heroH1 = document.getElementById('heroH1');
+const hlogomark = document.getElementById('hlogomark');
+window.addEventListener('scroll',()=>{
+  const y = window.scrollY;
+  const vh = window.innerHeight;
+  const p = Math.min(y/vh,1);
+  if(heroH1){
+    heroH1.style.transform = `scale(${1 + p*0.06}) translateY(${p * -30}px)`;
+    heroH1.style.opacity   = 1 - p*1.4;
+  }
+  if(hlogomark){
+    hlogomark.style.transform = `translateY(calc(-50% + ${y*0.2}px))`;
+    hlogomark.style.opacity = 1 - p*2;
+  }
+},{passive:true});
+
+/* ══════════════════════════════════════════
+   MOUSE PARALLAX on hero background shapes
+══════════════════════════════════════════ */
+const hbg   = document.querySelector('.hero-bg-glow');
+const hgrid = document.querySelector('.hero-grid');
+document.querySelector('.hero').addEventListener('mousemove', e=>{
+  const cx=window.innerWidth/2, cy=window.innerHeight/2;
+  const dx=(e.clientX-cx)/cx, dy=(e.clientY-cy)/cy;
+  if(hbg)   hbg.style.transform   = `translate(${dx*18}px,${dy*18}px)`;
+  if(hgrid) hgrid.style.transform = `translate(${dx*-8}px,${dy*-8}px)`;
+  if(hlogomark) hlogomark.style.transform = `translateY(-50%) translate(${dx*10}px,${dy*10}px)`;
+});
+
+/* ══════════════════════════════════════════
+   ZOOM SECTION — pinned, scale driven by scroll
+   Stats cycle: 48u → €299 → 100%
+══════════════════════════════════════════ */
+const zoomSec     = document.getElementById('zoomSec');
+const zoomInner   = document.getElementById('zoomInner');
+const zoomNum     = document.getElementById('zoomNum');
+const zoomLbl     = document.getElementById('zoomLbl');
+const zoomTag     = document.getElementById('zoomTag');
+const zoomCounter = document.getElementById('zoomCounter');
+const zdots       = [document.getElementById('zd0'),document.getElementById('zd1'),document.getElementById('zd2')];
+
+const zStats = [
+  {num:'48<span>u</span>',   lbl:'Gemiddelde levertijd van website tot live', tag:'Onze belofte'},
+  {num:'€299',               lbl:'Startprijs — de laagste in de markt',        tag:'Eerlijke prijs'},
+  {num:'100<span>%</span>',  lbl:'Volledig ontzorgd — u hoeft niets zelf te doen', tag:'Geen gedoe'},
+];
+let lastIdx = -1;
+
+window.addEventListener('scroll',()=>{
+  const secTop  = zoomSec.offsetTop;
+  const secH    = zoomSec.offsetHeight;
+  const scrolled = window.scrollY - secTop;
+  const p = Math.max(0, Math.min(1, scrolled / (secH - window.innerHeight)));
+
+  // Scale from 0.55 → 1 over first third, hold, then fade out
+  let scale, opacity;
+  if(p < .45){
+    scale   = 0.55 + p/0.45 * 0.45;
+    opacity = p/0.2;
+  } else if(p < .85){
+    scale   = 1;
+    opacity = 1;
+  } else {
+    scale   = 1 + (p-.85)/.15 * 0.06;
+    opacity = 1 - (p-.85)/.15;
+  }
+
+  zoomInner.style.transform = `scale(${Math.min(scale,1.06)})`;
+  zoomInner.style.opacity   = Math.max(0,Math.min(1,opacity));
+
+  // Cycle stats at 0%, 33%, 66%
+  const idx = Math.min(2, Math.floor(p * 3));
+  if(idx !== lastIdx){
+    lastIdx = idx;
+    const s = zStats[idx];
+    zoomNum.innerHTML = s.num;
+    zoomLbl.textContent = s.lbl;
+    zoomTag.textContent = s.tag;
+    if(zoomCounter) zoomCounter.textContent = `0${idx+1} / 03`;
+    zdots.forEach((d,i)=>{
+      d.classList.toggle('a', i===idx);
+    });
+  }
+},{passive:true});
+
+/* ══════════════════════════════════════════
+   VELOCITY MARQUEE (scroll-speed-reactive)
+══════════════════════════════════════════ */
+const mq = document.getElementById('mqTrack');
+let mqX = 0, lastScrollY = 0, velocity = 0;
+const baseSpeed = 0.38; // px per frame at rest
+(function mqLoop(){
+  velocity *= 0.92;
+  mqX -= baseSpeed + velocity * 3;
+  const w = mq.scrollWidth / 2;
+  if(Math.abs(mqX) >= w) mqX = 0;
+  mq.style.transform = `translateX(${mqX}px)`;
+  requestAnimationFrame(mqLoop);
+})();
+window.addEventListener('scroll',()=>{
+  const delta = window.scrollY - lastScrollY;
+  velocity = Math.max(-6, Math.min(6, delta * 0.12));
+  lastScrollY = window.scrollY;
+},{passive:true});
+
+/* ══════════════════════════════════════════
+   MAGNETIC BUTTONS
+══════════════════════════════════════════ */
+document.querySelectorAll('.mag').forEach(el=>{
+  el.addEventListener('mousemove', e=>{
+    const r = el.getBoundingClientRect();
+    const dx = e.clientX - (r.left + r.width/2);
+    const dy = e.clientY - (r.top  + r.height/2);
+    el.style.transform = `translate(${dx*.18}px,${dy*.22}px)`;
+  });
+  el.addEventListener('mouseleave',()=>{ el.style.transform=''; });
+});
+
+/* ══════════════════════════════════════════
+   NUMBER COUNTERS
+══════════════════════════════════════════ */
+const cntIO = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const el = e.target;
+    const target = parseInt(el.dataset.count)||0;
+    const prefix = el.dataset.prefix||'';
+    const suffix = el.dataset.suffix||'';
+    if(target===0){ cntIO.unobserve(el); return; }
+    let start=null;
+    const run=ts=>{
+      if(!start) start=ts;
+      const p=Math.min((ts-start)/1300,1);
+      const ease=1-Math.pow(1-p,3);
+      el.textContent = prefix+Math.round(ease*target)+suffix;
+      if(p<1) requestAnimationFrame(run);
+    };
+    requestAnimationFrame(run);
+    cntIO.unobserve(el);
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cntIO.observe(el));
+
+/* ══════════════════════════════════════════
+   CONTACT FORM — Netlify Forms (AJAX submit)
+   Submissions arrive at info@drpbuildlab.com
+══════════════════════════════════════════ */
+const demoForm = document.getElementById('formWrap');
+if(demoForm){
+  demoForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = new FormData(demoForm);
+    fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(data).toString()
+    })
+    .then(()=>{
+      demoForm.style.display = 'none';
+      document.getElementById('succ').classList.add('on');
+    })
+    .catch(()=>{
+      demoForm.style.display = 'none';
+      document.getElementById('succ').classList.add('on');
+    });
+  });
+}
+</script>
+</body>
+</html>
