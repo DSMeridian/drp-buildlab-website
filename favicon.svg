@@ -1,26 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-  <!-- White background -->
-  <rect width="400" height="400" fill="#ffffff"/>
-  <!-- DRP — large, very bold, dark navy -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Blue rounded square background — matches brand -->
+  <rect width="512" height="512" rx="96" fill="#4A90E2"/>
+  <!-- DRP — bold white, large, fills the square -->
   <text
-    x="200"
-    y="240"
+    x="256"
+    y="340"
     text-anchor="middle"
     font-family="Arial Black, Arial, sans-serif"
-    font-size="210"
+    font-size="248"
     font-weight="900"
-    fill="#1a1f36"
+    fill="#ffffff"
     letter-spacing="-4"
   >DRP</text>
-  <!-- BUILDLAB — bold, blue, letter-spaced -->
-  <text
-    x="200"
-    y="310"
-    text-anchor="middle"
-    font-family="Arial, sans-serif"
-    font-size="48"
-    font-weight="700"
-    fill="#4A90E2"
-    letter-spacing="10"
-  >BUILDLAB</text>
 </svg>
