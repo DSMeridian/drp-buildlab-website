@@ -746,7 +746,7 @@ nav.s{
 /* ─────────────────────────────────────────────
    PRICING
 ───────────────────────────────────────────── */
-.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:5rem}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:5rem}
 .plan{background:var(--bg);padding:3rem 2.5rem;position:relative;transition:background .3s;cursor:none}
 .plan:hover{background:var(--bg2)}
 .plan.feat{background:var(--bg2);border:1px solid var(--line-b);box-shadow:0 0 50px rgba(74,144,226,.08);margin:-1px;z-index:1}
@@ -901,6 +901,10 @@ footer{background:var(--ink);padding:4rem 5vw 2.5rem;color:#fff}
   .stime{display:none}
   .wgrid{grid-template-columns:1fr 1fr}
   .pgrid{grid-template-columns:1fr}
+  .plan{padding:2.5rem 1.8rem}
+  .plan.feat{margin:0}
+  .pprice{font-size:3.5rem}
+  .pprice[style]{font-size:1.9rem !important}
   .exgrid{grid-template-columns:1fr 1fr}
   .chd,.crow{grid-template-columns:2fr 1fr 1fr}
   .chc:nth-child(n+4),.cc:nth-child(n+4){display:none}
@@ -908,11 +912,25 @@ footer{background:var(--ink);padding:4rem 5vw 2.5rem;color:#fff}
   .ft-cols{gap:2.5rem}
   .zoom-section{height:200vh}
   .zoom-inner{transform:scale(.65)}
+  /* FAQ cards full-width on mobile */
+  #faq details{padding:1.1rem 1.2rem !important}
+  #faq details summary{font-size:.98rem !important}
+  /* Services intro + helper text readable */
+  #diensten .ssub{font-size:.95rem}
 }
 @media(max-width:480px){
   .wgrid{grid-template-columns:1fr}
   .exgrid{grid-template-columns:1fr}
   .ab-nums{grid-template-columns:1fr 1fr}
+  .plan{padding:2rem 1.4rem}
+  .pprice{font-size:3rem}
+  .pprice[style]{font-size:1.7rem !important;line-height:1.1 !important}
+  .pname{font-size:1.15rem}
+  .pfeats li{font-size:.88rem}
+  .pbtn{font-size:.9rem;padding:.9rem 1.2rem}
+  /* Footer columns stack on very small */
+  .ft-cols{flex-direction:column;gap:2rem}
+  .ft-top{flex-direction:column;gap:2.5rem}
 }
 </style>
 </head>
@@ -1245,7 +1263,7 @@ footer{background:var(--ink);padding:4rem 5vw 2.5rem;color:#fff}
     <p class="ssub" style="margin-top:1rem">Bij DRP BuildLab maken we elke website <strong>volledig op maat</strong>. De prijs bepalen we altijd op basis van de hoeveelheid werk die we in uw project steken. Geen verplichte pakketten, geen verrassingen — alleen een eerlijke quotatie die past bij wat u écht nodig heeft.</p>
   </div>
 
-  <div class="pgrid" style="grid-template-columns:repeat(2,1fr)">
+  <div class="pgrid">
     <!-- Beginnerspakket -->
     <div class="plan feat rv si">
       <div class="pbadge">Voor starters</div>
