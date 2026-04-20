@@ -879,6 +879,20 @@ footer{background:var(--ink);padding:4rem 5vw 2.5rem;color:#fff}
 .wr.in{transform:translateY(0)}
 
 /* ─────────────────────────────────────────────
+   LANGUAGE SWITCHER
+───────────────────────────────────────────── */
+.nav-right{display:flex;align-items:center;gap:1rem}
+.lang-sw{display:flex;align-items:center;gap:.25rem}
+.lang-btn{
+  background:none;border:1px solid transparent;border-radius:3px;
+  padding:.22rem .45rem;font-family:inherit;font-size:.68rem;font-weight:700;
+  letter-spacing:.06em;color:var(--muted);cursor:none;transition:all .2s;
+  text-transform:uppercase;line-height:1;
+}
+.lang-btn:hover{color:var(--ink);border-color:var(--line)}
+.lang-btn.active{color:var(--blue);border-color:rgba(74,144,226,.35);background:rgba(74,144,226,.06)}
+
+/* ─────────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────────── */
 @media(max-width:1100px){
@@ -965,14 +979,22 @@ footer{background:var(--ink);padding:4rem 5vw 2.5rem;color:#fff}
     <span class="nname">DRP BuildLab</span>
   </a>
   <div class="nlinks">
-    <a href="#hoe-het-werkt">Hoe het werkt</a>
-    <a href="#over-ons">Over ons</a>
-    <a href="#diensten">Diensten</a>
+    <a href="#hoe-het-werkt" id="navHow">Hoe het werkt</a>
+    <a href="#over-ons" id="navAbout">Over ons</a>
+    <a href="#diensten" id="navServices">Diensten</a>
     <a href="https://www.instagram.com/drp_buildlab/" target="_blank" rel="noopener" class="nig">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
       Instagram
     </a>
-    <a href="#contact" class="ncta">Gratis demo →</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-sw" id="langSw">
+      <button class="lang-btn active" data-lang="nl">NL</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+    </div>
+    <a href="#contact" class="ncta" id="navCta">Gratis demo →</a>
   </div>
 </nav>
 
@@ -1740,6 +1762,450 @@ if(demoForm){
     });
   });
 }
+
+/* ══════════════════════════════════════════
+   MULTILINGUAL — NL / EN / FR / ES
+══════════════════════════════════════════ */
+const TRANSLATIONS = {
+nl:{
+  'meta.title':'DRP BuildLab — Websites op maat voor lokale bedrijven | Beginnerspakket vanaf €499',
+  'meta.desc':'DRP BuildLab bouwt websites volledig op maat voor lokale ondernemers in België. Beginnerspakket vanaf €499 voor starters, of een persoonlijke quotatie voor geavanceerde projecten — altijd met maandelijks onderhoud.',
+  'loader':'Laden...',
+  'nav.how':'Hoe het werkt','nav.about':'Over ons','nav.srv':'Diensten','nav.cta':'Gratis demo →',
+  'hero.eye':'Websites op maat voor lokale bedrijven',
+  'hero.l1':'Jouw bedrijf','hero.l2':'online in','hero.l3':'<span class="h-accent">48</span> <span class="h-light">uur.</span>',
+  'hero.sub':'Geen website? Dan besta je niet online. DRP BuildLab bouwt <strong>websites volledig op maat</strong> voor lokale ondernemers — de prijs bepalen we op basis van de hoeveelheid werk die in jouw project gaat. Altijd eerlijk, altijd transparant.',
+  'hero.cta1':'Gratis demo aanvragen →','hero.cta2':'Bekijk onze aanpak','hero.scroll':'Scroll',
+  'mq':['Levering in 48 uur','Lokale focus','Eerlijke prijs','Mobiel-klaar','Google-geoptimaliseerd','Volledig ontzorgd'],
+  'zoom.bl':'Onze cijfers','zoom.br':'Scroll verder',
+  'zs':[{num:'48<span>u</span>',lbl:'Gemiddelde levertijd van website tot live',tag:'Onze belofte'},{num:'€499',lbl:'Beginnerspakket — website op maat voor starters',tag:'Eerlijke prijs'},{num:'100<span>%</span>',lbl:'Websites volledig op maat — prijs volgens werk',tag:'Op maat'}],
+  'how.tag':'Hoe het werkt','how.h2':'Van niets naar online<br><em>in 4 stappen.</em>','how.sub':'Geen technische kennis nodig. Wij regelen alles van eerste gesprek tot live website.',
+  'how.steps':[{t:'Eerste gesprek',b:'We bellen u op en tonen meteen een voorbeeld op maat. Volledig vrijblijvend.',d:'Dag 1'},{t:'Ontwerp op maat',b:'Op basis van uw wensen bouwen we uw website. U hoeft zelf niets te doen.',d:'Dag 1–2'},{t:'Preview & goedkeuring',b:'U krijgt een preview ter goedkeuring. Aanpassingen inbegrepen. Daarna gaat uw site live met eigen domein.',d:'Dag 2'},{t:'Live — en wij blijven',b:'Na de lancering staan wij nog steeds voor u klaar. Updates, aanpassingen, vragen — wij regelen het.',d:'Dag 2+'}],
+  'ab.logotag':'Websites · 48 uur',
+  'ab.quote':'"Elke lokale zaak verdient een eerlijke kans om online <em>gevonden te worden.</em>"',
+  'ab.sig':'— De founders van DRP BuildLab',
+  'ab.nums':['Gemiddelde levertijd','Beginnerspakket website','Op maat gemaakt','Verborgen kosten'],
+  'ab.tag':'Over ons','ab.h2':'Gebouwd door<br>ondernemers,<br><em>voor ondernemers.</em>',
+  'ab.p1':'Het begon met een frustratie. We zagen hoe lokale bedrijven — de slager op de hoek, de loodgieter die altijd bereikbaar is, de kapper die al jaren dezelfde klanten knipt — volledig onzichtbaar waren online.',
+  'ab.p2':'Grote agencies vroegen <strong>€5.000 voor een website</strong> die maanden op zich liet wachten. Dus bouwden we DRP BuildLab: een studio die gelooft dat elke lokale zaak <strong>recht heeft op een website op maat</strong> — betaalbaar, eerlijk en met een prijs die past bij het werk dat erin gaat.',
+  'ab.pillars':[{t:'Eerlijkheid boven alles',b:'Wat we beloven, leveren we. Geen verborgen kosten, geen vage offertes.'},{t:'Snelheid is onze troef',b:'Terwijl anderen weken praten, bouwen wij. Live binnen 48 uur na goedkeuring.'},{t:'Lokaal denken, digitaal bouwen',b:'Wij kennen uw regio, uw klanten en uw markt. Actief in heel België — van Brussel, Antwerpen, Gent en Leuven tot Brugge, Hasselt, Luik en alles daartussen.'}],
+  'why.tag':'Waarom DRP BuildLab','why.h2':'Wat maakt ons anders?','why.sub':'Gebouwd voor lokale bedrijven die online willen staan — zonder gedoe, zonder verrassingen.',
+  'why.cards':[{t:'Levering in 48 uur',b:'Geen weken wachten. Al na twee dagen bent u online en vindbaar voor uw klanten.'},{t:'Lokale focus',b:'Uw regio, uw klanten, een persoonlijk team. Wij begrijpen de lokale markt van binnenuit.'},{t:'Eerlijke prijs',b:'Geen verborgen kosten. Altijd vast op voorhand. U weet precies wat u betaalt.'},{t:'Altijd mobiel-klaar',b:'70%+ van uw klanten zoekt via telefoon. Elke DRP BuildLab site werkt perfect op elk apparaat.'},{t:'Google-geoptimaliseerd',b:'SEO ingebouwd zodat klanten u vinden. Wij zorgen dat Google u herkent en indexeert.'},{t:'Levenslange partner',b:'Na de lancering staan wij nog voor u klaar. Geen eenmalige leverancier, maar een echte partner.'}],
+  'opp.tag':'De verborgen kost','opp.h2':'Wat kost €0<br>online aanwezigheid<br><em>écht?</em>','opp.sub':'Geen website is niet gratis. Elke dag zonder online aanwezigheid verliest u klanten aan concurrenten die wel vindbaar zijn.',
+  'opp.pts':[{t:'78% zoekt eerst online',b:'Voordat iemand een lokale zaak bezoekt, googelt hij. Staat u er niet? Dan bestaat u niet voor die klant.'},{t:'Elke dag is gemiste omzet',b:'Klanten vinden u niet online en gaan hierdoor naar de concurrentie. Elke dag zonder website is een dag dat uw concurrent wint.'},{t:'Uw concurrent staat wel online',b:'Terwijl u wacht, bouwt uw concurrent zijn online reputatie op. Hoe langer u wacht, hoe moeilijker in te halen.'},{t:'Geloofwaardigheid is omzet',b:'Een professionele website geeft vertrouwen. Klanten kiezen sneller voor een bedrijf dat er serieus uitziet.'}],
+  'opp.boxtitle':'Kostenberekening per jaar',
+  'opp.rows':[['Gemiste klanten per week (schatting)','2–5'],['Gemiddelde waarde per klant','€80'],['Gemist per jaar zonder website','−€8.320'],['Investering DRP BuildLab (Beginnerspakket)','+€499'],['Jaarlijks maandelijks onderhoud','+€348']],
+  'opp.totlbl':'Potentieel netto-voordeel','opp.totval':'+€7.473/jaar',
+  'opp.note':'<strong>De conclusie is simpel:</strong> de kostprijs van een website is een fractie van wat u misloopt zonder er één te hebben. Wachten kost meer dan investeren.',
+  'comp.tag':'Marktoverzicht','comp.h2':'Niemand doet het<br>goedkoper <em>dan wij.</em>','comp.sub':'We verbergen dit niet — we zijn er trots op. Kijk zelf wat vergelijkbare websites elders kosten.',
+  'comp.cols':['Aanbieder','Startprijs','Levertijd','Mobiel','Beheer'],
+  'comp.us':'Wij',
+  'comp.rows':[{n:'DRP BuildLab',p:'€499',d:'48 uur',m:'Inbegrepen',us:true},{n:'Freelancer',p:'€800–€2.500',d:'3–8 weken',m:'Niet inbegrepen'},{n:'Digitaal bureau',p:'€2.500–€8.000',d:'6–16 weken',m:'Duur extra'},{n:'Groot agentschap',p:'€8.000+',d:'3–6 maanden',m:'Duur extra'},{n:'Wix / Squarespace',p:'€200–€500/jr',d:'Zelf doen',m:'Zelf doen'}],
+  'comp.note':'<strong>Opmerking:</strong> website builders zoals Wix zijn op jaarbasis even duur — maar u doet alles zelf, zonder professionele hulp of ondersteuning. Bij DRP BuildLab doet u niets zelf en staat er altijd iemand voor u klaar.',
+  'disc.tag':'Tijdelijke actie','disc.h':'Korting<br>voor nieuwe klanten.','disc.sub':'Vraag uw demo aan en ontvang een exclusieve korting op uw eerste website. Geldig voor een beperkt aantal nieuwe klanten.','disc.btn':'Vraag nu uw korting aan →',
+  'disc.boxes':[{l:'Korting op het beginnerspakket',v:'−€50'},{l:'Korting op projecten op maat',v:'−10%'},{l:'Gratis maand onderhoud (alle projecten)',v:'+1 maand'}],
+  'srv.tag':'Onze aanpak','srv.h2':'Websites <em>op maat</em><br>voor elke ondernemer.',
+  'srv.sub':'Bij DRP BuildLab maken we elke website <strong>volledig op maat</strong>. De prijs bepalen we altijd op basis van de hoeveelheid werk die we in uw project steken. Geen verplichte pakketten, geen verrassingen — alleen een eerlijke quotatie die past bij wat u écht nodig heeft.',
+  'p1.badge':'Voor starters','p1.name':'Beginnerspakket','p1.period':'eenmalig + maandelijks onderhoud',
+  'p1.desc':'Ideaal voor <strong>lokale ondernemers die net gestart zijn</strong> en nog geen website hebben — of ondernemers die hun bestaande website willen laten aanpassen naar een moderne, professionele versie.',
+  'p1.feats':['Website volledig op maat van uw bedrijf','Mobiel-klaar (responsive design)','Contactformulier + WhatsApp koppeling','Google Maps & basis SEO-optimalisatie','Eigen domeinnaam & hosting','Levering binnen 48 uur','Maandelijks onderhoud inbegrepen'],
+  'p1.btn':'Vraag gratis demo aan →',
+  'p2.name':'Geavanceerd op maat','p2.price':'Quotatie<br>op maat','p2.period':'persoonlijke offerte + maandelijks onderhoud',
+  'p2.desc':'Voor ondernemers met <strong>grotere of complexere projecten</strong>: webshops, reservatiesystemen, meertalige sites, integraties of unieke functionaliteiten. De prijs bepalen we op basis van de scope van uw project.',
+  'p2.feats':['Onbeperkt aantal pagina\'s op maat','Webshop, boekingssysteem of ledenportaal','Geavanceerde SEO & Google Ads','Meertalige websites mogelijk','Maatwerk integraties (CRM, API, etc.)','Onbeperkte revisies tijdens het traject','Maandelijks onderhoud altijd inbegrepen'],
+  'p2.btn':'Quotatie aanvragen →',
+  'srv.how':'<strong>Hoe het werkt:</strong> u vertelt ons wat u nodig heeft, wij bekijken de scope en maken een eerlijke prijs op basis van het werk. Altijd met maandelijks onderhoud — zodat uw website veilig, up-to-date en SEO-geoptimaliseerd blijft.',
+  'ex.tag':'Extra diensten','ex.h3':'Aanvullende diensten<br><em>om uw online groei te versnellen.</em>','ex.sub':'Ook los of in combinatie met uw website te bestellen. Prijzen zijn indicatief en worden altijd bevestigd in uw persoonlijke quotatie.',
+  'ex.items':[{n:'Logo ontwerp',p:'€149'},{n:'Extra pagina',p:'€79'},{n:'SEO startpakket',p:'€199'},{n:'Google Ads opzetten',p:'€149'},{n:'Meertalige site',p:'€199'},{n:'Webshop toevoegen',p:'Op maat'},{n:'Noodreparatie (24u)',p:'€99'},{n:'Fotografie (halve dag)',p:'€199'}],
+  'faq.tag':'Veelgestelde vragen','faq.h2':'Antwoord op uw<br><em>belangrijkste vragen.</em>',
+  'faq.items':[{q:'Wat kost een website bij DRP BuildLab?',a:'Elke website wordt volledig op maat gemaakt. De prijs hangt af van de hoeveelheid werk dat in uw project gaat. Voor lokale ondernemers die net gestart zijn of een bestaande website willen laten aanpassen, hebben we een beginnerspakket vanaf <strong>€499</strong>. Voor geavanceerde projecten maken we altijd een <strong>quotatie op maat</strong>, inclusief maandelijks onderhoud.'},{q:'Voor wie is het beginnerspakket van €499 bedoeld?',a:'Specifiek voor lokale ondernemers die net gestart zijn zonder website, of voor ondernemers die hun bestaande website willen laten aanpassen naar een moderne, professionele versie.'},{q:'Is maandelijks onderhoud altijd inbegrepen?',a:'Ja. Bij élk project — van het beginnerspakket tot volledig maatwerk — voorzien we altijd maandelijks onderhoud. Zo blijft uw website veilig, snel en SEO-geoptimaliseerd.'},{q:'Hoe snel staat mijn website online?',a:'De meeste websites uit het beginnerspakket leveren we binnen <strong>48 uur</strong>. Bij complexere projecten op maat stemmen we de levertijd af op de scope van uw project.'},{q:'Hoe werkt een quotatie op maat?',a:'Voor geavanceerde projecten bekijken we eerst uw wensen in een gratis kennismakingsgesprek. Daarna maken we een persoonlijke quotatie op basis van de hoeveelheid werk: aantal pagina\'s, functionaliteiten, integraties en onderhoud. Geen verborgen kosten — u weet op voorhand wat u betaalt.'}],
+  'ig.tag':'Volg ons op Instagram','ig.h2':'Bekijk ons werk<br><em>van dichtbij.</em>',
+  'ig.p1':'Volg ons op Instagram voor de nieuwste projecten, tips voor lokale ondernemers en een kijkje achter de schermen van DRP BuildLab.',
+  'ig.p2':'Ziet u iets dat u aanspreekt? Stuur ons een DM — we antwoorden altijd persoonlijk.','ig.link':'@drp_buildlab op Instagram →',
+  'ct.tag':'Gratis demo','ct.h2':'Klaar om online<br><em>te gaan?</em>','ct.lede':'Vraag een gratis demo aan. We bellen u op en tonen meteen een voorbeeld op maat. Geen verplichtingen.',
+  'ct.lbls':['Telefoon','E-mail','Adres','WhatsApp','Instagram'],
+  'f.labels':['Voornaam','Achternaam','Bedrijfsnaam','Telefoonnummer','E-mail','Welke dienst heeft u in gedachten?','Bericht (optioneel)'],
+  'f.phs':['Jan','Peeters','Jouw bedrijf','+32 ...','jan@jouwbedrijf.be','Vertel ons meer over uw project...'],
+  'f.sel':['Kies een dienst','Beginnerspakket — €499','Geavanceerd op maat — quotatie','Aanpassing bestaande website','Enkel extra diensten (logo, SEO, …)','Ik weet het nog niet'],
+  'f.btn':'Gratis demo aanvragen →','f.succ.h':'Aanvraag ontvangen!','f.succ.p':'We nemen contact met u op binnen 24 uur om uw gratis demo in te plannen.',
+  'ft.tag':'Professionele websites voor lokale bedrijven · Levering in 48 uur',
+  'ft.nav':['Navigatie','Hoe het werkt','Over ons','Diensten','Veelgestelde vragen','Contact'],
+  'ft.ct':'Contact','ft.copy':'© 2026 DRP BuildLab · Websites op maat voor lokale ondernemers · Beenhouwersstraat 32/1, 1000 Brussel, België','ft.ig':'Volg ons op Instagram',
+  'wa':'WhatsApp ons'
+},
+en:{
+  'meta.title':'DRP BuildLab — Custom Websites for Local Businesses | Starter Package from €499',
+  'meta.desc':'DRP BuildLab builds fully custom websites for local entrepreneurs in Belgium. Starter package from €499, or a custom quote for advanced projects — always with monthly maintenance.',
+  'loader':'Loading...',
+  'nav.how':'How it works','nav.about':'About us','nav.srv':'Services','nav.cta':'Free demo →',
+  'hero.eye':'Custom websites for local businesses',
+  'hero.l1':'Your business','hero.l2':'online in','hero.l3':'<span class="h-accent">48</span> <span class="h-light">hours.</span>',
+  'hero.sub':'No website? Then you don\'t exist online. DRP BuildLab builds <strong>fully custom websites</strong> for local entrepreneurs — the price is based on the amount of work your project requires. Always honest, always transparent.',
+  'hero.cta1':'Request free demo →','hero.cta2':'See our approach','hero.scroll':'Scroll',
+  'mq':['Delivery in 48 hours','Local focus','Fair pricing','Mobile-ready','Google-optimized','Fully worry-free'],
+  'zoom.bl':'Our numbers','zoom.br':'Scroll further',
+  'zs':[{num:'48<span>h</span>',lbl:'Average delivery time from build to live',tag:'Our promise'},{num:'€499',lbl:'Starter package — custom website for new businesses',tag:'Fair price'},{num:'100<span>%</span>',lbl:'Fully custom websites — price based on scope',tag:'Custom'}],
+  'how.tag':'How it works','how.h2':'From zero to online<br><em>in 4 steps.</em>','how.sub':'No technical knowledge needed. We handle everything from first call to live website.',
+  'how.steps':[{t:'First call',b:'We call you and show a custom example right away. Completely free and non-binding.',d:'Day 1'},{t:'Custom design',b:'Based on your wishes, we build your website. You don\'t have to do anything.',d:'Days 1–2'},{t:'Preview & approval',b:'You receive a preview for approval. Revisions included. Then your site goes live with your own domain.',d:'Day 2'},{t:'Live — and we stay',b:'After launch, we\'re still here for you. Updates, changes, questions — we handle it.',d:'Day 2+'}],
+  'ab.logotag':'Websites · 48 hours',
+  'ab.quote':'"Every local business deserves a fair chance to be found <em>online.</em>"',
+  'ab.sig':'— The founders of DRP BuildLab',
+  'ab.nums':['Average delivery time','Starter package website','Custom made','Hidden costs'],
+  'ab.tag':'About us','ab.h2':'Built by<br>entrepreneurs,<br><em>for entrepreneurs.</em>',
+  'ab.p1':'It started with a frustration. We saw how local businesses — the butcher on the corner, the plumber who\'s always available, the hairdresser who has cut the same clients\' hair for years — were completely invisible online.',
+  'ab.p2':'Large agencies charged <strong>€5,000 for a website</strong> that took months to deliver. So we built DRP BuildLab: a studio that believes every local business <strong>deserves a custom website</strong> — affordable, honest, with a price that matches the work it takes.',
+  'ab.pillars':[{t:'Honesty above all',b:'What we promise, we deliver. No hidden costs, no vague quotes.'},{t:'Speed is our edge',b:'While others spend weeks talking, we build. Live within 48 hours of approval.'},{t:'Think local, build digital',b:'We know your region, your customers, your market. Active across Belgium — from Brussels, Antwerp, Ghent and Leuven to Bruges, Hasselt, Liège and everywhere in between.'}],
+  'why.tag':'Why DRP BuildLab','why.h2':'What makes us different?','why.sub':'Built for local businesses that want to be online — without hassle, without surprises.',
+  'why.cards':[{t:'Delivery in 48 hours',b:'No weeks of waiting. After two days you\'re online and findable by your customers.'},{t:'Local focus',b:'Your region, your customers, a personal team. We understand the local market from the inside.'},{t:'Fair pricing',b:'No hidden costs. Always fixed in advance. You know exactly what you pay.'},{t:'Always mobile-ready',b:'70%+ of your customers search by phone. Every DRP BuildLab site works perfectly on every device.'},{t:'Google-optimized',b:'SEO built in so customers find you. We make sure Google recognizes and indexes you.'},{t:'Lifelong partner',b:'After launch we\'re still here for you. Not a one-time vendor, but a true partner.'}],
+  'opp.tag':'The hidden cost','opp.h2':'What does €0 online<br>presence<br><em>really cost?</em>','opp.sub':'Having no website isn\'t free. Every day without an online presence, you lose customers to competitors who are findable.',
+  'opp.pts':[{t:'78% search online first',b:'Before visiting a local business, people Google it. Not there? You don\'t exist for that customer.'},{t:'Every day is missed revenue',b:'Customers can\'t find you online and go to the competition. Every day without a website is a day your competitor wins.'},{t:'Your competitor is online',b:'While you wait, your competitor builds their online reputation. The longer you wait, the harder it is to catch up.'},{t:'Credibility is revenue',b:'A professional website builds trust. Customers more readily choose a business that looks serious.'}],
+  'opp.boxtitle':'Cost calculation per year',
+  'opp.rows':[['Missed customers per week (estimate)','2–5'],['Average value per customer','€80'],['Lost per year without a website','−€8,320'],['Investment DRP BuildLab (Starter package)','+€499'],['Annual monthly maintenance','+€348']],
+  'opp.totlbl':'Potential net benefit','opp.totval':'+€7,473/year',
+  'opp.note':'<strong>The conclusion is simple:</strong> the cost of a website is a fraction of what you miss out on without one. Waiting costs more than investing.',
+  'comp.tag':'Market overview','comp.h2':'No one does it<br>cheaper <em>than us.</em>','comp.sub':'We don\'t hide this — we\'re proud of it. See for yourself what comparable websites cost elsewhere.',
+  'comp.cols':['Provider','Starting price','Delivery','Mobile','Management'],
+  'comp.us':'Us',
+  'comp.rows':[{n:'DRP BuildLab',p:'€499',d:'48 hours',m:'Included',us:true},{n:'Freelancer',p:'€800–€2,500',d:'3–8 weeks',m:'Not included'},{n:'Digital agency',p:'€2,500–€8,000',d:'6–16 weeks',m:'Expensive extra'},{n:'Large agency',p:'€8,000+',d:'3–6 months',m:'Expensive extra'},{n:'Wix / Squarespace',p:'€200–€500/yr',d:'Do it yourself',m:'Do it yourself'}],
+  'comp.note':'<strong>Note:</strong> website builders like Wix are equally expensive annually — but you do everything yourself, without professional help or support. At DRP BuildLab you do nothing yourself and someone is always there for you.',
+  'disc.tag':'Limited offer','disc.h':'Discount<br>for new clients.','disc.sub':'Request your demo and receive an exclusive discount on your first website. Valid for a limited number of new clients.','disc.btn':'Claim your discount now →',
+  'disc.boxes':[{l:'Discount on starter package',v:'−€50'},{l:'Discount on custom projects',v:'−10%'},{l:'Free month of maintenance (all projects)',v:'+1 month'}],
+  'srv.tag':'Our approach','srv.h2':'Websites <em>custom-made</em><br>for every entrepreneur.',
+  'srv.sub':'At DRP BuildLab, every website is <strong>fully custom-made</strong>. The price is always based on the amount of work we put into your project. No mandatory packages, no surprises — just a fair quote that fits what you actually need.',
+  'p1.badge':'For starters','p1.name':'Starter Package','p1.period':'one-time + monthly maintenance',
+  'p1.desc':'Ideal for <strong>local entrepreneurs who are just starting out</strong> and don\'t have a website yet — or entrepreneurs who want to update their existing website to a modern, professional version.',
+  'p1.feats':['Website fully custom to your business','Mobile-ready (responsive design)','Contact form + WhatsApp integration','Google Maps & basic SEO optimization','Own domain name & hosting','Delivery within 48 hours','Monthly maintenance included'],
+  'p1.btn':'Request free demo →',
+  'p2.name':'Advanced custom','p2.price':'Custom<br>quote','p2.period':'personal quote + monthly maintenance',
+  'p2.desc':'For entrepreneurs with <strong>larger or more complex projects</strong>: webshops, booking systems, multilingual sites, integrations or unique functionality. The price is determined by the scope of your project.',
+  'p2.feats':['Unlimited custom pages','Webshop, booking system or member portal','Advanced SEO & Google Ads','Multilingual websites possible','Custom integrations (CRM, API, etc.)','Unlimited revisions during the process','Monthly maintenance always included'],
+  'p2.btn':'Request a quote →',
+  'srv.how':'<strong>How it works:</strong> you tell us what you need, we assess the scope and create a fair price based on the work. Always with monthly maintenance — so your website stays safe, up-to-date and SEO-optimized.',
+  'ex.tag':'Extra services','ex.h3':'Additional services<br><em>to accelerate your online growth.</em>','ex.sub':'Order separately or in combination with your website. Prices are indicative and always confirmed in your personal quote.',
+  'ex.items':[{n:'Logo design',p:'€149'},{n:'Extra page',p:'€79'},{n:'SEO starter package',p:'€199'},{n:'Google Ads setup',p:'€149'},{n:'Multilingual site',p:'€199'},{n:'Add webshop',p:'Custom'},{n:'Emergency repair (24h)',p:'€99'},{n:'Photography (half day)',p:'€199'}],
+  'faq.tag':'Frequently asked questions','faq.h2':'Answers to your<br><em>most important questions.</em>',
+  'faq.items':[{q:'How much does a website cost at DRP BuildLab?',a:'Every website is fully custom-made. The price depends on the amount of work that goes into your project. For local entrepreneurs who are just starting out or want to update an existing website, we have a starter package from <strong>€499</strong>. For advanced projects we always create a <strong>custom quote</strong>, including monthly maintenance.'},{q:'Who is the €499 starter package for?',a:'Specifically for local entrepreneurs who are just starting out without a website, or for entrepreneurs who want to update their existing website to a modern, professional version.'},{q:'Is monthly maintenance always included?',a:'Yes. For every project — from the starter package to fully custom — we always provide monthly maintenance. This keeps your website safe, fast and SEO-optimized.'},{q:'How quickly will my website be online?',a:'Most starter package websites are delivered within <strong>48 hours</strong>. For more complex custom projects, we align the delivery time with the scope of your project.'},{q:'How does a custom quote work?',a:'For advanced projects, we first review your needs in a free introductory call. Then we create a personal quote based on the amount of work: number of pages, features, integrations and maintenance. No hidden costs — you know in advance what you pay.'}],
+  'ig.tag':'Follow us on Instagram','ig.h2':'See our work<br><em>up close.</em>',
+  'ig.p1':'Follow us on Instagram for the latest projects, tips for local entrepreneurs and a behind-the-scenes look at DRP BuildLab.',
+  'ig.p2':'See something that appeals to you? Send us a DM — we always reply personally.','ig.link':'@drp_buildlab on Instagram →',
+  'ct.tag':'Free demo','ct.h2':'Ready to go<br><em>online?</em>','ct.lede':'Request a free demo. We\'ll call you and show a custom example right away. No obligations.',
+  'ct.lbls':['Phone','Email','Address','WhatsApp','Instagram'],
+  'f.labels':['First name','Last name','Company name','Phone number','Email','Which service do you have in mind?','Message (optional)'],
+  'f.phs':['John','Smith','Your company','+32 ...','john@yourcompany.com','Tell us more about your project...'],
+  'f.sel':['Choose a service','Starter package — €499','Advanced custom — quote','Update existing website','Extra services only (logo, SEO, …)','I\'m not sure yet'],
+  'f.btn':'Request free demo →','f.succ.h':'Request received!','f.succ.p':'We\'ll contact you within 24 hours to schedule your free demo.',
+  'ft.tag':'Professional websites for local businesses · Delivery in 48 hours',
+  'ft.nav':['Navigation','How it works','About us','Services','FAQ','Contact'],
+  'ft.ct':'Contact','ft.copy':'© 2026 DRP BuildLab · Custom websites for local entrepreneurs · Beenhouwersstraat 32/1, 1000 Brussels, Belgium','ft.ig':'Follow us on Instagram',
+  'wa':'WhatsApp us'
+},
+fr:{
+  'meta.title':'DRP BuildLab — Sites web sur mesure pour entreprises locales | Forfait débutant à partir de 499 €',
+  'meta.desc':'DRP BuildLab crée des sites web entièrement sur mesure pour les entrepreneurs locaux en Belgique. Forfait débutant à partir de 499 € ou devis personnalisé pour des projets avancés — toujours avec maintenance mensuelle.',
+  'loader':'Chargement...',
+  'nav.how':'Comment ça marche','nav.about':'À propos','nav.srv':'Services','nav.cta':'Démo gratuite →',
+  'hero.eye':'Sites web sur mesure pour entreprises locales',
+  'hero.l1':'Votre entreprise','hero.l2':'en ligne en','hero.l3':'<span class="h-accent">48</span> <span class="h-light">heures.</span>',
+  'hero.sub':'Pas de site web ? Vous n\'existez pas en ligne. DRP BuildLab crée des <strong>sites web entièrement sur mesure</strong> pour les entrepreneurs locaux — le prix est basé sur la quantité de travail que votre projet requiert. Toujours honnête, toujours transparent.',
+  'hero.cta1':'Demander une démo gratuite →','hero.cta2':'Voir notre approche','hero.scroll':'Défiler',
+  'mq':['Livraison en 48 heures','Focus local','Prix équitable','Mobile-ready','Optimisé Google','Entièrement géré'],
+  'zoom.bl':'Nos chiffres','zoom.br':'Continuer à défiler',
+  'zs':[{num:'48<span>h</span>',lbl:'Délai de livraison moyen de la création à la mise en ligne',tag:'Notre promesse'},{num:'499 €',lbl:'Forfait débutant — site web sur mesure pour les nouvelles entreprises',tag:'Prix équitable'},{num:'100<span>%</span>',lbl:'Sites web entièrement sur mesure — prix selon le travail',tag:'Sur mesure'}],
+  'how.tag':'Comment ça marche','how.h2':'De zéro à en ligne<br><em>en 4 étapes.</em>','how.sub':'Aucune connaissance technique requise. Nous gérons tout, du premier appel au site web en ligne.',
+  'how.steps':[{t:'Premier appel',b:'Nous vous appelons et vous montrons un exemple sur mesure immédiatement. Entièrement gratuit et sans engagement.',d:'Jour 1'},{t:'Design sur mesure',b:'Selon vos souhaits, nous construisons votre site web. Vous n\'avez rien à faire.',d:'Jours 1–2'},{t:'Aperçu & approbation',b:'Vous recevez un aperçu pour approbation. Révisions incluses. Ensuite votre site est mis en ligne avec votre propre domaine.',d:'Jour 2'},{t:'En ligne — et nous restons',b:'Après le lancement, nous sommes toujours là pour vous. Mises à jour, modifications, questions — nous nous en occupons.',d:'Jour 2+'}],
+  'ab.logotag':'Sites web · 48 heures',
+  'ab.quote':'"Chaque entreprise locale mérite une chance équitable d\'être trouvée <em>en ligne.</em>"',
+  'ab.sig':'— Les fondateurs de DRP BuildLab',
+  'ab.nums':['Délai de livraison moyen','Forfait débutant site web','Sur mesure','Frais cachés'],
+  'ab.tag':'À propos','ab.h2':'Construit par des<br>entrepreneurs,<br><em>pour des entrepreneurs.</em>',
+  'ab.p1':'Tout a commencé par une frustration. Nous avons vu comment les entreprises locales — le boucher du coin, le plombier toujours disponible, le coiffeur qui coiffe les mêmes clients depuis des années — étaient complètement invisibles en ligne.',
+  'ab.p2':'Les grandes agences demandaient <strong>5 000 € pour un site web</strong> qui prenait des mois à livrer. Nous avons donc créé DRP BuildLab : un studio qui croit que chaque entreprise locale <strong>mérite un site web sur mesure</strong> — abordable, honnête, avec un prix qui correspond au travail fourni.',
+  'ab.pillars':[{t:'L\'honnêteté avant tout',b:'Ce que nous promettons, nous le livrons. Pas de frais cachés, pas de devis vagues.'},{t:'La rapidité est notre atout',b:'Pendant que les autres parlent pendant des semaines, nous construisons. En ligne dans les 48 heures après approbation.'},{t:'Penser local, construire digital',b:'Nous connaissons votre région, vos clients, votre marché. Actifs dans toute la Belgique — de Bruxelles, Anvers, Gand et Louvain à Bruges, Hasselt, Liège et partout entre les deux.'}],
+  'why.tag':'Pourquoi DRP BuildLab','why.h2':'Qu\'est-ce qui nous différencie ?','why.sub':'Conçu pour les entreprises locales qui veulent être en ligne — sans tracas, sans surprises.',
+  'why.cards':[{t:'Livraison en 48 heures',b:'Pas de semaines d\'attente. Après deux jours, vous êtes en ligne et trouvable par vos clients.'},{t:'Focus local',b:'Votre région, vos clients, une équipe personnelle. Nous comprenons le marché local de l\'intérieur.'},{t:'Prix équitable',b:'Pas de frais cachés. Toujours fixe à l\'avance. Vous savez exactement ce que vous payez.'},{t:'Toujours mobile-ready',b:'70 %+ de vos clients cherchent par téléphone. Chaque site DRP BuildLab fonctionne parfaitement sur chaque appareil.'},{t:'Optimisé Google',b:'SEO intégré pour que les clients vous trouvent. Nous veillons à ce que Google vous reconnaisse et vous indexe.'},{t:'Partenaire à vie',b:'Après le lancement, nous sommes toujours là pour vous. Pas un fournisseur ponctuel, mais un vrai partenaire.'}],
+  'opp.tag':'Le coût caché','opp.h2':'Que coûte vraiment<br>0 € de présence<br><em>en ligne ?</em>','opp.sub':'Ne pas avoir de site web n\'est pas gratuit. Chaque jour sans présence en ligne, vous perdez des clients au profit de concurrents qui sont trouvables.',
+  'opp.pts':[{t:'78 % cherchent d\'abord en ligne',b:'Avant de visiter une entreprise locale, les gens la cherchent sur Google. Pas là ? Vous n\'existez pas pour ce client.'},{t:'Chaque jour est du chiffre d\'affaires manqué',b:'Les clients ne vous trouvent pas en ligne et vont à la concurrence. Chaque jour sans site web est un jour où votre concurrent gagne.'},{t:'Votre concurrent est en ligne',b:'Pendant que vous attendez, votre concurrent construit sa réputation en ligne. Plus vous attendez, plus il est difficile de rattraper.'},{t:'La crédibilité c\'est du chiffre d\'affaires',b:'Un site web professionnel inspire confiance. Les clients choisissent plus facilement une entreprise qui paraît sérieuse.'}],
+  'opp.boxtitle':'Calcul des coûts par an',
+  'opp.rows':[['Clients manqués par semaine (estimation)','2–5'],['Valeur moyenne par client','80 €'],['Perdu par an sans site web','−8 320 €'],['Investissement DRP BuildLab (Forfait débutant)','+499 €'],['Maintenance mensuelle annuelle','+348 €']],
+  'opp.totlbl':'Bénéfice net potentiel','opp.totval':'+7 473 €/an',
+  'opp.note':'<strong>La conclusion est simple :</strong> le coût d\'un site web est une fraction de ce que vous perdez sans en avoir un. Attendre coûte plus cher qu\'investir.',
+  'comp.tag':'Aperçu du marché','comp.h2':'Personne ne fait ça<br>moins cher <em>que nous.</em>','comp.sub':'Nous ne le cachons pas — nous en sommes fiers. Voyez par vous-même ce que coûtent des sites similaires ailleurs.',
+  'comp.cols':['Fournisseur','Prix de départ','Livraison','Mobile','Gestion'],
+  'comp.us':'Nous',
+  'comp.rows':[{n:'DRP BuildLab',p:'499 €',d:'48 heures',m:'Inclus',us:true},{n:'Freelance',p:'800–2 500 €',d:'3–8 semaines',m:'Non inclus'},{n:'Agence digitale',p:'2 500–8 000 €',d:'6–16 semaines',m:'En supplément'},{n:'Grande agence',p:'8 000 €+',d:'3–6 mois',m:'En supplément'},{n:'Wix / Squarespace',p:'200–500 €/an',d:'Fait soi-même',m:'Fait soi-même'}],
+  'comp.note':'<strong>Remarque :</strong> les constructeurs de sites comme Wix sont tout aussi chers annuellement — mais vous faites tout vous-même, sans aide ni support professionnel. Chez DRP BuildLab, vous ne faites rien vous-même et quelqu\'un est toujours là pour vous.',
+  'disc.tag':'Offre limitée','disc.h':'Réduction<br>pour nouveaux clients.','disc.sub':'Demandez votre démo et recevez une réduction exclusive sur votre premier site web. Valable pour un nombre limité de nouveaux clients.','disc.btn':'Réclamez votre réduction →',
+  'disc.boxes':[{l:'Réduction sur le forfait débutant',v:'−50 €'},{l:'Réduction sur les projets sur mesure',v:'−10 %'},{l:'Mois de maintenance gratuit (tous projets)',v:'+1 mois'}],
+  'srv.tag':'Notre approche','srv.h2':'Sites web <em>sur mesure</em><br>pour chaque entrepreneur.',
+  'srv.sub':'Chez DRP BuildLab, chaque site web est <strong>entièrement sur mesure</strong>. Le prix est toujours basé sur la quantité de travail que nous investissons dans votre projet. Pas de forfaits obligatoires, pas de surprises — juste un devis équitable adapté à vos besoins réels.',
+  'p1.badge':'Pour débutants','p1.name':'Forfait débutant','p1.period':'unique + maintenance mensuelle',
+  'p1.desc':'Idéal pour les <strong>entrepreneurs locaux qui démarrent</strong> et n\'ont pas encore de site web — ou ceux qui veulent moderniser leur site existant vers une version professionnelle.',
+  'p1.feats':['Site web entièrement sur mesure','Mobile-ready (design responsive)','Formulaire de contact + intégration WhatsApp','Google Maps & optimisation SEO de base','Nom de domaine & hébergement propres','Livraison sous 48 heures','Maintenance mensuelle incluse'],
+  'p1.btn':'Demander une démo gratuite →',
+  'p2.name':'Avancé sur mesure','p2.price':'Devis<br>personnalisé','p2.period':'devis personnel + maintenance mensuelle',
+  'p2.desc':'Pour les entrepreneurs avec <strong>des projets plus importants ou complexes</strong> : boutiques en ligne, systèmes de réservation, sites multilingues, intégrations ou fonctionnalités uniques.',
+  'p2.feats':['Pages illimitées sur mesure','Boutique en ligne, système de réservation ou portail membres','SEO avancé & Google Ads','Sites web multilingues possibles','Intégrations sur mesure (CRM, API, etc.)','Révisions illimitées pendant le projet','Maintenance mensuelle toujours incluse'],
+  'p2.btn':'Demander un devis →',
+  'srv.how':'<strong>Comment ça marche :</strong> vous nous dites ce dont vous avez besoin, nous évaluons la portée et créons un prix équitable basé sur le travail. Toujours avec maintenance mensuelle — pour que votre site reste sécurisé, à jour et optimisé SEO.',
+  'ex.tag':'Services supplémentaires','ex.h3':'Services additionnels<br><em>pour accélérer votre croissance en ligne.</em>','ex.sub':'Commandez séparément ou en combinaison avec votre site. Les prix sont indicatifs et toujours confirmés dans votre devis personnel.',
+  'ex.items':[{n:'Création de logo',p:'149 €'},{n:'Page supplémentaire',p:'79 €'},{n:'Forfait SEO starter',p:'199 €'},{n:'Configuration Google Ads',p:'149 €'},{n:'Site multilingue',p:'199 €'},{n:'Ajouter une boutique',p:'Sur mesure'},{n:'Réparation d\'urgence (24h)',p:'99 €'},{n:'Photographie (demi-journée)',p:'199 €'}],
+  'faq.tag':'Questions fréquentes','faq.h2':'Réponses à vos<br><em>questions les plus importantes.</em>',
+  'faq.items':[{q:'Combien coûte un site web chez DRP BuildLab ?',a:'Chaque site web est entièrement sur mesure. Le prix dépend de la quantité de travail que votre projet requiert. Pour les entrepreneurs locaux qui démarrent ou veulent mettre à jour un site existant, nous avons un forfait débutant à partir de <strong>499 €</strong>. Pour les projets avancés, nous créons toujours un <strong>devis sur mesure</strong>, maintenance mensuelle incluse.'},{q:'À qui s\'adresse le forfait débutant à 499 € ?',a:'Spécifiquement aux entrepreneurs locaux qui démarrent sans site web, ou aux entrepreneurs qui souhaitent moderniser leur site existant vers une version professionnelle.'},{q:'La maintenance mensuelle est-elle toujours incluse ?',a:'Oui. Pour chaque projet — du forfait débutant au entièrement sur mesure — nous fournissons toujours une maintenance mensuelle. Cela maintient votre site web sécurisé, rapide et optimisé SEO.'},{q:'En combien de temps mon site sera-t-il en ligne ?',a:'La plupart des sites du forfait débutant sont livrés en <strong>48 heures</strong>. Pour les projets sur mesure plus complexes, nous adaptons le délai à la portée de votre projet.'},{q:'Comment fonctionne un devis sur mesure ?',a:'Pour les projets avancés, nous examinons d\'abord vos besoins lors d\'un appel de présentation gratuit. Ensuite, nous créons un devis personnel basé sur la quantité de travail : nombre de pages, fonctionnalités, intégrations et maintenance. Pas de frais cachés — vous savez à l\'avance ce que vous payez.'}],
+  'ig.tag':'Suivez-nous sur Instagram','ig.h2':'Découvrez notre travail<br><em>de près.</em>',
+  'ig.p1':'Suivez-nous sur Instagram pour les derniers projets, des conseils pour les entrepreneurs locaux et un aperçu des coulisses de DRP BuildLab.',
+  'ig.p2':'Vous voyez quelque chose qui vous parle ? Envoyez-nous un DM — nous répondons toujours personnellement.','ig.link':'@drp_buildlab sur Instagram →',
+  'ct.tag':'Démo gratuite','ct.h2':'Prêt à aller<br><em>en ligne ?</em>','ct.lede':'Demandez une démo gratuite. Nous vous appelons et vous montrons un exemple sur mesure immédiatement. Sans engagement.',
+  'ct.lbls':['Téléphone','E-mail','Adresse','WhatsApp','Instagram'],
+  'f.labels':['Prénom','Nom de famille','Nom de l\'entreprise','Numéro de téléphone','E-mail','Quel service avez-vous en tête ?','Message (optionnel)'],
+  'f.phs':['Jean','Dupont','Votre entreprise','+32 ...','jean@votreentreprise.be','Parlez-nous de votre projet...'],
+  'f.sel':['Choisissez un service','Forfait débutant — 499 €','Avancé sur mesure — devis','Mise à jour site existant','Services supplémentaires uniquement (logo, SEO, …)','Je ne sais pas encore'],
+  'f.btn':'Demander une démo gratuite →','f.succ.h':'Demande reçue !','f.succ.p':'Nous vous contacterons dans les 24 heures pour planifier votre démo gratuite.',
+  'ft.tag':'Sites web professionnels pour entreprises locales · Livraison en 48 heures',
+  'ft.nav':['Navigation','Comment ça marche','À propos','Services','FAQ','Contact'],
+  'ft.ct':'Contact','ft.copy':'© 2026 DRP BuildLab · Sites web sur mesure pour entrepreneurs locaux · Beenhouwersstraat 32/1, 1000 Bruxelles, Belgique','ft.ig':'Suivez-nous sur Instagram',
+  'wa':'WhatsApp nous'
+},
+es:{
+  'meta.title':'DRP BuildLab — Sitios web a medida para negocios locales | Paquete inicial desde 499 €',
+  'meta.desc':'DRP BuildLab crea sitios web completamente a medida para emprendedores locales en Bélgica. Paquete inicial desde 499 € o presupuesto personalizado para proyectos avanzados — siempre con mantenimiento mensual.',
+  'loader':'Cargando...',
+  'nav.how':'Cómo funciona','nav.about':'Sobre nosotros','nav.srv':'Servicios','nav.cta':'Demo gratis →',
+  'hero.eye':'Sitios web a medida para negocios locales',
+  'hero.l1':'Tu negocio','hero.l2':'en línea en','hero.l3':'<span class="h-accent">48</span> <span class="h-light">horas.</span>',
+  'hero.sub':'¿Sin sitio web? No existes en línea. DRP BuildLab crea <strong>sitios web completamente a medida</strong> para emprendedores locales — el precio se basa en la cantidad de trabajo que requiere tu proyecto. Siempre honesto, siempre transparente.',
+  'hero.cta1':'Solicitar demo gratis →','hero.cta2':'Ver nuestro enfoque','hero.scroll':'Scroll',
+  'mq':['Entrega en 48 horas','Enfoque local','Precio justo','Optimizado para móvil','Optimizado para Google','Sin preocupaciones'],
+  'zoom.bl':'Nuestras cifras','zoom.br':'Seguir bajando',
+  'zs':[{num:'48<span>h</span>',lbl:'Tiempo de entrega medio desde la creación hasta el lanzamiento',tag:'Nuestra promesa'},{num:'499 €',lbl:'Paquete inicial — sitio web a medida para nuevos negocios',tag:'Precio justo'},{num:'100<span>%</span>',lbl:'Sitios web completamente a medida — precio según el trabajo',tag:'A medida'}],
+  'how.tag':'Cómo funciona','how.h2':'De cero a en línea<br><em>en 4 pasos.</em>','how.sub':'No se necesita conocimiento técnico. Gestionamos todo, desde la primera llamada hasta el sitio web en vivo.',
+  'how.steps':[{t:'Primera llamada',b:'Te llamamos y te mostramos un ejemplo personalizado de inmediato. Completamente gratuito y sin compromiso.',d:'Día 1'},{t:'Diseño a medida',b:'Según tus deseos, construimos tu sitio web. No tienes que hacer nada.',d:'Días 1–2'},{t:'Vista previa & aprobación',b:'Recibes una vista previa para aprobación. Revisiones incluidas. Luego tu sitio se lanza con tu propio dominio.',d:'Día 2'},{t:'En vivo — y nos quedamos',b:'Después del lanzamiento, seguimos aquí para ti. Actualizaciones, cambios, preguntas — lo gestionamos.',d:'Día 2+'}],
+  'ab.logotag':'Sitios web · 48 horas',
+  'ab.quote':'"Cada negocio local merece una oportunidad justa para ser encontrado <em>en línea.</em>"',
+  'ab.sig':'— Los fundadores de DRP BuildLab',
+  'ab.nums':['Tiempo de entrega medio','Paquete inicial sitio web','Hecho a medida','Costes ocultos'],
+  'ab.tag':'Sobre nosotros','ab.h2':'Construido por<br>emprendedores,<br><em>para emprendedores.</em>',
+  'ab.p1':'Todo comenzó con una frustración. Vimos cómo los negocios locales — el carnicero de la esquina, el fontanero siempre disponible, el peluquero que lleva años cortando el pelo a los mismos clientes — eran completamente invisibles en línea.',
+  'ab.p2':'Las grandes agencias cobraban <strong>5.000 € por un sitio web</strong> que tardaba meses en entregarse. Así que creamos DRP BuildLab: un estudio que cree que cada negocio local <strong>merece un sitio web a medida</strong> — asequible, honesto, con un precio que se ajusta al trabajo.',
+  'ab.pillars':[{t:'Honestidad ante todo',b:'Lo que prometemos, lo entregamos. Sin costes ocultos, sin presupuestos vagos.'},{t:'La velocidad es nuestra ventaja',b:'Mientras otros hablan durante semanas, nosotros construimos. En vivo en 48 horas tras la aprobación.'},{t:'Pensar local, construir digital',b:'Conocemos tu región, tus clientes, tu mercado. Activos en toda Bélgica — desde Bruselas, Amberes, Gante y Lovaina hasta Brujas, Hasselt, Lieja y todo entre medias.'}],
+  'why.tag':'Por qué DRP BuildLab','why.h2':'¿Qué nos hace diferentes?','why.sub':'Construido para negocios locales que quieren estar en línea — sin complicaciones, sin sorpresas.',
+  'why.cards':[{t:'Entrega en 48 horas',b:'Sin semanas de espera. Después de dos días estás en línea y localizable por tus clientes.'},{t:'Enfoque local',b:'Tu región, tus clientes, un equipo personal. Entendemos el mercado local desde dentro.'},{t:'Precio justo',b:'Sin costes ocultos. Siempre fijo de antemano. Sabes exactamente lo que pagas.'},{t:'Siempre optimizado para móvil',b:'El 70 %+ de tus clientes buscan por teléfono. Cada sitio DRP BuildLab funciona perfectamente en cualquier dispositivo.'},{t:'Optimizado para Google',b:'SEO integrado para que los clientes te encuentren. Nos aseguramos de que Google te reconozca e indexe.'},{t:'Socio de por vida',b:'Después del lanzamiento seguimos aquí para ti. No un proveedor puntual, sino un socio de verdad.'}],
+  'opp.tag':'El coste oculto','opp.h2':'¿Cuánto cuesta realmente<br>0 € de presencia<br><em>en línea?</em>','opp.sub':'No tener sitio web no es gratis. Cada día sin presencia en línea pierdes clientes ante competidores que sí son localizables.',
+  'opp.pts':[{t:'El 78 % busca primero en línea',b:'Antes de visitar un negocio local, la gente lo busca en Google. ¿No estás? No existes para ese cliente.'},{t:'Cada día son ingresos perdidos',b:'Los clientes no te encuentran en línea y van a la competencia. Cada día sin sitio web es un día que tu competidor gana.'},{t:'Tu competidor está en línea',b:'Mientras esperas, tu competidor construye su reputación en línea. Cuanto más esperas, más difícil es alcanzarle.'},{t:'La credibilidad son ingresos',b:'Un sitio web profesional genera confianza. Los clientes eligen más fácilmente una empresa que parece seria.'}],
+  'opp.boxtitle':'Cálculo de costes por año',
+  'opp.rows':[['Clientes perdidos por semana (estimación)','2–5'],['Valor medio por cliente','80 €'],['Perdido por año sin sitio web','−8.320 €'],['Inversión DRP BuildLab (Paquete inicial)','+499 €'],['Mantenimiento mensual anual','+348 €']],
+  'opp.totlbl':'Beneficio neto potencial','opp.totval':'+7.473 €/año',
+  'opp.note':'<strong>La conclusión es simple:</strong> el coste de un sitio web es una fracción de lo que pierdes sin tener uno. Esperar cuesta más que invertir.',
+  'comp.tag':'Panorama del mercado','comp.h2':'Nadie lo hace<br>más barato <em>que nosotros.</em>','comp.sub':'No lo ocultamos — estamos orgullosos de ello. Comprueba tú mismo cuánto cuestan sitios similares en otros lugares.',
+  'comp.cols':['Proveedor','Precio inicial','Entrega','Móvil','Gestión'],
+  'comp.us':'Nosotros',
+  'comp.rows':[{n:'DRP BuildLab',p:'499 €',d:'48 horas',m:'Incluido',us:true},{n:'Freelancer',p:'800–2.500 €',d:'3–8 semanas',m:'No incluido'},{n:'Agencia digital',p:'2.500–8.000 €',d:'6–16 semanas',m:'Extra costoso'},{n:'Gran agencia',p:'8.000 €+',d:'3–6 meses',m:'Extra costoso'},{n:'Wix / Squarespace',p:'200–500 €/año',d:'Hazlo tú mismo',m:'Hazlo tú mismo'}],
+  'comp.note':'<strong>Nota:</strong> los constructores de sitios web como Wix son igual de caros anualmente — pero lo haces todo tú mismo, sin ayuda ni soporte profesional. En DRP BuildLab no haces nada tú mismo y siempre hay alguien para ti.',
+  'disc.tag':'Oferta limitada','disc.h':'Descuento<br>para nuevos clientes.','disc.sub':'Solicita tu demo y recibe un descuento exclusivo en tu primer sitio web. Válido para un número limitado de nuevos clientes.','disc.btn':'Reclamar descuento ahora →',
+  'disc.boxes':[{l:'Descuento en el paquete inicial',v:'−50 €'},{l:'Descuento en proyectos a medida',v:'−10 %'},{l:'Mes de mantenimiento gratis (todos los proyectos)',v:'+1 mes'}],
+  'srv.tag':'Nuestro enfoque','srv.h2':'Sitios web <em>a medida</em><br>para cada emprendedor.',
+  'srv.sub':'En DRP BuildLab, cada sitio web es <strong>completamente a medida</strong>. El precio siempre se basa en la cantidad de trabajo que invertimos en tu proyecto. Sin paquetes obligatorios, sin sorpresas — solo un presupuesto justo adaptado a lo que realmente necesitas.',
+  'p1.badge':'Para principiantes','p1.name':'Paquete inicial','p1.period':'único + mantenimiento mensual',
+  'p1.desc':'Ideal para <strong>emprendedores locales que están empezando</strong> y aún no tienen sitio web — o emprendedores que quieren actualizar su sitio existente a una versión moderna y profesional.',
+  'p1.feats':['Sitio web completamente a medida de tu negocio','Optimizado para móvil (diseño responsive)','Formulario de contacto + integración WhatsApp','Google Maps & optimización SEO básica','Nombre de dominio & hosting propios','Entrega en 48 horas','Mantenimiento mensual incluido'],
+  'p1.btn':'Solicitar demo gratis →',
+  'p2.name':'Avanzado a medida','p2.price':'Presupuesto<br>personalizado','p2.period':'presupuesto personal + mantenimiento mensual',
+  'p2.desc':'Para emprendedores con <strong>proyectos más grandes o complejos</strong>: tiendas online, sistemas de reserva, sitios multilingües, integraciones o funcionalidades únicas.',
+  'p2.feats':['Páginas ilimitadas a medida','Tienda online, sistema de reserva o portal de miembros','SEO avanzado & Google Ads','Sitios web multilingües posibles','Integraciones a medida (CRM, API, etc.)','Revisiones ilimitadas durante el proyecto','Mantenimiento mensual siempre incluido'],
+  'p2.btn':'Solicitar presupuesto →',
+  'srv.how':'<strong>Cómo funciona:</strong> nos dices lo que necesitas, evaluamos el alcance y creamos un precio justo basado en el trabajo. Siempre con mantenimiento mensual — para que tu sitio web se mantenga seguro, actualizado y optimizado para SEO.',
+  'ex.tag':'Servicios extra','ex.h3':'Servicios adicionales<br><em>para acelerar tu crecimiento en línea.</em>','ex.sub':'Pide por separado o en combinación con tu sitio web. Los precios son indicativos y siempre se confirman en tu presupuesto personal.',
+  'ex.items':[{n:'Diseño de logo',p:'149 €'},{n:'Página adicional',p:'79 €'},{n:'Paquete SEO inicial',p:'199 €'},{n:'Configuración Google Ads',p:'149 €'},{n:'Sitio multilingüe',p:'199 €'},{n:'Añadir tienda online',p:'A medida'},{n:'Reparación urgente (24h)',p:'99 €'},{n:'Fotografía (medio día)',p:'199 €'}],
+  'faq.tag':'Preguntas frecuentes','faq.h2':'Respuestas a tus<br><em>preguntas más importantes.</em>',
+  'faq.items':[{q:'¿Cuánto cuesta un sitio web en DRP BuildLab?',a:'Cada sitio web es completamente a medida. El precio depende de la cantidad de trabajo que requiere tu proyecto. Para emprendedores locales que están empezando o quieren actualizar un sitio existente, tenemos un paquete inicial desde <strong>499 €</strong>. Para proyectos avanzados siempre creamos un <strong>presupuesto a medida</strong>, con mantenimiento mensual incluido.'},{q:'¿Para quién es el paquete inicial de 499 €?',a:'Específicamente para emprendedores locales que están empezando sin sitio web, o para emprendedores que quieren actualizar su sitio existente a una versión moderna y profesional.'},{q:'¿El mantenimiento mensual siempre está incluido?',a:'Sí. Para cada proyecto — desde el paquete inicial hasta completamente a medida — siempre proporcionamos mantenimiento mensual. Esto mantiene tu sitio web seguro, rápido y optimizado para SEO.'},{q:'¿En cuánto tiempo estará mi sitio web en línea?',a:'La mayoría de los sitios del paquete inicial se entregan en <strong>48 horas</strong>. Para proyectos a medida más complejos, adaptamos el tiempo de entrega al alcance de tu proyecto.'},{q:'¿Cómo funciona un presupuesto a medida?',a:'Para proyectos avanzados, primero revisamos tus necesidades en una llamada de presentación gratuita. Luego creamos un presupuesto personal basado en la cantidad de trabajo: número de páginas, funcionalidades, integraciones y mantenimiento. Sin costes ocultos — sabes de antemano lo que pagas.'}],
+  'ig.tag':'Síguenos en Instagram','ig.h2':'Mira nuestro trabajo<br><em>de cerca.</em>',
+  'ig.p1':'Síguenos en Instagram para los últimos proyectos, consejos para emprendedores locales y un vistazo entre bastidores de DRP BuildLab.',
+  'ig.p2':'¿Ves algo que te llama la atención? Envíanos un DM — siempre respondemos personalmente.','ig.link':'@drp_buildlab en Instagram →',
+  'ct.tag':'Demo gratis','ct.h2':'¿Listo para estar<br><em>en línea?</em>','ct.lede':'Solicita una demo gratis. Te llamamos y te mostramos un ejemplo personalizado de inmediato. Sin obligaciones.',
+  'ct.lbls':['Teléfono','E-mail','Dirección','WhatsApp','Instagram'],
+  'f.labels':['Nombre','Apellido','Nombre de empresa','Número de teléfono','E-mail','¿Qué servicio tienes en mente?','Mensaje (opcional)'],
+  'f.phs':['Juan','García','Tu empresa','+32 ...','juan@tuempresa.es','Cuéntanos más sobre tu proyecto...'],
+  'f.sel':['Elige un servicio','Paquete inicial — 499 €','Avanzado a medida — presupuesto','Actualizar sitio existente','Solo servicios extra (logo, SEO, …)','Aún no lo sé'],
+  'f.btn':'Solicitar demo gratis →','f.succ.h':'¡Solicitud recibida!','f.succ.p':'Nos pondremos en contacto contigo en 24 horas para programar tu demo gratis.',
+  'ft.tag':'Sitios web profesionales para negocios locales · Entrega en 48 horas',
+  'ft.nav':['Navegación','Cómo funciona','Sobre nosotros','Servicios','FAQ','Contacto'],
+  'ft.ct':'Contacto','ft.copy':'© 2026 DRP BuildLab · Sitios web a medida para emprendedores locales · Beenhouwersstraat 32/1, 1000 Bruselas, Bélgica','ft.ig':'Síguenos en Instagram',
+  'wa':'WhatsApp us'
+}
+};
+
+function qs(sel){return document.querySelector(sel)}
+function qsa(sel){return document.querySelectorAll(sel)}
+
+function resetSh(el){
+  if(!el) return;
+  delete el.dataset.wr;
+  el.querySelectorAll('.wr-w').forEach(w=>{
+    const inner=w.querySelector('.wr');
+    const frag=document.createDocumentFragment();
+    if(inner) inner.childNodes.forEach(n=>frag.appendChild(n.cloneNode(true)));
+    w.replaceWith(frag);
+  });
+}
+
+function applyLang(lang){
+  const t=TRANSLATIONS[lang]; if(!t) return;
+  document.documentElement.lang=lang;
+  document.title=t['meta.title'];
+  const md=qs('meta[name="description"]'); if(md) md.setAttribute('content',t['meta.desc']);
+  const ld=qs('.ld-name'); if(ld) ld.textContent=t['loader'];
+  const nh=document.getElementById('navHow');    if(nh) nh.textContent=t['nav.how'];
+  const na=document.getElementById('navAbout');  if(na) na.textContent=t['nav.about'];
+  const ns=document.getElementById('navServices');if(ns) ns.textContent=t['nav.srv'];
+  const nc=document.getElementById('navCta');    if(nc) nc.textContent=t['nav.cta'];
+  const he=qs('.hero-eye'); if(he) he.textContent=t['hero.eye'];
+  const h1=document.getElementById('heroH1');
+  if(h1){
+    h1.innerHTML=`<span class="hl"><span class="hl-i">${t['hero.l1']}</span></span><span class="hl"><span class="hl-i d1">${t['hero.l2']}</span></span><span class="hl"><span class="hl-i d2">${t['hero.l3']}</span></span>`;
+    h1.querySelectorAll('.hl-i').forEach(el=>el.classList.add('in'));
+  }
+  const hs=qs('.hero-sub'); if(hs) hs.innerHTML=t['hero.sub'];
+  const hb=qsa('.hero-acts .btn'); if(hb[0]) hb[0].textContent=t['hero.cta1']; if(hb[1]) hb[1].textContent=t['hero.cta2'];
+  const sh=qs('.shint span'); if(sh) sh.textContent=t['hero.scroll'];
+  const mq=document.getElementById('mqTrack');
+  if(mq){ const it=t['mq']; mq.innerHTML=[...it,...it].map(i=>`<div class="mq-item">${i} <span class="mqdot"></span></div>`).join(''); }
+  const zbl=qs('.zoom-corner-bl'); if(zbl) zbl.textContent=t['zoom.bl'];
+  const zbr=qs('.zoom-corner-br'); if(zbr) zbr.textContent=t['zoom.br'];
+  const nzs=t['zs'];
+  [0,1,2].forEach(i=>{ zStats[i]={num:nzs[i].num,lbl:nzs[i].lbl,tag:nzs[i].tag}; });
+  const ci=Math.max(0,lastIdx);
+  if(zoomLbl) zoomLbl.textContent=zStats[ci].lbl;
+  if(zoomTag) zoomTag.textContent=zStats[ci].tag;
+  const how=document.getElementById('hoe-het-werkt');
+  if(how){
+    const ht=how.querySelector('.stag'); if(ht) ht.textContent=t['how.tag'];
+    const hh=how.querySelector('.sh'); if(hh){resetSh(hh);hh.innerHTML=t['how.h2'];}
+    const hsu=how.querySelector('.ssub'); if(hsu) hsu.textContent=t['how.sub'];
+    const sr=how.querySelectorAll('.srow');
+    t['how.steps'].forEach((s,i)=>{ if(!sr[i]) return; const ti=sr[i].querySelector('.stitle');if(ti)ti.textContent=s.t; const tx=sr[i].querySelector('.stxt');if(tx)tx.textContent=s.b; const td=sr[i].querySelector('.stime');if(td)td.textContent=s.d; });
+  }
+  const ab=document.getElementById('over-ons');
+  if(ab){
+    const alt=ab.querySelector('.ab-logo-tag'); if(alt) alt.textContent=t['ab.logotag'];
+    const aq=ab.querySelector('.ab-quote'); if(aq) aq.innerHTML=t['ab.quote'];
+    const as=ab.querySelector('.ab-sig'); if(as) as.textContent=t['ab.sig'];
+    const an=ab.querySelectorAll('.abn-l'); t['ab.nums'].forEach((l,i)=>{ if(an[i]) an[i].textContent=l; });
+    const at=ab.querySelector('.stag'); if(at) at.textContent=t['ab.tag'];
+    const ah=ab.querySelector('.sh'); if(ah){resetSh(ah);ah.innerHTML=t['ab.h2'];}
+    const ap=ab.querySelectorAll('.ab-right > p'); if(ap[0]) ap[0].innerHTML=t['ab.p1']; if(ap[1]) ap[1].innerHTML=t['ab.p2'];
+    const pl=ab.querySelectorAll('.pillar'); t['ab.pillars'].forEach((p,i)=>{ if(!pl[i]) return; const pt=pl[i].querySelector('.ptitle');if(pt)pt.textContent=p.t; const pb=pl[i].querySelector('.pbody');if(pb)pb.textContent=p.b; });
+  }
+  const wy=document.getElementById('waarom');
+  if(wy){
+    const wt=wy.querySelector('.stag'); if(wt) wt.textContent=t['why.tag'];
+    const wh=wy.querySelector('.sh'); if(wh){resetSh(wh);wh.textContent=t['why.h2'];}
+    const ws=wy.querySelector('.ssub'); if(ws) ws.textContent=t['why.sub'];
+    const wc=wy.querySelectorAll('.wcard'); t['why.cards'].forEach((c,i)=>{ if(!wc[i]) return; const wtt=wc[i].querySelector('.wtitle');if(wtt)wtt.textContent=c.t; const wb=wc[i].querySelector('.wbody');if(wb)wb.textContent=c.b; });
+  }
+  qsa('.opt-title').forEach((el,i)=>{ const p=t['opp.pts'][i]; if(p) el.textContent=p.t; });
+  qsa('.opt-body').forEach((el,i)=>{ const p=t['opp.pts'][i]; if(p) el.textContent=p.b; });
+  qsa('.stag').forEach(tag=>{
+    const sec=tag.closest('section');
+    if(!sec||!sec.querySelector('.opt')) return;
+    tag.textContent=t['opp.tag'];
+    const oh=sec.querySelector('.sh'); if(oh){resetSh(oh);oh.innerHTML=t['opp.h2'];}
+    const os=sec.querySelector('.ssub'); if(os) os.innerHTML=t['opp.sub'];
+    const bt=sec.querySelector('.opp-box>div'); if(bt) bt.textContent=t['opp.boxtitle'];
+    const or=sec.querySelectorAll('.orow'); t['opp.rows'].forEach((r,i)=>{ if(!or[i]) return; const ol=or[i].querySelector('.olbl');if(ol)ol.textContent=r[0]; const ov=or[i].querySelector('.oval');if(ov)ov.textContent=r[1]; });
+    const otl=sec.querySelector('.otlbl'); if(otl) otl.textContent=t['opp.totlbl'];
+    const otv=sec.querySelector('.otval'); if(otv) otv.textContent=t['opp.totval'];
+    const on=sec.querySelector('.onote'); if(on) on.innerHTML=t['opp.note'];
+  });
+  const ct=qs('.ctbl');
+  if(ct){
+    const cs=ct.closest('section');
+    if(cs){ const cst=cs.querySelector('.stag');if(cst)cst.textContent=t['comp.tag']; const csh=cs.querySelector('.sh');if(csh){resetSh(csh);csh.innerHTML=t['comp.h2'];} const css=cs.querySelector('.ssub');if(css)css.innerHTML=t['comp.sub']; }
+    const cc=ct.querySelectorAll('.chc'); t['comp.cols'].forEach((c,i)=>{ if(cc[i]) cc[i].textContent=c; });
+    const cr=ct.querySelectorAll('.crow');
+    t['comp.rows'].forEach((r,i)=>{ if(!cr[i]) return; const cells=cr[i].querySelectorAll('.cc'); const nm=cells[0]&&cells[0].querySelector('.cnm'); if(nm){const bdg=nm.querySelector('.cbdg'); nm.childNodes[0].textContent=r.n; if(bdg)bdg.textContent=t['comp.us'];} if(cells[1]){const cp=cells[1].querySelector('.cp');if(cp)cp.textContent=r.p;} if(cells[2]){const cp=cells[2].querySelector('.cp');if(cp)cp.textContent=r.d;} if(cells[4]){const cp=cells[4].querySelector('.cp');if(cp)cp.textContent=r.m; const cx=cells[4].querySelector('.cx');if(cx)cx.textContent=r.m;} });
+    const cn=qs('.cnote'); if(cn) cn.innerHTML=t['comp.note'];
+  }
+  const dc=qs('.disc');
+  if(dc){
+    const dt=dc.querySelector('.disc-tag');if(dt)dt.textContent=t['disc.tag'];
+    const dh=dc.querySelector('.disc-h');if(dh)dh.innerHTML=t['disc.h'];
+    const ds=dc.querySelector('.disc-sub');if(ds)ds.textContent=t['disc.sub'];
+    const db=dc.querySelector('.disc-btn');if(db)db.textContent=t['disc.btn'];
+    const dbs=dc.querySelectorAll('.dbox'); t['disc.boxes'].forEach((b,i)=>{ if(!dbs[i]) return; const dl=dbs[i].querySelector('.dbox-lbl');if(dl)dl.textContent=b.l; const dv=dbs[i].querySelector('.dbox-val');if(dv)dv.textContent=b.v; });
+  }
+  const sv=document.getElementById('diensten');
+  if(sv){
+    const st=sv.querySelector('.stag');if(st)st.textContent=t['srv.tag'];
+    const ssh=sv.querySelector('.sh');if(ssh){resetSh(ssh);ssh.innerHTML=t['srv.h2'];}
+    const ss=sv.querySelector('.ssub');if(ss)ss.innerHTML=t['srv.sub'];
+    const pl=sv.querySelectorAll('.plan');
+    if(pl[0]){const p=pl[0]; const pb=p.querySelector('.pbadge');if(pb)pb.textContent=t['p1.badge']; const pn=p.querySelector('.pname');if(pn)pn.textContent=t['p1.name']; const pp=p.querySelector('.pperiod');if(pp)pp.textContent=t['p1.period']; const pd=p.querySelector('p');if(pd)pd.innerHTML=t['p1.desc']; const pf=p.querySelectorAll('.pfeats li');t['p1.feats'].forEach((f,i)=>{if(pf[i])pf[i].textContent=f;}); const pbt=p.querySelector('.pbtn');if(pbt)pbt.textContent=t['p1.btn'];}
+    if(pl[1]){const p=pl[1]; const pn=p.querySelector('.pname');if(pn)pn.textContent=t['p2.name']; const ppr=p.querySelector('.pprice');if(ppr)ppr.innerHTML=t['p2.price']; const pp=p.querySelector('.pperiod');if(pp)pp.textContent=t['p2.period']; const pd=p.querySelector('p');if(pd)pd.innerHTML=t['p2.desc']; const pf=p.querySelectorAll('.pfeats li');t['p2.feats'].forEach((f,i)=>{if(pf[i])pf[i].textContent=f;}); const pbt=p.querySelector('.pbtn');if(pbt)pbt.textContent=t['p2.btn'];}
+    const sps=sv.querySelectorAll('p.ssub'); if(sps[1]) sps[1].innerHTML=t['srv.how'];
+    const ets=sv.querySelectorAll('.stag'); if(ets[1]) ets[1].textContent=t['ex.tag'];
+    const ehs=sv.querySelectorAll('.sh'); if(ehs[1]){resetSh(ehs[1]);ehs[1].innerHTML=t['ex.h3'];}
+    const ess=sv.querySelectorAll('.ssub'); if(ess[2]) ess[2].textContent=t['ex.sub'];
+    const ei=sv.querySelectorAll('.ex'); t['ex.items'].forEach((item,i)=>{ if(!ei[i]) return; const en=ei[i].querySelector('.ex-n');if(en)en.textContent=item.n; const ep=ei[i].querySelector('.ex-p');if(ep)ep.textContent=item.p; });
+  }
+  const fq=document.getElementById('faq');
+  if(fq){
+    const ft=fq.querySelector('.stag');if(ft)ft.textContent=t['faq.tag'];
+    const fh=fq.querySelector('.sh');if(fh){resetSh(fh);fh.innerHTML=t['faq.h2'];}
+    const fd=fq.querySelectorAll('details'); t['faq.items'].forEach((item,i)=>{ if(!fd[i]) return; const sm=fd[i].querySelector('summary');if(sm)sm.textContent=item.q; const ap=fd[i].querySelector('p');if(ap)ap.innerHTML=item.a; });
+  }
+  const ig=qs('.ig-sec');
+  if(ig){
+    const it=ig.querySelector('.stag');if(it)it.textContent=t['ig.tag'];
+    const ih=ig.querySelector('.sh');if(ih){resetSh(ih);ih.innerHTML=t['ig.h2'];}
+    const ip=ig.querySelectorAll('.ig-text'); if(ip[0])ip[0].textContent=t['ig.p1']; if(ip[1])ip[1].textContent=t['ig.p2'];
+    const il=ig.querySelector('.ig-link'); if(il) il.lastChild.textContent=t['ig.link'];
+  }
+  const cn=document.getElementById('contact');
+  if(cn){
+    const ct2=cn.querySelector('.stag');if(ct2)ct2.textContent=t['ct.tag'];
+    const ch=cn.querySelector('.sh');if(ch){resetSh(ch);ch.innerHTML=t['ct.h2'];}
+    const cl=cn.querySelector('.ct-lede');if(cl)cl.textContent=t['ct.lede'];
+    const ci=cn.querySelectorAll('.ci-lbl'); t['ct.lbls'].forEach((l,i)=>{if(ci[i])ci[i].textContent=l;});
+    const fl=cn.querySelectorAll('.field label'); t['f.labels'].forEach((l,i)=>{if(fl[i])fl[i].textContent=l;});
+    const ph=t['f.phs'];
+    const fv=document.getElementById('f-vnaam');if(fv)fv.placeholder=ph[0];
+    const fa=document.getElementById('f-anaam');if(fa)fa.placeholder=ph[1];
+    const fb=document.getElementById('f-bedrijf');if(fb)fb.placeholder=ph[2];
+    const ft2=document.getElementById('f-tel');if(ft2)ft2.placeholder=ph[3];
+    const fe=document.getElementById('f-email');if(fe)fe.placeholder=ph[4];
+    const fm=document.getElementById('f-bericht');if(fm)fm.placeholder=ph[5];
+    const fsl=document.getElementById('f-pakket');
+    if(fsl){ const op=fsl.querySelectorAll('option'); t['f.sel'].forEach((o,i)=>{if(op[i])op[i].textContent=o;}); }
+    const fsb=document.getElementById('fSubmitBtn');if(fsb)fsb.textContent=t['f.btn'];
+    const sh2=cn.querySelector('.succ h3');if(sh2)sh2.textContent=t['f.succ.h'];
+    const sp=cn.querySelector('.succ p');if(sp)sp.textContent=t['f.succ.p'];
+  }
+  const footer=qs('footer');
+  if(footer){
+    const ftag=footer.querySelector('.ft-tag');if(ftag)ftag.textContent=t['ft.tag'];
+    const fcols=footer.querySelectorAll('.ft-col');
+    if(fcols[0]){ const h4=fcols[0].querySelector('h4');if(h4)h4.textContent=t['ft.nav'][0]; const as=fcols[0].querySelectorAll('a'); [1,2,3,4,5].forEach((k,i)=>{if(as[i])as[i].textContent=t['ft.nav'][k];}); }
+    if(fcols[1]){ const h4=fcols[1].querySelector('h4');if(h4)h4.textContent=t['ft.ct']; }
+    const fc=footer.querySelector('.ft-copy');if(fc)fc.textContent=t['ft.copy'];
+    const fi=footer.querySelector('.ft-ig');if(fi)fi.lastChild.textContent=' '+t['ft.ig'];
+  }
+  const wa=qs('.wa-float');if(wa)wa.setAttribute('aria-label',t['wa']);
+  qsa('.lang-btn').forEach(btn=>btn.classList.toggle('active',btn.dataset.lang===lang));
+  triggerWordReveals();
+  localStorage.setItem('drp-lang',lang);
+}
+
+document.getElementById('langSw').addEventListener('click',e=>{
+  const btn=e.target.closest('.lang-btn');
+  if(btn) applyLang(btn.dataset.lang);
+});
+
+(function initLang(){
+  const saved=localStorage.getItem('drp-lang');
+  if(saved&&TRANSLATIONS[saved]){applyLang(saved);return;}
+  const br=(navigator.language||navigator.userLanguage||'nl').toLowerCase();
+  const detected=['en','fr','es'].find(l=>br.startsWith(l));
+  applyLang(detected||'nl');
+})();
 </script>
 </body>
 </html>
