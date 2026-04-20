@@ -57,7 +57,17 @@
   "areaServed": [
     {"@type":"Country","name":"België"},
     {"@type":"AdministrativeArea","name":"Vlaanderen"},
-    {"@type":"AdministrativeArea","name":"Brussel"}
+    {"@type":"AdministrativeArea","name":"Wallonië"},
+    {"@type":"City","name":"Brussel"},
+    {"@type":"City","name":"Antwerpen"},
+    {"@type":"City","name":"Gent"},
+    {"@type":"City","name":"Leuven"},
+    {"@type":"City","name":"Mechelen"},
+    {"@type":"City","name":"Hasselt"},
+    {"@type":"City","name":"Brugge"},
+    {"@type":"City","name":"Kortrijk"},
+    {"@type":"City","name":"Namen"},
+    {"@type":"City","name":"Luik"}
   ],
   "address": {
     "@type": "PostalAddress",
@@ -113,6 +123,33 @@
 }
 </script>
 
+<!-- Schema.org Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://drpbuildlab.com/#organization",
+  "name": "DRP BuildLab",
+  "alternateName": "DRP BuildLab — Webdesign op maat",
+  "url": "https://drpbuildlab.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://drpbuildlab.com/favicon.svg",
+    "width": 200,
+    "height": 200
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+32473744431",
+    "contactType": "customer service",
+    "email": "info@drpbuildlab.com",
+    "availableLanguage": ["Dutch","English","French"],
+    "areaServed": "BE"
+  },
+  "sameAs": ["https://www.instagram.com/drp_buildlab/"]
+}
+</script>
+
 <!-- Schema.org WebSite -->
 <script type="application/ld+json">
 {
@@ -122,7 +159,7 @@
   "url": "https://drpbuildlab.com/",
   "name": "DRP BuildLab",
   "description": "Websites op maat voor lokale ondernemers in België.",
-  "publisher": {"@id":"https://drpbuildlab.com/#business"},
+  "publisher": {"@id":"https://drpbuildlab.com/#organization"},
   "inLanguage": "nl-BE"
 }
 </script>
@@ -191,9 +228,15 @@
 }
 </script>
 
+<!-- Performance: DNS prefetch + preconnect for fonts (improves LCP) -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
 <link rel="shortcut icon" href="favicon.svg">
 <style>
 /* ─────────────────────────────────────────────
@@ -1048,7 +1091,7 @@ footer{background:var(--ink);padding:4rem 5vw 2.5rem;color:#fff}
       <div class="pillars">
         <div class="pillar"><div class="pn">01</div><div><div class="ptitle">Eerlijkheid boven alles</div><div class="pbody">Wat we beloven, leveren we. Geen verborgen kosten, geen vage offertes.</div></div></div>
         <div class="pillar"><div class="pn">02</div><div><div class="ptitle">Snelheid is onze troef</div><div class="pbody">Terwijl anderen weken praten, bouwen wij. Live binnen 48 uur na goedkeuring.</div></div></div>
-        <div class="pillar"><div class="pn">03</div><div><div class="ptitle">Lokaal denken, digitaal bouwen</div><div class="pbody">Wij kennen uw regio, uw klanten en uw markt.</div></div></div>
+        <div class="pillar"><div class="pn">03</div><div><div class="ptitle">Lokaal denken, digitaal bouwen</div><div class="pbody">Wij kennen uw regio, uw klanten en uw markt. Actief in heel België — van Brussel, Antwerpen, Gent en Leuven tot Brugge, Hasselt, Luik en alles daartussen.</div></div></div>
       </div>
     </div>
   </div>

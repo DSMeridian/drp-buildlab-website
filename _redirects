@@ -1,0 +1,16 @@
+# Netlify _redirects — SEO-friendly URL handling
+
+# Force apex (no www) — prevents duplicate content SEO penalties
+https://www.drpbuildlab.com/*    https://drpbuildlab.com/:splat    301!
+
+# Strip .html extensions for cleaner URLs (SEO best practice)
+/*.html    /:splat    301!
+
+# Legacy anchors (in case old links still point here)
+/pakketten    /#diensten    301
+/pakket       /#diensten    301
+/prijzen      /#diensten    301
+/pricing      /#diensten    301
+
+# Catch-all 404 (must be last)
+/*    /404.html    404
