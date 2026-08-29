@@ -3,14 +3,30 @@
 # Force apex (no www) — prevents duplicate content SEO penalties
 https://www.drpbuildlab.com/*    https://drpbuildlab.com/:splat    301!
 
-# Strip .html extensions for cleaner URLs (SEO best practice)
-/*.html    /:splat    301!
+# Canonicalise every real page to its extensionless URL. Listed one by one
+# rather than as /*.html — a wildcard also caught /404.html, which the
+# catch-all below then rewrote straight back.
+/index.html       /            301!
+/over-ons.html    /over-ons    301!
+/prijzen.html     /prijzen     301!
+/contact.html     /contact     301!
 
-# Legacy anchors (in case old links still point here)
-/pakketten    /#diensten    301
-/pakket       /#diensten    301
-/prijzen      /#diensten    301
-/pricing      /#diensten    301
+# Legacy paths and old single-page anchors, now that these are real pages
+/diensten     /prijzen        301
+/pakketten    /prijzen        301
+/pakket       /prijzen        301
+/pricing      /prijzen        301
+/tarifs       /prijzen        301
+/precios      /prijzen        301
+/faq          /prijzen#faq    301
+/about        /over-ons       301
+/about-us     /over-ons       301
+
+# Social card. The image was .jpg on main, became .png on this branch, then
+# moved into assets/img/ — so both old URLs are already out in the wild with
+# anything that has scraped the page. Keep them resolving or the card breaks.
+/og-image.jpg    /assets/img/og-image.png    301
+/og-image.png    /assets/img/og-image.png    301
 
 # Catch-all 404 (must be last)
 /*    /404.html    404

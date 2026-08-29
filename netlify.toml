@@ -1,0 +1,14 @@
+# Netlify site configuration for DRP BuildLab.
+#
+# This is a plain static site with no build step -- the repository root is
+# published as-is. Declared explicitly rather than left to auto-detection,
+# which otherwise sees serve.py and can decide this is a Python project that
+# needs building.
+#
+# Headers and redirects stay in _headers and _redirects and are deliberately
+# NOT duplicated here. Those two files are already the source of truth, and
+# the one thing that reliably goes wrong with this site's config is a cache
+# rule being edited in one place and missed in the other.
+
+[build]
+  publish = "."
