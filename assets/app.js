@@ -301,6 +301,185 @@ if(mq){
 }
 
 /* ══════════════════════════════════════════
+   ANNOTATION RAIL — the folio in the left gutter
+══════════════════════════════════════════ */
+/* A second plane, moving at about a tenth of the page's speed.
+ *
+ * The strip holds every section label in document order and translates so
+ * that a label sits exactly on the playhead for the whole time you are in
+ * that section. Labels are spaced evenly and the translation between two of
+ * them is linear, so the strip runs faster through a long section than a
+ * short one -- the rail's speed is telling you how much of this section is
+ * left, which is the thing a slow plane is for.
+ *
+ * Even spacing rather than true document positions, which is what this did
+ * first. Sections cluster in the middle of a page -- on the home page the
+ * hero, the marquee and the pinned statistic take the first 37% with no
+ * section in them -- so a faithful map squeezed all four labels into a third
+ * of the rail and they overlapped into one unreadable column, with 03 buried
+ * under the tail of 02. Position is even; only the timing follows the
+ * document, and the timing is the part that has to be true.
+ *
+ * Labels are read from the .stag elements themselves rather than from new
+ * translation keys. Those tags are the section headings, they are already
+ * translated into all ten languages, and reading them means a rail label can
+ * never drift from the heading it names. It also means this works on any
+ * page, in any language, with nothing to configure -- and does not appear at
+ * all on /contact, which has no .stag and needs no folio.
+ *
+ * Positions come from the offsetTop chain, not getBoundingClientRect: every
+ * .stag sits inside a .rv, which is translated 32px down until it reveals,
+ * so measuring the rendered box would place each label a section-reveal out
+ * of true. offsetTop is layout position and ignores transforms.
+ *
+ * Nothing here is interactive and it is aria-hidden. The nav navigates; this
+ * says where you are. Adding a second menu that reads out the same headings
+ * to a screen reader would be noise, not access.
+ */
+(function annotationRail(){
+  if(!window.matchMedia) return;
+  const wide  = window.matchMedia('(min-width:1280px)');
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)');
+  /* All of it is movement; with the movement gone there is nothing left worth
+     showing, so it is never built rather than built and frozen. */
+  if(still.matches || !wide.matches) return;
+
+  const tags = Array.prototype.slice.call(document.querySelectorAll('.stag'));
+  if(tags.length < 2) return;
+
+  function div(cls){ const d=document.createElement('div'); d.className=cls; return d; }
+
+  const rail  = div('arail');
+  rail.setAttribute('aria-hidden','true');
+  const strip = div('arail-strip');
+  const items = div('arail-items');
+
+  const entries = tags.map(function(tag,i){
+    const el = div('arail-i');
+    const n  = document.createElement('i');
+    n.textContent = ('0'+(i+1)).slice(-2);
+    const b  = document.createElement('b');
+    b.textContent = tag.textContent.trim();
+    el.appendChild(n); el.appendChild(b);
+    items.appendChild(el);
+    return { el:el, src:tag, b:b, at:0, y:0 };
+  });
+
+  strip.appendChild(items);
+  rail.appendChild(div('arail-line'));
+  rail.appendChild(strip);
+  rail.appendChild(div('arail-mark'));   // last, so the playhead sits on top
+  document.body.appendChild(rail);
+
+  function docTop(el){
+    let y = 0, n = el;
+    while(n){ y += n.offsetTop; n = n.offsetParent; }
+    return y;
+  }
+
+  let gap = 0, head = 0, docMax = 1, start = 0, stop = Infinity, active = -1, ready = false;
+
+  function measure(){
+    const railH = rail.clientHeight;
+    if(!railH){ ready = false; return; }            // hidden below 1280px
+    const vh = window.innerHeight;
+    docMax = Math.max(1, document.documentElement.scrollHeight - vh);
+
+    /* Spacing is set by the longest label actually rendered, not by a guess:
+       Polish sets 'Najczestciej zadawane pytania' 223px long where Japanese
+       sets three glyphs in 54px, and a fixed gap either overlaps the one or
+       strands the other. */
+    let tallest = 0;
+    entries.forEach(function(en){ tallest = Math.max(tallest, en.el.offsetHeight); });
+    gap  = Math.max(120, tallest + 26);
+    head = railH * 0.6;
+
+    entries.forEach(function(en,i){
+      en.y = head + i*gap;
+      en.el.style.top = en.y.toFixed(1) + 'px';
+      en.at = Math.min(1, Math.max(0, (docTop(en.src) - vh*0.4) / docMax));
+    });
+
+    /* The floor matters as much as the lead-in. On /prijzen and /over-ons the
+       first section tag is only ~550px down, so a fixed lead-in put start at a
+       negative scroll position and the rail was already lit at the top of the
+       page -- over the page header, which is the one screen it should stay out
+       of. Whichever is later wins: past the first screen, and near the first
+       thing it can name. */
+    start = Math.max(vh*0.6, docTop(entries[0].src) - vh*0.5);
+    /* Visible until the closing pitch. The hero and the pinned statistic each
+       own their screen -- the statistic has its own corner labels and does not
+       want a second set beside them -- and the footer is dark, where a hairline
+       in --line is invisible anyway. */
+    const tail = document.querySelector('.ctastrip') || document.querySelector('footer');
+    stop = tail ? docTop(tail) - vh*0.55 : Infinity;
+    ready = true;
+  }
+
+  /* Where the strip has to sit for the right label to be on the playhead.
+     Piecewise-linear through the section anchors, with a lead in and out so
+     the plane is already moving before the first label and after the last. */
+  function stripY(s){
+    const n = entries.length;
+    const edge = gap * 0.6;
+    let target;
+    if(s <= entries[0].at){
+      const span = entries[0].at;
+      const f = span ? s/span : 1;
+      target = entries[0].y - edge*(1-f);
+    } else if(s >= entries[n-1].at){
+      const span = 1 - entries[n-1].at;
+      const f = span ? (s - entries[n-1].at)/span : 0;
+      target = entries[n-1].y + edge*f;
+    } else {
+      let i = 0;
+      while(i < n-2 && s > entries[i+1].at) i++;
+      const span = entries[i+1].at - entries[i].at;
+      const f = span ? (s - entries[i].at)/span : 0;
+      target = entries[i].y + f*(entries[i+1].y - entries[i].y);
+    }
+    return head - target;
+  }
+
+  let queued = false;
+  function paint(){
+    queued = false;
+    if(!ready) return;
+    const y = window.scrollY;
+    const s = Math.min(1, Math.max(0, y / docMax));
+    items.style.transform = 'translateY(' + stripY(s).toFixed(2) + 'px)';
+
+    let idx = 0;
+    for(let i=0;i<entries.length;i++) if(s >= entries[i].at) idx = i;
+    if(idx !== active){
+      if(entries[active]) entries[active].el.classList.remove('on');
+      entries[idx].el.classList.add('on');
+      active = idx;
+    }
+    rail.classList.toggle('on', y > start && y < stop);
+  }
+  let pending;
+  function remeasure(){
+    clearTimeout(pending);
+    pending = setTimeout(function(){ measure(); paint(); }, 120);
+  }
+
+  window.addEventListener('scroll', function(){
+    if(!queued){ queued = true; requestAnimationFrame(paint); }
+  }, {passive:true});
+  window.addEventListener('resize', remeasure);
+  window.addEventListener('load', remeasure);
+  /* A language change rewrites the tags and reflows the page, so both the
+     text and every mapped position have to be read again. */
+  document.addEventListener('drp:langapplied', function(){
+    entries.forEach(function(en){ en.b.textContent = en.src.textContent.trim(); });
+    remeasure();
+  });
+
+  measure(); paint();
+})();
+
+/* ══════════════════════════════════════════
    MAGNETIC BUTTONS
 ══════════════════════════════════════════ */
 document.querySelectorAll('.mag').forEach(el=>{
@@ -487,6 +666,9 @@ function applyLang(lang,persist){
     const cs2=cta.querySelector('.ssub'); if(cs2) cs2.textContent=t['cta.sub'];
     const cb=cta.querySelector('.btn'); if(cb) cb.textContent=t['cta.btn'];
   }
+  /* Same copy as the closing strip: it is the same offer, four screens
+     earlier, and reusing the key means no eleventh translation to review. */
+  const oact=qs('.opp-act'); if(oact) oact.textContent=t['cta.btn'];
   const h1=document.getElementById('heroH1');
   if(h1){
     h1.innerHTML=`<span class="hl"><span class="hl-i">${t['hero.l1']}</span></span><span class="hl"><span class="hl-i d1">${t['hero.l2']}</span></span><span class="hl"><span class="hl-i d2">${t['hero.l3']}</span></span>`;

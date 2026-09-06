@@ -200,6 +200,12 @@ function stripRuntimeState() {
   // .ccb-manage too: baked, it is a dead button, and addFooterLink sees it
   // and declines to add the live one.
   document.querySelectorAll('.ccb, .ccb-manage').forEach(el => el.remove());
+  /* The annotation rail. This context renders with reducedMotion 'reduce',
+   * so app.js declines to build one and there is normally nothing here --
+   * but baked it would be a scroll indicator frozen on section 01, pointing
+   * at the wrong place on every page and unable to correct itself without
+   * the JS that was going to create it anyway. */
+  document.querySelectorAll('.arail').forEach(el => el.remove());
   document.querySelectorAll('script[src*="googletagmanager"]').forEach(el => el.remove());
   document.querySelectorAll('[style=""]').forEach(el => el.removeAttribute('style'));
 }

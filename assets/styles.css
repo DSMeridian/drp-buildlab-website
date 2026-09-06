@@ -17,7 +17,8 @@ a{text-decoration:none;color:inherit}
 /* A6 — real cursor everywhere unless a fine pointer is present */
 @media (hover:hover) and (pointer:fine){
   body,.btn,.srow,.wcard,.plan,.ex,.crow,.pbtn,.fsubmit,
-  .soc-link,.wa-float,.lang-btn,.nav-tog,.nav-ov a{cursor:none}
+  .soc-link,.wa-float,.lang-btn,.nav-tog,.nav-ov a,
+  .nav-cta,.opp-act{cursor:none}
 }
 /* A6 — the site had zero focus rings in 700 lines of CSS */
 :focus-visible{outline:2px solid var(--blue-d);outline-offset:3px}
@@ -904,6 +905,109 @@ body.nav-open{overflow:hidden}
 }
 
 /* ─────────────────────────────────────────────
+   ANNOTATION RAIL — the page's own folio
+
+   The zoom section already had this idea and used it once: four corner
+   labels naming where you are while the statistic holds the middle. This is
+   that annotation plane extended over the whole document.
+
+   It is a second plane, not decoration. The strip carries every section
+   label laid out in document order and translates at roughly a tenth of
+   scroll speed, so the label sitting against the blue playhead is always the
+   section you are actually in, with what came before still visible above and
+   what is coming below. That ratio is not a taste value -- it is
+   (strip travel / document travel), which is what makes the mapping true.
+
+   Vertical-rl rather than a rotation: Latin turns ninety degrees and reads
+   top-to-bottom, which is the magazine convention, and Japanese sets
+   properly vertical instead of being tipped on its side. One rule, ten
+   languages.
+
+   Desktop only, and only in the gutter .sec already reserves (5vw). Below
+   1280px that gutter is narrower than the strip, so the rail is not there.
+───────────────────────────────────────────── */
+.arail{
+  position:fixed;left:20px;top:13vh;bottom:13vh;width:30px;
+  z-index:400;pointer-events:none;
+  opacity:0;transition:opacity .55s ease;
+}
+.arail.on{opacity:1}
+.arail-line{position:absolute;left:14px;top:0;bottom:0;width:1px;background:var(--line)}
+/* The playhead. Whatever sits against it is where you are. */
+.arail-mark{position:absolute;left:8px;top:60%;width:13px;height:1px;background:var(--blue)}
+.arail-mark::before{
+  content:'';position:absolute;left:-3px;top:-2px;
+  width:5px;height:5px;border-radius:50%;background:var(--blue);
+}
+.arail-strip{
+  position:absolute;inset:0;overflow:hidden;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 88%,transparent 100%);
+          mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 88%,transparent 100%);
+}
+.arail-items{position:absolute;left:0;top:0;width:100%;will-change:transform}
+.arail-i{
+  position:absolute;left:0;width:100%;
+  display:flex;align-items:center;gap:.6rem;
+  writing-mode:vertical-rl;
+  font-size:.56rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted2);opacity:.5;
+  transform:translateY(-50%);
+  transition:color .4s ease,opacity .4s ease;
+  white-space:nowrap;
+}
+.arail-i i{font-style:normal;font-variant-numeric:tabular-nums;letter-spacing:.08em}
+.arail-i.on{opacity:1;color:var(--blue)}
+.arail-i.on b{color:var(--ink)}
+@media(max-width:1279px){.arail{display:none}}
+
+/* ─────────────────────────────────────────────
+   NAV CTA — the desktop conversion path
+
+   Desktop had none. Four text links and a market picker, with the nearest
+   button 7.4 screens down the home page; mobile meanwhile had a sticky bar
+   and an overlay CTA. This closes that, and it closes the 769-980px band
+   where .nlinks has already gone and .scta has not yet arrived.
+
+   Copy comes from nav.cta via data-nav, which the mobile overlay was already
+   using -- so it arrived translated into all ten languages and cost nothing.
+   Polish sets it longest by some margin, which is what max-width is sized
+   against.
+───────────────────────────────────────────── */
+.nav-cta{
+  display:inline-flex;align-items:center;
+  background:var(--blue-d);color:#fff;
+  font-size:.72rem;font-weight:700;letter-spacing:.01em;
+  padding:.52rem .9rem;border-radius:4px;
+  box-shadow:0 4px 14px rgba(74,144,226,.26);
+  transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+  white-space:nowrap;max-width:15rem;overflow:hidden;text-overflow:ellipsis;
+  flex-shrink:0;
+}
+.nav-cta:hover{background:var(--blue-dd);transform:translateY(-1px);box-shadow:0 7px 20px rgba(74,144,226,.34)}
+.nav-cta:active{transform:translateY(0)}
+/* Already on the contact page: the form is the CTA. */
+body[data-page="contact"] .nav-cta{display:none}
+@media(max-width:768px){.nav-cta{display:none}}
+
+/* ─────────────────────────────────────────────
+   COST-CALCULATOR CTA — the last row of the ledger
+
+   The box totals to a benefit figure and then stopped. This is the highest
+   intent moment on the page and there was nothing to press for another four
+   screens. Squared to the box rather than pill-shaped, because it is a row
+   of the table and not a floating button.
+───────────────────────────────────────────── */
+.opp-act{
+  display:block;margin-top:1.75rem;
+  background:var(--blue-d);color:#fff;text-align:center;
+  padding:1.05rem 1.25rem;border-radius:3px;
+  font-size:.86rem;font-weight:700;letter-spacing:-.005em;
+  box-shadow:0 8px 24px rgba(74,144,226,.24);
+  transition:background .25s ease,box-shadow .25s ease;
+}
+.opp-act:hover{background:var(--blue-dd);box-shadow:0 12px 30px rgba(74,144,226,.32)}
+
+/* ─────────────────────────────────────────────
    A7 — REDUCED MOTION
 ───────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce){
@@ -915,6 +1019,7 @@ body.nav-open{overflow:hidden}
   .rv,.hl-i,.wr,.nav-ov a{opacity:1!important;transform:none!important}
   #cdot,#cring{display:none}
   .shint-line{animation:none!important}
+  .arail{display:none!important}
 }
 
 /* ─────────────────────────────────────────────
