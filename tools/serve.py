@@ -223,19 +223,41 @@ class PrettyURLHandler(SimpleHTTPRequestHandler):
         if self.command != 'HEAD':
             self.wfile.write(body)
 
-    def _send_i18n_with_drafts(self):
-        """i18n.js with the draft languages folded in.
+    def _send_i18n_with_drafts(self, route):
+        """The market's own payload, with its draft translations folded in.
 
-        Merged here rather than by adding a <script> to every page, so no
-        markup changes are needed and production cannot accidentally ship a
-        reference to an unreviewed file.
+        This used to intercept /assets/i18n.js and merge every draft language
+        at once. No page has loaded that file since the payload was split per
+        language, and the split files are now content-hashed on top of that,
+        so the old interception had quietly stopped matching anything and
+        --draft silently showed the reviewed copy instead of the draft.
+
+        The route is /assets/build/i18n.<lang>.<hash>.js, so the language to
+        merge is in the filename, and only that one is merged -- a page
+        carries one language and assigning the others over it would do
+        nothing but grow the file.
+
+        Still merged here rather than by adding a <script> to every page, so
+        no markup changes are needed and production cannot accidentally ship
+        a reference to an unreviewed file.
         """
-        with open(os.path.join(ROOT, 'assets', 'i18n.js'), encoding='utf-8') as fh:
-            src = fh.read()
-        with open(DRAFT_PATH, encoding='utf-8') as fh:
-            draft = fh.read()
-        merged = (src + '\n\n/* --draft: machine translations merged by serve.py */\n'
-                  + draft + '\nObject.assign(TRANSLATIONS, TRANSLATIONS_DRAFT);\n')
+        name = route.rsplit('/', 1)[-1]              # i18n.nl.9be55902.js
+        parts = name.split('.')
+        lang = parts[1] if len(parts) > 3 else ''
+        path = os.path.join(ROOT, 'assets', 'build', name)
+        if not os.path.isfile(path):
+            return self.send_error(404)
+        with open(path, encoding='utf-8') as fh:
+            merged = fh.read()
+        if lang in DRAFT_LANGS:
+            with open(DRAFT_PATH, encoding='utf-8') as fh:
+                draft = fh.read()
+            key = '"%s"' % lang
+            merged += ('\n\n/* --draft: machine translations merged by serve.py */\n'
+                       + draft
+                       + '\nif (TRANSLATIONS_DRAFT[%s]) '
+                         'Object.assign(TRANSLATIONS[%s], TRANSLATIONS_DRAFT[%s]);\n'
+                       % (key, key, key))
         body = merged.encode('utf-8')
         self.send_response(200)
         self.send_header('Content-Type', 'text/javascript; charset=utf-8')
@@ -333,8 +355,10 @@ class PrettyURLHandler(SimpleHTTPRequestHandler):
         if route == '/api/rates':
             return self._json({'base': 'EUR', 'rates': FAKE_RATES,
                                'updated': None, 'stale': True})
-        if DRAFT and route == '/assets/i18n.js' and DRAFT_LANGS:
-            return self._send_i18n_with_drafts()
+        if (DRAFT and DRAFT_LANGS
+                and route.startswith('/assets/build/i18n.')
+                and route.endswith('.js')):
+            return self._send_i18n_with_drafts(route)
         if LOCK_GEO or DRAFT:
             full = self.translate_path(self.path)
             if full.endswith('.html') and os.path.isfile(full):
