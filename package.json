@@ -3,13 +3,14 @@
   "private": true,
   "description": "Static site. This package.json exists only for the tools in tools/ — Netlify never runs it and the site has no build step.",
   "scripts": {
-    "build": "npm run check && node tools/build-locales.js && node tools/prerender.js",
+    "build": "node tools/build.js",
     "locales": "node tools/build-locales.js",
     "prerender": "node tools/prerender.js",
     "translate": "node tools/translate.js",
     "check-prices": "node tools/check-prices.js",
     "check": "node tools/check-prices.js --live-only && node tools/check-labels.js --live-only",
-    "check-labels": "node tools/check-labels.js"
+    "check-labels": "node tools/check-labels.js",
+    "dev": "node tools/build.js --market=be"
   },
   "devDependencies": {
     "playwright-core": "^1.62.1"

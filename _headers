@@ -78,15 +78,39 @@
 # new HTML against old JavaScript -- which is exactly what happened here.
 #
 # The cost is one conditional request per asset, answered with a 304 and no
-# body: the file still comes from the browser cache. Switch to the immutable
-# rule above once the filenames carry a content hash, which makes the pairing
-# explicit and removes the problem properly.
+# body: the file still comes from the browser cache.
+#
+# That was the holding position. The filenames now carry a content hash, so
+# the rules below this pair are the real answer and these two only cover what
+# is left in /assets/ that is not content-addressed: the hand-edited sources,
+# which nothing on a page references any more.
 /assets/*.css
   Cache-Control: public, max-age=0, must-revalidate
   Content-Type: text/css; charset=utf-8
 
 /assets/*.js
   Cache-Control: public, max-age=0, must-revalidate
+  Content-Type: text/javascript; charset=utf-8
+
+# Content-addressed build output. styles.a3f9c1.css is that stylesheet and
+# can never be another one, so a year of immutable is not a gamble -- a
+# change produces a different filename and the old entry is simply never
+# asked for again. This is what ends the stale-asset class of bug: there is
+# no longer any way to serve new HTML against old CSS, because the HTML names
+# the exact CSS it was built with.
+#
+# `immutable` matters as much as the year: it stops the revalidation request
+# entirely, where max-age alone still lets a reload send one.
+#
+# Only this directory. /assets/img/, /assets/icons/ and the favicons keep
+# fixed names, and freezing those for a year is the same trap in a different
+# coat -- replace the logo and nobody sees it until their cache expires.
+/assets/build/*.css
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: text/css; charset=utf-8
+
+/assets/build/*.js
+  Cache-Control: public, max-age=31536000, immutable
   Content-Type: text/javascript; charset=utf-8
 
 # Images under /assets/img/ are safe to cache hard — replacing one means a

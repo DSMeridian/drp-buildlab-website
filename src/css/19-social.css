@@ -1,0 +1,43 @@
+/* ─────────────────────────────────────────────
+   SOCIAL
+───────────────────────────────────────────── */
+.soc-sec{background:var(--bg2);padding:8rem 5vw;display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center}
+.soc-card{
+  position:relative;aspect-ratio:1;max-width:400px;
+  background:var(--blue);border-radius:18px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.4rem;overflow:hidden;
+  box-shadow:0 32px 80px rgba(74,144,226,.25);
+}
+.soc-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 35%,rgba(255,255,255,.15) 0%,transparent 65%)}
+.soc-big{font-size:6rem;font-weight:800;letter-spacing:-.04em;color:#fff;line-height:1;position:relative;z-index:1}
+.soc-sub{font-size:1rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.8);position:relative;z-index:1}
+/* .soc-text IS the paragraph. The old rule was `.ig-text p`, a descendant
+   selector that matched nothing at all, so both paragraphs here rendered
+   with browser defaults: full-strength colour, tight leading, no gap. */
+.soc-text{font-size:.92rem;color:var(--muted);line-height:1.9;margin-bottom:1.3rem}
+/* A converted price can be far longer than the euro figure the columns were
+   sized for -- "Rp 8.535.395" against "€499". When that happens the table
+   scrolls sideways instead of clipping, since the figures are the whole point
+   of it. locale.js measures the columns and sets these, and only adds
+   .scrolls when the content genuinely does not fit, so the euro layout is
+   untouched. Every row gets the same explicit template, which is what keeps
+   the columns aligned once they stop being fr-proportional. */
+.ctbl.scrolls{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ctbl.scrolls .chd,.ctbl.scrolls .crow{
+  grid-template-columns:var(--c1) var(--c2) var(--c3);
+  min-width:max-content;
+}
+.ctbl.scrolls .cc,.ctbl.scrolls .chc{white-space:nowrap}
+.ctbl.measuring .cc,.ctbl.measuring .chc{white-space:nowrap}
+
+/* Wraps rather than overflows: three buttons do not fit one line on a phone. */
+.soc-links{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.4rem}
+.soc-link{
+  display:inline-flex;align-items:center;gap:.7rem;
+  border:1.5px solid var(--line-b);color:var(--ink);
+  padding:.88rem 1.7rem;font-size:.86rem;font-weight:600;
+  transition:all .25s;
+}
+.soc-link:hover{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 8px 26px rgba(74,144,226,.28)}
+.soc-link svg{width:18px;height:18px}

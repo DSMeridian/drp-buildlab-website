@@ -1,0 +1,27 @@
+/* ─────────────────────────────────────────────
+   OPPORTUNITY COST
+───────────────────────────────────────────── */
+.opp-layout{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
+.opp-layout>*{min-width:0}
+.opp-box{
+  background:var(--bg2);border:1px solid var(--line-b);padding:3rem;
+  position:relative;
+}
+.opp-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent)}
+.orow{display:flex;justify-content:space-between;align-items:center;padding:.82rem 0;border-bottom:1px solid var(--line);gap:1rem}
+.orow:last-child{border-bottom:none}
+.olbl{font-size:.83rem;color:var(--muted)}
+.oval{font-size:.92rem;font-weight:700;color:var(--ink)}
+.oval.n{color:#dc2626}
+.oval.p{color:#16a34a}
+.ototl{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line-b);display:flex;justify-content:space-between;align-items:baseline}
+.otlbl{font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.otval{font-size:2rem;font-weight:800;color:var(--blue);letter-spacing:-.035em}
+.onote{margin-top:1.5rem;padding:1.15rem 1.4rem;background:var(--bg3);border-left:2.5px solid var(--blue);font-size:.82rem;color:var(--muted);line-height:1.75}
+.onote strong{color:var(--ink);font-weight:700}
+.opoints{display:flex;flex-direction:column}
+.opt{display:flex;gap:1.25rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.opt:first-child{border-top:1px solid var(--line)}
+.opt-title{font-weight:700;font-size:.88rem;margin-bottom:.18rem;color:var(--ink)}
+.opt-body{font-size:.8rem;color:var(--muted);line-height:1.7}
+.opt-marker{width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:.45rem}

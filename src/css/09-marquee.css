@@ -1,0 +1,17 @@
+/* ─────────────────────────────────────────────
+   MARQUEE
+───────────────────────────────────────────── */
+.mq-wrap{
+  overflow:hidden;
+  border-top:1px solid var(--line-b);border-bottom:1px solid var(--line-b);
+  padding:.95rem 0;background:var(--bg);
+}
+.mq-track{
+  display:flex;gap:4rem;width:max-content;
+  will-change:transform;
+}
+.mq-item{
+  font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);white-space:nowrap;display:flex;align-items:center;gap:1.5rem;
+}
+.mqdot{width:4px;height:4px;border-radius:50%;background:var(--blue);display:inline-block;flex-shrink:0}

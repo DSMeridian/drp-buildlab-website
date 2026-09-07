@@ -1,0 +1,28 @@
+/* ─────────────────────────────────────────────
+   NAV CTA — the desktop conversion path
+
+   Desktop had none. Four text links and a market picker, with the nearest
+   button 7.4 screens down the home page; mobile meanwhile had a sticky bar
+   and an overlay CTA. This closes that, and it closes the 769-980px band
+   where .nlinks has already gone and .scta has not yet arrived.
+
+   Copy comes from nav.cta via data-nav, which the mobile overlay was already
+   using -- so it arrived translated into all ten languages and cost nothing.
+   Polish sets it longest by some margin, which is what max-width is sized
+   against.
+───────────────────────────────────────────── */
+.nav-cta{
+  display:inline-flex;align-items:center;
+  background:var(--blue-d);color:#fff;
+  font-size:.72rem;font-weight:700;letter-spacing:.01em;
+  padding:.52rem .9rem;border-radius:4px;
+  box-shadow:0 4px 14px rgba(74,144,226,.26);
+  transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+  white-space:nowrap;max-width:15rem;overflow:hidden;text-overflow:ellipsis;
+  flex-shrink:0;
+}
+.nav-cta:hover{background:var(--blue-dd);transform:translateY(-1px);box-shadow:0 7px 20px rgba(74,144,226,.34)}
+.nav-cta:active{transform:translateY(0)}
+/* Already on the contact page: the form is the CTA. */
+body[data-page="contact"] .nav-cta{display:none}
+@media(max-width:768px){.nav-cta{display:none}}

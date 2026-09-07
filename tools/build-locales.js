@@ -27,6 +27,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const ROOT = path.resolve(__dirname, '..');
 const MARKETS = require(path.join(ROOT, 'assets', 'markets.js'));
@@ -43,6 +44,20 @@ const DEFAULT = MARKETS.__default;
 // x-default is advice to a crawler about the unmatched visitor, so it names
 // the fallback market rather than the home one.
 const FALLBACK = MARKETS.__fallback || MARKETS.__default;
+
+/* --market=be limits page generation to one market, for the edit-and-reload
+ * loop. Assets are still built in full, because they are shared and cheap;
+ * what it skips is the other eighty pages, the sitemap, and the prune. The
+ * markets this run did not touch keep pointing at the hashed files from the
+ * last full build, which are deliberately left in place -- so the local site
+ * stays coherent, but the tree is NOT publishable until a full build has
+ * run. The build says so on the way out. */
+const ARGV = process.argv.slice(2);
+const ONLY = (ARGV.find(a => a.startsWith('--market=')) || '').split('=')[1] || '';
+if (ONLY && !CODES.includes(ONLY)) {
+  console.error('--market=' + ONLY + ' is not a market. Known: ' + CODES.join(', '));
+  process.exit(1);
+}
 
 /* source page -> path under a market directory */
 const PAGES = [
@@ -424,6 +439,91 @@ function consentHead(html) {
   if (at === -1) throw new Error('market marker not found; consentHead must run after step 5');
   return html.slice(0, at) + block + '\n' + html.slice(at);
 }
+/* -- assets: concatenate, hash, and rewrite every reference ---------------
+ *
+ * Every file a page loads is emitted into assets/build/ under a name
+ * carrying a hash of its own contents -- styles.a3f9c1.css. The name changes
+ * if and only if the bytes change, which is what lets _headers mark that
+ * directory immutable for a year and end the class of bug where a fix ships
+ * and nobody sees it because the browser still holds last week copy.
+ *
+ * A subdirectory, rather than marking /assets/* immutable outright: the
+ * favicon, the OG image and the app icons live under /assets/ too, under
+ * fixed names, and freezing those for a year is the same trap wearing a
+ * different hat. Only content-addressed files get the long cache.
+ *
+ * The rewrite happens last, on the finished HTML, rather than at each of the
+ * half-dozen places that write a script tag. Those steps go on dealing in
+ * plain readable paths; this pass maps them at the end. */
+const BUILD_DIR = path.join(ROOT, 'assets', 'build');
+const CSS_DIR = path.join(ROOT, 'src', 'css');
+const ASSETS = {};        // logical name -> served path
+const EMITTED = new Set();
+
+function shortHash(text) {
+  return crypto.createHash('sha256').update(text, 'utf8').digest('hex').slice(0, 8);
+}
+
+function emitAsset(name, content) {
+  const dot = name.lastIndexOf('.');
+  const file = name.slice(0, dot) + '.' + shortHash(content) + name.slice(dot);
+  const dest = path.join(BUILD_DIR, file);
+  fs.mkdirSync(BUILD_DIR, { recursive: true });
+  // Same hash means same bytes, so rewriting would only churn mtimes.
+  if (!fs.existsSync(dest)) fs.writeFileSync(dest, content, 'utf8');
+  ASSETS[name] = '/assets/build/' + file;
+  EMITTED.add(file);
+  return ASSETS[name];
+}
+
+/* Hand-written files in assets/ are sources; this copies one to its hashed
+   serving name without changing a byte. */
+function copyAsset(name) {
+  return emitAsset(name, fs.readFileSync(path.join(ROOT, 'assets', name), 'utf8'));
+}
+
+/* src/css/*.css in filename order -- the numbers are the cascade, and the
+   README there says why. The readable whole is still written to
+   assets/styles.css so there is one file to grep and src/ stays previewable;
+   the pages load the hashed copy. */
+function buildStylesheet() {
+  const parts = fs.readdirSync(CSS_DIR).filter(f => f.endsWith('.css')).sort();
+  if (!parts.length) throw new Error('no stylesheet parts in src/css');
+  const read = f => fs.readFileSync(path.join(CSS_DIR, f), 'utf8');
+  const CR = String.fromCharCode(13), LF = String.fromCharCode(10);
+  const nl = read(parts[0]).includes(CR + LF) ? CR + LF : LF;
+  const css = parts.map(read).join(nl);
+  fs.writeFileSync(path.join(ROOT, 'assets', 'styles.css'), css, 'utf8');
+  emitAsset('styles.css', css);
+  return parts.length;
+}
+
+/* The closing quote is part of the match on purpose: without it
+   /assets/i18n.js would also match inside /assets/i18n.nl.js. */
+function hashAssets(html) {
+  const Q = String.fromCharCode(34);
+  for (const name of Object.keys(ASSETS)) {
+    html = html.split('/assets/' + name + Q).join(ASSETS[name] + Q);
+  }
+  if (html.includes('/assets/styles.css') || html.includes('/assets/app.js')) {
+    throw new Error('an asset reference escaped hashing -- check hashAssets()');
+  }
+  return html;
+}
+
+/* Old hashes are dead weight and, worse, they are exactly what a stale page
+   would still resolve. Full builds only: a --market run has not regenerated
+   the other markets, so their files are still in use. */
+function pruneBuildDir() {
+  let gone = 0;
+  for (const f of fs.readdirSync(BUILD_DIR)) {
+    if (EMITTED.has(f)) continue;
+    fs.unlinkSync(path.join(BUILD_DIR, f));
+    gone++;
+  }
+  return gone;
+}
+
 function build(code, page) {
   const m = MARKETS[code];
   let html = fs.readFileSync(path.join(ROOT, page.src), 'utf8');
@@ -486,6 +586,9 @@ function build(code, page) {
     /[ \t]*<div class="lang-sw"[\s\S]*?<\/div>\n/,
     marketPicker(code, page.route) + '\n');
 
+  // 7. last: point every asset reference at its content-addressed name
+  html = hashAssets(html);
+
   const dest = path.join(ROOT, code, page.out);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, html, 'utf8');
@@ -522,7 +625,7 @@ function writeLangPayloads() {
       "};",
       "",
     ].join("\n");
-    fs.writeFileSync(path.join(ROOT, "assets", `i18n.${lang}.js`), out, "utf8");
+    emitAsset(`i18n.${lang}.js`, out);
   }
   return langs;
 }
@@ -547,14 +650,13 @@ function writeLangOffer() {
     'window.__DRP_LANG_OFFER__ = ' + JSON.stringify(out) + ';',
     '',
   ].join('\n');
-  fs.writeFileSync(path.join(ROOT, 'assets', 'lang-offer.js'), body, 'utf8');
+  emitAsset('lang-offer.js', body);
   return Object.keys(out);
 }
-const OFFERS = writeLangOffer();
-console.log(`lang-offer.js: ${OFFERS.length} languages`);
-
-const LANGS = writeLangPayloads();
-console.log(`wrote ${LANGS.length} language payloads: ${LANGS.join(", ")}`);
+/* Both of these are called from main() at the foot of this file rather than
+   here. A page cannot reference a hashed filename until the hash exists, so
+   everything a page loads has to be emitted before the first page is built,
+   in one ordered place. */
 
 /* ── the rate a page starts from ─────────────────────────────────
  * Every non-euro market painted €499 and held it for 1.2s, 2.9s on a slow
@@ -576,7 +678,6 @@ console.log(`wrote ${LANGS.length} language payloads: ${LANGS.join(", ")}`);
  * behaviour -- a euro flash -- which is worse than instant but better than
  * shipping a rate nobody checked. */
 async function writeBootstrapRates() {
-  const OUT = path.join(ROOT, 'assets', 'rates.boot.js');
   const head = [
     '/* GENERATED by tools/build-locales.js -- do not edit.',
     '   A starting rate so prices are not euro for the first second. The live',
@@ -607,48 +708,83 @@ async function writeBootstrapRates() {
     }
   }
 
-  fs.writeFileSync(OUT, head + '\n'
-    + 'window.__DRP_RATES__ = ' + JSON.stringify(wanted) + ';\n', 'utf8');
+  emitAsset('rates.boot.js', head + '\n'
+    + 'window.__DRP_RATES__ = ' + JSON.stringify(wanted) + ';\n');
   return Object.keys(wanted);
 }
 
-let n = 0;
-for (const code of CODES) {
-  for (const page of PAGES) { build(code, page); n++; }
-}
-console.log(`generated ${n} pages across ${CODES.length} markets`);
+/* -- build ----------------------------------------------------------------
+ *
+ * Assets first, pages second, and the order is a requirement rather than a
+ * preference: a page cannot reference a hashed filename before the hash
+ * exists. That is why the rates fetch is awaited here, at the top, when it
+ * used to run last and asynchronously -- it produces one of the files the
+ * pages have to name.
+ *
+ * A rates outage still does not fail the build. writeBootstrapRates catches
+ * its own network errors and emits an empty table, which costs a euro flash
+ * on first paint and nothing else. */
+async function main() {
+  const parts = buildStylesheet();
+  console.log(`styles.css: ${parts} parts from src/css`);
 
-/* ── sitemap ─────────────────────────────────────────────────────────────
- * Every market page, so each is discoverable rather than relying on the
- * crawler following hreflang. */
-const urls = [];
-for (const code of CODES) {
-  for (const page of PAGES) {
-    const loc = `${ORIGIN}/${code}${page.route || '/'}`;
-    const alts = CODES.map(c =>
-      `    <xhtml:link rel="alternate" hreflang="${MARKETS[c].lang}-${c.toUpperCase()}" href="${ORIGIN}/${c}${page.route || '/'}"/>`
-    ).join('\n');
-    urls.push(
-      `  <url>\n    <loc>${loc}</loc>\n`
-      + `    <lastmod>${new Date().toISOString().slice(0, 10)}</lastmod>\n`
-      + `    <changefreq>${page.route ? 'monthly' : 'weekly'}</changefreq>\n`
-      + `    <priority>${page.route ? '0.8' : '1.0'}</priority>\n`
-      + alts + '\n'
-      + `    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}/${FALLBACK}${page.route || '/'}"/>\n`
-      + '  </url>'
-    );
+  ['app.js', 'locale.js', 'consent.js', 'markets.js'].forEach(copyAsset);
+
+  const offers = writeLangOffer();
+  console.log(`lang-offer.js: ${offers.length} languages`);
+  const langs = writeLangPayloads();
+  console.log(`wrote ${langs.length} language payloads: ${langs.join(", ")}`);
+  const cur = await writeBootstrapRates();
+  console.log('rates.boot.js: '
+    + (cur.length ? cur.join(', ') : 'empty, prices will flash euro'));
+
+  const codes = ONLY ? [ONLY] : CODES;
+  let n = 0;
+  for (const code of codes) {
+    for (const page of PAGES) { build(code, page); n++; }
   }
-}
-fs.writeFileSync(path.join(ROOT, 'sitemap.xml'),
-  '<?xml version="1.0" encoding="UTF-8"?>\n'
-  + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
-  + '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
-  + urls.join('\n') + '\n</urlset>\n', 'utf8');
-console.log(`sitemap.xml: ${urls.length} URLs`);
+  console.log(`generated ${n} pages across ${codes.length} market${codes.length === 1 ? '' : 's'}`);
 
-/* Last, and on its own: the pages do not depend on it, and a rates outage
- * should not stop a build that is otherwise fine. */
-writeBootstrapRates()
-  .then(cur => console.log('rates.boot.js: '
-    + (cur.length ? cur.join(', ') : 'empty, prices will flash euro')))
-  .catch(err => { console.error(err); process.exit(1); });
+  if (ONLY) {
+    /* The sitemap would list one market and the prune would delete the files
+       the other twenty are still pointing at. Neither is survivable in a
+       commit, so both are skipped and the run says what it is. */
+    console.log('');
+    console.log(`  --market=${ONLY}: sitemap and prune skipped, other markets untouched.`);
+    console.log('  Local preview only. Run a full `npm run build` before committing.');
+    return;
+  }
+
+  /* -- sitemap ------------------------------------------------------------
+   * Every market page, so each is discoverable rather than relying on the
+   * crawler following hreflang. */
+  const urls = [];
+  for (const code of CODES) {
+    for (const page of PAGES) {
+      const loc = `${ORIGIN}/${code}${page.route || '/'}`;
+      const alts = CODES.map(c =>
+        `    <xhtml:link rel="alternate" hreflang="${MARKETS[c].lang}-${c.toUpperCase()}" href="${ORIGIN}/${c}${page.route || '/'}"/>`
+      ).join('\n');
+      urls.push(
+        `  <url>\n    <loc>${loc}</loc>\n`
+        + `    <lastmod>${new Date().toISOString().slice(0, 10)}</lastmod>\n`
+        + `    <changefreq>${page.route ? 'monthly' : 'weekly'}</changefreq>\n`
+        + `    <priority>${page.route ? '0.8' : '1.0'}</priority>\n`
+        + alts + '\n'
+        + `    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}/${FALLBACK}${page.route || '/'}"/>\n`
+        + '  </url>'
+      );
+    }
+  }
+  fs.writeFileSync(path.join(ROOT, 'sitemap.xml'),
+    '<?xml version="1.0" encoding="UTF-8"?>\n'
+    + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
+    + '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+    + urls.join('\n') + '\n</urlset>\n', 'utf8');
+  console.log(`sitemap.xml: ${urls.length} URLs`);
+
+  const gone = pruneBuildDir();
+  console.log(`assets/build: ${EMITTED.size} live${gone ? `, ${gone} stale removed` : ''}`);
+}
+
+main().catch(err => { console.error(err); process.exit(1); });

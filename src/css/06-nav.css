@@ -1,0 +1,34 @@
+/* ─────────────────────────────────────────────
+   NAV
+───────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  padding:1.4rem 5vw;
+  display:flex;justify-content:space-between;align-items:center;
+  transition:padding .4s ease, background .5s ease, box-shadow .4s ease;
+}
+nav.s{
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  padding:1rem 5vw;
+  box-shadow:0 1px 0 var(--line);
+}
+.nlogo{display:flex;align-items:center;gap:.7rem}
+.nmark{
+  width:32px;height:32px;background:var(--blue);border-radius:6px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1px;flex-shrink:0;
+}
+.nmark-drp{font-size:.72rem;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1}
+.nmark-bl{font-size:.32rem;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:.1em}
+.nname{font-size:.92rem;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.nlinks{display:flex;align-items:center;gap:2rem}
+.nlinks a{font-size:.8rem;font-weight:500;color:var(--muted);transition:color .2s;position:relative}
+.nlinks a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--blue);transition:width .3s ease}
+.nlinks a:hover{color:var(--ink)}
+.nlinks a:hover::after{width:100%}
+/* C4 — scrollspy */
+.nlinks a.active{color:var(--ink)}
+.nlinks a.active::after{width:100%}
+.nig svg{width:14px;height:14px}
+.nig{display:inline-flex;align-items:center;gap:.35rem}

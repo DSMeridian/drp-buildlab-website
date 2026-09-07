@@ -1,0 +1,54 @@
+/* ─────────────────────────────────────────────
+   MOBILE NAV  (A4 + C4)
+───────────────────────────────────────────── */
+.nav-tog{
+  display:none;width:34px;height:30px;padding:0;background:none;border:none;
+  flex-direction:column;justify-content:center;align-items:flex-end;gap:5px;
+  flex-shrink:0;
+}
+.nav-tog span{
+  display:block;height:2px;width:22px;background:var(--ink);border-radius:2px;
+  transition:transform .3s cubic-bezier(.16,1,.3,1),opacity .2s,width .3s;
+}
+.nav-tog span:nth-child(2){width:15px}
+.nav-tog[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-tog[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-tog[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);width:22px}
+.nav-ov{
+  position:fixed;inset:0;z-index:450;
+  background:rgba(255,255,255,.985);
+  -webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:7rem 8vw 3rem;overflow-y:auto;
+  opacity:0;visibility:hidden;transform:translateY(-10px);
+  transition:opacity .34s cubic-bezier(.16,1,.3,1),visibility .34s,transform .34s cubic-bezier(.16,1,.3,1);
+}
+.nav-ov.on{opacity:1;visibility:visible;transform:none}
+.nav-ov a{
+  display:block;font-size:clamp(1.5rem,6.4vw,2.2rem);font-weight:800;letter-spacing:-.032em;
+  line-height:1.25;color:var(--ink);padding:.55rem 0;border-bottom:1px solid var(--line);
+  opacity:0;transform:translateY(20px);
+  transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1),color .2s;
+}
+.nav-ov.on a{opacity:1;transform:none}
+.nav-ov.on a:nth-child(1){transition-delay:.05s}
+.nav-ov.on a:nth-child(2){transition-delay:.10s}
+.nav-ov.on a:nth-child(3){transition-delay:.15s}
+.nav-ov.on a:nth-child(4){transition-delay:.20s}
+.nav-ov.on a:nth-child(5){transition-delay:.25s}
+.nav-ov.on a:nth-child(6){transition-delay:.30s}
+.nav-ov.on a:nth-child(7){transition-delay:.35s}
+.nav-ov a:hover,.nav-ov a.active{color:var(--blue-d)}
+.nav-ov .nav-ov-ig{
+  display:flex;align-items:center;gap:.55rem;
+  font-size:.92rem;font-weight:600;letter-spacing:0;color:var(--muted);
+  border-bottom:none;margin-top:1.1rem;
+}
+.nav-ov .nav-ov-ig svg{width:16px;height:16px;flex-shrink:0}
+.nav-ov .nav-ov-cta{
+  margin-top:1.4rem;border-bottom:none;text-align:center;
+  background:var(--blue-d);color:#fff;font-size:1rem;padding:1rem;
+  box-shadow:0 8px 24px rgba(74,144,226,.28);
+}
+.nav-ov .nav-ov-cta:hover{background:var(--blue-dd);color:#fff}
+body.nav-open{overflow:hidden}

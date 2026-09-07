@@ -1,0 +1,33 @@
+/* ─────────────────────────────────────────────
+   ABOUT
+───────────────────────────────────────────── */
+.ab-layout{display:grid;grid-template-columns:1fr 1fr;gap:9rem;align-items:center}
+.ab-layout>*{min-width:0}
+/* Smooth logo integration */
+.ab-logo-wrap{
+  margin-bottom:3rem;
+  display:inline-flex;align-items:center;gap:1.2rem;
+  padding:1.5rem 2rem;
+  background:var(--bg2);border:1px solid var(--line);
+  border-radius:12px;
+}
+.ab-logo-wrap svg{width:72px;height:72px;border-radius:10px;flex-shrink:0}
+.ab-logo-text{display:flex;flex-direction:column}
+.ab-logo-name{font-size:1.3rem;font-weight:800;letter-spacing:-.025em;color:var(--ink)}
+.ab-logo-tag{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-top:.1rem}
+.ab-quote{font-size:clamp(1.3rem,2.2vw,2.2rem);font-weight:700;line-height:1.2;letter-spacing:-.025em;margin-bottom:1.25rem;color:var(--ink)}
+.ab-quote em{font-style:italic;font-weight:300;color:var(--blue)}
+.ab-sig{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.ab-nums{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2.5rem}
+.abn{background:var(--bg);padding:1.6rem 1.8rem}
+.abn-v{font-size:clamp(1.45rem,6.5vw,2.5rem);font-weight:800;letter-spacing:-.04em;color:var(--blue);line-height:1;margin-bottom:.2rem}
+.abn-l{font-size:.68rem;color:var(--muted)}
+.ab-right p{font-size:.92rem;color:var(--muted);line-height:1.9;margin-bottom:1.35rem}
+.ab-right p strong{color:var(--ink);font-weight:700}
+.pillars{display:flex;flex-direction:column;margin-top:2rem}
+.pillar{display:flex;gap:1.4rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.pillar>*{min-width:0}
+.pillar:first-child{border-top:1px solid var(--line)}
+.pn{font-size:.58rem;font-weight:700;color:var(--blue);letter-spacing:.1em;flex-shrink:0;padding-top:.12rem}
+.ptitle{font-weight:700;font-size:.88rem;margin-bottom:.18rem;color:var(--ink)}
+.pbody{font-size:.8rem;color:var(--muted);line-height:1.72}

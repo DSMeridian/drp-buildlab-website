@@ -1,0 +1,26 @@
+/* ─────────────────────────────────────────────
+   RESET & BASE
+───────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  background:#fff;
+  color:#1a1f36;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:400;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+
+/* A6 — real cursor everywhere unless a fine pointer is present */
+@media (hover:hover) and (pointer:fine){
+  body,.btn,.srow,.wcard,.plan,.ex,.crow,.pbtn,.fsubmit,
+  .soc-link,.wa-float,.lang-btn,.nav-tog,.nav-ov a,
+  .nav-cta,.opp-act{cursor:none}
+}
+/* A6 — the site had zero focus rings in 700 lines of CSS */
+:focus-visible{outline:2px solid var(--blue-d);outline-offset:3px}
+::-webkit-scrollbar{width:2px}
+::-webkit-scrollbar-track{background:#fff}
+::-webkit-scrollbar-thumb{background:#4a90e2}

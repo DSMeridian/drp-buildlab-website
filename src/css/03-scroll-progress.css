@@ -1,0 +1,9 @@
+/* ─────────────────────────────────────────────
+   SCROLL PROGRESS
+───────────────────────────────────────────── */
+#sprog{
+  position:fixed;top:0;left:0;height:2px;
+  background:var(--blue);z-index:9999;
+  width:0;transform-origin:left;
+  transition:width .05s linear;
+}

@@ -36,6 +36,8 @@ const { chromium } = require('playwright-core');
 const ROOT = path.resolve(__dirname, '..');
 const MARKETS = require(path.join(ROOT, 'assets', 'markets.js'));
 const CODES = Object.keys(MARKETS).filter(k => !k.startsWith('__'));
+const ONLY = (process.argv.slice(2).find(a => a.startsWith('--market=')) || '').split('=')[1] || '';
+const RENDER = ONLY ? [ONLY] : CODES;
 const ROUTES = ['', '/over-ons', '/prijzen', '/contact'];
 // Checked after each render: if applyLang did not run, the page would be
 // written back still in Dutch and the bug would look fixed.
@@ -100,7 +102,9 @@ function serve() {
      * serialise the result -- freezing today's rate into a committed file,
      * which is the thing the line above exists to prevent. The page keeps
      * its <script> tag either way; it just gets nothing to work with. */
-    if (url === '/assets/rates.boot.js') { res.writeHead(503).end('') ; return; }
+    if (url.startsWith('/assets/build/rates.boot.') && url.endsWith('.js')) {
+      res.writeHead(503).end(''); return;
+    }
     let file = path.join(ROOT, url);
     if (!path.extname(file)) file = path.join(file, 'index.html');
     if (!fs.existsSync(file) || !fs.statSync(file).isFile()) { res.writeHead(404).end(); return; }
@@ -234,7 +238,7 @@ function stripRuntimeState() {
   page.on('pageerror', e => errors.push(e.message.slice(0, 80)));
 
   let done = 0, failed = 0;
-  for (const code of CODES) {
+  for (const code of RENDER) {
     for (const route of ROUTES) {
       const rel = path.join(code, route.replace(/^\//, ''), 'index.html');
       const dest = path.join(ROOT, rel);

@@ -1,0 +1,114 @@
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────── */
+/* Five nav links + CTA + language switcher gets tight before 980px */
+@media(max-width:1180px){
+  .nlinks{gap:1.15rem}
+  .nlinks a{font-size:.76rem}
+}
+@media(max-width:1100px){
+  .ab-layout,.opp-layout,.ct-layout{grid-template-columns:1fr;gap:4rem}
+  .shint{display:none}
+  .soc-sec{grid-template-columns:1fr;gap:3rem;padding:6rem 6vw}
+  .soc-card{max-width:100%;aspect-ratio:2.5/1}
+  .soc-big{font-size:4rem}
+}
+@media(max-width:980px){
+  .nlinks{display:none}
+  .nav-tog{display:flex}
+}
+@media(max-width:768px){
+  /* Reveal upward, not sideways.
+   *
+   * .rv.fl and .rv.fr enter from translateX(-32px)/(+32px). On a wide
+   * screen the 5vw gutter absorbs that; at 320px there is no gutter, so a
+   * full-width block sat 32px past the edge and made the document 32px
+   * wider until the section revealed -- a horizontal scrollbar that came
+   * and went with the scroll position. Vertical entry cannot overflow,
+   * and it is what .rv already does everywhere else. */
+  .rv.fl,.rv.fr{transform:translateY(32px)}
+  .rv.fl.vv,.rv.fr.vv{transform:none}
+  .sec{padding:5rem 6vw}
+  .soc-sec{padding:6rem 6vw}
+  .hero{padding:5.5rem 6vw 4rem}
+  .hero-logomark{display:none}
+  .hero-h1{font-size:clamp(3rem,11vw,5.5rem)}
+  .hero-foot{flex-direction:column;align-items:flex-start;gap:1.5rem}
+  .proc-head{flex-direction:column}
+  .srow{grid-template-columns:56px 1fr;gap:1.5rem}
+  .stime{display:none}
+  .wgrid{grid-template-columns:1fr 1fr}
+  .pgrid{grid-template-columns:1fr}
+  .plan{padding:2.5rem 1.8rem}
+  .plan.feat{margin:0}
+  .pprice{font-size:3.5rem}
+  .pprice[style]{font-size:1.9rem !important}
+  .exgrid{grid-template-columns:1fr 1fr}
+  .chd,.crow{grid-template-columns:2fr 1fr 1fr}
+  .chc:nth-child(n+4),.cc:nth-child(n+4){display:none}
+  .ft-cols{gap:2.5rem}
+  .zoom-section{height:200vh}
+  .zoom-inner{transform:scale(.65)}
+  /* FAQ cards full-width on mobile */
+  #faq details{padding:1.1rem 1.2rem !important}
+  #faq details summary{font-size:.98rem !important}
+  /* Services intro + helper text readable */
+  #diensten .ssub{font-size:.95rem}
+}
+@media(max-width:560px){
+  .nav-right{gap:.7rem}
+  .lang-btn{padding:.2rem .3rem;font-size:.64rem}
+}
+@media(max-width:480px){
+  .wgrid{grid-template-columns:1fr}
+  .exgrid{grid-template-columns:1fr}
+  .ex-wide{grid-column:span 1}
+  .addon{flex-direction:column;align-items:flex-start;padding:1.3rem 1.4rem}
+  /* Two converted figures do not fit side by side on a phone. */
+  .ab-nums{grid-template-columns:1fr}
+  .abn{padding:1.25rem 1.3rem}
+  .plan{padding:2rem 1.4rem}
+  .pprice{font-size:clamp(1.9rem,9vw,3rem)}
+  .pprice[style]{font-size:1.7rem !important;line-height:1.1 !important}
+  .pname{font-size:1.15rem}
+  .pfeats li{font-size:.88rem}
+  .pbtn{font-size:.9rem;padding:.9rem 1.2rem}
+  /* Footer columns stack on very small */
+  .ft-cols{flex-direction:column;gap:2rem}
+  .ft-top{flex-direction:column;gap:2.5rem}
+
+  /* Market overview — 1.1rem of cell padding left the value columns with
+     almost no room, so prices wrapped mid-figure.
+
+     Narrowing the padding was not enough once a converted figure arrived.
+     Three columns leave about 93px each and Rp 163.895.984 needs 100, so it
+     still broke mid-number: "Rp 10.223." on one line, "012" on the next,
+     which reads as a different price. Two columns give the price column the
+     room to keep each figure whole. Provider against start price is the
+     comparison this table exists to make; maintenance is stated in the copy
+     beside it and on the pricing page. */
+  .chd,.crow{grid-template-columns:1.35fr 1fr}
+  .chc:nth-child(n+3),.cc:nth-child(n+3){display:none}
+  .chc{font-size:.52rem;letter-spacing:.08em;padding:.62rem .55rem}
+  .cc{font-size:.78rem;padding:.85rem .55rem}
+  .cbdg{margin-left:0;margin-top:.32rem}
+  .cnm{display:flex;flex-direction:column;align-items:flex-start}
+
+  /* Cost calculation — 3rem of padding each side is 96px of a 320px screen.
+     The total also stacks: "+EUR7.473/jaar" is one unbreakable token and at
+     2rem it alone is wider than the remaining space. */
+  .opp-box{padding:1.5rem 1.2rem}
+  .orow{gap:.7rem}
+  .olbl{font-size:.78rem;min-width:0}
+  .oval{font-size:.85rem;flex-shrink:0}
+  .ototl{flex-direction:column;align-items:flex-start;gap:.45rem}
+  .otval{font-size:1.6rem}
+  .onote{padding:1rem 1.1rem;font-size:.78rem}
+}
+
+@media(max-width:360px){
+  .chc{font-size:.48rem;letter-spacing:.04em;padding:.55rem .42rem}
+  .cc{font-size:.72rem;padding:.75rem .42rem}
+  .otval{font-size:1.35rem}
+  .opp-box{padding:1.3rem 1rem}
+}

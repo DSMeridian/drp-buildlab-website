@@ -1,0 +1,13 @@
+/* ─────────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.88rem 2rem;font-family:inherit;font-size:.88rem;font-weight:700;
+  border:none;transition:all .25s;
+  position:relative;overflow:hidden;
+}
+.btn-p{background:var(--blue-d);color:#fff;box-shadow:0 8px 24px rgba(74,144,226,.28)}
+.btn-p:hover{background:var(--blue-dd);transform:translateY(-2px);box-shadow:0 14px 36px rgba(74,144,226,.42)}
+.btn-g{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn-g:hover{border-color:var(--blue);color:var(--blue);background:rgba(74,144,226,.05)}

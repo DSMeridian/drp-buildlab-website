@@ -1,0 +1,12 @@
+/* ─────────────────────────────────────────────
+   WHATSAPP FLOAT
+───────────────────────────────────────────── */
+.wa-float{
+  position:fixed;bottom:2rem;right:2rem;z-index:800;
+  width:54px;height:54px;background:#25D366;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 22px rgba(37,211,102,.42);
+  transition:transform .22s,box-shadow .22s;
+}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,.58)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
