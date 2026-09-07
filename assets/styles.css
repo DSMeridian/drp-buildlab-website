@@ -400,6 +400,7 @@ section[id]{scroll-margin-top:90px}
    ABOUT
 ───────────────────────────────────────────── */
 .ab-layout{display:grid;grid-template-columns:1fr 1fr;gap:9rem;align-items:center}
+.ab-layout>*{min-width:0}
 /* Smooth logo integration */
 .ab-logo-wrap{
   margin-bottom:3rem;
@@ -417,12 +418,13 @@ section[id]{scroll-margin-top:90px}
 .ab-sig{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 .ab-nums{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2.5rem}
 .abn{background:var(--bg);padding:1.6rem 1.8rem}
-.abn-v{font-size:2.5rem;font-weight:800;letter-spacing:-.04em;color:var(--blue);line-height:1;margin-bottom:.2rem}
+.abn-v{font-size:clamp(1.45rem,6.5vw,2.5rem);font-weight:800;letter-spacing:-.04em;color:var(--blue);line-height:1;margin-bottom:.2rem}
 .abn-l{font-size:.68rem;color:var(--muted)}
 .ab-right p{font-size:.92rem;color:var(--muted);line-height:1.9;margin-bottom:1.35rem}
 .ab-right p strong{color:var(--ink);font-weight:700}
 .pillars{display:flex;flex-direction:column;margin-top:2rem}
 .pillar{display:flex;gap:1.4rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.pillar>*{min-width:0}
 .pillar:first-child{border-top:1px solid var(--line)}
 .pn{font-size:.58rem;font-weight:700;color:var(--blue);letter-spacing:.1em;flex-shrink:0;padding-top:.12rem}
 .ptitle{font-weight:700;font-size:.88rem;margin-bottom:.18rem;color:var(--ink)}
@@ -486,6 +488,11 @@ section[id]{scroll-margin-top:90px}
 .chc:last-child{border-right:none}
 .cc{padding:1.1rem 1.1rem;font-size:.83rem;display:flex;align-items:center;border-right:1px solid var(--line);min-width:0;overflow-wrap:break-word}
 .cc:last-child{border-right:none}
+/* Flex items default to min-width:auto, so min-width:0 on .cc alone did not
+   let a long price shrink -- it stayed at its min-content width, declared
+   itself clipped, and sent fitTable() into its pinned-and-scrolling mode.
+   Rp 16.417.744-Rp 51.305.449 needs to be allowed to wrap. */
+.cc>*,.chc>*{min-width:0;overflow-wrap:anywhere}
 .cnm{font-weight:700;color:var(--ink)}
 .cnm.u{color:var(--blue)}
 .cbdg{display:inline-block;background:var(--blue);color:#fff;font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.14rem .48rem;margin-left:.45rem;border-radius:2px;vertical-align:middle}
@@ -501,6 +508,7 @@ section[id]{scroll-margin-top:90px}
    PRICING
 ───────────────────────────────────────────── */
 .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:5rem}
+.pgrid>*{min-width:0}
 .plan{background:var(--bg);padding:3rem 2.5rem;position:relative;transition:background .3s}
 .plan:hover{background:var(--bg2)}
 .plan.feat{background:var(--bg2);border:1px solid var(--line-b);box-shadow:0 0 50px rgba(74,144,226,.08);margin:-1px;z-index:1}
@@ -527,6 +535,7 @@ section[id]{scroll-margin-top:90px}
 /* Footer social row — three links now, so let them wrap on narrow screens */
 .ft-socials{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
 .ft-follow{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.addon>*{min-width:0}
 .addon{
   margin-top:1.6rem;border:1px solid var(--line);background:var(--bg2);
   padding:1.6rem 1.8rem;display:flex;justify-content:space-between;
@@ -535,8 +544,8 @@ section[id]{scroll-margin-top:90px}
 .addon-tag{font-size:.6rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--blue-d);display:block;margin-bottom:.5rem}
 .addon-n{font-size:1.15rem;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
 .addon-b{font-size:.84rem;color:var(--ink2);line-height:1.6;margin-top:.45rem;max-width:520px}
-.addon-r{display:flex;align-items:baseline;gap:.9rem;flex-shrink:0}
-.addon-p{font-size:1.5rem;font-weight:800;letter-spacing:-.03em;color:var(--blue-d);white-space:nowrap}
+.addon-r{display:flex;align-items:baseline;gap:.9rem;flex-shrink:0;flex-wrap:wrap;min-width:0}
+.addon-p{font-size:clamp(1.1rem,5vw,1.5rem);font-weight:800;letter-spacing:-.03em;color:var(--blue-d);white-space:nowrap}
 .addon-p span{font-size:.78rem;font-weight:600;color:var(--ink2);letter-spacing:0}
 .addon-or{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.16em}
 
@@ -588,6 +597,7 @@ section[id]{scroll-margin-top:90px}
    CONTACT
 ───────────────────────────────────────────── */
 .ct-layout{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
+.ct-layout>*{min-width:0}
 .ct-lede{font-size:.92rem;color:var(--muted);line-height:1.9;margin-top:1.1rem;margin-bottom:2rem}
 .ct-items{display:flex;flex-direction:column}
 .ct-item{display:flex;gap:1.2rem;align-items:flex-start;padding:1.2rem 0;border-bottom:1px solid var(--line)}
@@ -671,6 +681,9 @@ footer{background:var(--ink);padding:4rem 5vw 2.5rem;color:#fff}
 ───────────────────────────────────────────── */
 .wr-w{
   display:inline-block;overflow:hidden;vertical-align:bottom;
+  /* A single long word must not be able to set a floor wider than the
+     screen. German and Indonesian compounds did exactly that at 320px. */
+  max-width:100%;overflow-wrap:break-word;word-break:break-word;
   /* Prevent edge-character clipping (negative letter-spacing + descenders) */
   padding:0.1em 0.08em 0.22em;
   margin:-0.1em -0.08em -0.22em;
@@ -798,6 +811,16 @@ body.nav-open{overflow:hidden}
   .nav-tog{display:flex}
 }
 @media(max-width:768px){
+  /* Reveal upward, not sideways.
+   *
+   * .rv.fl and .rv.fr enter from translateX(-32px)/(+32px). On a wide
+   * screen the 5vw gutter absorbs that; at 320px there is no gutter, so a
+   * full-width block sat 32px past the edge and made the document 32px
+   * wider until the section revealed -- a horizontal scrollbar that came
+   * and went with the scroll position. Vertical entry cannot overflow,
+   * and it is what .rv already does everywhere else. */
+  .rv.fl,.rv.fr{transform:translateY(32px)}
+  .rv.fl.vv,.rv.fr.vv{transform:none}
   .sec{padding:5rem 6vw}
   .soc-sec{padding:6rem 6vw}
   .hero{padding:5.5rem 6vw 4rem}
@@ -834,9 +857,11 @@ body.nav-open{overflow:hidden}
   .exgrid{grid-template-columns:1fr}
   .ex-wide{grid-column:span 1}
   .addon{flex-direction:column;align-items:flex-start;padding:1.3rem 1.4rem}
-  .ab-nums{grid-template-columns:1fr 1fr}
+  /* Two converted figures do not fit side by side on a phone. */
+  .ab-nums{grid-template-columns:1fr}
+  .abn{padding:1.25rem 1.3rem}
   .plan{padding:2rem 1.4rem}
-  .pprice{font-size:3rem}
+  .pprice{font-size:clamp(1.9rem,9vw,3rem)}
   .pprice[style]{font-size:1.7rem !important;line-height:1.1 !important}
   .pname{font-size:1.15rem}
   .pfeats li{font-size:.88rem}
@@ -846,8 +871,17 @@ body.nav-open{overflow:hidden}
   .ft-top{flex-direction:column;gap:2.5rem}
 
   /* Market overview — 1.1rem of cell padding left the value columns with
-     almost no room, so prices wrapped mid-figure. */
-  .chd,.crow{grid-template-columns:1.5fr 1fr 1fr}
+     almost no room, so prices wrapped mid-figure.
+
+     Narrowing the padding was not enough once a converted figure arrived.
+     Three columns leave about 93px each and Rp 163.895.984 needs 100, so it
+     still broke mid-number: "Rp 10.223." on one line, "012" on the next,
+     which reads as a different price. Two columns give the price column the
+     room to keep each figure whole. Provider against start price is the
+     comparison this table exists to make; maintenance is stated in the copy
+     beside it and on the pricing page. */
+  .chd,.crow{grid-template-columns:1.35fr 1fr}
+  .chc:nth-child(n+3),.cc:nth-child(n+3){display:none}
   .chc{font-size:.52rem;letter-spacing:.08em;padding:.62rem .55rem}
   .cc{font-size:.78rem;padding:.85rem .55rem}
   .cbdg{margin-left:0;margin-top:.32rem}
@@ -888,7 +922,7 @@ body.nav-open{overflow:hidden}
   transition:transform .34s cubic-bezier(.16,1,.3,1),visibility 0s .34s;
 }
 .scta.on{visibility:visible;transform:none;transition:transform .34s cubic-bezier(.16,1,.3,1)}
-.scta-txt{font-size:.78rem;font-weight:600;color:var(--ink);line-height:1.3}
+.scta-txt{font-size:.78rem;font-weight:600;color:var(--ink);line-height:1.3;min-width:0;overflow-wrap:anywhere}
 .scta-btn{
   flex-shrink:0;background:var(--blue-d);color:#fff;
   padding:.72rem 1.1rem;font-size:.82rem;font-weight:700;white-space:nowrap;
@@ -1066,6 +1100,7 @@ body[data-page="contact"] .nav-cta{display:none}
 
 .ccb-opts{display:grid;gap:.55rem;margin:0 0 1rem}
 .ccb-row{display:flex;gap:.6rem;align-items:flex-start;cursor:pointer}
+.ccb-row>*{min-width:0}
 .ccb-row.is-locked{cursor:default;opacity:.7}
 .ccb-row input{width:16px;height:16px;flex:none;margin-top:.18rem;appearance:auto;accent-color:var(--blue-d,#1b4ee0)}
 .ccb-row strong{display:block;font-size:.82rem;font-weight:600}
