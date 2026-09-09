@@ -2,3 +2,15 @@
 .claude/
 node_modules/
 docs/
+
+# Secrets — never commit an API key
+.env
+.env.*
+!.env.example
+
+# Python bytecode from serve.py
+__pycache__/
+*.pyc
+
+# Python bytecode from tools/serve.py
+__pycache__/

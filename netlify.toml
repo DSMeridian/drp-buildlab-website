@@ -12,3 +12,11 @@
 
 [build]
   publish = "."
+
+# The edge functions are NOT declared here. netlify/edge-functions/ is already
+# where Netlify looks by default, so the setting was redundant -- and it was
+# the only infrastructure change between a deploy that served the site and one
+# that returned 404 for every path, including index.html. Each function still
+# routes itself through its exported `config.path`:
+#   geo.js   -> /api/geo    visitor country, from Netlify's own edge data
+#   rates.js -> /api/rates  EUR rates, proxied and cached for an hour

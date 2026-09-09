@@ -1,0 +1,44 @@
+/* ─────────────────────────────────────────────
+   LANGUAGE SWITCHER
+───────────────────────────────────────────── */
+.nav-right{display:flex;align-items:center;gap:1rem;min-width:0}
+/* The switcher now lists seven languages, not four. min-width:0 lets it
+   shrink below its content size (the flexbox default is auto, which never
+   shrinks), and overflow-x:auto turns any width it cannot fit into a
+   horizontal scroll instead of pushing the hamburger off-screen -- which is
+   what happened at 320-360px before this. nav-tog is flex-shrink:0 so it is
+   never the thing that gives, whatever the language count grows to. */
+/* Market picker. A native select rather than a row of codes: 17 markets do
+   not fit a nav bar, and the OS picker is better on a phone than anything
+   custom. min-width:0 lets it shrink so it can never push the hamburger off
+   screen, which a row of buttons previously did at 320px. */
+.market-sw{display:flex;align-items:center;min-width:0}
+.market-sw select{
+  -webkit-appearance:none;appearance:none;
+  background:none;border:1px solid var(--line);border-radius:3px;
+  padding:.26rem 1.35rem .26rem .5rem;max-width:11rem;
+  font-family:inherit;font-size:.68rem;font-weight:700;letter-spacing:.04em;
+  color:var(--muted);cursor:pointer;transition:all .2s;
+  text-overflow:ellipsis;
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right .45rem center;background-size:8px;
+}
+.market-sw select:hover{color:var(--ink);border-color:var(--line-b)}
+.market-sw select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+@media(max-width:560px){
+  .market-sw select{max-width:7.5rem;font-size:.64rem;padding:.22rem 1.2rem .22rem .4rem}
+}
+
+.lang-sw{
+  display:flex;align-items:center;gap:.25rem;
+  min-width:0;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
+}
+.lang-sw::-webkit-scrollbar{display:none}
+.lang-btn{
+  background:none;border:1px solid transparent;border-radius:3px;
+  padding:.22rem .45rem;font-family:inherit;font-size:.68rem;font-weight:700;
+  letter-spacing:.06em;color:var(--muted);transition:all .2s;
+  text-transform:uppercase;line-height:1;flex-shrink:0;
+}
+.lang-btn:hover{color:var(--ink);border-color:var(--line)}
+.lang-btn.active{color:var(--blue);border-color:rgba(74,144,226,.35);background:rgba(74,144,226,.06)}

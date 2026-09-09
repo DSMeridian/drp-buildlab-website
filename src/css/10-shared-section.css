@@ -1,0 +1,34 @@
+/* ─────────────────────────────────────────────
+   SHARED SECTION
+───────────────────────────────────────────── */
+.sec{padding:6.5rem 5vw}
+.sec-alt{background:var(--bg)}
+/* C4 — anchor jumps land below the fixed nav, not underneath it */
+section[id]{scroll-margin-top:90px}
+/* Thin rule separates sections without heavy color change */
+.sec+.sec,.sec+.sec-alt,.sec-alt+.sec,.sec-alt+.sec-alt{
+  border-top:1px solid var(--line);
+}
+.stag{display:block;font-size:.6rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);margin-bottom:.85rem}
+.sh{
+  font-size:clamp(2.6rem,5.5vw,5.5rem);
+  font-weight:800;line-height:1.0;letter-spacing:-.038em;color:var(--ink);
+  margin-bottom:1.5rem;
+}
+.sh em{font-style:italic;font-weight:300;color:var(--muted)}
+.ssub{font-size:.96rem;color:var(--muted);line-height:1.85;max-width:480px}
+
+/* Page header — the pages that are not the home hero still need an h1 */
+.phero{padding:9.5rem 5vw 3.75rem;border-bottom:1px solid var(--line)}
+.phero-eye{font-size:.6rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);margin-bottom:.9rem}
+.phero-h1{margin-bottom:0}
+.phero-sub{margin-top:1.15rem;max-width:620px}
+
+/* Closing CTA — sends people to the contact page from any other page */
+.ctastrip{padding:6.5rem 5vw;text-align:center;border-top:1px solid var(--line)}
+.ctastrip .sh{margin-bottom:0}
+.ctastrip .ssub{margin:1.15rem auto 2.1rem;max-width:560px}
+@media(max-width:700px){
+  .phero{padding:7.5rem 6vw 2.75rem}
+  .ctastrip{padding:4.5rem 6vw}
+}

@@ -1,0 +1,32 @@
+/* ─────────────────────────────────────────────
+   LOADER
+───────────────────────────────────────────── */
+#loader{
+  position:fixed;inset:0;z-index:10000;
+  background:#fff;
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .6s ease .1s, visibility .6s ease .1s;
+  /* A1 — hides itself even if the JS that removes it never runs */
+  animation:loaderFailsafe 0s linear 3s forwards;
+}
+@keyframes loaderFailsafe{to{opacity:0;visibility:hidden;pointer-events:none}}
+#loader.gone{opacity:0;visibility:hidden}
+.ld-inner{display:flex;flex-direction:column;align-items:center;gap:8px}
+.ld-mark{
+  width:64px;height:64px;background:var(--blue);border-radius:12px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:2px;
+  opacity:0;transform:scale(.8);
+  animation:ldPop .5s cubic-bezier(.16,1,.3,1) .2s forwards;
+}
+.ld-drp{font-size:1.4rem;font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1}
+.ld-bl{font-size:.38rem;font-weight:700;color:rgba(255,255,255,.8);letter-spacing:.12em;text-transform:uppercase}
+.ld-name{
+  font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);
+  opacity:0;animation:ldUp .4s ease .5s forwards;
+}
+.ld-bar{width:48px;height:1.5px;background:var(--bg3);border-radius:2px;overflow:hidden;opacity:0;animation:ldUp .3s ease .6s forwards;margin-top:4px}
+.ld-fill{height:100%;background:var(--blue);width:0;animation:ldFill 1.1s ease .7s forwards}
+@keyframes ldPop{to{opacity:1;transform:scale(1)}}
+@keyframes ldUp{to{opacity:1;transform:none}}
+@keyframes ldFill{to{width:100%}}

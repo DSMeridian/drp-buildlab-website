@@ -1,0 +1,20 @@
+/* ─────────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────────── */
+footer{background:var(--ink);padding:4rem 5vw 2.5rem;color:#fff}
+.ft-top{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:2.5rem}
+.ft-brand{display:flex;align-items:center;gap:.75rem;margin-bottom:.65rem}
+.ft-mark{width:40px;height:40px;background:var(--blue);border-radius:7px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;flex-shrink:0}
+.ft-mark-drp{font-size:.8rem;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1}
+.ft-mark-bl{font-size:.34rem;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.1em}
+.ft-name{font-size:1.05rem;font-weight:800;letter-spacing:-.02em;color:#fff}
+.ft-tag{font-size:.72rem;color:rgba(255,255,255,.5)}
+.ft-cols{display:flex;gap:4rem;flex-wrap:wrap}
+.ft-col h4{font-size:.58rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.9rem}
+.ft-col a{display:block;font-size:.8rem;color:rgba(255,255,255,.62);margin-bottom:.45rem;transition:color .22s}
+.ft-col a:hover{color:#fff}
+.ft-bot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.ft-copy{font-size:.7rem;color:rgba(255,255,255,.55)}
+.ft-ig{display:inline-flex;align-items:center;gap:.45rem;font-size:.76rem;color:rgba(255,255,255,.6);transition:color .22s}
+.ft-ig:hover{color:var(--blue-l)}
+.ft-ig svg{width:13px;height:13px}

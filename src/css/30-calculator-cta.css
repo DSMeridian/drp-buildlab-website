@@ -1,0 +1,17 @@
+/* ─────────────────────────────────────────────
+   COST-CALCULATOR CTA — the last row of the ledger
+
+   The box totals to a benefit figure and then stopped. This is the highest
+   intent moment on the page and there was nothing to press for another four
+   screens. Squared to the box rather than pill-shaped, because it is a row
+   of the table and not a floating button.
+───────────────────────────────────────────── */
+.opp-act{
+  display:block;margin-top:1.75rem;
+  background:var(--blue-d);color:#fff;text-align:center;
+  padding:1.05rem 1.25rem;border-radius:3px;
+  font-size:.86rem;font-weight:700;letter-spacing:-.005em;
+  box-shadow:0 8px 24px rgba(74,144,226,.24);
+  transition:background .25s ease,box-shadow .25s ease;
+}
+.opp-act:hover{background:var(--blue-dd);box-shadow:0 12px 30px rgba(74,144,226,.32)}

@@ -1,0 +1,48 @@
+/* ─────────────────────────────────────────────
+   CONTACT
+───────────────────────────────────────────── */
+.ct-layout{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
+.ct-layout>*{min-width:0}
+.ct-lede{font-size:.92rem;color:var(--muted);line-height:1.9;margin-top:1.1rem;margin-bottom:2rem}
+.ct-items{display:flex;flex-direction:column}
+.ct-item{display:flex;gap:1.2rem;align-items:flex-start;padding:1.2rem 0;border-bottom:1px solid var(--line)}
+.ct-item:first-child{border-top:1px solid var(--line)}
+.ci-ico{color:var(--blue);flex-shrink:0;margin-top:.1rem}
+.ci-lbl{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.22rem}
+.ci-val{font-size:.88rem;color:var(--ink)}
+.ci-val a{color:var(--blue)}
+.fwrap{background:var(--bg2);border:1px solid var(--line);padding:3rem;position:relative}
+.fwrap::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue-d),var(--blue-l))}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.field{display:flex;flex-direction:column;gap:.38rem;margin-bottom:.9rem}
+.field label{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{
+  background:#fff;border:1px solid var(--line);color:var(--ink);
+  padding:.82rem 1rem;font-family:inherit;font-size:.88rem;
+  outline:none;transition:border-color .25s,box-shadow .25s;width:100%;appearance:none;
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(74,144,226,.38);box-shadow:0 0 0 3px rgba(74,144,226,.06)}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted2)}
+.field select option{background:#fff;color:var(--ink)}
+.field textarea{min-height:96px;resize:none}
+.fsubmit{
+  width:100%;margin-top:.4rem;background:var(--blue-d);color:#fff;border:none;
+  padding:.95rem;font-family:inherit;font-size:.88rem;font-weight:700;
+  letter-spacing:.04em;transition:all .25s;box-shadow:0 8px 22px rgba(74,144,226,.24);
+}
+.fsubmit:hover{background:var(--blue-dd);transform:translateY(-1px);box-shadow:0 12px 34px rgba(74,144,226,.38)}
+/* A2 — failed submissions get an error state, not the success screen */
+.ferr{display:none;margin-top:1.1rem;padding:1.1rem 1.3rem;background:rgba(220,38,38,.05);border:1px solid rgba(220,38,38,.25);border-left:3px solid #dc2626}
+.ferr.on{display:block}
+.ferr-t{font-size:.86rem;font-weight:700;color:#b91c1c;margin-bottom:.35rem}
+.ferr-b{font-size:.81rem;color:var(--ink2);line-height:1.75}
+.ferr-b a{color:var(--blue-d);font-weight:700;text-decoration:underline}
+/* A10 — GDPR consent */
+.fconsent{display:flex;align-items:flex-start;gap:.65rem;margin:.35rem 0 1.1rem}
+.fconsent input{width:16px;height:16px;flex-shrink:0;margin-top:.16rem;appearance:auto;accent-color:var(--blue-d)}
+.fconsent label{font-size:.78rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);line-height:1.65}
+.succ{display:none;text-align:center;padding:3rem 1rem}
+.succ.on{display:block}
+.succ-chk{font-size:2.2rem;color:var(--blue);margin-bottom:.9rem}
+.succ h3{font-size:1.4rem;font-weight:800;color:var(--ink);margin-bottom:.45rem}
+.succ p{font-size:.88rem;color:var(--muted)}

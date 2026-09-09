@@ -1,0 +1,49 @@
+/* ─────────────────────────────────────────────
+   COOKIE CONSENT   (.ccb — .cc is the comparison cell)
+   Accept and Reject share one class on purpose:
+   refusing must not be the quieter button.
+───────────────────────────────────────────── */
+.ccb{
+  position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:80;
+  max-width:34rem;margin-inline:auto;
+  background:#fff;color:var(--ink,#12141a);
+  border:1px solid rgba(0,0,0,.08);border-radius:14px;
+  box-shadow:0 18px 50px rgba(0,0,0,.16);
+  padding:1.15rem 1.25rem;
+}
+.ccb-body{margin:0 0 .9rem;font-size:.86rem;line-height:1.6;color:var(--muted,#5a5f6b)}
+
+.ccb-opts{display:grid;gap:.55rem;margin:0 0 1rem}
+.ccb-row{display:flex;gap:.6rem;align-items:flex-start;cursor:pointer}
+.ccb-row>*{min-width:0}
+.ccb-row.is-locked{cursor:default;opacity:.7}
+.ccb-row input{width:16px;height:16px;flex:none;margin-top:.18rem;appearance:auto;accent-color:var(--blue-d,#1b4ee0)}
+.ccb-row strong{display:block;font-size:.82rem;font-weight:600}
+.ccb-row small{display:block;font-size:.76rem;line-height:1.5;color:var(--muted,#5a5f6b)}
+
+.ccb-btns{display:flex;flex-wrap:wrap;gap:.5rem}
+.ccb-b{
+  flex:1 1 auto;min-width:8rem;
+  font-family:inherit;font-size:.82rem;font-weight:600;
+  padding:.6rem 1rem;border-radius:999px;cursor:pointer;
+  border:1px solid transparent;
+}
+/* Identical weight for accept and reject. */
+.ccb-b-solid{background:var(--ink,#12141a);color:#fff}
+.ccb-b-solid:hover{opacity:.88}
+.ccb-b-ghost{background:transparent;color:var(--ink,#12141a);border-color:rgba(0,0,0,.16)}
+.ccb-b-ghost:hover{background:rgba(0,0,0,.04)}
+.ccb-b:focus-visible{outline:2px solid var(--blue-d,#1b4ee0);outline-offset:2px}
+
+/* The permanent way back, so consent can be withdrawn as easily as given. */
+.ccb-manage{
+  background:none;border:0;padding:0;margin:.4rem 0 0;
+  font-family:inherit;font-size:inherit;color:inherit;opacity:.8;
+  text-decoration:underline;text-underline-offset:2px;cursor:pointer;
+}
+.ccb-manage:hover{opacity:1}
+
+@media (max-width:700px){
+  .ccb{left:.6rem;right:.6rem;bottom:.6rem;padding:1rem}
+  .ccb-b{flex:1 1 100%}
+}

@@ -53,32 +53,64 @@
 /*.js
   Cache-Control: public, max-age=31536000, immutable
 
-# The three shared assets under /assets/ have unversioned filenames, so they
-# must NOT inherit the immutable year above — a returning visitor would be
-# stuck on stale CSS until 2027.
+# Everything under /assets/ has an unversioned filename, so none of it may
+# inherit the immutable year above -- a returning visitor would be stuck on
+# whatever they cached until 2027.
+#
+# This was written as three named files, and the list did not keep up. Six
+# more assets arrived since -- locale.js, markets.js, the per-language i18n
+# payloads, rates.boot.js, lang-offer.js -- and every one of them silently
+# inherited `immutable` for a year:
+#
+#   locale.js      does every currency conversion, so no fix to it reached
+#                  anyone who had already visited
+#   markets.js     lists the markets, so a returning visitor would not see
+#                  Chile or Brazil in the picker at all
+#   rates.boot.js  carries the day's exchange rate and was pinned for a year,
+#                  which is the exact opposite of what it is for
+#
+# So it is a pattern now, not a list. A new asset is covered the day it is
+# added rather than the day someone remembers this file.
 #
 # They revalidate on every load rather than holding a max-age, because the
 # HTML above is already `max-age=0, must-revalidate` and these files change
-# *with* it. Caching one side of that pair and not the other serves a
-# visitor new HTML against old CSS: the .ig-* to .soc-* rename shipped
-# exactly that, and the social section rendered unstyled for anyone who had
-# the previous CSS cached. An hour of that after every deploy is not worth
-# the saving.
+# *with* it. Caching one side of that pair and not the other serves a visitor
+# new HTML against old JavaScript -- which is exactly what happened here.
 #
 # The cost is one conditional request per asset, answered with a 304 and no
-# body — the file still comes from the browser cache. Switch these to the
-# immutable rule above once the filenames carry a content hash, which makes
-# the HTML/CSS pair explicit and removes the problem properly.
-/assets/styles.css
+# body: the file still comes from the browser cache.
+#
+# That was the holding position. The filenames now carry a content hash, so
+# the rules below this pair are the real answer and these two only cover what
+# is left in /assets/ that is not content-addressed: the hand-edited sources,
+# which nothing on a page references any more.
+/assets/*.css
   Cache-Control: public, max-age=0, must-revalidate
   Content-Type: text/css; charset=utf-8
 
-/assets/app.js
+/assets/*.js
   Cache-Control: public, max-age=0, must-revalidate
   Content-Type: text/javascript; charset=utf-8
 
-/assets/i18n.js
-  Cache-Control: public, max-age=0, must-revalidate
+# Content-addressed build output. styles.a3f9c1.css is that stylesheet and
+# can never be another one, so a year of immutable is not a gamble -- a
+# change produces a different filename and the old entry is simply never
+# asked for again. This is what ends the stale-asset class of bug: there is
+# no longer any way to serve new HTML against old CSS, because the HTML names
+# the exact CSS it was built with.
+#
+# `immutable` matters as much as the year: it stops the revalidation request
+# entirely, where max-age alone still lets a reload send one.
+#
+# Only this directory. /assets/img/, /assets/icons/ and the favicons keep
+# fixed names, and freezing those for a year is the same trap in a different
+# coat -- replace the logo and nobody sees it until their cache expires.
+/assets/build/*.css
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: text/css; charset=utf-8
+
+/assets/build/*.js
+  Cache-Control: public, max-age=31536000, immutable
   Content-Type: text/javascript; charset=utf-8
 
 # Images under /assets/img/ are safe to cache hard — replacing one means a
@@ -88,7 +120,7 @@
 
 # Icons & social card. 7 days, not `immutable` — long enough to be cheap,
 # short enough that a corrected icon reaches people who cached the old one.
-/favicon.svg
+/assets/icons/favicon.svg
   Cache-Control: public, max-age=604800
   Content-Type: image/svg+xml
 

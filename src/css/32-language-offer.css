@@ -1,0 +1,26 @@
+/* ─────────────────────────────────────────────
+   LANGUAGE OFFER — suggested, never forced
+───────────────────────────────────────────── */
+.lang-offer{
+  position:fixed;left:1rem;bottom:1rem;z-index:60;
+  display:flex;align-items:center;gap:.25rem;
+  background:var(--ink,#12141a);color:#fff;
+  border-radius:999px;padding:.15rem .35rem .15rem 1rem;
+  box-shadow:0 6px 24px rgba(0,0,0,.18);
+  font-size:.85rem;max-width:calc(100vw - 2rem);
+}
+.lang-offer a{
+  color:inherit;text-decoration:underline;text-underline-offset:2px;
+  padding:.45rem 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.lang-offer a:hover{text-decoration-thickness:2px}
+.lang-offer-x{
+  flex:none;background:none;border:0;color:inherit;cursor:pointer;
+  font-size:1.15rem;line-height:1;padding:.35rem .5rem;border-radius:999px;
+}
+.lang-offer-x:hover{background:rgba(255,255,255,.14)}
+.lang-offer-x:focus-visible,.lang-offer a:focus-visible{outline:2px solid #fff;outline-offset:2px}
+/* The sticky mobile CTA owns the bottom of a small screen; sit above it. */
+@media (max-width:700px){
+  .lang-offer{bottom:auto;top:calc(var(--navh,64px) + .5rem);left:.75rem;right:.75rem;font-size:.8rem}
+}
