@@ -22,7 +22,18 @@
 .exgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1.4rem}
 .ex{background:var(--bg);padding:1.2rem 1.4rem;display:flex;justify-content:space-between;align-items:center;gap:.9rem;transition:background .25s}
 .ex:hover{background:var(--bg2)}
-.ex-n{font-size:.83rem;color:var(--muted);line-height:1.45}
+/* Grid items keep min-width:auto -- their min-content width -- and the label
+   here is a flex item beside a price that never shrinks. A long word or a long
+   converted price ("Auf Anfrage", "Rp 3.034.342") therefore propped the whole
+   grid open, making sixteen pricing pages up to 148px wider than the screen
+   between 769px and 900px. Let the cell shrink and the label wrap instead. */
+.exgrid>*{min-width:0}
+/* hyphens:auto breaks a long word where the language allows, in browsers that
+   carry a dictionary for it (Safari, Firefox, Chrome on Mac and Android).
+   Chrome and Edge on Windows carry none, so a word that must break there does
+   so at a soft hyphen in the copy -- German "hinzu&shy;fügen" -- or, failing
+   that, anywhere (overflow-wrap). */
+.ex-n{font-size:.83rem;color:var(--muted);line-height:1.45;min-width:0;overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
 .ex-p{font-size:.86rem;font-weight:700;color:var(--blue-d);flex-shrink:0}
 /* C2 — 11 items in a 4-col grid: the closer spans 2 so the last row is flush */
 .ex-wide{grid-column:span 2}

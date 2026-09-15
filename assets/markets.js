@@ -35,15 +35,32 @@
    * All three are optional. Without them a market gets its country alone, no
    * administrative areas, and its own language plus English. */
   return {
+    /* A market is a country read in one language. Most countries are one
+     * market. A multilingual country is one market per language, keyed
+     * country-language -- 'ch-de', 'ae-en' -- beside the bare country ('ch',
+     * 'ae'), which is its default and keeps the URL it always had. The key
+     * becomes a nested address, /ch/de/prijzen, so every language version is
+     * a page of its own: indexed separately, and a shared link opens in the
+     * language it was sent in. Every version of a country shares its
+     * currency; the language switch moves between them without repricing.
+     * build-locales.js derives the country, the path and the sibling
+     * versions from the key, so a new language version is one line here. */
     //        language   currency  the market's own name (also the picker label)
     be: { lang: 'nl', currency: 'EUR', name: 'België',        region: 'Europe',
           areas: ['Vlaanderen', 'Wallonië'],
           languages: ['Dutch', 'English', 'French'],
           cities: ['Brussel', 'Antwerpen', 'Gent', 'Leuven', 'Mechelen', 'Hasselt', 'Brugge', 'Kortrijk', 'Namen', 'Luik'] },
+    'be-fr': { lang: 'fr', currency: 'EUR', name: 'Belgique',  region: 'Europe',
+          areas: ['Flandre', 'Wallonie'],
+          languages: ['Dutch', 'English', 'French'],
+          cities: ['Bruxelles', 'Anvers', 'Gand', 'Louvain', 'Malines', 'Hasselt', 'Bruges', 'Courtrai', 'Namur', 'Liège'] },
     nl: { lang: 'nl', currency: 'EUR', name: 'Nederland',     region: 'Europe' },
     fr: { lang: 'fr', currency: 'EUR', name: 'France',        region: 'Europe' },
     lu: { lang: 'fr', currency: 'EUR', name: 'Luxembourg',    region: 'Europe' },
+    'lu-de': { lang: 'de', currency: 'EUR', name: 'Luxemburg', region: 'Europe' },
     ch: { lang: 'fr', currency: 'CHF', name: 'Suisse',        region: 'Europe' },
+    'ch-de': { lang: 'de', currency: 'CHF', name: 'Schweiz',   region: 'Europe' },
+    'ch-it': { lang: 'it', currency: 'CHF', name: 'Svizzera',  region: 'Europe' },
     de: { lang: 'de', currency: 'EUR', name: 'Deutschland',   region: 'Europe' },
     at: { lang: 'de', currency: 'EUR', name: 'Österreich',    region: 'Europe' },
     es: { lang: 'es', currency: 'EUR', name: 'España',        region: 'Europe' },
@@ -54,6 +71,7 @@
 
     us: { lang: 'en', currency: 'USD', name: 'United States', region: 'Americas' },
     ca: { lang: 'en', currency: 'CAD', name: 'Canada',        region: 'Americas' },
+    'ca-fr': { lang: 'fr', currency: 'CAD', name: 'Canada',    region: 'Americas' },
     mx: { lang: 'es', currency: 'MXN', name: 'México',        region: 'Americas' },
     cl: { lang: 'es', currency: 'CLP', name: 'Chile',         region: 'Americas' },
     br: { lang: 'pt', currency: 'BRL', name: 'Brasil',        region: 'Americas' },
@@ -70,8 +88,18 @@
      * the client's decision: Arabic search in the Gulf is far less crowded
      * than English, which is where the reach is. */
     ae: { lang: 'ar', currency: 'AED', name: 'الإمارات',      region: 'Middle East' },
+    'ae-en': { lang: 'en', currency: 'AED', name: 'United Arab Emirates', region: 'Middle East' },
     sa: { lang: 'ar', currency: 'SAR', name: 'السعودية',      region: 'Middle East' },
+    'sa-en': { lang: 'en', currency: 'SAR', name: 'Saudi Arabia', region: 'Middle East' },
     qa: { lang: 'ar', currency: 'QAR', name: 'قطر',           region: 'Middle East' },
+    'qa-en': { lang: 'en', currency: 'QAR', name: 'Qatar',        region: 'Middle East' },
+
+    /* South Africa: English first, Afrikaans beside it. Added 2026-09-15; the
+     * Afrikaans is a DeepL draft on staging for review, like the Arabic. The
+     * other official languages DeepL can translate (isiZulu, isiXhosa,
+     * Sesotho, Tswana, Tsonga) were considered and left out by the client. */
+    za: { lang: 'en', currency: 'ZAR', name: 'South Africa',  region: 'Africa' },
+    'za-af': { lang: 'af', currency: 'ZAR', name: 'Suid-Afrika', region: 'Africa' },
 
     /* Google Tag Manager container. Empty means GTM never loads at all --
      * no script, no request, nothing. Paste the GTM-XXXXXXX here and it goes

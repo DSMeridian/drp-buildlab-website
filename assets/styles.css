@@ -532,7 +532,18 @@ section[id]{scroll-margin-top:90px}
 .exgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1.4rem}
 .ex{background:var(--bg);padding:1.2rem 1.4rem;display:flex;justify-content:space-between;align-items:center;gap:.9rem;transition:background .25s}
 .ex:hover{background:var(--bg2)}
-.ex-n{font-size:.83rem;color:var(--muted);line-height:1.45}
+/* Grid items keep min-width:auto -- their min-content width -- and the label
+   here is a flex item beside a price that never shrinks. A long word or a long
+   converted price ("Auf Anfrage", "Rp 3.034.342") therefore propped the whole
+   grid open, making sixteen pricing pages up to 148px wider than the screen
+   between 769px and 900px. Let the cell shrink and the label wrap instead. */
+.exgrid>*{min-width:0}
+/* hyphens:auto breaks a long word where the language allows, in browsers that
+   carry a dictionary for it (Safari, Firefox, Chrome on Mac and Android).
+   Chrome and Edge on Windows carry none, so a word that must break there does
+   so at a soft hyphen in the copy -- German "hinzu&shy;fügen" -- or, failing
+   that, anywhere (overflow-wrap). */
+.ex-n{font-size:.83rem;color:var(--muted);line-height:1.45;min-width:0;overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
 .ex-p{font-size:.86rem;font-weight:700;color:var(--blue-d);flex-shrink:0}
 /* C2 — 11 items in a 4-col grid: the closer spans 2 so the last row is flush */
 .ex-wide{grid-column:span 2}
@@ -802,6 +813,10 @@ body.nav-open{overflow:hidden}
 @media(max-width:1180px){
   .nlinks{gap:1.15rem}
   .nlinks a{font-size:.76rem}
+  /* Four extras per row needs about 250px a cell once a price is converted
+     or a label is German. Below 1180px that is not there, so two per row,
+     which is what the grid already falls back to on a tablet. */
+  .exgrid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:1100px){
   .ab-layout,.opp-layout,.ct-layout{grid-template-columns:1fr;gap:4rem}
@@ -1253,3 +1268,51 @@ html[lang="ar"] .hl{line-height:1.25;padding:.2em .06em .32em;margin:-.2em -.06e
 html[lang="ar"] .sh{line-height:1.4}
 html[lang="ar"] .wr-w{padding:.3em .1em .4em;margin:-.3em -.1em -.4em}
 html[lang="ar"] .abn-v,html[lang="ar"] .pprice,html[lang="ar"] .otval{line-height:1.25}
+
+/* ─────────────────────────────────────────────
+   LANGUAGE SWITCH — countries published in more than one language
+
+   Links beside the country picker, one per language the country is
+   published in, each to the same page in that language at the same
+   currency. Only multilingual countries render them; everywhere else this
+   file matches nothing.
+
+   Short codes by default and each language's own name on wide screens,
+   because the nav bar is already carrying the logo, four links, the demo
+   button and the country picker. Below 560px there is room for the logo, the
+   picker and the menu button only, so the choice moves into the menu, where
+   it is shown as a row of pills above the closing call to action.
+───────────────────────────────────────────── */
+.lang-switch{display:flex;align-items:center;gap:.15rem;flex-shrink:0}
+.lang-switch a{
+  font-size:.68rem;font-weight:700;letter-spacing:.04em;line-height:1;
+  color:var(--muted);padding:.34rem .45rem;border-radius:3px;
+  border:1px solid transparent;white-space:nowrap;
+  transition:color .2s,border-color .2s,background .2s;
+}
+.lang-switch a:hover{color:var(--ink);border-color:var(--line)}
+.lang-switch a[aria-current="true"]{
+  color:var(--blue-d);border-color:rgba(74,144,226,.35);background:rgba(74,144,226,.06);
+}
+.lang-switch .ls-full{display:none}
+@media(min-width:1281px){
+  .lang-switch .ls-full{display:inline}
+  .lang-switch .ls-short{display:none}
+}
+@media(max-width:560px){.lang-switch{display:none}}
+
+/* In the mobile menu. Overrides the menu's own large link style, which would
+   otherwise set each language at the size of a page link. */
+.nav-ov .nav-ov-langs{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;
+  margin:.25rem 0 1.25rem;
+}
+.nav-ov .nav-ov-langs a{
+  font-size:.95rem;font-weight:700;letter-spacing:0;
+  padding:.5rem 1rem;border:1px solid var(--line);border-radius:999px;
+  color:var(--muted);
+}
+.nav-ov .nav-ov-langs a[aria-current="true"]{
+  color:var(--blue-d);border-color:var(--blue);background:rgba(74,144,226,.06);
+}
+.nav-ov .nav-ov-langs .ls-short{display:none}

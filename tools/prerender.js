@@ -245,7 +245,7 @@ function stripRuntimeState() {
   let done = 0, failed = 0;
   for (const code of RENDER) {
     for (const route of ROUTES) {
-      const rel = path.join(code, route.replace(/^\//, ''), 'index.html');
+      const rel = path.join(code.split('-').join('/'), route.replace(/^\//, ''), 'index.html');
       const dest = path.join(ROOT, rel);
       if (!fs.existsSync(dest)) { console.log('  skip (missing) ' + rel); continue; }
 
@@ -255,7 +255,7 @@ function stripRuntimeState() {
         // animation loop keep the page permanently "busy", so networkidle
         // never fires. The scripts are deferred, so applyLang has already run
         // by this point anyway.
-        await page.goto(`http://127.0.0.1:${PORT}/${code}${route || '/'}`,
+        await page.goto(`http://127.0.0.1:${PORT}/${code.split('-').join('/')}${route || '/'}`,
           { waitUntil: 'domcontentloaded', timeout: 30000 });
 
         // Wait for the translation itself rather than a timeout, and fail

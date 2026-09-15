@@ -40,6 +40,17 @@ const ORIGIN = 'https://drpbuildlab.com';
 // and __webfonts. Matched by prefix so the next one added does not have to
 // be remembered here.
 const CODES = Object.keys(MARKETS).filter(k => !k.startsWith('__'));
+
+/* A market is a country read in one language. A multilingual country is one
+ * market per language, keyed country-language ('ch-de', 'ae-en'), beside the
+ * bare country key that is its default. Everything that names a place takes
+ * the country -- hreflang, og:locale, the schema's areaServed and inLanguage
+ * -- and everything that names an address takes the path, /ch/de/. The two
+ * used to be the same string, which is why a second language per country was
+ * impossible before these existed. */
+const countryOf = code => code.split('-')[0];
+const pathOf = code => code.split('-').join('/');
+const variantsOf = code => CODES.filter(c => countryOf(c) === countryOf(code));
 const DEFAULT = MARKETS.__default;
 // x-default is advice to a crawler about the unmatched visitor, so it names
 // the fallback market rather than the home one.
@@ -74,18 +85,19 @@ const ROUTES = ['/over-ons', '/prijzen', '/contact'];
 function marketiseLinks(html, code) {
   let out = html;
   for (const r of ROUTES) {
-    out = out.split(`href="${r}"`).join(`href="/${code}${r}"`);
+    out = out.split(`href="${r}"`).join(`href="/${pathOf(code)}${r}"`);
   }
   // The bare root link, only as a complete attribute value.
-  out = out.split('href="/"').join(`href="/${code}/"`);
+  out = out.split('href="/"').join(`href="/${pathOf(code)}/"`);
   return out;
 }
 
 function hreflangBlock(route) {
   const lines = CODES.map(code => {
-    // hreflang wants language-REGION; the market code is the region.
-    const tag = `${MARKETS[code].lang}-${code.toUpperCase()}`;
-    return `<link rel="alternate" hreflang="${tag}" href="${ORIGIN}/${code}${route || '/'}">`;
+    // hreflang wants language-REGION; the region is the country, whichever
+    // of its languages this version is.
+    const tag = `${MARKETS[code].lang}-${countryOf(code).toUpperCase()}`;
+    return `<link rel="alternate" hreflang="${tag}" href="${ORIGIN}/${pathOf(code)}${route || '/'}">`;
   });
   lines.push(`<link rel="alternate" hreflang="x-default" href="${ORIGIN}/${FALLBACK}${route || '/'}">`);
   return lines.join('\n');
@@ -96,15 +108,23 @@ function hreflangBlock(route) {
  * a flat list of every market is not scannable, and labelled with the
  * currency because that is half of what a visitor is choosing. */
 function marketPicker(current, route) {
+  /* One entry per country -- its default language -- rather than one per
+     market. A language version is chosen with the language switch beside
+     this; listing /ch/, /ch/de/ and /ch/it/ here would read as three
+     Switzerlands. The country being read is preselected whichever of its
+     languages the page is in. app.js keeps the reader's language when the
+     next country has it. */
   const byRegion = {};
   for (const code of CODES) {
+    if (code !== countryOf(code)) continue;
     const m = MARKETS[code];
     (byRegion[m.region] = byRegion[m.region] || []).push(code);
   }
+  const here = countryOf(current);
   const groups = Object.keys(byRegion).map(region => {
     const opts = byRegion[region].map(code => {
       const m = MARKETS[code];
-      const sel = code === current ? ' selected' : '';
+      const sel = code === here ? ' selected' : '';
       return `        <option value="${code}"${sel}>${m.name} — ${m.currency}</option>`;
     }).join('\n');
     return `      <optgroup label="${region}">\n${opts}\n      </optgroup>`;
@@ -117,6 +137,69 @@ function marketPicker(current, route) {
     '      </select>',
     '    </div>',
   ].join('\n');
+}
+
+/* The language choice, for a country published in more than one.
+ *
+ * A market used to be one language, full stop. A French-speaking Belgian had
+ * only the language-offer bar to find French, and only if their browser
+ * happened to ask for it. Now every language a country is published in is a
+ * link beside the country picker, to the same page in that language, at the
+ * same currency.
+ *
+ * Links rather than a script: each language version is its own URL, so the
+ * choice works with scripts off, a crawler follows it, and it can open in a
+ * new tab. Each language is named in itself -- Deutsch, Italiano, العربية --
+ * because the reader looking for their language reads it in their language,
+ * and that also means no translation key.
+ *
+ * A single-language country gets nothing, so those pages are unchanged. */
+const AUTONYM = {
+  nl: ['Nederlands', 'NL'], fr: ['Français', 'FR'], de: ['Deutsch', 'DE'],
+  it: ['Italiano', 'IT'], en: ['English', 'EN'], ar: ['العربية', 'عربي'],
+  af: ['Afrikaans', 'AF'], es: ['Español', 'ES'], pt: ['Português', 'PT'],
+  pl: ['Polski', 'PL'], ja: ['日本語', '日本語'], id: ['Bahasa Indonesia', 'ID'],
+};
+
+function languageLinks(current, route) {
+  const versions = variantsOf(current);
+  if (versions.length < 2) return '';
+  return versions.map(code => {
+    const lang = MARKETS[code].lang;
+    const name = AUTONYM[lang];
+    if (!name) throw new Error('no autonym for "' + lang + '" -- add it to AUTONYM in build-locales.js');
+    const rtl = (MARKETS.__rtl || []).includes(lang) ? ' dir="rtl"' : '';
+    const cur = code === current ? ' aria-current="true"' : '';
+    return `<a href="/${pathOf(code)}${route || '/'}" lang="${lang}" hreflang="${lang}"${rtl}${cur}>`
+      + `<span class="ls-full">${name[0]}</span><span class="ls-short">${name[1]}</span></a>`;
+  }).join('');
+}
+
+/* A div with role="group", deliberately not a <nav>. The stylesheet styles the
+   site's main bar with a bare element selector -- nav{position:fixed; left:0;
+   right:0; justify-content:space-between} -- so a <nav> here became a second
+   fixed, full-width bar: the three Swiss languages were flung to the far left,
+   the middle and the far right of the screen, over the logo and the menu links.
+   The group role still announces the links as one set, which is what the
+   earlier language switcher used as well. */
+function languageSwitch(current, route) {
+  const links = languageLinks(current, route);
+  return links ? `    <div class="lang-switch" role="group" aria-label="Language">${links}</div>\n` : '';
+}
+
+/* The same choice inside the mobile menu, placed above its closing call to
+   action. On a phone the nav bar has room for the logo, the country picker and
+   the menu button and nothing more. A div for the same reason as above. */
+function mobileLanguageLinks(html, code, route) {
+  const links = languageLinks(code, route);
+  if (!links) return html;
+  const at = html.indexOf('class="nav-ov-cta"');
+  if (at === -1) return html;
+  const open = html.lastIndexOf('<a ', at);
+  if (open === -1) return html;
+  return html.slice(0, open)
+    + '<div class="nav-ov-langs" role="group" aria-label="Language">' + links + '</div>\n  '
+    + html.slice(open);
 }
 
 
@@ -140,7 +223,7 @@ function socialTags(html, code, route) {
   set('property', 'og:title', title);
   set('property', 'og:description', desc);
   set('property', 'og:image:alt', alt);
-  set('property', 'og:locale', lang + '_' + code.toUpperCase());
+  set('property', 'og:locale', lang + '_' + countryOf(code).toUpperCase());
   set('name', 'twitter:title', title);
   set('name', 'twitter:description', desc);
   set('name', 'twitter:image:alt', alt);
@@ -172,7 +255,7 @@ function socialTags(html, code, route) {
 const LANG_NAME = {
   nl: 'Dutch', en: 'English', fr: 'French', de: 'German',
   es: 'Spanish', id: 'Indonesian', ja: 'Japanese', pt: 'Portuguese',
-  it: 'Italian', pl: 'Polish', ar: 'Arabic',
+  it: 'Italian', pl: 'Polish', ar: 'Arabic', af: 'Afrikaans',
 };
 
 /* Replace everything from `open` to the first following `close`, inclusive.
@@ -216,8 +299,12 @@ function marketSchema(html, code) {
     throw new Error('no English name for language "' + m.lang + '" (market '
       + code + '). Add it to LANG_NAME, or give the market its own `languages`.');
   }
+  /* Every language the country is published in, then English. A Swiss page
+     says German, French and Italian whichever of the three it is written in,
+     because the studio answers in all of them there. */
   const langs = m.languages
-    || [LANG_NAME[m.lang], 'English'].filter((v, i, a) => a.indexOf(v) === i);
+    || variantsOf(code).map(c => LANG_NAME[MARKETS[c].lang]).concat('English')
+      .filter((v, i, a) => v && a.indexOf(v) === i);
   html = spliceBetween(html, '"availableLanguage": [', ']',
     '"availableLanguage": [' + langs.map(l => JSON.stringify(l)).join(',') + ']');
 
@@ -293,7 +380,7 @@ function marketSchema(html, code) {
 
   /* The contactPoint's own areaServed, which is a country code, not a list. */
   html = html.replace(/"areaServed": "[A-Z]{2}"/,
-    () => '"areaServed": ' + JSON.stringify(code.toUpperCase()));
+    () => '"areaServed": ' + JSON.stringify(countryOf(code).toUpperCase()));
 
   /* Scope the entity ids to the market.
    *
@@ -307,12 +394,12 @@ function marketSchema(html, code) {
    * it. The pages are still tied to one company by the things that identify
    * a company -- the same vatID, the same BE-KBO number, the same telephone
    * and the same registered address on every one of them. */
-  const base = ORIGIN + '/' + code + '/#';
+  const base = ORIGIN + '/' + pathOf(code) + '/#';
   html = html.split(ORIGIN + '/#').join(base);
 
   /* WebSite.inLanguage, which claimed nl-BE on all seventeen. */
   html = html.replace(/"inLanguage": "[^"]*"/,
-    () => '"inLanguage": ' + JSON.stringify(m.lang + '-' + code.toUpperCase()));
+    () => '"inLanguage": ' + JSON.stringify(m.lang + '-' + countryOf(code).toUpperCase()));
 
   return html;
 }
@@ -339,7 +426,7 @@ function breadcrumb(html, code, route) {
   const crumb = (pos, name, path) => '    '
     + '{"@type":"ListItem","position":' + pos
     + ',' + '"name":' + JSON.stringify(name)
-    + ',' + '"item":' + JSON.stringify(ORIGIN + '/' + code + path) + '}';
+    + ',' + '"item":' + JSON.stringify(ORIGIN + '/' + pathOf(code) + path) + '}';
 
   const items = [crumb(1, t['nav.home'], '/')];
   if (route) items.push(crumb(2, t[CRUMB_KEY[route]], route));
@@ -527,7 +614,7 @@ function pruneBuildDir() {
 function build(code, page) {
   const m = MARKETS[code];
   let html = fs.readFileSync(path.join(ROOT, page.src), 'utf8');
-  const self = `${ORIGIN}/${code}${page.route || '/'}`;
+  const self = `${ORIGIN}/${pathOf(code)}${page.route || '/'}`;
 
   // 1. document language
   /* dir beside lang. Every direction-dependent rule in the stylesheet keys off
@@ -591,12 +678,15 @@ function build(code, page) {
   // 6. the language toggle becomes a market picker that navigates
   html = html.replace(
     /[ \t]*<div class="lang-sw"[\s\S]*?<\/div>\n/,
-    marketPicker(code, page.route) + '\n');
+    languageSwitch(code, page.route) + marketPicker(code, page.route) + '\n');
+
+  // 6b. the same language choice inside the mobile menu
+  html = mobileLanguageLinks(html, code, page.route);
 
   // 7. last: point every asset reference at its content-addressed name
   html = hashAssets(html);
 
-  const dest = path.join(ROOT, code, page.out);
+  const dest = path.join(ROOT, pathOf(code), page.out);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, html, 'utf8');
   return dest;
@@ -768,9 +858,9 @@ async function main() {
   const urls = [];
   for (const code of CODES) {
     for (const page of PAGES) {
-      const loc = `${ORIGIN}/${code}${page.route || '/'}`;
+      const loc = `${ORIGIN}/${pathOf(code)}${page.route || '/'}`;
       const alts = CODES.map(c =>
-        `    <xhtml:link rel="alternate" hreflang="${MARKETS[c].lang}-${c.toUpperCase()}" href="${ORIGIN}/${c}${page.route || '/'}"/>`
+        `    <xhtml:link rel="alternate" hreflang="${MARKETS[c].lang}-${countryOf(c).toUpperCase()}" href="${ORIGIN}/${pathOf(c)}${page.route || '/'}"/>`
       ).join('\n');
       urls.push(
         `  <url>\n    <loc>${loc}</loc>\n`

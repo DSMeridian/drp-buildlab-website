@@ -60,6 +60,8 @@ const ALLOWED = {
   // "VAT registration number" and "VAT", in Arabic. The number is Belgian; the
   // label only says what kind of number it is, which is true in every market.
   ar: ['رقم ضريبة القيمة المضافة', 'ضريبة القيمة المضافة', 'VAT'],
+  // Belasting op Toegevoegde Waarde -- Afrikaans shares the Dutch abbreviation.
+  af: ['BTW', 'BTW-nommer', 'VAT'],
 };
 
 /* Terms that are a country's own register or tax and are therefore false
@@ -86,6 +88,9 @@ const FALSE_CLAIMS = {
   // is not on the exact-match ALLOWED list above.
   TRN: 'a UAE tax registration number',
   ZATCA: 'the Saudi tax authority',
+  // South Africa. Registered in Belgium; no CIPC company number, no SARS VAT number.
+  CIPC: 'the South African company register',
+  SARS: 'the South African tax authority',
 };
 
 /* Payment schemes that only work in one country.

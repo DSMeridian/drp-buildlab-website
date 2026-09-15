@@ -24,7 +24,7 @@
   var LOCALES = {
     nl: 'nl-BE', en: 'en-US', fr: 'fr-BE', es: 'es-ES',
     de: 'de-DE', id: 'id-ID', ja: 'ja-JP', pt: 'pt-BR',
-    it: 'it-IT', pl: 'pl-PL', ar: 'ar-AE',
+    it: 'it-IT', pl: 'pl-PL', ar: 'ar-AE', af: 'af-ZA',
   };
 
   /* Languages whose figures are written in their own digits rather than 0-9.
@@ -63,7 +63,10 @@
     var M = window.DRP_MARKETS || {};
     var fromPage = window.__DRP_MARKET__;
     if (fromPage && M[fromPage]) return fromPage;
-    var seg = (location.pathname.split('/')[1] || '').toLowerCase();
+    var parts = location.pathname.split('/');
+    var seg = (parts[1] || '').toLowerCase();
+    var version = seg + '-' + (parts[2] || '').toLowerCase();
+    if (M[version]) return version;   // a language version: /ch/de/ is ch-de
     if (M[seg]) return seg;
     return M.__default || 'be';
   }
@@ -188,7 +191,7 @@
      * the way Ireland would render a foreign currency. */
     var M = window.DRP_MARKETS || {};
     var region = (state.market === M.__fallback && state.geo && state.geo.country)
-      ? state.geo.country : state.market;
+      ? state.geo.country : state.market.split('-')[0];
     var tag = lang + '-' + region.toUpperCase() + nu;
     try {
       return Intl.NumberFormat.supportedLocalesOf(tag).length ? tag : base;

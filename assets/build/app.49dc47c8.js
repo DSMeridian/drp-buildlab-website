@@ -917,10 +917,17 @@ window.DRP_T=function(key){
 const marketSel=document.getElementById('marketSel');
 if(marketSel){
   marketSel.addEventListener('change',()=>{
-    const code=marketSel.value;
+    const country=marketSel.value;
     const route=marketSel.dataset.route||'/';
+    /* The picker lists countries. It keeps the reader's language when the
+       next country is published in it -- German on /ch/de/ goes to /at/ or
+       /lu/de/, not to the French default -- and otherwise lands on that
+       country's own default language. */
+    const M=window.DRP_MARKETS||{};
+    const same=country+'-'+document.documentElement.lang;
+    const code=M[same]?same:country;
     // route is '' for the home page, so normalise to a trailing slash
-    location.href='/'+code+(route==='/'?'/':route);
+    location.href='/'+code.split('-').join('/')+(route==='/'?'/':route);
   });
 }
 
@@ -959,9 +966,15 @@ if(marketSel){
   /* Which market to send them to. Prefer one that keeps the price in the
      currency they are already seeing -- a French speaker on /be/ should land
      on a euro market, not be repriced because they changed language. */
-  const cur = (M[window.__DRP_MARKET__] || {}).currency;
+  const market = window.__DRP_MARKET__ || '';
+  const country = market.split('-')[0];
+  const cur = (M[market] || {}).currency;
   const opts = codes.filter(c => M[c].lang === want);
-  const target = opts.find(c => M[c].currency === cur) || opts[0];
+  /* This country in that language first -- a German browser on /ch/ belongs
+     on /ch/de/, same franc prices -- then another market at the same
+     currency, then any market in that language at all. */
+  const target = opts.find(c => c.split('-')[0] === country)
+    || opts.find(c => M[c].currency === cur) || opts[0];
   if (!target) return;
 
   /* Not from LANGS(): a page carries only its own language, so the French
@@ -979,7 +992,7 @@ if(marketSel){
      sentence and its close button land at the wrong ends of the bar. */
   bar.setAttribute('dir', (M.__rtl || []).includes(want) ? 'rtl' : 'ltr');
   const a = document.createElement('a');
-  a.href = '/' + target + (route === '/' ? '/' : route);
+  a.href = '/' + target.split('-').join('/') + (route === '/' ? '/' : route);
   a.textContent = t.o;
   const x = document.createElement('button');
   x.type = 'button';
