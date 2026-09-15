@@ -285,6 +285,10 @@ nav.s{
   font-size:clamp(6rem,22vw,22rem);
   font-weight:800;letter-spacing:-.06em;color:var(--ink);
   line-height:.85;
+  /* One line, always. A long converted figure used to be free to break at its
+     space -- "Rp" above "10.161.992" -- and app.js fits the figure to the
+     screen by measuring one line of it. */
+  white-space:nowrap;
 }
 .zoom-num span{color:var(--blue)}
 .zoom-lbl{
@@ -1132,3 +1136,120 @@ body[data-page="contact"] .nav-cta{display:none}
   .ccb{left:.6rem;right:.6rem;bottom:.6rem;padding:1rem}
   .ccb-b{flex:1 1 100%}
 }
+
+/* ─────────────────────────────────────────────
+   RIGHT-TO-LEFT — added on top, never instead
+
+   Arabic is the first right-to-left language on the site. Rather than convert
+   the stylesheet to logical properties -- 53 physical left/right declarations
+   across 17 files, each one a chance to move something on 21 markets that
+   were already right -- the flips live here, every one scoped to
+   [dir="rtl"], so nothing in this file can reach a left-to-right page.
+
+   Most of the layout needs nothing. Grid and flex already run in reading
+   order, so the columns, the nav, the hero footer and the comparison table
+   reverse on their own. What is listed below is only what was pinned to a
+   physical side.
+
+   Keep this file last. It overrides rules from across the stylesheet, by
+   specificity where it can and by order where it cannot.
+───────────────────────────────────────────── */
+
+/* Things that grow or slide in from an edge */
+[dir="rtl"] #sprog{left:auto;right:0}
+[dir="rtl"] .nlinks a::after{left:auto;right:0}
+[dir="rtl"] .srow::before{left:auto;right:0}
+[dir="rtl"] .wcard::after{transform-origin:right}
+[dir="rtl"] .hero-h1{transform-origin:bottom right}
+[dir="rtl"] .stime{text-align:left}
+
+/* The pinned statistic's corner labels swap sides */
+[dir="rtl"] .zoom-corner-tl{left:auto;right:5vw}
+[dir="rtl"] .zoom-corner-tr{right:auto;left:5vw;text-align:left}
+[dir="rtl"] .zoom-corner-bl{left:auto;right:5vw}
+[dir="rtl"] .zoom-corner-br{right:auto;left:5vw}
+
+/* Accent rules sit on the side reading starts from */
+[dir="rtl"] .onote{border-left:0;border-right:2.5px solid var(--blue)}
+[dir="rtl"] .crow.us{border-left:0;border-right:2.5px solid var(--blue)}
+[dir="rtl"] .ferr{border-left:1px solid rgba(220,38,38,.25);border-right:3px solid #dc2626}
+
+/* Comparison table: the column rules and the badge gap */
+[dir="rtl"] .chc,[dir="rtl"] .cc{border-right:0;border-left:1px solid var(--line)}
+[dir="rtl"] .chc:last-child,[dir="rtl"] .cc:last-child{border-left:0}
+[dir="rtl"] .cbdg{margin-left:0;margin-right:.45rem}
+@media(max-width:480px){[dir="rtl"] .cbdg{margin-right:0}}
+
+/* Floating controls change corners. The language bar only on desktop: below
+   700px it already spans the width. Its padding follows the bar's own
+   direction rather than the page's, because an Arabic offer can appear on a
+   Latin page and the other way round. */
+[dir="rtl"] .wa-float{right:auto;left:2rem}
+@media(min-width:701px){[dir="rtl"] .lang-offer{left:auto;right:1rem}}
+.lang-offer[dir="rtl"]{padding:.15rem 1rem .15rem .35rem}
+
+/* The market picker's chevron moves to the start of the reading line */
+[dir="rtl"] .market-sw select{padding:.26rem .5rem .26rem 1.35rem;background-position:left .45rem center}
+
+/* Reveals enter from the mirrored side -- desktop only. Below 769px every
+   reveal is vertical already, and a sideways entry there is what made the
+   320px page scrollable; in RTL it would overflow to the left instead. The
+   .si rules restate the scale-in, which the .fl override would otherwise
+   replace on the one element that is both. */
+@media(min-width:769px){
+  [dir="rtl"] .rv.fl{transform:translateX(32px)}
+  [dir="rtl"] .rv.fr{transform:translateX(-32px)}
+  [dir="rtl"] .rv.si{transform:scale(.93) translateY(16px)}
+  [dir="rtl"] .rv.fl.vv,[dir="rtl"] .rv.fr.vv,[dir="rtl"] .rv.si.vv{transform:none}
+}
+
+/* The annotation rail moves to the right-hand gutter */
+[dir="rtl"] .arail{left:auto;right:20px}
+[dir="rtl"] .arail-line{left:auto;right:14px}
+[dir="rtl"] .arail-mark{left:auto;right:8px}
+[dir="rtl"] .arail-mark::before{left:auto;right:-3px}
+
+/* Things that read left to right whatever the page does. A phone number laid
+   out right to left reverses its groups -- the WhatsApp number on the contact
+   page came out as "31 44 74 473 32+" -- and a handle loses its @ to the far
+   end. The contact values and the footer's link columns are isolated whole:
+   an inline run of Arabic inside a left-to-right isolate still reads right to
+   left, so the Arabic links among them are unaffected. The icon-and-label
+   social buttons are in neither list, and keep their icon on the reading
+   side. An email address or a phone field that flips mid-entry is unusable. */
+[dir="rtl"] a[href^="tel:"],[dir="rtl"] a[href^="mailto:"],
+[dir="rtl"] .ci-val a,[dir="rtl"] .ft-col a{direction:ltr;unicode-bidi:isolate}
+[dir="rtl"] input[type="tel"],[dir="rtl"] input[type="email"]{direction:ltr;text-align:right}
+
+/* The footer's legal line is mostly Latin -- the company, the Hallaar address,
+   the VAT number -- with Arabic between them. Laid out right to left, bidi
+   splits the Latin into runs that reorder around the separators, and the
+   address reads before the company name. plaintext lets the line take its
+   direction from its own first strong character, which keeps the parts in
+   the order they were written. */
+[dir="rtl"] .ft-copy{unicode-bidi:plaintext}
+
+/* ── Arabic typography ─────────────────────────── */
+
+/* Tracking breaks Arabic. The letters of a word are joined, and letter-spacing
+   pulls the joins apart into visible gaps. The site tracks 62 things, from
+   the uppercase eyebrows to the tightened display headings, and none of it
+   survives contact with the script. !important because the tracked rules run
+   up to two classes deep and this has to beat all of them. */
+html[lang="ar"] *{letter-spacing:normal!important}
+
+/* Arabic has no italic. Asked for one, a browser slants the glyphs, which
+   reads as broken rather than as emphasis; the light weight and the muted
+   colour already mark the accent. */
+html[lang="ar"] em,html[lang="ar"] .h-light{font-style:normal}
+
+/* Taller lines and roomier clip boxes. Arabic dots and marks sit well above
+   and below the Latin cap height and baseline these were tuned to, and the
+   reveal boxes are overflow:hidden, so at a line-height of .9 they were
+   sliced off. */
+html[lang="ar"] body{line-height:1.85}
+html[lang="ar"] .hero-h1{line-height:1.2}
+html[lang="ar"] .hl{line-height:1.25;padding:.2em .06em .32em;margin:-.2em -.06em -.32em}
+html[lang="ar"] .sh{line-height:1.4}
+html[lang="ar"] .wr-w{padding:.3em .1em .4em;margin:-.3em -.1em -.4em}
+html[lang="ar"] .abn-v,html[lang="ar"] .pprice,html[lang="ar"] .otval{line-height:1.25}

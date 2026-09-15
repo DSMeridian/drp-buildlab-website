@@ -208,6 +208,7 @@ FAKE_RATES = {
     'THB': 38.47, 'PHP': 72.44, 'NGN': 1560.0, 'KES': 150.0,
     'ARS': 1751.0, 'CLP': 1084.0, 'COP': 3662.0, 'MAD': 10.82,
     'EGP': 59.14, 'PKR': 321.0, 'BDT': 142.0, 'TWD': 36.78,
+    'SAR': 4.3435, 'QAR': 4.2161,
 }
 
 class PrettyURLHandler(SimpleHTTPRequestHandler):

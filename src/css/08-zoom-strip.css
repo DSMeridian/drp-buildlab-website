@@ -41,6 +41,10 @@
   font-size:clamp(6rem,22vw,22rem);
   font-weight:800;letter-spacing:-.06em;color:var(--ink);
   line-height:.85;
+  /* One line, always. A long converted figure used to be free to break at its
+     space -- "Rp" above "10.161.992" -- and app.js fits the figure to the
+     screen by measuring one line of it. */
+  white-space:nowrap;
 }
 .zoom-num span{color:var(--blue)}
 .zoom-lbl{

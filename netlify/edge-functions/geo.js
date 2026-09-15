@@ -44,6 +44,17 @@ const LANG_COUNTRIES = {
   de: ['DE', 'AT'],
   id: ['ID'],
   ja: ['JP'],
+
+  // Arabic, added 2026-09-15 from a DeepL draft that is on staging pending
+  // review by a native speaker. AE, SA and QA have markets and Country
+  // redirects of their own. The rest of the Gulf and the Levant are listed so
+  // an Arabic-speaking visitor from a country with no market is offered
+  // Arabic rather than left on English. The Maghreb stays under fr above,
+  // which it matches first.
+  ar: [
+    'AE', 'SA', 'QA', 'KW', 'BH', 'OM', 'JO', 'LB', 'IQ', 'SY', 'PS', 'YE',
+    'EG', 'LY', 'SD',
+  ],
 };
 
 /* ── Currency ───────────────────────────────────────────────────────────

@@ -24,8 +24,22 @@
   var LOCALES = {
     nl: 'nl-BE', en: 'en-US', fr: 'fr-BE', es: 'es-ES',
     de: 'de-DE', id: 'id-ID', ja: 'ja-JP', pt: 'pt-BR',
-    it: 'it-IT', pl: 'pl-PL',
+    it: 'it-IT', pl: 'pl-PL', ar: 'ar-AE',
   };
+
+  /* Languages whose figures are written in their own digits rather than 0-9.
+   *
+   * Arabic, on the client's decision: Eastern Arabic numerals. That is the
+   * default in Saudi Arabia and Qatar but not in the UAE -- ar-AE formats in
+   * Western digits unless told otherwise, so without this /ae/ would show a
+   * price as 2,124 while /sa/ showed the same figure in Eastern digits. The
+   * Unicode extension makes all three markets agree.
+   *
+   * This governs what Intl writes, and it is safe for prices because nothing
+   * ever parses a formatted price back: convert() restores every original
+   * from its snapshot before converting again. The copy -- statistics, step
+   * numbers, anything that is not a price -- is handled by nativeDigits(). */
+  var NUMBERING = { ar: 'arab' };
 
   /* Any of these between digit groups is a thousands separator. No price
    * on the site carries decimals, so there is nothing to disambiguate:
@@ -166,7 +180,8 @@
        "S$735" and en-CA renders CAD as "CA$802", where a bare en-US would
        print "SGD 735". The market is exactly the region half of a locale tag,
        which is what makes this correct rather than a guess. */
-    var base = LOCALES[lang] || LOCALES.nl;
+    var nu = NUMBERING[lang] ? '-u-nu-' + NUMBERING[lang] : '';
+    var base = (LOCALES[lang] || LOCALES.nl) + nu;
     if (!state.market) return base;
     /* On the fallback market the region comes from the visitor rather than
      * the URL, so rupees render the way they do in India (en-IN) instead of
@@ -174,7 +189,7 @@
     var M = window.DRP_MARKETS || {};
     var region = (state.market === M.__fallback && state.geo && state.geo.country)
       ? state.geo.country : state.market;
-    var tag = lang + '-' + region.toUpperCase();
+    var tag = lang + '-' + region.toUpperCase() + nu;
     try {
       return Intl.NumberFormat.supportedLocalesOf(tag).length ? tag : base;
     } catch (e) { return base; }
@@ -248,6 +263,8 @@
     recount();
     note(cur);
     fitTable();
+    // Last, so no digit is shaped while it still reads as a euro amount.
+    reshape();
   }
 
   /* Figures that wrap the currency symbol in its own tag for styling --
@@ -434,7 +451,109 @@
     return format(n, cur, document.documentElement.lang || 'nl');
   };
 
+  /* ── native digits in the copy ────────────────────────────────────
+   *
+   * Prices get their digits from Intl (see NUMBERING). Everything else a page
+   * says with a number -- 78%, step 03, 2-5 clients a week, the rail's 01 --
+   * is plain text from the translation, and the translations keep 0-9 on
+   * purpose: the price checker and convertText both find amounts by matching
+   * 0-9 beside a euro sign, and a translation written in Eastern digits would
+   * blind both of them. So the digits are shaped here, as the last thing done
+   * to the text, and only to text that is already safe to shape.
+   *
+   * The one rule that matters: nothing still showing a euro sign is touched.
+   * Shape "€499" before convert() reaches it and it becomes "€" followed by
+   * Eastern digits, which no pattern will ever match again -- the price
+   * freezes in euro, silently, which is exactly the failure the
+   * bootstrap-rate fix was for. So a node whose parent still carries a euro
+   * sign waits, and convert() calls reshape() once it has finished. The
+   * parent rather than the node, because "<sup>€</sup>499" puts the digits in
+   * a text node of their own.
+   *
+   * Some numbers stay as issued in any script: the phone number, the Belgian
+   * VAT number, and a figure standing against a Latin word -- the Hallaar
+   * postcode, "1D", the year beside "DRP BuildLab".
+   *
+   * A MutationObserver carries it past first paint, because app.js keeps
+   * writing numbers after load: counters as they run, the pinned statistic as
+   * the page scrolls, the rail as it builds. */
+  var DIGIT_ZERO = { arab: 0x0660 };
+  var KEEP_RE = /\+\d[\d ]{6,}\d|\b[A-Z]{2} ?\d[\d.]*\d/g;
+  var LATIN_RE = /[A-Za-z]/;
+  var DIGIT_RE = /[0-9]/;
+  var SKIP_TAGS = { SCRIPT: 1, STYLE: 1, NOSCRIPT: 1, TEXTAREA: 1, INPUT: 1, SELECT: 1, OPTION: 1 };
+  var shapeZero = null;
+
+  function shapeText(text, zero) {
+    if (!DIGIT_RE.test(text)) return text;
+    var kept = [];
+    var s = text.replace(KEEP_RE, function (m) {
+      kept.push(m);
+      return String.fromCharCode(0xE000 + kept.length - 1);
+    });
+    var parts = s.split(/(\s+)/);
+    for (var i = 0; i < parts.length; i += 2) {
+      var tok = parts[i];
+      if (!tok || !DIGIT_RE.test(tok) || LATIN_RE.test(tok)) continue;
+      // A figure standing against a Latin word belongs to it.
+      if ((i >= 2 && LATIN_RE.test(parts[i - 2]))
+        || (i + 2 < parts.length && LATIN_RE.test(parts[i + 2]))) continue;
+      parts[i] = tok.replace(/[0-9]/g, function (d) {
+        return String.fromCharCode(zero + d.charCodeAt(0) - 48);
+      }).replace(/%/g, '٪');
+    }
+    return parts.join('').replace(/[-]/g, function (c) {
+      return kept[c.charCodeAt(0) - 0xE000];
+    });
+  }
+
+  function shapeNode(node, zero) {
+    var p = node.parentNode;
+    if (!p || p.nodeType !== 1 || SKIP_TAGS[p.nodeName]) return;
+    if (p.closest('a[href^="tel:"], [data-keep-digits]')) return;
+    if ((p.textContent || '').indexOf('€') !== -1) return;
+    var v = node.nodeValue;
+    var out = shapeText(v, zero);
+    if (out !== v) node.nodeValue = out;
+  }
+
+  function shapeAll(root, zero) {
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    var n, list = [];
+    while ((n = w.nextNode())) list.push(n);
+    list.forEach(function (x) { shapeNode(x, zero); });
+  }
+
+  function reshape() {
+    if (shapeZero == null || !document.body) return;
+    shapeAll(document.body, shapeZero);
+  }
+
+  function startNativeDigits() {
+    var nu = NUMBERING[document.documentElement.lang];
+    if (!nu || !DIGIT_ZERO[nu] || !document.body) return;
+    shapeZero = DIGIT_ZERO[nu];
+    reshape();
+    if (!window.MutationObserver) return;
+    var obs = new MutationObserver(function (records) {
+      for (var i = 0; i < records.length; i++) {
+        var r = records[i];
+        if (r.type === 'characterData') { shapeNode(r.target, shapeZero); continue; }
+        for (var j = 0; j < r.addedNodes.length; j++) {
+          var a = r.addedNodes[j];
+          if (a.nodeType === 3) shapeNode(a, shapeZero);
+          else if (a.nodeType === 1) shapeAll(a, shapeZero);
+        }
+      }
+      /* Our own rewrites queue records too. Drop them rather than walk the
+         same nodes again only to find nothing left to do. */
+      obs.takeRecords();
+    });
+    obs.observe(document.body, { subtree: true, childList: true, characterData: true });
+  }
+
   document.addEventListener('drp:langapplied', convert);
+  startNativeDigits();
 
   /* The column measurement above is only as good as the font in use when it
    * runs, and the webfont arrives after first paint -- measuring in the

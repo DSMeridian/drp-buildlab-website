@@ -32,6 +32,9 @@ https://www.drpbuildlab.com/*    https://drpbuildlab.com/:splat    301!
 /                                 /jp/                              302!  Country=jp
 /                                 /sg/                              302!  Country=sg
 /                                 /au/                              302!  Country=au
+/                                 /ae/                              302!  Country=ae
+/                                 /sa/                              302!  Country=sa
+/                                 /qa/                              302!  Country=qa
 # Every country without a market of its own. English at euro prices rather
 # than Dutch: the studio is Belgian, but Dutch is the wrong greeting for the
 # ~180 countries above, and euro is the currency actually quoted.

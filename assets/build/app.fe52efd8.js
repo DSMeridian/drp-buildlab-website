@@ -241,6 +241,46 @@ const zStats = [
 ];
 let lastIdx = -1;
 
+/* The statistic is set at 22vw with a 6rem floor, which suits "€499" and
+   nothing much longer. Converted, the same figure is "Rp 10.161.992", or
+   "٢٬١٦٢ ر.س." on /sa/, and measured it ran 414px past a 1440px screen on
+   /id/ and 280px on /sa/. On a 360px phone it clipped on six of the
+   twenty-four markets -- br, cl, jp, id, ae and sa. The pinned statistic is
+   the largest thing on the home page, and it was showing a price with both
+   ends cut off.
+
+   So the figure is measured once it is written and scaled down if it does not
+   fit. It is never scaled up, so a euro page looks exactly as it did.
+
+   A MutationObserver rather than a call at each write, because three things
+   write this element and only one of them lives in this file: the scroll
+   handler below, the currency converter when a rate lands, and the digit
+   shaper on Arabic pages. The scale animation on zoomInner is cleared for the
+   measurement, or it would shrink the reading along with the element. */
+function fitZoomNum(){
+  if(!zoomNum || !zoomSec || !zoomInner) return;
+  const prev = zoomInner.style.transform;
+  zoomInner.style.transform = 'none';
+  zoomNum.style.removeProperty('font-size');
+  const rg = document.createRange();
+  rg.selectNodeContents(zoomNum);
+  const natural = rg.getBoundingClientRect().width;
+  const room = zoomSec.clientWidth * 0.88;
+  if(natural > room){
+    const size = parseFloat(getComputedStyle(zoomNum).fontSize);
+    zoomNum.style.fontSize = Math.floor(size * room / natural) + 'px';
+  }
+  zoomInner.style.transform = prev;
+}
+if(zoomNum && window.MutationObserver){
+  // Only text is observed; the fit writes a style attribute, so it cannot loop.
+  new MutationObserver(fitZoomNum).observe(zoomNum, { childList:true, characterData:true, subtree:true });
+  let zoomFitQueued;
+  window.addEventListener('resize', ()=>{ clearTimeout(zoomFitQueued); zoomFitQueued = setTimeout(fitZoomNum, 120); });
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitZoomNum);
+  fitZoomNum();
+}
+
 if(zoomSec) window.addEventListener('scroll',()=>{
   const secTop  = zoomSec.offsetTop;
   const secH    = zoomSec.offsetHeight;
@@ -283,11 +323,16 @@ if(zoomSec) window.addEventListener('scroll',()=>{
 ══════════════════════════════════════════ */
 const mq = document.getElementById('mqTrack');
 let mqX = 0, lastScrollY = 0, velocity = 0;
+/* Right-to-left pages run the band the other way. The track starts at the
+   right edge there and overflows to the left, so moving it left, as every
+   other page does, would scroll it away from its own content and open a
+   growing gap at the right. */
+const MQ_DIR = document.documentElement.getAttribute('dir') === 'rtl' ? -1 : 1;
 const baseSpeed = 0.38; // px per frame at rest
 if(mq){
   (function mqLoop(){
     velocity *= 0.92;
-    mqX -= baseSpeed + velocity * 3;
+    mqX -= (baseSpeed + velocity * 3) * MQ_DIR;
     const w = mq.scrollWidth / 2;
     if(Math.abs(mqX) >= w) mqX = 0;
     mq.style.transform = `translateX(${mqX}px)`;
@@ -645,6 +690,12 @@ function ensureWebFont(lang){
 function applyLang(lang,persist){
   const t=LANGS()[lang]; if(!t) return;
   document.documentElement.lang=lang;
+  /* dir follows lang. The generated page already carries it; this is for a
+     page that swaps language in place, where a dir="rtl" left behind after
+     leaving Arabic would mirror a Latin layout. Removed rather than set to
+     "ltr", so left-to-right pages stay exactly as they were. */
+  if(((window.DRP_MARKETS&&window.DRP_MARKETS.__rtl)||[]).includes(lang)) document.documentElement.setAttribute('dir','rtl');
+  else document.documentElement.removeAttribute('dir');
   ensureWebFont(lang);
   const pg=document.body.dataset.page||'home';
   document.title=t['meta.title.'+pg]||t['meta.title'];
@@ -923,6 +974,10 @@ if(marketSel){
   const bar = document.createElement('div');
   bar.className = 'lang-offer';
   bar.setAttribute('lang', want);
+  /* Its own direction, whatever the page is: an Arabic offer on a Latin page
+     and an English one on an Arabic page both need the bidi isolation, or the
+     sentence and its close button land at the wrong ends of the bar. */
+  bar.setAttribute('dir', (M.__rtl || []).includes(want) ? 'rtl' : 'ltr');
   const a = document.createElement('a');
   a.href = '/' + target + (route === '/' ? '/' : route);
   a.textContent = t.o;

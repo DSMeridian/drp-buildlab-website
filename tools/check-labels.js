@@ -57,6 +57,9 @@ const ALLOWED = {
   pt: ['VAT', 'IVA'],
   it: ['Partita IVA', 'IVA', 'VAT'],
   pl: ['Numer VAT', 'NIP UE', 'VAT'],
+  // "VAT registration number" and "VAT", in Arabic. The number is Belgian; the
+  // label only says what kind of number it is, which is true in every market.
+  ar: ['رقم ضريبة القيمة المضافة', 'ضريبة القيمة المضافة', 'VAT'],
 };
 
 /* Terms that are a country's own register or tax and are therefore false
@@ -77,6 +80,12 @@ const FALSE_CLAIMS = {
   'SIRET': 'a French establishment register',
   'ABN': 'an Australian business number',
   'GST': 'a goods and services tax registration',
+  // The Gulf. DRP BuildLab is registered in Belgium and holds none of these.
+  // Latin forms only: \b does not see a boundary inside Arabic script, and an
+  // Arabic label claiming a Gulf registration is caught anyway, because it
+  // is not on the exact-match ALLOWED list above.
+  TRN: 'a UAE tax registration number',
+  ZATCA: 'the Saudi tax authority',
 };
 
 /* Payment schemes that only work in one country.
@@ -95,6 +104,7 @@ const DOMESTIC_SCHEMES = {
   Vipps: 'Norway', Pix: 'Brazil', Boleto: 'Brazil', OXXO: 'Mexico',
   Interac: 'Canada', PayNow: 'Singapore', BECS: 'Australia',
   Konbini: 'Japan', PayID: 'Australia', Twint: 'Switzerland',
+  mada: 'Saudi Arabia', 'STC Pay': 'Saudi Arabia', NAPS: 'Qatar',
 };
 
 /* ── load ────────────────────────────────────────────────────────────────── */

@@ -63,6 +63,16 @@
     sg: { lang: 'en', currency: 'SGD', name: 'Singapore',     region: 'Asia Pacific' },
     au: { lang: 'en', currency: 'AUD', name: 'Australia',     region: 'Asia Pacific' },
 
+    /* Arabic: right to left, Eastern Arabic digits. Added 2026-09-15 from a
+     * DeepL draft that is on staging for review by a native speaker, and must
+     * not reach production before that review signs it off -- see
+     * docs/07-arabic-review.md. The UAE reads Arabic rather than English by
+     * the client's decision: Arabic search in the Gulf is far less crowded
+     * than English, which is where the reach is. */
+    ae: { lang: 'ar', currency: 'AED', name: 'الإمارات',      region: 'Middle East' },
+    sa: { lang: 'ar', currency: 'SAR', name: 'السعودية',      region: 'Middle East' },
+    qa: { lang: 'ar', currency: 'QAR', name: 'قطر',           region: 'Middle East' },
+
     /* Google Tag Manager container. Empty means GTM never loads at all --
      * no script, no request, nothing. Paste the GTM-XXXXXXX here and it goes
      * live on the next build; that is the only edit needed.
@@ -88,7 +98,21 @@
         family: 'Noto Sans JP',
         href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;800&display=swap',
       },
+      /* 300 as well as the three the Japanese face loads. The site sets its
+         italic accents in weight 300, and Arabic has no italic, so the light
+         weight is the only thing left to mark them. */
+      ar: {
+        family: 'Noto Sans Arabic',
+        href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;600;800&display=swap',
+      },
     },
+
+    /* Languages that read right to left. build-locales.js writes dir="rtl" on
+     * their pages' <html>, and every direction-dependent rule -- in
+     * src/css/34-rtl.css and in app.js -- keys off that one attribute. So
+     * adding Hebrew or Persian later is a line here and a translation, not a
+     * second stylesheet. */
+    __rtl: ['ar'],
 
     /* The market served when geo says nothing useful, and the one every
      * pre-existing URL redirects into. Belgium, because that is where the

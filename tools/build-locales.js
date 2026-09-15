@@ -172,7 +172,7 @@ function socialTags(html, code, route) {
 const LANG_NAME = {
   nl: 'Dutch', en: 'English', fr: 'French', de: 'German',
   es: 'Spanish', id: 'Indonesian', ja: 'Japanese', pt: 'Portuguese',
-  it: 'Italian', pl: 'Polish',
+  it: 'Italian', pl: 'Polish', ar: 'Arabic',
 };
 
 /* Replace everything from `open` to the first following `close`, inclusive.
@@ -530,7 +530,14 @@ function build(code, page) {
   const self = `${ORIGIN}/${code}${page.route || '/'}`;
 
   // 1. document language
-  html = html.replace(/<html lang="[^"]*"/, `<html lang="${m.lang}"`);
+  /* dir beside lang. Every direction-dependent rule in the stylesheet keys off
+     [dir="rtl"], so this one attribute is what turns a market right-to-left.
+     Written into the file rather than set by script, so the page is laid out
+     the right way round before anything runs, and for anyone with scripts
+     off. Left-to-right markets get no attribute at all, which keeps their
+     generated HTML exactly what it was. */
+  const dir = (MARKETS.__rtl || []).includes(m.lang) ? ' dir="rtl"' : '';
+  html = html.replace(/<html lang="[^"]*"/, `<html lang="${m.lang}"${dir}`);
 
   // 2. canonical + og:url point at this market's own URL
   html = html.replace(/<link rel="canonical" href="[^"]*">/,
