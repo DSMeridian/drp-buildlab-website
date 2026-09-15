@@ -829,6 +829,14 @@ function applyLang(lang,persist){
     /* The three button labels are network names, the same word in every
        language, so they carry no translation key. */
   }
+  const ptn=document.getElementById('partners');
+  if(ptn){
+    const pnt=ptn.querySelector('.stag');if(pnt)pnt.textContent=t['prt.tag'];
+    const pnh=ptn.querySelector('.sh');if(pnh){resetSh(pnh);pnh.innerHTML=t['prt.h2'];}
+    const pnb=ptn.querySelectorAll('.prt-b'); (t['prt.b']||[]).forEach((b,i)=>{if(pnb[i])pnb[i].textContent=b;});
+    /* Partner names and taglines are printed on the images in the partners'
+       own words, so they stay as they are in every language. */
+  }
   const cn=document.getElementById('contact');
   if(cn){
     const ct2=cn.querySelector('.stag');if(ct2)ct2.textContent=t['ct.tag'];

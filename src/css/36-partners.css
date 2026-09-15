@@ -1,0 +1,23 @@
+/* ─────────────────────────────────────────────
+   PARTNERS
+───────────────────────────────────────────── */
+/* Two portrait images (5:6) side by side. 1040px keeps each near 500px wide,
+   which is what the 600w/1000w WebP files are cut for; wider and a 1440px
+   screen would show two images taller than the viewport. */
+.prt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem;margin-top:3.5rem;max-width:1040px}
+.prt{margin:0;min-width:0}
+/* width/height on the tag reserve the space before the lazy image arrives;
+   aspect-ratio keeps that true once CSS makes the width fluid. */
+.prt img{display:block;width:100%;height:auto;aspect-ratio:5/6;object-fit:cover;background:var(--bg2);border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 60px rgba(26,31,54,.08)}
+.prt figcaption{margin-top:1.4rem}
+.prt-name{display:block;font-size:.6rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--blue-d);margin-bottom:.55rem}
+.prt-b{font-size:.98rem;color:var(--ink2);line-height:1.7;max-width:34rem}
+.prt-line{display:block;margin-top:.7rem;font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+/* The tagline is English on every page. On an Arabic page it inherited the
+   right-to-left direction and its full stop jumped to the front
+   (".TECHNOLOGY SUPPORTS BEAUTY"); read it left to right, aligned with the
+   Arabic caption above it. */
+[dir="rtl"] .prt-line{direction:ltr;text-align:right}
+@media(max-width:768px){
+  .prt-grid{grid-template-columns:1fr;gap:3.2rem;max-width:520px;margin-top:2.5rem}
+}
