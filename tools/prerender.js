@@ -168,15 +168,6 @@ function stripRuntimeState() {
     el.removeAttribute('data-wr');
   });
 
-  const zoom = document.getElementById('zoomInner');
-  if (zoom) { zoom.style.removeProperty('transform'); zoom.style.removeProperty('opacity'); }
-  // The statistic's fitted size is measured against this render's own 1440px
-  // window. Baked, it would pin that size for every screen until the page's
-  // script refit it -- and for a visitor without script, it never would.
-  const zoomNum = document.getElementById('zoomNum');
-  if (zoomNum) zoomNum.style.removeProperty('font-size');
-  const mq = document.getElementById('mqTrack');
-  if (mq) mq.style.removeProperty('transform');
 
   // Webfont stack is applied per language at runtime; leaving it inline would
   // pin it before the font has loaded.

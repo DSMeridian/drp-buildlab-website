@@ -9,26 +9,6 @@
   position:relative;overflow:hidden;
   background:var(--bg);
 }
-/* Top-fade: white veil so fixed nav always readable */
-.hero::after{
-  content:'';position:absolute;top:0;left:0;right:0;
-  height:120px;
-  background:linear-gradient(to bottom,rgba(255,255,255,.98) 0%,transparent 100%);
-  pointer-events:none;z-index:3;
-}
-.hero-bg-glow{
-  position:absolute;inset:0;
-  background:radial-gradient(ellipse 55% 55% at 70% 20%, rgba(74,144,226,.1) 0%, transparent 70%),
-             radial-gradient(ellipse 35% 35% at 15% 75%, rgba(74,144,226,.07) 0%, transparent 70%);
-  pointer-events:none;
-}
-.hero-grid{
-  position:absolute;inset:0;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:88px 88px;
-  mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 20%,transparent 100%);
-  opacity:.6;pointer-events:none;
-}
 /* Eye — top anchor, always below nav */
 .hero-eye{
   position:relative;z-index:4;

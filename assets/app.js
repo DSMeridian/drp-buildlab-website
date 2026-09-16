@@ -204,144 +204,6 @@ window.addEventListener('scroll',()=>{
 },{passive:true});
 
 /* ══════════════════════════════════════════
-   MOUSE PARALLAX on hero background shapes
-══════════════════════════════════════════ */
-const hbg   = document.querySelector('.hero-bg-glow');
-const hgrid = document.querySelector('.hero-grid');
-const heroEl = document.querySelector('.hero');
-if(heroEl) heroEl.addEventListener('mousemove', e=>{
-  const cx=window.innerWidth/2, cy=window.innerHeight/2;
-  const dx=(e.clientX-cx)/cx, dy=(e.clientY-cy)/cy;
-  if(hbg)   hbg.style.transform   = `translate(${dx*18}px,${dy*18}px)`;
-  if(hgrid) hgrid.style.transform = `translate(${dx*-8}px,${dy*-8}px)`;
-  if(hlogomark) hlogomark.style.transform = `translateY(-50%) translate(${dx*10}px,${dy*10}px)`;
-});
-
-/* ══════════════════════════════════════════
-   ZOOM SECTION — pinned, scale driven by scroll
-   Stats cycle: €0 → €499 → 100%
-══════════════════════════════════════════ */
-const zoomSec     = document.getElementById('zoomSec');
-const zoomInner   = document.getElementById('zoomInner');
-/* Currency-converts a statistic before it is written. No-op until the rates
-   land, and a no-op for euro visitors. */
-const money = html => (window.DRP_LOCALE && window.DRP_LOCALE.money)
-  ? window.DRP_LOCALE.money(html) : html;
-
-const zoomNum     = document.getElementById('zoomNum');
-const zoomLbl     = document.getElementById('zoomLbl');
-const zoomTag     = document.getElementById('zoomTag');
-const zoomCounter = document.getElementById('zoomCounter');
-
-const zStats = [
-  {num:'<span>€</span>0',    lbl:'Kost van uw demo en eerste voorstel', tag:'Geen drempel'},
-  {num:'€499',               lbl:'Beginnerspakket — website op maat voor starters', tag:'Eerlijke prijs'},
-  {num:'100<span>%</span>',  lbl:'Websites volledig op maat — prijs volgens werk', tag:'Op maat'},
-];
-let lastIdx = -1;
-
-/* The statistic is set at 22vw with a 6rem floor, which suits "€499" and
-   nothing much longer. Converted, the same figure is "Rp 10.161.992", or
-   "٢٬١٦٢ ر.س." on /sa/, and measured it ran 414px past a 1440px screen on
-   /id/ and 280px on /sa/. On a 360px phone it clipped on six of the
-   twenty-four markets -- br, cl, jp, id, ae and sa. The pinned statistic is
-   the largest thing on the home page, and it was showing a price with both
-   ends cut off.
-
-   So the figure is measured once it is written and scaled down if it does not
-   fit. It is never scaled up, so a euro page looks exactly as it did.
-
-   A MutationObserver rather than a call at each write, because three things
-   write this element and only one of them lives in this file: the scroll
-   handler below, the currency converter when a rate lands, and the digit
-   shaper on Arabic pages. The scale animation on zoomInner is cleared for the
-   measurement, or it would shrink the reading along with the element. */
-function fitZoomNum(){
-  if(!zoomNum || !zoomSec || !zoomInner) return;
-  const prev = zoomInner.style.transform;
-  zoomInner.style.transform = 'none';
-  zoomNum.style.removeProperty('font-size');
-  const rg = document.createRange();
-  rg.selectNodeContents(zoomNum);
-  const natural = rg.getBoundingClientRect().width;
-  const room = zoomSec.clientWidth * 0.88;
-  if(natural > room){
-    const size = parseFloat(getComputedStyle(zoomNum).fontSize);
-    zoomNum.style.fontSize = Math.floor(size * room / natural) + 'px';
-  }
-  zoomInner.style.transform = prev;
-}
-if(zoomNum && window.MutationObserver){
-  // Only text is observed; the fit writes a style attribute, so it cannot loop.
-  new MutationObserver(fitZoomNum).observe(zoomNum, { childList:true, characterData:true, subtree:true });
-  let zoomFitQueued;
-  window.addEventListener('resize', ()=>{ clearTimeout(zoomFitQueued); zoomFitQueued = setTimeout(fitZoomNum, 120); });
-  if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitZoomNum);
-  fitZoomNum();
-}
-
-if(zoomSec) window.addEventListener('scroll',()=>{
-  const secTop  = zoomSec.offsetTop;
-  const secH    = zoomSec.offsetHeight;
-  const scrolled = window.scrollY - secTop;
-  const p = Math.max(0, Math.min(1, scrolled / (secH - window.innerHeight)));
-
-  // Scale from 0.55 → 1 over first third, hold, then fade out
-  let scale, opacity;
-  if(p < .45){
-    scale   = 0.55 + p/0.45 * 0.45;
-    opacity = p/0.2;
-  } else if(p < .85){
-    scale   = 1;
-    opacity = 1;
-  } else {
-    scale   = 1 + (p-.85)/.15 * 0.06;
-    opacity = 1 - (p-.85)/.15;
-  }
-
-  zoomInner.style.transform = `scale(${Math.min(scale,1.06)})`;
-  zoomInner.style.opacity   = Math.max(0,Math.min(1,opacity));
-
-  // Cycle stats at 0%, 33%, 66%
-  const idx = Math.min(2, Math.floor(p * 3));
-  if(idx !== lastIdx){
-    lastIdx = idx;
-    const s = zStats[idx];
-    zoomNum.innerHTML = money(s.num);
-    zoomLbl.textContent = s.lbl;
-    zoomTag.textContent = s.tag;
-    if(zoomCounter) zoomCounter.textContent = `0${idx+1} / 03`;
-  }
-},{passive:true});
-
-/* ══════════════════════════════════════════
-   VELOCITY MARQUEE (scroll-speed-reactive)
-══════════════════════════════════════════ */
-const mq = document.getElementById('mqTrack');
-let mqX = 0, lastScrollY = 0, velocity = 0;
-/* Right-to-left pages run the band the other way. The track starts at the
-   right edge there and overflows to the left, so moving it left, as every
-   other page does, would scroll it away from its own content and open a
-   growing gap at the right. */
-const MQ_DIR = document.documentElement.getAttribute('dir') === 'rtl' ? -1 : 1;
-const baseSpeed = 0.38; // px per frame at rest
-if(mq){
-  (function mqLoop(){
-    velocity *= 0.92;
-    mqX -= (baseSpeed + velocity * 3) * MQ_DIR;
-    const w = mq.scrollWidth / 2;
-    if(Math.abs(mqX) >= w) mqX = 0;
-    mq.style.transform = `translateX(${mqX}px)`;
-    requestAnimationFrame(mqLoop);
-  })();
-  window.addEventListener('scroll',()=>{
-    const delta = window.scrollY - lastScrollY;
-    velocity = Math.max(-6, Math.min(6, delta * 0.12));
-    lastScrollY = window.scrollY;
-  },{passive:true});
-}
-
-/* ══════════════════════════════════════════
    ANNOTATION RAIL — the folio in the left gutter
 ══════════════════════════════════════════ */
 /* A second plane, moving at about a tenth of the page's speed.
@@ -465,9 +327,8 @@ if(mq){
        sticky child, which is one screen tall, while the dark is on screen for
        the whole 220vh section it is pinned inside. The section is the range. */
     darkAt = Array.prototype.map.call(document.querySelectorAll('.dark'), function(el){
-      const box = el.closest('.zoom-section') || el;
-      const top = docTop(box);
-      return [top, top + box.offsetHeight];
+      const top = docTop(el);
+      return [top, top + el.offsetHeight];
     });
     markY = rail.getBoundingClientRect().top + head;   // playhead, in the viewport
     ready = true;
@@ -749,19 +610,9 @@ function applyLang(lang,persist){
   const hs=qs('.hero-sub'); if(hs) hs.innerHTML=t['hero.sub'];
   const hb=qsa('.hero-acts .btn'); if(hb[0]) hb[0].textContent=t['hero.cta1']; if(hb[1]) hb[1].textContent=t['hero.cta2'];
   const sh=qs('.shint span'); if(sh) sh.textContent=t['hero.scroll'];
-  const mq=document.getElementById('mqTrack');
-  if(mq){ const it=t['mq']; mq.innerHTML=[...it,...it].map(i=>`<div class="mq-item">${i} <span class="mqdot"></span></div>`).join(''); }
-  const zbl=qs('.zoom-corner-bl'); if(zbl) zbl.textContent=t['zoom.bl'];
-  const zbr=qs('.zoom-corner-br'); if(zbr) zbr.textContent=t['zoom.br'];
-  const nzs=t['zs'];
-  [0,1,2].forEach(i=>{ zStats[i]={num:nzs[i].num,lbl:nzs[i].lbl,tag:nzs[i].tag}; });
-  const ci=Math.max(0,lastIdx);
-  if(zoomLbl) zoomLbl.textContent=zStats[ci].lbl;
-  if(zoomTag) zoomTag.textContent=zStats[ci].tag;
-  // The figure was previously left to the scroll handler, so it kept the old
-  // language's number until you scrolled past it -- and never picked up a
-  // currency at all.
-  if(zoomNum) zoomNum.innerHTML=money(zStats[ci].num);
+  /* The same five claims, now the ticked row under the headline. */
+  const trust=document.getElementById('heroTrust');
+  if(trust&&t['mq']) trust.innerHTML=t['mq'].map(i=>`<li>${i}</li>`).join('');
   const how=document.getElementById('hoe-het-werkt');
   if(how){
     const ht=how.querySelector('.stag'); if(ht) ht.textContent=t['how.tag'];

@@ -25,10 +25,6 @@
 [dir="rtl"] .stime{text-align:left}
 
 /* The pinned statistic's corner labels swap sides */
-[dir="rtl"] .zoom-corner-tl{left:auto;right:5vw}
-[dir="rtl"] .zoom-corner-tr{right:auto;left:5vw;text-align:left}
-[dir="rtl"] .zoom-corner-bl{left:auto;right:5vw}
-[dir="rtl"] .zoom-corner-br{right:auto;left:5vw}
 
 /* Accent rules sit on the side reading starts from */
 [dir="rtl"] .onote{border-left:0;border-right:2.5px solid var(--blue)}

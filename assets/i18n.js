@@ -24,8 +24,6 @@ nl:{
   'hero.sub':'Geen website? Dan besta je niet online. DRP BuildLab bouwt <strong>websites volledig op maat</strong> voor lokale ondernemers — de prijs bepalen we op basis van de hoeveelheid werk die in jouw project gaat. Altijd eerlijk, altijd transparant.',
   'hero.cta1':'Gratis demo aanvragen','hero.cta2':'Bekijk onze aanpak','hero.scroll':'Scroll',
   'mq':['Lokale focus','Eerlijke prijs','Mobiel-klaar','Google-geoptimaliseerd','Volledig ontzorgd'],
-  'zoom.bl':'Onze cijfers','zoom.br':'Scroll verder',
-  'zs':[{num:'<span>€</span>0',lbl:'Kost van uw demo en eerste voorstel',tag:'Geen drempel'},{num:'€499',lbl:'Beginnerspakket — website op maat voor starters',tag:'Eerlijke prijs'},{num:'100<span>%</span>',lbl:'Websites volledig op maat — prijs volgens werk',tag:'Op maat'}],
   'how.tag':'Hoe het werkt','how.h2':'Van niets naar online<br><em>in 4 stappen.</em>','how.sub':'Geen technische kennis nodig. Wij regelen alles van eerste gesprek tot live website.',
   'how.steps':[{t:'Eerste gesprek',b:'We bellen u op en tonen meteen een voorbeeld op maat. Volledig vrijblijvend.',d:'Samen'},{t:'Ontwerp op maat',b:'Op basis van uw wensen bouwen we uw website. U hoeft zelf niets te doen.',d:'Wij'},{t:'Preview & goedkeuring',b:'U krijgt een preview ter goedkeuring. Aanpassingen inbegrepen. Daarna gaat uw site live met eigen domein.',d:'Samen'},{t:'Live — en wij blijven',b:'Na de lancering staan wij nog steeds voor u klaar. Updates, aanpassingen, vragen — wij regelen het.',d:'Wij'}],
   'ab.logotag':'Websites · op maat',
@@ -119,8 +117,6 @@ en:{
   'hero.sub':'No website? Then you don\'t exist online. DRP BuildLab builds <strong>fully custom websites</strong> for local entrepreneurs — the price is based on the amount of work your project requires. Always honest, always transparent.',
   'hero.cta1':'Request free demo','hero.cta2':'See our approach','hero.scroll':'Scroll',
   'mq':['Local focus','Fair pricing','Mobile-ready','Google-optimized','Fully worry-free'],
-  'zoom.bl':'Our numbers','zoom.br':'Scroll further',
-  'zs':[{num:'<span>€</span>0',lbl:'What your demo and first proposal cost',tag:'No barrier'},{num:'€499',lbl:'Starter package — custom website for new businesses',tag:'Fair price'},{num:'100<span>%</span>',lbl:'Fully custom websites — price based on scope',tag:'Custom'}],
   'how.tag':'How it works','how.h2':'From zero to online<br><em>in 4 steps.</em>','how.sub':'No technical knowledge needed. We handle everything from first call to live website.',
   'how.steps':[{t:'First call',b:'We call you and show a custom example right away. Completely free and non-binding.',d:'Together'},{t:'Custom design',b:'Based on your wishes, we build your website. You don\'t have to do anything.',d:'Us'},{t:'Preview & approval',b:'You receive a preview for approval. Revisions included. Then your site goes live with your own domain.',d:'Together'},{t:'Live — and we stay',b:'After launch, we\'re still here for you. Updates, changes, questions — we handle it.',d:'Us'}],
   'ab.logotag':'Websites · custom built',
@@ -214,8 +210,6 @@ fr:{
   'hero.sub':'Pas de site web ? Vous n\'existez pas en ligne. DRP BuildLab crée des <strong>sites web entièrement sur mesure</strong> pour les entrepreneurs locaux — le prix est basé sur la quantité de travail que votre projet requiert. Toujours honnête, toujours transparent.',
   'hero.cta1':'Demander une démo gratuite','hero.cta2':'Voir notre approche','hero.scroll':'Défiler',
   'mq':['Focus local','Prix équitable','Mobile-ready','Optimisé Google','Entièrement géré'],
-  'zoom.bl':'Nos chiffres','zoom.br':'Continuer à défiler',
-  'zs':[{num:'0<span> €</span>',lbl:'Le coût de votre démo et de votre première proposition',tag:'Sans barrière'},{num:'499 €',lbl:'Forfait débutant — site web sur mesure pour les nouvelles entreprises',tag:'Prix équitable'},{num:'100<span>%</span>',lbl:'Sites web entièrement sur mesure — prix selon le travail',tag:'Sur mesure'}],
   'how.tag':'Comment ça marche','how.h2':'De zéro à en ligne<br><em>en 4 étapes.</em>','how.sub':'Aucune connaissance technique requise. Nous gérons tout, du premier appel au site web en ligne.',
   'how.steps':[{t:'Premier appel',b:'Nous vous appelons et vous montrons un exemple sur mesure immédiatement. Entièrement gratuit et sans engagement.',d:'Ensemble'},{t:'Design sur mesure',b:'Selon vos souhaits, nous construisons votre site web. Vous n\'avez rien à faire.',d:'Nous'},{t:'Aperçu & approbation',b:'Vous recevez un aperçu pour approbation. Révisions incluses. Ensuite votre site est mis en ligne avec votre propre domaine.',d:'Ensemble'},{t:'En ligne — et nous restons',b:'Après le lancement, nous sommes toujours là pour vous. Mises à jour, modifications, questions — nous nous en occupons.',d:'Nous'}],
   'ab.logotag':'Sites web · sur mesure',
@@ -309,8 +303,6 @@ es:{
   'hero.sub':'¿Sin sitio web? No existes en línea. DRP BuildLab crea <strong>sitios web completamente a medida</strong> para emprendedores locales — el precio se basa en la cantidad de trabajo que requiere tu proyecto. Siempre honesto, siempre transparente.',
   'hero.cta1':'Solicitar demo gratis','hero.cta2':'Ver nuestro enfoque','hero.scroll':'Scroll',
   'mq':['Enfoque local','Precio justo','Optimizado para móvil','Optimizado para Google','Sin preocupaciones'],
-  'zoom.bl':'Nuestras cifras','zoom.br':'Seguir bajando',
-  'zs':[{num:'0<span> €</span>',lbl:'Lo que cuesta tu demo y primera propuesta',tag:'Sin barreras'},{num:'499 €',lbl:'Paquete inicial — sitio web a medida para nuevos negocios',tag:'Precio justo'},{num:'100<span>%</span>',lbl:'Sitios web completamente a medida — precio según el trabajo',tag:'A medida'}],
   'how.tag':'Cómo funciona','how.h2':'De cero a en línea<br><em>en 4 pasos.</em>','how.sub':'No se necesita conocimiento técnico. Gestionamos todo, desde la primera llamada hasta el sitio web en vivo.',
   'how.steps':[{t:'Primera llamada',b:'Te llamamos y te mostramos un ejemplo personalizado de inmediato. Completamente gratuito y sin compromiso.',d:'Juntos'},{t:'Diseño a medida',b:'Según tus deseos, construimos tu sitio web. No tienes que hacer nada.',d:'Nosotros'},{t:'Vista previa & aprobación',b:'Recibes una vista previa para aprobación. Revisiones incluidas. Luego tu sitio se lanza con tu propio dominio.',d:'Juntos'},{t:'En vivo — y nos quedamos',b:'Después del lanzamiento, seguimos aquí para ti. Actualizaciones, cambios, preguntas — lo gestionamos.',d:'Nosotros'}],
   'ab.logotag':'Sitios web · a medida',
@@ -428,25 +420,6 @@ id:{
     "Dapat diakses melalui perangkat seluler",
     "Dioptimalkan untuk Google",
     "Benar-benar bebas dari kekhawatiran"
-   ],
-   "zoom.bl": "Data kami",
-   "zoom.br": "Gulir ke bawah",
-   "zs": [
-    {
-     "num": "<span>€</span>0",
-     "lbl": "Berapa biaya demo dan proposal pertama Anda",
-     "tag": "Tidak ada hambatan"
-    },
-    {
-     "num": "€499",
-     "lbl": "Paket awal — situs web khusus untuk bisnis baru",
-     "tag": "Harga yang wajar"
-    },
-    {
-     "num": "100<span>%</span>",
-     "lbl": "Situs web yang sepenuhnya disesuaikan — harga tergantung pada cakupan proyek",
-     "tag": "Kustom"
-    }
    ],
    "how.tag": "Cara kerjanya",
    "how.h2": "Dari nol hingga online<br><em>dalam 4 langkah.</em>",
@@ -847,25 +820,6 @@ de:{
     "Für Google optimiert",
     "Völlig sorgenfrei"
    ],
-   "zoom.bl": "Unsere Zahlen",
-   "zoom.br": "Weiter scrollen",
-   "zs": [
-    {
-     "num": "0 <span>€</span>",
-     "lbl": "Was Ihre Demo und Ihr erstes Angebot kosten",
-     "tag": "Keine Barriere"
-    },
-    {
-     "num": "€499",
-     "lbl": "Starterpaket – maßgeschneiderte Website für Start-ups",
-     "tag": "Faires Preisniveau"
-    },
-    {
-     "num": "100 <span>%</span>",
-     "lbl": "Vollständig maßgeschneiderte Websites – Preis je nach Umfang",
-     "tag": "Benutzerdefiniert"
-    }
-   ],
    "how.tag": "So funktioniert es",
    "how.h2": "<em>In 4 Schritten</em> von null auf online<br><em>.</em>",
    "how.sub": "Es sind keine technischen Kenntnisse erforderlich. Wir kümmern uns um alles – vom ersten Anruf bis zur Live-Schaltung der Website.",
@@ -1265,25 +1219,6 @@ ja:{
     "Google向けに最適化済み",
     "一切の心配なし"
    ],
-   "zoom.bl": "当社の数値",
-   "zoom.br": "さらに下にスクロールしてください",
-   "zs": [
-    {
-     "num": "<span>€</span>0",
-     "lbl": "デモと最初の提案にかかる費用",
-     "tag": "障壁なし"
-    },
-    {
-     "num": "€499",
-     "lbl": "スターターパッケージ — 新規事業向けオーダーメイドウェブサイト",
-     "tag": "適正な価格"
-    },
-    {
-     "num": "100<span>％</span>",
-     "lbl": "完全オーダーメイドのウェブサイト — 価格は作業範囲に応じて決定されます",
-     "tag": "カスタム"
-    }
-   ],
    "how.tag": "仕組み",
    "how.h2": "ゼロからオンライン化<br>まで<em>、4つのステップ。</em>",
    "how.sub": "技術的な知識は一切必要ありません。最初の問い合わせからウェブサイトの公開まで、すべて弊社にお任せください。",
@@ -1677,9 +1612,6 @@ pt:{
    "hero.cta2": "Conheça nossa abordagem",
    "hero.scroll": "Rolar a tela",
    "mq": ["Foco local","Preços justos","Otimizado para dispositivos móveis","Otimizado para o Google","Sem nenhuma preocupação"],
-   "zoom.bl": "Nossos números",
-   "zoom.br": "Role a página para baixo",
-   "zs": [{"num":"<span>€</span>0","lbl":"Quanto custam sua demonstração e sua primeira proposta","tag":"Sem barreira"},{"num":"€499","lbl":"Pacote inicial — site personalizado para novas empresas","tag":"Preço justo"},{"num":"100<span>%</span>","lbl":"Sites totalmente personalizados — preço com base no escopo","tag":"Personalizado"}],
    "how.tag": "Como funciona",
    "how.h2": "Do zero à presença online<br><em>em 4 etapas.</em>",
    "how.sub": "Não é necessário ter conhecimento técnico. Cuidamos de tudo, desde o primeiro contato até a publicação do site.",
@@ -1824,9 +1756,6 @@ it:{
    "hero.cta2": "Scopri il nostro approccio",
    "hero.scroll": "Scorri",
    "mq": ["Attenzione al territorio","Prezzi equi","Ottimizzato per dispositivi mobili","Ottimizzato per Google","Senza alcuna preoccupazione"],
-   "zoom.bl": "I nostri dati",
-   "zoom.br": "Scorri più in basso",
-   "zs": [{"num":"0 <span>€</span>","lbl":"Quanto costano la tua demo e la tua prima proposta","tag":"Nessuna barriera"},{"num":"€499","lbl":"Pacchetto iniziale — sito web personalizzato per le nuove imprese","tag":"Prezzo equo"},{"num":"100<span>%</span>","lbl":"Siti web completamente personalizzati — prezzo in base all'entità del progetto","tag":"Personalizzato"}],
    "how.tag": "Come funziona",
    "how.h2": "Da zero al web<br><em>in 4 passaggi.</em>",
    "how.sub": "Non è richiesta alcuna competenza tecnica. Ci occupiamo di tutto, dalla prima chiamata alla messa online del sito web.",
@@ -1971,9 +1900,6 @@ pl:{
    "hero.cta2": "Zobacz nasze podejście",
    "hero.scroll": "Przewiń",
    "mq": ["Skupienie się na sprawach lokalnych","Uczciwe ceny","Dostosowane do urządzeń mobilnych","Zoptymalizowane pod kątem Google","Całkowicie bez zmartwień"],
-   "zoom.bl": "Nasze dane liczbowe",
-   "zoom.br": "Przewiń dalej",
-   "zs": [{"num":"0 <span>€</span>","lbl":"Ile kosztuje przygotowanie prezentacji i pierwszej oferty","tag":"Brak bariery"},{"num":"€499","lbl":"Pakiet startowy — strona internetowa dostosowana do potrzeb nowych firm","tag":"Uczciwa cena"},{"num":"100<span>%</span>","lbl":"W pełni dostosowane strony internetowe — cena zależy od zakresu prac","tag":"Niestandardowe"}],
    "how.tag": "Jak to działa",
    "how.h2": "Od zera do obecności<br>w sieci <em>w 4 krokach.</em>",
    "how.sub": "Nie jest wymagana żadna wiedza techniczna. Zajmujemy się wszystkim – od pierwszego zgłoszenia aż po uruchomienie strony internetowej.",
@@ -2128,25 +2054,6 @@ pl:{
       "متوافق مع الأجهزة المحمولة",
       "مُحسَّن لمحرك بحث جوجل",
       "خالية تمامًا من القلق"
-   ],
-   "zoom.bl": "أرقامنا",
-   "zoom.br": "مرر لأسفل",
-   "zs": [
-      {
-         "num": "<span>€</span>0",
-         "lbl": "تكلفة العرض التوضيحي والعرض الأولي",
-         "tag": "لا توجد عوائق"
-      },
-      {
-         "num": "€499",
-         "lbl": "حزمة البداية — موقع إلكتروني مصمم خصيصًا للشركات الناشئة",
-         "tag": "سعر عادل"
-      },
-      {
-         "num": "100<span>%</span>",
-         "lbl": "مواقع إلكترونية مصممة خصيصًا بالكامل — السعر يعتمد على نطاق العمل",
-         "tag": "مخصص"
-      }
    ],
    "how.tag": "كيف تعمل",
    "how.h2": "من الصفر إلى التواجد عبر الإنترنت<br><em>في 4 خطوات.</em>",
@@ -2549,25 +2456,6 @@ pl:{
       "Mobielgereed",
       "Google-geoptimaliseer",
       "Heeltemal sorgvry"
-   ],
-   "zoom.bl": "Ons syfers",
-   "zoom.br": "Gly verder",
-   "zs": [
-      {
-         "num": "<span>€</span>0",
-         "lbl": "Wat jou demo en eerste voorstel gekos het",
-         "tag": "Geen versperring"
-      },
-      {
-         "num": "€499",
-         "lbl": "Beginpakket — pasgemaakte webwerf vir nuwe besighede",
-         "tag": "Regverdige prys"
-      },
-      {
-         "num": "100<span>%</span>",
-         "lbl": "Volledig pasgemaakte webwerwe — prys gebaseer op omvang",
-         "tag": "Pasgemaak"
-      }
    ],
    "how.tag": "Hoe dit werk",
    "how.h2": "Van nul tot aanlyn<br><em>in 4 stappe.</em>",

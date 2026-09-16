@@ -2,8 +2,8 @@
    DARK SECTIONS
 
    The page alternates light and dark rather than running white throughout:
-   hero, then the pinned figures in the dark, the four steps back in the
-   light, the hidden cost in the dark again. Contrast is the rhythm.
+   the hero in the dark, the four steps in the light, the hidden cost dark
+   again. Contrast is the rhythm.
 
    One class does it. Every component here draws its colours from the tokens
    in 02-tokens.css, so redefining those tokens on a section repaints
@@ -42,13 +42,6 @@
   background:var(--bg);
   color:var(--ink);
 }
-/* position:relative above is for the backdrops, and it silently took the pin
-   off the one .dark element that was already positioned: .zoom-sticky is
-   position:sticky, the same specificity, and this file loads later. The strip
-   stopped pinning and scrolled away, leaving two empty screens where the
-   figures should hold. Restated here, with a class more than the rule above. */
-.zoom-sticky.dark{position:sticky;top:0}
-
 /* The seam where light meets dark */
 .dark{box-shadow:inset 0 1px 0 rgba(255,255,255,.06),inset 0 -1px 0 rgba(255,255,255,.06)}
 
@@ -103,21 +96,6 @@
 .dark .wcard{background:rgba(9,13,26,.72)}
 .dark .wcard:hover{background:rgba(23,30,54,.82)}
 .dark .wico{background:rgba(122,179,237,.14)}
-
-/* ── The pinned figures ──────────────────────────────────────────────────
-   The number is the whole screen here, so it gets the light: a top-lit
-   gradient fill and a wide blue bloom under it. */
-.zoom-sticky.dark .zoom-num{
-  background:linear-gradient(180deg,#ffffff 28%,rgba(255,255,255,.74) 100%);
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;
-  filter:drop-shadow(0 22px 70px rgba(74,144,226,.42));
-}
-/* The currency symbol and the per-cent sign keep the accent colour, which
-   text-fill-color would otherwise blank out along with the rest. */
-.zoom-sticky.dark .zoom-num span{
-  -webkit-text-fill-color:var(--blue);color:var(--blue);
-}
 
 /* ── The closing offer ───────────────────────────────────────────────────
    Last thing before the footer, and the footer is dark too: the two now

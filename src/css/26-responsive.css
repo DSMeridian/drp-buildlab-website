@@ -51,8 +51,6 @@
   .chd,.crow{grid-template-columns:2fr 1fr 1fr}
   .chc:nth-child(n+4),.cc:nth-child(n+4){display:none}
   .ft-cols{gap:2.5rem}
-  .zoom-section{height:200vh}
-  .zoom-inner{transform:scale(.65)}
   /* FAQ cards full-width on mobile */
   #faq details{padding:1.1rem 1.2rem !important}
   #faq details summary{font-size:.98rem !important}
