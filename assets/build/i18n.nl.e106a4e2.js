@@ -28,6 +28,7 @@ const TRANSLATIONS = {
   "nav.about": "Over ons",
   "nav.contact": "Contact",
   "nav.cta": "Gratis demo",
+  "nav.menu": "Menu",
   "hero.eye": "Websites op maat voor lokale bedrijven",
   "hero.l1": "Wij zorgen",
   "hero.l2": "voor jouw",

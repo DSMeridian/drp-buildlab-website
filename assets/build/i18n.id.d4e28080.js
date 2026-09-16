@@ -28,6 +28,7 @@ const TRANSLATIONS = {
   "nav.about": "Tentang Kami",
   "nav.contact": "Hubungi Kami",
   "nav.cta": "Demo gratis",
+  "nav.menu": "Menu",
   "hero.eye": "Situs web khusus untuk bisnis lokal",
   "hero.l1": "Kami mengurus",
   "hero.l2": "kehadiran",

@@ -28,6 +28,7 @@ const TRANSLATIONS = {
   "nav.about": "Oor ons",
   "nav.contact": "Kontak",
   "nav.cta": "Gratis demo",
+  "nav.menu": "Kieslys",
   "hero.eye": "Pasgemaakte webwerwe vir plaaslike besighede",
   "hero.l1": "Ons sorg vir",
   "hero.l2": "jou aanlyn",

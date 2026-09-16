@@ -124,3 +124,27 @@ nav:not(.s) .market-sw select:hover{color:#fff;border-color:rgba(255,255,255,.5)
   .trust li{font-size:.76rem}
   .hero-foot{align-items:flex-start}
 }
+
+/* ── Numbered cards ──────────────────────────────────────────────────────
+   The six reasons, set the way the reference sets its six routes: a counted
+   number over a heading in caps, on a hairline grid with no card edges of its
+   own. The number is CSS, not markup -- decimal-leading-zero gives 01..06 and
+   renumbers itself if a card is ever added or dropped.
+
+   The icons they replace are gone rather than moved: a number and a pictogram
+   on the same card are two systems for one job, and the number is the one the
+   grid reads by. */
+.wgrid{counter-reset:wcard}
+.wcard{counter-increment:wcard;padding-top:2.1rem}
+.wcard .wico{display:none}
+.wcard::before{
+  content:counter(wcard,decimal-leading-zero);
+  display:block;margin-bottom:1.5rem;
+  font-size:.68rem;font-weight:700;letter-spacing:.18em;
+  font-variant-numeric:tabular-nums;color:var(--blue);
+}
+.wtitle{text-transform:uppercase;font-size:1rem;letter-spacing:-.01em;margin-bottom:.6rem}
+.wbody{font-size:.84rem}
+/* The steps already carry their own numbers; they get the same caps heading so
+   the two sections read as one system. */
+.stitle{text-transform:uppercase;letter-spacing:-.02em}

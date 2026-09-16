@@ -13,12 +13,6 @@ body{
 }
 a{text-decoration:none;color:inherit}
 
-/* A6 — real cursor everywhere unless a fine pointer is present */
-@media (hover:hover) and (pointer:fine){
-  body,.btn,.srow,.wcard,.plan,.ex,.crow,.pbtn,.fsubmit,
-  .soc-link,.wa-float,.lang-btn,.nav-tog,.nav-ov a,
-  .nav-cta,.opp-act{cursor:none}
-}
 /* A6 — the site had zero focus rings in 700 lines of CSS */
 :focus-visible{outline:2px solid var(--blue-d);outline-offset:3px}
 ::-webkit-scrollbar{width:2px}

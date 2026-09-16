@@ -7,8 +7,6 @@
     transition-duration:.01ms!important;scroll-behavior:auto!important;
   }
   html{scroll-behavior:auto}
-  .rv,.hl-i,.wr,.nav-ov a{opacity:1!important;transform:none!important}
-  #cdot,#cring{display:none}
-  .shint-line{animation:none!important}
+  .rv,.hl-i,.wr,.nav-ov a{opacity:1!important;transform:none!important}  .shint-line{animation:none!important}
   .arail{display:none!important}
 }

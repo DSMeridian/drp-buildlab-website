@@ -28,6 +28,7 @@ const TRANSLATIONS = {
   "nav.about": "Sobre nosotros",
   "nav.contact": "Contacto",
   "nav.cta": "Demo gratis",
+  "nav.menu": "Menú",
   "hero.eye": "Sitios web a medida para negocios locales",
   "hero.l1": "Nos encargamos",
   "hero.l2": "de tu presencia",

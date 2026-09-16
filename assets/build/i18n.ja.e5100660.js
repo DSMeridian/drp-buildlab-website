@@ -28,6 +28,7 @@ const TRANSLATIONS = {
   "nav.about": "当社について",
   "nav.contact": "お問い合わせ",
   "nav.cta": "無料体験版",
+  "nav.menu": "メニュー",
   "hero.eye": "地元企業向けのオーダーメイドウェブサイト",
   "hero.l1": "オンラインでの",
   "hero.l2": "存在感は",

@@ -40,28 +40,6 @@ if(store('drp-seen')){
 }
 
 /* ══════════════════════════════════════════
-   CURSOR — smooth lag ring
-══════════════════════════════════════════ */
-const cdot  = document.getElementById('cdot');
-const cring = document.getElementById('cring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
-(function loop(){
-  cdot.style.cssText  = `left:${mx}px;top:${my}px`;
-  rx += (mx-rx)*.1; ry += (my-ry)*.1;
-  cring.style.cssText = `left:${rx}px;top:${ry}px`;
-  requestAnimationFrame(loop);
-})();
-document.querySelectorAll('a,button,.wcard,.srow,.plan,.ex,.crow,.mag').forEach(el=>{
-  el.addEventListener('mouseenter',()=>document.body.classList.add('ch'));
-  el.addEventListener('mouseleave',()=>document.body.classList.remove('ch'));
-});
-document.querySelectorAll('input,textarea,select').forEach(el=>{
-  el.addEventListener('mouseenter',()=>document.body.classList.add('ct'));
-  el.addEventListener('mouseleave',()=>document.body.classList.remove('ct'));
-});
-
-/* ══════════════════════════════════════════
    NAV + SCROLL PROGRESS
 ══════════════════════════════════════════ */
 const nav  = document.getElementById('nav');
@@ -98,13 +76,15 @@ function closeNav(returnFocus){
 }
 if(navTog && navOv){
   navTog.addEventListener('click', ()=>{ navIsOpen() ? closeNav() : openNav(); });
+  const navX = document.getElementById('navClose');
+  if(navX) navX.addEventListener('click', ()=>closeNav());
   // anchors close the overlay so the jump is visible
   navOv.addEventListener('click', e=>{ if(e.target.closest('a')) closeNav(false); });
   document.addEventListener('keydown', e=>{
     if(!navIsOpen()) return;
     if(e.key === 'Escape'){ e.preventDefault(); closeNav(); return; }
     if(e.key !== 'Tab') return;
-    const f = [navTog].concat(Array.prototype.slice.call(navOv.querySelectorAll('a')));
+    const f = [navTog].concat(navX ? [navX] : []).concat(Array.prototype.slice.call(navOv.querySelectorAll('a')));
     const i = f.indexOf(document.activeElement);
     if(e.shiftKey){ if(i <= 0){ e.preventDefault(); f[f.length-1].focus(); } }
     else if(i === f.length-1){ e.preventDefault(); f[0].focus(); }
@@ -582,6 +562,10 @@ function applyLang(lang,persist){
   const ld=qs('.ld-name'); if(ld) ld.textContent=t['loader'];
   const NAVKEYS={home:'nav.home',about:'nav.about',pricing:'nav.pricing',contact:'nav.contact',cta:'nav.cta'};
   qsa('[data-nav]').forEach(el=>{ const k=NAVKEYS[el.dataset.nav]; if(k&&t[k]) el.textContent=t[k]; });
+  /* The menu's group headings. "Volg ons" is the social section's own key, so
+     only the word "Menu" needed adding. */
+  const GROUPKEYS={menu:'nav.menu',social:'soc.tag'};
+  qsa('[data-navgroup]').forEach(el=>{ const k=GROUPKEYS[el.dataset.navgroup]; if(k&&t[k]) el.textContent=t[k]; });
   const he=qs('.hero-eye'); if(he) he.textContent=t['hero.eye'];
   const ph=qs('.phero');
   if(ph){

@@ -224,10 +224,6 @@
 <!-- SCROLL PROGRESS -->
 <div id="sprog"></div>
 
-<!-- CURSOR -->
-<div id="cdot"></div>
-<div id="cring"></div>
-
 <!-- LOADER -->
 <div id="loader">
   <div class="ld-inner">
@@ -273,14 +269,26 @@
 
 <!-- MOBILE NAV OVERLAY (A4) -->
 <div class="nav-ov" id="navOverlay" role="dialog" aria-modal="true" aria-label="Navigatie">
-  <a href="/" data-nav="home">Home</a>
-  <a href="/over-ons" data-nav="about">Over ons</a>
-  <a href="/prijzen" data-nav="pricing">Prijzen</a>
-  <a href="/contact" data-nav="contact">Contact</a>
-  <a href="https://www.instagram.com/drp_buildlab/" target="_blank" rel="noopener" class="nav-ov-ig nig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> Instagram</a>
-  <a href="https://www.facebook.com/share/1Hz1mJG22E/" target="_blank" rel="noopener" class="nav-ov-ig nig"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a>
-  <a href="https://www.tiktok.com/@drpbuildlab" target="_blank" rel="noopener" class="nav-ov-ig nig"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 14.5V2a5 5 0 0 0 5 5"/><circle cx="11.5" cy="14.5" r="4.5"/></svg> TikTok</a>
-  <a href="/contact" class="nav-ov-cta" data-nav="cta">Gratis demo &rarr;</a>
+  <div class="nav-ov-top">
+    <span class="nav-ov-mark">DRP BuildLab</span>
+    <button type="button" class="nav-ov-x" id="navClose" aria-label="Menu sluiten">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <div class="nav-ov-group">
+    <h2 class="nav-ov-h" data-navgroup="menu">Menu</h2>
+    <a href="/" data-nav="home">Home</a>
+    <a href="/over-ons" data-nav="about">Over ons</a>
+    <a href="/prijzen" data-nav="pricing">Prijzen</a>
+    <a href="/contact" data-nav="contact">Contact</a>
+  </div>
+  <div class="nav-ov-group">
+    <h2 class="nav-ov-h" data-navgroup="social">Volg ons</h2>
+    <a href="https://www.instagram.com/drp_buildlab/" target="_blank" rel="noopener" class="nav-ov-ig nig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> Instagram</a>
+    <a href="https://www.facebook.com/share/1Hz1mJG22E/" target="_blank" rel="noopener" class="nav-ov-ig nig"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a>
+    <a href="https://www.tiktok.com/@drpbuildlab" target="_blank" rel="noopener" class="nav-ov-ig nig"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 14.5V2a5 5 0 0 0 5 5"/><circle cx="11.5" cy="14.5" r="4.5"/></svg> TikTok</a>
+  </div>
+  <a href="/contact" class="nav-ov-cta" data-nav="cta">Gratis demo</a>
 </div>
 
 <!-- ── HERO ── -->
