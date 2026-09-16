@@ -295,9 +295,9 @@ nav.s{
   font-size:clamp(.9rem,1.6vw,1.4rem);color:var(--muted);
   margin-top:1.8rem;letter-spacing:.02em;max-width:480px;
 }
-.zoom-dots{display:flex;gap:.6rem;justify-content:center;margin-top:2.5rem}
-.zoom-dot{width:6px;height:6px;border-radius:50%;background:var(--muted2);transition:background .3s,transform .3s}
-.zoom-dot.a{background:var(--blue);transform:scale(1.4)}
+/* The three progress dots under the figure are gone: the corner counter
+   ("02 / 03") already says where the strip is, and the dots read as tabs
+   people tried to press. */
 
 /* ─────────────────────────────────────────────
    MARQUEE

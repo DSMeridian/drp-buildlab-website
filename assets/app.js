@@ -232,7 +232,6 @@ const zoomNum     = document.getElementById('zoomNum');
 const zoomLbl     = document.getElementById('zoomLbl');
 const zoomTag     = document.getElementById('zoomTag');
 const zoomCounter = document.getElementById('zoomCounter');
-const zdots       = [document.getElementById('zd0'),document.getElementById('zd1'),document.getElementById('zd2')];
 
 const zStats = [
   {num:'<span>€</span>0',    lbl:'Kost van uw demo en eerste voorstel', tag:'Geen drempel'},
@@ -312,9 +311,6 @@ if(zoomSec) window.addEventListener('scroll',()=>{
     zoomLbl.textContent = s.lbl;
     zoomTag.textContent = s.tag;
     if(zoomCounter) zoomCounter.textContent = `0${idx+1} / 03`;
-    zdots.forEach((d,i)=>{
-      d.classList.toggle('a', i===idx);
-    });
   }
 },{passive:true});
 
@@ -722,7 +718,10 @@ function applyLang(lang,persist){
   const oact=qs('.opp-act'); if(oact) oact.textContent=t['cta.btn'];
   const h1=document.getElementById('heroH1');
   if(h1){
-    h1.innerHTML=`<span class="hl"><span class="hl-i">${t['hero.l1']}</span></span><span class="hl"><span class="hl-i d1">${t['hero.l2']}</span></span><span class="hl"><span class="hl-i d2">${t['hero.l3']}</span></span>`;
+    /* Newlines between the lines: each .hl is its own block, so they change
+       nothing on screen, but without them the three lines run together as one
+       word for anything reading the text -- "We take careof youronline". */
+    h1.innerHTML=`<span class="hl"><span class="hl-i">${t['hero.l1']}</span></span>\n<span class="hl"><span class="hl-i d1">${t['hero.l2']}</span></span>\n<span class="hl"><span class="hl-i d2">${t['hero.l3']}</span></span>`;
     // only animate once the loader is out of the way (A12)
     if(heroRevealed) h1.querySelectorAll('.hl-i').forEach(el=>el.classList.add('in'));
   }

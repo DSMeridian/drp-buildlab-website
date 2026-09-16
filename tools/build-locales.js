@@ -213,7 +213,11 @@ function socialTags(html, code, route) {
   const key = PAGE_KEY[route];
   const title = t['meta.title.' + key] || t['meta.title'];
   const desc = t['meta.desc.' + key] || t['meta.desc'];
-  const alt = 'DRP BuildLab — ' + [t['hero.l1'], t['hero.l2']].filter(Boolean).join(' ');
+  /* All three headline lines, not the first two: the headline is one sentence
+     spread over three lines, so stopping at the second ends mid-phrase
+     ("Wij zorgen voor jouw"). The third carries the accent markup. */
+  const joiner = lang === 'ja' ? '' : ' ';   // Japanese sets no spaces between phrases
+  const alt = 'DRP BuildLab — ' + [t['hero.l1'], t['hero.l2'], t['hero.l3']].filter(Boolean).join(joiner).replace(/<[^>]+>/g, '').replace(/\s+/g, joiner || ' ').trim();
 
   const set = (attr, name, value) => {
     const re = new RegExp('(<meta ' + attr + '="' + name + '" content=")[^"]*(")');
