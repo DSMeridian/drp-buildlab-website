@@ -1,0 +1,142 @@
+/* ─────────────────────────────────────────────
+   DARK SECTIONS
+
+   The page alternates light and dark rather than running white throughout:
+   hero, then the pinned figures in the dark, the four steps back in the
+   light, the hidden cost in the dark again. Contrast is the rhythm.
+
+   One class does it. Every component here draws its colours from the tokens
+   in 02-tokens.css, so redefining those tokens on a section repaints
+   everything inside it -- headings, rules, muted text, table borders -- with
+   no per-component dark rules to keep in step. Only the handful of colours
+   that are hard-coded for meaning (the red and green figures) are restated
+   below.
+
+   --blue-d and --blue-dd stay as they are: they are the filled button's
+   background, and a lighter blue there would leave white label text on a
+   pale field. The accent token goes lighter instead, because on near-black
+   it is text.
+───────────────────────────────────────────── */
+.dark{
+  --bg:#080b16;
+  --bg2:#0f142a;
+  --bg3:#151b33;
+  --ink:#ffffff;
+  --ink2:rgba(255,255,255,.86);
+  --muted:rgba(255,255,255,.66);
+  /* .52, not the .45 of the light theme: white at 44% over this near-black
+     measures 4.35:1, and the corner labels and the currency note set in it
+     are small text, which wants 4.5. */
+  --muted2:rgba(255,255,255,.52);
+  --line:rgba(255,255,255,.10);
+  --line-b:rgba(122,179,237,.26);
+  --blue:#7ab3ed;
+  position:relative;
+  /* Contains the aurora: without it the blurred glow, which is deliberately
+     larger than the section, widens the document and puts a horizontal
+     scrollbar on every page. */
+  overflow:hidden;
+  /* Own stacking context, so the negative-z backdrops below sit behind this
+     section's content and not behind the page. */
+  isolation:isolate;
+  background:var(--bg);
+  color:var(--ink);
+}
+/* position:relative above is for the backdrops, and it silently took the pin
+   off the one .dark element that was already positioned: .zoom-sticky is
+   position:sticky, the same specificity, and this file loads later. The strip
+   stopped pinning and scrolled away, leaving two empty screens where the
+   figures should hold. Restated here, with a class more than the rule above. */
+.zoom-sticky.dark{position:sticky;top:0}
+
+/* The seam where light meets dark */
+.dark{box-shadow:inset 0 1px 0 rgba(255,255,255,.06),inset 0 -1px 0 rgba(255,255,255,.06)}
+
+/* Aurora — three coloured clouds, drifting. Transform and nothing else, so
+   it animates on the compositor; `alternate` means it never jumps back. */
+.dark::before{
+  content:'';position:absolute;inset:-25%;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(38% 42% at 18% 22%, rgba(74,144,226,.34) 0%, transparent 68%),
+    radial-gradient(32% 34% at 82% 26%, rgba(122,179,237,.20) 0%, transparent 70%),
+    radial-gradient(44% 40% at 60% 92%, rgba(46,116,201,.28) 0%, transparent 72%);
+  animation:auroraDrift 28s cubic-bezier(.45,0,.55,1) infinite alternate;
+  will-change:transform;
+}
+@keyframes auroraDrift{
+  from{transform:translate3d(-2%,-1%,0) scale(1)}
+  to{transform:translate3d(3%,2%,0) scale(1.09)}
+}
+/* Grid, grain and vignette in one layer. The grid is the hero's, at the same
+   88px, so the two read as the same drawing. The grain is an inline SVG
+   turbulence -- it costs no request and keeps the big gradients from
+   banding into stripes on an 8-bit screen. */
+.dark::after{
+  content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.38'/%3E%3C/svg%3E");
+  background-size:88px 88px,88px 88px,180px 180px;
+  -webkit-mask-image:radial-gradient(ellipse 88% 78% at 50% 45%,#000 28%,transparent 100%);
+          mask-image:radial-gradient(ellipse 88% 78% at 50% 45%,#000 28%,transparent 100%);
+  opacity:.9;
+}
+
+/* Figures that carry meaning by colour, restated for a dark field: the
+   crimson and green of the cost table are unreadable at 3:1 on near-black. */
+.dark .oval.n{color:#ff7a7a}
+.dark .oval.p{color:#5fd68b}
+/* The ghost button's border is the token line, which is now a white film. */
+.dark .btn-g:hover{border-color:var(--blue);color:var(--blue);background:rgba(122,179,237,.10)}
+/* The calculator panel sits on the section's own glow, so it needs a surface
+   of its own to stay legible rather than the flat tint it has in the light. */
+.dark .opp-box{
+  background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02));
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  border-color:rgba(255,255,255,.12);
+}
+.dark .onote{background:rgba(255,255,255,.04)}
+/* Cards on dark: a film of white rather than a lighter grey, so the aurora
+   behind them still shows through. */
+.dark .wgrid{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.09)}
+.dark .wcard{background:rgba(9,13,26,.72)}
+.dark .wcard:hover{background:rgba(23,30,54,.82)}
+.dark .wico{background:rgba(122,179,237,.14)}
+
+/* ── The pinned figures ──────────────────────────────────────────────────
+   The number is the whole screen here, so it gets the light: a top-lit
+   gradient fill and a wide blue bloom under it. */
+.zoom-sticky.dark .zoom-num{
+  background:linear-gradient(180deg,#ffffff 28%,rgba(255,255,255,.74) 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  filter:drop-shadow(0 22px 70px rgba(74,144,226,.42));
+}
+/* The currency symbol and the per-cent sign keep the accent colour, which
+   text-fill-color would otherwise blank out along with the rest. */
+.zoom-sticky.dark .zoom-num span{
+  -webkit-text-fill-color:var(--blue);color:var(--blue);
+}
+
+/* ── The closing offer ───────────────────────────────────────────────────
+   Last thing before the footer, and the footer is dark too: the two now
+   read as one closing block rather than a white strip wedged between. */
+.ctastrip.dark{padding-block:8rem}
+.ctastrip.dark .sh{text-shadow:0 22px 60px rgba(8,11,22,.6)}
+
+/* The rail floats over whatever is behind it, so over a dark section its
+   ink-coloured labels disappear. app.js watches which section is at the
+   playhead and flips these. */
+.arail.on-dark .arail-line{background:rgba(255,255,255,.14)}
+.arail.on-dark .arail-i{color:rgba(255,255,255,.5)}
+.arail.on-dark .arail-i.on{color:var(--blue-l)}
+.arail.on-dark .arail-i.on b{color:#fff}
+
+@media(max-width:768px){
+  /* The drift is a slow luxury on a laptop and a battery cost on a phone,
+     where the section is a single screen tall and the movement is barely
+     legible anyway. */
+  .dark::before{animation:none}
+  .ctastrip.dark{padding-block:5.5rem}
+}

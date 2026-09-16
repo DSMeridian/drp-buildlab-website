@@ -419,6 +419,7 @@ if(mq){
   }
 
   let gap = 0, head = 0, docMax = 1, start = 0, stop = Infinity, active = -1, ready = false;
+  let darkAt = [], markY = 0, onDark = null;
 
   function measure(){
     const railH = rail.clientHeight;
@@ -454,6 +455,21 @@ if(mq){
        in --line is invisible anyway. */
     const tail = document.querySelector('.ctastrip') || document.querySelector('footer');
     stop = tail ? docTop(tail) - vh*0.55 : Infinity;
+
+    /* Where the dark sections start and end, in document coordinates, so the
+       rail can invert while one is behind it -- its labels are drawn in ink
+       and vanish against near-black. Measured here rather than hit-tested per
+       frame: elementFromPoint on every scroll costs a layout flush.
+
+       The pinned figures are the exception worth naming: .dark sits on the
+       sticky child, which is one screen tall, while the dark is on screen for
+       the whole 220vh section it is pinned inside. The section is the range. */
+    darkAt = Array.prototype.map.call(document.querySelectorAll('.dark'), function(el){
+      const box = el.closest('.zoom-section') || el;
+      const top = docTop(box);
+      return [top, top + box.offsetHeight];
+    });
+    markY = rail.getBoundingClientRect().top + head;   // playhead, in the viewport
     ready = true;
   }
 
@@ -498,6 +514,11 @@ if(mq){
       active = idx;
     }
     rail.classList.toggle('on', y > start && y < stop);
+
+    const mark = y + markY;
+    let dark = false;
+    for(let i=0;i<darkAt.length;i++) if(mark >= darkAt[i][0] && mark <= darkAt[i][1]){ dark = true; break; }
+    if(dark !== onDark){ rail.classList.toggle('on-dark', dark); onDark = dark; }
   }
   let pending;
   function remeasure(){
@@ -1039,5 +1060,52 @@ function pickLang(marketLang){
     // Same language, but rates have landed since the first pass: re-run the
     // currency conversion that listens on this event.
     else document.dispatchEvent(new CustomEvent('drp:langapplied',{detail:{lang:want}}));
+  });
+})();
+
+/* ══════════════════════════════════════════
+   DEPTH — cards lean towards the pointer
+
+   The rotation is written to custom properties and the transform itself
+   lives in 38-depth.css, behind a (hover:hover) and (pointer:fine) query.
+   That split is deliberate: the class can be baked into the prerendered
+   HTML and still do nothing on a phone, where a stuck :hover would leave a
+   card frozen mid-lean after a tap.
+
+   One pointermove listener per card, coalesced into an animation frame --
+   the event fires far more often than the screen refreshes, and setting a
+   custom property is a style invalidation each time.
+══════════════════════════════════════════ */
+(function pointerTilt(){
+  if(!window.matchMedia) return;
+  if(!window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const MAX = 6;   // degrees at the corner
+  document.querySelectorAll('.wcard,.plan,.prt,.opp-box').forEach(function(el){
+    el.classList.add('tilt');
+    let queued = false, px = 0, py = 0;
+
+    el.addEventListener('pointermove', function(e){
+      const b = el.getBoundingClientRect();
+      px = (e.clientX - b.left) / b.width;
+      py = (e.clientY - b.top) / b.height;
+      if(queued) return;
+      queued = true;
+      requestAnimationFrame(function(){
+        queued = false;
+        el.style.setProperty('--rx', ((px - .5) * MAX * 2).toFixed(2) + 'deg');
+        el.style.setProperty('--ry', ((.5 - py) * MAX * 2).toFixed(2) + 'deg');
+        el.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+        el.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+        el.classList.add('on');
+      });
+    });
+
+    el.addEventListener('pointerleave', function(){
+      el.classList.remove('on');
+      el.style.setProperty('--rx','0deg');
+      el.style.setProperty('--ry','0deg');
+    });
   });
 })();
