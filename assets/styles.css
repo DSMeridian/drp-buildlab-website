@@ -1227,51 +1227,116 @@ html[lang="ar"] .abn-v,html[lang="ar"] .pprice,html[lang="ar"] .otval{line-heigh
 
 /* ─────────────────────────────────────────────
    PARTNERS
+
+   Cards, in the shape the client asked for after the Impact reference:
+   a 5:6 image flush to the top of a square-cornered card, then a counted
+   label, the partner's name set large in caps, the body, and a tag on the
+   last line.
+
+   The reference sets white cards on a tinted ground. This inverts that --
+   tinted cards on the white section -- because the home page alternates
+   light, dark, light, and the section before this one is already the tinted
+   treatment. Two tinted grounds running together would lose the seam between
+   two sections that say different things. The card itself is what the
+   reference makes it: square, borderless, image flush, text padded.
+
+   Nothing here needed new copy. The number is a CSS counter, the name and
+   the tagline are the partners' own words that were already on the page,
+   and the tagline becomes the tag on the last line.
 ───────────────────────────────────────────── */
-/* Two portrait images (5:6) side by side. 1040px keeps each near 500px wide,
-   which is what the 600w/1000w WebP files are cut for; wider and a 1440px
-   screen would show two images taller than the viewport. */
-.prt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem;margin-top:3.5rem;max-width:1040px}
-.prt{margin:0;min-width:0}
+/* 1040px keeps each card near 500px wide, which is what the 600w/1000w WebP
+   files are cut for; wider and a 1440px screen would show two images taller
+   than the viewport. */
+.prt-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:2.6rem;margin-top:3.5rem;max-width:1040px;
+  counter-reset:prt;
+}
+.prt{
+  margin:0;min-width:0;counter-increment:prt;
+  /* A column, so .prt-body can push the tag to the bottom and the two cards'
+     last lines agree however long the copy above them runs. */
+  display:flex;flex-direction:column;
+  background:var(--bg2);
+}
+
+/* ── The image ───────────────────────────────────────────────────────────
+   Flush to three edges of the card. overflow:hidden is load-bearing: the
+   hover in 38-depth.css scales the image, and without it the artwork would
+   grow past the card instead of filling more of its frame. */
+.prt-shot{display:block;overflow:hidden}
+.prt-shot:focus-visible{outline:2px solid var(--blue);outline-offset:-3px}
 /* width/height on the tag reserve the space before the lazy image arrives;
-   aspect-ratio keeps that true once CSS makes the width fluid. */
-.prt img{display:block;width:100%;height:auto;aspect-ratio:5/6;object-fit:cover;background:var(--bg2);border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 60px rgba(26,31,54,.08)}
-.prt figcaption{margin-top:1.4rem}
-/* ── The cards link out ──────────────────────────────────────────────────
-   Both partners have a site of their own, and the image is the thing a
-   reader reaches for. Two links per card: the image, taken out of the tab
-   order and hidden from the accessibility tree, and the name, which is the
-   one that carries the label. Otherwise a keyboard lands twice per card and
-   the first stop announces nothing but a filename.
+   aspect-ratio keeps that true once CSS makes the width fluid. The border,
+   the radius and the shadow are gone -- the card carries all three now. */
+.prt img{
+  display:block;width:100%;height:auto;
+  aspect-ratio:5/6;object-fit:cover;background:var(--bg3);
+}
 
-   The lift on hover is 38-depth.css's and is unchanged -- the anchor is a
-   block wrapper around the image, not a new surface. */
-.prt-shot{display:block}
-.prt-shot:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+/* ── The text ────────────────────────────────────────────────────────────
+   flex:1 so the column fills the card and the tag can sit on the floor of
+   it. align-items:flex-start so the name and the tag are only as wide as
+   their own text -- a stretched inline-flex would put the arrow at the far
+   edge of the card, a hand's width from the word it belongs to. */
+.prt-body{
+  flex:1;display:flex;flex-direction:column;align-items:flex-start;
+  padding:1.9rem 2rem 2rem;
+}
+/* The count, bracketed, the way every other label on the site is set. CSS
+   rather than markup, as on the numbered cards: it renumbers itself if a
+   third partner is ever added. */
+.prt-body::before{
+  content:'[ ' counter(prt,decimal-leading-zero) ' ]';
+  font-size:.6rem;font-weight:700;letter-spacing:.24em;
+  font-variant-numeric:tabular-nums;color:var(--blue-d);
+  margin-bottom:1.1rem;
+}
 
+/* ── The name, which is also the link out ────────────────────────────────
+   Both partners have a site of their own, and the image is what a reader
+   reaches for -- so the image is a link too, taken out of the tab order and
+   hidden from the accessibility tree. This one carries the label, and is the
+   only stop a keyboard makes. */
 .prt-name{
-  display:inline-flex;align-items:center;gap:.45rem;
-  font-size:.6rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
-  color:var(--blue-d);margin-bottom:.55rem;
+  display:inline-flex;align-items:baseline;gap:.5rem;
+  font-size:clamp(1.25rem,2.1vw,1.85rem);font-weight:800;
+  letter-spacing:-.03em;text-transform:uppercase;line-height:1.06;
+  color:var(--ink);margin-bottom:.85rem;
   transition:color .2s;
 }
-/* The arrow is the affordance: at .6rem in caps with letter-spacing, an
-   underline reads as noise and nothing else says "this leaves the site". */
-a.prt-name::after{content:'↗';font-size:.85em;letter-spacing:0;transition:transform .25s}
-a.prt-name:hover{color:var(--blue-dd)}
+/* The arrow is the affordance: in caps at this weight an underline reads as
+   damage, and nothing else says "this leaves the site". */
+a.prt-name::after{content:'↗';font-size:.62em;font-weight:700;transition:transform .25s}
+a.prt-name:hover{color:var(--blue-d)}
 a.prt-name:hover::after{transform:translate(2px,-2px)}
 /* Right to left, the arrow leads rather than trails, and points the way the
    text runs. */
 [dir="rtl"] a.prt-name::after{content:'↖'}
-.prt-b{font-size:.98rem;color:var(--ink2);line-height:1.7;max-width:34rem}
-.prt-line{display:block;margin-top:.7rem;font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+.prt-b{font-size:.9rem;color:var(--ink2);line-height:1.75;margin-bottom:1.5rem}
+
+/* ── The tag ─────────────────────────────────────────────────────────────
+   The partners' own English tagline, on the last line of the card.
+
+   Square, where the reference rounds it. 39-editorial.css states the rule --
+   round actions, square everything else -- and this is a label, not
+   something to click. Rounding it would be the one pill on the site that
+   does nothing when pressed. */
+.prt-line{
+  display:inline-block;margin-top:auto;
+  padding:.5rem .9rem;border:1px solid var(--line-b);
+  font-size:.56rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);
+}
 /* The tagline is English on every page. On an Arabic page it inherited the
    right-to-left direction and its full stop jumped to the front
-   (".TECHNOLOGY SUPPORTS BEAUTY"); read it left to right, aligned with the
-   Arabic caption above it. */
-[dir="rtl"] .prt-line{direction:ltr;text-align:right}
+   (".TECHNOLOGY SUPPORTS BEAUTY"); read it left to right. */
+[dir="rtl"] .prt-line{direction:ltr}
+
 @media(max-width:768px){
-  .prt-grid{grid-template-columns:1fr;gap:3.2rem;max-width:520px;margin-top:2.5rem}
+  .prt-grid{grid-template-columns:1fr;gap:2rem;max-width:520px;margin-top:2.5rem}
+  .prt-body{padding:1.5rem 1.6rem 1.7rem}
 }
 
 /* ─────────────────────────────────────────────
@@ -1432,15 +1497,23 @@ a.prt-name:hover::after{transform:translate(2px,-2px)}
   .plan.tilt.on{box-shadow:0 30px 70px rgba(26,31,54,.14)}
   .dark .wcard.tilt.on{box-shadow:0 26px 60px rgba(0,0,0,.45)}
 
-  /* The partner images lift rather than glow -- artwork of someone else's
-     brand should not have our blue washed over it. */
-  .prt.tilt img{
-    transition:transform .55s cubic-bezier(.16,1,.3,1),box-shadow .55s cubic-bezier(.16,1,.3,1);
-  }
-  .prt.tilt.on img{
-    transform:translateZ(0) scale(1.012);
-    box-shadow:0 38px 90px rgba(26,31,54,.20);
-  }
+  /* The partner cards lift rather than glow -- artwork of someone else's
+     brand should not have our blue washed over it.
+
+     The lift moved from the image to the card when the card gained a ground
+     of its own: a shadow under the image alone would have been a shadow
+     cast inside the thing holding it. The image still answers, by filling
+     more of its frame -- .prt-shot clips it, so this reads as the artwork
+     coming forward rather than the picture growing.
+
+     Only the shadow is set here. .tilt above already owns transform (the
+     lean itself) and transition (which .tilt.on swaps for pointer tracking);
+     restating either at this specificity would have overwritten the lean
+     with a flat translate and put the half-second ease back on a card that
+     is supposed to follow the cursor. */
+  .prt.tilt.on{box-shadow:0 38px 90px rgba(26,31,54,.17)}
+  .prt.tilt img{transition:transform .7s cubic-bezier(.16,1,.3,1)}
+  .prt.tilt.on img{transform:scale(1.045)}
 }
 
 /* The logomark drifts, the way a thing hanging in space does. Three seconds

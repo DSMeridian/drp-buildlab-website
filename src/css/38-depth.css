@@ -35,15 +35,23 @@
   .plan.tilt.on{box-shadow:0 30px 70px rgba(26,31,54,.14)}
   .dark .wcard.tilt.on{box-shadow:0 26px 60px rgba(0,0,0,.45)}
 
-  /* The partner images lift rather than glow -- artwork of someone else's
-     brand should not have our blue washed over it. */
-  .prt.tilt img{
-    transition:transform .55s cubic-bezier(.16,1,.3,1),box-shadow .55s cubic-bezier(.16,1,.3,1);
-  }
-  .prt.tilt.on img{
-    transform:translateZ(0) scale(1.012);
-    box-shadow:0 38px 90px rgba(26,31,54,.20);
-  }
+  /* The partner cards lift rather than glow -- artwork of someone else's
+     brand should not have our blue washed over it.
+
+     The lift moved from the image to the card when the card gained a ground
+     of its own: a shadow under the image alone would have been a shadow
+     cast inside the thing holding it. The image still answers, by filling
+     more of its frame -- .prt-shot clips it, so this reads as the artwork
+     coming forward rather than the picture growing.
+
+     Only the shadow is set here. .tilt above already owns transform (the
+     lean itself) and transition (which .tilt.on swaps for pointer tracking);
+     restating either at this specificity would have overwritten the lean
+     with a flat translate and put the half-second ease back on a card that
+     is supposed to follow the cursor. */
+  .prt.tilt.on{box-shadow:0 38px 90px rgba(26,31,54,.17)}
+  .prt.tilt img{transition:transform .7s cubic-bezier(.16,1,.3,1)}
+  .prt.tilt.on img{transform:scale(1.045)}
 }
 
 /* The logomark drifts, the way a thing hanging in space does. Three seconds
