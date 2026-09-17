@@ -77,6 +77,7 @@
 <link rel="stylesheet" href="/assets/styles.css">
 <script defer src="/assets/i18n.js"></script>
 <script defer src="/assets/locale.js"></script>
+<script defer src="/assets/referral.js"></script>
 <script defer src="/assets/app.js"></script>
 <script defer src="/assets/consent.js"></script>
 </head>
@@ -153,6 +154,7 @@
     <a href="/over-ons" data-nav="about">Over ons</a>
     <a href="/prijzen" data-nav="pricing">Prijzen</a>
     <a href="/contact" data-nav="contact">Contact</a>
+    <a href="/partner-worden" data-route="/partner-worden" data-nav="partner">Marketingpartner worden</a>
   </div>
   <div class="nav-ov-group">
     <h2 class="nav-ov-h" data-navgroup="social">Volg ons</h2>
@@ -168,6 +170,16 @@
   <div class="phero-eye">Contact</div>
   <h1 class="sh phero-h1">Klaar om online<br><em>te gaan?</em></h1>
   <p class="ssub phero-sub">Vraag een gratis demo aan. We bellen u op en tonen meteen een voorbeeld op maat.</p>
+  <!-- The same five claims the home hero carries, from the same key, so the
+       inner pages open with the proof row the rebuild gave the home page and
+       no eleventh string went out for translation. -->
+  <ul class="trust phero-trust">
+    <li>Lokale focus</li>
+    <li>Eerlijke prijs</li>
+    <li>Mobiel-klaar</li>
+    <li>Google-geoptimaliseerd</li>
+    <li>Volledig ontzorgd</li>
+  </ul>
 </section>
 
 <!-- ── CONTACT ── -->
@@ -215,6 +227,14 @@
           <input type="hidden" name="form-name" value="demo-aanvraag">
           <input type="hidden" name="subject" value="Nieuwe demo aanvraag — DRP BuildLab">
           <p style="display:none"><input name="bot-field"></p>
+          <!-- The marketing partner's code, if this visitor arrived on one of
+               their links. assets/referral.js fills it; empty otherwise, and
+               present on every market, because a referral can start anywhere
+               even though the partner page itself is published in two
+               languages. The note below is shown only in the languages that
+               have the string, so attribution never depends on the copy. -->
+          <input type="hidden" name="ref" value="">
+          <p class="ref-note" id="refNote" hidden></p>
           <div class="frow">
             <div class="field"><label for="f-vnaam">Voornaam</label><input id="f-vnaam" name="voornaam" type="text" placeholder="Jan" autocomplete="given-name" required></div>
             <div class="field"><label for="f-anaam">Achternaam</label><input id="f-anaam" name="achternaam" type="text" placeholder="Peeters" autocomplete="family-name"></div>
@@ -270,6 +290,7 @@
         <a href="/over-ons">Over ons</a>
         <a href="/prijzen">Prijzen</a>
         <a href="/contact">Contact</a>
+        <a href="/partner-worden" data-route="/partner-worden" data-nav="partner">Marketingpartner worden</a>
       </div>
       <div class="ft-col">
         <h4>Contact</h4>

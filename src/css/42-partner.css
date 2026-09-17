@@ -1,0 +1,74 @@
+/* ─────────────────────────────────────────────
+   PARTNER PROGRAMME
+
+   The page is built almost entirely from components that already existed --
+   the dark page header with its proof row, the numbered steps from the home
+   page, the form wrapper from Contact, the counted FAQ rows from Pricing.
+   That is deliberate: a page selling a commission deal has to look like the
+   rest of the company, and the fastest way to look like the rest of the
+   company is to be made of it.
+
+   Two things are new, and only because nothing on the site did their job:
+   the terms panel, and the line that tells a referred visitor their discount
+   is attached.
+───────────────────────────────────────────── */
+
+/* ── The terms ───────────────────────────────────────────────────────────
+   Six facts, each a label over a figure, on the same hairline grid the
+   extras and the pricing columns use. A panel rather than prose because
+   these are the numbers somebody will come back to check, and a reader
+   checking a commission rate should not have to find it inside a paragraph.
+
+   Three columns for six cells, so it is two clean rows at every width that
+   can hold them. */
+.terms{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);
+  margin-top:3rem;
+}
+.terms>*{min-width:0}
+.term{
+  background:var(--bg);padding:1.6rem 1.7rem;
+  display:flex;flex-direction:column;gap:.55rem;
+  transition:background .25s;
+}
+.term:hover{background:var(--bg2)}
+.term-n{
+  font-size:.6rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--muted);
+}
+.term-v{
+  font-size:1.02rem;font-weight:800;letter-spacing:-.02em;line-height:1.35;
+  color:var(--ink);
+  /* "Maandelijks, per overschrijving" in German is one long word plus one
+     longer word, and these cells are a third of the column. */
+  overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto;
+}
+
+/* ── The referred-visitor note ───────────────────────────────────────────
+   Shown on the demo form when the visitor arrived on a partner's link, so
+   the discount they were promised is visible before they submit rather than
+   only on the quote that turns up later.
+
+   It is hidden in the markup and unhidden by applyLang, and only in the
+   languages that carry the string -- see the note in the contact form. The
+   hidden field beside it is filled either way, so a market without the copy
+   still attributes the referral; it just does not say so out loud. */
+.ref-note{
+  margin:0 0 1rem;padding:.75rem .95rem;
+  border-left:2px solid var(--blue-d);
+  background:rgba(74,144,226,.06);
+  font-size:.8rem;line-height:1.65;color:var(--ink2);
+}
+.ref-note strong{color:var(--blue-d);font-weight:700}
+/* The border is the one thing that has to move: on an Arabic page a rule on
+   the left of the text is a rule at the end of it. */
+[dir="rtl"] .ref-note{border-left:none;border-right:2px solid var(--blue-d)}
+
+@media(max-width:900px){
+  .terms{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px){
+  .terms{grid-template-columns:1fr;margin-top:2.2rem}
+  .term{padding:1.3rem 1.4rem}
+}

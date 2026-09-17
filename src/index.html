@@ -205,7 +205,9 @@
 <link rel="stylesheet" href="/assets/styles.css">
 <script defer src="/assets/i18n.js"></script>
 <script defer src="/assets/locale.js"></script>
+<script defer src="/assets/referral.js"></script>
 <script defer src="/assets/app.js"></script>
+<script defer src="/assets/hero3d.js"></script>
 <script defer src="/assets/consent.js"></script>
 </head>
 <body data-page="home">
@@ -281,6 +283,7 @@
     <a href="/over-ons" data-nav="about">Over ons</a>
     <a href="/prijzen" data-nav="pricing">Prijzen</a>
     <a href="/contact" data-nav="contact">Contact</a>
+    <a href="/partner-worden" data-route="/partner-worden" data-nav="partner">Marketingpartner worden</a>
   </div>
   <div class="nav-ov-group">
     <h2 class="nav-ov-h" data-navgroup="social">Volg ons</h2>
@@ -293,6 +296,10 @@
 
 <!-- ── HERO ── -->
 <section class="hero dark" id="hero">
+  <!-- The turning lattice. Decorative and empty of text: assets/hero3d.js
+       fills it if the browser has WebGL, and if it does not the hero is
+       unchanged. aria-hidden so it is never announced as an image. -->
+  <canvas id="hero3d" aria-hidden="true"></canvas>
   <div class="hero-content" id="heroContent">
     <div class="hero-eye">Websites op maat voor lokale bedrijven</div>
     <h1 class="hero-h1" id="heroH1">
@@ -527,6 +534,7 @@
         <a href="/over-ons">Over ons</a>
         <a href="/prijzen">Prijzen</a>
         <a href="/contact">Contact</a>
+        <a href="/partner-worden" data-route="/partner-worden" data-nav="partner">Marketingpartner worden</a>
       </div>
       <div class="ft-col">
         <h4>Contact</h4>

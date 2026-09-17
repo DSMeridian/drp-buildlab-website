@@ -36,9 +36,32 @@ const { chromium } = require('playwright-core');
 const ROOT = path.resolve(__dirname, '..');
 const MARKETS = require(path.join(ROOT, 'assets', 'markets.js'));
 const CODES = Object.keys(MARKETS).filter(k => !k.startsWith('__'));
-const ONLY = (process.argv.slice(2).find(a => a.startsWith('--market=')) || '').split('=')[1] || '';
-const RENDER = ONLY ? [ONLY] : CODES;
-const ROUTES = ['', '/over-ons', '/prijzen', '/contact'];
+/* --market and --lang take lists and mean the same here as in
+   build-locales.js, which is the point: the two run back to back and a flag
+   that selected different markets in each would render pages the generator
+   had not written. See the comment on ARGV there. */
+const ARGV = process.argv.slice(2);
+function listArg(name) {
+  const hit = ARGV.find(a => a.startsWith('--' + name + '='));
+  if (!hit) return [];
+  return hit.slice(name.length + 3).split(',').map(s => s.trim()).filter(Boolean);
+}
+const WANT_MARKETS = listArg('market');
+const WANT_LANGS = listArg('lang');
+const ONLY = WANT_MARKETS.length || WANT_LANGS.length;
+const RENDER = ONLY
+  ? CODES.filter(c => WANT_MARKETS.includes(c) || WANT_LANGS.includes(MARKETS[c].lang))
+  : CODES;
+if (ONLY && !RENDER.length) {
+  console.error('nothing selected by ' + ARGV.join(' '));
+  process.exit(1);
+}
+/* /partner-worden is published in two languages only, so it is absent from
+   most markets. The loop below already skips a route with no file, which
+   is the right behaviour here rather than a second copy of the langs
+   table from build-locales.js -- the generator decides what exists, this
+   script renders whatever it finds. */
+const ROUTES = ['', '/over-ons', '/prijzen', '/contact', '/partner-worden'];
 // Checked after each render: if applyLang did not run, the page would be
 // written back still in Dutch and the bug would look fixed.
 const LANG_OF = Object.fromEntries(CODES.map(c => [c, MARKETS[c].lang]));
@@ -50,7 +73,8 @@ const LANG_OF = Object.fromEntries(CODES.map(c => [c, MARKETS[c].lang]));
  * identical in Dutch and English and would prove nothing. */
 const TRANSLATIONS = eval(
   fs.readFileSync(path.join(ROOT, 'assets', 'i18n.js'), 'utf8') + ';TRANSLATIONS');
-const PAGE_KEY = { '': 'home', '/over-ons': 'about', '/prijzen': 'pricing', '/contact': 'contact' };
+const PAGE_KEY = { '': 'home', '/over-ons': 'about', '/prijzen': 'pricing',
+  '/contact': 'contact', '/partner-worden': 'partner' };
 
 function expectedTitle(lang, route) {
   const t = TRANSLATIONS[lang];
@@ -122,6 +146,19 @@ function stripRuntimeState() {
   document.body.classList.remove('scta-on');
   document.querySelectorAll('.scta.on').forEach(el => el.classList.remove('on'));
   document.querySelectorAll('[data-counted]').forEach(el => el.removeAttribute('data-counted'));
+
+  /* The hero lattice. hero3d.js sizes the canvas in device pixels and adds
+     "on" once it has a context and a first frame, so serializing after it ran
+     baked both in: the width and height of whatever viewport this render used,
+     and an "on" that would light the canvas at first paint on a machine with no
+     WebGL to fill it. Put the element back the way src/ writes it, and let the
+     script decide again in the visitor's browser. */
+  document.querySelectorAll('#hero3d').forEach(el => {
+    el.classList.remove('on');
+    if (!el.className) el.removeAttribute('class');
+    el.removeAttribute('width');
+    el.removeAttribute('height');
+  });
 
   // Counters animate from zero, so serializing mid-run baked "€1" and
   // "€19" in place of "€499" and "€29" -- a wrong price in the
@@ -233,12 +270,12 @@ function stripRuntimeState() {
   const errors = [];
   page.on('pageerror', e => errors.push(e.message.slice(0, 80)));
 
-  let done = 0, failed = 0;
+  let done = 0, failed = 0, skipped = 0;
   for (const code of RENDER) {
     for (const route of ROUTES) {
       const rel = path.join(code.split('-').join('/'), route.replace(/^\//, ''), 'index.html');
       const dest = path.join(ROOT, rel);
-      if (!fs.existsSync(dest)) { console.log('  skip (missing) ' + rel); continue; }
+      if (!fs.existsSync(dest)) { skipped++; continue; }
 
       errors.length = 0;
       try {
@@ -280,6 +317,8 @@ function stripRuntimeState() {
 
   await browser.close();
   server.close();
-  console.log(`\nprerendered ${done} pages` + (failed ? `, ${failed} FAILED` : ''));
+  console.log(`\nprerendered ${done} pages`
+    + (skipped ? `, ${skipped} not published in this market` : '')
+    + (failed ? `, ${failed} FAILED` : ''));
   process.exit(failed ? 1 : 0);
 })();

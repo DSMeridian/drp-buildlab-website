@@ -1,0 +1,71 @@
+/* ─────────────────────────────────────────────
+   HERO — the lattice, placed
+
+   assets/hero3d.js draws a turning wireframe cube into this canvas. Every
+   rule here is about where it sits and what it must not cover: the editorial
+   hero is bottom-anchored, so the type occupies the lower-left and the cube
+   takes the space above and to the right of it that the rebuild left empty.
+
+   A positioned box rather than inset:0. The scene is centred in its own
+   canvas, so a full-bleed canvas would centre the cube on the screen -- which
+   is exactly where the headline is. Giving the canvas the corner puts the
+   cube in the corner, and costs a fraction of the pixels to fill.
+───────────────────────────────────────────── */
+#hero3d{
+  position:absolute;
+  top:-5%;
+  right:-6%;
+  width:min(64vw,820px);
+  height:min(82vh,820px);
+  /* Above the aurora (z-index -2) and the grain, below .hero-content (2). */
+  z-index:1;
+  /* Decorative, and it sits over the top half of the hero: without this it
+     would eat the pointer on its way to the nav and the scroll hint. */
+  pointer-events:none;
+  /* The canvas is sized in device pixels by the script; these keep the CSS
+     box authoritative whatever it writes into width/height. */
+  display:block;
+  /* Nothing is drawn until the context is up and the first frame is out, so
+     the canvas fades in rather than appearing mid-turn. Roughly with the
+     headline, which finishes its rise at 1.6s. */
+  opacity:0;
+  transition:opacity 1.2s cubic-bezier(.16,1,.3,1) .35s;
+  /* Dissolve the edges. Without it the cube ends on four hard canvas edges
+     that read as a box sitting on the hero rather than a depth in it. */
+  -webkit-mask-image:radial-gradient(64% 64% at 52% 44%,#000 0%,rgba(0,0,0,.78) 62%,transparent 88%);
+  mask-image:radial-gradient(64% 64% at 52% 44%,#000 0%,rgba(0,0,0,.78) 62%,transparent 88%);
+}
+#hero3d.on{opacity:1}
+
+/* Right-to-left markets set the headline to the right, so the cube takes the
+   other corner with it. The scene itself is symmetric; only the box moves. */
+[dir="rtl"] #hero3d{right:auto;left:-6%}
+
+/* ── Narrow screens ──────────────────────────────────────────────────────
+   There is no empty corner on a phone -- the hero is one column and the type
+   fills it. The cube goes behind the type instead, larger and much fainter,
+   where it works as a texture on the ground rather than as an object beside
+   the words. */
+@media(max-width:900px){
+  #hero3d{
+    top:2%;
+    right:-22%;
+    width:118vw;
+    height:min(62vh,560px);
+  }
+  #hero3d.on{opacity:.55}
+}
+
+/* The one place the canvas is a liability: a hero shorter than it is wide, on
+   a phone held sideways, leaves the cube sitting on the headline with no room
+   above it to go. */
+@media(max-height:520px) and (orientation:landscape){
+  #hero3d{display:none}
+}
+
+/* prefers-reduced-motion: the script already draws a single still frame and
+   never starts the loop, so the cube is kept -- it is a shape on the hero, not
+   a movement. Only the fade-in is dropped, because that is the animation. */
+@media(prefers-reduced-motion:reduce){
+  #hero3d{transition:none}
+}

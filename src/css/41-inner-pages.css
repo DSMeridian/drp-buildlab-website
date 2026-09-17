@@ -1,0 +1,103 @@
+/* ─────────────────────────────────────────────
+   INNER PAGES — the editorial system, finished
+
+   39-editorial.css set the grounds and the type roles once and let the
+   sections inherit them, which carried most of the rebuild onto About,
+   Pricing and Contact for free: bracketed labels, caps display type, pills
+   for actions and square corners everywhere else, the numbered cards.
+
+   Two things it did not reach, because they are markup and not tokens, are
+   here:
+
+   1. The page headers opened flat -- label, headline, standfirst -- where the
+      home hero had gained a ticked row of proof under its headline. Three
+      pages opening on a different anatomy from the fourth is the kind of
+      seam a visitor cannot name but can see.
+
+   2. The pricing FAQ was still the old design underneath the new one: five
+      rounded cards on a tinted ground, laid out by inline styles, sitting in
+      a section where everything else is a hairline rule. It is rebuilt below
+      as counted rows, which is what the rest of the site does with a list.
+───────────────────────────────────────────── */
+
+/* ── The proof row on a page header ──────────────────────────────────────
+   The same .trust object as the hero, so it inherits the ticks, the weight
+   and the twelve translations. Only the space around it differs: the header
+   ends here, and the section's own bottom padding is the gap to what
+   follows, so the row's lower margin comes off. */
+.phero-trust{margin:2.2rem 0 0}
+
+/* ── FAQ ─────────────────────────────────────────────────────────────────
+   Counted rows on hairlines, the way the numbered cards and the contact
+   details are set. The number is CSS rather than markup, as it is on the
+   cards: decimal-leading-zero gives 01..05 and renumbers itself if a
+   question is added or dropped, and applyLang refills the summary text
+   without touching it. */
+.faq{
+  counter-reset:faq;
+  /* Flush left across the measure, not a centred block. Every other list on
+     the site -- the contact details, the extras grid, the pricing columns --
+     starts where its heading starts and runs the width of the column, and a
+     narrower box floating in the middle of the section was the last thing on
+     these pages that did not line up with the heading above it. The answers
+     keep a reading measure of their own below. */
+  margin:3.4rem 0 0;
+  border-top:1px solid var(--line);
+}
+.faq-i{counter-increment:faq;border-bottom:1px solid var(--line)}
+
+.faq-q{
+  display:flex;align-items:baseline;gap:1.3rem;
+  padding:1.45rem 0;cursor:pointer;
+  font-size:clamp(.92rem,1.5vw,1.08rem);font-weight:700;
+  text-transform:uppercase;letter-spacing:-.015em;line-height:1.35;
+  color:var(--ink);
+  transition:color .25s;
+  /* The default triangle, twice: Firefox and the old WebKit spelling. It is
+     replaced by the marker drawn in ::after below. */
+  list-style:none;
+}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q:hover{color:var(--blue-d)}
+/* Keyboard focus lands on the summary, and without this the only signal is
+   the row opening -- which is also what a mouse does, so there is none. */
+.faq-i:focus-within .faq-q{color:var(--blue-d)}
+
+.faq-q::before{
+  content:counter(faq,decimal-leading-zero);
+  flex:none;width:2.4rem;
+  font-size:.68rem;font-weight:700;letter-spacing:.18em;
+  font-variant-numeric:tabular-nums;color:var(--blue);
+  text-transform:none;
+}
+
+/* The marker is two crossed gradients rather than a glyph, so it is the same
+   1.5px as the hairlines it sits among at any size, and rotating it 45deg
+   turns the plus into a cross on open -- one element, both states. */
+.faq-q::after{
+  content:'';
+  flex:none;margin-inline-start:auto;
+  width:13px;height:13px;
+  align-self:center;
+  background:
+    linear-gradient(var(--blue),var(--blue)) center/100% 1.5px no-repeat,
+    linear-gradient(var(--blue),var(--blue)) center/1.5px 100% no-repeat;
+  transition:transform .3s cubic-bezier(.16,1,.3,1);
+}
+.faq-i[open] .faq-q::after{transform:rotate(45deg)}
+
+/* Indented to the number's column, so every answer starts on the same line
+   the questions do. */
+.faq-a{padding:0 2.4rem 1.7rem calc(2.4rem + 1.3rem)}
+.faq-a p{
+  font-size:.88rem;line-height:1.85;color:var(--ink2);
+  max-width:68ch;
+}
+
+@media(max-width:768px){
+  .phero-trust{margin-top:1.6rem}
+  .faq{margin-top:2.4rem}
+  .faq-q{gap:.9rem;padding:1.25rem 0}
+  .faq-q::before{width:1.9rem}
+  .faq-a{padding:0 0 1.4rem calc(1.9rem + .9rem)}
+}

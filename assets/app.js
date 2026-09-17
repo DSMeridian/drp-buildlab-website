@@ -455,6 +455,26 @@ document.querySelectorAll('[data-count]').forEach(el=>cntIO.observe(el));
  * because f.sel has the same order in every language. */
 const DEMO_SERVICE = ['none','starter','custom','update','extras','undecided'];
 
+/* The partner application's signal. Same rule as pushDemoRequest below it:
+ * nothing that identifies anybody. A name, an email and a profile URL are all
+ * on that form and none of them travel -- what goes is which channel and
+ * which audience bracket was picked, by index, because the labels are
+ * translated and the raw text would report one choice under two names. */
+const PARTNER_CHANNEL = ['none','instagram','tiktok','youtube','linkedin','newsletter','offline','other'];
+
+function pushPartnerRequest(){
+  const ch = document.getElementById('pa-kanaal');
+  const reach = document.getElementById('pa-bereik');
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'partner_request',
+    partner_channel: PARTNER_CHANNEL[ch ? ch.selectedIndex : -1] || 'unknown',
+    partner_reach: reach && reach.selectedIndex > 0 ? reach.selectedIndex : 0,
+    demo_market: window.__DRP_MARKET__ || '',
+    demo_language: document.documentElement.lang || '',
+  });
+}
+
 function pushDemoRequest(){
   const sel = document.getElementById('f-pakket');
   const i = sel ? sel.selectedIndex : -1;
@@ -467,34 +487,44 @@ function pushDemoRequest(){
   });
 }
 
-const demoForm = document.getElementById('formWrap');
-if(demoForm){
-  const ferrBox = document.getElementById('ferr');
-  const submitBtn = document.getElementById('fSubmitBtn');
-  demoForm.addEventListener('submit', function(e){
+/* Post a Netlify form over fetch and swap in the success panel, or put the
+ * error box up and give the button back. Two forms use this now -- the demo
+ * request on /contact and the partner application on /partner-worden -- and
+ * the behaviour has to be the same for both: a form that silently succeeded
+ * on a 500 would lose a lead on one page and a partner on the other. */
+function wireAjaxForm(o){
+  const form = document.getElementById(o.form);
+  if(!form) return;
+  const errBox = document.getElementById(o.err);
+  const submitBtn = document.getElementById(o.btn);
+  form.addEventListener('submit', function(e){
     e.preventDefault();
-    if(ferrBox) ferrBox.classList.remove('on');
+    if(errBox) errBox.classList.remove('on');
     if(submitBtn) submitBtn.disabled = true;
-    const data = new FormData(demoForm);
+    const data = new FormData(form);
     fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
       body: new URLSearchParams(data).toString()
     })
     .then(res=>{
       // fetch resolves on 404/500 too — only 2xx counts as delivered
       if(!res.ok) throw new Error('HTTP '+res.status);
-      demoForm.style.display = 'none';
-      document.getElementById('succ').classList.add('on');
-      pushDemoRequest();
+      form.style.display = 'none';
+      const succ = document.getElementById(o.succ);
+      if(succ) succ.classList.add('on');
+      if(o.sent) o.sent();
     })
     .catch(()=>{
       if(submitBtn) submitBtn.disabled = false;
-      if(ferrBox){
-        ferrBox.classList.add('on');
-        ferrBox.scrollIntoView({block:'nearest', behavior:'smooth'});
+      if(errBox){
+        errBox.classList.add('on');
+        errBox.scrollIntoView({block:'nearest', behavior:'smooth'});
       }
     });
   });
 }
+
+wireAjaxForm({form:'formWrap', err:'ferr', succ:'succ', btn:'fSubmitBtn', sent:pushDemoRequest});
+wireAjaxForm({form:'partnerForm', err:'paErr', succ:'paSucc', btn:'paSubmitBtn', sent:pushPartnerRequest});
 
 
 function qs(sel){return document.querySelector(sel)}
@@ -560,7 +590,7 @@ function applyLang(lang,persist){
   const md=qs('meta[name="description"]');
   if(md) md.setAttribute('content',t['meta.desc.'+pg]||t['meta.desc']);
   const ld=qs('.ld-name'); if(ld) ld.textContent=t['loader'];
-  const NAVKEYS={home:'nav.home',about:'nav.about',pricing:'nav.pricing',contact:'nav.contact',cta:'nav.cta'};
+  const NAVKEYS={home:'nav.home',about:'nav.about',pricing:'nav.pricing',contact:'nav.contact',cta:'nav.cta',partner:'nav.partner'};
   qsa('[data-nav]').forEach(el=>{ const k=NAVKEYS[el.dataset.nav]; if(k&&t[k]) el.textContent=t[k]; });
   /* The menu's group headings. "Volg ons" is the social section's own key, so
      only the word "Menu" needed adding. */
@@ -594,9 +624,110 @@ function applyLang(lang,persist){
   const hs=qs('.hero-sub'); if(hs) hs.innerHTML=t['hero.sub'];
   const hb=qsa('.hero-acts .btn'); if(hb[0]) hb[0].textContent=t['hero.cta1']; if(hb[1]) hb[1].textContent=t['hero.cta2'];
   const sh=qs('.shint span'); if(sh) sh.textContent=t['hero.scroll'];
-  /* The same five claims, now the ticked row under the headline. */
-  const trust=document.getElementById('heroTrust');
-  if(trust&&t['mq']) trust.innerHTML=t['mq'].map(i=>`<li>${i}</li>`).join('');
+  /* The same five claims, now the ticked row under the headline -- and,
+     since the editorial rebuild reached the inner pages, under the three
+     page headers as well. Filled by class rather than by the hero's id:
+     it is one object fed by one key, on whichever pages carry it. */
+  if(t['mq']){
+    const row=t['mq'].map(i=>`<li>${i}</li>`).join('');
+    qsa('.trust').forEach(el=>{el.innerHTML=row;});
+  }
+  /* ── The partner programme ────────────────────────────────────────────
+     Published in Dutch and English only, so every key below is absent in the
+     other ten languages and every lookup is guarded. A market that does not
+     have the page never loads it, but a reader can still switch language on
+     a market that has two -- and when the string is missing the page keeps
+     the words it was prerendered with rather than emptying itself. */
+  const pah=document.getElementById('partner-how');
+  if(pah){
+    const pt=pah.querySelector('.stag'); if(pt&&t['pa.how.tag']) pt.textContent=t['pa.how.tag'];
+    const ph2=pah.querySelector('.sh'); if(ph2&&t['pa.how.h2']){resetSh(ph2);ph2.innerHTML=t['pa.how.h2'];}
+    const ps2=pah.querySelector('.ssub'); if(ps2&&t['pa.how.sub']) ps2.textContent=t['pa.how.sub'];
+    const pr=pah.querySelectorAll('.srow');
+    (t['pa.how.steps']||[]).forEach((st,i)=>{
+      if(!pr[i]) return;
+      const a=pr[i].querySelector('.stitle'); if(a) a.textContent=st.t;
+      const b=pr[i].querySelector('.stxt');   if(b) b.textContent=st.b;
+      const c=pr[i].querySelector('.stime');  if(c) c.textContent=st.d;
+    });
+  }
+  const pat=document.getElementById('partner-terms');
+  if(pat){
+    const tt=pat.querySelector('.stag'); if(tt&&t['pa.terms.tag']) tt.textContent=t['pa.terms.tag'];
+    const th=pat.querySelector('.sh'); if(th&&t['pa.terms.h2']){resetSh(th);th.innerHTML=t['pa.terms.h2'];}
+    const tr=pat.querySelectorAll('.term');
+    (t['pa.terms.rows']||[]).forEach((row,i)=>{
+      if(!tr[i]) return;
+      const n=tr[i].querySelector('.term-n'); if(n) n.textContent=row[0];
+      const v=tr[i].querySelector('.term-v'); if(v) v.textContent=row[1];
+    });
+  }
+  const paa=document.getElementById('partner-apply');
+  if(paa){
+    const at2=paa.querySelector('.stag'); if(at2&&t['pa.apply.tag']) at2.textContent=t['pa.apply.tag'];
+    const ah2=paa.querySelector('.sh'); if(ah2&&t['pa.apply.h2']){resetSh(ah2);ah2.innerHTML=t['pa.apply.h2'];}
+    const al=paa.querySelector('.ct-lede'); if(al&&t['pa.apply.sub']) al.textContent=t['pa.apply.sub'];
+    /* The two notes beside the form, label over value. */
+    const lbl=paa.querySelectorAll('.ci-lbl'), val=paa.querySelectorAll('.ci-val');
+    (t['pa.apply.notes']||[]).forEach((n,i)=>{
+      if(lbl[i]) lbl[i].textContent=n[0];
+      /* The first carries a mailto; only the second is plain text. */
+      if(val[i]&&!val[i].querySelector('a')) val[i].textContent=n[1];
+    });
+    /* The form. Labels by id, so reordering the fields cannot silently
+       re-label them the way an index would. */
+    const F={'pa-vnaam':'pa.f.first','pa-anaam':'pa.f.last','pa-email':'pa.f.email',
+             'pa-kanaal':'pa.f.channel','pa-profiel':'pa.f.profile','pa-bereik':'pa.f.reach',
+             'pa-code':'pa.f.code','pa-bericht':'pa.f.msg'};
+    Object.keys(F).forEach(id=>{
+      const k=t[F[id]]; if(!k) return;
+      const l=paa.querySelector('label[for="'+id+'"]'); if(l) l.textContent=k;
+    });
+    const P={'pa-vnaam':'pa.p.first','pa-anaam':'pa.p.last','pa-email':'pa.p.email',
+             'pa-profiel':'pa.p.profile','pa-code':'pa.p.code','pa-bericht':'pa.p.msg'};
+    Object.keys(P).forEach(id=>{
+      const k=t[P[id]]; if(!k) return;
+      const el=document.getElementById(id); if(el) el.placeholder=k;
+    });
+    const chan=document.getElementById('pa-kanaal');
+    if(chan&&t['pa.sel.channel']) t['pa.sel.channel'].forEach((o,i)=>{ if(chan.options[i]) chan.options[i].textContent=o; });
+    const reach=document.getElementById('pa-bereik');
+    if(reach&&t['pa.sel.reach']) t['pa.sel.reach'].forEach((o,i)=>{ if(reach.options[i]) reach.options[i].textContent=o; });
+    const pc=document.getElementById('paConsentLbl'); if(pc&&t['pa.f.consent']) pc.textContent=t['pa.f.consent'];
+    const pb=document.getElementById('paSubmitBtn'); if(pb&&t['pa.f.submit']) pb.textContent=t['pa.f.submit'];
+    const pet=document.getElementById('paErrT'); if(pet&&t['pa.err.h']) pet.textContent=t['pa.err.h'];
+    const peb=document.getElementById('paErrB'); if(peb&&t['pa.err.p']) peb.innerHTML=t['pa.err.p'];
+    const psh=paa.querySelector('.succ h3'); if(psh&&t['pa.succ.h']) psh.textContent=t['pa.succ.h'];
+    const psp=paa.querySelector('.succ p');  if(psp&&t['pa.succ.p']) psp.textContent=t['pa.succ.p'];
+  }
+  const paf=document.getElementById('partner-faq');
+  if(paf){
+    const ft2=paf.querySelector('.stag'); if(ft2&&t['pa.faq.tag']) ft2.textContent=t['pa.faq.tag'];
+    const fh2=paf.querySelector('.sh'); if(fh2&&t['pa.faq.h2']){resetSh(fh2);fh2.innerHTML=t['pa.faq.h2'];}
+    const fd2=paf.querySelectorAll('details');
+    (t['pa.faq.items']||[]).forEach((item,i)=>{
+      if(!fd2[i]) return;
+      const sm=fd2[i].querySelector('summary'); if(sm) sm.textContent=item.q;
+      const ap=fd2[i].querySelector('p');       if(ap) ap.innerHTML=item.a;
+    });
+  }
+
+  /* ── The referred visitor's note on the demo form ──────────────────────
+     Shown only when there is a code AND this language has the string. The
+     hidden field beside it is filled by referral.js regardless, so a market
+     without the copy still attributes the referral -- it just does not
+     announce it. Hidden again on a language switch that has no string, or
+     the reader would be left with a sentence in the wrong language. */
+  const rnote=document.getElementById('refNote');
+  if(rnote){
+    const rcode=window.__DRP_REF__;
+    if(rcode&&t['ref.applied']){
+      rnote.innerHTML=t['ref.applied'].split('{code}').join('<strong>'+rcode+'</strong>');
+      rnote.hidden=false;
+    }else{
+      rnote.hidden=true;
+    }
+  }
   const how=document.getElementById('hoe-het-werkt');
   if(how){
     const ht=how.querySelector('.stag'); if(ht) ht.textContent=t['how.tag'];

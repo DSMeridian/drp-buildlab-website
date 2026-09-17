@@ -1583,3 +1583,254 @@ nav:not(.s) .market-sw select:hover{color:#fff;border-color:rgba(255,255,255,.5)
 /* The steps already carry their own numbers; they get the same caps heading so
    the two sections read as one system. */
 .stitle{text-transform:uppercase;letter-spacing:-.02em}
+
+/* ─────────────────────────────────────────────
+   HERO — the lattice, placed
+
+   assets/hero3d.js draws a turning wireframe cube into this canvas. Every
+   rule here is about where it sits and what it must not cover: the editorial
+   hero is bottom-anchored, so the type occupies the lower-left and the cube
+   takes the space above and to the right of it that the rebuild left empty.
+
+   A positioned box rather than inset:0. The scene is centred in its own
+   canvas, so a full-bleed canvas would centre the cube on the screen -- which
+   is exactly where the headline is. Giving the canvas the corner puts the
+   cube in the corner, and costs a fraction of the pixels to fill.
+───────────────────────────────────────────── */
+#hero3d{
+  position:absolute;
+  top:-5%;
+  right:-6%;
+  width:min(64vw,820px);
+  height:min(82vh,820px);
+  /* Above the aurora (z-index -2) and the grain, below .hero-content (2). */
+  z-index:1;
+  /* Decorative, and it sits over the top half of the hero: without this it
+     would eat the pointer on its way to the nav and the scroll hint. */
+  pointer-events:none;
+  /* The canvas is sized in device pixels by the script; these keep the CSS
+     box authoritative whatever it writes into width/height. */
+  display:block;
+  /* Nothing is drawn until the context is up and the first frame is out, so
+     the canvas fades in rather than appearing mid-turn. Roughly with the
+     headline, which finishes its rise at 1.6s. */
+  opacity:0;
+  transition:opacity 1.2s cubic-bezier(.16,1,.3,1) .35s;
+  /* Dissolve the edges. Without it the cube ends on four hard canvas edges
+     that read as a box sitting on the hero rather than a depth in it. */
+  -webkit-mask-image:radial-gradient(64% 64% at 52% 44%,#000 0%,rgba(0,0,0,.78) 62%,transparent 88%);
+  mask-image:radial-gradient(64% 64% at 52% 44%,#000 0%,rgba(0,0,0,.78) 62%,transparent 88%);
+}
+#hero3d.on{opacity:1}
+
+/* Right-to-left markets set the headline to the right, so the cube takes the
+   other corner with it. The scene itself is symmetric; only the box moves. */
+[dir="rtl"] #hero3d{right:auto;left:-6%}
+
+/* ── Narrow screens ──────────────────────────────────────────────────────
+   There is no empty corner on a phone -- the hero is one column and the type
+   fills it. The cube goes behind the type instead, larger and much fainter,
+   where it works as a texture on the ground rather than as an object beside
+   the words. */
+@media(max-width:900px){
+  #hero3d{
+    top:2%;
+    right:-22%;
+    width:118vw;
+    height:min(62vh,560px);
+  }
+  #hero3d.on{opacity:.55}
+}
+
+/* The one place the canvas is a liability: a hero shorter than it is wide, on
+   a phone held sideways, leaves the cube sitting on the headline with no room
+   above it to go. */
+@media(max-height:520px) and (orientation:landscape){
+  #hero3d{display:none}
+}
+
+/* prefers-reduced-motion: the script already draws a single still frame and
+   never starts the loop, so the cube is kept -- it is a shape on the hero, not
+   a movement. Only the fade-in is dropped, because that is the animation. */
+@media(prefers-reduced-motion:reduce){
+  #hero3d{transition:none}
+}
+
+/* ─────────────────────────────────────────────
+   INNER PAGES — the editorial system, finished
+
+   39-editorial.css set the grounds and the type roles once and let the
+   sections inherit them, which carried most of the rebuild onto About,
+   Pricing and Contact for free: bracketed labels, caps display type, pills
+   for actions and square corners everywhere else, the numbered cards.
+
+   Two things it did not reach, because they are markup and not tokens, are
+   here:
+
+   1. The page headers opened flat -- label, headline, standfirst -- where the
+      home hero had gained a ticked row of proof under its headline. Three
+      pages opening on a different anatomy from the fourth is the kind of
+      seam a visitor cannot name but can see.
+
+   2. The pricing FAQ was still the old design underneath the new one: five
+      rounded cards on a tinted ground, laid out by inline styles, sitting in
+      a section where everything else is a hairline rule. It is rebuilt below
+      as counted rows, which is what the rest of the site does with a list.
+───────────────────────────────────────────── */
+
+/* ── The proof row on a page header ──────────────────────────────────────
+   The same .trust object as the hero, so it inherits the ticks, the weight
+   and the twelve translations. Only the space around it differs: the header
+   ends here, and the section's own bottom padding is the gap to what
+   follows, so the row's lower margin comes off. */
+.phero-trust{margin:2.2rem 0 0}
+
+/* ── FAQ ─────────────────────────────────────────────────────────────────
+   Counted rows on hairlines, the way the numbered cards and the contact
+   details are set. The number is CSS rather than markup, as it is on the
+   cards: decimal-leading-zero gives 01..05 and renumbers itself if a
+   question is added or dropped, and applyLang refills the summary text
+   without touching it. */
+.faq{
+  counter-reset:faq;
+  /* Flush left across the measure, not a centred block. Every other list on
+     the site -- the contact details, the extras grid, the pricing columns --
+     starts where its heading starts and runs the width of the column, and a
+     narrower box floating in the middle of the section was the last thing on
+     these pages that did not line up with the heading above it. The answers
+     keep a reading measure of their own below. */
+  margin:3.4rem 0 0;
+  border-top:1px solid var(--line);
+}
+.faq-i{counter-increment:faq;border-bottom:1px solid var(--line)}
+
+.faq-q{
+  display:flex;align-items:baseline;gap:1.3rem;
+  padding:1.45rem 0;cursor:pointer;
+  font-size:clamp(.92rem,1.5vw,1.08rem);font-weight:700;
+  text-transform:uppercase;letter-spacing:-.015em;line-height:1.35;
+  color:var(--ink);
+  transition:color .25s;
+  /* The default triangle, twice: Firefox and the old WebKit spelling. It is
+     replaced by the marker drawn in ::after below. */
+  list-style:none;
+}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q:hover{color:var(--blue-d)}
+/* Keyboard focus lands on the summary, and without this the only signal is
+   the row opening -- which is also what a mouse does, so there is none. */
+.faq-i:focus-within .faq-q{color:var(--blue-d)}
+
+.faq-q::before{
+  content:counter(faq,decimal-leading-zero);
+  flex:none;width:2.4rem;
+  font-size:.68rem;font-weight:700;letter-spacing:.18em;
+  font-variant-numeric:tabular-nums;color:var(--blue);
+  text-transform:none;
+}
+
+/* The marker is two crossed gradients rather than a glyph, so it is the same
+   1.5px as the hairlines it sits among at any size, and rotating it 45deg
+   turns the plus into a cross on open -- one element, both states. */
+.faq-q::after{
+  content:'';
+  flex:none;margin-inline-start:auto;
+  width:13px;height:13px;
+  align-self:center;
+  background:
+    linear-gradient(var(--blue),var(--blue)) center/100% 1.5px no-repeat,
+    linear-gradient(var(--blue),var(--blue)) center/1.5px 100% no-repeat;
+  transition:transform .3s cubic-bezier(.16,1,.3,1);
+}
+.faq-i[open] .faq-q::after{transform:rotate(45deg)}
+
+/* Indented to the number's column, so every answer starts on the same line
+   the questions do. */
+.faq-a{padding:0 2.4rem 1.7rem calc(2.4rem + 1.3rem)}
+.faq-a p{
+  font-size:.88rem;line-height:1.85;color:var(--ink2);
+  max-width:68ch;
+}
+
+@media(max-width:768px){
+  .phero-trust{margin-top:1.6rem}
+  .faq{margin-top:2.4rem}
+  .faq-q{gap:.9rem;padding:1.25rem 0}
+  .faq-q::before{width:1.9rem}
+  .faq-a{padding:0 0 1.4rem calc(1.9rem + .9rem)}
+}
+
+/* ─────────────────────────────────────────────
+   PARTNER PROGRAMME
+
+   The page is built almost entirely from components that already existed --
+   the dark page header with its proof row, the numbered steps from the home
+   page, the form wrapper from Contact, the counted FAQ rows from Pricing.
+   That is deliberate: a page selling a commission deal has to look like the
+   rest of the company, and the fastest way to look like the rest of the
+   company is to be made of it.
+
+   Two things are new, and only because nothing on the site did their job:
+   the terms panel, and the line that tells a referred visitor their discount
+   is attached.
+───────────────────────────────────────────── */
+
+/* ── The terms ───────────────────────────────────────────────────────────
+   Six facts, each a label over a figure, on the same hairline grid the
+   extras and the pricing columns use. A panel rather than prose because
+   these are the numbers somebody will come back to check, and a reader
+   checking a commission rate should not have to find it inside a paragraph.
+
+   Three columns for six cells, so it is two clean rows at every width that
+   can hold them. */
+.terms{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);
+  margin-top:3rem;
+}
+.terms>*{min-width:0}
+.term{
+  background:var(--bg);padding:1.6rem 1.7rem;
+  display:flex;flex-direction:column;gap:.55rem;
+  transition:background .25s;
+}
+.term:hover{background:var(--bg2)}
+.term-n{
+  font-size:.6rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--muted);
+}
+.term-v{
+  font-size:1.02rem;font-weight:800;letter-spacing:-.02em;line-height:1.35;
+  color:var(--ink);
+  /* "Maandelijks, per overschrijving" in German is one long word plus one
+     longer word, and these cells are a third of the column. */
+  overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto;
+}
+
+/* ── The referred-visitor note ───────────────────────────────────────────
+   Shown on the demo form when the visitor arrived on a partner's link, so
+   the discount they were promised is visible before they submit rather than
+   only on the quote that turns up later.
+
+   It is hidden in the markup and unhidden by applyLang, and only in the
+   languages that carry the string -- see the note in the contact form. The
+   hidden field beside it is filled either way, so a market without the copy
+   still attributes the referral; it just does not say so out loud. */
+.ref-note{
+  margin:0 0 1rem;padding:.75rem .95rem;
+  border-left:2px solid var(--blue-d);
+  background:rgba(74,144,226,.06);
+  font-size:.8rem;line-height:1.65;color:var(--ink2);
+}
+.ref-note strong{color:var(--blue-d);font-weight:700}
+/* The border is the one thing that has to move: on an Arabic page a rule on
+   the left of the text is a rule at the end of it. */
+[dir="rtl"] .ref-note{border-left:none;border-right:2px solid var(--blue-d)}
+
+@media(max-width:900px){
+  .terms{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px){
+  .terms{grid-template-columns:1fr;margin-top:2.2rem}
+  .term{padding:1.3rem 1.4rem}
+}
