@@ -10,7 +10,32 @@
    aspect-ratio keeps that true once CSS makes the width fluid. */
 .prt img{display:block;width:100%;height:auto;aspect-ratio:5/6;object-fit:cover;background:var(--bg2);border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 60px rgba(26,31,54,.08)}
 .prt figcaption{margin-top:1.4rem}
-.prt-name{display:block;font-size:.6rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--blue-d);margin-bottom:.55rem}
+/* ── The cards link out ──────────────────────────────────────────────────
+   Both partners have a site of their own, and the image is the thing a
+   reader reaches for. Two links per card: the image, taken out of the tab
+   order and hidden from the accessibility tree, and the name, which is the
+   one that carries the label. Otherwise a keyboard lands twice per card and
+   the first stop announces nothing but a filename.
+
+   The lift on hover is 38-depth.css's and is unchanged -- the anchor is a
+   block wrapper around the image, not a new surface. */
+.prt-shot{display:block}
+.prt-shot:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+
+.prt-name{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-size:.6rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--blue-d);margin-bottom:.55rem;
+  transition:color .2s;
+}
+/* The arrow is the affordance: at .6rem in caps with letter-spacing, an
+   underline reads as noise and nothing else says "this leaves the site". */
+a.prt-name::after{content:'↗';font-size:.85em;letter-spacing:0;transition:transform .25s}
+a.prt-name:hover{color:var(--blue-dd)}
+a.prt-name:hover::after{transform:translate(2px,-2px)}
+/* Right to left, the arrow leads rather than trails, and points the way the
+   text runs. */
+[dir="rtl"] a.prt-name::after{content:'↖'}
 .prt-b{font-size:.98rem;color:var(--ink2);line-height:1.7;max-width:34rem}
 .prt-line{display:block;margin-top:.7rem;font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 /* The tagline is English on every page. On an Arabic page it inherited the

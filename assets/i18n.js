@@ -8,7 +8,7 @@
 ══════════════════════════════════════════ */
 const TRANSLATIONS = {
 nl:{
-  'nav.partner':'Marketingpartner worden',
+  'nav.partner':'Partner worden',
   'phero.partner.eye':'Partnerprogramma','phero.partner.h':'Verdien mee aan<br><em>elke aanbeveling.</em>','phero.partner.sub':'Je krijgt een persoonlijke link. Wie er via binnenkomt, krijgt 10% korting op de quotatie \u2014 en jij 5% van elke factuur die betaald wordt.',
   'pa.how.tag':'Hoe het werkt','pa.how.h2':'Van link naar<br><em>uitbetaling.</em>','pa.how.sub':'Geen doelstellingen, geen minimumaantal. Je deelt je link wanneer het past.',
   'pa.how.steps':[{t:'Vraag je link aan',b:'Vul het formulier hieronder in. Je krijgt een persoonlijke link met je eigen code erin.',d:'Jij'},{t:'Deel hem met je publiek',b:'Wie via jouw link een quotatie aanvraagt, krijgt daar automatisch 10% korting op.',d:'Jij'},{t:'De klant betaalt de factuur',b:'Zodra de factuur in het klantenportaal betaald is, staat jouw 5% vast. Niet bij de aanvraag \u2014 bij de betaling.',d:'Wij'},{t:'Maandelijks uitbetaald',b:'Je volgt elke klik, aanvraag en commissie in je eigen dashboard. Wat een maand verdiend is, betalen we de maand erna uit.',d:'Wij'}],
@@ -122,7 +122,7 @@ nl:{
   'cc.manage':'Cookie-instellingen'
 },
 en:{
-  'nav.partner':'Become a marketing partner',
+  'nav.partner':'Become a partner',
   'phero.partner.eye':'Partner programme','phero.partner.h':'Earn from every<br><em>recommendation.</em>','phero.partner.sub':'You get a personal link. Anyone who arrives on it gets 10% off their quote \u2014 and you get 5% of every invoice that gets paid.',
   'pa.how.tag':'How it works','pa.how.h2':'From link to<br><em>payout.</em>','pa.how.sub':'No targets, no minimum. You share your link whenever it suits you.',
   'pa.how.steps':[{t:'Request your link',b:'Fill in the form below. You get a personal link with your own code in it.',d:'You'},{t:'Share it with your audience',b:'Anyone who requests a quote through your link automatically gets 10% off it.',d:'You'},{t:'The client pays the invoice',b:'As soon as the invoice is paid in the client portal, your 5% is locked in. Not on the request \u2014 on the payment.',d:'Us'},{t:'Paid out monthly',b:'You follow every click, request and commission in your own dashboard. What is earned in a month, we pay out the month after.',d:'Us'}],

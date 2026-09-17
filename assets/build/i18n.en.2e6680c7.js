@@ -2,7 +2,7 @@
    The en slice of assets/i18n.js, which is the file to edit. */
 const TRANSLATIONS = {
 "en": {
-  "nav.partner": "Become a marketing partner",
+  "nav.partner": "Become a partner",
   "phero.partner.eye": "Partner programme",
   "phero.partner.h": "Earn from every<br><em>recommendation.</em>",
   "phero.partner.sub": "You get a personal link. Anyone who arrives on it gets 10% off their quote — and you get 5% of every invoice that gets paid.",
