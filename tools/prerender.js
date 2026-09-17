@@ -147,6 +147,11 @@ function stripRuntimeState() {
   document.querySelectorAll('.scta.on').forEach(el => el.classList.remove('on'));
   document.querySelectorAll('[data-counted]').forEach(el => el.removeAttribute('data-counted'));
 
+  /* The loader is 400ms behind DOMContentLoaded, so by serialisation time it
+     has already been sent away. Shipping it with "gone" on it would be the
+     same bug as shipping it removed, one class further along. */
+  document.querySelectorAll('#loader').forEach(el => el.classList.remove('gone'));
+
   /* The hero lattice. hero3d.js sizes the canvas in device pixels and adds
      "on" once it has a context and a first frame, so serializing after it ran
      baked both in: the width and height of whatever viewport this render used,
@@ -260,6 +265,23 @@ function stripRuntimeState() {
   // Wide viewport so the comparison table never enters its scrolling mode
   // during the render; reduced motion so reveals settle without animating.
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 1200 }, reducedMotion: 'reduce' });
+
+  /* Every page is a first visit.
+   *
+   * app.js shows the loader once per session and, on any later page, calls
+   * loaderEl.remove(). sessionStorage is per origin and this run navigates one
+   * page through all 148 of them, so the flag survived from the first render
+   * to the last -- and because this script serialises the DOM it finds, the
+   * removal was baked into the HTML. The loader was in src/index.html and in
+   * exactly one built page out of 148: whichever market happened to render
+   * first. Nobody had seen it in months.
+   *
+   * addInitScript runs before the page's own scripts on every navigation,
+   * which is the only place this can be cleared in time. */
+  await ctx.addInitScript(() => {
+    try { sessionStorage.removeItem('drp-seen'); } catch (e) { /* private mode */ }
+  });
+
   // One page for the whole run: opening sixty-eight was enough for Chromium
   // to crash a target partway through.
   const page = await ctx.newPage();

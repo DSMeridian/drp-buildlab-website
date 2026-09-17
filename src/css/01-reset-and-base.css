@@ -4,7 +4,13 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
 body{
-  background:#fff;
+  /* Black, not white, and not because the hero is black -- because both ends
+     of every page are. Every page opens on a dark section and every page ends
+     on the dark footer, so the only places this colour is ever seen are the
+     overscroll at the top and the bottom, where a white band above a black
+     hero is the page appearing to come apart in your hands. It was #fff from
+     when the site was a white site. */
+  background:#000;
   color:#1a1f36;
   font-family:'Plus Jakarta Sans',sans-serif;
   font-weight:400;
