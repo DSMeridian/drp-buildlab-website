@@ -33,7 +33,6 @@ const TRANSLATIONS = {
   "hero.l1": "Kami mengurus",
   "hero.l2": "kehadiran",
   "hero.l3": "<span class=\"h-accent\">online</span> <span class=\"h-light\">bisnis Anda.</span>",
-  "hero.sub": "Tidak punya situs web? Artinya, Anda tidak ada di dunia maya. DRP BuildLab membuat <strong>situs web yang sepenuhnya disesuaikan</strong> untuk para pengusaha lokal — harganya ditentukan berdasarkan besarnya pekerjaan yang dibutuhkan proyek Anda. Selalu jujur, selalu transparan.",
   "hero.cta1": "Ajukan permintaan demo gratis",
   "hero.cta2": "Lihat pendekatan kami",
   "hero.scroll": "Gulir",

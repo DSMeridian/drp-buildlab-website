@@ -76,7 +76,6 @@ const TRANSLATIONS = {
   "hero.l1": "Wij zorgen",
   "hero.l2": "voor jouw",
   "hero.l3": "<span class=\"h-accent\">online</span> <span class=\"h-light\">aanwezigheid.</span>",
-  "hero.sub": "We bouwen elke website <strong>van nul</strong>, voor één zaak: die van jou. Je betaalt voor het werk, niet voor een pakket.",
   "hero.cta1": "Gratis demo aanvragen",
   "hero.cta2": "Bekijk onze aanpak",
   "hero.scroll": "Scroll",

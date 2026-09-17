@@ -33,7 +33,6 @@ const TRANSLATIONS = {
   "hero.l1": "Zajmujemy się",
   "hero.l2": "Twoją obecnością",
   "hero.l3": "<span class=\"h-accent\">w internecie.</span>",
-  "hero.sub": "Nie masz strony internetowej? To znaczy, że nie istniejesz w sieci. DRP BuildLab tworzy <strong>w pełni spersonalizowane strony internetowe</strong> dla lokalnych przedsiębiorców — cena zależy od nakładu pracy wymaganego w ramach Twojego projektu. Zawsze uczciwie, zawsze przejrzyście.",
   "hero.cta1": "Poproś o bezpłatną wersję demonstracyjną",
   "hero.cta2": "Zobacz nasze podejście",
   "hero.scroll": "Przewiń",

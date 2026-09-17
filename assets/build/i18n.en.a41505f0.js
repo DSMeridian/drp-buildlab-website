@@ -76,7 +76,6 @@ const TRANSLATIONS = {
   "hero.l1": "We take care",
   "hero.l2": "of your",
   "hero.l3": "<span class=\"h-accent\">online</span> <span class=\"h-light\">presence.</span>",
-  "hero.sub": "We build every website <strong>from scratch</strong>, for one business: yours. You pay for the work, not for a package.",
   "hero.cta1": "Request free demo",
   "hero.cta2": "See our approach",
   "hero.scroll": "Scroll",

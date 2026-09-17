@@ -33,7 +33,6 @@ const TRANSLATIONS = {
   "hero.l1": "オンラインでの",
   "hero.l2": "存在感は",
   "hero.l3": "<span class=\"h-accent\">私たちに</span> <span class=\"h-light\">おまかせ。</span>",
-  "hero.sub": "ウェブサイトがない？　それなら、ネット上では存在しないも同然です。DRP BuildLabは、地元の起業家のために<strong>完全にオーダーメイドのウェブサイトを</strong>制作しています。料金は、プロジェクトに必要な作業量に基づいて決定されます。常に誠実で、常に透明性を重視しています。",
   "hero.cta1": "無料デモを申し込む",
   "hero.cta2": "当社の取り組みをご覧ください",
   "hero.scroll": "スクロール",

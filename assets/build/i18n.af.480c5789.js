@@ -33,7 +33,6 @@ const TRANSLATIONS = {
   "hero.l1": "Ons sorg vir",
   "hero.l2": "jou aanlyn",
   "hero.l3": "<span class=\"h-accent\">teenwoordigheid.</span>",
-  "hero.sub": "Geen webwerf? Dan bestaan jy nie aanlyn nie. DRP BuildLab bou <strong>heeltemal pasgemaakte webwerwe</strong> vir plaaslike entrepreneurs — die prys is gebaseer op die hoeveelheid werk wat jou projek vereis. Altyd eerlik, altyd deursigtig.",
   "hero.cta1": "Vra gratis demo aan",
   "hero.cta2": "Sien ons benadering",
   "hero.scroll": "Gly",

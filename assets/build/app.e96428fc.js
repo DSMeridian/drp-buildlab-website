@@ -621,7 +621,6 @@ function applyLang(lang,persist){
     // only animate once the loader is out of the way (A12)
     if(heroRevealed) h1.querySelectorAll('.hl-i').forEach(el=>el.classList.add('in'));
   }
-  const hs=qs('.hero-sub'); if(hs) hs.innerHTML=t['hero.sub'];
   const hb=qsa('.hero-acts .btn'); if(hb[0]) hb[0].textContent=t['hero.cta1']; if(hb[1]) hb[1].textContent=t['hero.cta2'];
   const sh=qs('.shint span'); if(sh) sh.textContent=t['hero.scroll'];
   /* The same five claims, now the ticked row under the headline -- and,
