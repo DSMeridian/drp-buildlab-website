@@ -100,7 +100,7 @@
    it is sitting on near-black and its ink-coloured type is invisible. It gets
    a scrim of its own rather than a veil on the hero: the hero's ::after is
    spoken for by the grain layer. */
-nav:not(.s){background:linear-gradient(180deg,rgba(8,11,22,.86) 0%,rgba(8,11,22,0) 100%)}
+nav:not(.s){background:linear-gradient(180deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,0) 100%)}
 nav:not(.s) .nname{color:#fff}
 nav:not(.s) .nlinks a{color:rgba(255,255,255,.74)}
 nav:not(.s) .nlinks a:hover,nav:not(.s) .nlinks a.active{color:#fff}

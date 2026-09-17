@@ -76,7 +76,7 @@ const TRANSLATIONS = {
   "hero.l1": "Wij zorgen",
   "hero.l2": "voor jouw",
   "hero.l3": "<span class=\"h-accent\">online</span> <span class=\"h-light\">aanwezigheid.</span>",
-  "hero.sub": "Geen website? Dan besta je niet online. DRP BuildLab bouwt <strong>websites volledig op maat</strong> voor lokale ondernemers — de prijs bepalen we op basis van de hoeveelheid werk die in jouw project gaat. Altijd eerlijk, altijd transparant.",
+  "hero.sub": "We bouwen elke website <strong>van nul</strong>, voor één zaak: die van jou. Je betaalt voor het werk, niet voor een pakket.",
   "hero.cta1": "Gratis demo aanvragen",
   "hero.cta2": "Bekijk onze aanpak",
   "hero.scroll": "Scroll",

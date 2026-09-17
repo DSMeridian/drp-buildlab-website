@@ -13,10 +13,19 @@
 ───────────────────────────────────────────── */
 #hero3d{
   position:absolute;
-  top:-5%;
-  right:-6%;
-  width:min(64vw,820px);
-  height:min(82vh,820px);
+  /* Cropped off the right edge the way the reference crops it, but high
+     rather than low, and smaller than the first attempt at it.
+
+     It cannot take the bottom-right corner the reference uses: on this hero
+     that corner holds the two actions, and the lower-left holds a headline
+     set at 7rem. Sized to fill the one quarter of the frame the editorial
+     layout leaves empty -- at min(78vw,980px) the limb cut straight through
+     "PRESENCE." and came out behind the demo button, which is a planet
+     competing with the two things on the page that have a job. */
+  top:-15%;
+  right:-9%;
+  width:min(58vw,735px);
+  height:min(86vh,735px);
   /* Above the aurora (z-index -2) and the grain, below .hero-content (2). */
   z-index:1;
   /* Decorative, and it sits over the top half of the hero: without this it

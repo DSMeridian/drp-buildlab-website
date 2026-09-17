@@ -18,7 +18,11 @@
    it is text.
 ───────────────────────────────────────────── */
 .dark{
-  --bg:#080b16;
+  /* Solid black, at the client's request -- it was #080b16, a near-black
+     with enough blue in it to read as dark grey against the white the page
+     used to be. On true black the bone grounds land harder and the globe's
+     limb has nothing to compete with. */
+  --bg:#000000;
   --bg2:#0f142a;
   --bg3:#151b33;
   --ink:#ffffff;
@@ -50,9 +54,9 @@
 .dark::before{
   content:'';position:absolute;inset:-25%;z-index:-2;pointer-events:none;
   background:
-    radial-gradient(38% 42% at 18% 22%, rgba(74,144,226,.34) 0%, transparent 68%),
-    radial-gradient(32% 34% at 82% 26%, rgba(122,179,237,.20) 0%, transparent 70%),
-    radial-gradient(44% 40% at 60% 92%, rgba(46,116,201,.28) 0%, transparent 72%);
+    radial-gradient(38% 42% at 18% 22%, rgba(74,144,226,.065) 0%, transparent 68%),
+    radial-gradient(32% 34% at 82% 26%, rgba(122,179,237,.035) 0%, transparent 70%),
+    radial-gradient(44% 40% at 60% 92%, rgba(46,116,201,.05) 0%, transparent 72%);
   animation:auroraDrift 28s cubic-bezier(.45,0,.55,1) infinite alternate;
   will-change:transform;
 }
@@ -67,13 +71,13 @@
 .dark::after{
   content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
   background-image:
-    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.38'/%3E%3C/svg%3E");
+    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.24'/%3E%3C/svg%3E");
   background-size:88px 88px,88px 88px,180px 180px;
   -webkit-mask-image:radial-gradient(ellipse 88% 78% at 50% 45%,#000 28%,transparent 100%);
           mask-image:radial-gradient(ellipse 88% 78% at 50% 45%,#000 28%,transparent 100%);
-  opacity:.9;
+  opacity:.6;
 }
 
 /* Figures that carry meaning by colour, restated for a dark field: the
@@ -101,7 +105,7 @@
    Last thing before the footer, and the footer is dark too: the two now
    read as one closing block rather than a white strip wedged between. */
 .ctastrip.dark{padding-block:8rem}
-.ctastrip.dark .sh{text-shadow:0 22px 60px rgba(8,11,22,.6)}
+.ctastrip.dark .sh{text-shadow:0 22px 60px rgba(0,0,0,.7)}
 
 /* The rail floats over whatever is behind it, so over a dark section its
    ink-coloured labels disappear. app.js watches which section is at the
