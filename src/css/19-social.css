@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────────
    SOCIAL
 ───────────────────────────────────────────── */
-.soc-sec{background:var(--bg2);padding:8rem 5vw;display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center}
+.soc-sec{background:var(--bone);padding:8rem 5vw;display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center}
 .soc-card{
   position:relative;aspect-ratio:1;max-width:400px;
   background:var(--blue);border-radius:18px;

@@ -5,6 +5,11 @@
   --bg:#ffffff;
   --bg2:#f5f7fc;
   --bg3:#ebeff8;
+  /* The alternate ground. Warm, where --bg2 and --bg3 are blue-tinted,
+     because its job is to be a different ground rather than a paler version
+     of the same one -- two cool near-whites read as a printing fault, one
+     cool and one warm reads as two surfaces. Only .sec-alt uses it. */
+  --bone:#f4f2eb;
   --ink:#1a1f36;
   --ink2:#2d3454;
   --blue:#4a90e2;

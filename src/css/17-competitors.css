@@ -2,6 +2,13 @@
    COMPETITORS
 ───────────────────────────────────────────── */
 .ctbl{width:100%;margin-top:5rem;border:1px solid var(--line);overflow:hidden}
+/* On bone the table becomes a white panel with a recessed header, rather
+   than a transparent grid whose header is the only thing lifted. The hover
+   has to move with it: --bg2 is white here, which is the panel it would be
+   highlighting against. */
+.sec-alt .ctbl{background:#fff}
+.sec-alt .chd{background:var(--bg3)}
+.sec-alt .crow:hover{background:var(--bg3)}
 .chd{display:grid;grid-template-columns:2fr 1.2fr 1.2fr 1fr;background:var(--bg2);border-bottom:1px solid var(--line)}
 .crow{display:grid;grid-template-columns:2fr 1.2fr 1.2fr 1fr;border-bottom:1px solid var(--line);transition:background .25s}
 .crow:last-child{border-bottom:none}

@@ -27,6 +27,11 @@ a{text-decoration:none;color:inherit}
   --bg:#ffffff;
   --bg2:#f5f7fc;
   --bg3:#ebeff8;
+  /* The alternate ground. Warm, where --bg2 and --bg3 are blue-tinted,
+     because its job is to be a different ground rather than a paler version
+     of the same one -- two cool near-whites read as a printing fault, one
+     cool and one warm reads as two surfaces. Only .sec-alt uses it. */
+  --bone:#f4f2eb;
   --ink:#1a1f36;
   --ink2:#2d3454;
   --blue:#4a90e2;
@@ -200,7 +205,29 @@ nav.s{
    SHARED SECTION
 ───────────────────────────────────────────── */
 .sec{padding:6.5rem 5vw}
-.sec-alt{background:var(--bg)}
+/* ── The alternate ground ────────────────────────────────────────
+   This class did nothing for most of the site's life: it was
+   background:var(--bg), and --bg is #ffffff, so every "alternating" section
+   was the same flat white as the one before it, separated by a hairline.
+   The page went slack after the hero because the light half of it was one
+   uninterrupted sheet.
+
+   It alternates now. The mechanism is 37-dark.css's rather than a new one:
+   the section redefines the surface tokens instead of restyling what sits
+   on it, so every panel inside picks up a ground that suits the new one
+   with no per-component rules. --bg2 is the tint that lifts a panel off
+   white, so on bone it becomes white and panels lift the other way.
+
+   --bg is deliberately left alone. The cards that use it -- the pricing
+   columns, the extras, the about figures, the partner terms -- are white
+   panels, and white is exactly what they should stay on bone. Redefining
+   it here would have painted them bone-on-bone and made them vanish. */
+.sec-alt{
+  background:var(--bone);
+  --bg2:#ffffff;
+  --bg3:#efeade;
+  --line:rgba(46,38,24,.13);
+}
 /* C4 — anchor jumps land below the fixed nav, not underneath it */
 section[id]{scroll-margin-top:90px}
 /* Thin rule separates sections without heavy color change */
@@ -361,6 +388,13 @@ section[id]{scroll-margin-top:90px}
    COMPETITORS
 ───────────────────────────────────────────── */
 .ctbl{width:100%;margin-top:5rem;border:1px solid var(--line);overflow:hidden}
+/* On bone the table becomes a white panel with a recessed header, rather
+   than a transparent grid whose header is the only thing lifted. The hover
+   has to move with it: --bg2 is white here, which is the panel it would be
+   highlighting against. */
+.sec-alt .ctbl{background:#fff}
+.sec-alt .chd{background:var(--bg3)}
+.sec-alt .crow:hover{background:var(--bg3)}
 .chd{display:grid;grid-template-columns:2fr 1.2fr 1.2fr 1fr;background:var(--bg2);border-bottom:1px solid var(--line)}
 .crow{display:grid;grid-template-columns:2fr 1.2fr 1.2fr 1fr;border-bottom:1px solid var(--line);transition:background .25s}
 .crow:last-child{border-bottom:none}
@@ -446,7 +480,7 @@ section[id]{scroll-margin-top:90px}
 /* ─────────────────────────────────────────────
    SOCIAL
 ───────────────────────────────────────────── */
-.soc-sec{background:var(--bg2);padding:8rem 5vw;display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center}
+.soc-sec{background:var(--bone);padding:8rem 5vw;display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center}
 .soc-card{
   position:relative;aspect-ratio:1;max-width:400px;
   background:var(--blue);border-radius:18px;
@@ -1931,4 +1965,65 @@ nav:not(.s) .market-sw select:hover{color:#fff;border-color:rgba(255,255,255,.5)
 @media(max-width:560px){
   .terms{grid-template-columns:1fr;margin-top:2.2rem}
   .term{padding:1.3rem 1.4rem}
+}
+
+/* ─────────────────────────────────────────────
+   LIGHT SECTIONS — the same material as the dark ones
+
+   The dark sections carry three layers: a drifting aurora, an 88px grid and
+   a grain. The light sections carried nothing, which is half of why the page
+   went flat below the hero — not only were the grounds all one colour, they
+   were one *texture*, and the two halves of the page read as two different
+   materials with a seam between them.
+
+   This is the dark sections' own layer, re-tinted. Same 88px module, same
+   SVG turbulence, same radial mask that fades it out at the edges so it
+   never ends on a hard line. Only the alpha changes: ink at 3.5% where the
+   dark uses white at 5%, because a grid that is legible on near-black is a
+   grid you can count on paper.
+
+   Deliberately quiet. At this weight it is not a pattern a visitor will
+   notice or be able to describe; it is the difference between a screen and a
+   sheet of paper, and it is doing its job when nobody mentions it.
+
+   ── Why ::after and not a background-image on the section ──
+   The sections already use background for their ground, and .sec-alt now
+   redefines tokens on top of that. A separate layer keeps the texture
+   independent of whichever ground it lands on, so white and bone get the
+   same drawing without either rule knowing about the other.
+───────────────────────────────────────────── */
+
+/* isolation, not overflow:hidden. The pseudo-element below sits at z-index:-1
+   so it paints above the section's own background and below its content, and
+   that only works inside a stacking context -- without isolation it would
+   drop behind the ground and be invisible. overflow:hidden would have done
+   it too and would also have clipped the pricing column's 50px glow and the
+   cards' hover shadows, which reach past their section. */
+.sec:not(.dark),.soc-sec{position:relative;isolation:isolate}
+
+.sec:not(.dark)::after,.soc-sec::after{
+  content:'';
+  position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(26,31,54,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(26,31,54,.035) 1px,transparent 1px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+  background-size:88px 88px,88px 88px,180px 180px;
+  /* Fades the drawing out before it reaches the edge, so the grid never
+     collides with the hairline between two sections and turn the seam into a
+     ladder. The same ellipse the dark sections use, one notch wider because
+     a light section is usually shorter. */
+  -webkit-mask-image:radial-gradient(ellipse 94% 84% at 50% 45%,#000 30%,transparent 100%);
+          mask-image:radial-gradient(ellipse 94% 84% at 50% 45%,#000 30%,transparent 100%);
+}
+
+/* The grid is a drawing, not information. On a screen that cannot resolve a
+   1px line at 3.5% it is either invisible or it is banding, and the grain is
+   the part that survives. Drop the lines and keep the paper. */
+@media (max-width:560px){
+  .sec:not(.dark)::after,.soc-sec::after{
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+    background-size:180px 180px;
+  }
 }

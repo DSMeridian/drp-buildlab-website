@@ -1,0 +1,60 @@
+/* ─────────────────────────────────────────────
+   LIGHT SECTIONS — the same material as the dark ones
+
+   The dark sections carry three layers: a drifting aurora, an 88px grid and
+   a grain. The light sections carried nothing, which is half of why the page
+   went flat below the hero — not only were the grounds all one colour, they
+   were one *texture*, and the two halves of the page read as two different
+   materials with a seam between them.
+
+   This is the dark sections' own layer, re-tinted. Same 88px module, same
+   SVG turbulence, same radial mask that fades it out at the edges so it
+   never ends on a hard line. Only the alpha changes: ink at 3.5% where the
+   dark uses white at 5%, because a grid that is legible on near-black is a
+   grid you can count on paper.
+
+   Deliberately quiet. At this weight it is not a pattern a visitor will
+   notice or be able to describe; it is the difference between a screen and a
+   sheet of paper, and it is doing its job when nobody mentions it.
+
+   ── Why ::after and not a background-image on the section ──
+   The sections already use background for their ground, and .sec-alt now
+   redefines tokens on top of that. A separate layer keeps the texture
+   independent of whichever ground it lands on, so white and bone get the
+   same drawing without either rule knowing about the other.
+───────────────────────────────────────────── */
+
+/* isolation, not overflow:hidden. The pseudo-element below sits at z-index:-1
+   so it paints above the section's own background and below its content, and
+   that only works inside a stacking context -- without isolation it would
+   drop behind the ground and be invisible. overflow:hidden would have done
+   it too and would also have clipped the pricing column's 50px glow and the
+   cards' hover shadows, which reach past their section. */
+.sec:not(.dark),.soc-sec{position:relative;isolation:isolate}
+
+.sec:not(.dark)::after,.soc-sec::after{
+  content:'';
+  position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(26,31,54,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(26,31,54,.035) 1px,transparent 1px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+  background-size:88px 88px,88px 88px,180px 180px;
+  /* Fades the drawing out before it reaches the edge, so the grid never
+     collides with the hairline between two sections and turn the seam into a
+     ladder. The same ellipse the dark sections use, one notch wider because
+     a light section is usually shorter. */
+  -webkit-mask-image:radial-gradient(ellipse 94% 84% at 50% 45%,#000 30%,transparent 100%);
+          mask-image:radial-gradient(ellipse 94% 84% at 50% 45%,#000 30%,transparent 100%);
+}
+
+/* The grid is a drawing, not information. On a screen that cannot resolve a
+   1px line at 3.5% it is either invisible or it is banding, and the grain is
+   the part that survives. Drop the lines and keep the paper. */
+@media (max-width:560px){
+  .sec:not(.dark)::after,.soc-sec::after{
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+    background-size:180px 180px;
+  }
+}
