@@ -5,39 +5,89 @@
   /* ── Translations ── */
   var T = {
     nl: {
-      greeting:  'Hallo! Ik ben de assistent van DRP BuildLab. Stel me gerust een vraag over onze diensten, prijzen of aanpak — ik help je graag.',
-      chips:     ['Wat kost een website?', 'Wat zit er in het basispakket?', 'Hoe werkt jullie proces?', 'Wat doen jullie niet?'],
-      sub:       'Assistent · Normaal binnen 1 min',
-      input:     'Stel een vraag…',
-      connErr:   'Verbindingsfout. Controleer je verbinding of stuur een mail naar info@drpbuildlab.com.',
+      greeting: 'Hallo! Ik ben de assistent van DRP BuildLab. Stel gerust een vraag over onze diensten, prijzen of aanpak.',
+      chips:    ['Wat kost een website?', 'Wat zit er in het basispakket?', 'Hoe werkt jullie proces?', 'Wat doen jullie niet?'],
+      sub:      'Assistent · Normaal binnen 1 min',
+      input:    'Stel een vraag…',
+      err:      'Er ging iets mis. Probeer opnieuw of mail naar info@drpbuildlab.com.',
     },
     en: {
-      greeting:  'Hello! I’m the assistant of DRP BuildLab. Feel free to ask about our services, pricing or approach — happy to help.',
-      chips:     ['How much does a website cost?', 'What’s in the starter package?', 'How does your process work?', 'What do you not do?'],
-      sub:       'Assistant · Usually within 1 min',
-      input:     'Ask a question…',
-      connErr:   'Connection error. Check your connection or email info@drpbuildlab.com.',
+      greeting: 'Hello! I am the assistant of DRP BuildLab. Feel free to ask about our services, pricing or approach.',
+      chips:    ['How much does a website cost?', 'What is in the starter package?', 'How does your process work?', 'What do you not do?'],
+      sub:      'Assistant · Usually within 1 min',
+      input:    'Ask a question…',
+      err:      'Something went wrong. Please try again or email info@drpbuildlab.com.',
     },
     fr: {
-      greeting:  'Bonjour ! Je suis l’assistant de DRP BuildLab. N’hésitez pas à poser des questions sur nos services, tarifs ou approche.',
-      chips:     ['Combien coûte un site web ?', 'Que comprend le forfait de base ?', 'Comment fonctionne votre processus ?', 'Que ne faites-vous pas ?'],
-      sub:       'Assistant · Généralement en moins d’1 min',
-      input:     'Posez une question…',
-      connErr:   'Erreur de connexion. Vérifiez votre connexion ou écrivez à info@drpbuildlab.com.',
+      greeting: 'Bonjour ! Je suis l\'assistant de DRP BuildLab. N\'hésitez pas à poser des questions sur nos services, tarifs ou approche.',
+      chips:    ['Combien coûte un site web ?', 'Que comprend le forfait de base ?', 'Comment fonctionne votre processus ?', 'Que ne faites-vous pas ?'],
+      sub:      'Assistant · Généralement en moins d\'1 min',
+      input:    'Posez une question…',
+      err:      'Quelque chose s\'est mal passé. Réessayez ou écrivez à info@drpbuildlab.com.',
     },
     es: {
-      greeting:  '¡Hola! Soy el asistente de DRP BuildLab. No dudes en preguntar sobre nuestros servicios, precios o enfoque.',
-      chips:     ['¿Cuánto cuesta un sitio web?', '¿Qué incluye el paquete básico?', '¿Cómo funciona vuestro proceso?', '¿Qué no hacéis?'],
-      sub:       'Asistente · Normalmente en menos de 1 min',
-      input:     'Haz una pregunta…',
-      connErr:   'Error de conexión. Comprueba tu conexión o escribe a info@drpbuildlab.com.',
+      greeting: '¡Hola! Soy el asistente de DRP BuildLab. No dudes en preguntar sobre nuestros servicios, precios o enfoque.',
+      chips:    ['¿Cuánto cuesta un sitio web?', '¿Qué incluye el paquete básico?', '¿Cómo funciona vuestro proceso?', '¿Qué no hacéis?'],
+      sub:      'Asistente · Normalmente en menos de 1 min',
+      input:    'Haz una pregunta…',
+      err:      'Algo salió mal. Inténtalo de nuevo o escribe a info@drpbuildlab.com.',
     },
     de: {
-      greeting:  'Hallo! Ich bin der Assistent von DRP BuildLab. Stellen Sie gerne Fragen zu unseren Leistungen, Preisen oder unserem Ansatz.',
-      chips:     ['Was kostet eine Website?', 'Was ist im Basispaket enthalten?', 'Wie läuft Ihr Prozess ab?', 'Was machen Sie nicht?'],
-      sub:       'Assistent · Normalerweise innerhalb von 1 Min.',
-      input:     'Eine Frage stellen…',
-      connErr:   'Verbindungsfehler. Überprüfen Sie Ihre Verbindung oder schreiben Sie an info@drpbuildlab.com.',
+      greeting: 'Hallo! Ich bin der Assistent von DRP BuildLab. Stellen Sie gerne Fragen zu unseren Leistungen, Preisen oder unserem Ansatz.',
+      chips:    ['Was kostet eine Website?', 'Was ist im Basispaket enthalten?', 'Wie läuft Ihr Prozess ab?', 'Was machen Sie nicht?'],
+      sub:      'Assistent · Normalerweise innerhalb von 1 Min.',
+      input:    'Eine Frage stellen…',
+      err:      'Etwas ist schiefgelaufen. Bitte erneut versuchen oder schreiben Sie an info@drpbuildlab.com.',
+    },
+    id: {
+      greeting: 'Halo! Saya asisten DRP BuildLab. Silakan bertanya tentang layanan, harga, atau pendekatan kami.',
+      chips:    ['Berapa biaya website?', 'Apa yang termasuk paket dasar?', 'Bagaimana proses Anda?', 'Apa yang tidak Anda lakukan?'],
+      sub:      'Asisten · Biasanya dalam 1 menit',
+      input:    'Ajukan pertanyaan…',
+      err:      'Terjadi kesalahan. Coba lagi atau email info@drpbuildlab.com.',
+    },
+    ja: {
+      greeting: 'こんにちは！DRP BuildLabのアシスタントです。サービス、料金、アプローチについてお気軽にお問いください。',
+      chips:    ['ウェブサイトの料金は？', 'スターターパッケージの内容は？', 'プロセスは？', '対応していないことは？'],
+      sub:      'アシスタント · 通序1分以内',
+      input:    '質問を入力…',
+      err:      'エラーが発生しました。再度お試しいただくか、info@drpbuildlab.comまでお問い合わせください。',
+    },
+    ar: {
+      greeting: 'مرحباً! أنا مساعد DRP BuildLab. لا تتردد في السؤال عن خدماتنا أو أسعارنا!',
+      chips:    ['كم تكلفة إنشاء موقع؟', 'ماذا يتضمن الباقة الأساسية؟', 'كيف يعمل نظامكم؟', 'ماذا لا تفعلون؟'],
+      sub:      'المساعد · عادةً خلال دقيقة',
+      input:    'اطرح سؤالاً…',
+      err:      'حدث خطأ! حاول مرة أخرى أو راسلنا عبر info@drpbuildlab.com',
+      rtl:      true,
+    },
+    it: {
+      greeting: 'Ciao! Sono l\'assistente di DRP BuildLab. Sentiti libero di chiedere dei nostri servizi, prezzi o approccio.',
+      chips:    ['Quanto costa un sito web?', 'Cosa include il pacchetto base?', 'Come funziona il vostro processo?', 'Cosa non fate?'],
+      sub:      'Assistente · Di solito entro 1 min',
+      input:    'Fai una domanda…',
+      err:      'Qualcosa è andato storto. Riprova o scrivi a info@drpbuildlab.com.',
+    },
+    pt: {
+      greeting: 'Olá! Sou o assistente da DRP BuildLab. Fique à vontade para perguntar sobre os nossos serviços, preços ou abordagem.',
+      chips:    ['Quanto custa um website?', 'O que inclui o pacote básico?', 'Como funciona o vosso processo?', 'O que não fazem?'],
+      sub:      'Assistente · Normalmente em menos de 1 min',
+      input:    'Faça uma pergunta…',
+      err:      'Algo correu mal. Tente novamente ou escreva para info@drpbuildlab.com.',
+    },
+    pl: {
+      greeting: 'Cześć! Jestem asystentem DRP BuildLab. Śmiało pytaj o nasze usługi, ceny lub podejście do pracy.',
+      chips:    ['Ile kosztuje strona internetowa?', 'Co zawiera pakiet podstawowy?', 'Jak wygląda wasz proces?', 'Czego nie robicie?'],
+      sub:      'Asystent · Zazwyczaj w ciągu 1 min',
+      input:    'Zadaj pytanie…',
+      err:      'Coś poszło nie tak. Spróbuj ponownie lub napisz na info@drpbuildlab.com.',
+    },
+    af: {
+      greeting: 'Hallo! Ek is die assistent van DRP BuildLab. Vra gerus oor ons dienste, pryse of benadering.',
+      chips:    ['Hoeveel kos \'n webwerf?', 'Wat is in die basispakket?', 'Hoe werk julle proses?', 'Wat doen julle nie?'],
+      sub:      'Assistent · Gewoonlik binne 1 min',
+      input:    'Stel \'n vraag…',
+      err:      'Iets het fout gegaan. Probeer weer of e-pos info@drpbuildlab.com.',
     },
   };
 
@@ -46,7 +96,8 @@
     return T[lang] || T['en'];
   }
 
-  var s = strings();
+  var s    = strings();
+  var rtl  = !!s.rtl;
   var history = [];
   var busy    = false;
   var opened  = false;
@@ -54,7 +105,7 @@
   /* ── Toggle button ── */
   var toggle = document.createElement('button');
   toggle.className = 'chat-toggle';
-  toggle.setAttribute('aria-label', 'Chat openen');
+  toggle.setAttribute('aria-label', 'Chat');
   toggle.innerHTML =
     '<svg class="chat-ico-chat" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
     '<svg class="chat-ico-close" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>' +
@@ -95,11 +146,11 @@
   input.className = 'chat-input';
   input.placeholder = s.input;
   input.rows = 1;
-  input.setAttribute('aria-label', 'Bericht');
+  input.setAttribute('aria-label', s.input);
 
   var sendBtn = document.createElement('button');
   sendBtn.className = 'chat-send';
-  sendBtn.setAttribute('aria-label', 'Verzenden');
+  sendBtn.setAttribute('aria-label', 'Send');
   sendBtn.innerHTML = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
 
   var inputRow = document.createElement('div');
@@ -113,6 +164,7 @@
   panel.setAttribute('role', 'dialog');
   panel.setAttribute('aria-modal', 'false');
   panel.setAttribute('aria-label', 'DRP BuildLab chat');
+  if (rtl) { panel.setAttribute('dir', 'rtl'); }
   panel.appendChild(hd);
   panel.appendChild(msgsEl);
   panel.appendChild(chipsEl);
@@ -232,7 +284,7 @@
               finish();
             } else if (evt.type === 'error') {
               typing.remove();
-              addMsg('error', evt.message || s.connErr);
+              addMsg('error', s.err);
               setBusy(false);
             }
           });
@@ -244,7 +296,7 @@
     .catch(function (err) {
       if (err.name === 'AbortError') return;
       typing.remove();
-      addMsg('error', s.connErr);
+      addMsg('error', s.err);
       setBusy(false);
     });
 
