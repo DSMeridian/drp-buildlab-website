@@ -111,15 +111,19 @@ const PAGES = [
   { src: 'src/over-ons/index.html', out: 'over-ons/index.html', route: '/over-ons' },
   { src: 'src/prijzen/index.html', out: 'prijzen/index.html', route: '/prijzen' },
   { src: 'src/contact/index.html', out: 'contact/index.html', route: '/contact' },
-  /* langs: the first page that is not published everywhere. The affiliate
-     terms are a contract -- a commission rate, a discount, a payout schedule
-     -- and machine-translated contract copy is not something to put in front
-     of a reader in a language nobody here has checked. So the page exists in
-     the two languages it was written in, the other twenty-two markets never
-     generate it, and (see stripUnbuiltRoutes) they do not link to it either.
-     Drop the key when the copy has been reviewed in the rest. */
+  /* The partner page used to carry a langs: ['nl', 'en'] key -- the affiliate
+     terms are a contract, and there was no copy for it in the other ten
+     languages. The copy now exists in all twelve (the pa.* keys in
+     assets/i18n.js), so the page builds everywhere like the other four.
+
+     Eight of those ten are machine translation that no speaker has read yet,
+     and this is contract copy: a commission rate, a discount, a payout
+     schedule. Restoring the key is the way to pull the page back to Dutch
+     and English if a figure turns out wrong in a language. The machinery for
+     a restricted page -- pageLive, stripUnbuiltRoutes, the hreflang and
+     picker filters -- is all still here. */
   { src: 'src/partner-worden/index.html', out: 'partner-worden/index.html',
-    route: '/partner-worden', langs: ['nl', 'en'] },
+    route: '/partner-worden' },
 ];
 
 /* Is this page published in this market's language? Pages with no langs key
@@ -152,12 +156,13 @@ function marketiseLinks(html, code) {
    page for that language, which is worse than the alternate being missing. */
 /* Take out the links to pages this market does not have.
  *
- * The partner page is published in two languages, so on the other twenty-two
- * markets the footer link to it would be a 404 in the footer of every page --
- * the worst kind, because it is on every page and nobody clicks their own
- * footer. Links that point at a restricted route carry data-route with that
- * route on them, and this removes the whole element wherever the market has
- * no such page.
+ * No page is restricted at the moment -- the partner page was the one, and it
+ * now builds everywhere -- so this is currently a no-op. It stays because a
+ * restricted page's footer link would otherwise be a 404 in the footer of
+ * every page in that market: the worst kind, because it is on every page and
+ * nobody clicks their own footer. Links that point at a restricted route
+ * carry data-route with that route on them, and this removes the whole
+ * element wherever the market has no such page.
  *
  * data-route rather than matching on the href: build() rewrites hrefs to carry
  * the market prefix, so the href is a different string in every market while
@@ -208,11 +213,11 @@ function marketPicker(current, route, page) {
      next country has it. */
   /* One entry per country, but on a restricted page the entry has to be a
      market that actually has the page -- which is not always the country's
-     default. The Gulf countries default to Arabic and the partner page is not
-     published in Arabic, so /ae/ is listed through /ae/en/ or not at all. A
-     country with no live variant drops out of the list entirely: the
-     programme genuinely is not offered there, and a picker that navigates to
-     a 404 is worse than a shorter picker. */
+     default. The Gulf countries default to Arabic, and while the partner page
+     was English-only /ae/ was listed through /ae/en/ or not at all. The
+     partner page is published in Arabic now, so every country resolves to its
+     own default again and no country drops out. Kept for the next restricted
+     page: a picker that navigates to a 404 is worse than a shorter picker. */
   const byRegion = {};
   for (const code of CODES) {
     if (code !== countryOf(code)) continue;
@@ -271,8 +276,10 @@ const AUTONYM = {
 function languageLinks(current, route, page) {
   /* A country published in two languages where the page exists in only one
      has nothing to switch to, so the whole control goes rather than offering
-     a link to a page that was never generated. Belgium on the partner page is
-     the live case: /be/partner-worden exists, /be/fr/partner-worden does not. */
+     a link to a page that was never generated. Belgium on the partner page
+     used to be the live case -- /be/partner-worden existed, /be/fr/ did not.
+     Both exist now, and no page is restricted, so this guard no longer fires
+     for anything; it is kept for the next page that is. */
   const versions = variantsOf(current).filter(c => !page || pageLive(page, c));
   if (versions.length < 2) return '';
   return versions.map(code => {
@@ -530,9 +537,15 @@ function marketSchema(html, code) {
  * Names come from the same nav.* keys the visible nav uses, so a crumb and
  * the link it describes cannot drift apart. In Dutch they are already the
  * words that were hard-coded here, which is why /be/ only gains the prefix. */
+/* Every route in PAGES needs an entry. A route missing from here looked up
+   t[undefined], and JSON.stringify(undefined) is the bare word undefined --
+   so every partner page shipped {"name":undefined} inside its JSON-LD, which
+   is not JSON and which no crawler parsed. The throw below is why that
+   cannot come back quietly the next time a page is added. */
 const CRUMB_KEY = {
   '': 'nav.home', '/over-ons': 'nav.about',
   '/prijzen': 'nav.pricing', '/contact': 'nav.contact',
+  '/partner-worden': 'nav.partner',
 };
 
 function breadcrumb(html, code, route) {
@@ -544,7 +557,16 @@ function breadcrumb(html, code, route) {
     + ',' + '"item":' + JSON.stringify(ORIGIN + '/' + pathOf(code) + path) + '}';
 
   const items = [crumb(1, t['nav.home'], '/')];
-  if (route) items.push(crumb(2, t[CRUMB_KEY[route]], route));
+  if (route) {
+    const key = CRUMB_KEY[route];
+    const name = key && t[key];
+    if (!name) {
+      throw new Error('no breadcrumb label for route "' + route + '" in '
+        + MARKETS[code].lang + ' -- add the route to CRUMB_KEY in '
+        + 'build-locales.js, and the key it names to every language');
+    }
+    items.push(crumb(2, name, route));
+  }
 
   return spliceBetween(html, '"itemListElement": [', LF + '  ]',
     '"itemListElement": [' + LF + items.join(',' + LF) + LF + '  ]');

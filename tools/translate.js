@@ -18,6 +18,13 @@
  *   node tools/translate.js --list                      what DeepL can target
  *   node tools/translate.js --langs=id --dry-run        show what would be sent
  *   node tools/translate.js --langs=id --replace       discard existing drafts
+ *   node tools/translate.js --langs=id --keys=pa.,nav.partner   only these keys
+ *
+ * --keys takes a comma-separated list of key prefixes and translates only the
+ * keys that start with one of them. DeepL bills per character, so adding one
+ * page to ten languages should not pay to re-translate the other four pages
+ * that were already reviewed. A filtered run still merges: the draft keeps
+ * every key it already had for that language and gains the ones asked for.
  *
  * Runs merge: translating one language leaves the others in the draft
  * file alone. Pass --replace only to throw the existing ones away.
@@ -46,6 +53,7 @@ const flag = name => argv.includes('--' + name);
 
 const OPTS = {
   langs: arg('langs', '').split(',').map(s => s.trim()).filter(Boolean),
+  keys: arg('keys', '').split(',').map(s => s.trim()).filter(Boolean),
   provider: arg('provider', 'deepl'),
   source: arg('source', 'en'),
   list: flag('list'),
@@ -140,7 +148,13 @@ function restore(translated, held, where) {
     }
     out = out.replace(token, () => held[i]);
   }
-  return out.replace(/<\/?x>/g, '');
+  /* DeepL escapes apostrophes as &#x27; -- it is producing HTML, and an
+     apostrophe is legal to escape there. Most of these strings are written
+     to the page with textContent, which does not decode entities, so the
+     reader saw the escape itself: "Word &#x27;n vennoot", "L&#x27;envoi a
+     echoue." Decoded here rather than at render time, because the value in
+     i18n.js should be the text somebody reviewing it expects to read. */
+  return out.replace(/<\/?x>/g, '').replace(/&#(?:x27|39);/g, "'");
 }
 
 /* ── which DeepL variant a language key asks for ───────────────────────── */
@@ -289,9 +303,24 @@ async function supported() {
     process.exit(0);
   }
 
-  const source = TRANSLATIONS[OPTS.source];
+  let source = TRANSLATIONS[OPTS.source];
   if (!source) { console.error('no "' + OPTS.source + '" block in i18n.js'); process.exit(1); }
   if (!OPTS.langs.length) { console.error('nothing to do: pass --langs=id,ja'); process.exit(1); }
+
+  /* --keys: narrow the source to the keys asked for, before anything is
+     counted, costed or sent. Done here rather than by filtering the drafts
+     afterwards so the billable-chars line below tells the truth. */
+  if (OPTS.keys.length) {
+    const wanted = Object.keys(source).filter(k => OPTS.keys.some(p => k.startsWith(p)));
+    if (!wanted.length) {
+      console.error('no key in "' + OPTS.source + '" starts with any of: ' + OPTS.keys.join(', '));
+      process.exit(1);
+    }
+    const narrowed = {};
+    for (const k of wanted) narrowed[k] = source[k];
+    source = narrowed;
+    console.log('keys filter     : ' + OPTS.keys.join(', ') + '  (' + wanted.length + ' keys)');
+  }
 
   const entries = [];
   collect(source, [], entries);
@@ -336,8 +365,14 @@ async function supported() {
     if (translated.length !== entries.length) {
       throw new Error('got ' + translated.length + ' strings back, expected ' + entries.length);
     }
-    drafts[lang.toLowerCase()] = rebuild(source,
+    const built = rebuild(source,
       entries.map((e, i) => ({ path: e.path, text: translated[i] })));
+    /* A filtered run tops up the language's existing draft instead of
+       replacing it, or translating one page would delete the other four. */
+    const key = lang.toLowerCase();
+    drafts[key] = OPTS.keys.length
+      ? Object.assign({}, drafts[key] || {}, built)
+      : built;
     process.stdout.write(' done');
   }
 

@@ -8,6 +8,12 @@ docs/
 .env.*
 !.env.example
 
+# Machine-translation drafts from tools/translate.js. No page loads this
+# file; a language only becomes real once someone moves the block into
+# assets/i18n.js. Committing it would put unreviewed copy in the repo
+# looking exactly like the reviewed copy beside it.
+assets/i18n.draft.js
+
 # Python bytecode from serve.py
 __pycache__/
 *.pyc
