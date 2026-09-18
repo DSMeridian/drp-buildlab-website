@@ -2723,6 +2723,13 @@ select optgroup,
   border-bottom-left-radius: 4px;
 }
 
+/* Markdown rendered inside bot messages */
+.chat-msg.bot p          { margin: 0 0 .35em; }
+.chat-msg.bot p:last-child { margin-bottom: 0; }
+.chat-msg.bot ul         { margin: .25em 0 .35em 1.1em; padding: 0; }
+.chat-msg.bot li         { margin-bottom: .2em; }
+.chat-msg.bot strong     { font-weight: 700; }
+
 /* Typing dots while streaming */
 .chat-typing {
   display: flex;
@@ -2821,6 +2828,9 @@ select optgroup,
 .chat-send:disabled { opacity: .4; cursor: not-allowed; }
 .chat-send svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
+/* Hide WhatsApp button whenever chat panel is open (avoids overlap at all sizes) */
+.chat-panel-open .wa-float { display: none !important; }
+
 /* Mobile: panel takes almost the full screen */
 @media (max-width: 480px) {
   .chat-panel {
@@ -2837,9 +2847,5 @@ select optgroup,
   .chat-toggle {
     bottom: 5.5rem;
     right: 1rem;
-  }
-  /* Hide WhatsApp button behind the full-screen panel on mobile */
-  .chat-panel-open .wa-float {
-    display: none;
   }
 }

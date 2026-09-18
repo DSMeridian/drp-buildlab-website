@@ -253,6 +253,9 @@
 .chat-send:disabled { opacity: .4; cursor: not-allowed; }
 .chat-send svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
+/* Hide WhatsApp button whenever chat panel is open (avoids overlap at all sizes) */
+.chat-panel-open .wa-float { display: none !important; }
+
 /* Mobile: panel takes almost the full screen */
 @media (max-width: 480px) {
   .chat-panel {
@@ -269,9 +272,5 @@
   .chat-toggle {
     bottom: 5.5rem;
     right: 1rem;
-  }
-  /* Hide WhatsApp button behind the full-screen panel on mobile */
-  .chat-panel-open .wa-float {
-    display: none;
   }
 }
