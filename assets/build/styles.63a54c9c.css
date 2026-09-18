@@ -2394,18 +2394,44 @@ select optgroup,
    the breakpoints in 39-editorial.css and 44-page-art.css, which come
    earlier in the concatenation and cannot reach forward.
 
-   ── Why svh ──
-   100vh on iOS Safari is the *large* viewport: the height the page has once
-   the toolbars have scrolled away. Used here it would size the opening to a
-   screen taller than the one actually visible, and put the bottom of the
-   drawing behind the toolbar -- which is the bug this file exists to fix,
-   reintroduced by the unit. svh is the small viewport, toolbars showing,
-   and is the only one of the three that is correct on first paint. The vh
-   line above it is the fallback for anything that does not know svh; it is
-   wrong by exactly the toolbar, which is better than being ignored.
+   ── Why lvh for the height and svh for the content ──
+   The three viewport units answer different questions and the opening asks
+   both of them.
+
+   How tall should it be drawn? The large viewport, lvh: the whole screen,
+   toolbars discounted. Sized to svh instead, the opening stops exactly
+   where the browser's bar begins -- and on the phones whose bar floats over
+   the page rather than sitting under it, the strip behind that bar is the
+   top of the next section, showing through. That is the report this file
+   is answering: the opening looked cut off at the bottom on a phone.
+
+   Where may its content sit? Inside the small viewport, svh: the height
+   that is certainly visible with the bar showing. So the opening is given a
+   bottom padding of exactly calc(100lvh - 100svh) -- the bar's own height,
+   asked of the browser rather than guessed -- and everything in it lands
+   where svh alone would have put it. The screen is filled; nothing is put
+   under the bar. On a viewport with no such bar the two units are equal,
+   the padding is zero, and none of this applies.
+
+   The plain vh line under each min-height is the fallback for anything that
+   knows neither unit; it is wrong by exactly the toolbar, which is better
+   than being ignored.
 ───────────────────────────────────────────── */
 
 @media(max-width:960px){
+  /* The opening is drawn to the large viewport and its content kept inside
+     the small one. --uibar is the difference: the browser's own bar,
+     measured in CSS rather than guessed, and zero on a desktop-style
+     viewport where the two units agree. It is declared as a fallback of 0px
+     first so anything that does not know lvh/svh simply gets the old
+     spacing rather than an invalid calc. */
+  .hero,.phero{
+    --uibar:0px;
+    padding-bottom:calc(var(--pb) + var(--uibar));
+  }
+  .hero{--pb:4.5rem}
+  .phero{--pb:4.5rem}
+
   /* The inner pages become a flex column so the copy can be centred in
      whatever height the screen turns out to have, instead of being pinned
      under a top padding chosen for one device. The padding stays as the
@@ -2414,7 +2440,7 @@ select optgroup,
      set the height itself. */
   .phero{
     min-height:100vh;
-    min-height:100svh;
+    min-height:100lvh;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -2426,8 +2452,27 @@ select optgroup,
      here would only risk diverging from the file that owns it. */
   .hero{
     min-height:100vh;
-    min-height:100svh;
+    min-height:100lvh;
   }
+
+  /* The scroll hint is the one thing in the opening placed from the bottom
+     edge rather than by the flow, so it is the one thing the extra padding
+     does not move. It gets the same lift by hand. */
+  .shint{bottom:calc(2.2rem + var(--uibar))}
+}
+
+@supports (height:100lvh) and (height:100svh){
+  @media(max-width:960px){
+    .hero,.phero{--uibar:calc(100lvh - 100svh)}
+  }
+}
+
+/* The bottom spacing per breakpoint, restated as --pb because the rule above
+   owns padding-bottom for the whole of the mobile range and would otherwise
+   flatten these. The top padding still comes from the files that set it. */
+@media(max-width:768px){
+  .hero{--pb:3.5rem}
+  .phero{--pb:3rem}
 }
 
 /* ── The smallest screens ────────────────────────────────────────────────
@@ -2444,8 +2489,8 @@ select optgroup,
    the four inner openings and the home page inside the viewport with the
    headline, the standfirst and the whole drawing visible without scrolling. */
 @media(max-width:380px){
-  .hero{padding-block:5.5rem 2rem}
-  .phero{padding-block:5.5rem 2rem}
+  .hero{padding-top:5.5rem;--pb:2rem}
+  .phero{padding-top:5.5rem;--pb:2rem}
   /* The standfirst carries the same measure at every width, and at 320 that
      is three lines of a sentence written for one. Nothing is lost by
      letting it set a notch smaller here. */
@@ -2492,7 +2537,7 @@ select optgroup,
    nothing but reserving clearance. It starts to matter at exactly the point
    the content is what sets the height -- which is the case being fixed. */
 @media(max-width:960px) and (max-height:780px){
-  .phero{padding-block:6rem 2rem}
+  .phero{padding-top:6rem;--pb:2rem}
   .phero-grid{gap:1.9rem}
 
   /* The headlines stop responding long before the screen stops shrinking,
@@ -2520,7 +2565,7 @@ select optgroup,
 @media(max-width:420px) and (max-height:640px){
   .phero-sub{font-size:.9rem}
   .phero-grid{gap:1.5rem}
-  .phero{padding-block:5.25rem 1.5rem}
+  .phero{padding-top:5.25rem;--pb:1.5rem}
 }
 
 /* ── The home page at 320 ────────────────────────────────────────────────
@@ -2535,7 +2580,7 @@ select optgroup,
    matters; it is no longer larger than the screen. */
 @media(max-width:380px){
   .hero-h1{font-size:clamp(2.5rem,11.4vw,8.2rem)}
-  .hero{padding-block:4.75rem 1.5rem}
+  .hero{padding-top:4.75rem;--pb:1.5rem}
   .trust{gap:.4rem .9rem;margin:1rem 0 1.2rem}
   .trust li{font-size:.72rem}
   .hero-acts{gap:.6rem}
@@ -2555,7 +2600,7 @@ select optgroup,
    trust row and two buttons is most of the screen before a word of the
    page has been read. */
 @media(max-height:480px) and (orientation:landscape){
-  .hero,.phero{min-height:0}
+  .hero,.phero{min-height:0;--uibar:0px}
   .phero-art{display:none}
   .phero{padding-block:6rem 2rem}
   .hero{padding-block:5rem 1.5rem}
