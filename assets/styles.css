@@ -358,7 +358,14 @@ section[id]{scroll-margin-top:90px}
 .ab-quote{font-size:clamp(1.3rem,2.2vw,2.2rem);font-weight:700;line-height:1.2;letter-spacing:-.025em;margin-bottom:1.25rem;color:var(--ink)}
 .ab-quote em{font-style:italic;font-weight:300;color:var(--blue-t)}
 .ab-sig{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.ab-nums{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2.5rem}
+/* minmax(0,1fr), not 1fr. A bare 1fr floors each column at its content's
+   min-content width, and in a market that converts, the content is a figure
+   with no space in it -- Rp8.500.000, ¥82,000, $470.000. The column refused
+   to go below that figure's width and the grid grew wider than the page,
+   which put a horizontal scrollbar on the About page in Indonesian between
+   about 500 and 620px. With a zero floor the columns shrink and the label
+   wraps instead. */
+.ab-nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2.5rem}
 .abn{background:var(--bg);padding:1.6rem 1.8rem}
 .abn-v{font-size:clamp(1.45rem,6.5vw,2.5rem);font-weight:800;letter-spacing:-.04em;color:var(--blue-t);line-height:1;margin-bottom:.2rem}
 .abn-l{font-size:.68rem;color:var(--muted)}
@@ -847,6 +854,13 @@ body.nav-open{overflow:hidden}
   /* Services intro + helper text readable */
   #diensten .ssub{font-size:.95rem}
 }
+/* Two figures side by side need about 270px a cell once a price is
+   converted -- the same sum as the extras grid above, for the same reason.
+   Below 640px that is not there, and it was 480 before, which left a band
+   of widths where the grid was wider than the screen. */
+@media(max-width:640px){
+  .ab-nums{grid-template-columns:1fr}
+}
 @media(max-width:560px){
   .nav-right{gap:.7rem}
   .lang-btn{padding:.2rem .3rem;font-size:.64rem}
@@ -856,8 +870,6 @@ body.nav-open{overflow:hidden}
   .exgrid{grid-template-columns:1fr}
   .ex-wide{grid-column:span 1}
   .addon{flex-direction:column;align-items:flex-start;padding:1.3rem 1.4rem}
-  /* Two converted figures do not fit side by side on a phone. */
-  .ab-nums{grid-template-columns:1fr}
   .abn{padding:1.25rem 1.3rem}
   .plan{padding:2rem 1.4rem}
   .pprice{font-size:clamp(1.9rem,9vw,3rem)}
@@ -2120,9 +2132,22 @@ nav:not(.s) .market-sw select:hover{color:#fff;border-color:rgba(255,255,255,.5)
    inside the two-column header, so a page header without a drawing would
    keep the larger size. */
 .phero-grid .phero-h1{font-size:clamp(2.4rem,4.6vw,4.2rem)}
-/* Below 960px the columns collapse and the copy has the full width back. */
+/* Below 960px the columns collapse and the copy has the full width back, so
+   the headline goes back up to the size 39-editorial.css sets -- with one
+   change to that size, which is the floor.
+
+   clamp(2.6rem,6.4vw,5.4rem) stops responding below about 406px, because
+   under that width 6.4vw is smaller than the 2.6rem floor and the floor
+   wins. The type then stays 41.6px while the screen keeps narrowing, and by
+   320px the longest word on these pages is wider than the page: measured,
+   RECOMMENDATION wanted 381px in a 288px column, Uberraschungen 384, and
+   verrassingen 301. All three hit the break-word backstop and set with a
+   letter or two orphaned on a line of their own.
+
+   9.2vw with a 1.85rem floor keeps scaling all the way down and leaves the
+   worst of those three about 7% of clearance at every width from 320 up. */
 @media(max-width:960px){
-  .phero-grid .phero-h1{font-size:clamp(2.6rem,6.4vw,5.4rem)}
+  .phero-grid .phero-h1{font-size:clamp(1.85rem,9.2vw,5.4rem)}
 }
 
 /* The drawing. A square box that never grows past its natural size, pinned

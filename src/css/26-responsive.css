@@ -57,6 +57,13 @@
   /* Services intro + helper text readable */
   #diensten .ssub{font-size:.95rem}
 }
+/* Two figures side by side need about 270px a cell once a price is
+   converted -- the same sum as the extras grid above, for the same reason.
+   Below 640px that is not there, and it was 480 before, which left a band
+   of widths where the grid was wider than the screen. */
+@media(max-width:640px){
+  .ab-nums{grid-template-columns:1fr}
+}
 @media(max-width:560px){
   .nav-right{gap:.7rem}
   .lang-btn{padding:.2rem .3rem;font-size:.64rem}
@@ -66,8 +73,6 @@
   .exgrid{grid-template-columns:1fr}
   .ex-wide{grid-column:span 1}
   .addon{flex-direction:column;align-items:flex-start;padding:1.3rem 1.4rem}
-  /* Two converted figures do not fit side by side on a phone. */
-  .ab-nums{grid-template-columns:1fr}
   .abn{padding:1.25rem 1.3rem}
   .plan{padding:2rem 1.4rem}
   .pprice{font-size:clamp(1.9rem,9vw,3rem)}

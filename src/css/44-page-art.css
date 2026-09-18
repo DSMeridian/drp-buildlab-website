@@ -39,9 +39,22 @@
    inside the two-column header, so a page header without a drawing would
    keep the larger size. */
 .phero-grid .phero-h1{font-size:clamp(2.4rem,4.6vw,4.2rem)}
-/* Below 960px the columns collapse and the copy has the full width back. */
+/* Below 960px the columns collapse and the copy has the full width back, so
+   the headline goes back up to the size 39-editorial.css sets -- with one
+   change to that size, which is the floor.
+
+   clamp(2.6rem,6.4vw,5.4rem) stops responding below about 406px, because
+   under that width 6.4vw is smaller than the 2.6rem floor and the floor
+   wins. The type then stays 41.6px while the screen keeps narrowing, and by
+   320px the longest word on these pages is wider than the page: measured,
+   RECOMMENDATION wanted 381px in a 288px column, Uberraschungen 384, and
+   verrassingen 301. All three hit the break-word backstop and set with a
+   letter or two orphaned on a line of their own.
+
+   9.2vw with a 1.85rem floor keeps scaling all the way down and leaves the
+   worst of those three about 7% of clearance at every width from 320 up. */
 @media(max-width:960px){
-  .phero-grid .phero-h1{font-size:clamp(2.6rem,6.4vw,5.4rem)}
+  .phero-grid .phero-h1{font-size:clamp(1.85rem,9.2vw,5.4rem)}
 }
 
 /* The drawing. A square box that never grows past its natural size, pinned
