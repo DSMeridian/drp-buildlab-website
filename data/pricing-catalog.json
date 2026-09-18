@@ -1,0 +1,76 @@
+{
+  "bedrijf": {
+    "naam": "DRP BuildLab",
+    "adres": "Honingstraat 1D, 2220 Hallaar, België",
+    "btw": "BE 1033.313.383",
+    "email": "info@drpbuildlab.com",
+    "telefoon": "+32 473 74 44 31",
+    "whatsapp": "+32 473 74 44 31",
+    "website": "https://drpbuildlab.com/"
+  },
+
+  "diensten": [
+    { "id": "onepager", "categorie": "Website bouw & redesign", "naam": "Onepager basispakket", "type": "basis", "eenheid": "project", "prijs": 499.00, "omschrijving": "1 pagina, inclusief contactformulier. Basisprijs voor elke meerpagina-website." },
+    { "id": "extra-pagina", "categorie": "Website bouw & redesign", "naam": "Extra pagina", "type": "module", "eenheid": "per pagina", "prijs": 79.00, "omschrijving": "Eén bijkomende pagina in dezelfde stijl, bovenop het basispakket." },
+    { "id": "aanpassing-bestaand", "categorie": "Website bouw & redesign", "naam": "Aanpassing bestaande website", "type": "basis", "eenheid": "project", "prijs": 349.00, "omschrijving": "Update/aanpassing binnen de bestaande opzet en huisstijl." },
+    { "id": "vernieuwing-bestaand", "categorie": "Website bouw & redesign", "naam": "Website & webshop vernieuwing", "type": "basis", "eenheid": "project", "prijs": 499.00, "omschrijving": "Frisse, moderne look voor een bestaande site, met behoud van aanbod en huisstijl." },
+    { "id": "shopify-herontwerp", "categorie": "Website bouw & redesign", "naam": "Shopify website & webshop herontwerp", "type": "basis", "eenheid": "project", "prijs": 799.00, "omschrijving": "Volledig herontwerp van een bestaande Shopify-webshop met nieuw thema." },
+    { "id": "webshop-medium", "categorie": "Website bouw & redesign", "naam": "Webshop (B2C, medium)", "type": "basis", "eenheid": "project", "prijs": 999.00, "omschrijving": "Productcatalogus, winkelmandje, checkout en orderbeheer. Richtprijs — op maat, bevestigd in offerte." },
+    { "id": "webshop-uitgebreid", "categorie": "Website bouw & redesign", "naam": "Webshop (Uitgebreid)", "type": "basis", "eenheid": "project", "prijs": 1499.00, "omschrijving": "Uitgebreid winkelwagen- en afrekenproces, weekpakketten/abonnementslogica. Richtprijs — op maat, bevestigd in offerte." },
+    { "id": "noodreparatie", "categorie": "Website bouw & redesign", "naam": "Noodreparatie website", "type": "interventie", "eenheid": "interventie", "prijs": 99.00, "omschrijving": "Dringende herstelling van een acuut probleem op een live website (24-48u)." },
+    { "id": "audit", "categorie": "Website bouw & redesign", "naam": "Website audit & optimalisatie", "type": "module", "eenheid": "project", "prijs": 199.00, "omschrijving": "Doorlichting van structuur, snelheid, mobielvriendelijkheid en vindbaarheid." },
+    { "id": "content-uitbreiding", "categorie": "Website bouw & redesign", "naam": "Content-uitbreiding bestaande website", "type": "module", "eenheid": "project", "prijs": 299.00, "omschrijving": "Extra teksten/informatie toevoegen, met behoud van bestaande look-and-feel." },
+    { "id": "productmigratie", "categorie": "Website bouw & redesign", "naam": "Productmigratie & herstructurering", "type": "module", "eenheid": "project", "prijs": 299.00, "omschrijving": "Overzetting van bestaande producten naar een nieuwe omgeving met heldere categorie-indeling." },
+    { "id": "contactform-herstel", "categorie": "Website bouw & redesign", "naam": "Contactformulier herstel & beveiliging", "type": "interventie", "eenheid": "interventie", "prijs": 89.00, "omschrijving": "Herstel van een contactformulier plus bescherming tegen spam/bots." },
+
+    { "id": "cms", "categorie": "Modules & integraties", "naam": "CMS integratie", "type": "module", "eenheid": "project", "prijs": 149.00, "omschrijving": "Zelf teksten, afbeeldingen en pagina's beheren — geen technische kennis vereist." },
+    { "id": "seo", "categorie": "Modules & integraties", "naam": "SEO startpakket", "type": "module", "eenheid": "project", "prijs": 199.00, "omschrijving": "Metatags, paginatitels, alt-teksten en laadsnelheid-optimalisatie." },
+    { "id": "betaling", "categorie": "Modules & integraties", "naam": "Betalingsintegratie", "type": "module", "eenheid": "integratie", "prijs": 149.99, "omschrijving": "Koppeling met een betaalplatform naar keuze." },
+    { "id": "b2b-portaal", "categorie": "Modules & integraties", "naam": "B2B portaal", "type": "module", "eenheid": "project", "prijs": 299.00, "omschrijving": "Afgeschermd luik voor zakelijke klanten met eigen login en groothandelprijzen." },
+    { "id": "meertalig", "categorie": "Modules & integraties", "naam": "Meertalige structuur", "type": "module", "eenheid": "project", "prijs": 199.00, "omschrijving": "Bv. NL / FR / EN met automatische taalherkenning en vertaalbeheer." },
+    { "id": "stockbeheer", "categorie": "Modules & integraties", "naam": "Stockbeheersysteem", "type": "module", "eenheid": "project", "prijs": 799.00, "omschrijving": "Op maat gebouwd voorraadbeheer met real-time opvolging over kanalen." },
+    { "id": "hosting-advies", "categorie": "Modules & integraties", "naam": "Hosting advies & overzetting", "type": "module", "eenheid": "project", "prijs": 99.00, "omschrijving": "Analyse van huidige hosting plus begeleiding bij overzetting." },
+    { "id": "int-facturatie", "categorie": "Modules & integraties", "naam": "Integratie: facturatie", "type": "module", "eenheid": "integratie", "prijs": 149.00, "omschrijving": "Automatische facturatie na elke betaling aan de checkout." },
+    { "id": "int-logistiek", "categorie": "Modules & integraties", "naam": "Integratie: logistiek", "type": "module", "eenheid": "integratie", "prijs": 149.00, "omschrijving": "Automatische verzendtrigger naar de logistieke partner." },
+    { "id": "int-faq", "categorie": "Modules & integraties", "naam": "Integratie: FAQ & contact", "type": "module", "eenheid": "integratie", "prijs": 149.00, "omschrijving": "Semi-automatisch FAQ-systeem gekoppeld aan een contactformulier." },
+    { "id": "int-social", "categorie": "Modules & integraties", "naam": "Integratie: sociale media", "type": "module", "eenheid": "integratie", "prijs": 149.00, "omschrijving": "Koppeling met sociale mediakanalen." },
+    { "id": "int-nieuwsbrief", "categorie": "Modules & integraties", "naam": "Integratie: nieuwsbrief & personalisatie", "type": "module", "eenheid": "integratie", "prijs": 149.00, "omschrijving": "Gepersonaliseerde e-mails op basis van aankoopgeschiedenis." },
+    { "id": "google-reviews", "categorie": "Modules & integraties", "naam": "Google reviews integratie", "type": "module", "eenheid": "integratie", "prijs": 149.99, "omschrijving": "Automatische, up-to-date weergave van Google-reviews." },
+    { "id": "leasingmodule", "categorie": "Modules & integraties", "naam": "Leasingmodule", "type": "module", "eenheid": "project", "prijs": 999.00, "omschrijving": "Abonnementsstructuur met terugkerende betalingen en contractbeheer." },
+    { "id": "ai-scouting", "categorie": "Modules & integraties", "naam": "AI-powered scouting", "type": "module", "eenheid": "project", "prijs": 999.00, "omschrijving": "Automatische monitoring van nieuwe, populaire producten of trends." },
+    { "id": "prijscalculator", "categorie": "Modules & integraties", "naam": "Prijscalculator op maat", "type": "module", "eenheid": "project", "prijs": 199.00, "omschrijving": "Bv. een waardebepalings-, offerte- of kostencalculator op de website." },
+    { "id": "formulierlogica", "categorie": "Modules & integraties", "naam": "Formulierlogica op maat", "type": "module", "eenheid": "project", "prijs": 149.00, "omschrijving": "Op maat gebouwd formulier met validatie en automatische melding." },
+
+    { "id": "logo", "categorie": "Marketing & creatief", "naam": "Logo ontwerp", "type": "module", "eenheid": "project", "prijs": 149.00, "omschrijving": "Professioneel logo op maat van het merk." },
+    { "id": "google-ads", "categorie": "Marketing & creatief", "naam": "Google Ads opzetten", "type": "module", "eenheid": "project", "prijs": 149.00, "omschrijving": "Opzet van een eerste Google Ads-campagne (geen doorlopend beheer)." },
+    { "id": "fotografie", "categorie": "Marketing & creatief", "naam": "Fotografie (halve dag)", "type": "module", "eenheid": "sessie", "prijs": 199.00, "omschrijving": "Professionele product- of bedrijfsfotografie." },
+    { "id": "koppelingen", "categorie": "Marketing & creatief", "naam": "Koppelingen", "type": "module", "eenheid": "integratie", "prijs": 149.00, "omschrijving": "Boekingssysteem, betaalprovider of boekhoudpakket koppelen aan de website." }
+  ],
+
+  "onderhoud": [
+    { "id": "onderhoud-maandelijks", "naam": "Maandelijks onderhoud", "eenheid": "per maand", "prijs": 29.99, "omschrijving": "Beheer, updates en monitoring van de website/webshop. Optioneel." },
+    { "id": "onderhoud-jaarlijks", "naam": "Jaarlijks onderhoud", "eenheid": "per jaar", "prijs": 250.00, "omschrijving": "Zelfde dienst, eenmalig afgerekend voor het volledige jaar. Optioneel." }
+  ],
+
+  "wat_we_niet_doen": [
+    "Fysieke drukwerken (visitekaartjes, flyers, brochures, ...) — enkel het logo-ontwerp zelf",
+    "Mobiele apps (enkel websites/webshops)",
+    "Doorlopend beheer van advertentiecampagnes — we zetten een eerste Google Ads-campagne wel op, maar beheren die niet dagelijks",
+    "Boekhoudkundig, juridisch of financieel advies",
+    "Contentcreatie/copywriting vanaf nul — we werken met teksten die de klant zelf aanlevert, tenzij anders afgesproken"
+  ],
+
+  "proces": {
+    "offerte_geldigheid_dagen": 14,
+    "revisierondes_inbegrepen": 2,
+    "betaling": "Doorgaans 50% voorschot, 50% bij oplevering",
+    "reactietermijn_dringend": "1 werkdag (bij lopend onderhoudscontract)",
+    "reactietermijn_normaal": "3 werkdagen (bij lopend onderhoudscontract)",
+    "btw_percentage": 21
+  },
+
+  "metadata": {
+    "versie": "2026-09-17",
+    "opmerking": "Eén bron van waarheid voor alle prijs-gerelateerde tools (AI-offertegenerator, chatagent, interne documenten). Bij prijswijzigingen: enkel dit bestand aanpassen."
+  }
+}
