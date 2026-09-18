@@ -1028,7 +1028,7 @@ async function main() {
   const parts = buildStylesheet();
   console.log(`styles.css: ${parts} parts from src/css`);
 
-  ['app.js', 'hero3d.js', 'referral.js', 'locale.js', 'consent.js', 'markets.js'].forEach(copyAsset);
+  ['app.js', 'hero3d.js', 'referral.js', 'locale.js', 'consent.js', 'markets.js', 'chat.js'].forEach(copyAsset);
 
   const offers = writeLangOffer();
   console.log(`lang-offer.js: ${offers.length} languages`);

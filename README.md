@@ -27,6 +27,7 @@ assets/                 css, js, translations, images
 netlify/edge-functions/
   rates.js              /api/rates — EUR rates, cached an hour
   geo.js                /api/geo — country lookup (no longer used by the page)
+  chat.js               /api/chat — AI chat widget backend (streaming SSE)
 
 tools/
   build-locales.js      regenerates the market directories + sitemap
@@ -120,7 +121,30 @@ but knows nothing about `_headers` or the `Country` conditions.
 
 See `tools/TESTING.md` for what to check.
 
+## AI Chat Widget
+
+A floating chat button appears on every page. It calls `POST /api/chat`, which
+is handled by `netlify/edge-functions/chat.js`.
+
+**How it works:**
+- The edge function reads `data/pricing-catalog.json` and builds a system prompt
+  from it (services, prices, what we don't do, process info).
+- It calls the Anthropic API (`claude-sonnet-4-6`) with streaming and forwards
+  the response as Server-Sent Events to the browser.
+- Rate limiting: max 20 messages per IP per 10 minutes (in-memory, per edge isolate).
+
+**To update prices or services:** edit `data/pricing-catalog.json` only. That
+file is the single source of truth — the chat widget reads it at runtime.
+
+**Required environment variable:** `ANTHROPIC_API_KEY`
+Set it in Netlify → Site configuration → Environment variables.
+Never commit the real key; `.env.example` shows the expected name.
+
+**Frontend:** `assets/chat.js` injects the widget DOM and handles streaming.
+`src/css/47-chat.css` contains all widget styles (compiled into `assets/styles.css`
+by the build tool along with the rest of the CSS).
+
 ## Secrets
 
-`DEEPL_API_KEY` goes in `.env`, which is gitignored. Nothing else in this
-repo needs a key.
+`DEEPL_API_KEY` goes in `.env`, which is gitignored.
+`ANTHROPIC_API_KEY` goes in Netlify's environment variables UI, not in any file.
