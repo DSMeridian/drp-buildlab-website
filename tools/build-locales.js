@@ -728,7 +728,12 @@ function pruneBuildDir() {
 
 function build(code, page) {
   const m = MARKETS[code];
-  let html = fs.readFileSync(path.join(ROOT, page.src), 'utf8');
+  /* CRLF-normalised on the way in: the rewrites below are line-based
+     regexes ending in a newline, and a source file saved with Windows line
+     endings silently matched none of them -- /over-ons kept the old language
+     toggle in all 34 markets while every other page got the market picker. */
+  let html = fs.readFileSync(path.join(ROOT, page.src), 'utf8')
+               .replace(/\r\n/g, '\n');
   const self = `${ORIGIN}/${pathOf(code)}${page.route || '/'}`;
 
   // 1. document language
