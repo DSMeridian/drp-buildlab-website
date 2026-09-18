@@ -92,7 +92,8 @@
     var chip = document.createElement('button');
     chip.className = 'chat-chip';
     chip.textContent = q;
-    chip.addEventListener('click', function () {
+    chip.addEventListener('click', function (e) {
+      e.stopPropagation();
       removeChips();
       send(q);
     });
