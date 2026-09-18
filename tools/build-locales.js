@@ -722,6 +722,61 @@ function buildStylesheet() {
   return parts.length;
 }
 
+/* A page that outlives its assets must degrade, not blank.
+ *
+ * pruneBuildDir() deletes every hash the current build did not emit, on the
+ * reasoning that an old hash is dead weight and is exactly what a stale page
+ * would still resolve. That is right about the weight and backwards about
+ * the failure: resolving last build's stylesheet renders the site slightly
+ * out of date, and resolving nothing renders it as unstyled markup -- serif
+ * text, blue underlined links, an SVG logo three screens tall. One of those
+ * is a blemish and the other is an outage, and deleting the file chooses the
+ * outage.
+ *
+ * It is not hypothetical. It was reported from production on /lu/ within the
+ * hour of a deploy, and every previous styles.<hash>.css returns 404. HTML is
+ * served must-revalidate, so this needs a browser holding a page from before
+ * the deploy and re-fetching a stylesheet it had evicted -- a restored
+ * session, a back-forward navigation, a tab open across the deploy. Rare per
+ * visit, certain across enough visits, and total when it happens.
+ *
+ * So the hashed reference carries a fallback to the unhashed original, which
+ * is written by this same build, deployed beside it, and served
+ * max-age=0 must-revalidate -- always current, never cached long. The
+ * fallback only fires on a failed load, costs one attribute, and turns the
+ * outage back into nothing at all.
+ *
+ * Only assets that exist unhashed under /assets/ get one. The generated
+ * payloads -- i18n.<lang>.js, lang-offer.js, rates.boot.js -- have no
+ * unhashed twin, and pointing at one would swap a 404 for a different 404.
+ *
+ * Scripts are re-inserted with async=false, which is what makes a
+ * dynamically added script keep its order relative to the others rather than
+ * executing the moment it arrives: app.js reads what i18n and locale set up,
+ * and a fallback that ran early would be a subtler version of this same bug. */
+function assetFallbacks(html) {
+  const Q = String.fromCharCode(34);
+  const A = String.fromCharCode(39);
+  for (const name of Object.keys(ASSETS)) {
+    if (!fs.existsSync(path.join(ROOT, 'assets', name))) continue;
+    const hashed = ASSETS[name];
+    const plain = '/assets/' + name;
+    if (name.endsWith('.css')) {
+      html = html.split('href=' + Q + hashed + Q + '>').join(
+        'href=' + Q + hashed + Q
+        + ' onerror=' + Q + 'this.onerror=null;this.href=' + A + plain + A + Q + '>');
+    } else {
+      const js = 'this.onerror=null;'
+        + 'var s=document.createElement(' + A + 'script' + A + ');'
+        + 's.src=' + A + plain + A + ';s.async=false;s.defer=true;'
+        + 'this.parentNode.insertBefore(s,this.nextSibling)';
+      html = html.split('src=' + Q + hashed + Q + '>').join(
+        'src=' + Q + hashed + Q + ' onerror=' + Q + js + Q + '>');
+    }
+  }
+  return html;
+}
+
 /* The closing quote is part of the match on purpose: without it
    /assets/i18n.js would also match inside /assets/i18n.nl.js. */
 function hashAssets(html) {
@@ -830,6 +885,9 @@ function build(code, page) {
 
   // 7. last: point every asset reference at its content-addressed name
   html = hashAssets(html);
+  /* After hashing, not before: hashAssets throws if an unhashed reference
+     survives it, and these fallbacks are unhashed references on purpose. */
+  html = assetFallbacks(html);
 
   const dest = path.join(ROOT, pathOf(code), page.out);
   fs.mkdirSync(path.dirname(dest), { recursive: true });

@@ -12,6 +12,7 @@
     "check-labels": "node tools/check-labels.js",
     "check-forms": "node tools/check-forms.js",
     "check-responsive": "node tools/check-responsive.js",
+    "check-assets": "node tools/check-assets.js",
     "dev": "node tools/build.js --market=be"
   },
   "devDependencies": {
