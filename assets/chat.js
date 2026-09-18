@@ -2,14 +2,51 @@
 (function () {
   'use strict';
 
-  var GREETING = 'Hallo! Ik ben de assistent van DRP BuildLab. Stel me gerust een vraag over onze diensten, prijzen of aanpak — ik help je graag.';
-  var CHIPS = [
-    'Wat kost een website?',
-    'Wat zit er in het basispakket?',
-    'Hoe werkt jullie proces?',
-    'Wat doen jullie niet?',
-  ];
+  /* ── Translations ── */
+  var T = {
+    nl: {
+      greeting:  'Hallo! Ik ben de assistent van DRP BuildLab. Stel me gerust een vraag over onze diensten, prijzen of aanpak — ik help je graag.',
+      chips:     ['Wat kost een website?', 'Wat zit er in het basispakket?', 'Hoe werkt jullie proces?', 'Wat doen jullie niet?'],
+      sub:       'Assistent · Normaal binnen 1 min',
+      input:     'Stel een vraag…',
+      connErr:   'Verbindingsfout. Controleer je verbinding of stuur een mail naar info@drpbuildlab.com.',
+    },
+    en: {
+      greeting:  'Hello! I’m the assistant of DRP BuildLab. Feel free to ask about our services, pricing or approach — happy to help.',
+      chips:     ['How much does a website cost?', 'What’s in the starter package?', 'How does your process work?', 'What do you not do?'],
+      sub:       'Assistant · Usually within 1 min',
+      input:     'Ask a question…',
+      connErr:   'Connection error. Check your connection or email info@drpbuildlab.com.',
+    },
+    fr: {
+      greeting:  'Bonjour ! Je suis l’assistant de DRP BuildLab. N’hésitez pas à poser des questions sur nos services, tarifs ou approche.',
+      chips:     ['Combien coûte un site web ?', 'Que comprend le forfait de base ?', 'Comment fonctionne votre processus ?', 'Que ne faites-vous pas ?'],
+      sub:       'Assistant · Généralement en moins d’1 min',
+      input:     'Posez une question…',
+      connErr:   'Erreur de connexion. Vérifiez votre connexion ou écrivez à info@drpbuildlab.com.',
+    },
+    es: {
+      greeting:  '¡Hola! Soy el asistente de DRP BuildLab. No dudes en preguntar sobre nuestros servicios, precios o enfoque.',
+      chips:     ['¿Cuánto cuesta un sitio web?', '¿Qué incluye el paquete básico?', '¿Cómo funciona vuestro proceso?', '¿Qué no hacéis?'],
+      sub:       'Asistente · Normalmente en menos de 1 min',
+      input:     'Haz una pregunta…',
+      connErr:   'Error de conexión. Comprueba tu conexión o escribe a info@drpbuildlab.com.',
+    },
+    de: {
+      greeting:  'Hallo! Ich bin der Assistent von DRP BuildLab. Stellen Sie gerne Fragen zu unseren Leistungen, Preisen oder unserem Ansatz.',
+      chips:     ['Was kostet eine Website?', 'Was ist im Basispaket enthalten?', 'Wie läuft Ihr Prozess ab?', 'Was machen Sie nicht?'],
+      sub:       'Assistent · Normalerweise innerhalb von 1 Min.',
+      input:     'Eine Frage stellen…',
+      connErr:   'Verbindungsfehler. Überprüfen Sie Ihre Verbindung oder schreiben Sie an info@drpbuildlab.com.',
+    },
+  };
 
+  function strings() {
+    var lang = (document.documentElement.lang || 'nl').slice(0, 2).toLowerCase();
+    return T[lang] || T['en'];
+  }
+
+  var s = strings();
   var history = [];
   var busy    = false;
   var opened  = false;
@@ -31,7 +68,7 @@
 
   var hdInfo = document.createElement('div');
   hdInfo.className = 'chat-hd-info';
-  hdInfo.innerHTML = '<div class="chat-hd-name">DRP BuildLab</div><div class="chat-hd-sub">Assistent · Normaal binnen 1 min</div>';
+  hdInfo.innerHTML = '<div class="chat-hd-name">DRP BuildLab</div><div class="chat-hd-sub">' + s.sub + '</div>';
 
   var hdAvatar = document.createElement('div');
   hdAvatar.className = 'chat-hd-avatar';
@@ -46,7 +83,6 @@
   /* ── Messages area ── */
   var msgsEl = document.createElement('div');
   msgsEl.className = 'chat-msgs';
-  msgsEl.id = 'chatMsgs';
   msgsEl.setAttribute('role', 'log');
   msgsEl.setAttribute('aria-live', 'polite');
 
@@ -57,7 +93,7 @@
   /* ── Input row ── */
   var input = document.createElement('textarea');
   input.className = 'chat-input';
-  input.placeholder = 'Stel een vraag…';
+  input.placeholder = s.input;
   input.rows = 1;
   input.setAttribute('aria-label', 'Bericht');
 
@@ -77,7 +113,6 @@
   panel.setAttribute('role', 'dialog');
   panel.setAttribute('aria-modal', 'false');
   panel.setAttribute('aria-label', 'DRP BuildLab chat');
-  panel.id = 'chatPanel';
   panel.appendChild(hd);
   panel.appendChild(msgsEl);
   panel.appendChild(chipsEl);
@@ -86,13 +121,14 @@
   document.body.appendChild(panel);
   document.body.appendChild(toggle);
 
-  /* ── Initial greeting + chips ── */
-  addMsg('bot', GREETING);
-  CHIPS.forEach(function (q) {
+  /* ── Greeting + chips ── */
+  addMsg('bot', s.greeting);
+  s.chips.forEach(function (q) {
     var chip = document.createElement('button');
     chip.className = 'chat-chip';
     chip.textContent = q;
-    chip.addEventListener('click', function () {
+    chip.addEventListener('click', function (e) {
+      e.stopPropagation();
       removeChips();
       send(q);
     });
@@ -101,8 +137,14 @@
   badge(true);
 
   /* ── Events ── */
-  toggle.addEventListener('click', function () { opened ? close() : open(); });
-  closeBtn.addEventListener('click', close);
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    opened ? close() : open();
+  });
+  closeBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    close();
+  });
 
   input.addEventListener('keydown', function (e) {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -111,10 +153,17 @@
     }
   });
   input.addEventListener('input', autoResize);
-  sendBtn.addEventListener('click', function () { if (!busy) submit(); });
 
+  sendBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (!busy) submit();
+  });
+
+  /* Close when clicking outside the panel and toggle */
   document.addEventListener('click', function (e) {
-    if (opened && !panel.contains(e.target) && e.target !== toggle && !toggle.contains(e.target)) close();
+    if (!opened) return;
+    if (panel.contains(e.target) || toggle.contains(e.target)) return;
+    close();
   });
 
   /* ── Open / close ── */
@@ -183,7 +232,7 @@
               finish();
             } else if (evt.type === 'error') {
               typing.remove();
-              addMsg('error', evt.message || 'Er ging iets mis. Probeer opnieuw of mail naar info@drpbuildlab.com.');
+              addMsg('error', evt.message || s.connErr);
               setBusy(false);
             }
           });
@@ -195,7 +244,7 @@
     .catch(function (err) {
       if (err.name === 'AbortError') return;
       typing.remove();
-      addMsg('error', 'Verbindingsfout. Controleer je verbinding of stuur een mail naar info@drpbuildlab.com.');
+      addMsg('error', s.connErr);
       setBusy(false);
     });
 

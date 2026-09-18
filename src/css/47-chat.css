@@ -263,4 +263,8 @@
     bottom: 5.5rem;
     right: 1rem;
   }
+  /* Hide WhatsApp button behind the full-screen panel on mobile */
+  .chat-panel-open .wa-float {
+    display: none;
+  }
 }
