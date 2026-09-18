@@ -2326,3 +2326,48 @@ nav:not(.s) .market-sw select:hover{color:#fff;border-color:rgba(255,255,255,.5)
    the same element would win, so the flip goes on the <svg> and the motion
    stays on the wrapper. */
 [dir="rtl"] .phero-art svg{transform:scaleX(-1)}
+
+/* ─────────────────────────────────────────────
+   THE OPEN DROPDOWN OF A <select>
+
+   A select's closed box is ours to style. The list it opens is not: it is
+   drawn by the operating system, in a window that is not part of the page,
+   and on Windows and Android that window's background is white no matter
+   what the page is doing. What the OS does take from us is the colour of
+   the <option> text -- and with nothing set, an option inherits the colour
+   of the select it belongs to.
+
+   That is the bug. 39-editorial.css gives the market picker white text
+   while the bar is over a dark hero:
+
+       nav:not(.s) .market-sw select{color:rgba(255,255,255,.82)}
+
+   which is right for the closed box on black, and wrong for the list, where
+   it painted white text onto the OS's white window. Every market was
+   invisible except the one under the cursor, which the system paints with
+   its own highlight and its own white-on-blue -- so the list looked empty
+   apart from a single blue row that moved with the mouse.
+
+   Literal values, not tokens. --ink is what the page has just redefined in
+   .dark, so var(--ink) here would resolve to white in exactly the places
+   this rule exists to rescue -- which is also why the contact form's own
+   option rule, written with var(--ink), is restated below rather than left
+   alone. It works today only because those forms happen to sit on a light
+   ground, and it would fail the moment one did not.
+
+   color-scheme tells the OS to draw the whole popup -- window, scrollbar,
+   highlight -- in its light set, so the colours below sit on the surface
+   they were chosen against rather than on a dark one on a machine set to
+   dark mode.
+───────────────────────────────────────────── */
+select{color-scheme:light}
+
+/* The .field selector repeats the one in 20-contact.css so this wins on
+   document order rather than needing !important; the bare `select option`
+   covers the market picker and anything added later. */
+select option,
+select optgroup,
+.field select option{
+  color:#1a1f36;
+  background-color:#fff;
+}

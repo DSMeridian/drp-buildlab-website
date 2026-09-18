@@ -502,7 +502,12 @@ function wireAjaxForm(o){
     if(errBox) errBox.classList.remove('on');
     if(submitBtn) submitBtn.disabled = true;
     const data = new FormData(form);
-    fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    /* Post to this page's own path, not '/'. The root carries 34 forced
+       geo redirects (302!, one per market), and a 302 on a POST turns it
+       into a GET -- the submission is lost, and the 2xx that comes back
+       says nothing about whether it was ever recorded. The form's own
+       page has no redirect on it. */
+    fetch(location.pathname, {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
       body: new URLSearchParams(data).toString()
     })
     .then(res=>{
