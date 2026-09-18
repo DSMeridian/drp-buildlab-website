@@ -148,6 +148,13 @@
   border-bottom-left-radius: 4px;
 }
 
+/* Markdown rendered inside bot messages */
+.chat-msg.bot p          { margin: 0 0 .35em; }
+.chat-msg.bot p:last-child { margin-bottom: 0; }
+.chat-msg.bot ul         { margin: .25em 0 .35em 1.1em; padding: 0; }
+.chat-msg.bot li         { margin-bottom: .2em; }
+.chat-msg.bot strong     { font-weight: 700; }
+
 /* Typing dots while streaming */
 .chat-typing {
   display: flex;

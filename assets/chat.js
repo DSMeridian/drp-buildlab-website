@@ -278,7 +278,7 @@
             if (evt.type === 'delta' && evt.text) {
               if (!botEl) { typing.remove(); botEl = addMsg('bot', ''); }
               botTxt += evt.text;
-              botEl.textContent = botTxt;
+              botEl.innerHTML = renderMd(botTxt);
               scrollBottom();
             } else if (evt.type === 'done') {
               finish();
@@ -318,7 +318,11 @@
   function addMsg(type, text) {
     var div = document.createElement('div');
     div.className = 'chat-msg ' + type;
-    div.textContent = text;
+    if (type === 'bot') {
+      div.innerHTML = renderMd(text);
+    } else {
+      div.textContent = text;
+    }
     msgsEl.appendChild(div);
     scrollBottom();
     return div;
@@ -331,6 +335,36 @@
     msgsEl.appendChild(div);
     scrollBottom();
     return div;
+  }
+
+  /* Render simple markdown to safe HTML (bot messages only) */
+  function renderMd(raw) {
+    var safe = raw
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+
+    var lines = safe.split('\n');
+    var html  = [];
+    var inUl  = false;
+
+    lines.forEach(function (line) {
+      var li = line.match(/^[-*]\s+(.+)/);
+      if (li) {
+        if (!inUl) { html.push('<ul>'); inUl = true; }
+        html.push('<li>' + applyInline(li[1]) + '</li>');
+      } else {
+        if (inUl) { html.push('</ul>'); inUl = false; }
+        var trimmed = line.trim();
+        if (trimmed) html.push('<p>' + applyInline(trimmed) + '</p>');
+      }
+    });
+    if (inUl) html.push('</ul>');
+    return html.join('');
+  }
+
+  function applyInline(s) {
+    return s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
   }
 
   function removeChips() { chipsEl.innerHTML = ''; }
