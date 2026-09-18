@@ -2078,3 +2078,210 @@ nav:not(.s) .market-sw select:hover{color:#fff;border-color:rgba(255,255,255,.5)
     background-size:180px 180px;
   }
 }
+
+/* ─────────────────────────────────────────────
+   PAGE ART — the illustration in a page header, and the team
+
+   Two things, in one file because they share one decision: the site has no
+   photography and buying some would have been a different project, so both
+   are drawn in line rather than shot. Thin strokes, square ends, the blue
+   used once per drawing -- the same hand as the icons that were already
+   here, at four times the size.
+
+   The home page is not included on purpose. Its hero already carries the
+   turning lattice from 40-hero-3d.css, and a second illustration beside it
+   would be two drawings competing for the same screen.
+
+   Placement in the cascade: after 43 because it overrides the single-column
+   .phero set in 39-editorial.css, and it carries its own breakpoints, which
+   26-responsive.css (earlier in the concatenation) cannot reach.
+───────────────────────────────────────────── */
+
+/* ── The page header, as two columns ─────────────────────────────────────
+   The copy keeps the measure it had -- the drawing takes the space that was
+   empty to the right of it, not space off the headline. minmax(0,…) on both
+   tracks because the headline is caps with break-word: without it a long
+   word in German or Dutch sets the column's min-content width and pushes
+   the drawing off the page. */
+.phero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+  align-items:center;
+  gap:clamp(2rem,5vw,4.5rem);
+}
+.phero-copy{min-width:0}
+
+/* The headline comes down a notch, because its column did.
+   39-editorial.css sizes .phero-h1 for the full width of the page, and at
+   that size the longest word on these four pages -- RECOMMENDATION, and
+   RECOMMANDATION in French -- no longer fits half of it: it hit the
+   break-word backstop and set as RECOMMENDATI / ON. This is the same
+   calculation redone against the narrower measure, and it only applies
+   inside the two-column header, so a page header without a drawing would
+   keep the larger size. */
+.phero-grid .phero-h1{font-size:clamp(2.4rem,4.6vw,4.2rem)}
+/* Below 960px the columns collapse and the copy has the full width back. */
+@media(max-width:960px){
+  .phero-grid .phero-h1{font-size:clamp(2.6rem,6.4vw,5.4rem)}
+}
+
+/* The drawing. A square box that never grows past its natural size, pinned
+   to the outer edge of its column so the gap between copy and art is the
+   gutter and not a pool of dead space in the middle. */
+.phero-art{
+  min-width:0;
+  justify-self:end;
+  width:100%;max-width:440px;
+  /* Decorative. It is aria-hidden in the markup too; this is for anything
+     that reaches the SVG some other way. */
+  pointer-events:none;
+}
+.phero-art svg{display:block;width:100%;height:auto;overflow:visible}
+
+/* The three ink weights every drawing is built from, so a new one inherits
+   the palette instead of restating it. On .dark these resolve to white and
+   the light blue; on a light ground they would resolve to near-black, which
+   is what makes the same markup safe if a header ever stops being dark. */
+.pa-line{fill:none;stroke:var(--ink);stroke-opacity:.34;stroke-width:1.25;stroke-linejoin:round}
+.pa-key {fill:none;stroke:var(--blue);stroke-opacity:.95;stroke-width:1.5;stroke-linejoin:round}
+.pa-fill{fill:var(--ink);fill-opacity:.045}
+.pa-fill-key{fill:var(--blue);fill-opacity:.12}
+.pa-dot{fill:var(--blue)}
+.pa-t{
+  fill:var(--ink);fill-opacity:.5;
+  font-family:inherit;font-size:8px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+/* The graph-paper backdrop each drawing sits on: one tile, repeated by the
+   pattern, so the grid is four lines of markup rather than forty. */
+.pa-grid{stroke:var(--ink);stroke-opacity:.09;stroke-width:1;fill:none}
+
+/* Motion: the whole drawing breathes, and one or two parts drift against it.
+   Transform only, so it stays on the compositor, and 31-reduced-motion.css
+   already stops every animation on the site at the root. */
+@keyframes pa-float{from{transform:translateY(-5px)}to{transform:translateY(5px)}}
+@keyframes pa-drift{from{transform:translateY(3px)}to{transform:translateY(-7px)}}
+@keyframes pa-pulse{0%,100%{opacity:.25}50%{opacity:1}}
+.pa-float{animation:pa-float 7s ease-in-out infinite alternate}
+.pa-drift{animation:pa-drift 5.2s ease-in-out infinite alternate}
+.pa-pulse{animation:pa-pulse 3.4s ease-in-out infinite}
+
+/* Under 960px the two columns become one and the drawing goes below the
+   standfirst, smaller and centred -- it is support for the headline, and on
+   a phone the headline should still be the first full thing on screen. */
+@media(max-width:960px){
+  .phero-grid{grid-template-columns:1fr;gap:2.6rem}
+  .phero-art{justify-self:center;max-width:340px}
+}
+@media(max-width:560px){
+  .phero-art{max-width:270px}
+}
+
+/* ─────────────────────────────────────────────
+   THE TEAM
+
+   Four people, set the way the rest of the site sets a list: hairline rules,
+   a counted number, caps headings. The portraits are placeholders -- a
+   monogram over a drawn bust -- and they are sized and framed exactly as a
+   photograph will be, so replacing one is swapping the contents of .tm-ph
+   for an <img> and nothing else moves. See the note in the markup.
+───────────────────────────────────────────── */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(1.4rem,2.6vw,2.4rem);
+  margin-top:3.4rem;
+  counter-reset:tm;
+}
+.tm{counter-increment:tm;min-width:0}
+
+/* The frame. 4:5 because that is the crop a portrait is taken in, and fixing
+   it here means four photographs of four different shapes still line up
+   along the bottom.
+
+   The ground is flat. The graph paper the page headers are drawn on was
+   tried here and did not survive being repeated four times across a row:
+   at this size it stopped being a backdrop and became the loudest thing in
+   the section. The frames carry a gradient instead, and the crop marks do
+   the work of saying a picture belongs here. */
+.tm-ph{
+  position:relative;
+  aspect-ratio:4/5;
+  border:1px solid var(--line);
+  background:
+    linear-gradient(180deg,rgba(26,31,54,.02) 0%,rgba(26,31,54,.055) 100%),
+    var(--bg2);
+  overflow:hidden;
+}
+/* Crop marks in two corners, the way a photograph is marked up for the
+   printer -- the thing that says "a picture belongs here" without a word of
+   copy to translate. They go when a real portrait lands. */
+.tm-ph::before,.tm-ph::after{
+  content:'';position:absolute;width:14px;height:14px;
+  border:1px solid var(--blue);opacity:.55;
+}
+.tm-ph::before{top:10px;left:10px;border-right:0;border-bottom:0}
+.tm-ph::after{bottom:10px;right:10px;border-left:0;border-top:0}
+
+/* Drop a real photograph in and it fills the same frame -- and covers the
+   crop marks and the figure, because it is painted over both. */
+.tm-ph img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:cover}
+
+/* The placeholder figure. Centred and held to a fraction of the frame, so
+   it stays a small drawing on a large ground instead of growing into a
+   pictogram the size of the card. */
+.tm-fig{
+  position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);
+  width:56%;height:auto;max-width:150px;
+}
+
+/* The monogram, bottom-left inside the frame, where a caption would sit. */
+.tm-mono{
+  position:absolute;z-index:2;left:0;bottom:0;
+  padding:.5rem .7rem;
+  font-size:.62rem;font-weight:700;letter-spacing:.2em;
+  color:var(--blue-t);
+  background:var(--bg);
+}
+
+.tm-n{
+  display:block;margin:1.1rem 0 .5rem;
+  font-size:.68rem;font-weight:700;letter-spacing:.18em;
+  font-variant-numeric:tabular-nums;color:var(--blue-t);
+}
+.tm-n::before{content:counter(tm,decimal-leading-zero)}
+.tm-name{
+  font-size:1rem;font-weight:700;line-height:1.2;
+  text-transform:uppercase;letter-spacing:-.01em;color:var(--ink);
+}
+.tm-role{
+  margin-top:.35rem;
+  font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted2);
+}
+.tm-body{margin-top:.75rem;font-size:.84rem;line-height:1.6;color:var(--muted)}
+
+/* Two up on a tablet, one up on a phone. Four 1fr columns at 600px gives
+   each portrait about 120px, at which point the monogram is wider than the
+   face it sits on. */
+@media(max-width:900px){
+  .team-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 1.6rem}
+}
+@media(max-width:520px){
+  .team-grid{grid-template-columns:1fr;gap:2.4rem}
+  .tm-ph{aspect-ratio:3/2}
+}
+
+/* ── Right to left ───────────────────────────────────────────────────────
+   The drawings read across the page: the partner link runs from the link
+   out to its two ends, the contact drawing puts the site first and the call
+   second. In Arabic that order is back to front, so the whole drawing is
+   mirrored. Safe to do bluntly because none of them contains a glyph -- the
+   one thing a scaleX would reverse. The monogram in a team portrait is
+   text, and it sits outside the SVG.
+
+   Stacked on the float transform rather than replacing it: an animation on
+   the same element would win, so the flip goes on the <svg> and the motion
+   stays on the wrapper. */
+[dir="rtl"] .phero-art svg{transform:scaleX(-1)}

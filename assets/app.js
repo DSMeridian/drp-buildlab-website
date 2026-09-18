@@ -744,6 +744,24 @@ function applyLang(lang,persist){
     const ap=ab.querySelectorAll('.ab-right > p'); if(ap[0]) ap[0].innerHTML=t['ab.p1']; if(ap[1]) ap[1].innerHTML=t['ab.p2'];
     const pl=ab.querySelectorAll('.pillar'); t['ab.pillars'].forEach((p,i)=>{ if(!pl[i]) return; const pt=pl[i].querySelector('.ptitle');if(pt)pt.textContent=p.t; const pb=pl[i].querySelector('.pbody');if(pb)pb.textContent=p.b; });
   }
+  /* ── The team ─────────────────────────────────────────────────────────
+     Every lookup is guarded, the way the partner programme's are: the four
+     entries are placeholders and were written in Dutch and English only, so
+     on the other ten languages the section keeps the words it was
+     prerendered with rather than emptying itself. The names are not
+     translated on purpose -- a person's name is the same in every market. */
+  const tmw=document.getElementById('team');
+  if(tmw){
+    const tt=tmw.querySelector('.stag'); if(tt&&t['team.tag']) tt.textContent=t['team.tag'];
+    const th=tmw.querySelector('.sh'); if(th&&t['team.h2']){resetSh(th);th.innerHTML=t['team.h2'];}
+    const ts=tmw.querySelector('.ssub'); if(ts&&t['team.sub']) ts.textContent=t['team.sub'];
+    const tc=tmw.querySelectorAll('.tm');
+    (t['team.members']||[]).forEach((p,i)=>{
+      if(!tc[i]) return;
+      const r=tc[i].querySelector('.tm-role'); if(r) r.innerHTML=p.r;
+      const b=tc[i].querySelector('.tm-body'); if(b) b.innerHTML=p.b;
+    });
+  }
   const wy=document.getElementById('waarom');
   if(wy){
     const wt=wy.querySelector('.stag'); if(wt) wt.textContent=t['why.tag'];

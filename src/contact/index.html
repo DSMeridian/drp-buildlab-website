@@ -168,8 +168,45 @@
 
 <!-- ── PAGE HEADER ── -->
 <section class="phero dark">
-  <h1 class="sh phero-h1">Klaar om online<br><em>te gaan?</em></h1>
-  <p class="ssub phero-sub">Vraag een gratis demo aan. We bellen u op en tonen meteen een voorbeeld op maat.</p>
+  <!-- Two columns: the copy keeps the measure it had, the drawing takes the
+       space that was empty beside it. The wrapper is new; applyLang still
+       finds .phero-h1 and .phero-sub by class, at any depth. -->
+  <div class="phero-grid">
+    <div class="phero-copy">
+      <h1 class="sh phero-h1">Klaar om online<br><em>te gaan?</em></h1>
+      <p class="ssub phero-sub">Vraag een gratis demo aan. We bellen u op en tonen meteen een voorbeeld op maat.</p>
+    </div>
+    <!-- Decorative, and hidden from assistive technology: everything it says
+         is already said by the headline beside it. Drawn rather than
+         photographed -- see src/css/44-page-art.css. -->
+    <div class="phero-art pa-float" aria-hidden="true">
+      <svg viewBox="0 0 400 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
+        <defs><pattern id="paGridContact" width="20" height="20" patternUnits="userSpaceOnUse"><path class="pa-grid" d="M20 0H0v20"/></pattern></defs>
+        <rect width="400" height="340" fill="url(#paGridContact)"/>
+        <g class="pa-drift">
+          <rect class="pa-fill" x="46" y="62" width="216" height="158"/>
+          <rect class="pa-line" x="46.75" y="62.75" width="214.5" height="156.5"/>
+          <path class="pa-line" d="M46 88h216"/>
+          <circle class="pa-line" cx="62" cy="75" r="3.5"/>
+          <circle class="pa-line" cx="75" cy="75" r="3.5"/>
+          <circle class="pa-line" cx="88" cy="75" r="3.5"/>
+          <path class="pa-line" d="M70 112h80M70 132h168M70 152h130"/>
+          <rect class="pa-fill-key" x="70" y="176" width="84" height="22" rx="11"/>
+          <rect class="pa-key" x="70.75" y="176.75" width="82.5" height="20.5" rx="10.25"/>
+        </g>
+        <g class="pa-float">
+          <rect class="pa-fill" x="252" y="150" width="76" height="140" rx="10"/>
+          <rect class="pa-key" x="252.75" y="150.75" width="74.5" height="138.5" rx="9.25"/>
+          <path class="pa-key" d="M280 164h20"/>
+          <path class="pa-line" d="M268 196h44M268 214h44M268 232h26"/>
+        </g>
+        <g class="pa-pulse">
+          <path class="pa-key" d="M340 186a44 44 0 0 1 0 68"/>
+          <path class="pa-line" d="M356 168a68 68 0 0 1 0 104"/>
+        </g>
+      </svg>
+    </div>
+  </div>
 </section>
 
 <!-- ── CONTACT ── -->

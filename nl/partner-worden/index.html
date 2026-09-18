@@ -100,13 +100,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T5V7GG6G');</script>
 <script>window.__DRP_MARKET__="nl";</script>
 <script defer="" src="/assets/build/markets.20fe24cf.js"></script>
-<link rel="stylesheet" href="/assets/build/styles.cf618971.css">
+<link rel="stylesheet" href="/assets/build/styles.b1a5cd18.css">
 <script defer="" src="/assets/build/rates.boot.89c65adf.js"></script>
 <script defer="" src="/assets/build/lang-offer.5221b308.js"></script>
-<script defer="" src="/assets/build/i18n.nl.7a5807a0.js"></script>
+<script defer="" src="/assets/build/i18n.nl.65abb200.js"></script>
 <script defer="" src="/assets/build/locale.54eac327.js"></script>
 <script defer="" src="/assets/build/referral.1ebd7622.js"></script>
-<script defer="" src="/assets/build/app.bab24d4d.js"></script>
+<script defer="" src="/assets/build/app.82dfa1f6.js"></script>
 <script defer="" src="/assets/build/consent.2530d27c.js"></script>
 </head>
 <body data-page="partner">
@@ -213,8 +213,46 @@ f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T5V7
 
 <!-- ── PAGE HEADER ── -->
 <section class="phero dark">
-  <h1 class="sh phero-h1">Verdien mee aan<br><em>elke aanbeveling</em></h1>
-  <p class="ssub phero-sub">Je krijgt een persoonlijke link. Wie er via binnenkomt, krijgt 10% korting op de quotatie — en jij 5% van elke factuur die betaald wordt.</p>
+  <!-- Two columns: the copy keeps the measure it had, the drawing takes the
+       space that was empty beside it. The wrapper is new; applyLang still
+       finds .phero-h1 and .phero-sub by class, at any depth. -->
+  <div class="phero-grid">
+    <div class="phero-copy">
+      <h1 class="sh phero-h1">Verdien mee aan<br><em>elke aanbeveling</em></h1>
+      <p class="ssub phero-sub">Je krijgt een persoonlijke link. Wie er via binnenkomt, krijgt 10% korting op de quotatie — en jij 5% van elke factuur die betaald wordt.</p>
+    </div>
+    <!-- Decorative, and hidden from assistive technology: everything it says
+         is already said by the headline beside it. Drawn rather than
+         photographed -- see src/css/44-page-art.css. -->
+    <div class="phero-art pa-float" aria-hidden="true">
+      <svg viewBox="0 0 400 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
+        <defs><pattern id="paGridPartner" width="20" height="20" patternUnits="userSpaceOnUse"><path class="pa-grid" d="M20 0H0v20"></path></pattern></defs>
+        <rect width="400" height="340" fill="url(#paGridPartner)"></rect>
+        <g class="pa-drift">
+          <rect class="pa-fill" x="26" y="142" width="84" height="56"></rect>
+          <rect class="pa-line" x="26.75" y="142.75" width="82.5" height="54.5"></rect>
+          <path class="pa-key" d="M50 170h36M63 158l-9 12 9 12"></path>
+        </g>
+        <path class="pa-key" d="M110 170h48c22 0 22-72 44-72h58"></path>
+        <path class="pa-line" d="M110 170h48c22 0 22 72 44 72h58"></path>
+        <g class="pa-float">
+          <rect class="pa-fill-key" x="260" y="68" width="106" height="60"></rect>
+          <rect class="pa-key" x="260.75" y="68.75" width="104.5" height="58.5"></rect>
+          <path class="pa-key" d="M292 88l-18 20"></path>
+          <circle class="pa-key" cx="292" cy="90" r="6"></circle>
+          <circle class="pa-key" cx="310" cy="108" r="6"></circle>
+        </g>
+        <g class="pa-float" style="animation-delay:-2.6s">
+          <rect class="pa-fill" x="260" y="212" width="106" height="60"></rect>
+          <rect class="pa-line" x="260.75" y="212.75" width="104.5" height="58.5"></rect>
+          <path class="pa-line" d="M292 232l-18 20"></path>
+          <circle class="pa-line" cx="292" cy="234" r="6"></circle>
+          <circle class="pa-line" cx="310" cy="252" r="6"></circle>
+        </g>
+        <circle class="pa-dot pa-pulse" cx="158" cy="170" r="4"></circle>
+      </svg>
+    </div>
+  </div>
 </section>
 
 <!-- ── HOW THE PROGRAMME WORKS ── -->

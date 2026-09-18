@@ -170,13 +170,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T5V7GG6G');</script>
 <script>window.__DRP_MARKET__="cl";</script>
 <script defer="" src="/assets/build/markets.20fe24cf.js"></script>
-<link rel="stylesheet" href="/assets/build/styles.cf618971.css">
+<link rel="stylesheet" href="/assets/build/styles.b1a5cd18.css">
 <script defer="" src="/assets/build/rates.boot.89c65adf.js"></script>
 <script defer="" src="/assets/build/lang-offer.5221b308.js"></script>
-<script defer="" src="/assets/build/i18n.es.ccf7654b.js"></script>
+<script defer="" src="/assets/build/i18n.es.f28866b9.js"></script>
 <script defer="" src="/assets/build/locale.54eac327.js"></script>
 <script defer="" src="/assets/build/referral.1ebd7622.js"></script>
-<script defer="" src="/assets/build/app.bab24d4d.js"></script>
+<script defer="" src="/assets/build/app.82dfa1f6.js"></script>
 <script defer="" src="/assets/build/consent.2530d27c.js"></script>
 </head>
 <body data-page="pricing">
@@ -294,8 +294,40 @@ f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T5V7
 
 <!-- ── PAGE HEADER ── -->
 <section class="phero dark">
-  <h1 class="sh phero-h1">Precios justos,<br><em>sin sorpresas</em></h1>
-  <p class="ssub phero-sub">Un paquete inicial desde 499 € o un presupuesto a medida. El mantenimiento lo añades tú.</p>
+  <!-- Two columns: the copy keeps the measure it had, the drawing takes the
+       space that was empty beside it. The wrapper is new; applyLang still
+       finds .phero-h1 and .phero-sub by class, at any depth. -->
+  <div class="phero-grid">
+    <div class="phero-copy">
+      <h1 class="sh phero-h1">Precios justos,<br><em>sin sorpresas</em></h1>
+      <p class="ssub phero-sub">Un paquete inicial desde 499 € o un presupuesto a medida. El mantenimiento lo añades tú.</p>
+    </div>
+    <!-- Decorative, and hidden from assistive technology: everything it says
+         is already said by the headline beside it. Drawn rather than
+         photographed -- see src/css/44-page-art.css. -->
+    <div class="phero-art pa-float" aria-hidden="true">
+      <svg viewBox="0 0 400 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
+        <defs><pattern id="paGridPricing" width="20" height="20" patternUnits="userSpaceOnUse"><path class="pa-grid" d="M20 0H0v20"></path></pattern></defs>
+        <rect width="400" height="340" fill="url(#paGridPricing)"></rect>
+        <g class="pa-drift">
+          <rect class="pa-fill" x="52" y="46" width="182" height="248"></rect>
+          <rect class="pa-line" x="52.75" y="46.75" width="180.5" height="246.5"></rect>
+          <path class="pa-line" d="M76 84h98M76 104h134M76 140h134M76 160h78M76 196h134M76 216h104"></path>
+          <path class="pa-line" d="M76 250h134"></path>
+          <rect class="pa-fill-key" x="76" y="262" width="96" height="14"></rect>
+          <path class="pa-key" d="M76 269h96"></path>
+        </g>
+        <g class="pa-float" style="animation-delay:-3s">
+          <rect class="pa-fill" x="266" y="204" width="30" height="66"></rect>
+          <rect class="pa-line" x="266.75" y="204.75" width="28.5" height="64.5"></rect>
+          <rect class="pa-fill-key" x="310" y="150" width="30" height="120"></rect>
+          <rect class="pa-key" x="310.75" y="150.75" width="28.5" height="118.5"></rect>
+          <path class="pa-line" d="M258 278h96"></path>
+        </g>
+        <circle class="pa-dot pa-pulse" cx="325" cy="132" r="3"></circle>
+      </svg>
+    </div>
+  </div>
 </section>
 
 <!-- ── DIENSTEN ── -->

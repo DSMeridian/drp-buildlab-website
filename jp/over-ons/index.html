@@ -126,13 +126,13 @@ f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T5V7
 <style>
 html[lang="ja"] body{font-family:'Plus Jakarta Sans','Noto Sans JP',sans-serif}
 </style>
-<link rel="stylesheet" href="/assets/build/styles.cf618971.css">
+<link rel="stylesheet" href="/assets/build/styles.b1a5cd18.css">
 <script defer="" src="/assets/build/rates.boot.89c65adf.js"></script>
 <script defer="" src="/assets/build/lang-offer.5221b308.js"></script>
-<script defer="" src="/assets/build/i18n.ja.ce0c204b.js"></script>
+<script defer="" src="/assets/build/i18n.ja.396aed9b.js"></script>
 <script defer="" src="/assets/build/locale.54eac327.js"></script>
 <script defer="" src="/assets/build/referral.1ebd7622.js"></script>
-<script defer="" src="/assets/build/app.bab24d4d.js"></script>
+<script defer="" src="/assets/build/app.82dfa1f6.js"></script>
 <script defer="" src="/assets/build/consent.2530d27c.js"></script>
 </head>
 <body data-page="about">
@@ -176,46 +176,17 @@ html[lang="ja"] body{font-family:'Plus Jakarta Sans','Noto Sans JP',sans-serif}
     <a href="/jp/over-ons" data-nav="about" class="active">当社について</a>
     <a href="/jp/prijzen" data-nav="pricing">価格</a>
     <a href="/jp/contact" data-nav="contact">お問い合わせ</a>
+
   </div>
   <div class="nav-right">
-    <div class="market-sw">
-      <select id="marketSel" data-route="/over-ons" aria-label="Choose your market">
-      <optgroup label="Europe">
-        <option value="be">België — EUR</option>
-        <option value="nl">Nederland — EUR</option>
-        <option value="fr">France — EUR</option>
-        <option value="lu">Luxembourg — EUR</option>
-        <option value="ch">Suisse — CHF</option>
-        <option value="de">Deutschland — EUR</option>
-        <option value="at">Österreich — EUR</option>
-        <option value="es">España — EUR</option>
-        <option value="gb">United Kingdom — GBP</option>
-        <option value="ie">Ireland — EUR</option>
-        <option value="it">Italia — EUR</option>
-        <option value="pl">Polska — PLN</option>
-      </optgroup>
-      <optgroup label="Americas">
-        <option value="us">United States — USD</option>
-        <option value="ca">Canada — CAD</option>
-        <option value="mx">México — MXN</option>
-        <option value="cl">Chile — CLP</option>
-        <option value="br">Brasil — BRL</option>
-      </optgroup>
-      <optgroup label="Asia Pacific">
-        <option value="id">Indonesia — IDR</option>
-        <option value="jp" selected="">日本 — JPY</option>
-        <option value="sg">Singapore — SGD</option>
-        <option value="au">Australia — AUD</option>
-      </optgroup>
-      <optgroup label="Middle East">
-        <option value="ae">الإمارات — AED</option>
-        <option value="sa">السعودية — SAR</option>
-        <option value="qa">قطر — QAR</option>
-      </optgroup>
-      <optgroup label="Africa">
-        <option value="za">South Africa — ZAR</option>
-      </optgroup>
-      </select>
+    <div class="lang-sw" id="langSw" role="group" aria-label="Taal / Language">
+      <button type="button" class="lang-btn" data-lang="nl" lang="nl" aria-label="Nederlands" aria-pressed="false">NL</button>
+      <button type="button" class="lang-btn" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+      <button type="button" class="lang-btn" data-lang="fr" lang="fr" aria-label="Français" aria-pressed="false">FR</button>
+      <button type="button" class="lang-btn" data-lang="es" lang="es" aria-label="Español" aria-pressed="false">ES</button>
+      <button type="button" class="lang-btn" data-lang="id" lang="id" aria-label="Bahasa Indonesia" aria-pressed="false">ID</button>
+      <button type="button" class="lang-btn" data-lang="de" lang="de" aria-label="Deutsch" aria-pressed="false">DE</button>
+      <button type="button" class="lang-btn active" data-lang="ja" lang="ja" aria-label="日本語" aria-pressed="true">JA</button>
     </div>
     <a href="/jp/contact" class="nav-cta" data-nav="cta">無料体験版</a>
     <button type="button" class="nav-tog" id="navTog" aria-expanded="false" aria-controls="navOverlay" aria-label="Menu">
@@ -238,6 +209,7 @@ html[lang="ja"] body{font-family:'Plus Jakarta Sans','Noto Sans JP',sans-serif}
     <a href="/jp/over-ons" data-nav="about" class="active">当社について</a>
     <a href="/jp/prijzen" data-nav="pricing">価格</a>
     <a href="/jp/contact" data-nav="contact">お問い合わせ</a>
+
   </div>
   <div class="nav-ov-group">
     <h2 class="nav-ov-h" data-navgroup="social">フォローしてください</h2>
@@ -250,8 +222,31 @@ html[lang="ja"] body{font-family:'Plus Jakarta Sans','Noto Sans JP',sans-serif}
 
 <!-- ── PAGE HEADER ── -->
 <section class="phero dark">
-  <h1 class="sh phero-h1"><em>あなたのウェブサイトを</em>支<br>えている人々<em></em></h1>
-  <p class="ssub phero-sub">私たちについて、設立の経緯、そして私たちに何を期待できるか。</p>
+  <!-- Two columns: the copy keeps the measure it had, the drawing takes the
+       space that was empty beside it. The wrapper is new; applyLang still
+       finds .phero-h1 and .phero-sub by class, at any depth. -->
+  <div class="phero-grid">
+    <div class="phero-copy">
+      <h1 class="sh phero-h1"><em>あなたのウェブサイトを</em>支<br>えている人々<em></em></h1>
+      <p class="ssub phero-sub">私たちについて、設立の経緯、そして私たちに何を期待できるか。</p>
+    </div>
+    <!-- Decorative, and hidden from assistive technology: everything it says
+         is already said by the headline beside it. Drawn rather than
+         photographed -- see src/css/44-page-art.css. -->
+    <div class="phero-art pa-float" aria-hidden="true">
+      <svg viewBox="0 0 400 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
+        <defs><pattern id="paGridAbout" width="20" height="20" patternUnits="userSpaceOnUse"><path class="pa-grid" d="M20 0H0v20"></path></pattern></defs>
+        <rect width="400" height="340" fill="url(#paGridAbout)"></rect>
+        <path class="pa-line" d="M66 150h95m24 0h95m24 0h30"></path>
+        <g class="pa-drift"><g transform="translate(30,104)"><rect class="pa-fill" width="72" height="92"></rect><rect class="pa-line" x=".75" y=".75" width="70.5" height="90.5"></rect><circle class="pa-line" cx="36" cy="35" r="13"></circle><path class="pa-line" d="M13 80c0-12.7 10.3-23 23-23s23 10.3 23 23"></path></g></g>
+        <g transform="translate(125,74)"><rect class="pa-fill-key" width="72" height="92"></rect><rect class="pa-key" x=".75" y=".75" width="70.5" height="90.5"></rect><circle class="pa-key" cx="36" cy="35" r="13"></circle><path class="pa-key" d="M13 80c0-12.7 10.3-23 23-23s23 10.3 23 23"></path></g>
+        <g class="pa-drift" style="animation-delay:-2.4s"><g transform="translate(220,104)"><rect class="pa-fill" width="72" height="92"></rect><rect class="pa-line" x=".75" y=".75" width="70.5" height="90.5"></rect><circle class="pa-line" cx="36" cy="35" r="13"></circle><path class="pa-line" d="M13 80c0-12.7 10.3-23 23-23s23 10.3 23 23"></path></g></g>
+        <g transform="translate(315,74)"><rect class="pa-fill" width="72" height="92"></rect><rect class="pa-line" x=".75" y=".75" width="70.5" height="90.5"></rect><circle class="pa-line" cx="36" cy="35" r="13"></circle><path class="pa-line" d="M13 80c0-12.7 10.3-23 23-23s23 10.3 23 23"></path></g>
+        <circle class="pa-dot pa-pulse" cx="161" cy="150" r="3"></circle>
+        <circle class="pa-dot pa-pulse" cx="256" cy="150" r="3" style="animation-delay:-1.7s"></circle>
+      </svg>
+    </div>
+  </div>
 </section>
 
 <!-- ── ABOUT ── -->
@@ -290,6 +285,77 @@ html[lang="ja"] body{font-family:'Plus Jakarta Sans','Noto Sans JP',sans-serif}
         <div class="pillar"><div class="pn">03</div><div><div class="ptitle">地域に根ざし、デジタルを築く</div><div class="pbody">私たちは地域に根ざしたビジネスのために制作しています。ベルギーからリモートで対応しているため、所在地を問わずお手伝いできます。</div></div></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ── TEAM ──────────────────────────────────────────
+     Four placeholders, and deliberately obvious ones: the names read "Naam
+     Achternaam" so nobody ships them by accident. To make it real, replace
+     the name, the monogram and the one-liner here, and swap the <svg> inside
+     .tm-ph for an <img> -- the frame is the crop a portrait is taken in, so
+     four photographs of four different shapes still line up.
+
+     The copy is also in assets/i18n.js under team.*, which is what every
+     other market reads. Changing it here alone changes the Dutch page only. -->
+<section id="team" class="sec sec-alt">
+  <div class="rv">
+    <span class="stag">私たちのチーム</span>
+    <h2 class="sh">4人のチーム、<br><em>窓口はひとつ。</em></h2>
+    <p class="ssub">チケットシステムも、担当者の交代もありません。お客様のウェブサイトに携わるのは、この4人だけです。</p>
+  </div>
+  <div class="team-grid">
+      <div class="tm rv si">
+        <div class="tm-ph">
+          <svg class="tm-fig" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
+            <circle class="pa-line" cx="60" cy="38" r="25"></circle>
+            <path class="pa-line" d="M9 128c0-28.2 22.8-51 51-51s51 22.8 51 51"></path>
+          </svg>
+          <span class="tm-mono">NA</span>
+        </div>
+        <span class="tm-n"></span>
+        <div class="tm-name">Naam Achternaam</div>
+        <div class="tm-role">創業者・開発</div>
+        <p class="tm-body">サイトを構築し、公開後も安定して動き続けるように保守します。技術的なことがあれば、いつでもこの担当者が窓口です。</p>
+      </div>
+      <div class="tm rv si d1">
+        <div class="tm-ph">
+          <svg class="tm-fig" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
+            <circle class="pa-line" cx="60" cy="38" r="25"></circle>
+            <path class="pa-line" d="M9 128c0-28.2 22.8-51 51-51s51 22.8 51 51"></path>
+          </svg>
+          <span class="tm-mono">NA</span>
+        </div>
+        <span class="tm-n"></span>
+        <div class="tm-name">Naam Achternaam</div>
+        <div class="tm-role">デザイン</div>
+        <p class="tm-body">お客様の事業を、きちんと機能するデザインに落とし込みます。スマートフォンでも大きな画面でも同じように。</p>
+      </div>
+      <div class="tm rv si d2">
+        <div class="tm-ph">
+          <svg class="tm-fig" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
+            <circle class="pa-line" cx="60" cy="38" r="25"></circle>
+            <path class="pa-line" d="M9 128c0-28.2 22.8-51 51-51s51 22.8 51 51"></path>
+          </svg>
+          <span class="tm-mono">NA</span>
+        </div>
+        <span class="tm-n"></span>
+        <div class="tm-name">Naam Achternaam</div>
+        <div class="tm-role">顧客対応・プロジェクト管理</div>
+        <p class="tm-body">お客様にお電話し、ご要望をうかがい、予定どおり公開されるよう管理します。</p>
+      </div>
+      <div class="tm rv si d3">
+        <div class="tm-ph">
+          <svg class="tm-fig" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
+            <circle class="pa-line" cx="60" cy="38" r="25"></circle>
+            <path class="pa-line" d="M9 128c0-28.2 22.8-51 51-51s51 22.8 51 51"></path>
+          </svg>
+          <span class="tm-mono">NA</span>
+        </div>
+        <span class="tm-n"></span>
+        <div class="tm-name">Naam Achternaam</div>
+        <div class="tm-role">SEO・保守</div>
+        <p class="tm-body">Google に見つけてもらえるようにし、サイトを安全かつ最新の状態に保ちます。</p>
+      </div>
   </div>
 </section>
 
@@ -358,6 +424,7 @@ html[lang="ja"] body{font-family:'Plus Jakarta Sans','Noto Sans JP',sans-serif}
         <a href="/jp/over-ons">当社について</a>
         <a href="/jp/prijzen">価格</a>
         <a href="/jp/contact">お問い合わせ</a>
+
       </div>
       <div class="ft-col">
         <h4>お問い合わせ</h4>
