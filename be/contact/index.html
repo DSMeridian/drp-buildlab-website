@@ -128,7 +128,7 @@ f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T5V7
 <script defer="" src="/assets/build/i18n.nl.8bd5ddb3.js"></script>
 <script defer="" src="/assets/build/locale.54eac327.js"></script>
 <script defer="" src="/assets/build/referral.7f6b4bdb.js"></script>
-<script defer="" src="/assets/build/app.8aa37552.js"></script>
+<script defer="" src="/assets/build/app.45a7a89d.js"></script>
 <script defer="" src="/assets/build/consent.2530d27c.js"></script>
 </head>
 <body data-page="contact">
@@ -337,12 +337,12 @@ f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T5V7
           <input type="hidden" name="subject" value="Nieuwe offerteaanvraag — DRP BuildLab">
           <p style="display:none"><input name="bot-field"></p>
           <div class="frow">
-            <div class="field"><label for="f-vnaam">Voornaam</label><input id="f-vnaam" name="voornaam" type="text" placeholder="Jan" autocomplete="given-name" required=""></div>
-            <div class="field"><label for="f-anaam">Achternaam</label><input id="f-anaam" name="achternaam" type="text" placeholder="Peeters" autocomplete="family-name"></div>
+            <div class="field"><label for="f-vnaam">Voornaam</label><input id="f-vnaam" name="voornaam" type="text" placeholder="Jan" autocomplete="given-name" required="" maxlength="64"></div>
+            <div class="field"><label for="f-anaam">Achternaam</label><input id="f-anaam" name="achternaam" type="text" placeholder="Peeters" autocomplete="family-name" maxlength="64"></div>
           </div>
-          <div class="field"><label for="f-bedrijf">Bedrijfsnaam</label><input id="f-bedrijf" name="bedrijf" type="text" placeholder="Jouw bedrijf" autocomplete="organization"></div>
-          <div class="field"><label for="f-tel">Telefoonnummer</label><input id="f-tel" name="telefoon" type="tel" placeholder="+32 ..." autocomplete="tel" required=""></div>
-          <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" placeholder="jan@jouwbedrijf.be" autocomplete="email" required=""></div>
+          <div class="field"><label for="f-bedrijf">Bedrijfsnaam</label><input id="f-bedrijf" name="bedrijf" type="text" placeholder="Jouw bedrijf" autocomplete="organization" maxlength="100"></div>
+          <div class="field"><label for="f-tel">Telefoonnummer</label><input id="f-tel" name="telefoon" type="tel" placeholder="+32 ..." autocomplete="tel" required="" maxlength="32"></div>
+          <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" placeholder="jan@jouwbedrijf.be" autocomplete="email" required="" maxlength="254"></div>
           <div class="field">
             <label for="f-pakket">Welke dienst heeft u in gedachten?</label>
             <select id="f-pakket" name="dienst"><option value="" disabled="" selected="">Kies een dienst</option><option>Beginnerspakket — €499</option><option>Geavanceerd op maat — quotatie</option><option>Aanpassing bestaande website</option><option>Enkel extra diensten (logo, SEO, …)</option><option>Ik weet het nog niet</option></select>
@@ -367,10 +367,10 @@ f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T5V7
                on the copy existing. -->
           <div class="field">
             <label for="f-ref">Partnerkortingscode (optioneel)</label>
-            <input id="f-ref" name="ref" type="text" value="" placeholder="Bijv. LOTTE24" autocomplete="off" maxlength="32" spellcheck="false">
+            <input id="f-ref" name="ref" type="text" value="" placeholder="Bijv. LOTTE24" autocomplete="off" maxlength="32" spellcheck="false" pattern="[A-Za-z0-9](?:[A-Za-z0-9_]|-){1,31}">
           </div>
           <p class="ref-note" id="refNote" hidden=""></p>
-          <div class="field"><label for="f-bericht">Bericht (optioneel)</label><textarea id="f-bericht" name="bericht" placeholder="Vertel ons meer over uw project..."></textarea></div>
+          <div class="field"><label for="f-bericht">Bericht (optioneel)</label><textarea id="f-bericht" name="bericht" placeholder="Vertel ons meer over uw project..." maxlength="2000"></textarea></div>
           <!-- A10 - GDPR consent. Once /privacy exists, link "privacybeleid" in this label. -->
           <div class="fconsent">
             <input type="checkbox" id="f-consent" name="toestemming" value="ja" required="">

@@ -132,7 +132,7 @@ html[lang="ar"] body{font-family:'Plus Jakarta Sans','Noto Sans Arabic',sans-ser
 <script defer="" src="/assets/build/i18n.ar.3f8ca9d8.js"></script>
 <script defer="" src="/assets/build/locale.54eac327.js"></script>
 <script defer="" src="/assets/build/referral.7f6b4bdb.js"></script>
-<script defer="" src="/assets/build/app.8aa37552.js"></script>
+<script defer="" src="/assets/build/app.45a7a89d.js"></script>
 <script defer="" src="/assets/build/consent.2530d27c.js"></script>
 </head>
 <body data-page="partner">
@@ -370,21 +370,21 @@ html[lang="ar"] body{font-family:'Plus Jakarta Sans','Noto Sans Arabic',sans-ser
           <input type="hidden" name="subject" value="Nieuwe partneraanvraag — DRP BuildLab">
           <p style="display:none"><input name="bot-field"></p>
           <div class="frow">
-            <div class="field"><label for="pa-vnaam">الاسم الأول</label><input id="pa-vnaam" name="voornaam" type="text" placeholder="لوتي" autocomplete="given-name" required=""></div>
-            <div class="field"><label for="pa-anaam">اللقب</label><input id="pa-anaam" name="achternaam" type="text" placeholder="بيترز" autocomplete="family-name"></div>
+            <div class="field"><label for="pa-vnaam">الاسم الأول</label><input id="pa-vnaam" name="voornaam" type="text" placeholder="لوتي" autocomplete="given-name" required="" maxlength="64"></div>
+            <div class="field"><label for="pa-anaam">اللقب</label><input id="pa-anaam" name="achternaam" type="text" placeholder="بيترز" autocomplete="family-name" maxlength="64"></div>
           </div>
-          <div class="field"><label for="pa-email">البريد الإلكتروني</label><input id="pa-email" name="email" type="email" placeholder="lotte@example.com" autocomplete="email" required=""></div>
+          <div class="field"><label for="pa-email">البريد الإلكتروني</label><input id="pa-email" name="email" type="email" placeholder="lotte@example.com" autocomplete="email" required="" maxlength="254"></div>
           <div class="field">
             <label for="pa-kanaal">أين تصل إلى جمهورك؟</label>
             <select id="pa-kanaal" name="kanaal"><option value="" disabled="" selected="">اختر قناة</option><option>إنستغرام</option><option>تيك توك</option><option>يوتيوب</option><option>لينكدإن</option><option>النشرة الإخبارية أو المدونة</option><option>شبكة غير متصلة بالإنترنت</option><option>أخرى</option></select>
           </div>
-          <div class="field"><label for="pa-profiel">رابط إلى ملفك الشخصي أو موقعك الإلكتروني</label><input id="pa-profiel" name="profiel" type="url" placeholder="https://instagram.com/..." required=""></div>
+          <div class="field"><label for="pa-profiel">رابط إلى ملفك الشخصي أو موقعك الإلكتروني</label><input id="pa-profiel" name="profiel" type="url" placeholder="https://instagram.com/..." required="" maxlength="200"></div>
           <div class="field">
             <label for="pa-bereik">ما هو حجم جمهورك تقريبًا؟</label>
             <select id="pa-bereik" name="bereik"><option value="" disabled="" selected="">اختر مقاسًا</option><option>أقل من 1,000</option><option>1,000 – 10,000</option><option>10,000 – 50,000</option><option>50,000 – 250,000</option><option>أكثر من 250,000</option></select>
           </div>
-          <div class="field"><label for="pa-code">الرمز المفضل (اختياري)</label><input id="pa-code" name="gewenste_code" type="text" placeholder="لوت" maxlength="32" pattern="[A-Za-z0-9_-]{2,32}"></div>
-          <div class="field"><label for="pa-bericht">أخبرنا عن جمهورك (اختياري)</label><textarea id="pa-bericht" name="bericht" placeholder="من هم متابعيك، ولماذا قد يكون DRP BuildLab مناسبًا لهم؟"></textarea></div>
+          <div class="field"><label for="pa-code">الرمز المفضل (اختياري)</label><input id="pa-code" name="gewenste_code" type="text" placeholder="لوت" maxlength="32" pattern="[A-Za-z0-9](?:[A-Za-z0-9_]|-){1,31}"></div>
+          <div class="field"><label for="pa-bericht">أخبرنا عن جمهورك (اختياري)</label><textarea id="pa-bericht" name="bericht" placeholder="من هم متابعيك، ولماذا قد يكون DRP BuildLab مناسبًا لهم؟" maxlength="2000"></textarea></div>
           <div class="fconsent">
             <input type="checkbox" id="pa-consent" name="toestemming" value="ja" required="">
             <label for="pa-consent" id="paConsentLbl">أوافق على أن تستخدم DRP BuildLab البيانات الواردة في هذا النموذج للاتصال بي بخصوص هذا الطلب.</label>

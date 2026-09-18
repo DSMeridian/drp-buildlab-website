@@ -132,7 +132,7 @@ html[lang="ar"] body{font-family:'Plus Jakarta Sans','Noto Sans Arabic',sans-ser
 <script defer="" src="/assets/build/i18n.ar.3f8ca9d8.js"></script>
 <script defer="" src="/assets/build/locale.54eac327.js"></script>
 <script defer="" src="/assets/build/referral.7f6b4bdb.js"></script>
-<script defer="" src="/assets/build/app.8aa37552.js"></script>
+<script defer="" src="/assets/build/app.45a7a89d.js"></script>
 <script defer="" src="/assets/build/consent.2530d27c.js"></script>
 </head>
 <body data-page="contact">
@@ -341,12 +341,12 @@ html[lang="ar"] body{font-family:'Plus Jakarta Sans','Noto Sans Arabic',sans-ser
           <input type="hidden" name="subject" value="Nieuwe offerteaanvraag — DRP BuildLab">
           <p style="display:none"><input name="bot-field"></p>
           <div class="frow">
-            <div class="field"><label for="f-vnaam">الاسم الأول</label><input id="f-vnaam" name="voornaam" type="text" placeholder="جون" autocomplete="given-name" required=""></div>
-            <div class="field"><label for="f-anaam">اللقب</label><input id="f-anaam" name="achternaam" type="text" placeholder="سميث" autocomplete="family-name"></div>
+            <div class="field"><label for="f-vnaam">الاسم الأول</label><input id="f-vnaam" name="voornaam" type="text" placeholder="جون" autocomplete="given-name" required="" maxlength="64"></div>
+            <div class="field"><label for="f-anaam">اللقب</label><input id="f-anaam" name="achternaam" type="text" placeholder="سميث" autocomplete="family-name" maxlength="64"></div>
           </div>
-          <div class="field"><label for="f-bedrijf">اسم الشركة</label><input id="f-bedrijf" name="bedrijf" type="text" placeholder="شركتكم" autocomplete="organization"></div>
-          <div class="field"><label for="f-tel">رقم الهاتف</label><input id="f-tel" name="telefoon" type="tel" placeholder="+32 ..." autocomplete="tel" required=""></div>
-          <div class="field"><label for="f-email">البريد الإلكتروني</label><input id="f-email" name="email" type="email" placeholder="john@yourcompany.com" autocomplete="email" required=""></div>
+          <div class="field"><label for="f-bedrijf">اسم الشركة</label><input id="f-bedrijf" name="bedrijf" type="text" placeholder="شركتكم" autocomplete="organization" maxlength="100"></div>
+          <div class="field"><label for="f-tel">رقم الهاتف</label><input id="f-tel" name="telefoon" type="tel" placeholder="+32 ..." autocomplete="tel" required="" maxlength="32"></div>
+          <div class="field"><label for="f-email">البريد الإلكتروني</label><input id="f-email" name="email" type="email" placeholder="john@yourcompany.com" autocomplete="email" required="" maxlength="254"></div>
           <div class="field">
             <label for="f-pakket">ما هي الخدمة التي تفكر فيها؟</label>
             <select id="f-pakket" name="dienst"><option value="" disabled="" selected="">اختر خدمة</option><option>حزمة المبتدئين — €499</option><option>تخصيص متقدم — عرض أسعار</option><option>تحديث الموقع الإلكتروني الحالي</option><option>الخدمات الإضافية فقط (الشعار، تحسين محركات البحث، ...)</option><option>لست متأكدًا بعد</option></select>
@@ -371,10 +371,10 @@ html[lang="ar"] body{font-family:'Plus Jakarta Sans','Noto Sans Arabic',sans-ser
                on the copy existing. -->
           <div class="field">
             <label for="f-ref">رمز الخصم الخاص بالشريك (اختياري)</label>
-            <input id="f-ref" name="ref" type="text" value="" placeholder="على سبيل المثال: LOTTE24" autocomplete="off" maxlength="32" spellcheck="false">
+            <input id="f-ref" name="ref" type="text" value="" placeholder="على سبيل المثال: LOTTE24" autocomplete="off" maxlength="32" spellcheck="false" pattern="[A-Za-z0-9](?:[A-Za-z0-9_]|-){1,31}">
           </div>
           <p class="ref-note" id="refNote" hidden=""></p>
-          <div class="field"><label for="f-bericht">رسالة (اختياري)</label><textarea id="f-bericht" name="bericht" placeholder="أخبرنا بالمزيد عن مشروعك..."></textarea></div>
+          <div class="field"><label for="f-bericht">رسالة (اختياري)</label><textarea id="f-bericht" name="bericht" placeholder="أخبرنا بالمزيد عن مشروعك..." maxlength="2000"></textarea></div>
           <!-- A10 - GDPR consent. Once /privacy exists, link "privacybeleid" in this label. -->
           <div class="fconsent">
             <input type="checkbox" id="f-consent" name="toestemming" value="ja" required="">

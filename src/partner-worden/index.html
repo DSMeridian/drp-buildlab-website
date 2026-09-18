@@ -284,21 +284,21 @@
           <input type="hidden" name="subject" value="Nieuwe partneraanvraag — DRP BuildLab">
           <p style="display:none"><input name="bot-field"></p>
           <div class="frow">
-            <div class="field"><label for="pa-vnaam">Voornaam</label><input id="pa-vnaam" name="voornaam" type="text" placeholder="Lotte" autocomplete="given-name" required></div>
-            <div class="field"><label for="pa-anaam">Achternaam</label><input id="pa-anaam" name="achternaam" type="text" placeholder="Peeters" autocomplete="family-name"></div>
+            <div class="field"><label for="pa-vnaam">Voornaam</label><input id="pa-vnaam" name="voornaam" type="text" placeholder="Lotte" autocomplete="given-name" required maxlength="64"></div>
+            <div class="field"><label for="pa-anaam">Achternaam</label><input id="pa-anaam" name="achternaam" type="text" placeholder="Peeters" autocomplete="family-name" maxlength="64"></div>
           </div>
-          <div class="field"><label for="pa-email">E-mail</label><input id="pa-email" name="email" type="email" placeholder="lotte@voorbeeld.be" autocomplete="email" required></div>
+          <div class="field"><label for="pa-email">E-mail</label><input id="pa-email" name="email" type="email" placeholder="lotte@voorbeeld.be" autocomplete="email" required maxlength="254"></div>
           <div class="field">
             <label for="pa-kanaal">Waar bereik je je publiek?</label>
             <select id="pa-kanaal" name="kanaal"><option value="" disabled selected>Kies een kanaal</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>LinkedIn</option><option>Nieuwsbrief of blog</option><option>Offline netwerk</option><option>Anders</option></select>
           </div>
-          <div class="field"><label for="pa-profiel">Link naar je profiel of website</label><input id="pa-profiel" name="profiel" type="url" placeholder="https://instagram.com/..." required></div>
+          <div class="field"><label for="pa-profiel">Link naar je profiel of website</label><input id="pa-profiel" name="profiel" type="url" placeholder="https://instagram.com/..." required maxlength="200"></div>
           <div class="field">
             <label for="pa-bereik">Hoe groot is je publiek ongeveer?</label>
             <select id="pa-bereik" name="bereik"><option value="" disabled selected>Kies een grootte</option><option>Minder dan 1.000</option><option>1.000 – 10.000</option><option>10.000 – 50.000</option><option>50.000 – 250.000</option><option>Meer dan 250.000</option></select>
           </div>
-          <div class="field"><label for="pa-code">Gewenste code (optioneel)</label><input id="pa-code" name="gewenste_code" type="text" placeholder="LOTTE" maxlength="32" pattern="[A-Za-z0-9_-]{2,32}"></div>
-          <div class="field"><label for="pa-bericht">Vertel kort over je publiek (optioneel)</label><textarea id="pa-bericht" name="bericht" placeholder="Wie volgt je, en waarom zou DRP BuildLab bij hen passen?"></textarea></div>
+          <div class="field"><label for="pa-code">Gewenste code (optioneel)</label><input id="pa-code" name="gewenste_code" type="text" placeholder="LOTTE" maxlength="32" pattern="[A-Za-z0-9](?:[A-Za-z0-9_]|-){1,31}"></div>
+          <div class="field"><label for="pa-bericht">Vertel kort over je publiek (optioneel)</label><textarea id="pa-bericht" name="bericht" placeholder="Wie volgt je, en waarom zou DRP BuildLab bij hen passen?" maxlength="2000"></textarea></div>
           <div class="fconsent">
             <input type="checkbox" id="pa-consent" name="toestemming" value="ja" required>
             <label for="pa-consent" id="paConsentLbl">Ik ga ermee akkoord dat DRP BuildLab de gegevens uit dit formulier gebruikt om contact met mij op te nemen over deze aanvraag.</label>

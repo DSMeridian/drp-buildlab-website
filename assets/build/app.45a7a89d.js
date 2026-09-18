@@ -723,11 +723,26 @@ function applyLang(lang,persist){
 
      The note still earns its place now that the field is visible: the field
      shows a code, this says what the code does. */
+  /* Built as nodes rather than by concatenating the code into innerHTML.
+     The code is still the validated one from referral.js, so the old string
+     version was not exploitable -- but it was only not exploitable because
+     of a regex in a different file, and the value originates in a query
+     string. Anyone loosening that pattern would have turned a copy change
+     into stored XSS with nothing here to warn them. textContent cannot be
+     talked into parsing markup, so the guarantee now lives at the sink. */
   const rnote=document.getElementById('refNote');
   if(rnote){
     const rcode=window.__DRP_REF__;
     if(rcode&&t['ref.applied']){
-      rnote.innerHTML=t['ref.applied'].split('{code}').join('<strong>'+rcode+'</strong>');
+      const parts=t['ref.applied'].split('{code}');
+      rnote.textContent='';
+      parts.forEach((part,i)=>{
+        if(i){ const b=document.createElement('strong'); b.textContent=rcode; rnote.appendChild(b); }
+        /* The copy around the code is ours, from i18n.js, and carries inline
+           markup in some languages -- so it is still parsed as HTML. Only the
+           code is treated as text, because only the code comes from outside. */
+        if(part){ const span=document.createElement('span'); span.innerHTML=part; rnote.appendChild(span); }
+      });
       rnote.hidden=false;
     }else{
       rnote.hidden=true;

@@ -132,7 +132,7 @@ html[lang="ja"] body{font-family:'Plus Jakarta Sans','Noto Sans JP',sans-serif}
 <script defer="" src="/assets/build/i18n.ja.1f51a055.js"></script>
 <script defer="" src="/assets/build/locale.54eac327.js"></script>
 <script defer="" src="/assets/build/referral.7f6b4bdb.js"></script>
-<script defer="" src="/assets/build/app.8aa37552.js"></script>
+<script defer="" src="/assets/build/app.45a7a89d.js"></script>
 <script defer="" src="/assets/build/consent.2530d27c.js"></script>
 </head>
 <body data-page="contact">
@@ -339,12 +339,12 @@ html[lang="ja"] body{font-family:'Plus Jakarta Sans','Noto Sans JP',sans-serif}
           <input type="hidden" name="subject" value="Nieuwe offerteaanvraag — DRP BuildLab">
           <p style="display:none"><input name="bot-field"></p>
           <div class="frow">
-            <div class="field"><label for="f-vnaam">名</label><input id="f-vnaam" name="voornaam" type="text" placeholder="ジョン" autocomplete="given-name" required=""></div>
-            <div class="field"><label for="f-anaam">姓</label><input id="f-anaam" name="achternaam" type="text" placeholder="スミス" autocomplete="family-name"></div>
+            <div class="field"><label for="f-vnaam">名</label><input id="f-vnaam" name="voornaam" type="text" placeholder="ジョン" autocomplete="given-name" required="" maxlength="64"></div>
+            <div class="field"><label for="f-anaam">姓</label><input id="f-anaam" name="achternaam" type="text" placeholder="スミス" autocomplete="family-name" maxlength="64"></div>
           </div>
-          <div class="field"><label for="f-bedrijf">会社名</label><input id="f-bedrijf" name="bedrijf" type="text" placeholder="御社" autocomplete="organization"></div>
-          <div class="field"><label for="f-tel">電話番号</label><input id="f-tel" name="telefoon" type="tel" placeholder="+32 ..." autocomplete="tel" required=""></div>
-          <div class="field"><label for="f-email">電子メール</label><input id="f-email" name="email" type="email" placeholder="john@yourcompany.com" autocomplete="email" required=""></div>
+          <div class="field"><label for="f-bedrijf">会社名</label><input id="f-bedrijf" name="bedrijf" type="text" placeholder="御社" autocomplete="organization" maxlength="100"></div>
+          <div class="field"><label for="f-tel">電話番号</label><input id="f-tel" name="telefoon" type="tel" placeholder="+32 ..." autocomplete="tel" required="" maxlength="32"></div>
+          <div class="field"><label for="f-email">電子メール</label><input id="f-email" name="email" type="email" placeholder="john@yourcompany.com" autocomplete="email" required="" maxlength="254"></div>
           <div class="field">
             <label for="f-pakket">どのサービスをお考えですか？</label>
             <select id="f-pakket" name="dienst"><option value="" disabled="" selected="">サービスを選択してください</option><option>スターターパッケージ — €499</option><option>高度なカスタマイズ — 見積もり</option><option>既存のウェブサイトを更新する</option><option>追加サービスのみ（ロゴ、SEOなど）</option><option>まだよくわかりません</option></select>
@@ -369,10 +369,10 @@ html[lang="ja"] body{font-family:'Plus Jakarta Sans','Noto Sans JP',sans-serif}
                on the copy existing. -->
           <div class="field">
             <label for="f-ref">パートナー向け割引コード（任意）</label>
-            <input id="f-ref" name="ref" type="text" value="" placeholder="例：LOTTE24" autocomplete="off" maxlength="32" spellcheck="false">
+            <input id="f-ref" name="ref" type="text" value="" placeholder="例：LOTTE24" autocomplete="off" maxlength="32" spellcheck="false" pattern="[A-Za-z0-9](?:[A-Za-z0-9_]|-){1,31}">
           </div>
           <p class="ref-note" id="refNote" hidden=""></p>
-          <div class="field"><label for="f-bericht">メッセージ（任意）</label><textarea id="f-bericht" name="bericht" placeholder="そのプロジェクトについて、もっと詳しく教えてください…"></textarea></div>
+          <div class="field"><label for="f-bericht">メッセージ（任意）</label><textarea id="f-bericht" name="bericht" placeholder="そのプロジェクトについて、もっと詳しく教えてください…" maxlength="2000"></textarea></div>
           <!-- A10 - GDPR consent. Once /privacy exists, link "privacybeleid" in this label. -->
           <div class="fconsent">
             <input type="checkbox" id="f-consent" name="toestemming" value="ja" required="">

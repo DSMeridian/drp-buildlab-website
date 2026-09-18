@@ -128,7 +128,7 @@ f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T5V7
 <script defer="" src="/assets/build/i18n.es.729b1dde.js"></script>
 <script defer="" src="/assets/build/locale.54eac327.js"></script>
 <script defer="" src="/assets/build/referral.7f6b4bdb.js"></script>
-<script defer="" src="/assets/build/app.8aa37552.js"></script>
+<script defer="" src="/assets/build/app.45a7a89d.js"></script>
 <script defer="" src="/assets/build/consent.2530d27c.js"></script>
 </head>
 <body data-page="partner">
@@ -364,21 +364,21 @@ f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T5V7
           <input type="hidden" name="subject" value="Nieuwe partneraanvraag — DRP BuildLab">
           <p style="display:none"><input name="bot-field"></p>
           <div class="frow">
-            <div class="field"><label for="pa-vnaam">Nombre</label><input id="pa-vnaam" name="voornaam" type="text" placeholder="Lotte" autocomplete="given-name" required=""></div>
-            <div class="field"><label for="pa-anaam">Apellido</label><input id="pa-anaam" name="achternaam" type="text" placeholder="Peeters" autocomplete="family-name"></div>
+            <div class="field"><label for="pa-vnaam">Nombre</label><input id="pa-vnaam" name="voornaam" type="text" placeholder="Lotte" autocomplete="given-name" required="" maxlength="64"></div>
+            <div class="field"><label for="pa-anaam">Apellido</label><input id="pa-anaam" name="achternaam" type="text" placeholder="Peeters" autocomplete="family-name" maxlength="64"></div>
           </div>
-          <div class="field"><label for="pa-email">Correo electrónico</label><input id="pa-email" name="email" type="email" placeholder="lotte@example.com" autocomplete="email" required=""></div>
+          <div class="field"><label for="pa-email">Correo electrónico</label><input id="pa-email" name="email" type="email" placeholder="lotte@example.com" autocomplete="email" required="" maxlength="254"></div>
           <div class="field">
             <label for="pa-kanaal">¿Dónde llegas a tu público?</label>
             <select id="pa-kanaal" name="kanaal"><option value="" disabled="" selected="">Elige un canal</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>LinkedIn</option><option>Boletín informativo o blog</option><option>Red sin conexión</option><option>Otros</option></select>
           </div>
-          <div class="field"><label for="pa-profiel">Enlace a tu perfil o página web</label><input id="pa-profiel" name="profiel" type="url" placeholder="https://instagram.com/..." required=""></div>
+          <div class="field"><label for="pa-profiel">Enlace a tu perfil o página web</label><input id="pa-profiel" name="profiel" type="url" placeholder="https://instagram.com/..." required="" maxlength="200"></div>
           <div class="field">
             <label for="pa-bereik">¿Aproximadamente cuántas personas componen tu público?</label>
             <select id="pa-bereik" name="bereik"><option value="" disabled="" selected="">Elige una talla</option><option>Menos de 1.000</option><option>1.000 – 10.000</option><option>10 000 – 50 000</option><option>50.000 – 250.000</option><option>Más de 250 000</option></select>
           </div>
-          <div class="field"><label for="pa-code">Código preferido (opcional)</label><input id="pa-code" name="gewenste_code" type="text" placeholder="LOTTE" maxlength="32" pattern="[A-Za-z0-9_-]{2,32}"></div>
-          <div class="field"><label for="pa-bericht">Cuéntanos algo sobre tu público (opcional)</label><textarea id="pa-bericht" name="bericht" placeholder="¿Quién te sigue y por qué DRP BuildLab sería adecuado para ellos?"></textarea></div>
+          <div class="field"><label for="pa-code">Código preferido (opcional)</label><input id="pa-code" name="gewenste_code" type="text" placeholder="LOTTE" maxlength="32" pattern="[A-Za-z0-9](?:[A-Za-z0-9_]|-){1,31}"></div>
+          <div class="field"><label for="pa-bericht">Cuéntanos algo sobre tu público (opcional)</label><textarea id="pa-bericht" name="bericht" placeholder="¿Quién te sigue y por qué DRP BuildLab sería adecuado para ellos?" maxlength="2000"></textarea></div>
           <div class="fconsent">
             <input type="checkbox" id="pa-consent" name="toestemming" value="ja" required="">
             <label for="pa-consent" id="paConsentLbl">Acepto que DRP BuildLab utilice los datos de este formulario para ponerse en contacto conmigo en relación con esta solicitud.</label>

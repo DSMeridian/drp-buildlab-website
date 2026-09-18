@@ -10,6 +10,8 @@
     "check-prices": "node tools/check-prices.js",
     "check": "node tools/check-prices.js --live-only && node tools/check-labels.js --live-only",
     "check-labels": "node tools/check-labels.js",
+    "check-forms": "node tools/check-forms.js",
+    "check-responsive": "node tools/check-responsive.js",
     "dev": "node tools/build.js --market=be"
   },
   "devDependencies": {
