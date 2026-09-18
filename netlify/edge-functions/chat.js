@@ -6,6 +6,8 @@
  *   data: {"type":"error","message":"..."}
  */
 
+import catalog from "../../data/pricing-catalog.json" assert { type: "json" };
+
 const RATE_LIMIT  = 20;
 const RATE_WINDOW = 10 * 60 * 1000; // 10 minutes per IP
 const ipWindows   = new Map();       // in-memory, resets when isolate restarts
@@ -123,16 +125,6 @@ export default async (request, context) => {
 
   const apiKey = Deno.env.get('ANTHROPIC_API_KEY');
   if (!apiKey) {
-    return sseError('Configuratiefout. Neem contact op via info@drpbuildlab.com.');
-  }
-
-  let catalog;
-  try {
-    const text = await Deno.readTextFile(
-      new URL('../../data/pricing-catalog.json', import.meta.url)
-    );
-    catalog = JSON.parse(text);
-  } catch {
     return sseError('Configuratiefout. Neem contact op via info@drpbuildlab.com.');
   }
 
