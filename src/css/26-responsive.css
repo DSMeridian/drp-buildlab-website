@@ -5,6 +5,10 @@
 @media(max-width:1180px){
   .nlinks{gap:1.15rem}
   .nlinks a{font-size:.76rem}
+  /* Four extras per row needs about 250px a cell once a price is converted
+     or a label is German. Below 1180px that is not there, so two per row,
+     which is what the grid already falls back to on a tablet. */
+  .exgrid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:1100px){
   .ab-layout,.opp-layout,.ct-layout{grid-template-columns:1fr;gap:4rem}
@@ -47,13 +51,18 @@
   .chd,.crow{grid-template-columns:2fr 1fr 1fr}
   .chc:nth-child(n+4),.cc:nth-child(n+4){display:none}
   .ft-cols{gap:2.5rem}
-  .zoom-section{height:200vh}
-  .zoom-inner{transform:scale(.65)}
   /* FAQ cards full-width on mobile */
   #faq details{padding:1.1rem 1.2rem !important}
   #faq details summary{font-size:.98rem !important}
   /* Services intro + helper text readable */
   #diensten .ssub{font-size:.95rem}
+}
+/* Two figures side by side need about 270px a cell once a price is
+   converted -- the same sum as the extras grid above, for the same reason.
+   Below 640px that is not there, and it was 480 before, which left a band
+   of widths where the grid was wider than the screen. */
+@media(max-width:640px){
+  .ab-nums{grid-template-columns:1fr}
 }
 @media(max-width:560px){
   .nav-right{gap:.7rem}
@@ -64,8 +73,6 @@
   .exgrid{grid-template-columns:1fr}
   .ex-wide{grid-column:span 1}
   .addon{flex-direction:column;align-items:flex-start;padding:1.3rem 1.4rem}
-  /* Two converted figures do not fit side by side on a phone. */
-  .ab-nums{grid-template-columns:1fr}
   .abn{padding:1.25rem 1.3rem}
   .plan{padding:2rem 1.4rem}
   .pprice{font-size:clamp(1.9rem,9vw,3rem)}

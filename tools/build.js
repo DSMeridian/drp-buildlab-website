@@ -4,6 +4,7 @@
  *
  *   npm run build                  everything: 21 markets, 84 pages
  *   npm run build -- --market=be   one market, for the edit-and-reload loop
+ *   npm run build -- --lang=nl,en  every market in those languages
  *   npm run build -- --skip-check  skip the price and label assertions
  *
  * This exists because npm appends the arguments after `--` to the *last*
@@ -37,8 +38,21 @@ const value = name => {
   return hit ? hit.slice(name.length + 3) : '';
 };
 
+/* Both selectors, passed through untouched to the two scripts that
+ * understand them:
+ *
+ *   npm run build -- --market=be        one market
+ *   npm run build -- --market=be,nl     several
+ *   npm run build -- --lang=nl,en       every market in those languages
+ *
+ * --lang is the one to reach for while a design change is being reviewed:
+ * src/ feeds all thirty-four markets, and what is being checked is whether
+ * the change reads right in a language somebody actually speaks. */
 const market = value('market');
-const pass = market ? ['--market=' + market] : [];
+const lang = value('lang');
+const pass = [];
+if (market) pass.push('--market=' + market);
+if (lang) pass.push('--lang=' + lang);
 
 function run(script, extra) {
   const started = Date.now();
@@ -68,4 +82,4 @@ run('prerender.js', pass);
 
 const secs = ((Date.now() - t0) / 1000).toFixed(1);
 console.log('\nbuild finished in ' + secs + 's'
-  + (market ? '  (--market=' + market + ', local preview only)' : ''));
+  + (pass.length ? '  (' + pass.join(' ') + ', local preview only)' : ''));

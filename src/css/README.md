@@ -30,6 +30,10 @@ concatenation is checked against what the pages expect.
 | `23`-`25` | word reveal, language switcher, mobile nav |
 | `26` | **responsive** -- every breakpoint, and it must stay after the components |
 | `27`-`33` | things added later that must override what came before |
+| `34`-`38` | right-to-left, the language switch, partners, the dark ground, depth |
+| `39` | **editorial** -- the layout language: grounds, display type, labels, pills |
+| `40`-`41` | the hero lattice, and the two places the editorial rebuild could not reach from tokens alone |
+| `42` | the partner programme: the terms panel and the referred-visitor note |
 
 `26-responsive.css` is the one to read first when a layout breaks at a
 narrow width, and the one to be most careful editing: it is where component

@@ -36,9 +36,32 @@ const { chromium } = require('playwright-core');
 const ROOT = path.resolve(__dirname, '..');
 const MARKETS = require(path.join(ROOT, 'assets', 'markets.js'));
 const CODES = Object.keys(MARKETS).filter(k => !k.startsWith('__'));
-const ONLY = (process.argv.slice(2).find(a => a.startsWith('--market=')) || '').split('=')[1] || '';
-const RENDER = ONLY ? [ONLY] : CODES;
-const ROUTES = ['', '/over-ons', '/prijzen', '/contact'];
+/* --market and --lang take lists and mean the same here as in
+   build-locales.js, which is the point: the two run back to back and a flag
+   that selected different markets in each would render pages the generator
+   had not written. See the comment on ARGV there. */
+const ARGV = process.argv.slice(2);
+function listArg(name) {
+  const hit = ARGV.find(a => a.startsWith('--' + name + '='));
+  if (!hit) return [];
+  return hit.slice(name.length + 3).split(',').map(s => s.trim()).filter(Boolean);
+}
+const WANT_MARKETS = listArg('market');
+const WANT_LANGS = listArg('lang');
+const ONLY = WANT_MARKETS.length || WANT_LANGS.length;
+const RENDER = ONLY
+  ? CODES.filter(c => WANT_MARKETS.includes(c) || WANT_LANGS.includes(MARKETS[c].lang))
+  : CODES;
+if (ONLY && !RENDER.length) {
+  console.error('nothing selected by ' + ARGV.join(' '));
+  process.exit(1);
+}
+/* /partner-worden is published in two languages only, so it is absent from
+   most markets. The loop below already skips a route with no file, which
+   is the right behaviour here rather than a second copy of the langs
+   table from build-locales.js -- the generator decides what exists, this
+   script renders whatever it finds. */
+const ROUTES = ['', '/over-ons', '/prijzen', '/contact', '/partner-worden'];
 // Checked after each render: if applyLang did not run, the page would be
 // written back still in Dutch and the bug would look fixed.
 const LANG_OF = Object.fromEntries(CODES.map(c => [c, MARKETS[c].lang]));
@@ -50,7 +73,8 @@ const LANG_OF = Object.fromEntries(CODES.map(c => [c, MARKETS[c].lang]));
  * identical in Dutch and English and would prove nothing. */
 const TRANSLATIONS = eval(
   fs.readFileSync(path.join(ROOT, 'assets', 'i18n.js'), 'utf8') + ';TRANSLATIONS');
-const PAGE_KEY = { '': 'home', '/over-ons': 'about', '/prijzen': 'pricing', '/contact': 'contact' };
+const PAGE_KEY = { '': 'home', '/over-ons': 'about', '/prijzen': 'pricing',
+  '/contact': 'contact', '/partner-worden': 'partner' };
 
 function expectedTitle(lang, route) {
   const t = TRANSLATIONS[lang];
@@ -123,6 +147,24 @@ function stripRuntimeState() {
   document.querySelectorAll('.scta.on').forEach(el => el.classList.remove('on'));
   document.querySelectorAll('[data-counted]').forEach(el => el.removeAttribute('data-counted'));
 
+  /* The loader is 400ms behind DOMContentLoaded, so by serialisation time it
+     has already been sent away. Shipping it with "gone" on it would be the
+     same bug as shipping it removed, one class further along. */
+  document.querySelectorAll('#loader').forEach(el => el.classList.remove('gone'));
+
+  /* The hero lattice. hero3d.js sizes the canvas in device pixels and adds
+     "on" once it has a context and a first frame, so serializing after it ran
+     baked both in: the width and height of whatever viewport this render used,
+     and an "on" that would light the canvas at first paint on a machine with no
+     WebGL to fill it. Put the element back the way src/ writes it, and let the
+     script decide again in the visitor's browser. */
+  document.querySelectorAll('#hero3d').forEach(el => {
+    el.classList.remove('on');
+    if (!el.className) el.removeAttribute('class');
+    el.removeAttribute('width');
+    el.removeAttribute('height');
+  });
+
   // Counters animate from zero, so serializing mid-run baked "€1" and
   // "€19" in place of "€499" and "€29" -- a wrong price in the
   // static HTML, which is what a crawler and a JS-disabled visitor read.
@@ -168,10 +210,6 @@ function stripRuntimeState() {
     el.removeAttribute('data-wr');
   });
 
-  const zoom = document.getElementById('zoomInner');
-  if (zoom) { zoom.style.removeProperty('transform'); zoom.style.removeProperty('opacity'); }
-  const mq = document.getElementById('mqTrack');
-  if (mq) mq.style.removeProperty('transform');
 
   // Webfont stack is applied per language at runtime; leaving it inline would
   // pin it before the font has loaded.
@@ -227,6 +265,23 @@ function stripRuntimeState() {
   // Wide viewport so the comparison table never enters its scrolling mode
   // during the render; reduced motion so reveals settle without animating.
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 1200 }, reducedMotion: 'reduce' });
+
+  /* Every page is a first visit.
+   *
+   * app.js shows the loader once per session and, on any later page, calls
+   * loaderEl.remove(). sessionStorage is per origin and this run navigates one
+   * page through all 148 of them, so the flag survived from the first render
+   * to the last -- and because this script serialises the DOM it finds, the
+   * removal was baked into the HTML. The loader was in src/index.html and in
+   * exactly one built page out of 148: whichever market happened to render
+   * first. Nobody had seen it in months.
+   *
+   * addInitScript runs before the page's own scripts on every navigation,
+   * which is the only place this can be cleared in time. */
+  await ctx.addInitScript(() => {
+    try { sessionStorage.removeItem('drp-seen'); } catch (e) { /* private mode */ }
+  });
+
   // One page for the whole run: opening sixty-eight was enough for Chromium
   // to crash a target partway through.
   const page = await ctx.newPage();
@@ -237,12 +292,12 @@ function stripRuntimeState() {
   const errors = [];
   page.on('pageerror', e => errors.push(e.message.slice(0, 80)));
 
-  let done = 0, failed = 0;
+  let done = 0, failed = 0, skipped = 0;
   for (const code of RENDER) {
     for (const route of ROUTES) {
-      const rel = path.join(code, route.replace(/^\//, ''), 'index.html');
+      const rel = path.join(code.split('-').join('/'), route.replace(/^\//, ''), 'index.html');
       const dest = path.join(ROOT, rel);
-      if (!fs.existsSync(dest)) { console.log('  skip (missing) ' + rel); continue; }
+      if (!fs.existsSync(dest)) { skipped++; continue; }
 
       errors.length = 0;
       try {
@@ -250,7 +305,7 @@ function stripRuntimeState() {
         // animation loop keep the page permanently "busy", so networkidle
         // never fires. The scripts are deferred, so applyLang has already run
         // by this point anyway.
-        await page.goto(`http://127.0.0.1:${PORT}/${code}${route || '/'}`,
+        await page.goto(`http://127.0.0.1:${PORT}/${code.split('-').join('/')}${route || '/'}`,
           { waitUntil: 'domcontentloaded', timeout: 30000 });
 
         // Wait for the translation itself rather than a timeout, and fail
@@ -284,6 +339,8 @@ function stripRuntimeState() {
 
   await browser.close();
   server.close();
-  console.log(`\nprerendered ${done} pages` + (failed ? `, ${failed} FAILED` : ''));
+  console.log(`\nprerendered ${done} pages`
+    + (skipped ? `, ${skipped} not published in this market` : '')
+    + (failed ? `, ${failed} FAILED` : ''));
   process.exit(failed ? 1 : 0);
 })();

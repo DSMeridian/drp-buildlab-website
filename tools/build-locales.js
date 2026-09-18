@@ -40,6 +40,17 @@ const ORIGIN = 'https://drpbuildlab.com';
 // and __webfonts. Matched by prefix so the next one added does not have to
 // be remembered here.
 const CODES = Object.keys(MARKETS).filter(k => !k.startsWith('__'));
+
+/* A market is a country read in one language. A multilingual country is one
+ * market per language, keyed country-language ('ch-de', 'ae-en'), beside the
+ * bare country key that is its default. Everything that names a place takes
+ * the country -- hreflang, og:locale, the schema's areaServed and inLanguage
+ * -- and everything that names an address takes the path, /ch/de/. The two
+ * used to be the same string, which is why a second language per country was
+ * impossible before these existed. */
+const countryOf = code => code.split('-')[0];
+const pathOf = code => code.split('-').join('/');
+const variantsOf = code => CODES.filter(c => countryOf(c) === countryOf(code));
 const DEFAULT = MARKETS.__default;
 // x-default is advice to a crawler about the unmatched visitor, so it names
 // the fallback market rather than the home one.
@@ -51,13 +62,48 @@ const FALLBACK = MARKETS.__fallback || MARKETS.__default;
  * markets this run did not touch keep pointing at the hashed files from the
  * last full build, which are deliberately left in place -- so the local site
  * stays coherent, but the tree is NOT publishable until a full build has
- * run. The build says so on the way out. */
+ * run. The build says so on the way out.
+ *
+ * --market=be,nl takes a list, and --lang=nl,en takes every market published
+ * in those languages. A change to the design is reviewed in a language, not
+ * in a country: it lands in src/ for all thirty-four markets at once, and the
+ * question is whether it reads right in the languages somebody can actually
+ * check. --lang is that selection, so nobody has to keep the roster of which
+ * eleven directories are the English ones in their head. Both are the same
+ * partial build as --market=be and carry the same warning. */
 const ARGV = process.argv.slice(2);
-const ONLY = (ARGV.find(a => a.startsWith('--market=')) || '').split('=')[1] || '';
-if (ONLY && !CODES.includes(ONLY)) {
-  console.error('--market=' + ONLY + ' is not a market. Known: ' + CODES.join(', '));
+
+function listArg(name) {
+  const hit = ARGV.find(a => a.startsWith('--' + name + '='));
+  if (!hit) return [];
+  return hit.slice(name.length + 3).split(',').map(s => s.trim()).filter(Boolean);
+}
+
+const WANT_MARKETS = listArg('market');
+const WANT_LANGS = listArg('lang');
+
+const badMarket = WANT_MARKETS.find(c => !CODES.includes(c));
+if (badMarket) {
+  console.error('--market=' + badMarket + ' is not a market. Known: ' + CODES.join(', '));
   process.exit(1);
 }
+const LANGS = [...new Set(CODES.map(c => MARKETS[c].lang))];
+const badLang = WANT_LANGS.find(l => !LANGS.includes(l));
+if (badLang) {
+  console.error('--lang=' + badLang + ' is not a published language. Known: ' + LANGS.join(', '));
+  process.exit(1);
+}
+
+/* The union, so --market=be --lang=en is be plus the English markets rather
+   than the empty intersection of the two. */
+const SELECTED = (WANT_MARKETS.length || WANT_LANGS.length)
+  ? CODES.filter(c => WANT_MARKETS.includes(c) || WANT_LANGS.includes(MARKETS[c].lang))
+  : null;
+/* What the run is called on the way out, for the warning at the end. */
+const ONLY = SELECTED
+  ? [WANT_MARKETS.length ? '--market=' + WANT_MARKETS.join(',') : '',
+     WANT_LANGS.length ? '--lang=' + WANT_LANGS.join(',') : ''].filter(Boolean).join(' ')
+  : '';
 
 /* source page -> path under a market directory */
 const PAGES = [
@@ -65,29 +111,87 @@ const PAGES = [
   { src: 'src/over-ons/index.html', out: 'over-ons/index.html', route: '/over-ons' },
   { src: 'src/prijzen/index.html', out: 'prijzen/index.html', route: '/prijzen' },
   { src: 'src/contact/index.html', out: 'contact/index.html', route: '/contact' },
+  /* langs: the first page that is not published everywhere. The affiliate
+     terms are a contract -- a commission rate, a discount, a payout schedule
+     -- and machine-translated contract copy is not something to put in front
+     of a reader in a language nobody here has checked. So the page exists in
+     the two languages it was written in, the other twenty-two markets never
+     generate it, and (see stripUnbuiltRoutes) they do not link to it either.
+     Drop the key when the copy has been reviewed in the rest. */
+  { src: 'src/partner-worden/index.html', out: 'partner-worden/index.html',
+    route: '/partner-worden', langs: ['nl', 'en'] },
 ];
+
+/* Is this page published in this market's language? Pages with no langs key
+   are published everywhere, which is all of them but one. */
+function pageLive(page, code) {
+  return !page.langs || page.langs.includes(MARKETS[code].lang);
+}
+
+/* The routes a given market actually has a file for. */
+function livePages(code) {
+  return PAGES.filter(page => pageLive(page, code));
+}
 
 /* Internal routes that must gain the market prefix. Ordered longest-first so
  * "/contact" is not partly matched while rewriting "/". */
-const ROUTES = ['/over-ons', '/prijzen', '/contact'];
+const ROUTES = ['/partner-worden', '/over-ons', '/prijzen', '/contact'];
 
 function marketiseLinks(html, code) {
   let out = html;
   for (const r of ROUTES) {
-    out = out.split(`href="${r}"`).join(`href="/${code}${r}"`);
+    out = out.split(`href="${r}"`).join(`href="/${pathOf(code)}${r}"`);
   }
   // The bare root link, only as a complete attribute value.
-  out = out.split('href="/"').join(`href="/${code}/"`);
+  out = out.split('href="/"').join(`href="/${pathOf(code)}/"`);
   return out;
 }
 
-function hreflangBlock(route) {
-  const lines = CODES.map(code => {
-    // hreflang wants language-REGION; the market code is the region.
-    const tag = `${MARKETS[code].lang}-${code.toUpperCase()}`;
-    return `<link rel="alternate" hreflang="${tag}" href="${ORIGIN}/${code}${route || '/'}">`;
+/* Only the markets that publish this route. A hreflang pointing at a page
+   that was never generated offers a crawler a 404 as the right version of the
+   page for that language, which is worse than the alternate being missing. */
+/* Take out the links to pages this market does not have.
+ *
+ * The partner page is published in two languages, so on the other twenty-two
+ * markets the footer link to it would be a 404 in the footer of every page --
+ * the worst kind, because it is on every page and nobody clicks their own
+ * footer. Links that point at a restricted route carry data-route with that
+ * route on them, and this removes the whole element wherever the market has
+ * no such page.
+ *
+ * data-route rather than matching on the href: build() rewrites hrefs to carry
+ * the market prefix, so the href is a different string in every market while
+ * the attribute stays the canonical route. It also means a link can be moved
+ * or restyled without this function having to know what it looks like. */
+function stripUnbuiltRoutes(html, code) {
+  const live = new Set(livePages(code).map(pg => pg.route));
+  let out = html;
+  for (const page of PAGES) {
+    if (!page.route || live.has(page.route)) continue;
+    /* The element and the whitespace before it, so removing a link out of a
+       list does not leave a blank line where it was. */
+    const re = new RegExp(
+      '[ \\t]*<a[^>]*data-route="' + page.route + '"[^>]*>[\\s\\S]*?</a>\\n?',
+      'g');
+    out = out.replace(re, '');
+  }
+  return out;
+}
+
+function hreflangBlock(route, page) {
+  const codes = page ? CODES.filter(c => pageLive(page, c)) : CODES;
+  const lines = codes.map(code => {
+    // hreflang wants language-REGION; the region is the country, whichever
+    // of its languages this version is.
+    const tag = `${MARKETS[code].lang}-${countryOf(code).toUpperCase()}`;
+    return `<link rel="alternate" hreflang="${tag}" href="${ORIGIN}/${pathOf(code)}${route || '/'}">`;
   });
-  lines.push(`<link rel="alternate" hreflang="x-default" href="${ORIGIN}/${FALLBACK}${route || '/'}">`);
+  /* x-default names the fallback market, which must itself have the page.
+     It is Ireland -- English -- so it serves the partner route too. Should a
+     future restricted page exclude it, the first market that does have the
+     page stands in rather than the tag pointing at a 404. */
+  const xd = (page && !pageLive(page, FALLBACK)) ? pathOf(codes[0]) : FALLBACK;
+  lines.push(`<link rel="alternate" hreflang="x-default" href="${ORIGIN}/${xd}${route || '/'}">`);
   return lines.join('\n');
 }
 
@@ -95,16 +199,39 @@ function hreflangBlock(route) {
 /* The market picker, with this market preselected. Grouped by region because
  * a flat list of every market is not scannable, and labelled with the
  * currency because that is half of what a visitor is choosing. */
-function marketPicker(current, route) {
+function marketPicker(current, route, page) {
+  /* One entry per country -- its default language -- rather than one per
+     market. A language version is chosen with the language switch beside
+     this; listing /ch/, /ch/de/ and /ch/it/ here would read as three
+     Switzerlands. The country being read is preselected whichever of its
+     languages the page is in. app.js keeps the reader's language when the
+     next country has it. */
+  /* One entry per country, but on a restricted page the entry has to be a
+     market that actually has the page -- which is not always the country's
+     default. The Gulf countries default to Arabic and the partner page is not
+     published in Arabic, so /ae/ is listed through /ae/en/ or not at all. A
+     country with no live variant drops out of the list entirely: the
+     programme genuinely is not offered there, and a picker that navigates to
+     a 404 is worse than a shorter picker. */
   const byRegion = {};
   for (const code of CODES) {
+    if (code !== countryOf(code)) continue;
+    let entry = code;
+    if (page && !pageLive(page, code)) {
+      entry = variantsOf(code).find(c => pageLive(page, c));
+      if (!entry) continue;
+    }
     const m = MARKETS[code];
-    (byRegion[m.region] = byRegion[m.region] || []).push(code);
+    (byRegion[m.region] = byRegion[m.region] || []).push(entry);
   }
+  const here = countryOf(current);
   const groups = Object.keys(byRegion).map(region => {
     const opts = byRegion[region].map(code => {
-      const m = MARKETS[code];
-      const sel = code === current ? ' selected' : '';
+      /* Named for the country and priced in the country's currency, even when
+         the value is a language variant of it: the reader is choosing a
+         country here, and the language beside it. */
+      const m = MARKETS[countryOf(code)];
+      const sel = countryOf(code) === here ? ' selected' : '';
       return `        <option value="${code}"${sel}>${m.name} — ${m.currency}</option>`;
     }).join('\n');
     return `      <optgroup label="${region}">\n${opts}\n      </optgroup>`;
@@ -119,6 +246,73 @@ function marketPicker(current, route) {
   ].join('\n');
 }
 
+/* The language choice, for a country published in more than one.
+ *
+ * A market used to be one language, full stop. A French-speaking Belgian had
+ * only the language-offer bar to find French, and only if their browser
+ * happened to ask for it. Now every language a country is published in is a
+ * link beside the country picker, to the same page in that language, at the
+ * same currency.
+ *
+ * Links rather than a script: each language version is its own URL, so the
+ * choice works with scripts off, a crawler follows it, and it can open in a
+ * new tab. Each language is named in itself -- Deutsch, Italiano, العربية --
+ * because the reader looking for their language reads it in their language,
+ * and that also means no translation key.
+ *
+ * A single-language country gets nothing, so those pages are unchanged. */
+const AUTONYM = {
+  nl: ['Nederlands', 'NL'], fr: ['Français', 'FR'], de: ['Deutsch', 'DE'],
+  it: ['Italiano', 'IT'], en: ['English', 'EN'], ar: ['العربية', 'عربي'],
+  af: ['Afrikaans', 'AF'], es: ['Español', 'ES'], pt: ['Português', 'PT'],
+  pl: ['Polski', 'PL'], ja: ['日本語', '日本語'], id: ['Bahasa Indonesia', 'ID'],
+};
+
+function languageLinks(current, route, page) {
+  /* A country published in two languages where the page exists in only one
+     has nothing to switch to, so the whole control goes rather than offering
+     a link to a page that was never generated. Belgium on the partner page is
+     the live case: /be/partner-worden exists, /be/fr/partner-worden does not. */
+  const versions = variantsOf(current).filter(c => !page || pageLive(page, c));
+  if (versions.length < 2) return '';
+  return versions.map(code => {
+    const lang = MARKETS[code].lang;
+    const name = AUTONYM[lang];
+    if (!name) throw new Error('no autonym for "' + lang + '" -- add it to AUTONYM in build-locales.js');
+    const rtl = (MARKETS.__rtl || []).includes(lang) ? ' dir="rtl"' : '';
+    const cur = code === current ? ' aria-current="true"' : '';
+    return `<a href="/${pathOf(code)}${route || '/'}" lang="${lang}" hreflang="${lang}"${rtl}${cur}>`
+      + `<span class="ls-full">${name[0]}</span><span class="ls-short">${name[1]}</span></a>`;
+  }).join('');
+}
+
+/* A div with role="group", deliberately not a <nav>. The stylesheet styles the
+   site's main bar with a bare element selector -- nav{position:fixed; left:0;
+   right:0; justify-content:space-between} -- so a <nav> here became a second
+   fixed, full-width bar: the three Swiss languages were flung to the far left,
+   the middle and the far right of the screen, over the logo and the menu links.
+   The group role still announces the links as one set, which is what the
+   earlier language switcher used as well. */
+function languageSwitch(current, route, page) {
+  const links = languageLinks(current, route, page);
+  return links ? `    <div class="lang-switch" role="group" aria-label="Language">${links}</div>\n` : '';
+}
+
+/* The same choice inside the mobile menu, placed above its closing call to
+   action. On a phone the nav bar has room for the logo, the country picker and
+   the menu button and nothing more. A div for the same reason as above. */
+function mobileLanguageLinks(html, code, route, page) {
+  const links = languageLinks(code, route, page);
+  if (!links) return html;
+  const at = html.indexOf('class="nav-ov-cta"');
+  if (at === -1) return html;
+  const open = html.lastIndexOf('<a ', at);
+  if (open === -1) return html;
+  return html.slice(0, open)
+    + '<div class="nav-ov-langs" role="group" aria-label="Language">' + links + '</div>\n  '
+    + html.slice(open);
+}
+
 
 /* The social tags, in the market's language. Kept in step with <title> and
  * the meta description, which applyLang sets at runtime from these same
@@ -130,7 +324,11 @@ function socialTags(html, code, route) {
   const key = PAGE_KEY[route];
   const title = t['meta.title.' + key] || t['meta.title'];
   const desc = t['meta.desc.' + key] || t['meta.desc'];
-  const alt = 'DRP BuildLab — ' + [t['hero.l1'], t['hero.l2']].filter(Boolean).join(' ');
+  /* All three headline lines, not the first two: the headline is one sentence
+     spread over three lines, so stopping at the second ends mid-phrase
+     ("Wij zorgen voor jouw"). The third carries the accent markup. */
+  const joiner = lang === 'ja' ? '' : ' ';   // Japanese sets no spaces between phrases
+  const alt = 'DRP BuildLab — ' + [t['hero.l1'], t['hero.l2'], t['hero.l3']].filter(Boolean).join(joiner).replace(/<[^>]+>/g, '').replace(/\s+/g, joiner || ' ').trim();
 
   const set = (attr, name, value) => {
     const re = new RegExp('(<meta ' + attr + '="' + name + '" content=")[^"]*(")');
@@ -140,7 +338,7 @@ function socialTags(html, code, route) {
   set('property', 'og:title', title);
   set('property', 'og:description', desc);
   set('property', 'og:image:alt', alt);
-  set('property', 'og:locale', lang + '_' + code.toUpperCase());
+  set('property', 'og:locale', lang + '_' + countryOf(code).toUpperCase());
   set('name', 'twitter:title', title);
   set('name', 'twitter:description', desc);
   set('name', 'twitter:image:alt', alt);
@@ -172,7 +370,7 @@ function socialTags(html, code, route) {
 const LANG_NAME = {
   nl: 'Dutch', en: 'English', fr: 'French', de: 'German',
   es: 'Spanish', id: 'Indonesian', ja: 'Japanese', pt: 'Portuguese',
-  it: 'Italian', pl: 'Polish',
+  it: 'Italian', pl: 'Polish', ar: 'Arabic', af: 'Afrikaans',
 };
 
 /* Replace everything from `open` to the first following `close`, inclusive.
@@ -216,8 +414,12 @@ function marketSchema(html, code) {
     throw new Error('no English name for language "' + m.lang + '" (market '
       + code + '). Add it to LANG_NAME, or give the market its own `languages`.');
   }
+  /* Every language the country is published in, then English. A Swiss page
+     says German, French and Italian whichever of the three it is written in,
+     because the studio answers in all of them there. */
   const langs = m.languages
-    || [LANG_NAME[m.lang], 'English'].filter((v, i, a) => a.indexOf(v) === i);
+    || variantsOf(code).map(c => LANG_NAME[MARKETS[c].lang]).concat('English')
+      .filter((v, i, a) => v && a.indexOf(v) === i);
   html = spliceBetween(html, '"availableLanguage": [', ']',
     '"availableLanguage": [' + langs.map(l => JSON.stringify(l)).join(',') + ']');
 
@@ -293,7 +495,7 @@ function marketSchema(html, code) {
 
   /* The contactPoint's own areaServed, which is a country code, not a list. */
   html = html.replace(/"areaServed": "[A-Z]{2}"/,
-    () => '"areaServed": ' + JSON.stringify(code.toUpperCase()));
+    () => '"areaServed": ' + JSON.stringify(countryOf(code).toUpperCase()));
 
   /* Scope the entity ids to the market.
    *
@@ -307,12 +509,12 @@ function marketSchema(html, code) {
    * it. The pages are still tied to one company by the things that identify
    * a company -- the same vatID, the same BE-KBO number, the same telephone
    * and the same registered address on every one of them. */
-  const base = ORIGIN + '/' + code + '/#';
+  const base = ORIGIN + '/' + pathOf(code) + '/#';
   html = html.split(ORIGIN + '/#').join(base);
 
   /* WebSite.inLanguage, which claimed nl-BE on all seventeen. */
   html = html.replace(/"inLanguage": "[^"]*"/,
-    () => '"inLanguage": ' + JSON.stringify(m.lang + '-' + code.toUpperCase()));
+    () => '"inLanguage": ' + JSON.stringify(m.lang + '-' + countryOf(code).toUpperCase()));
 
   return html;
 }
@@ -339,7 +541,7 @@ function breadcrumb(html, code, route) {
   const crumb = (pos, name, path) => '    '
     + '{"@type":"ListItem","position":' + pos
     + ',' + '"name":' + JSON.stringify(name)
-    + ',' + '"item":' + JSON.stringify(ORIGIN + '/' + code + path) + '}';
+    + ',' + '"item":' + JSON.stringify(ORIGIN + '/' + pathOf(code) + path) + '}';
 
   const items = [crumb(1, t['nav.home'], '/')];
   if (route) items.push(crumb(2, t[CRUMB_KEY[route]], route));
@@ -527,10 +729,17 @@ function pruneBuildDir() {
 function build(code, page) {
   const m = MARKETS[code];
   let html = fs.readFileSync(path.join(ROOT, page.src), 'utf8');
-  const self = `${ORIGIN}/${code}${page.route || '/'}`;
+  const self = `${ORIGIN}/${pathOf(code)}${page.route || '/'}`;
 
   // 1. document language
-  html = html.replace(/<html lang="[^"]*"/, `<html lang="${m.lang}"`);
+  /* dir beside lang. Every direction-dependent rule in the stylesheet keys off
+     [dir="rtl"], so this one attribute is what turns a market right-to-left.
+     Written into the file rather than set by script, so the page is laid out
+     the right way round before anything runs, and for anyone with scripts
+     off. Left-to-right markets get no attribute at all, which keeps their
+     generated HTML exactly what it was. */
+  const dir = (MARKETS.__rtl || []).includes(m.lang) ? ' dir="rtl"' : '';
+  html = html.replace(/<html lang="[^"]*"/, `<html lang="${m.lang}"${dir}`);
 
   // 2. canonical + og:url point at this market's own URL
   html = html.replace(/<link rel="canonical" href="[^"]*">/,
@@ -549,11 +758,14 @@ function build(code, page) {
 
   // 3. replace the existing hreflang pair with the full market set
   html = html.replace(/<link rel="alternate" hreflang="nl-be"[^>]*>\s*\n\s*<link rel="alternate" hreflang="x-default"[^>]*>/,
-    hreflangBlock(page.route));
+    hreflangBlock(page.route, page));
   if (!html.includes('hreflang="x-default"')) {
     html = html.replace('<link rel="canonical"',
-      hreflangBlock(page.route) + '\n<link rel="canonical"');
+      hreflangBlock(page.route, page) + '\n<link rel="canonical"');
   }
+
+  // 3b. drop links to pages this market does not publish
+  html = stripUnbuiltRoutes(html, code);
 
   // 4. internal links carry the market
   html = marketiseLinks(html, code);
@@ -584,12 +796,15 @@ function build(code, page) {
   // 6. the language toggle becomes a market picker that navigates
   html = html.replace(
     /[ \t]*<div class="lang-sw"[\s\S]*?<\/div>\n/,
-    marketPicker(code, page.route) + '\n');
+    languageSwitch(code, page.route, page) + marketPicker(code, page.route, page) + '\n');
+
+  // 6b. the same language choice inside the mobile menu
+  html = mobileLanguageLinks(html, code, page.route, page);
 
   // 7. last: point every asset reference at its content-addressed name
   html = hashAssets(html);
 
-  const dest = path.join(ROOT, code, page.out);
+  const dest = path.join(ROOT, pathOf(code), page.out);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, html, 'utf8');
   return dest;
@@ -728,7 +943,7 @@ async function main() {
   const parts = buildStylesheet();
   console.log(`styles.css: ${parts} parts from src/css`);
 
-  ['app.js', 'locale.js', 'consent.js', 'markets.js'].forEach(copyAsset);
+  ['app.js', 'hero3d.js', 'referral.js', 'locale.js', 'consent.js', 'markets.js'].forEach(copyAsset);
 
   const offers = writeLangOffer();
   console.log(`lang-offer.js: ${offers.length} languages`);
@@ -738,10 +953,10 @@ async function main() {
   console.log('rates.boot.js: '
     + (cur.length ? cur.join(', ') : 'empty, prices will flash euro'));
 
-  const codes = ONLY ? [ONLY] : CODES;
+  const codes = SELECTED || CODES;
   let n = 0;
   for (const code of codes) {
-    for (const page of PAGES) { build(code, page); n++; }
+    for (const page of livePages(code)) { build(code, page); n++; }
   }
   console.log(`generated ${n} pages across ${codes.length} market${codes.length === 1 ? '' : 's'}`);
 
@@ -750,7 +965,7 @@ async function main() {
        the other twenty are still pointing at. Neither is survivable in a
        commit, so both are skipped and the run says what it is. */
     console.log('');
-    console.log(`  --market=${ONLY}: sitemap and prune skipped, other markets untouched.`);
+    console.log(`  ${ONLY}: sitemap and prune skipped, other markets untouched.`);
     console.log('  Local preview only. Run a full `npm run build` before committing.');
     return;
   }
@@ -760,10 +975,10 @@ async function main() {
    * crawler following hreflang. */
   const urls = [];
   for (const code of CODES) {
-    for (const page of PAGES) {
-      const loc = `${ORIGIN}/${code}${page.route || '/'}`;
-      const alts = CODES.map(c =>
-        `    <xhtml:link rel="alternate" hreflang="${MARKETS[c].lang}-${c.toUpperCase()}" href="${ORIGIN}/${c}${page.route || '/'}"/>`
+    for (const page of livePages(code)) {
+      const loc = `${ORIGIN}/${pathOf(code)}${page.route || '/'}`;
+      const alts = CODES.filter(c => pageLive(page, c)).map(c =>
+        `    <xhtml:link rel="alternate" hreflang="${MARKETS[c].lang}-${countryOf(c).toUpperCase()}" href="${ORIGIN}/${pathOf(c)}${page.route || '/'}"/>`
       ).join('\n');
       urls.push(
         `  <url>\n    <loc>${loc}</loc>\n`
@@ -771,7 +986,7 @@ async function main() {
         + `    <changefreq>${page.route ? 'monthly' : 'weekly'}</changefreq>\n`
         + `    <priority>${page.route ? '0.8' : '1.0'}</priority>\n`
         + alts + '\n'
-        + `    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}/${FALLBACK}${page.route || '/'}"/>\n`
+        + `    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}/${pageLive(page, FALLBACK) ? FALLBACK : pathOf(CODES.find(c => pageLive(page, c)))}${page.route || '/'}"/>\n`
         + '  </url>'
       );
     }

@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────────
    SOCIAL
 ───────────────────────────────────────────── */
-.soc-sec{background:var(--bg2);padding:8rem 5vw;display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center}
+.soc-sec{background:var(--bone);padding:8rem 5vw;display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center}
 .soc-card{
   position:relative;aspect-ratio:1;max-width:400px;
   background:var(--blue);border-radius:18px;
@@ -39,5 +39,5 @@
   padding:.88rem 1.7rem;font-size:.86rem;font-weight:600;
   transition:all .25s;
 }
-.soc-link:hover{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 8px 26px rgba(74,144,226,.28)}
+.soc-link:hover{background:var(--blue);color:#fff;border-color:var(--blue-t);box-shadow:0 8px 26px rgba(74,144,226,.28)}
 .soc-link svg{width:18px;height:18px}

@@ -124,6 +124,23 @@ for (const [lang, block, kind] of targets) {
   const problems = [];
   for (const k of KEYS) {
     const want = amounts(REF[k]);
+
+    /* A key this language does not have at all.
+     *
+     * That used to be impossible and is now normal: /partner-worden is
+     * published in Dutch and English, so its keys are absent from the other
+     * ten and those markets never generate the page. Absent is not the same
+     * as wrong, so it is only a problem when the English value has a figure
+     * in it -- that would be a price string that exists in one language and
+     * not another, which is the bug this script is for. A key with no
+     * amounts has nothing to convert and nothing to check. */
+    if (!(k in block)) {
+      if (want.length) {
+        problems.push('    ' + k + '  MISSING — en has ' + JSON.stringify(want));
+      }
+      continue;
+    }
+
     const got = amounts(block[k]);
     if (JSON.stringify(want) === JSON.stringify(got)) continue;
 
@@ -151,4 +168,4 @@ if (failed) {
   console.log('A lost amount means that figure keeps its euro value in every market.');
   process.exit(1);
 }
-console.log('every language carries exactly English’s amounts — all convertible.');
+console.log('every language carries exactly English’s amounts, for every key it has — all convertible.');

@@ -1,0 +1,70 @@
+/* ─────────────────────────────────────────────
+   DEPTH — pointer tilt and light
+
+   Cards lean towards the pointer and catch a highlight where it sits. The
+   rotation is small on purpose (6 degrees at the corner): enough to read as
+   a physical object catching the light, not enough to distort the text on it.
+
+   Everything here is driven by four custom properties that app.js sets
+   (--rx/--ry for the lean, --mx/--my for the highlight). Untouched, they fall
+   back to flat and centred, so a card that never sees a pointer -- a phone, a
+   crawler, a prerender -- is exactly the card it was before.
+
+   Gated on a real pointer: on a touch screen "hover" sticks after the tap and
+   would leave cards frozen mid-lean.
+───────────────────────────────────────────── */
+@media (hover:hover) and (pointer:fine){
+  .tilt{
+    transform:perspective(900px) rotateX(var(--ry,0deg)) rotateY(var(--rx,0deg));
+    transform-style:preserve-3d;
+    transition:transform .55s cubic-bezier(.16,1,.3,1),box-shadow .55s cubic-bezier(.16,1,.3,1);
+  }
+  /* While the pointer is on it, the lean must track the pointer rather than
+     ease towards it, or the card lags behind the cursor by half a second. */
+  .tilt.on{transition:transform .09s linear,box-shadow .4s ease}
+
+  /* The highlight. A background layer, not an overlay element, so it works on
+     cards whose ::before and ::after are already spoken for. */
+  .tilt::after,.tilt::before{pointer-events:none}
+  .wcard.tilt,.plan.tilt{
+    background-image:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(74,144,226,.10),transparent 62%);
+  }
+  .dark .wcard.tilt{
+    background-image:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.10),transparent 60%);
+  }
+  .plan.tilt.on{box-shadow:0 30px 70px rgba(26,31,54,.14)}
+  .dark .wcard.tilt.on{box-shadow:0 26px 60px rgba(0,0,0,.45)}
+
+  /* The partner cards lift rather than glow -- artwork of someone else's
+     brand should not have our blue washed over it.
+
+     The lift moved from the image to the card when the card gained a ground
+     of its own: a shadow under the image alone would have been a shadow
+     cast inside the thing holding it. The image still answers, by filling
+     more of its frame -- .prt-shot clips it, so this reads as the artwork
+     coming forward rather than the picture growing.
+
+     Only the shadow is set here. .tilt above already owns transform (the
+     lean itself) and transition (which .tilt.on swaps for pointer tracking);
+     restating either at this specificity would have overwritten the lean
+     with a flat translate and put the half-second ease back on a card that
+     is supposed to follow the cursor. */
+  .prt.tilt.on{box-shadow:0 38px 90px rgba(26,31,54,.17)}
+  .prt.tilt img{transition:transform .7s cubic-bezier(.16,1,.3,1)}
+  .prt.tilt.on img{transform:scale(1.045)}
+}
+
+/* The logomark drifts, the way a thing hanging in space does. Three seconds
+   up, three down, never resting on a keyframe the eye can predict. */
+/* The wrapper already fades and lifts it into place; this is only the drift
+   that starts once that has finished. */
+.hero-logomark svg{animation:floatY 7s ease-in-out 2.8s infinite}
+@keyframes floatY{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-14px) rotate(-1.5deg)}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .tilt{transform:none!important}
+  .hero-logomark svg{animation:none!important}
+}

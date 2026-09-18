@@ -11,10 +11,19 @@ https://www.drpbuildlab.com/*    https://drpbuildlab.com/:splat    301!
 # 302, not 301: the destination depends on who is asking, and a permanent
 # redirect would be cached and then served to the wrong country. This is the
 # only place geo is still consulted — every other URL states its own market.
+#
+# A multilingual country sends the browser's own language to that language
+# version when it has one -- Language= reads Accept-Language -- and
+# everyone else to the country's default. Netlify takes the first rule that
+# matches, so each language rule sits directly above its country's default.
+/                                 /be/fr/                           302!  Country=be  Language=fr
 /                                 /be/                              302!  Country=be
 /                                 /nl/                              302!  Country=nl
 /                                 /fr/                              302!  Country=fr
+/                                 /lu/de/                           302!  Country=lu  Language=de
 /                                 /lu/                              302!  Country=lu
+/                                 /ch/de/                           302!  Country=ch  Language=de
+/                                 /ch/it/                           302!  Country=ch  Language=it
 /                                 /ch/                              302!  Country=ch
 /                                 /de/                              302!  Country=de
 /                                 /at/                              302!  Country=at
@@ -24,6 +33,7 @@ https://www.drpbuildlab.com/*    https://drpbuildlab.com/:splat    301!
 /                                 /it/                              302!  Country=it
 /                                 /pl/                              302!  Country=pl
 /                                 /us/                              302!  Country=us
+/                                 /ca/fr/                           302!  Country=ca  Language=fr
 /                                 /ca/                              302!  Country=ca
 /                                 /mx/                              302!  Country=mx
 /                                 /cl/                              302!  Country=cl
@@ -32,6 +42,14 @@ https://www.drpbuildlab.com/*    https://drpbuildlab.com/:splat    301!
 /                                 /jp/                              302!  Country=jp
 /                                 /sg/                              302!  Country=sg
 /                                 /au/                              302!  Country=au
+/                                 /ae/en/                           302!  Country=ae  Language=en
+/                                 /ae/                              302!  Country=ae
+/                                 /sa/en/                           302!  Country=sa  Language=en
+/                                 /sa/                              302!  Country=sa
+/                                 /qa/en/                           302!  Country=qa  Language=en
+/                                 /qa/                              302!  Country=qa
+/                                 /za/af/                           302!  Country=za  Language=af
+/                                 /za/                              302!  Country=za
 # Every country without a market of its own. English at euro prices rather
 # than Dutch: the studio is Belgian, but Dutch is the wrong greeting for the
 # ~180 countries above, and euro is the currency actually quoted.

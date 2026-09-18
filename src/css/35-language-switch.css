@@ -1,0 +1,47 @@
+/* ─────────────────────────────────────────────
+   LANGUAGE SWITCH — countries published in more than one language
+
+   Links beside the country picker, one per language the country is
+   published in, each to the same page in that language at the same
+   currency. Only multilingual countries render them; everywhere else this
+   file matches nothing.
+
+   Short codes by default and each language's own name on wide screens,
+   because the nav bar is already carrying the logo, four links, the demo
+   button and the country picker. Below 560px there is room for the logo, the
+   picker and the menu button only, so the choice moves into the menu, where
+   it is shown as a row of pills above the closing call to action.
+───────────────────────────────────────────── */
+.lang-switch{display:flex;align-items:center;gap:.15rem;flex-shrink:0}
+.lang-switch a{
+  font-size:.68rem;font-weight:700;letter-spacing:.04em;line-height:1;
+  color:var(--muted);padding:.34rem .45rem;border-radius:3px;
+  border:1px solid transparent;white-space:nowrap;
+  transition:color .2s,border-color .2s,background .2s;
+}
+.lang-switch a:hover{color:var(--ink);border-color:var(--line)}
+.lang-switch a[aria-current="true"]{
+  color:var(--blue-t);border-color:rgba(74,144,226,.35);background:rgba(74,144,226,.06);
+}
+.lang-switch .ls-full{display:none}
+@media(min-width:1281px){
+  .lang-switch .ls-full{display:inline}
+  .lang-switch .ls-short{display:none}
+}
+@media(max-width:560px){.lang-switch{display:none}}
+
+/* In the mobile menu. Overrides the menu's own large link style, which would
+   otherwise set each language at the size of a page link. */
+.nav-ov .nav-ov-langs{
+  display:flex;flex-wrap:wrap;gap:.5rem;
+  margin:2.3rem 6vw 0;
+}
+.nav-ov .nav-ov-langs a{
+  font-size:.95rem;font-weight:700;letter-spacing:0;
+  padding:.5rem 1rem;border:1px solid var(--line);border-radius:999px;
+  color:var(--muted);
+}
+.nav-ov .nav-ov-langs a[aria-current="true"]{
+  color:var(--blue-t);border-color:var(--blue-t);background:rgba(74,144,226,.06);
+}
+.nav-ov .nav-ov-langs .ls-short{display:none}

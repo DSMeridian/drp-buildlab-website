@@ -50,6 +50,6 @@
   white-space:nowrap;
 }
 .arail-i i{font-style:normal;font-variant-numeric:tabular-nums;letter-spacing:.08em}
-.arail-i.on{opacity:1;color:var(--blue)}
+.arail-i.on{opacity:1;color:var(--blue-t)}
 .arail-i.on b{color:var(--ink)}
 @media(max-width:1279px){.arail{display:none}}

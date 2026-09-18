@@ -41,4 +41,4 @@
   text-transform:uppercase;line-height:1;flex-shrink:0;
 }
 .lang-btn:hover{color:var(--ink);border-color:var(--line)}
-.lang-btn.active{color:var(--blue);border-color:rgba(74,144,226,.35);background:rgba(74,144,226,.06)}
+.lang-btn.active{color:var(--blue-t);border-color:rgba(74,144,226,.35);background:rgba(74,144,226,.06)}

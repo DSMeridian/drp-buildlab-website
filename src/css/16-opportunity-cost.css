@@ -16,7 +16,7 @@
 .oval.p{color:#16a34a}
 .ototl{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line-b);display:flex;justify-content:space-between;align-items:baseline}
 .otlbl{font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-.otval{font-size:2rem;font-weight:800;color:var(--blue);letter-spacing:-.035em}
+.otval{font-size:2rem;font-weight:800;color:var(--blue-t);letter-spacing:-.035em}
 .onote{margin-top:1.5rem;padding:1.15rem 1.4rem;background:var(--bg3);border-left:2.5px solid var(--blue);font-size:.82rem;color:var(--muted);line-height:1.75}
 .onote strong{color:var(--ink);font-weight:700}
 .opoints{display:flex;flex-direction:column}
