@@ -35,6 +35,7 @@
   --line:rgba(255,255,255,.10);
   --line-b:rgba(122,179,237,.26);
   --blue:#7ab3ed;
+  --blue-t:#7ab3ed;
   position:relative;
   /* Contains the aurora: without it the blurred glow, which is deliberately
      larger than the section, widens the document and puts a horizontal
@@ -85,7 +86,7 @@
 .dark .oval.n{color:#ff7a7a}
 .dark .oval.p{color:#5fd68b}
 /* The ghost button's border is the token line, which is now a white film. */
-.dark .btn-g:hover{border-color:var(--blue);color:var(--blue);background:rgba(122,179,237,.10)}
+.dark .btn-g:hover{border-color:var(--blue-t);color:var(--blue-t);background:rgba(122,179,237,.10)}
 /* The calculator panel sits on the section's own glow, so it needs a surface
    of its own to stay legible rather than the flat tint it has in the light. */
 .dark .opp-box{

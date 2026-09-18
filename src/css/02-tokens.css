@@ -16,8 +16,15 @@
   --blue-d:#2e74c9;
   --blue-dd:#245ca6;
   --blue-l:#7ab3ed;
-  --muted:rgba(26,31,54,.62);
-  --muted2:rgba(26,31,54,.45);
+  /* Blue set as TEXT, which is a different job from blue as a brand colour.
+     --blue is 2.94:1 on bone and --blue-d is 4.21, both short of 4.5 for the
+     small caps labels it was used for. This one clears it on every light
+     ground; .dark swaps it for the light blue, as it does for --blue. */
+  --blue-t:#245ca6;
+  /* Mixed to clear 4.5:1 on the *worst* light ground, which is bone, not
+     white -- at .62 and .45 these measured 4.45 and 2.73 on it. */
+  --muted:rgba(26,31,54,.70);
+  --muted2:rgba(26,31,54,.64);
   --line:rgba(26,31,54,.09);
   --line-b:rgba(74,144,226,.2);
 }

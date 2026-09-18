@@ -1,7 +1,12 @@
 /* ─────────────────────────────────────────────
    SHARED SECTION
 ───────────────────────────────────────────── */
-.sec{padding:6.5rem 5vw}
+/* The ground, declared. This was padding only: .sec leaned on the body being
+   white, which it was until the body was blacked to stop the overscroll
+   flashing white above a black hero. Every plain section then went black with
+   ink text on it -- 1.1:1, invisible. A section paints its own ground now, so
+   the body colour is only ever seen where it should be: past either end. */
+.sec{padding:6.5rem 5vw;background:var(--bg)}
 /* ── The alternate ground ────────────────────────────────────────
    This class did nothing for most of the site's life: it was
    background:var(--bg), and --bg is #ffffff, so every "alternating" section
@@ -31,7 +36,7 @@ section[id]{scroll-margin-top:90px}
 .sec+.sec,.sec+.sec-alt,.sec-alt+.sec,.sec-alt+.sec-alt{
   border-top:1px solid var(--line);
 }
-.stag{display:block;font-size:.6rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);margin-bottom:.85rem}
+.stag{display:block;font-size:.6rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--blue-t);margin-bottom:.85rem}
 .sh{
   font-size:clamp(2.6rem,5.5vw,5.5rem);
   font-weight:800;line-height:1.0;letter-spacing:-.038em;color:var(--ink);
@@ -42,7 +47,6 @@ section[id]{scroll-margin-top:90px}
 
 /* Page header — the pages that are not the home hero still need an h1 */
 .phero{padding:9.5rem 5vw 3.75rem;border-bottom:1px solid var(--line)}
-.phero-eye{font-size:.6rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);margin-bottom:.9rem}
 .phero-h1{margin-bottom:0}
 .phero-sub{margin-top:1.15rem;max-width:620px}
 

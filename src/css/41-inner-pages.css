@@ -58,16 +58,16 @@
   list-style:none;
 }
 .faq-q::-webkit-details-marker{display:none}
-.faq-q:hover{color:var(--blue-d)}
+.faq-q:hover{color:var(--blue-t)}
 /* Keyboard focus lands on the summary, and without this the only signal is
    the row opening -- which is also what a mouse does, so there is none. */
-.faq-i:focus-within .faq-q{color:var(--blue-d)}
+.faq-i:focus-within .faq-q{color:var(--blue-t)}
 
 .faq-q::before{
   content:counter(faq,decimal-leading-zero);
   flex:none;width:2.4rem;
   font-size:.68rem;font-weight:700;letter-spacing:.18em;
-  font-variant-numeric:tabular-nums;color:var(--blue);
+  font-variant-numeric:tabular-nums;color:var(--blue-t);
   text-transform:none;
 }
 

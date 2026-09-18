@@ -596,10 +596,8 @@ function applyLang(lang,persist){
      only the word "Menu" needed adding. */
   const GROUPKEYS={menu:'nav.menu',social:'soc.tag'};
   qsa('[data-navgroup]').forEach(el=>{ const k=GROUPKEYS[el.dataset.navgroup]; if(k&&t[k]) el.textContent=t[k]; });
-  const he=qs('.hero-eye'); if(he) he.textContent=t['hero.eye'];
   const ph=qs('.phero');
   if(ph){
-    const pe=ph.querySelector('.phero-eye'); if(pe&&t['phero.'+pg+'.eye']) pe.textContent=t['phero.'+pg+'.eye'];
     const phh=ph.querySelector('.phero-h1'); if(phh&&t['phero.'+pg+'.h']){resetSh(phh);phh.innerHTML=t['phero.'+pg+'.h'];}
     const ps=ph.querySelector('.phero-sub'); if(ps&&t['phero.'+pg+'.sub']) ps.innerHTML=t['phero.'+pg+'.sub'];
   }

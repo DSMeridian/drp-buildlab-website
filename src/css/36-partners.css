@@ -62,7 +62,7 @@
 .prt-body::before{
   content:'[ ' counter(prt,decimal-leading-zero) ' ]';
   font-size:.6rem;font-weight:700;letter-spacing:.24em;
-  font-variant-numeric:tabular-nums;color:var(--blue-d);
+  font-variant-numeric:tabular-nums;color:var(--blue-t);
   margin-bottom:1.1rem;
 }
 
@@ -81,7 +81,7 @@
 /* The arrow is the affordance: in caps at this weight an underline reads as
    damage, and nothing else says "this leaves the site". */
 a.prt-name::after{content:'↗';font-size:.62em;font-weight:700;transition:transform .25s}
-a.prt-name:hover{color:var(--blue-d)}
+a.prt-name:hover{color:var(--blue-t)}
 a.prt-name:hover::after{transform:translate(2px,-2px)}
 /* Right to left, the arrow leads rather than trails, and points the way the
    text runs. */

@@ -44,8 +44,15 @@ a{text-decoration:none;color:inherit}
   --blue-d:#2e74c9;
   --blue-dd:#245ca6;
   --blue-l:#7ab3ed;
-  --muted:rgba(26,31,54,.62);
-  --muted2:rgba(26,31,54,.45);
+  /* Blue set as TEXT, which is a different job from blue as a brand colour.
+     --blue is 2.94:1 on bone and --blue-d is 4.21, both short of 4.5 for the
+     small caps labels it was used for. This one clears it on every light
+     ground; .dark swaps it for the light blue, as it does for --blue. */
+  --blue-t:#245ca6;
+  /* Mixed to clear 4.5:1 on the *worst* light ground, which is bone, not
+     white -- at .62 and .45 these measured 4.45 and 2.73 on it. */
+  --muted:rgba(26,31,54,.70);
+  --muted2:rgba(26,31,54,.64);
   --line:rgba(26,31,54,.09);
   --line-b:rgba(74,144,226,.2);
 }
@@ -164,14 +171,6 @@ nav.s{
   background:var(--bg);
 }
 /* Eye — top anchor, always below nav */
-.hero-eye{
-  position:relative;z-index:4;
-  display:inline-flex;align-items:center;gap:.7rem;
-  font-size:.65rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--blue);
-  opacity:0;animation:tUp .8s cubic-bezier(.16,1,.3,1) 1.6s forwards;
-}
-.hero-eye::before{content:'';display:block;width:28px;height:1.5px;background:var(--blue)}
 /* Content — bottom anchor */
 .hero-content{position:relative;z-index:2;width:100%}
 .hero-h1{
@@ -196,7 +195,7 @@ nav.s{
 .hl-i.d1{animation-delay:.08s}
 .hl-i.d2{animation-delay:.18s}
 @keyframes hlIn{to{transform:translateY(0)}}
-.h-accent{color:var(--blue)}
+.h-accent{color:var(--blue-t)}
 .h-light{font-style:italic;font-weight:300;color:var(--muted)}
 .hero-foot{
   display:flex;align-items:flex-end;justify-content:space-between;
@@ -233,7 +232,12 @@ nav.s{
 /* ─────────────────────────────────────────────
    SHARED SECTION
 ───────────────────────────────────────────── */
-.sec{padding:6.5rem 5vw}
+/* The ground, declared. This was padding only: .sec leaned on the body being
+   white, which it was until the body was blacked to stop the overscroll
+   flashing white above a black hero. Every plain section then went black with
+   ink text on it -- 1.1:1, invisible. A section paints its own ground now, so
+   the body colour is only ever seen where it should be: past either end. */
+.sec{padding:6.5rem 5vw;background:var(--bg)}
 /* ── The alternate ground ────────────────────────────────────────
    This class did nothing for most of the site's life: it was
    background:var(--bg), and --bg is #ffffff, so every "alternating" section
@@ -263,7 +267,7 @@ section[id]{scroll-margin-top:90px}
 .sec+.sec,.sec+.sec-alt,.sec-alt+.sec,.sec-alt+.sec-alt{
   border-top:1px solid var(--line);
 }
-.stag{display:block;font-size:.6rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);margin-bottom:.85rem}
+.stag{display:block;font-size:.6rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--blue-t);margin-bottom:.85rem}
 .sh{
   font-size:clamp(2.6rem,5.5vw,5.5rem);
   font-weight:800;line-height:1.0;letter-spacing:-.038em;color:var(--ink);
@@ -274,7 +278,6 @@ section[id]{scroll-margin-top:90px}
 
 /* Page header — the pages that are not the home hero still need an h1 */
 .phero{padding:9.5rem 5vw 3.75rem;border-bottom:1px solid var(--line)}
-.phero-eye{font-size:.6rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);margin-bottom:.9rem}
 .phero-h1{margin-bottom:0}
 .phero-sub{margin-top:1.15rem;max-width:620px}
 
@@ -310,7 +313,7 @@ section[id]{scroll-margin-top:90px}
 .btn-p{background:var(--blue-d);color:#fff;box-shadow:0 8px 24px rgba(74,144,226,.28)}
 .btn-p:hover{background:var(--blue-dd);transform:translateY(-2px);box-shadow:0 14px 36px rgba(74,144,226,.42)}
 .btn-g{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
-.btn-g:hover{border-color:var(--blue);color:var(--blue);background:rgba(74,144,226,.05)}
+.btn-g:hover{border-color:var(--blue-t);color:var(--blue-t);background:rgba(74,144,226,.05)}
 
 /* ─────────────────────────────────────────────
    PROCESS
@@ -329,11 +332,11 @@ section[id]{scroll-margin-top:90px}
   transition:width .6s cubic-bezier(.16,1,.3,1);z-index:0;
 }
 .srow:hover::before{width:100%}
-.sn{font-size:.58rem;font-weight:700;letter-spacing:.22em;color:var(--blue);text-transform:uppercase;padding-top:.3rem;position:relative;z-index:1}
+.sn{font-size:.58rem;font-weight:700;letter-spacing:.22em;color:var(--blue-t);text-transform:uppercase;padding-top:.3rem;position:relative;z-index:1}
 .sbody{position:relative;z-index:1}
 .stitle{font-size:clamp(1.05rem,2vw,1.5rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.45rem;color:var(--ink)}
 .stxt{font-size:.86rem;color:var(--muted);line-height:1.85;max-width:460px}
-.stime{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);opacity:.45;text-align:right;padding-top:.35rem;position:relative;z-index:1}
+.stime{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-t);opacity:.45;text-align:right;padding-top:.35rem;position:relative;z-index:1}
 
 /* ─────────────────────────────────────────────
    ABOUT
@@ -351,13 +354,13 @@ section[id]{scroll-margin-top:90px}
 .ab-logo-wrap svg{width:72px;height:72px;border-radius:10px;flex-shrink:0}
 .ab-logo-text{display:flex;flex-direction:column}
 .ab-logo-name{font-size:1.3rem;font-weight:800;letter-spacing:-.025em;color:var(--ink)}
-.ab-logo-tag{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-top:.1rem}
+.ab-logo-tag{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-t);margin-top:.1rem}
 .ab-quote{font-size:clamp(1.3rem,2.2vw,2.2rem);font-weight:700;line-height:1.2;letter-spacing:-.025em;margin-bottom:1.25rem;color:var(--ink)}
-.ab-quote em{font-style:italic;font-weight:300;color:var(--blue)}
+.ab-quote em{font-style:italic;font-weight:300;color:var(--blue-t)}
 .ab-sig{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 .ab-nums{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2.5rem}
 .abn{background:var(--bg);padding:1.6rem 1.8rem}
-.abn-v{font-size:clamp(1.45rem,6.5vw,2.5rem);font-weight:800;letter-spacing:-.04em;color:var(--blue);line-height:1;margin-bottom:.2rem}
+.abn-v{font-size:clamp(1.45rem,6.5vw,2.5rem);font-weight:800;letter-spacing:-.04em;color:var(--blue-t);line-height:1;margin-bottom:.2rem}
 .abn-l{font-size:.68rem;color:var(--muted)}
 .ab-right p{font-size:.92rem;color:var(--muted);line-height:1.9;margin-bottom:1.35rem}
 .ab-right p strong{color:var(--ink);font-weight:700}
@@ -365,7 +368,7 @@ section[id]{scroll-margin-top:90px}
 .pillar{display:flex;gap:1.4rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
 .pillar>*{min-width:0}
 .pillar:first-child{border-top:1px solid var(--line)}
-.pn{font-size:.58rem;font-weight:700;color:var(--blue);letter-spacing:.1em;flex-shrink:0;padding-top:.12rem}
+.pn{font-size:.58rem;font-weight:700;color:var(--blue-t);letter-spacing:.1em;flex-shrink:0;padding-top:.12rem}
 .ptitle{font-weight:700;font-size:.88rem;margin-bottom:.18rem;color:var(--ink)}
 .pbody{font-size:.8rem;color:var(--muted);line-height:1.72}
 
@@ -381,7 +384,7 @@ section[id]{scroll-margin-top:90px}
 .wcard:hover{background:var(--bg2)}
 .wcard:hover::after{transform:scaleX(1)}
 .wico{width:40px;height:40px;background:rgba(74,144,226,.08);border-radius:7px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
-.wico svg{width:19px;height:19px;color:var(--blue)}
+.wico svg{width:19px;height:19px;color:var(--blue-t)}
 .wtitle{font-size:.96rem;font-weight:700;margin-bottom:.42rem;letter-spacing:-.01em;color:var(--ink)}
 .wbody{font-size:.82rem;color:var(--muted);line-height:1.78}
 
@@ -403,7 +406,7 @@ section[id]{scroll-margin-top:90px}
 .oval.p{color:#16a34a}
 .ototl{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line-b);display:flex;justify-content:space-between;align-items:baseline}
 .otlbl{font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-.otval{font-size:2rem;font-weight:800;color:var(--blue);letter-spacing:-.035em}
+.otval{font-size:2rem;font-weight:800;color:var(--blue-t);letter-spacing:-.035em}
 .onote{margin-top:1.5rem;padding:1.15rem 1.4rem;background:var(--bg3);border-left:2.5px solid var(--blue);font-size:.82rem;color:var(--muted);line-height:1.75}
 .onote strong{color:var(--ink);font-weight:700}
 .opoints{display:flex;flex-direction:column}
@@ -440,12 +443,12 @@ section[id]{scroll-margin-top:90px}
    Rp 16.417.744-Rp 51.305.449 needs to be allowed to wrap. */
 .cc>*,.chc>*{min-width:0;overflow-wrap:anywhere}
 .cnm{font-weight:700;color:var(--ink)}
-.cnm.u{color:var(--blue)}
-.cbdg{display:inline-block;background:var(--blue);color:#fff;font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.14rem .48rem;margin-left:.45rem;border-radius:2px;vertical-align:middle}
+.cnm.u{color:var(--blue-t)}
+.cbdg{display:inline-block;background:var(--blue-d);color:#fff;font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.14rem .48rem;margin-left:.45rem;border-radius:2px;vertical-align:middle}
 .ck{color:#16a34a;font-weight:700}
 .cx{color:var(--muted2)}
 .cp{font-weight:700;color:var(--ink)}
-.cp.g{color:var(--blue)}
+.cp.g{color:var(--blue-t)}
 .cp.b{color:var(--muted2)}
 .cnote{margin-top:1.5rem;padding:1.1rem 1.4rem;background:var(--bg2);border:1px solid var(--line-b);font-size:.82rem;color:var(--muted);line-height:1.78}
 .cnote strong{color:var(--ink)}
@@ -458,19 +461,19 @@ section[id]{scroll-margin-top:90px}
 .plan{background:var(--bg);padding:3rem 2.5rem;position:relative;transition:background .3s}
 .plan:hover{background:var(--bg2)}
 .plan.feat{background:var(--bg2);border:1px solid var(--line-b);box-shadow:0 0 50px rgba(74,144,226,.08);margin:-1px;z-index:1}
-.pbadge{display:inline-block;background:var(--blue);color:#fff;font-size:.56rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.24rem .72rem;margin-bottom:1.5rem}
+.pbadge{display:inline-block;background:var(--blue-d);color:#fff;font-size:.56rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.24rem .72rem;margin-bottom:1.5rem}
 .pname{font-size:.6rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
 .pprice{font-size:3.5rem;font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:.2rem;color:var(--ink)}
 .pprice sup{font-size:1.2rem;vertical-align:super;font-weight:600}
 .pperiod{font-size:.8rem;color:var(--muted);margin-bottom:2rem;padding-bottom:1.4rem;border-bottom:1px solid var(--line)}
 .pfeats{list-style:none;margin-bottom:2rem}
 .pfeats li{font-size:.83rem;color:rgba(26,31,54,.65);padding:.4rem 0;display:flex;align-items:flex-start;gap:.6rem;border-bottom:1px solid rgba(26,31,54,.05)}
-.pfeats li::before{content:'✓';color:var(--blue);font-weight:700;flex-shrink:0}
+.pfeats li::before{content:'✓';color:var(--blue-t);font-weight:700;flex-shrink:0}
 .pbtn{display:block;text-align:center;padding:.88rem;font-size:.84rem;font-weight:700;letter-spacing:.03em;transition:all .25s}
 .pbtn.f{background:var(--blue-d);color:#fff;box-shadow:0 6px 20px rgba(74,144,226,.26)}
 .pbtn.f:hover{background:var(--blue-dd);box-shadow:0 10px 32px rgba(74,144,226,.4)}
 .pbtn.o{border:1.5px solid var(--line);color:var(--ink)}
-.pbtn.o:hover{border-color:var(--blue);color:var(--blue);background:rgba(74,144,226,.05)}
+.pbtn.o:hover{border-color:var(--blue-t);color:var(--blue-t);background:rgba(74,144,226,.05)}
 .exgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1.4rem}
 .ex{background:var(--bg);padding:1.2rem 1.4rem;display:flex;justify-content:space-between;align-items:center;gap:.9rem;transition:background .25s}
 .ex:hover{background:var(--bg2)}
@@ -486,23 +489,23 @@ section[id]{scroll-margin-top:90px}
    so at a soft hyphen in the copy -- German "hinzu&shy;fügen" -- or, failing
    that, anywhere (overflow-wrap). */
 .ex-n{font-size:.83rem;color:var(--muted);line-height:1.45;min-width:0;overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
-.ex-p{font-size:.86rem;font-weight:700;color:var(--blue-d);flex-shrink:0}
+.ex-p{font-size:.86rem;font-weight:700;color:var(--blue-t);flex-shrink:0}
 /* C2 — 11 items in a 4-col grid: the closer spans 2 so the last row is flush */
 .ex-wide{grid-column:span 2}
 /* Footer social row — three links now, so let them wrap on narrow screens */
 .ft-socials{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
-.ft-follow{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.ft-follow{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55)}
 .addon>*{min-width:0}
 .addon{
   margin-top:1.6rem;border:1px solid var(--line);background:var(--bg2);
   padding:1.6rem 1.8rem;display:flex;justify-content:space-between;
   align-items:center;gap:1.6rem;flex-wrap:wrap;
 }
-.addon-tag{font-size:.6rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--blue-d);display:block;margin-bottom:.5rem}
+.addon-tag{font-size:.6rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--blue-t);display:block;margin-bottom:.5rem}
 .addon-n{font-size:1.15rem;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
 .addon-b{font-size:.84rem;color:var(--ink2);line-height:1.6;margin-top:.45rem;max-width:520px}
 .addon-r{display:flex;align-items:baseline;gap:.9rem;flex-shrink:0;flex-wrap:wrap;min-width:0}
-.addon-p{font-size:clamp(1.1rem,5vw,1.5rem);font-weight:800;letter-spacing:-.03em;color:var(--blue-d);white-space:nowrap}
+.addon-p{font-size:clamp(1.1rem,5vw,1.5rem);font-weight:800;letter-spacing:-.03em;color:var(--blue-t);white-space:nowrap}
 .addon-p span{font-size:.78rem;font-weight:600;color:var(--ink2);letter-spacing:0}
 .addon-or{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.16em}
 
@@ -547,7 +550,7 @@ section[id]{scroll-margin-top:90px}
   padding:.88rem 1.7rem;font-size:.86rem;font-weight:600;
   transition:all .25s;
 }
-.soc-link:hover{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 8px 26px rgba(74,144,226,.28)}
+.soc-link:hover{background:var(--blue);color:#fff;border-color:var(--blue-t);box-shadow:0 8px 26px rgba(74,144,226,.28)}
 .soc-link svg{width:18px;height:18px}
 
 /* ─────────────────────────────────────────────
@@ -559,10 +562,10 @@ section[id]{scroll-margin-top:90px}
 .ct-items{display:flex;flex-direction:column}
 .ct-item{display:flex;gap:1.2rem;align-items:flex-start;padding:1.2rem 0;border-bottom:1px solid var(--line)}
 .ct-item:first-child{border-top:1px solid var(--line)}
-.ci-ico{color:var(--blue);flex-shrink:0;margin-top:.1rem}
+.ci-ico{color:var(--blue-t);flex-shrink:0;margin-top:.1rem}
 .ci-lbl{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.22rem}
 .ci-val{font-size:.88rem;color:var(--ink)}
-.ci-val a{color:var(--blue)}
+.ci-val a{color:var(--blue-t)}
 .fwrap{background:var(--bg2);border:1px solid var(--line);padding:3rem;position:relative}
 .fwrap::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue-d),var(--blue-l))}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
@@ -588,14 +591,14 @@ section[id]{scroll-margin-top:90px}
 .ferr.on{display:block}
 .ferr-t{font-size:.86rem;font-weight:700;color:#b91c1c;margin-bottom:.35rem}
 .ferr-b{font-size:.81rem;color:var(--ink2);line-height:1.75}
-.ferr-b a{color:var(--blue-d);font-weight:700;text-decoration:underline}
+.ferr-b a{color:var(--blue-t);font-weight:700;text-decoration:underline}
 /* A10 — GDPR consent */
 .fconsent{display:flex;align-items:flex-start;gap:.65rem;margin:.35rem 0 1.1rem}
-.fconsent input{width:16px;height:16px;flex-shrink:0;margin-top:.16rem;appearance:auto;accent-color:var(--blue-d)}
+.fconsent input{width:16px;height:16px;flex-shrink:0;margin-top:.16rem;appearance:auto;accent-color:var(--blue-t)}
 .fconsent label{font-size:.78rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);line-height:1.65}
 .succ{display:none;text-align:center;padding:3rem 1rem}
 .succ.on{display:block}
-.succ-chk{font-size:2.2rem;color:var(--blue);margin-bottom:.9rem}
+.succ-chk{font-size:2.2rem;color:var(--blue-t);margin-bottom:.9rem}
 .succ h3{font-size:1.4rem;font-weight:800;color:var(--ink);margin-bottom:.45rem}
 .succ p{font-size:.88rem;color:var(--muted)}
 
@@ -691,7 +694,7 @@ footer{background:var(--ink);padding:4rem 5vw 2.5rem;color:#fff}
   text-transform:uppercase;line-height:1;flex-shrink:0;
 }
 .lang-btn:hover{color:var(--ink);border-color:var(--line)}
-.lang-btn.active{color:var(--blue);border-color:rgba(74,144,226,.35);background:rgba(74,144,226,.06)}
+.lang-btn.active{color:var(--blue-t);border-color:rgba(74,144,226,.35);background:rgba(74,144,226,.06)}
 
 /* ─────────────────────────────────────────────
    MOBILE NAV  (A4 + C4)
@@ -986,7 +989,7 @@ body.nav-open{overflow:hidden}
   white-space:nowrap;
 }
 .arail-i i{font-style:normal;font-variant-numeric:tabular-nums;letter-spacing:.08em}
-.arail-i.on{opacity:1;color:var(--blue)}
+.arail-i.on{opacity:1;color:var(--blue-t)}
 .arail-i.on b{color:var(--ink)}
 @media(max-width:1279px){.arail{display:none}}
 
@@ -1263,7 +1266,7 @@ html[lang="ar"] .abn-v,html[lang="ar"] .pprice,html[lang="ar"] .otval{line-heigh
 }
 .lang-switch a:hover{color:var(--ink);border-color:var(--line)}
 .lang-switch a[aria-current="true"]{
-  color:var(--blue-d);border-color:rgba(74,144,226,.35);background:rgba(74,144,226,.06);
+  color:var(--blue-t);border-color:rgba(74,144,226,.35);background:rgba(74,144,226,.06);
 }
 .lang-switch .ls-full{display:none}
 @media(min-width:1281px){
@@ -1284,7 +1287,7 @@ html[lang="ar"] .abn-v,html[lang="ar"] .pprice,html[lang="ar"] .otval{line-heigh
   color:var(--muted);
 }
 .nav-ov .nav-ov-langs a[aria-current="true"]{
-  color:var(--blue-d);border-color:var(--blue);background:rgba(74,144,226,.06);
+  color:var(--blue-t);border-color:var(--blue-t);background:rgba(74,144,226,.06);
 }
 .nav-ov .nav-ov-langs .ls-short{display:none}
 
@@ -1352,7 +1355,7 @@ html[lang="ar"] .abn-v,html[lang="ar"] .pprice,html[lang="ar"] .otval{line-heigh
 .prt-body::before{
   content:'[ ' counter(prt,decimal-leading-zero) ' ]';
   font-size:.6rem;font-weight:700;letter-spacing:.24em;
-  font-variant-numeric:tabular-nums;color:var(--blue-d);
+  font-variant-numeric:tabular-nums;color:var(--blue-t);
   margin-bottom:1.1rem;
 }
 
@@ -1371,7 +1374,7 @@ html[lang="ar"] .abn-v,html[lang="ar"] .pprice,html[lang="ar"] .otval{line-heigh
 /* The arrow is the affordance: in caps at this weight an underline reads as
    damage, and nothing else says "this leaves the site". */
 a.prt-name::after{content:'↗';font-size:.62em;font-weight:700;transition:transform .25s}
-a.prt-name:hover{color:var(--blue-d)}
+a.prt-name:hover{color:var(--blue-t)}
 a.prt-name:hover::after{transform:translate(2px,-2px)}
 /* Right to left, the arrow leads rather than trails, and points the way the
    text runs. */
@@ -1439,6 +1442,7 @@ a.prt-name:hover::after{transform:translate(2px,-2px)}
   --line:rgba(255,255,255,.10);
   --line-b:rgba(122,179,237,.26);
   --blue:#7ab3ed;
+  --blue-t:#7ab3ed;
   position:relative;
   /* Contains the aurora: without it the blurred glow, which is deliberately
      larger than the section, widens the document and puts a horizontal
@@ -1489,7 +1493,7 @@ a.prt-name:hover::after{transform:translate(2px,-2px)}
 .dark .oval.n{color:#ff7a7a}
 .dark .oval.p{color:#5fd68b}
 /* The ghost button's border is the token line, which is now a white film. */
-.dark .btn-g:hover{border-color:var(--blue);color:var(--blue);background:rgba(122,179,237,.10)}
+.dark .btn-g:hover{border-color:var(--blue-t);color:var(--blue-t);background:rgba(122,179,237,.10)}
 /* The calculator panel sits on the section's own glow, so it needs a surface
    of its own to stay legible rather than the flat tint it has in the light. */
 .dark .opp-box{
@@ -1633,12 +1637,11 @@ a.prt-name:hover::after{transform:translate(2px,-2px)}
    Set in brackets, the way a running head is marked up in print. The hero's
    label loses its rule and joins them, so every eyebrow on the site is the
    same object. */
-.stag,.phero-eye,.hero-eye{
+.stag{
   font-size:.6rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
 }
-.stag::before,.phero-eye::before,.hero-eye::before{content:'[ '}
-.stag::after,.phero-eye::after,.hero-eye::after{content:' ]'}
-.hero-eye::before{width:auto;height:auto;background:none;display:inline}
+.stag::before{content:'[ '}
+.stag::after{content:' ]'}
 
 /* ── Display type ────────────────────────────────────────────────────────
    Caps, tight tracking, heavy weight. The italic light face stays -- it is
@@ -1683,7 +1686,14 @@ a.prt-name:hover::after{transform:translate(2px,-2px)}
    Bottom-anchored: label, headline, proof, then the standfirst and the two
    actions side by side on the last line. The ground is the dark section
    treatment, so the aurora, the grid and the grain come with it. */
-.hero{justify-content:flex-end;padding-block:9rem 4.5rem;min-height:100vh}
+/* Full screen, and the same full screen on a phone.
+   It was 92vh below 768px, which was a fudge for the mobile URL bar: 100vh
+   on a phone is the viewport with the bar hidden, so a 100vh hero is taller
+   than what you can actually see and its last line sits under the chrome.
+   svh is that measurement done properly -- the smallest the viewport gets,
+   with the bar showing -- so the hero fills the screen and nothing is cut.
+   vh stays as the fallback for anything that has not got svh. */
+.hero{justify-content:flex-end;padding-block:9rem 4.5rem;min-height:100vh;min-height:100svh}
 .hero-content{width:100%;padding-inline:0}
 .hero-h1{margin-bottom:0}
 .hero-foot{align-items:flex-end;margin-top:0}
@@ -1717,7 +1727,7 @@ nav:not(.s) .market-sw select:hover{color:#fff;border-color:rgba(255,255,255,.5)
 .hero .shint span{color:rgba(255,255,255,.5)}
 
 @media(max-width:768px){
-  .hero{padding-block:7rem 3.5rem;min-height:92vh}
+  .hero{padding-block:7rem 3.5rem}
   .phero{padding-block:8.5rem 3rem}
   .trust{gap:.5rem 1.1rem;margin:1.4rem 0 1.8rem}
   .trust li{font-size:.76rem}
@@ -1740,7 +1750,7 @@ nav:not(.s) .market-sw select:hover{color:#fff;border-color:rgba(255,255,255,.5)
   content:counter(wcard,decimal-leading-zero);
   display:block;margin-bottom:1.5rem;
   font-size:.68rem;font-weight:700;letter-spacing:.18em;
-  font-variant-numeric:tabular-nums;color:var(--blue);
+  font-variant-numeric:tabular-nums;color:var(--blue-t);
 }
 .wtitle{text-transform:uppercase;font-size:1rem;letter-spacing:-.01em;margin-bottom:.6rem}
 .wbody{font-size:.84rem}
@@ -1889,16 +1899,16 @@ nav:not(.s) .market-sw select:hover{color:#fff;border-color:rgba(255,255,255,.5)
   list-style:none;
 }
 .faq-q::-webkit-details-marker{display:none}
-.faq-q:hover{color:var(--blue-d)}
+.faq-q:hover{color:var(--blue-t)}
 /* Keyboard focus lands on the summary, and without this the only signal is
    the row opening -- which is also what a mouse does, so there is none. */
-.faq-i:focus-within .faq-q{color:var(--blue-d)}
+.faq-i:focus-within .faq-q{color:var(--blue-t)}
 
 .faq-q::before{
   content:counter(faq,decimal-leading-zero);
   flex:none;width:2.4rem;
   font-size:.68rem;font-weight:700;letter-spacing:.18em;
-  font-variant-numeric:tabular-nums;color:var(--blue);
+  font-variant-numeric:tabular-nums;color:var(--blue-t);
   text-transform:none;
 }
 
@@ -1995,7 +2005,7 @@ nav:not(.s) .market-sw select:hover{color:#fff;border-color:rgba(255,255,255,.5)
   background:rgba(74,144,226,.06);
   font-size:.8rem;line-height:1.65;color:var(--ink2);
 }
-.ref-note strong{color:var(--blue-d);font-weight:700}
+.ref-note strong{color:var(--blue-t);font-weight:700}
 /* The border is the one thing that has to move: on an Arabic page a rule on
    the left of the text is a rule at the end of it. */
 [dir="rtl"] .ref-note{border-left:none;border-right:2px solid var(--blue-d)}

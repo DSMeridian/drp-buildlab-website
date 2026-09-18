@@ -33,12 +33,11 @@
    Set in brackets, the way a running head is marked up in print. The hero's
    label loses its rule and joins them, so every eyebrow on the site is the
    same object. */
-.stag,.phero-eye,.hero-eye{
+.stag{
   font-size:.6rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
 }
-.stag::before,.phero-eye::before,.hero-eye::before{content:'[ '}
-.stag::after,.phero-eye::after,.hero-eye::after{content:' ]'}
-.hero-eye::before{width:auto;height:auto;background:none;display:inline}
+.stag::before{content:'[ '}
+.stag::after{content:' ]'}
 
 /* ── Display type ────────────────────────────────────────────────────────
    Caps, tight tracking, heavy weight. The italic light face stays -- it is
@@ -83,7 +82,14 @@
    Bottom-anchored: label, headline, proof, then the standfirst and the two
    actions side by side on the last line. The ground is the dark section
    treatment, so the aurora, the grid and the grain come with it. */
-.hero{justify-content:flex-end;padding-block:9rem 4.5rem;min-height:100vh}
+/* Full screen, and the same full screen on a phone.
+   It was 92vh below 768px, which was a fudge for the mobile URL bar: 100vh
+   on a phone is the viewport with the bar hidden, so a 100vh hero is taller
+   than what you can actually see and its last line sits under the chrome.
+   svh is that measurement done properly -- the smallest the viewport gets,
+   with the bar showing -- so the hero fills the screen and nothing is cut.
+   vh stays as the fallback for anything that has not got svh. */
+.hero{justify-content:flex-end;padding-block:9rem 4.5rem;min-height:100vh;min-height:100svh}
 .hero-content{width:100%;padding-inline:0}
 .hero-h1{margin-bottom:0}
 .hero-foot{align-items:flex-end;margin-top:0}
@@ -117,7 +123,7 @@ nav:not(.s) .market-sw select:hover{color:#fff;border-color:rgba(255,255,255,.5)
 .hero .shint span{color:rgba(255,255,255,.5)}
 
 @media(max-width:768px){
-  .hero{padding-block:7rem 3.5rem;min-height:92vh}
+  .hero{padding-block:7rem 3.5rem}
   .phero{padding-block:8.5rem 3rem}
   .trust{gap:.5rem 1.1rem;margin:1.4rem 0 1.8rem}
   .trust li{font-size:.76rem}
@@ -140,7 +146,7 @@ nav:not(.s) .market-sw select:hover{color:#fff;border-color:rgba(255,255,255,.5)
   content:counter(wcard,decimal-leading-zero);
   display:block;margin-bottom:1.5rem;
   font-size:.68rem;font-weight:700;letter-spacing:.18em;
-  font-variant-numeric:tabular-nums;color:var(--blue);
+  font-variant-numeric:tabular-nums;color:var(--blue-t);
 }
 .wtitle{text-transform:uppercase;font-size:1rem;letter-spacing:-.01em;margin-bottom:.6rem}
 .wbody{font-size:.84rem}

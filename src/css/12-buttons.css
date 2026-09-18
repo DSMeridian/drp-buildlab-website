@@ -10,4 +10,4 @@
 .btn-p{background:var(--blue-d);color:#fff;box-shadow:0 8px 24px rgba(74,144,226,.28)}
 .btn-p:hover{background:var(--blue-dd);transform:translateY(-2px);box-shadow:0 14px 36px rgba(74,144,226,.42)}
 .btn-g{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
-.btn-g:hover{border-color:var(--blue);color:var(--blue);background:rgba(74,144,226,.05)}
+.btn-g:hover{border-color:var(--blue-t);color:var(--blue-t);background:rgba(74,144,226,.05)}

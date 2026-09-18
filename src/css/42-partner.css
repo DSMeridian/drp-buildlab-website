@@ -60,7 +60,7 @@
   background:rgba(74,144,226,.06);
   font-size:.8rem;line-height:1.65;color:var(--ink2);
 }
-.ref-note strong{color:var(--blue-d);font-weight:700}
+.ref-note strong{color:var(--blue-t);font-weight:700}
 /* The border is the one thing that has to move: on an Arabic page a rule on
    the left of the text is a rule at the end of it. */
 [dir="rtl"] .ref-note{border-left:none;border-right:2px solid var(--blue-d)}

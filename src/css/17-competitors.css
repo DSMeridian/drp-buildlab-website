@@ -25,12 +25,12 @@
    Rp 16.417.744-Rp 51.305.449 needs to be allowed to wrap. */
 .cc>*,.chc>*{min-width:0;overflow-wrap:anywhere}
 .cnm{font-weight:700;color:var(--ink)}
-.cnm.u{color:var(--blue)}
-.cbdg{display:inline-block;background:var(--blue);color:#fff;font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.14rem .48rem;margin-left:.45rem;border-radius:2px;vertical-align:middle}
+.cnm.u{color:var(--blue-t)}
+.cbdg{display:inline-block;background:var(--blue-d);color:#fff;font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.14rem .48rem;margin-left:.45rem;border-radius:2px;vertical-align:middle}
 .ck{color:#16a34a;font-weight:700}
 .cx{color:var(--muted2)}
 .cp{font-weight:700;color:var(--ink)}
-.cp.g{color:var(--blue)}
+.cp.g{color:var(--blue-t)}
 .cp.b{color:var(--muted2)}
 .cnote{margin-top:1.5rem;padding:1.1rem 1.4rem;background:var(--bg2);border:1px solid var(--line-b);font-size:.82rem;color:var(--muted);line-height:1.78}
 .cnote strong{color:var(--ink)}
