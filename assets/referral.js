@@ -5,7 +5,7 @@
 
        https://drpbuildlab.com/?ref=LOTTE24
 
-   This remembers the code and puts it on the demo request, so the quote that
+   This remembers the code and puts it on the quote request, so the quote that
    comes out of that request can carry the visitor's 10% and the partner's 5%.
    That is the whole job. Everything after the form submission -- issuing the
    code, discounting the quote, booking the commission when the invoice is
@@ -44,10 +44,16 @@
   var DAYS = 90;
   var MAX_AGE = DAYS * 24 * 60 * 60 * 1000;
 
-  /* Codes are chosen by us, not typed by the visitor, so the pattern can be
-     strict. Anything else in the parameter is discarded rather than stored:
-     the value reaches a form field and an invoice, and a query string is the
-     most public input a page has. */
+  /* Codes on the URL are ones we issued, so the pattern can be strict.
+     Anything else in the parameter is discarded rather than stored: the value
+     reaches a form field and an invoice, and a query string is the most
+     public input a page has.
+
+     This governs the URL only. The visitor can now type a code into the form
+     themselves, and that field is deliberately not held to this pattern --
+     the site has no list of real codes, so rejecting one here could only ever
+     be a guess, and a guess that refuses a genuine code costs a sale. The
+     portal resolves what arrives. */
   var VALID = /^[A-Za-z0-9][A-Za-z0-9_-]{1,31}$/;
 
   function read() {
@@ -97,10 +103,16 @@
 
   if (!code) return;
 
-  /* Onto the demo request. The field is in the markup on every market, empty
-     unless this runs, so a market without the partner page still records a
-     referral that started on somebody's link -- the programme is published in
-     two languages, but a Dutch influencer's audience is not all in Belgium. */
+  /* Onto the quote request. The field is in the markup on every market, empty
+     unless this runs, so a referral that started on somebody's link is
+     recorded wherever it is completed -- a Dutch influencer's audience is not
+     all in Belgium.
+
+     It is a visible input now rather than a hidden one, so this is a prefill
+     and not the last word: it runs at DOMContentLoaded, before anyone could
+     have typed, and nothing rewrites the field afterwards. A visitor who was
+     given a different code offline can replace what is here, and what they
+     leave in the box is what gets submitted. */
   function fill() {
     var fields = document.querySelectorAll('input[name="ref"]');
     for (var i = 0; i < fields.length; i++) fields[i].value = code;

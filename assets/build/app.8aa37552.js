@@ -714,12 +714,15 @@ function applyLang(lang,persist){
     });
   }
 
-  /* ── The referred visitor's note on the demo form ──────────────────────
+  /* ── The referred visitor's note on the quote form ─────────────────────
      Shown only when there is a code AND this language has the string. The
-     hidden field beside it is filled by referral.js regardless, so a market
-     without the copy still attributes the referral -- it just does not
-     announce it. Hidden again on a language switch that has no string, or
-     the reader would be left with a sentence in the wrong language. */
+     field beside it is filled by referral.js regardless, so a market without
+     the copy still attributes the referral -- it just does not announce it.
+     Hidden again on a language switch that has no string, or the reader
+     would be left with a sentence in the wrong language.
+
+     The note still earns its place now that the field is visible: the field
+     shows a code, this says what the code does. */
   const rnote=document.getElementById('refNote');
   if(rnote){
     const rcode=window.__DRP_REF__;
@@ -857,6 +860,11 @@ function applyLang(lang,persist){
     const ft2=document.getElementById('f-tel');if(ft2)ft2.placeholder=ph[3];
     const fe=document.getElementById('f-email');if(fe)fe.placeholder=ph[4];
     const fm=document.getElementById('f-bericht');if(fm)fm.placeholder=ph[5];
+    /* The partner code's placeholder is ph[6] rather than its position in the
+       form, because f.phs is indexed explicitly here and the select has none.
+       Its label comes from f.labels like every other field -- that array is
+       positional and does include an entry for it, at index 6. */
+    const fr2=document.getElementById('f-ref');if(fr2)fr2.placeholder=ph[6];
     const fsl=document.getElementById('f-pakket');
     if(fsl){ const op=fsl.querySelectorAll('option'); t['f.sel'].forEach((o,i)=>{if(op[i])op[i].textContent=o;}); }
     const fcl=document.getElementById('fConsentLbl');if(fcl)fcl.textContent=t['f.consent'];
