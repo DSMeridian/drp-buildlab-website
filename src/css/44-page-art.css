@@ -98,7 +98,23 @@
 }
 
 /* ─────────────────────────────────────────────
-   THE TEAM
+   THE TEAM  --  not on the page at the moment
+
+   The markup is out of src/over-ons/index.html until the four portraits
+   have been taken. It is not lost: it is on the branch `our-team-section`
+   of the drp-compro remote, with that page as it stood with the section in.
+
+       git checkout our-team-section -- src/over-ons/index.html
+       npm run build
+
+   Everything the section needs is still here and costs nothing without it:
+   the rules below, the team.* keys in all twelve languages in
+   assets/i18n.js, and the block in applyLang() that fills them. Only the
+   markup went, and only because placeholder names reading "Naam
+   Achternaam" in the shipped HTML of thirty-four markets is not a thing to
+   leave lying around while it waits. Comments in src/ are served verbatim,
+   so this note lives here rather than in the page.
+
 
    Four people, set the way the rest of the site sets a list: hairline rules,
    a counted number, caps headings. The portraits are placeholders -- a
