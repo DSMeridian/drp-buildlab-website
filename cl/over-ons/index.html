@@ -172,17 +172,46 @@ f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T5V7
     <a href="/cl/over-ons" data-nav="about" class="active">Sobre nosotros</a>
     <a href="/cl/prijzen" data-nav="pricing">Precios</a>
     <a href="/cl/contact" data-nav="contact">Contacto</a>
-
   </div>
   <div class="nav-right">
-    <div class="lang-sw" id="langSw" role="group" aria-label="Taal / Language">
-      <button type="button" class="lang-btn" data-lang="nl" lang="nl" aria-label="Nederlands" aria-pressed="false">NL</button>
-      <button type="button" class="lang-btn" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
-      <button type="button" class="lang-btn" data-lang="fr" lang="fr" aria-label="Français" aria-pressed="false">FR</button>
-      <button type="button" class="lang-btn active" data-lang="es" lang="es" aria-label="Español" aria-pressed="true">ES</button>
-      <button type="button" class="lang-btn" data-lang="id" lang="id" aria-label="Bahasa Indonesia" aria-pressed="false">ID</button>
-      <button type="button" class="lang-btn" data-lang="de" lang="de" aria-label="Deutsch" aria-pressed="false">DE</button>
-      <button type="button" class="lang-btn" data-lang="ja" lang="ja" aria-label="日本語" aria-pressed="false">JA</button>
+    <div class="market-sw">
+      <select id="marketSel" data-route="/over-ons" aria-label="Choose your market">
+      <optgroup label="Europe">
+        <option value="be">België — EUR</option>
+        <option value="nl">Nederland — EUR</option>
+        <option value="fr">France — EUR</option>
+        <option value="lu">Luxembourg — EUR</option>
+        <option value="ch">Suisse — CHF</option>
+        <option value="de">Deutschland — EUR</option>
+        <option value="at">Österreich — EUR</option>
+        <option value="es">España — EUR</option>
+        <option value="gb">United Kingdom — GBP</option>
+        <option value="ie">Ireland — EUR</option>
+        <option value="it">Italia — EUR</option>
+        <option value="pl">Polska — PLN</option>
+      </optgroup>
+      <optgroup label="Americas">
+        <option value="us">United States — USD</option>
+        <option value="ca">Canada — CAD</option>
+        <option value="mx">México — MXN</option>
+        <option value="cl" selected="">Chile — CLP</option>
+        <option value="br">Brasil — BRL</option>
+      </optgroup>
+      <optgroup label="Asia Pacific">
+        <option value="id">Indonesia — IDR</option>
+        <option value="jp">日本 — JPY</option>
+        <option value="sg">Singapore — SGD</option>
+        <option value="au">Australia — AUD</option>
+      </optgroup>
+      <optgroup label="Middle East">
+        <option value="ae">الإمارات — AED</option>
+        <option value="sa">السعودية — SAR</option>
+        <option value="qa">قطر — QAR</option>
+      </optgroup>
+      <optgroup label="Africa">
+        <option value="za">South Africa — ZAR</option>
+      </optgroup>
+      </select>
     </div>
     <a href="/cl/contact" class="nav-cta" data-nav="cta">Demo gratis</a>
     <button type="button" class="nav-tog" id="navTog" aria-expanded="false" aria-controls="navOverlay" aria-label="Menu">
@@ -205,7 +234,6 @@ f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T5V7
     <a href="/cl/over-ons" data-nav="about" class="active">Sobre nosotros</a>
     <a href="/cl/prijzen" data-nav="pricing">Precios</a>
     <a href="/cl/contact" data-nav="contact">Contacto</a>
-
   </div>
   <div class="nav-ov-group">
     <h2 class="nav-ov-h" data-navgroup="social">Síguenos</h2>
@@ -351,7 +379,6 @@ f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T5V7
         <a href="/cl/over-ons">Sobre nosotros</a>
         <a href="/cl/prijzen">Precios</a>
         <a href="/cl/contact">Contacto</a>
-
       </div>
       <div class="ft-col">
         <h4>Contacto</h4>
