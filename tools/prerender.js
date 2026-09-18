@@ -56,11 +56,12 @@ if (ONLY && !RENDER.length) {
   console.error('nothing selected by ' + ARGV.join(' '));
   process.exit(1);
 }
-/* /partner-worden is published in two languages only, so it is absent from
-   most markets. The loop below already skips a route with no file, which
-   is the right behaviour here rather than a second copy of the langs
-   table from build-locales.js -- the generator decides what exists, this
-   script renders whatever it finds. */
+/* The loop below skips a route with no file, rather than keeping a second
+   copy of build-locales.js's table of which pages exist where: the
+   generator decides what exists, this script renders whatever it finds.
+   /partner-worden was the case that motivated it -- published in two
+   languages, absent from most markets -- and it now builds everywhere, but
+   the arrangement is the right one either way. */
 const ROUTES = ['', '/over-ons', '/prijzen', '/contact', '/partner-worden'];
 // Checked after each render: if applyLang did not run, the page would be
 // written back still in Dutch and the bug would look fixed.
