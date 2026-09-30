@@ -262,12 +262,41 @@
         node.nodeValue = out;
       }
     });
+    balanceTotal(cur, rate, lang);
     splitFigures(cur, rate, lang);
     recount();
     note(cur);
     fitTable();
     // Last, so no digit is shaped while it still reads as a euro amount.
     reshape();
+  }
+
+  /* The cost calculator's total is a sum of the rows above it, but each
+   * figure converts and rounds on its own, so the converted total landed a
+   * unit off the rows a reader can add up: $9,438 - $566 - $284 printed as
+   * +$8,589. Rebuilt here from the rows as rounded -- the loss row counts
+   * up, the cost rows down -- so the box adds up in every currency. */
+  function balanceTotal(cur, rate, lang) {
+    var box = document.querySelector('.opp-box');
+    var tot = box && box.querySelector('.otval');
+    if (!tot || !tot.firstChild) return;
+    function original(el) {
+      var t = el.firstChild;
+      return t ? (snap.has(t) ? snap.get(t) : t.nodeValue) : '';
+    }
+    var sum = 0, ok = true;
+    Array.prototype.forEach.call(box.querySelectorAll('.oval.n, .oval.p'), function (el) {
+      var m = amountPattern().exec(original(el));
+      var v = m && parseAmount(m[2] || m[3]);
+      if (v === null || v === undefined) { ok = false; return; }
+      sum += (el.classList.contains('n') ? 1 : -1) * Math.round(v * rate);
+    });
+    if (!ok) return;
+    var node = tot.firstChild;
+    if (!snap.has(node)) snap.set(node, node.nodeValue);
+    node.nodeValue = snap.get(node).replace(amountPattern(), function () {
+      return format(sum, cur, lang);
+    });
   }
 
   /* Figures that wrap the currency symbol in its own tag for styling --

@@ -48,7 +48,7 @@
   ],
 
   "onderhoud": [
-    { "id": "onderhoud-maandelijks", "naam": "Maandelijks onderhoud", "eenheid": "per maand", "prijs": 29.99, "omschrijving": "Beheer, updates en monitoring van de website/webshop. Optioneel." },
+    { "id": "onderhoud-maandelijks", "naam": "Maandelijks onderhoud", "eenheid": "per maand", "prijs": 29.00, "omschrijving": "Beheer, updates en monitoring van de website/webshop. Optioneel." },
     { "id": "onderhoud-jaarlijks", "naam": "Jaarlijks onderhoud", "eenheid": "per jaar", "prijs": 250.00, "omschrijving": "Zelfde dienst, eenmalig afgerekend voor het volledige jaar. Optioneel." }
   ],
 

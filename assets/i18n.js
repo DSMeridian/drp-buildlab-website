@@ -15,7 +15,7 @@ nl:{
   'pa.terms.tag':'De voorwaarden','pa.terms.h2':'Alles op \u00e9\u00e9n rij,<br><em>zonder kleine lettertjes.</em>',
   'pa.terms.rows':[['Korting voor de klant','10% op de quotatie'],['Jouw commissie','5% van de betaalde factuur'],['Wanneer verdiend','Bij betaling, niet bij aanvraag'],['Uitbetaling','Maandelijks, per overschrijving'],['Geldigheid van je link','90 dagen na de klik'],['Bij twee links','De eerste telt']],
   'pa.apply.tag':'Aanmelden','pa.apply.h2':'Vraag je<br><em>link aan.</em>','pa.apply.sub':'Vertel ons kort wie je bereikt. We bekijken elke aanvraag persoonlijk en sturen je link door zodra we akkoord zijn.',
-  'pa.apply.notes':[['Liever mailen?','partners@drpbuildlab.com'],['Wie kan meedoen','Makers, consultants, boekhouders \u2014 iedereen met een publiek van ondernemers']],
+  'pa.apply.notes':[['Liever mailen?','partners@drpbuildlab.com'],['Wie kan meedoen','Influencers, consultants, boekhouders \u2014 iedereen met een publiek van ondernemers']],
   'pa.f.first':'Voornaam','pa.f.last':'Achternaam','pa.f.email':'E-mail','pa.f.channel':'Waar bereik je je publiek?','pa.f.profile':'Link naar je profiel of website','pa.f.reach':'Hoe groot is je publiek ongeveer?','pa.f.code':'Gewenste code (optioneel)','pa.f.msg':'Vertel kort over je publiek (optioneel)',
   'pa.p.first':'Lotte','pa.p.last':'Peeters','pa.p.email':'lotte@voorbeeld.be','pa.p.profile':'https://instagram.com/...','pa.p.code':'LOTTE','pa.p.msg':'Wie volgt je, en waarom zou DRP BuildLab bij hen passen?',
   'pa.sel.channel':['Kies een kanaal','Instagram','TikTok','YouTube','LinkedIn','Nieuwsbrief of blog','Offline netwerk','Anders'],
@@ -25,7 +25,7 @@ nl:{
   'pa.err.h':'Verzenden is niet gelukt.','pa.err.p':'Er ging iets mis bij het versturen. Probeer het opnieuw, of bereik ons rechtstreeks via <a href="mailto:partners@drpbuildlab.com">partners@drpbuildlab.com</a>.',
   'pa.succ.h':'Aanvraag ontvangen!','pa.succ.p':'We bekijken je aanvraag en sturen je persoonlijke link binnen enkele werkdagen door.',
   'pa.faq.tag':'Veelgestelde vragen','pa.faq.h2':'Wat partners<br><em>meestal vragen.</em>',
-  'pa.faq.items':[{q:'Wie kan marketingpartner worden?',a:'Iedereen met een publiek van ondernemers: makers op sociale media, consultants, boekhouders, coaches, netwerkers. Je hoeft geen groot bereik te hebben \u2014 wel een publiek waarvoor een website op maat zinvol is. We bekijken elke aanvraag persoonlijk.'},{q:'Wanneer verdien ik mijn commissie?',a:'Pas wanneer de klant de factuur effectief betaalt in het klantenportaal. Een aanvraag of een goedgekeurde quotatie levert nog niets op: we betalen uit op wat binnenkomt, niet op wat beloofd is. Zo staat er nooit een commissie tegenover een factuur die nooit betaald raakt.'},{q:'Waarop wordt de 5% berekend?',a:'Op het bedrag dat de klant werkelijk betaalt, dus n\u00e1 de 10% korting die jouw link hem opleverde en exclusief btw. Bij een project dat in schijven gefactureerd wordt, verdien je op elke betaalde schijf.'},{q:'Wat als iemand via twee partnerlinks binnenkomt?',a:'De eerste link telt. Een link blijft 90 dagen geldig vanaf de klik, en in die periode wordt hij niet overschreven door een latere. Dat voorkomt dat iemand een bestaande aanbeveling kan overnemen door er op het laatste moment tussen te komen.'},{q:'Hoe volg ik wat ik verdiend heb?',a:'Je krijgt toegang tot een dashboard met je kliks, aanvragen, betaalde facturen en openstaande commissie. Wat in een kalendermaand verdiend is, betalen we in de loop van de maand erna uit per overschrijving.'}],
+  'pa.faq.items':[{q:'Wie kan marketingpartner worden?',a:'Iedereen met een publiek van ondernemers: influencers op sociale media, consultants, boekhouders, coaches, netwerkers. Je hoeft geen groot bereik te hebben \u2014 wel een publiek waarvoor een website op maat zinvol is. We bekijken elke aanvraag persoonlijk.'},{q:'Wanneer verdien ik mijn commissie?',a:'Pas wanneer de klant de factuur effectief betaalt in het klantenportaal. Een aanvraag of een goedgekeurde quotatie levert nog niets op: we betalen uit op wat binnenkomt, niet op wat beloofd is. Zo staat er nooit een commissie tegenover een factuur die nooit betaald raakt.'},{q:'Waarop wordt de 5% berekend?',a:'Op het bedrag dat de klant werkelijk betaalt, dus n\u00e1 de 10% korting die jouw link hem opleverde en exclusief btw. Bij een project dat in schijven gefactureerd wordt, verdien je op elke betaalde schijf.'},{q:'Wat als iemand via twee partnerlinks binnenkomt?',a:'De eerste link telt. Een link blijft 90 dagen geldig vanaf de klik, en in die periode wordt hij niet overschreven door een latere. Dat voorkomt dat iemand een bestaande aanbeveling kan overnemen door er op het laatste moment tussen te komen.'},{q:'Hoe volg ik wat ik verdiend heb?',a:'Je krijgt toegang tot een dashboard met je kliks, aanvragen, betaalde facturen en openstaande commissie. Wat in een kalendermaand verdiend is, betalen we in de loop van de maand erna uit per overschrijving.'}],
   'ref.applied':'Je komt binnen via {code}. De 10% partnerkorting wordt automatisch op je quotatie toegepast.',
   'meta.title.partner':'Marketingpartner worden \u2014 DRP BuildLab | 10% voor jouw publiek, 5% voor jou','meta.desc.partner':'Word marketingpartner van DRP BuildLab. Je krijgt een persoonlijke link: jouw publiek krijgt 10% korting op de quotatie, jij 5% commissie op elke betaalde factuur. Maandelijks uitbetaald, te volgen in je eigen dashboard.',
   'meta.title':'DRP BuildLab — Websites op maat voor lokale bedrijven | Beginnerspakket vanaf €499',
@@ -62,8 +62,8 @@ nl:{
   'opp.tag':'De verborgen kost','opp.h2':'Wat kost €0<br>online aanwezigheid<br><em>écht?</em>','opp.sub':'Geen website is niet gratis. Elke dag zonder online aanwezigheid verliest u klanten aan concurrenten die wel vindbaar zijn.',
   'opp.pts':[{t:'78% zoekt eerst online',b:'Voordat iemand een lokale zaak bezoekt, googelt hij. Staat u er niet? Dan bestaat u niet voor die klant.'},{t:'Elke dag is gemiste omzet',b:'Klanten vinden u niet online en gaan hierdoor naar de concurrentie. Elke dag zonder website is een dag dat uw concurrent wint.'},{t:'Uw concurrent staat wel online',b:'Terwijl u wacht, bouwt uw concurrent zijn online reputatie op. Hoe langer u wacht, hoe moeilijker in te halen.'},{t:'Geloofwaardigheid is omzet',b:'Een professionele website geeft vertrouwen. Klanten kiezen sneller voor een bedrijf dat er serieus uitziet.'}],
   'opp.boxtitle':'Kostenberekening per jaar',
-  'opp.rows':[['Gemiste klanten per week (schatting)','2–5'],['Gemiddelde waarde per klant','€80'],['Gemist per jaar zonder website','−€8.320'],['Investering DRP BuildLab (Beginnerspakket)','+€499'],['Jaarlijks maandelijks onderhoud','+€348']],
-  'opp.totlbl':'Potentieel netto-voordeel','opp.totval':'+€7.473/jaar',
+  'opp.rows':[['Gemiste klanten per week (schatting)','2–5'],['Gemiddelde waarde per klant','€80'],['Gemist per jaar zonder website','−€8.320'],['Investering DRP BuildLab (Beginnerspakket)','+€499'],['Jaarlijks maandelijks onderhoud','+€250']],
+  'opp.totlbl':'Potentieel netto-voordeel','opp.totval':'+€7.571/jaar',
   'opp.note':'<strong>De conclusie is simpel:</strong> de kostprijs van een website is een fractie van wat u misloopt zonder er één te hebben. Wachten kost meer dan investeren.',
   'comp.tag':'Marktoverzicht','comp.h2':'Niemand doet het<br>goedkoper <em>dan wij.</em>','comp.sub':'We verbergen dit niet — we zijn er trots op. Kijk zelf wat vergelijkbare websites elders kosten.',
   'comp.cols':['Aanbieder','Startprijs','Onderhoud','Mobiel'],
@@ -175,8 +175,8 @@ en:{
   'opp.tag':'The hidden cost','opp.h2':'What does €0 online<br>presence<br><em>really cost?</em>','opp.sub':'Having no website isn\'t free. Every day without an online presence, you lose customers to competitors who are findable.',
   'opp.pts':[{t:'78% search online first',b:'Before visiting a local business, people Google it. Not there? You don\'t exist for that customer.'},{t:'Every day is missed revenue',b:'Customers can\'t find you online and go to the competition. Every day without a website is a day your competitor wins.'},{t:'Your competitor is online',b:'While you wait, your competitor builds their online reputation. The longer you wait, the harder it is to catch up.'},{t:'Credibility is revenue',b:'A professional website builds trust. Customers more readily choose a business that looks serious.'}],
   'opp.boxtitle':'Cost calculation per year',
-  'opp.rows':[['Missed customers per week (estimate)','2–5'],['Average value per customer','€80'],['Lost per year without a website','−€8,320'],['Investment DRP BuildLab (Starter package)','+€499'],['Annual monthly maintenance','+€348']],
-  'opp.totlbl':'Potential net benefit','opp.totval':'+€7,473/year',
+  'opp.rows':[['Missed customers per week (estimate)','2–5'],['Average value per customer','€80'],['Lost per year without a website','−€8,320'],['Investment DRP BuildLab (Starter package)','+€499'],['Annual monthly maintenance','+€250']],
+  'opp.totlbl':'Potential net benefit','opp.totval':'+€7,571/year',
   'opp.note':'<strong>The conclusion is simple:</strong> the cost of a website is a fraction of what you miss out on without one. Waiting costs more than investing.',
   'comp.tag':'Market overview','comp.h2':'No one does it<br>cheaper <em>than us.</em>','comp.sub':'We don\'t hide this — we\'re proud of it. See for yourself what comparable websites cost elsewhere.',
   'comp.cols':['Provider','Starting price','Maintenance','Mobile'],
@@ -268,8 +268,8 @@ fr:{
   'opp.tag':'Le coût caché','opp.h2':'Que coûte vraiment<br>0 € de présence<br><em>en ligne ?</em>','opp.sub':'Ne pas avoir de site web n\'est pas gratuit. Chaque jour sans présence en ligne, vous perdez des clients au profit de concurrents qui sont trouvables.',
   'opp.pts':[{t:'78 % cherchent d\'abord en ligne',b:'Avant de visiter une entreprise locale, les gens la cherchent sur Google. Pas là ? Vous n\'existez pas pour ce client.'},{t:'Chaque jour est du chiffre d\'affaires manqué',b:'Les clients ne vous trouvent pas en ligne et vont à la concurrence. Chaque jour sans site web est un jour où votre concurrent gagne.'},{t:'Votre concurrent est en ligne',b:'Pendant que vous attendez, votre concurrent construit sa réputation en ligne. Plus vous attendez, plus il est difficile de rattraper.'},{t:'La crédibilité c\'est du chiffre d\'affaires',b:'Un site web professionnel inspire confiance. Les clients choisissent plus facilement une entreprise qui paraît sérieuse.'}],
   'opp.boxtitle':'Calcul des coûts par an',
-  'opp.rows':[['Clients manqués par semaine (estimation)','2–5'],['Valeur moyenne par client','80 €'],['Perdu par an sans site web','−8 320 €'],['Investissement DRP BuildLab (Forfait débutant)','+499 €'],['Maintenance mensuelle annuelle','+348 €']],
-  'opp.totlbl':'Bénéfice net potentiel','opp.totval':'+7 473 €/an',
+  'opp.rows':[['Clients manqués par semaine (estimation)','2–5'],['Valeur moyenne par client','80 €'],['Perdu par an sans site web','−8 320 €'],['Investissement DRP BuildLab (Forfait débutant)','+499 €'],['Maintenance mensuelle annuelle','+250 €']],
+  'opp.totlbl':'Bénéfice net potentiel','opp.totval':'+7 571 €/an',
   'opp.note':'<strong>La conclusion est simple :</strong> le coût d\'un site web est une fraction de ce que vous perdez sans en avoir un. Attendre coûte plus cher qu\'investir.',
   'comp.tag':'Aperçu du marché','comp.h2':'Personne ne fait ça<br>moins cher <em>que nous.</em>','comp.sub':'Nous ne le cachons pas — nous en sommes fiers. Voyez par vous-même ce que coûtent des sites similaires ailleurs.',
   'comp.cols':['Fournisseur','Prix de départ','Maintenance','Mobile'],
@@ -403,8 +403,8 @@ es:{
   'opp.tag':'El coste oculto','opp.h2':'¿Cuánto cuesta realmente<br>0 € de presencia<br><em>en línea?</em>','opp.sub':'No tener sitio web no es gratis. Cada día sin presencia en línea pierdes clientes ante competidores que sí son localizables.',
   'opp.pts':[{t:'El 78 % busca primero en línea',b:'Antes de visitar un negocio local, la gente lo busca en Google. ¿No estás? No existes para ese cliente.'},{t:'Cada día son ingresos perdidos',b:'Los clientes no te encuentran en línea y van a la competencia. Cada día sin sitio web es un día que tu competidor gana.'},{t:'Tu competidor está en línea',b:'Mientras esperas, tu competidor construye su reputación en línea. Cuanto más esperas, más difícil es alcanzarle.'},{t:'La credibilidad son ingresos',b:'Un sitio web profesional genera confianza. Los clientes eligen más fácilmente una empresa que parece seria.'}],
   'opp.boxtitle':'Cálculo de costes por año',
-  'opp.rows':[['Clientes perdidos por semana (estimación)','2–5'],['Valor medio por cliente','80 €'],['Perdido por año sin sitio web','−8.320 €'],['Inversión DRP BuildLab (Paquete inicial)','+499 €'],['Mantenimiento mensual anual','+348 €']],
-  'opp.totlbl':'Beneficio neto potencial','opp.totval':'+7.473 €/año',
+  'opp.rows':[['Clientes perdidos por semana (estimación)','2–5'],['Valor medio por cliente','80 €'],['Perdido por año sin sitio web','−8.320 €'],['Inversión DRP BuildLab (Paquete inicial)','+499 €'],['Mantenimiento mensual anual','+250 €']],
+  'opp.totlbl':'Beneficio neto potencial','opp.totval':'+7.571 €/año',
   'opp.note':'<strong>La conclusión es simple:</strong> el coste de un sitio web es una fracción de lo que pierdes sin tener uno. Esperar cuesta más que invertir.',
   'comp.tag':'Panorama del mercado','comp.h2':'Nadie lo hace<br>más barato <em>que nosotros.</em>','comp.sub':'No lo ocultamos — estamos orgullosos de ello. Comprueba tú mismo cuánto cuestan sitios similares en otros lugares.',
   'comp.cols':['Proveedor','Precio inicial','Mantenimiento','Móvil'],
@@ -669,11 +669,11 @@ id:{
     ],
     [
      "Pemeliharaan bulanan tahunan",
-     "+€348"
+     "+€250"
     ]
    ],
    "opp.totlbl": "Manfaat bersih potensial",
-   "opp.totval": "+€7.473 per tahun",
+   "opp.totval": "+€7.571 per tahun",
    "opp.note": "<strong>Kesimpulannya sederhana:</strong> biaya pembuatan situs web hanyalah sebagian kecil dari kerugian yang akan Anda alami jika tidak memilikinya. Menunda-nunda <strong>justru</strong> lebih mahal daripada berinvestasi.",
    "comp.tag": "Gambaran umum pasar",
    "comp.h2": "Tidak ada yang menawarkan harga<br>lebih murah <em>daripada kami.</em>",
@@ -1094,11 +1094,11 @@ de:{
     ],
     [
      "Jährliche monatliche Wartung",
-     "+€348"
+     "+€250"
     ]
    ],
    "opp.totlbl": "Potentieller Nettonutzen",
-   "opp.totval": "+€7.473 pro Jahr",
+   "opp.totval": "+€7.571 pro Jahr",
    "opp.note": "<strong>Die Schlussfolgerung ist einfach:</strong> Die Kosten für eine Website machen nur einen Bruchteil dessen aus, was Ihnen ohne eine solche entgeht. Abwarten kostet mehr als investieren.",
    "comp.tag": "Marktüberblick",
    "comp.h2": "Niemand bietet das<br>günstiger an <em>als wir.</em>",
@@ -1519,11 +1519,11 @@ ja:{
     ],
     [
      "年次・月次メンテナンス",
-     "+€348"
+     "+€250"
     ]
    ],
    "opp.totlbl": "見込まれる正味の便益",
-   "opp.totval": "+€7,473/年",
+   "opp.totval": "+€7,571/年",
    "opp.note": "<strong>結論は単純です。</strong>ウェブサイトにかかる費用は、ウェブサイトを持たないことで失う利益に比べれば、ごくわずかなものです。待つことの方が、投資することよりもコストがかかります。",
    "comp.tag": "市場の概要",
    "comp.h2": "私たちほど安く<br><em>提供できるところはありません。</em>",
@@ -1838,9 +1838,9 @@ pt:{
    "opp.sub": "Não ter um site não sai de graça. A cada dia que passa sem uma presença online, você perde clientes para os concorrentes que podem ser encontrados na internet.",
    "opp.pts": [{"t":"78% fazem uma pesquisa online primeiro","b":"Antes de visitar um estabelecimento local, as pessoas pesquisam no Google. Não aparece lá? Para esse cliente, você não existe."},{"t":"Cada dia que passa representa uma perda de receita","b":"Os clientes não conseguem encontrá-lo na internet e acabam indo para a concorrência. Cada dia sem um site é um dia em que seu concorrente sai ganhando."},{"t":"Seu concorrente está online","b":"Enquanto você espera, seu concorrente constrói sua reputação online. Quanto mais você demora, mais difícil fica recuperar o atraso."},{"t":"Credibilidade é receita","b":"Um site profissional inspira confiança. Os clientes tendem a escolher mais facilmente uma empresa que transmita seriedade."}],
    "opp.boxtitle": "Cálculo dos custos por ano",
-   "opp.rows": [["Clientes perdidos por semana (estimativa)","2–5"],["Valor médio por cliente","€80"],["Perda anual por não ter um site","−€8,320"],["Investimento no DRP BuildLab (Pacote inicial)","+€499"],["Manutenção mensal anual","+€348"]],
+   "opp.rows": [["Clientes perdidos por semana (estimativa)","2–5"],["Valor médio por cliente","€80"],["Perda anual por não ter um site","−€8,320"],["Investimento no DRP BuildLab (Pacote inicial)","+€499"],["Manutenção mensal anual","+€250"]],
    "opp.totlbl": "Benefício líquido potencial",
-   "opp.totval": "+€7,473/ano",
+   "opp.totval": "+€7,571/ano",
    "opp.note": "<strong>A conclusão é simples:</strong> o custo de um site é uma fração do que você deixa de ganhar por não ter um. Esperar custa mais do que investir.",
    "comp.tag": "Visão geral do mercado",
    "comp.h2": "Ninguém oferece preços<br>mais baixos <em>do que nós.</em>",
@@ -2023,9 +2023,9 @@ it:{
    "opp.sub": "Non avere un sito web non è gratuito. Ogni giorno che trascorri senza una presenza online, perdi clienti a vantaggio dei concorrenti che invece sono facilmente reperibili.",
    "opp.pts": [{"t":"Il 78% effettua prima una ricerca online","b":"Prima di recarsi in un’attività commerciale locale, le persone la cercano su Google. Non compare nei risultati? Per quel cliente, è come se non esistesse."},{"t":"Ogni giorno è una perdita di entrate","b":"I clienti non riescono a trovarti online e si rivolgono alla concorrenza. Ogni giorno che passa senza un sito web è un giorno in cui vince la concorrenza."},{"t":"Il tuo concorrente è online","b":"Nel frattempo, la concorrenza si costruisce la propria reputazione online. Più aspetti, più diventa difficile recuperare il ritardo."},{"t":"La credibilità è sinonimo di fatturato","b":"Un sito web professionale ispira fiducia. I clienti tendono a scegliere più volentieri un’azienda che dia un’immagine seria."}],
    "opp.boxtitle": "Calcolo dei costi annuali",
-   "opp.rows": [["Clienti persi ogni settimana (stima)","2–5"],["Valore medio per cliente","€80"],["Perdita annua in assenza di un sito web","−€8,320"],["DRP BuildLab per gli investimenti (Pacchetto base)","+€499"],["Manutenzione mensile annuale","+€348"]],
+   "opp.rows": [["Clienti persi ogni settimana (stima)","2–5"],["Valore medio per cliente","€80"],["Perdita annua in assenza di un sito web","−€8,320"],["DRP BuildLab per gli investimenti (Pacchetto base)","+€499"],["Manutenzione mensile annuale","+€250"]],
    "opp.totlbl": "Potenziale beneficio netto",
-   "opp.totval": "+€7,473all'anno",
+   "opp.totval": "+€7,571 all'anno",
    "opp.note": "<strong>La conclusione è semplice:</strong> il costo di un sito web è una frazione di ciò che si perde non avendolo. Aspettare costa più che investire.",
    "comp.tag": "Panoramica del mercato",
    "comp.h2": "Nessuno lo<br>fa a un prezzo più conveniente <em>del nostro.</em>",
@@ -2208,9 +2208,9 @@ pl:{
    "opp.sub": "Brak strony internetowej nie jest darmowy. Każdego dnia, w którym nie jesteś obecny w sieci, tracisz klientów na rzecz konkurencji, którą łatwo znaleźć.",
    "opp.pts": [{"t":"78% osób najpierw szuka informacji w Internecie","b":"Zanim ludzie odwiedzą lokalną firmę, sprawdzają ją w Google. Nie ma jej tam? Dla tego klienta po prostu nie istniejesz."},{"t":"Każdy dzień to utracone przychody","b":"Klienci nie mogą znaleźć Twojej firmy w sieci i przechodzą do konkurencji. Każdy dzień bez strony internetowej to dzień, w którym wygrywa konkurencja."},{"t":"Twój konkurent jest online","b":"W międzyczasie Twoja konkurencja buduje swoją reputację w sieci. Im dłużej zwlekasz, tym trudniej będzie Ci nadrobić zaległości."},{"t":"Wiarygodność to przychody","b":"Profesjonalna strona internetowa buduje zaufanie. Klienci chętniej wybierają firmę, która sprawia poważne wrażenie."}],
    "opp.boxtitle": "Roczne obliczenie kosztów",
-   "opp.rows": [["Liczba utraconych klientów tygodniowo (szacunkowo)","2–5"],["Średnia wartość na klienta","€80"],["Roczne straty wynikające z braku strony internetowej","−€8,320"],["Pakiet inwestycyjny DRP BuildLab (pakiet startowy)","+€499"],["Roczna konserwacja miesięczna","+€348"]],
+   "opp.rows": [["Liczba utraconych klientów tygodniowo (szacunkowo)","2–5"],["Średnia wartość na klienta","€80"],["Roczne straty wynikające z braku strony internetowej","−€8,320"],["Pakiet inwestycyjny DRP BuildLab (pakiet startowy)","+€499"],["Roczna konserwacja miesięczna","+€250"]],
    "opp.totlbl": "Potencjalna korzyść netto",
-   "opp.totval": "+€7,473/rok",
+   "opp.totval": "+€7,571/rok",
    "opp.note": "<strong>Wniosek jest prosty:</strong> koszt strony internetowej to zaledwie ułamek tego, co tracisz, nie mając jej. Czekanie kosztuje więcej niż inwestycja.",
    "comp.tag": "Przegląd rynku",
    "comp.h2": "Nikt nie oferuje tego<br>taniej <em>niż my.</em>",
@@ -2504,11 +2504,11 @@ pl:{
       ],
       [
          "الصيانة الشهرية السنوية",
-         "+€348"
+         "+€250"
       ]
    ],
    "opp.totlbl": "الفائدة الصافية المحتملة",
-   "opp.totval": "+€7,473/سنة",
+   "opp.totval": "+€7,571/سنة",
    "opp.note": "<strong>الاستنتاج بسيط:</strong> تكلفة إنشاء موقع إلكتروني لا تمثل سوى جزء ضئيل مما ستخسره في حالة عدم امتلاكك لموقع. فالتأجيل يكلف أكثر من الاستثمار.",
    "comp.tag": "نظرة عامة على السوق",
    "comp.h2": "لا أحد يقدم هذه الخدمة<br>بسعر أرخص <em>منا.</em>",
@@ -2932,11 +2932,11 @@ pl:{
       ],
       [
          "Jaarlikse maandelikse instandhouding",
-         "+€348"
+         "+€250"
       ]
    ],
    "opp.totlbl": "Potensiële netto voordeel",
-   "opp.totval": "+€7,473/jaar",
+   "opp.totval": "+€7,571/jaar",
    "opp.note": "<strong>Die gevolgtrekking is eenvoudig:</strong> die koste van 'n webwerf is 'n fraksie van wat jy misloop as jy nie een het nie. Wag kos meer as belê.",
    "comp.tag": "Markoorsig",
    "comp.h2": "Niemand doen dit<br>goedkoper <em>as ons</em> nie<em>.</em>",
