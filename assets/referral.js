@@ -93,6 +93,26 @@
   if (fresh && !stored) {
     remember(fresh);
     stored = read();
+    countClick(fresh);
+  }
+
+  /* One click for the partner's dashboard, sent only here, when a code is
+     first stored, so a reload or the next page is not a second click. The
+     client zone keeps a count per partner per day and nothing about the
+     visitor. That is not tracking, so like remember() it does not wait for
+     consent (decision of 29 Sep 2026, in the client zone's CLAUDE.md).
+     sendBeacon with a string goes as text/plain: no preflight, no answer
+     read, and it never holds up the page.
+
+     Staging and deploy previews live on *.netlify.app and report to the
+     staging client zone; the real domain reports to the real one. */
+  function countClick(code) {
+    var zone = /\.netlify\.app$/.test(location.hostname)
+      ? 'https://monumental-kleicha-dc31ff.netlify.app'
+      : 'https://clientzone.drpbuildlab.com';
+    try {
+      if (navigator.sendBeacon) navigator.sendBeacon(zone + '/partner/click', code);
+    } catch (e) { /* a lost click costs a number on a dashboard, nothing more */ }
   }
 
   var code = stored ? stored.code : null;
