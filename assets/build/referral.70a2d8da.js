@@ -108,7 +108,7 @@
      staging client zone; the real domain reports to the real one. */
   function countClick(code) {
     var zone = /\.netlify\.app$/.test(location.hostname)
-      ? 'https://monumental-kleicha-dc31ff.netlify.app'
+      ? 'https://drpbuildlab-clientzone.netlify.app'
       : 'https://clientzone.drpbuildlab.com';
     try {
       if (navigator.sendBeacon) navigator.sendBeacon(zone + '/partner/click', code);
