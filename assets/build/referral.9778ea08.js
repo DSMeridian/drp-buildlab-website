@@ -24,15 +24,15 @@
    If legal advice comes back the other way, the fix is a consent check at
    remember() and nothing else changes.
 
-   ── Ninety days ──
-   Long enough for the ordinary path -- see the post, sit on it, ask for a
-   demo a month later -- and short enough that a partner is not still being
-   paid for a click from last spring. The clock is not extended by later
-   visits: the window runs from the click that carried the code.
+   ── No expiry ──
+   A stored code does not run out. A partner's link counts until DRP BuildLab
+   revokes it, and that is enforced in the client zone, which resolves the
+   code against the partner's status when the request arrives. The browser
+   only keeps the code; ts records when it was first clicked.
 
    ── First code wins ──
    If a visitor arrives on a second partner's link while a code is still
-   live, the first one is kept. Last-click would let a partner overwrite
+   stored, the first one is kept. Last-click would let a partner overwrite
    somebody else's referral by getting their link in front of a reader who
    was already sold, and first-click is the rule that cannot be gamed that
    way. It is stated on the partner page so nobody has to guess.
@@ -41,8 +41,6 @@
   'use strict';
 
   var KEY = 'drp_ref';
-  var DAYS = 90;
-  var MAX_AGE = DAYS * 24 * 60 * 60 * 1000;
 
   /* Codes on the URL are ones we issued, so the pattern can be strict.
      Anything else in the parameter is discarded rather than stored: the value
@@ -62,10 +60,6 @@
       if (!raw) return null;
       var v = JSON.parse(raw);
       if (!v || !v.code || !VALID.test(v.code)) return null;
-      if (!v.ts || Date.now() - v.ts > MAX_AGE) {
-        localStorage.removeItem(KEY);
-        return null;
-      }
       return v;
     } catch (e) {
       return null;   // private mode, or somebody put junk in the key
