@@ -528,6 +528,24 @@ function wireAjaxForm(o){
   });
 }
 
+/* Business or private person on the quote form. The company fields show
+ * only for a business, and are disabled rather than just hidden otherwise:
+ * a disabled field is left out of FormData, so a company name typed before
+ * switching to "private" does not reach the client zone as a business. */
+(function wireClientKind(){
+  const form = document.getElementById('formWrap');
+  const biz = document.getElementById('fBiz');
+  if(!form || !biz) return;
+  const sync = () => {
+    const picked = form.querySelector('input[name="klanttype"]:checked');
+    const isBiz = !!picked && picked.value === 'bedrijf';
+    biz.hidden = !isBiz;
+    biz.querySelectorAll('input').forEach(i => { i.disabled = !isBiz; });
+  };
+  form.querySelectorAll('input[name="klanttype"]').forEach(r => r.addEventListener('change', sync));
+  sync();
+})();
+
 wireAjaxForm({form:'formWrap', err:'ferr', succ:'succ', btn:'fSubmitBtn', sent:pushDemoRequest});
 wireAjaxForm({form:'partnerForm', err:'paErr', succ:'paSucc', btn:'paSubmitBtn', sent:pushPartnerRequest});
 
@@ -867,7 +885,13 @@ function applyLang(lang,persist){
     const ch=cn.querySelector('.sh');if(ch){resetSh(ch);ch.innerHTML=t['ct.h2'];}
     const cl=cn.querySelector('.ct-lede');if(cl)cl.textContent=t['ct.lede'];
     const ci=cn.querySelectorAll('.ci-lbl'); t['ct.lbls'].forEach((l,i)=>{if(ci[i])ci[i].textContent=l;});
-    const fl=cn.querySelectorAll('.field label'); t['f.labels'].forEach((l,i)=>{if(fl[i])fl[i].textContent=l;});
+    /* Positional, so a label added later carries data-i18n-own and is
+       filled by its own key below instead of shifting every one after it. */
+    const fl=cn.querySelectorAll('.field label:not([data-i18n-own])'); t['f.labels'].forEach((l,i)=>{if(fl[i])fl[i].textContent=l;});
+    [['fKindLbl','f.kind'],['fKindBiz','f.kind.biz'],['fKindPriv','f.kind.priv'],['fKboLbl','f.kbo']].forEach(([id,k])=>{
+      const el=document.getElementById(id); if(el&&t[k]) el.textContent=t[k];
+    });
+    const fk=document.getElementById('f-kbo');if(fk&&t['f.kbo.ph'])fk.placeholder=t['f.kbo.ph'];
     const ph=t['f.phs'];
     const fv=document.getElementById('f-vnaam');if(fv)fv.placeholder=ph[0];
     const fa=document.getElementById('f-anaam');if(fa)fa.placeholder=ph[1];

@@ -259,7 +259,33 @@
             <div class="field"><label for="f-vnaam">Voornaam</label><input id="f-vnaam" name="voornaam" type="text" placeholder="Jan" autocomplete="given-name" required maxlength="64"></div>
             <div class="field"><label for="f-anaam">Achternaam</label><input id="f-anaam" name="achternaam" type="text" placeholder="Peeters" autocomplete="family-name" maxlength="64"></div>
           </div>
-          <div class="field"><label for="f-bedrijf">Bedrijfsnaam</label><input id="f-bedrijf" name="bedrijf" type="text" placeholder="Jouw bedrijf" autocomplete="organization" maxlength="100"></div>
+          <!-- Business or private person. The client zone needs it before it
+               can invoice: a Belgian business is invoiced over Peppol, found
+               by its company number, and a private person by email with no
+               VAT number. Asked here so the quote can be drafted right the
+               first time rather than chased afterwards.
+
+               The company fields sit in #fBiz and only show for a business.
+               The number is optional on purpose -- not everyone knows it by
+               heart, and a lead is worth more than the field. The portal asks
+               again before it invoices, and validates what arrived; the
+               pattern below is a typo guard, not a check of the number.
+
+               The new labels carry data-i18n-own so app.js does not count
+               them into f.labels, which fills .field labels by position.
+               Field names are Dutch like the rest of this form; the client
+               zone reads `klanttype` and `ondernemingsnummer`. -->
+          <fieldset class="fkind" id="fKind">
+            <legend id="fKindLbl">U vraagt aan als</legend>
+            <div class="fkind-opts">
+              <label class="fkind-opt"><input type="radio" name="klanttype" value="bedrijf" required><span id="fKindBiz">Bedrijf</span></label>
+              <label class="fkind-opt"><input type="radio" name="klanttype" value="particulier"><span id="fKindPriv">Particulier</span></label>
+            </div>
+          </fieldset>
+          <div id="fBiz" hidden>
+            <div class="field"><label for="f-bedrijf">Bedrijfsnaam</label><input id="f-bedrijf" name="bedrijf" type="text" placeholder="Jouw bedrijf" autocomplete="organization" maxlength="100"></div>
+            <div class="field"><label for="f-kbo" id="fKboLbl" data-i18n-own>Ondernemingsnummer of btw-nummer (optioneel)</label><input id="f-kbo" name="ondernemingsnummer" type="text" placeholder="Bijv. BE 0123.456.789" autocomplete="off" maxlength="20" spellcheck="false" pattern="[A-Za-z0-9](?:[A-Za-z0-9 .]|-){1,19}"></div>
+          </div>
           <div class="field"><label for="f-tel">Telefoonnummer</label><input id="f-tel" name="telefoon" type="tel" placeholder="+32 ..." autocomplete="tel" required maxlength="32"></div>
           <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" placeholder="jan@jouwbedrijf.be" autocomplete="email" required maxlength="254"></div>
           <div class="field">

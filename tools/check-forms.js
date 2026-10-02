@@ -58,12 +58,23 @@ const MARKETS = listArg('market').length ? listArg('market') : ['gb', 'be', 'jp'
  * was throwing it away. */
 const CODE_PATTERN = '[A-Za-z0-9](?:[A-Za-z0-9_]|-){1,31}';
 
+/* The company number: a typo guard, not a check of the number. It has to let
+   through every shape a client might type -- a Belgian KBO with or without
+   dots, a VAT number with its country prefix, a Dutch KvK, a UK company
+   number -- and the portal validates what actually arrived. Same v-flag
+   caution as the code pattern: the dash is its own alternative. */
+const KBO_PATTERN = '[A-Za-z0-9](?:[A-Za-z0-9 .]|-){1,19}';
+const GOOD_KBO = ['0123456789', 'BE 0123.456.789', 'BE0123456789', '1033.313.383',
+  '12345678', 'DE123456789', 'SC-123456'];
+const BAD_KBO = ['<b>1</b>', '=1+1', ' 0123', 'x'.repeat(21), '0123;DROP'];
+
 const BOUNDS = {
   contact: {
     'f-vnaam': { maxlength: 64 }, 'f-anaam': { maxlength: 64 },
     'f-bedrijf': { maxlength: 100 }, 'f-tel': { maxlength: 32 },
     'f-email': { maxlength: 254 }, 'f-bericht': { maxlength: 2000 },
     'f-ref': { maxlength: 32, pattern: CODE_PATTERN },
+    'f-kbo': { maxlength: 20, pattern: KBO_PATTERN, good: GOOD_KBO, bad: BAD_KBO },
   },
   'partner-worden': {
     'pa-vnaam': { maxlength: 64 }, 'pa-anaam': { maxlength: 64 },
@@ -169,15 +180,58 @@ const check = (name, pass, detail) => results.push({ name, pass, detail });
             catch (e) { compiles = false; }
             const matches = v => { const was = el.value; el.value = v; const m = !el.validity.patternMismatch; el.value = was; return m; };
             return { compiles, rejectedGood: good.filter(v => !matches(v)), acceptedBad: bad.filter(v => matches(v)) };
-          }, { sel: id, good: GOOD_CODES, bad: BAD_CODES });
+          }, { sel: id, good: want.good || GOOD_CODES, bad: want.bad || BAD_CODES });
           check(market + ' ' + id + ' pattern compiles under v', live.compiles,
             'a pattern that throws is ignored entirely, not enforced');
-          check(market + ' ' + id + ' accepts real codes', live.rejectedGood.length === 0,
+          check(market + ' ' + id + ' accepts real values', live.rejectedGood.length === 0,
             'rejected ' + JSON.stringify(live.rejectedGood));
-          check(market + ' ' + id + ' refuses non-codes', live.acceptedBad.length === 0,
+          check(market + ' ' + id + ' refuses junk', live.acceptedBad.length === 0,
             'accepted ' + JSON.stringify(live.acceptedBad));
         }
       }
+      await ctx.close();
+    }
+
+    /* ── business or private person ─────────────────────────────────── */
+    {
+      const ctx = await browser.newContext();
+      const p = await ctx.newPage();
+      await p.goto(base + mp + '/contact', { waitUntil: 'networkidle' });
+      const state = () => p.evaluate(() => {
+        const f = document.getElementById('formWrap');
+        const d = new FormData(f);
+        return { hidden: document.getElementById('fBiz').hidden,
+          sends: { bedrijf: d.has('bedrijf'), nr: d.has('ondernemingsnummer') },
+          valid: f.checkValidity() };
+      });
+      /* Fill what is required so only the choice decides validity. */
+      await p.fill('#f-vnaam', 'Jan'); await p.fill('#f-tel', '+32 1');
+      await p.fill('#f-email', 'jan@example.com'); await p.check('#f-consent');
+      let s = await state();
+      check(market + ' kind: company fields hidden until chosen', s.hidden === true);
+      check(market + ' kind: a choice is required', s.valid === false, 'form valid without one');
+      await p.check('input[name="klanttype"][value="bedrijf"]');
+      await p.fill('#f-bedrijf', 'Acme'); await p.fill('#f-kbo', 'BE 0123.456.789');
+      s = await state();
+      check(market + ' kind: business shows company fields', s.hidden === false);
+      check(market + ' kind: business sends name and number', s.sends.bedrijf && s.sends.nr, JSON.stringify(s.sends));
+      check(market + ' kind: business is valid', s.valid === true);
+      await p.check('input[name="klanttype"][value="particulier"]');
+      s = await state();
+      check(market + ' kind: private hides company fields', s.hidden === true);
+      check(market + ' kind: private sends no company data', !s.sends.bedrijf && !s.sends.nr, JSON.stringify(s.sends));
+      const labels = await p.evaluate(() => ['fKindLbl', 'fKindBiz', 'fKindPriv', 'fKboLbl']
+        .map(id => (document.getElementById(id) || {}).textContent || ''));
+      check(market + ' kind: labels are filled', labels.every(Boolean), JSON.stringify(labels));
+      /* f.labels is applied by position. A new label counted into it would
+         shift every later field's label by one, in every language, and the
+         page would still look finished. So each label is read back from its
+         own field and compared with the entry meant for it. */
+      const want = ((TRANSLATIONS[(ALL_MARKETS[market] || {}).lang] || {})['f.labels']) || [];
+      const got = await p.evaluate(() => ['f-vnaam', 'f-anaam', 'f-bedrijf', 'f-tel', 'f-email', 'f-pakket', 'f-ref', 'f-bericht']
+        .map(id => { const l = document.querySelector('label[for="' + id + '"]'); return l ? l.textContent : null; }));
+      check(market + ' labels sit on their own fields', want.length === 8 && want.every((w, i) => w === got[i]),
+        got.map((g, i) => g === want[i] ? 'ok' : JSON.stringify(g) + '!=' + JSON.stringify(want[i])).join(' '));
       await ctx.close();
     }
 
