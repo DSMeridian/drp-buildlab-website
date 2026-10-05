@@ -688,7 +688,11 @@ footer{background:var(--ink);padding:4rem 5vw 2.5rem;color:#fff}
 .ft-legal{display:flex;justify-content:space-between;align-items:center;gap:1rem 2rem;flex-wrap:wrap;padding-bottom:1.6rem;margin-bottom:1.6rem;border-bottom:1px solid rgba(255,255,255,.07)}
 .ft-pay{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
 .ft-pay-h{font-size:.58rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-right:.4rem}
-.ft-pm{font-size:.68rem;font-weight:700;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:.28rem .6rem}
+.ft-pm{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;height:34px;min-width:56px;padding:0 .6rem;background:#fff;border-radius:6px;box-shadow:0 1px 0 rgba(255,255,255,.08),0 6px 16px -8px rgba(0,0,0,.6);transition:transform .22s,box-shadow .22s}
+.ft-pm:hover{transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,.12),0 10px 22px -10px rgba(0,0,0,.7)}
+.ft-pm svg{height:22px;width:auto;display:block}
+.ft-pm-wire{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);box-shadow:none;color:#fff;font-size:.7rem;font-weight:700;padding:0 .75rem}
+.ft-pm-wire svg{height:16px}
 .ft-links{display:flex;gap:1.4rem;flex-wrap:wrap}
 .ft-links a{font-size:.74rem;color:rgba(255,255,255,.62);text-decoration:underline;text-underline-offset:3px;transition:color .22s}
 .ft-links a:hover{color:#fff}
