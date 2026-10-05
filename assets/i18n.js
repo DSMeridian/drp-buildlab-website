@@ -9,6 +9,7 @@
 const TRANSLATIONS = {
 nl:{
   'nav.partner':'Partner worden',
+  'nav.terms':'Algemene voorwaarden','nav.privacy':'Privacybeleid','meta.title.terms':'Algemene voorwaarden — DRP BuildLab','meta.title.privacy':'Privacybeleid — DRP BuildLab','ft.pay':'Betaalmethoden',
 'phero.partner.h':'Verdien mee aan<br><em>elke aanbeveling</em>','phero.partner.sub':'Je krijgt een persoonlijke link. Wie er via binnenkomt, krijgt 10% korting op de quotatie \u2014 en jij 5% van elke factuur die betaald wordt.',
   'pa.how.tag':'Hoe het werkt','pa.how.h2':'Van link naar<br><em>uitbetaling.</em>','pa.how.sub':'Geen doelstellingen, geen minimumaantal. Je deelt je link wanneer het past.',
   'pa.how.steps':[{t:'Vraag je link aan',b:'Vul het formulier hieronder in. Je krijgt een persoonlijke link met je eigen code erin.',d:'Jij'},{t:'Deel hem met je publiek',b:'Wie via jouw link een quotatie aanvraagt, krijgt daar automatisch 10% korting op.',d:'Jij'},{t:'De klant betaalt de factuur',b:'Zodra de factuur in het klantenportaal betaald is, staat jouw 5% vast. Niet bij de aanvraag \u2014 bij de betaling.',d:'Wij'},{t:'Maandelijks uitbetaald',b:'Je volgt elke klik, aanvraag en commissie in je eigen dashboard. Wat een maand verdiend is, betalen we de maand erna uit.',d:'Wij'}],
@@ -125,6 +126,7 @@ nl:{
   'cc.manage':'Cookie-instellingen',},
 en:{
   'nav.partner':'Become a partner',
+  'nav.terms':'General terms','nav.privacy':'Privacy policy','meta.title.terms':'General terms — DRP BuildLab','meta.title.privacy':'Privacy policy — DRP BuildLab','ft.pay':'Payment methods',
 'phero.partner.h':'Earn from every<br><em>recommendation</em>','phero.partner.sub':'You get a personal link. Anyone who arrives on it gets 10% off their quote \u2014 and you get 5% of every invoice that gets paid.',
   'pa.how.tag':'How it works','pa.how.h2':'From link to<br><em>payout.</em>','pa.how.sub':'No targets, no minimum. You share your link whenever it suits you.',
   'pa.how.steps':[{t:'Request your link',b:'Fill in the form below. You get a personal link with your own code in it.',d:'You'},{t:'Share it with your audience',b:'Anyone who requests a quote through your link automatically gets 10% off it.',d:'You'},{t:'The client pays the invoice',b:'As soon as the invoice is paid in the client portal, your 5% is locked in. Not on the request \u2014 on the payment.',d:'Us'},{t:'Paid out monthly',b:'You follow every click, request and commission in your own dashboard. What is earned in a month, we pay out the month after.',d:'Us'}],
@@ -333,6 +335,7 @@ fr:{
   'cc.manage':'Paramètres des cookies',
   /* Partner programme -- DeepL, 2026-09-18, not reviewed by a speaker. */
   "nav.partner": "Devenez partenaire",
+  "nav.terms": "Conditions générales", "nav.privacy": "Politique de confidentialité", "meta.title.terms": "Conditions générales — DRP BuildLab", "meta.title.privacy": "Politique de confidentialité — DRP BuildLab", "ft.pay": "Moyens de paiement",
   "phero.partner.h": "Gagnez de l'argent à chaque<br><em>recommandation</em>",
   "phero.partner.sub": "Vous recevez un lien personnel. Toute personne qui clique dessus bénéficie d'une réduction de 10 % sur son devis, et vous touchez 5 % du montant de chaque facture réglée.",
   "pa.how.tag": "Comment ça marche ?",
@@ -469,6 +472,7 @@ es:{
   'cc.manage':'Configuración de cookies',
   /* Partner programme -- DeepL, 2026-09-18, not reviewed by a speaker. */
   "nav.partner": "Conviértete en socio",
+  "nav.terms": "Condiciones generales", "nav.privacy": "Política de privacidad", "meta.title.terms": "Condiciones generales — DRP BuildLab", "meta.title.privacy": "Política de privacidad — DRP BuildLab", "ft.pay": "Métodos de pago",
   "phero.partner.h": "Gana dinero con cada<br><em>recomendación</em>",
   "phero.partner.sub": "Recibirás un enlace personal. Cualquiera que acceda a él obtendrá un 10 % de descuento en su presupuesto, y tú recibirás un 5 % de cada factura que se abone.",
   "pa.how.tag": "Cómo funciona",
@@ -895,6 +899,7 @@ id:{
    "cc.manage": "Pengaturan cookie",
   /* Partner programme -- DeepL, 2026-09-18, not reviewed by a speaker. */
   "nav.partner": "Jadilah mitra",
+  "nav.terms": "Syarat umum", "nav.privacy": "Kebijakan privasi", "meta.title.terms": "Syarat umum — DRP BuildLab", "meta.title.privacy": "Kebijakan privasi — DRP BuildLab", "ft.pay": "Metode pembayaran",
   "phero.partner.h": "Dapatkan penghasilan dari setiap<br><em>rekomendasi</em>",
   "phero.partner.sub": "Anda akan mendapatkan tautan pribadi. Siapa pun yang mengakses tautan tersebut akan mendapatkan diskon 10% dari penawaran harga mereka — dan Anda akan mendapatkan 5% dari setiap tagihan yang telah dibayarkan.",
   "pa.how.tag": "Cara kerjanya",
@@ -1321,6 +1326,7 @@ de:{
    "cc.manage": "Cookie-Einstellungen",
   /* Partner programme -- DeepL, 2026-09-18, not reviewed by a speaker. */
   "nav.partner": "Werden Sie Partner",
+  "nav.terms": "Allgemeine Geschäftsbedingungen", "nav.privacy": "Datenschutzerklärung", "meta.title.terms": "Allgemeine Geschäftsbedingungen — DRP BuildLab", "meta.title.privacy": "Datenschutzerklärung — DRP BuildLab", "ft.pay": "Zahlungsmethoden",
   "phero.partner.h": "Verdienen Sie Geld mit jeder<br><em>Empfehlung</em>",
   "phero.partner.sub": "Sie erhalten einen persönlichen Link. Jeder, der über diesen Link auf die Seite gelangt, erhält 10 % Rabatt auf sein Angebot – und Sie erhalten 5 % von jeder bezahlten Rechnung.",
   "pa.how.tag": "So funktioniert es",
@@ -1747,6 +1753,7 @@ ja:{
    "cc.manage": "Cookie 設定",
   /* Partner programme -- DeepL, 2026-09-18, not reviewed by a speaker. */
   "nav.partner": "パートナーになる",
+  "nav.terms": "利用規約", "nav.privacy": "プライバシーポリシー", "meta.title.terms": "利用規約 — DRP BuildLab", "meta.title.privacy": "プライバシーポリシー — DRP BuildLab", "ft.pay": "お支払い方法",
   "phero.partner.h": "<em>紹介</em>のたびに<br>報酬が得られます",
   "phero.partner.sub": "あなた専用のリンクが発行されます。このリンクからアクセスした人は、見積もりの金額から10％割引を受けられ、支払われた請求額ごとに、あなたにはその5％が還元されます。",
   "pa.how.tag": "仕組み",
@@ -1933,6 +1940,7 @@ pt:{
    "cc.manage": "Configurações de cookies",
   /* Partner programme -- DeepL, 2026-09-18, not reviewed by a speaker. */
   "nav.partner": "Torne-se um parceiro",
+  "nav.terms": "Condições gerais", "nav.privacy": "Política de privacidade", "meta.title.terms": "Condições gerais — DRP BuildLab", "meta.title.privacy": "Política de privacidade — DRP BuildLab", "ft.pay": "Métodos de pagamento",
   "phero.partner.h": "Ganhe com cada<br><em>indicação</em>",
   "phero.partner.sub": "Você recebe um link pessoal. Qualquer pessoa que acessá-lo ganha 10% de desconto no orçamento — e você recebe 5% de cada fatura paga.",
   "pa.how.tag": "Como funciona",
@@ -2119,6 +2127,7 @@ it:{
    "cc.manage": "Impostazioni cookie",
   /* Partner programme -- DeepL, 2026-09-18, not reviewed by a speaker. */
   "nav.partner": "Diventa nostro partner",
+  "nav.terms": "Condizioni generali", "nav.privacy": "Informativa sulla privacy", "meta.title.terms": "Condizioni generali — DRP BuildLab", "meta.title.privacy": "Informativa sulla privacy — DRP BuildLab", "ft.pay": "Metodi di pagamento",
   "phero.partner.h": "Guadagna con ogni<br><em>segnalazione</em>",
   "phero.partner.sub": "Riceverai un link personale. Chiunque lo utilizzi otterrà uno sconto del 10% sul proprio preventivo — e tu riceverai il 5% di ogni fattura pagata.",
   "pa.how.tag": "Come funziona",
@@ -2305,6 +2314,7 @@ pl:{
    "cc.manage": "Ustawienia plików cookie",
   /* Partner programme -- DeepL, 2026-09-18, not reviewed by a speaker. */
   "nav.partner": "Zostań partnerem",
+  "nav.terms": "Ogólne warunki", "nav.privacy": "Polityka prywatności", "meta.title.terms": "Ogólne warunki — DRP BuildLab", "meta.title.privacy": "Polityka prywatności — DRP BuildLab", "ft.pay": "Metody płatności",
   "phero.partner.h": "Zarabiaj na każdej<br><em>rekomendacji</em>",
   "phero.partner.sub": "Otrzymasz osobisty link. Każdy, kto go kliknie, otrzyma 10% zniżki od wyceny — a Ty otrzymasz 5% od każdej opłaconej faktury.",
   "pa.how.tag": "Jak to działa",
@@ -2736,6 +2746,7 @@ pl:{
    "cc.manage": "إعدادات ملفات تعريف الارتباط",
    /* Partner programme -- DeepL, 2026-09-18, not reviewed by a speaker. */
    "nav.partner": "كن شريكًا",
+   "nav.terms": "الشروط العامة", "nav.privacy": "سياسة الخصوصية", "meta.title.terms": "الشروط العامة — DRP BuildLab", "meta.title.privacy": "سياسة الخصوصية — DRP BuildLab", "ft.pay": "طرق الدفع",
    "phero.partner.h": "اربح من كل<br><em>توصية</em>",
    "phero.partner.sub": "ستحصل على رابط شخصي. سيحصل أي شخص يزور الموقع عبر هذا الرابط على خصم بنسبة 10% على عرض الأسعار الخاص به — وستحصل أنت على 5% من قيمة كل فاتورة يتم سدادها.",
    "pa.how.tag": "كيف يعمل",
@@ -3165,6 +3176,7 @@ pl:{
    "cc.manage": "Koekiestellings",
    /* Partner programme -- DeepL, 2026-09-18, not reviewed by a speaker. */
    "nav.partner": "Word 'n vennoot",
+   "nav.terms": "Algemene voorwaardes", "nav.privacy": "Privaatheidsbeleid", "meta.title.terms": "Algemene voorwaardes — DRP BuildLab", "meta.title.privacy": "Privaatheidsbeleid — DRP BuildLab", "ft.pay": "Betaalmetodes",
    "phero.partner.h": "Verdien aan elke<br><em>aanbeveling</em>",
    "phero.partner.sub": "Jy kry 'n persoonlike skakel. Enigiemand wat daarop beland, kry 10% afslag op hul kwotasie — en jy kry 5% van elke faktuur wat betaal word.",
    "pa.how.tag": "Hoe dit werk",
