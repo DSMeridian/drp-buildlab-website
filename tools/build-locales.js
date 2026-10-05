@@ -124,6 +124,11 @@ const PAGES = [
      picker filters -- is all still here. */
   { src: 'src/partner-worden/index.html', out: 'partner-worden/index.html',
     route: '/partner-worden' },
+  /* The legal pages: Dutch is binding, English beside it on the same page.
+     The quote page in the client zone links to the /be/ copies. */
+  { src: 'src/algemene-voorwaarden/index.html', out: 'algemene-voorwaarden/index.html',
+    route: '/algemene-voorwaarden' },
+  { src: 'src/privacy/index.html', out: 'privacy/index.html', route: '/privacy' },
 ];
 
 /* Is this page published in this market's language? Pages with no langs key
@@ -139,7 +144,7 @@ function livePages(code) {
 
 /* Internal routes that must gain the market prefix. Ordered longest-first so
  * "/contact" is not partly matched while rewriting "/". */
-const ROUTES = ['/partner-worden', '/over-ons', '/prijzen', '/contact'];
+const ROUTES = ['/algemene-voorwaarden', '/partner-worden', '/over-ons', '/prijzen', '/contact', '/privacy'];
 
 function marketiseLinks(html, code) {
   let out = html;
@@ -584,6 +589,7 @@ const CRUMB_KEY = {
   '': 'nav.home', '/over-ons': 'nav.about',
   '/prijzen': 'nav.pricing', '/contact': 'nav.contact',
   '/partner-worden': 'nav.partner',
+  '/algemene-voorwaarden': 'nav.terms', '/privacy': 'nav.privacy',
 };
 
 function breadcrumb(html, code, route) {

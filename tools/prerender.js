@@ -62,7 +62,7 @@ if (ONLY && !RENDER.length) {
    /partner-worden was the case that motivated it -- published in two
    languages, absent from most markets -- and it now builds everywhere, but
    the arrangement is the right one either way. */
-const ROUTES = ['', '/over-ons', '/prijzen', '/contact', '/partner-worden'];
+const ROUTES = ['', '/over-ons', '/prijzen', '/contact', '/partner-worden', '/algemene-voorwaarden', '/privacy'];
 // Checked after each render: if applyLang did not run, the page would be
 // written back still in Dutch and the bug would look fixed.
 const LANG_OF = Object.fromEntries(CODES.map(c => [c, MARKETS[c].lang]));
@@ -75,7 +75,8 @@ const LANG_OF = Object.fromEntries(CODES.map(c => [c, MARKETS[c].lang]));
 const TRANSLATIONS = eval(
   fs.readFileSync(path.join(ROOT, 'assets', 'i18n.js'), 'utf8') + ';TRANSLATIONS');
 const PAGE_KEY = { '': 'home', '/over-ons': 'about', '/prijzen': 'pricing',
-  '/contact': 'contact', '/partner-worden': 'partner' };
+  '/contact': 'contact', '/partner-worden': 'partner',
+  '/algemene-voorwaarden': 'terms', '/privacy': 'privacy' };
 
 function expectedTitle(lang, route) {
   const t = TRANSLATIONS[lang];

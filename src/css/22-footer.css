@@ -18,3 +18,10 @@ footer{background:var(--ink);padding:4rem 5vw 2.5rem;color:#fff}
 .ft-ig{display:inline-flex;align-items:center;gap:.45rem;font-size:.76rem;color:rgba(255,255,255,.6);transition:color .22s}
 .ft-ig:hover{color:var(--blue-l)}
 .ft-ig svg{width:13px;height:13px}
+.ft-legal{display:flex;justify-content:space-between;align-items:center;gap:1rem 2rem;flex-wrap:wrap;padding-bottom:1.6rem;margin-bottom:1.6rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.ft-pay{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+.ft-pay-h{font-size:.58rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-right:.4rem}
+.ft-pm{font-size:.68rem;font-weight:700;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:.28rem .6rem}
+.ft-links{display:flex;gap:1.4rem;flex-wrap:wrap}
+.ft-links a{font-size:.74rem;color:rgba(255,255,255,.62);text-decoration:underline;text-underline-offset:3px;transition:color .22s}
+.ft-links a:hover{color:#fff}

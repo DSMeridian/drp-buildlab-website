@@ -48,7 +48,7 @@ const listArg = name => {
 };
 
 const WIDTHS = listArg('width').length ? listArg('width').map(Number) : [320, 360, 390, 768];
-const ROUTES = ['', '/over-ons', '/prijzen', '/contact', '/partner-worden'];
+const ROUTES = ['', '/over-ons', '/prijzen', '/contact', '/partner-worden', '/algemene-voorwaarden', '/privacy'];
 
 /* One market per language by default. The layout is the same everywhere;
    what differs is how long the words are, and that follows the language. */
