@@ -110,6 +110,20 @@ const NOT_DONE = ['Printed matter such as business cards, flyers and brochures. 
 const NAV = [['work', 'Work', '/werk/'], ['services', 'Services', '/diensten/'], ['about', 'About', '/over-ons/'], ['pricing', 'Pricing', '/prijzen/'], ['contact', 'Contact', '/contact/']];
 const LANGS = [['NL', 'Nederlands'], ['EN', 'English'], ['FR', 'Français'], ['ES', 'Español'], ['DE', 'Deutsch'], ['ID', 'Bahasa Indonesia'], ['JA', '日本語']];
 
+
+const ICON = {
+  instagram: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>',
+  facebook: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>',
+  tiktok: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 14.5V2a5 5 0 0 0 5 5"/><circle cx="11.5" cy="14.5" r="4.5"/></svg>'
+};
+/* payment marks, as on the live footer */
+const PAY = [
+  ['Bancontact', '<svg viewBox="0 0 92 24" role="img" aria-label="Bancontact"><path fill="#005498" d="M6 6h14l-5 6H1z"/><path fill="#FFD800" d="M17 12h14l-5 6H12z"/><text x="34" y="15.5" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#1e3764">Bancontact</text></svg>'],
+  ['Visa', '<svg viewBox="0 0 48 24" role="img" aria-label="Visa"><text x="24" y="17" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="13" font-weight="900" font-style="italic" fill="#1A1F71" letter-spacing=".5">VISA</text></svg>'],
+  ['Mastercard', '<svg viewBox="0 0 40 24" role="img" aria-label="Mastercard"><circle cx="15" cy="12" r="8" fill="#EB001B"/><circle cx="25" cy="12" r="8" fill="#F79E1B"/><path fill="#FF5F00" d="M20 5.75a8 8 0 0 1 0 12.5 8 8 0 0 1 0-12.5z"/></svg>'],
+  ['Bank transfer', '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#1a1f36" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><path d="M5 10v8M9.7 10v8M14.3 10v8M19 10v8"/><path d="M3 20h18"/></svg><span>Bank transfer</span>']
+];
+
 const logo = (label = 'DRP BuildLab home') => `<a class="logo" href="${B}/" aria-label="${label}"><span class="l1">DRP</span><span class="l2">BUILDLAB</span></a>`;
 
 function header(cur) {
@@ -144,8 +158,8 @@ const footer = () => `<footer class="ftr"><div class="wrap">
   <div class="ft-cols">
     <nav aria-label="Footer"><h2>Site</h2><ul>${NAV.map(([, t, h]) => `<li><a href="${B}${h}">${t}</a></li>`).join('')}<li><a href="${B}/partner-worden/">Partner programme</a></li></ul></nav>
     <div><h2>Services</h2><ul>${SERVICES.map(s => `<li><a href="${B}/diensten/${s.slug}/">${s.name}</a></li>`).join('')}</ul></div>
-    <div><h2>Studio</h2><address>Honingstraat 1D<br>2220 Hallaar, Belgium</address><p>Monday to Friday, 9:00 to 18:00<br><a href="tel:+32473744431">+32 473 74 44 31</a></p><p class="ft-small">Pay by Bancontact, Visa, Mastercard or bank transfer</p></div>
-    <div><h2>Follow</h2><ul class="ft-social"><li><a href="https://www.instagram.com/drp_buildlab/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/share/1Hz1mJG22E/" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.tiktok.com/@drpbuildlab" target="_blank" rel="noopener">TikTok</a></li></ul></div>
+    <div><h2>Studio</h2><address>Honingstraat 1D<br>2220 Hallaar, Belgium</address><p>Monday to Friday, 9:00 to 18:00<br><a href="tel:+32473744431">+32 473 74 44 31</a></p><h2 class="ft-pay-h">We accept</h2><ul class="ft-pay">${PAY.map(([n, svg]) => `<li title="${n}">${svg}</li>`).join('')}</ul></div>
+    <div><h2>Follow</h2><ul class="ft-social">${[['instagram', 'Instagram', '@drp_buildlab', 'https://www.instagram.com/drp_buildlab/'], ['facebook', 'Facebook', 'DRP BuildLab', 'https://www.facebook.com/share/1Hz1mJG22E/'], ['tiktok', 'TikTok', '@drpbuildlab', 'https://www.tiktok.com/@drpbuildlab']].map(([k, n, h, u]) => `<li><a href="${u}" target="_blank" rel="noopener"><span class="ico">${ICON[k]}</span><span><b>${n}</b><small>${h}</small></span></a></li>`).join('')}</ul></div>
   </div>
   <div class="ft-bot">
     ${logo()}
