@@ -91,3 +91,29 @@ $$('form[data-concept]').forEach(f => f.addEventListener('submit', e => {
   ok.textContent = f.dataset.concept;
   ok.classList.add('show');
 }));
+
+/* showreel: expands with scroll, loads when near, plays only in view */
+const reelBox = $('#reelBox'), vid = $('#reelVid'), reelBtn = $('#reelBtn');
+if (reelBox && vid) {
+  let userPaused = reduce, loaded = false, inView = false;
+  const setBtn = () => { const paused = vid.paused; reelBtn.textContent = paused ? 'Play' : 'Pause'; reelBtn.setAttribute('aria-pressed', paused); };
+  const load = () => {
+    if (loaded) return; loaded = true;
+    vid.src = innerWidth < 760 ? vid.dataset.srcSm : vid.dataset.srcMp4;
+    vid.addEventListener('error', () => { if (vid.src.indexOf(vid.dataset.srcSm) === -1) { vid.src = vid.dataset.srcSm; if (!userPaused) play(); } }, { once: true });
+  };
+  const play = () => { load(); const pr = vid.play(); if (pr) pr.catch(() => {}); };
+  vid.addEventListener('play', setBtn); vid.addEventListener('pause', setBtn);
+  reelBtn.addEventListener('click', () => { if (vid.paused) { userPaused = false; play(); } else { userPaused = true; vid.pause(); } });
+  new IntersectionObserver(es => es.forEach(e => {
+    inView = e.isIntersecting;
+    if (inView) { load(); if (!userPaused) play(); } else if (!vid.paused) vid.pause();
+  }), { rootMargin: '200px 0px' }).observe(reelBox);
+  setBtn();
+  const grow = () => {
+    if (reduce) return reelBox.style.setProperty('--p', 1);
+    const r = reelBox.getBoundingClientRect(), vh = innerHeight;
+    reelBox.style.setProperty('--p', Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.85))).toFixed(4));
+  };
+  addEventListener('scroll', grow, { passive: true }); addEventListener('resize', grow); grow();
+}

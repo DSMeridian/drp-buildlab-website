@@ -24,7 +24,17 @@ const arr = '<span class="arr" aria-hidden="true">→</span>';
 
 /* ── Data ─────────────────────────────────────────────────────────────── */
 
-const CASES = [
+const CASES_RAW = [
+  {
+    slug: 'kasteel-warmelo', name: 'Kasteel Warmelo', em: 'Kasteel <em>Warmelo</em>',
+    url: 'kasteelwarmelo.nl', href: 'https://kasteelwarmelo.nl/', img: 'warmelo',
+    sector: 'Heritage estate and tourism', where: 'Diepenheim, Netherlands', scope: 'Design and development, in three languages',
+    tags: ['Design', 'Development', 'NL · EN · DE', 'Responsive'], kinds: 'Website',
+    short: 'A website for a centuries-old estate in Twente: historic gardens, a yearly sand sculpture exhibition, a terrace and holiday homes in the orangery. In Dutch, English and German.',
+    brief: ['Kasteel Warmelo in Diepenheim is an estate with four centuries of garden architecture. Each season it hosts a sand sculpture exhibition, this year 28 works by ten artists, alongside events, a terrace and holiday homes in the former orangery.', 'Visitors come from the Netherlands, Germany and further away, so the site has to sell a day out and an overnight stay, in three languages.'],
+    did: ['We designed the site around the estate itself: an aerial photo of the castle, the numbers that matter (675+ years of history, 7 hectares of gardens, 28 sand sculptures) and a clear route to the gardens, events, food and drink, and stays.', 'Visitors switch between Dutch, English and German in one tap, and the practical information on the season, parking and dogs is easy to find on a phone.'],
+    hDesk: 5200, hMob: 3600, phoneImg: 'warmelo-mob'
+  },
   {
     slug: 'start-to-business', name: 'Start to Business', em: 'Start to <em>Business</em>',
     url: 'start-to-business.be', href: 'https://start-to-business.be/', img: 'stb',
@@ -33,7 +43,7 @@ const CASES = [
     short: 'A website for Petra Vanhandenhoven’s coaching practice for entrepreneurs, with her e-books, workshops and one-to-one guidance in one place. We designed and built it, and we still maintain it.',
     brief: ['Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.'],
     did: ['We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.', 'It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.'],
-    quote: 'Ideas deserve a strong online foundation.', hDesk: 3943, phoneImg: 'stb-mob'
+    quote: 'Ideas deserve a strong online foundation.', hDesk: 3943, hMob: 3600, phoneImg: 'stb-mob'
   },
   {
     slug: 'hermosa-antwerp', name: 'Hermosa Antwerp', em: 'Hermosa <em>Antwerp</em>',
@@ -43,7 +53,27 @@ const CASES = [
     short: 'A Shopify webshop for handmade BIAB press-on nails, shipped to customers worldwide. We are Hermosa’s IT maintenance partner and keep the shop running, up to date and ready to sell.',
     brief: ['Hermosa Antwerp sells handmade BIAB press-on nails and treatments, shipped to customers worldwide. The Shopify store is the business, so it has to work every day.'],
     did: ['DRP BuildLab is Hermosa’s IT maintenance partner. We keep the store up to date, fix problems before customers notice them, and make changes when the shop needs them.', 'Hermosa focuses on the product. We look after everything behind the checkout.'],
-    quote: 'Technology supports beauty.', hDesk: 5200, phoneImg: 'hermosa-mob'
+    quote: 'Technology supports beauty.', hDesk: 5200, hMob: 3600, phoneImg: 'hermosa-mob'
+  },
+  {
+    slug: 'vonckx-performance', name: 'Vonckx Performance', em: 'Vonckx <em>Performance</em>',
+    url: 'vonckx-performance.netlify.app', href: 'https://vonckx-performance.netlify.app/', img: 'vonckx',
+    sector: 'Car tuning and maintenance', where: 'Booischot, Belgium', scope: 'Design and development',
+    tags: ['Design', 'Development', 'Appointments', 'Responsive'], kinds: 'Website',
+    short: 'A website for an independent garage in Booischot that does chiptuning, styling and regular servicing. Dark, sharp and built around one action: booking an appointment.',
+    brief: ['Vonckx Performance is an independent garage for cars and light commercial vehicles, from chiptuning and styling to regular servicing. Visits are by appointment only.', 'So the website has one job: explain the services clearly and get drivers to book.'],
+    did: ['We built a dark, workshop-style site with the services in one place, a selection of recent cars from the workshop, and a clear four-step process: we listen, we plan, we do the work, you drive away.', 'Address, phone and email sit right under the headline, so a driver on a phone can call in one tap or send a message to book.'],
+    hDesk: 5200, hMob: 3600, phoneImg: 'vonckx-mob'
+  },
+  {
+    slug: 'de-smedt-meridian', name: 'De Smedt Meridian', em: 'De Smedt <em>Meridian</em>',
+    url: 'dsmeridian.com', href: 'https://dsmeridian.com/', img: 'dsm',
+    sector: 'Global sales and market entry', where: 'Belgium', scope: 'Design and development',
+    tags: ['Design', 'Development', 'B2B', 'Responsive'], kinds: 'Website',
+    short: 'A website for an external sales agency that connects brands with distributors and buyers in more than 30 markets. Built to feel international and to book intro calls.',
+    brief: ['De Smedt Meridian works as an embedded sales force for brands that want to sell abroad, connecting them to distributors and buyers across more than 30 markets.', 'The site needed to feel as international as the service, and turn interest into a booked call.'],
+    did: ['We designed a dark, editorial site with a meridian globe as its signature, the key numbers up front, and one clear action throughout: book an intro call.'],
+    hDesk: 1286, hMob: 2418, phoneImg: 'dsm-mob'
   }
 ];
 
@@ -54,7 +84,7 @@ const SERVICES = [
     intro: 'Every website we make starts from your business: what you sell, who buys it and what they need to see before they contact you. No templates, no page builders that slow your site down.',
     incl: ['A design made for your business', 'Works on every phone, tablet and screen', 'Contact form and WhatsApp button', 'Google Maps and basic SEO', 'Personal guidance from start to launch', 'Two revision rounds included'],
     opts: [['onepager', 'One-page website', 'One page, including a contact form. The base for every multi-page site.'], ['extra-pagina', 'Extra page', 'Another page in the same style, on top of the base.'], ['cms', 'Edit it yourself', 'Manage texts, images and pages without technical knowledge.'], ['meertalig', 'Multilingual site', 'For example NL / FR / EN, with language detection.'], ['seo', 'SEO starter', 'Meta tags, page titles, alt texts and speed optimisation.'], ['logo', 'Logo design', 'A professional logo made for your brand.']],
-    caseSlug: 'start-to-business',
+    caseSlug: 'kasteel-warmelo',
     faq: [['Who is the €499 package for?', 'For business owners who have just started and have no website yet, or who want their existing website turned into a modern, professional one.'], ['How quickly will my website be online?', 'As soon as we have your texts, photos and logo, we can move fast. At the start we agree on a delivery date that fits the scope of your project, and we keep to it. Along the way you get a preview to approve.']]
   },
   {
@@ -94,6 +124,10 @@ const SERVICES = [
     faq: [['Can I add these to a website someone else built?', 'Often, yes. We look at your site first and tell you honestly what is possible and what it costs.']]
   }
 ];
+
+const CASE_ORDER = ['kasteel-warmelo', 'start-to-business', 'vonckx-performance', 'hermosa-antwerp', 'de-smedt-meridian'];
+const CASES = CASE_ORDER.map(k => CASES_RAW.find(c => c.slug === k));
+const caseBy = k => CASES.find(c => c.slug === k);
 
 /* prices come from the same catalogue the chat assistant reads */
 const CAT = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'pricing-catalog.json'), 'utf8'));
@@ -208,7 +242,7 @@ function caseMedia(c, { tile = false } = {}) {
   return `<a class="case-media" href="${B}/werk/${c.slug}/" aria-label="${esc(c.name)} case study">
     <div class="browser" style="view-transition-name:shot-${c.img}"><div class="bar"><i></i><i></i><i></i><span class="url">${c.url}</span></div>
       <div class="screen"><img src="${B}/img/${c.img}-desk-full.webp" width="1200" height="${c.hDesk}" loading="lazy" decoding="async" alt="${esc(c.name)} homepage on desktop"></div></div>
-    <div class="phone"><div class="pscreen"><img src="${B}/img/${c.img}-mob-full.webp" width="420" height="3600" loading="lazy" decoding="async" alt="${esc(c.name)} on a phone"></div></div>
+    <div class="phone"><div class="pscreen"><img src="${B}/img/${c.img}-mob-full.webp" width="420" height="${c.hMob}" loading="lazy" decoding="async" alt="${esc(c.name)} on a phone"></div></div>
   </a>`;
 }
 
@@ -281,15 +315,26 @@ pages[''] = page({
   <ul class="facts"><li>Custom built, no templates</li><li>Websites from €499</li><li>Care plans from €29 a month</li><li>One point of contact</li></ul>
 </div>
 <div class="wrap stage" id="stage"><div class="stage-in" id="stageIn">
-  <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">start-to-business.be</span></div>
-    <div class="screen"><img src="${B}/img/stb-desk.webp" width="1440" height="900" alt="Homepage of Start to Business, designed and built by DRP BuildLab" fetchpriority="high" decoding="async"></div></div>
-  <div class="phone" aria-hidden="true"><div class="pscreen"><img src="${B}/img/hermosa-mob.webp" width="420" height="909" alt="" decoding="async"></div></div>
-  <a class="stage-tag" href="https://start-to-business.be/" target="_blank" rel="noopener">Live at start-to-business.be ↗</a>
+  <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">kasteelwarmelo.nl</span></div>
+    <div class="screen"><img src="${B}/img/warmelo-desk.webp" width="1440" height="900" alt="Homepage of Kasteel Warmelo, designed and built by DRP BuildLab" fetchpriority="high" decoding="async"></div></div>
+  <div class="phone" aria-hidden="true"><div class="pscreen"><img src="${B}/img/stb-mob.webp" width="420" height="909" alt="" decoding="async"></div></div>
+  <a class="stage-tag" href="https://kasteelwarmelo.nl/" target="_blank" rel="noopener">Live at kasteelwarmelo.nl ↗</a>
 </div></div></section>
+
+<section class="reel-sec" id="reel" aria-label="Showreel">
+  <div class="reel" id="reelBox">
+    <video id="reelVid" muted loop playsinline preload="none" poster="${B}/media/reel-poster.webp" data-src-sm="${B}/media/reel-960.mp4" data-src-mp4="${B}/media/reel.mp4" aria-label="Showreel: ${CASES.length} client websites by DRP BuildLab, scrolling on desktop and phone"></video>
+    <div class="reel-ui">
+      <p>Showreel · ${CASES.length} client websites</p>
+      <button type="button" class="reel-btn" id="reelBtn" aria-pressed="false">Pause</button>
+    </div>
+  </div>
+</section>
 
 <section class="sec" id="work"><div class="wrap">
   <div class="sec-head"><h2 class="h2 rv">Our work</h2><p class="sub rv">Real businesses, live right now. Hover a project to scroll through it on desktop and phone, or open it to see what we did.</p></div>
-  <div class="cases">${caseRow(CASES[0], false)}${caseRow(CASES[1], true)}${nextSlot()}</div>
+  <div class="cases">${caseRow(caseBy('kasteel-warmelo'), false)}${caseRow(caseBy('start-to-business'), true)}${caseRow(caseBy('vonckx-performance'), false)}</div>
+  <p class="all-work rv"><a class="btn ghost" href="${B}/werk/">See all ${CASES.length} projects ${arr}</a></p>
 </div></section>
 
 <section class="sec light"><div class="wrap stmt-grid">
@@ -352,8 +397,8 @@ pages['werk'] = page({
   body: `${phero({ h1: 'Our <em>work</em>', lede: 'Websites and webshops we designed, built or look after, all live today. Open a project to see the brief and what we did.' })}
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="wgrid">
   ${CASES.map(c => `<article class="wtile rv">${caseMedia(c)}<h2><a href="${B}/werk/${c.slug}/" style="text-decoration:none">${c.name}</a></h2><p>${c.kinds} · ${c.sector}</p></article>`).join('')}
+  <article class="wtile rv"><a class="slot" href="${B}/contact/" style="margin:0 7% 8% 0"><span class="big">Your business<br><em>goes here.</em></span></a><h2>Could be yours</h2><p>Request a free demo website. No obligation.</p></article>
 </div>
-<div class="cases" style="margin-top:clamp(80px,10vw,140px)">${nextSlot()}</div>
 </div></section>
 ${ctaBand()}`
 });
@@ -373,8 +418,8 @@ CASES.forEach((c, i) => {
 <section class="light"><div class="wrap">
   <div class="two"><h2>The brief</h2><div>${c.brief.map(p => `<p>${p}</p>`).join('')}</div></div>
   <div class="two"><h2>What we did</h2><div>${c.did.map(p => `<p>${p}</p>`).join('')}<ul class="tags" style="margin-top:24px">${c.tags.map(t => `<li>${t}</li>`).join('')}</ul></div></div>
-  <div class="two"><h2>On a phone</h2><div class="phones" style="justify-content:start"><div class="phone static"><div class="pscreen"><img src="${B}/img/${c.phoneImg}.webp" width="420" height="909" loading="lazy" decoding="async" alt="${esc(c.name)} on a phone, top of the page"></div></div><div class="phone static"><div class="pscreen"><img src="${B}/img/${c.img}-mob-full.webp" width="420" height="3600" loading="lazy" decoding="async" alt="${esc(c.name)} on a phone, further down the page" style="transform:translateY(-38%)"></div></div></div></div>
-  <div class="two"><h2>In their words</h2><div><p class="statement" style="max-width:none;font-size:clamp(28px,3.4vw,48px)">“${c.quote}”</p><p class="muted" style="margin-top:16px">${c.name}</p></div></div>
+  <div class="two"><h2>On a phone</h2><div class="phones" style="justify-content:start"><div class="phone static"><div class="pscreen"><img src="${B}/img/${c.phoneImg}.webp" width="420" height="909" loading="lazy" decoding="async" alt="${esc(c.name)} on a phone, top of the page"></div></div><div class="phone static"><div class="pscreen"><img src="${B}/img/${c.img}-mob-full.webp" width="420" height="${c.hMob}" loading="lazy" decoding="async" alt="${esc(c.name)} on a phone, further down the page" style="transform:translateY(-38%)"></div></div></div></div>
+  ${c.quote ? `<div class="two"><h2>In their words</h2><div><p class="statement" style="max-width:none;font-size:clamp(28px,3.4vw,48px)">“${c.quote}”</p><p class="muted" style="margin-top:16px">${c.name}</p></div></div>` : ''}
 </div></section>
 <a class="next" href="${B}/werk/${n.slug}/"><div class="wrap"><small>Next project</small><p class="h2" style="margin:0">${n.em} →</p></div></a>
 ${ctaBand()}`
