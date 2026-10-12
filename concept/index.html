@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>DRP BuildLab Homepage Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: black stage for the work, white paper for the people and the offer.
+   Electric blue appears only where something can be clicked or is live. */
+:root{
+  --ink:#0b0b0c;
+  --stage:#111114;
+  --paper:#ffffff;
+  --fog:#f1f2f6;
+  --line-d:rgba(255,255,255,.12);
+  --line-l:rgba(11,11,12,.10);
+  --mute-d:#a3a5ae;
+  --mute-l:#5b5e68;
+  --electric:#1f5eff;
+  --electric-hi:#7c9dff;
+  --electric-ink:#0a2a8a;
+  --display:"Archivo","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --body:"Geist","Helvetica Neue",Arial,sans-serif;
+  --mono:"Geist Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --gut:clamp(16px,4vw,56px);
+  --max:1440px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--electric);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gut)}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ── Review bar ── */
+.review{position:relative;z-index:60;background:var(--electric);color:#fff;display:flex;gap:12px 20px;align-items:center;justify-content:center;flex-wrap:wrap;padding:8px var(--gut);font-size:13px;text-align:center}
+.review b{font-weight:600}
+.review button{background:#fff;color:var(--electric-ink);border:0;border-radius:99px;padding:5px 14px;font-weight:600;font-size:12.5px;cursor:pointer}
+.review button[aria-pressed="true"]{background:var(--ink);color:#fff}
+
+/* ── Header ── */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;transition:transform .5s var(--ease),background .3s}
+.hdr.hide{transform:translateY(-110%)}
+.hdr-in{display:flex;align-items:center;gap:24px;height:72px}
+.hdr.solid{background:rgba(11,11,12,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-d)}
+.logo{display:flex;flex-direction:column;line-height:.82;text-decoration:none;margin-right:auto}
+.logo .l1{font-family:var(--display);font-weight:900;font-style:italic;font-stretch:88%;font-size:30px;letter-spacing:-.02em}
+.logo .l2{font-family:var(--display);font-weight:800;font-stretch:110%;font-size:9.6px;letter-spacing:.42em;color:var(--electric-hi);margin-top:3px}
+.nav{display:flex;gap:30px}
+.nav a{text-decoration:none;font-size:15px;color:#d9dae0;position:relative;padding-block:6px}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav a:hover{color:#fff}.nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.lang{font-family:var(--mono);font-size:12px;color:var(--mute-d);border:1px solid var(--line-d);border-radius:99px;padding:6px 11px;background:none;cursor:pointer}
+.btn{--b:var(--electric);--c:#fff;position:relative;display:inline-flex;align-items:center;gap:12px;background:var(--b);color:var(--c);text-decoration:none;border:0;border-radius:99px;padding:15px 24px;font-weight:600;font-size:15.5px;cursor:pointer;overflow:hidden;isolation:isolate;transition:transform .4s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;background:var(--paper);border-radius:inherit;transform:translateY(101%);transition:transform .5s var(--ease);z-index:-1}
+.btn:hover{color:var(--ink)}.btn:hover::before{transform:translateY(0)}
+.btn .arr{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.18);transition:transform .5s var(--ease),background .3s}
+.btn:hover .arr{transform:rotate(-45deg);background:var(--electric);color:#fff}
+.btn.ghost{--b:transparent;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
+.btn.dark{--b:var(--ink)}
+.btn.dark::before{background:var(--electric)}.btn.dark:hover{color:#fff}
+.btn.sm{padding:11px 18px;font-size:14px}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-d);background:none;cursor:pointer;place-items:center}
+.burger span{display:block;width:16px;height:1.5px;background:#fff;box-shadow:0 5px 0 #fff}
+@media (max-width:960px){.nav,.hdr .lang,.hdr .btn{display:none}.burger{display:grid}}
+
+.menu{position:fixed;inset:0;z-index:70;background:var(--ink);padding:calc(env(safe-area-inset-top,0px) + 18px) var(--gut) 32px;display:flex;flex-direction:column;clip-path:inset(0 0 100% 0);transition:clip-path .7s var(--ease);visibility:hidden}
+.menu.open{clip-path:inset(0);visibility:visible}
+.menu-top{display:flex;justify-content:space-between;align-items:center;height:54px}
+.menu nav{display:flex;flex-direction:column;margin-top:8vh}
+.menu nav a{font-family:var(--display);font-weight:800;font-stretch:80%;font-size:clamp(42px,12vw,72px);line-height:1.04;text-decoration:none;letter-spacing:-.02em}
+.menu nav a span{color:var(--electric-hi)}
+.menu .btn{margin-top:auto;justify-content:center}
+.menu-x{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-d);background:none;cursor:pointer;font-size:22px;line-height:1}
+
+/* ── Hero ── */
+.hero{position:relative;padding-top:clamp(40px,8vh,96px);overflow:clip}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70vw;height:70vw;max-width:1100px;max-height:1100px;background:radial-gradient(closest-side,rgba(31,94,255,.28),rgba(31,94,255,0));pointer-events:none}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--mute-d)}
+.live{width:8px;height:8px;border-radius:50%;background:var(--electric-hi);box-shadow:0 0 0 0 rgba(124,157,255,.7);animation:ping 2.4s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(124,157,255,.6)}70%{box-shadow:0 0 0 10px rgba(124,157,255,0)}100%{box-shadow:0 0 0 0 rgba(124,157,255,0)}}
+.h1{font-family:var(--display);font-weight:800;font-stretch:72%;font-size:clamp(54px,11.2vw,184px);line-height:.88;letter-spacing:-.025em;margin:26px 0 0;text-transform:uppercase;text-wrap:balance}
+.h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.h1 .ln>span{display:block;animation:rise 1.1s var(--ease) both}
+.h1 .ln:nth-child(2)>span{animation-delay:.09s}.h1 .ln:nth-child(3)>span{animation-delay:.18s}
+.h1 em{font-style:italic;font-weight:900;color:var(--electric-hi)}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.hero-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px 64px;align-items:end;margin-top:40px}
+.lede{font-size:clamp(18px,1.6vw,21px);line-height:1.5;color:#cfd0d6;max-width:34ch;margin:0}
+.lede strong{color:#fff;font-weight:600}
+.acts{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:44px;padding-top:20px;border-top:1px solid var(--line-d);color:var(--mute-d)}
+.facts span{display:flex;gap:8px;align-items:center}
+.facts span::before{content:"";width:5px;height:5px;background:var(--electric-hi);border-radius:50%}
+@media (max-width:860px){.hero-row{grid-template-columns:1fr}.acts{justify-content:flex-start}}
+
+/* device stage */
+.stage{position:relative;margin-top:clamp(48px,8vh,96px);padding-bottom:clamp(40px,6vw,90px)}
+.stage-in{position:relative;transform:scale(var(--s,.92)) translateY(var(--y,0px));transform-origin:50% 0;transition:transform .1s linear}
+.browser{position:relative;border-radius:14px;background:#1c1d22;box-shadow:0 40px 120px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.08);overflow:hidden}
+.bar{display:flex;align-items:center;gap:7px;height:38px;padding-inline:14px;background:#1c1d22;border-bottom:1px solid rgba(255,255,255,.06)}
+.bar i{width:10px;height:10px;border-radius:50%;background:#3a3b42}
+.url{margin-inline:auto;font-family:var(--mono);font-size:11.5px;color:#9a9ca5;background:#26272d;border-radius:6px;padding:4px 14px;max-width:60%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.screen{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0e0e10}
+.screen img{width:100%;height:auto}
+.phone{position:absolute;width:clamp(120px,19%,260px);aspect-ratio:9/19.2;border-radius:clamp(20px,2.6vw,38px);background:#0b0b0c;padding:clamp(5px,.6vw,9px);box-shadow:0 30px 80px -20px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.14)}
+.phone .pscreen{width:100%;height:100%;border-radius:clamp(15px,2vw,30px);overflow:hidden;background:#fff}
+.phone img{width:100%;height:auto}
+.stage .phone{right:-2%;bottom:-6%}
+.stage-tag{position:absolute;left:18px;bottom:18px;z-index:2;display:flex;gap:10px;align-items:center;background:rgba(11,11,12,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line-d);border-radius:99px;padding:8px 14px 8px 10px;font-size:13px;text-decoration:none}
+.stage-tag:hover{border-color:var(--electric-hi)}
+@media (max-width:700px){.stage .phone{right:-3%;bottom:-10%;width:30%}.url{max-width:72%}}
+
+/* marquee */
+.marq{border-block:1px solid var(--line-d);overflow:hidden;padding-block:22px;white-space:nowrap}
+.marq-t{display:inline-flex;gap:48px;animation:marq 38s linear infinite;padding-left:48px}
+.marq:hover .marq-t{animation-play-state:paused}
+.marq-t span{font-family:var(--display);font-weight:700;font-stretch:70%;font-size:clamp(28px,4vw,52px);text-transform:uppercase;letter-spacing:-.01em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.45)}
+.marq-t span:nth-child(odd){color:#fff;-webkit-text-stroke:0}
+.marq-t b{color:var(--electric-hi);font-size:28px;align-self:center}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ── Section scaffolding ── */
+.sec{padding-block:clamp(80px,11vw,160px)}
+.light{background:var(--paper);color:var(--ink)}
+.fog{background:var(--fog);color:var(--ink)}
+.blue{background:var(--electric);color:#fff}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-bottom:clamp(48px,6vw,88px)}
+.kicker{display:flex;gap:12px;align-items:center;margin-bottom:22px;color:var(--mute-d)}
+.light .kicker,.fog .kicker{color:var(--mute-l)}
+.kicker::before{content:"";width:28px;height:1px;background:currentColor}
+.h2{font-family:var(--display);font-weight:800;font-stretch:74%;font-size:clamp(44px,7vw,112px);line-height:.9;letter-spacing:-.025em;text-transform:uppercase;margin:0;text-wrap:balance}
+.h2 em{font-style:italic;font-weight:900;color:var(--electric)}
+.sec:not(.light):not(.fog):not(.blue) .h2 em{color:var(--electric-hi)}
+.sub{font-size:clamp(17px,1.4vw,19px);color:var(--mute-d);max-width:44ch;margin:0}
+.light .sub,.fog .sub{color:var(--mute-l)}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr}}
+
+/* reveal: transform only, so nothing is ever hidden */
+.js .rv{transform:translateY(36px);transition:transform 1.1s var(--ease)}
+.js .rv.in{transform:none}
+
+/* ── Work ── */
+.cases{display:flex;flex-direction:column;gap:clamp(80px,10vw,150px)}
+.case{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:40px 64px;align-items:center}
+.case:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,1.55fr)}
+.case:nth-child(even) .case-media{order:2}
+.case-media{position:relative;display:block;cursor:pointer;text-decoration:none;padding-bottom:6%;padding-right:6%}
+.case-media .browser{transition:transform .8s var(--ease)}
+.case-media:hover .browser{transform:translateY(-6px)}
+.case-media .screen img,.case-media .pscreen img{transition:transform 7s cubic-bezier(.45,.05,.3,1)}
+.case-media:hover .screen img{transform:translateY(calc(-100% + var(--sh,300px)))}
+.case-media:hover .pscreen img{transform:translateY(calc(-100% + var(--ph,300px)));transition-delay:.3s}
+.case-media .phone{right:0;bottom:0;width:22%;transition:transform .8s var(--ease)}
+.case-media:hover .phone{transform:translateY(-14px) rotate(-2deg)}
+.case-idx{display:flex;justify-content:space-between;color:var(--mute-d);padding-bottom:16px;border-bottom:1px solid var(--line-d);margin-bottom:28px}
+.case h3{font-family:var(--display);font-weight:800;font-stretch:76%;font-size:clamp(40px,5vw,76px);line-height:.92;letter-spacing:-.02em;text-transform:uppercase;margin:0 0 18px}
+.case p{color:#c9cad1;margin:0 0 26px;max-width:42ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 32px;padding:0;list-style:none}
+.tags li{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;border:1px solid var(--line-d);border-radius:99px;padding:6px 12px;color:#d6d7dc}
+.case-acts{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center}
+.tlink{display:inline-flex;gap:8px;align-items:center;font-weight:500;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px}
+.tlink:hover{color:var(--electric-hi)}
+.light .tlink:hover,.fog .tlink:hover{color:var(--electric)}
+.case.next .slot{position:relative;display:grid;place-items:center;aspect-ratio:16/10.6;border:1.5px dashed rgba(255,255,255,.25);border-radius:14px;text-align:center;padding:24px;text-decoration:none;transition:border-color .4s,background .4s}
+.case.next .slot:hover{border-color:var(--electric-hi);background:rgba(31,94,255,.08)}
+.slot .big{font-family:var(--display);font-weight:800;font-stretch:72%;font-size:clamp(40px,6vw,96px);line-height:.9;text-transform:uppercase;letter-spacing:-.02em}
+.slot .big em{color:var(--electric-hi);font-weight:900}
+@media (max-width:900px){.case,.case:nth-child(even){grid-template-columns:1fr}.case:nth-child(even) .case-media{order:0}}
+
+/* cursor bubble */
+.cur{position:fixed;left:0;top:0;z-index:80;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:var(--electric);color:#fff;display:grid;place-items:center;font-weight:600;font-size:14px;pointer-events:none;transform:translate(var(--x,-200px),var(--y,-200px)) scale(0);transition:transform .35s var(--ease)}
+.cur.on{transform:translate(var(--x),var(--y)) scale(1)}
+@media (hover:none){.cur{display:none}}
+
+/* ── Statement ── */
+.statement{font-family:var(--display);font-weight:600;font-stretch:92%;font-size:clamp(30px,4.3vw,66px);line-height:1.08;letter-spacing:-.02em;margin:0;max-width:22ch}
+.statement .w{color:rgba(11,11,12,.22);transition:color .3s}
+.statement .w.on{color:var(--ink)}
+.statement .w.hl.on{color:var(--electric)}
+.stmt-grid{display:grid;grid-template-columns:minmax(0,.4fr) minmax(0,1.6fr);gap:32px 64px}
+.stmt-foot{display:flex;flex-wrap:wrap;gap:16px 40px;margin-top:56px;align-items:center}
+.stmt-foot p{margin:0;color:var(--mute-l);max-width:44ch}
+@media (max-width:860px){.stmt-grid{grid-template-columns:1fr}}
+
+/* ── Services ── */
+.svc{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-l)}
+.svc li{border-bottom:1px solid var(--line-l)}
+.svc a{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.3fr) auto;gap:16px 48px;align-items:center;padding:34px 0;text-decoration:none;overflow:hidden;isolation:isolate}
+.svc a::before{content:"";position:absolute;inset:0 calc(var(--gut) * -1);background:var(--ink);transform:scaleY(0);transform-origin:bottom;transition:transform .55s var(--ease);z-index:-1}
+.svc a:hover::before,.svc a:focus-visible::before{transform:scaleY(1);transform-origin:top}
+.svc a:hover,.svc a:focus-visible{color:#fff}
+.svc h3{font-family:var(--display);font-weight:800;font-stretch:78%;font-size:clamp(32px,4vw,58px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;margin:0;transition:transform .55s var(--ease)}
+.svc a:hover h3{transform:translateX(14px)}
+.svc p{margin:0;color:var(--mute-l);max-width:46ch;transition:color .4s}
+.svc a:hover p{color:#c9cad1}
+.price{font-family:var(--mono);font-size:13px;white-space:nowrap;display:flex;gap:16px;align-items:center}
+.price .ar{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid currentColor;transition:transform .5s var(--ease),background .3s,border-color .3s}
+.svc a:hover .ar{transform:rotate(-45deg);background:var(--electric);border-color:var(--electric)}
+@media (max-width:860px){.svc a{grid-template-columns:1fr auto}.svc p{grid-column:1/-1;grid-row:2}}
+
+/* ── Why ── */
+.why{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line-d);border:1px solid var(--line-d);border-radius:20px;overflow:hidden}
+.why>div{background:var(--ink);padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;gap:18px;min-height:300px;transition:background .5s}
+.why>div:hover{background:#15161b}
+.why .n{font-family:var(--display);font-weight:800;font-stretch:72%;font-size:clamp(64px,8vw,120px);line-height:.8;color:var(--electric-hi);letter-spacing:-.03em}
+.why h3{font-family:var(--display);font-weight:700;font-stretch:88%;font-size:clamp(24px,2.4vw,34px);line-height:1.05;margin:auto 0 0;letter-spacing:-.01em}
+.why p{margin:0;color:var(--mute-d);max-width:40ch}
+@media (max-width:760px){.why{grid-template-columns:1fr}.why>div{min-height:0}}
+
+/* ── Team ── */
+.team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,28px)}
+.person{margin:0}
+.portrait{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:var(--fog)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;filter:grayscale(1) contrast(1.05);transform:scale(1.02);transition:filter .7s var(--ease),transform 1s var(--ease)}
+.person:hover .portrait img{filter:none;transform:scale(1.06)}
+.portrait .init{position:absolute;left:18px;bottom:14px;font-family:var(--display);font-weight:900;font-style:italic;font-stretch:80%;font-size:clamp(64px,7vw,110px);line-height:.8;color:var(--electric);opacity:0;transform:translateY(20px);transition:opacity .5s,transform .7s var(--ease)}
+.person:hover .init{opacity:1;transform:none}
+.person figcaption{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding-top:18px;border-top:1px solid var(--line-l);margin-top:18px}
+.person h3{font-family:var(--display);font-weight:700;font-stretch:90%;font-size:clamp(20px,1.8vw,26px);margin:0;letter-spacing:-.01em;line-height:1.1}
+.person .role{color:var(--mute-l);font-size:14.5px;margin:4px 0 0}
+.team-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 40px;align-items:center;margin-top:48px;padding:20px 24px;border-radius:18px;background:var(--fog)}
+.builder{display:flex;gap:16px;align-items:center}
+.builder img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 15%;background:#fff}
+.builder p{margin:0;color:var(--mute-l)}.builder strong{color:var(--ink)}
+@media (max-width:820px){.team{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}.person{scroll-snap-align:start}.portrait img{filter:none}}
+
+/* ── Partners ── */
+.prt{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,28px)}
+.prt-card{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:var(--paper);text-decoration:none;transition:transform .7s var(--ease),box-shadow .7s}
+.prt-card:hover{transform:translateY(-8px);box-shadow:0 30px 60px -30px rgba(11,11,12,.35)}
+.prt-card .img{aspect-ratio:5/6;overflow:hidden}
+.prt-card .img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.prt-card:hover .img img{transform:scale(1.05)}
+.prt-card .body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:6px}
+.prt-card h3{font-family:var(--display);font-weight:700;font-stretch:90%;font-size:24px;margin:0}
+.prt-card p{margin:0;color:var(--mute-l);font-size:15.5px}
+.prt-card .q{font-style:italic;color:var(--ink);margin-top:6px}
+.prt-cta{background:var(--ink);color:#fff;padding:clamp(26px,3vw,40px);justify-content:space-between;gap:28px}
+.prt-cta h3{font-family:var(--display);font-weight:800;font-stretch:76%;font-size:clamp(40px,4.4vw,64px);line-height:.92;text-transform:uppercase;letter-spacing:-.02em}
+.prt-cta h3 em{color:var(--electric-hi);font-weight:900}
+.prt-cta p{color:var(--mute-d)}
+@media (max-width:900px){.prt{grid-template-columns:1fr 1fr}.prt-cta{grid-column:1/-1}}
+@media (max-width:560px){.prt{grid-template-columns:1fr}}
+
+/* ── Final CTA ── */
+.cta-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px 72px;align-items:start}
+.cta .h2{font-size:clamp(56px,9vw,150px)}
+.cta .h2 em{color:var(--ink)}
+.steps{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 14px;padding:16px 0;border-top:1px solid rgba(255,255,255,.28)}
+.steps li::before{counter-increment:s;content:"0" counter(s);font-family:var(--mono);font-size:12.5px;padding-top:3px;grid-row:span 2}
+.steps b{font-weight:600}
+.steps span{color:rgba(255,255,255,.82);font-size:15.5px}
+.form{background:var(--paper);color:var(--ink);border-radius:22px;padding:clamp(24px,3.4vw,44px);display:grid;gap:18px;box-shadow:0 40px 80px -40px rgba(10,42,138,.7)}
+.form h3{font-family:var(--display);font-weight:800;font-stretch:84%;font-size:28px;margin:0;letter-spacing:-.01em}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fld{display:grid;gap:6px;min-width:0}
+.fld label{font-size:13.5px;font-weight:500}
+.fld input,.fld select,.fld textarea{width:100%;border:1px solid #cfd2db;border-radius:12px;padding:13px 14px;background:#fff;color:var(--ink);font-size:16px;transition:border-color .2s,box-shadow .2s}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--electric);box-shadow:0 0 0 3px rgba(31,94,255,.18)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;border:0;padding:0;margin:0}
+.chips legend{font-size:13.5px;font-weight:500;margin-bottom:8px;padding:0}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{border:1px solid #cfd2db;border-radius:99px;padding:9px 15px;font-size:14.5px;cursor:pointer;transition:all .25s}
+.chips input:checked+label{background:var(--ink);border-color:var(--ink);color:#fff}
+.chips input:focus-visible+label{outline:2px solid var(--electric);outline-offset:2px}
+.form .btn{justify-content:space-between;width:100%;padding:18px 20px 18px 26px;font-size:16.5px}
+.form small{color:var(--mute-l);font-size:13px}
+.ok{display:none;background:var(--fog);border-radius:14px;padding:16px 18px;font-size:15px}
+.ok.show{display:block}
+.alt{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:28px;font-size:15px}
+.alt span{user-select:all}
+@media (max-width:900px){.cta-grid{grid-template-columns:1fr}}
+@media (max-width:520px){.form .row{grid-template-columns:1fr}}
+
+/* ── Footer ── */
+.ftr{padding-block:clamp(64px,8vw,110px) 28px}
+.ft-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:36px 48px}
+.ft-grid h4{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute-d);margin:0 0 16px}
+.ft-grid a{display:block;text-decoration:none;color:#d9dae0;padding-block:5px;width:fit-content}
+.ft-grid a:hover{color:var(--electric-hi)}
+.ft-grid a.logo{display:flex;color:#fff}
+.ft-grid p{color:var(--mute-d);margin:0 0 20px;max-width:32ch}
+.wordmark{margin-top:clamp(56px,8vw,110px);font-family:var(--display);font-weight:900;font-style:italic;font-stretch:66%;font-size:clamp(64px,19.5vw,330px);line-height:.78;letter-spacing:-.04em;white-space:nowrap;overflow:hidden}
+.wordmark span{color:var(--electric)}
+.ft-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28px;margin-top:28px;padding-top:22px;border-top:1px solid var(--line-d);color:var(--mute-d);font-size:13.5px}
+.ft-bot a{text-decoration:none}.ft-bot a:hover{color:#fff}
+@media (max-width:860px){.ft-grid{grid-template-columns:1fr 1fr}.ft-grid>div:first-child{grid-column:1/-1}}
+
+/* ── Case study overlay (shows the page transition) ── */
+.case-pg{position:fixed;inset:0;z-index:90;background:var(--paper);color:var(--ink);overflow-y:auto;overscroll-behavior:contain;clip-path:circle(0 at var(--cx,50%) var(--cy,50%));visibility:hidden;transition:clip-path .9s var(--ease),visibility 0s .9s}
+.case-pg.open{clip-path:circle(150% at var(--cx,50%) var(--cy,50%));visibility:visible;transition:clip-path .9s var(--ease),visibility 0s}
+.cp-top{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:calc(env(safe-area-inset-top,0px) + 14px) var(--gut) 14px;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line-l)}
+.cp-x{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--line-l);background:none;border-radius:99px;padding:9px 16px;cursor:pointer;font-weight:500}
+.cp-x:hover{border-color:var(--ink)}
+.cp-hero{padding-block:clamp(48px,7vw,100px) 40px}
+.cp-hero .h2 em{color:var(--electric)}
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:48px;border-top:1px solid var(--line-l)}
+.meta div{padding:18px 18px 18px 0;border-right:1px solid var(--line-l);min-width:0}
+.meta div+div{padding-left:18px}.meta div:last-child{border-right:0}
+.meta dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute-l);margin-bottom:8px}
+.meta dd{margin:0;font-weight:500;overflow-wrap:anywhere}
+@media (max-width:760px){.meta{grid-template-columns:1fr 1fr}.meta div:nth-child(2){border-right:0}.meta div:nth-child(3){padding-left:0}}
+.cp-shot{background:var(--fog);padding-block:clamp(40px,6vw,90px)}
+.cp-shot .browser{max-width:1200px;margin-inline:auto;box-shadow:0 40px 100px -40px rgba(11,11,12,.45)}
+.cp-shot .screen{aspect-ratio:auto;max-height:78vh;overflow-y:auto}
+.cp-body{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:32px 72px;padding-block:clamp(56px,7vw,110px)}
+.cp-body h3{font-family:var(--display);font-weight:800;font-stretch:80%;font-size:clamp(30px,3vw,44px);text-transform:uppercase;line-height:.95;margin:0}
+.cp-body p{margin:0 0 18px;color:#2b2d33;max-width:58ch}
+.cp-phones{display:grid;grid-template-columns:repeat(2,minmax(0,220px));gap:28px;justify-content:center;padding-block:0 clamp(56px,7vw,110px)}
+.cp-phones .phone{position:relative;width:100%}
+.cp-next{display:block;background:var(--ink);color:#fff;text-decoration:none;padding-block:clamp(56px,8vw,120px)}
+.cp-next .h2 em{color:var(--electric-hi)}
+@media (max-width:860px){.cp-body{grid-template-columns:1fr}}
+
+/* concept notes */
+.cn{display:none;position:relative;z-index:5;margin:14px 0;max-width:520px;background:#fffbe6;color:#3a3000;border:1px solid #e9d78a;border-radius:12px;padding:12px 14px 12px 40px;font-size:14px;line-height:1.45}
+.cn::before{content:attr(data-n);position:absolute;left:10px;top:11px;width:20px;height:20px;border-radius:50%;background:var(--electric);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center}
+.notes .cn{display:block}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .rv{transform:none}
+  .stage-in{transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="review" role="note">
+  <span><b>Homepage concept v1</b> · for review by the DRP BuildLab founders · English copy shown, all site languages carry over</span>
+  <button type="button" id="notesBtn" aria-pressed="false">Show concept notes</button>
+</div>
+
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a class="logo" href="#top" aria-label="DRP BuildLab, back to top"><span class="l1">DRP</span><span class="l2">BUILDLAB</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#services">Pricing</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="lang" type="button" aria-label="Language: English">EN ▾</button>
+    <a class="btn sm" href="#contact">Free demo website <span class="arr" aria-hidden="true">→</span></a>
+    <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-top">
+    <span class="logo"><span class="l1">DRP</span><span class="l2">BUILDLAB</span></span>
+    <button class="menu-x" type="button" id="menuX" aria-label="Close menu">×</button>
+  </div>
+  <nav aria-label="Mobile">
+    <a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#partners">Partners</a><a href="#contact">Contact<span>.</span></a>
+  </nav>
+  <a class="btn" href="#contact">Request your free demo website <span class="arr" aria-hidden="true">→</span></a>
+</div>
+
+<main id="top">
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow mono"><span class="live" aria-hidden="true"></span>Web design &amp; development studio · Belgium → worldwide</p>
+    <h1 class="h1">
+      <span class="ln"><span>Websites</span></span>
+      <span class="ln"><span>built to</span></span>
+      <span class="ln"><span><em>win clients.</em></span></span>
+    </h1>
+    <p class="cn" data-n="1">The headline is the promise in four words, and the visual underneath is our own work, not stock photos. Visitors learn what we do and see proof of it within one screen.</p>
+    <div class="hero-row">
+      <p class="lede">We design and build <strong>custom websites and webshops</strong> for businesses worldwide. Tell us about yours and we’ll show you a <strong>free demo website</strong> before you commit to anything.</p>
+      <div class="acts">
+        <a class="btn" href="#contact">Request your free demo website <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn ghost" href="#work">See our work</a>
+      </div>
+    </div>
+    <div class="facts mono"><span>Custom built, no templates</span><span>Websites from €499</span><span>Care plans from €29 / month</span><span>One point of contact</span></div>
+  </div>
+
+  <div class="wrap stage" id="stage">
+    <div class="stage-in" id="stageIn">
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><span class="url">start-to-business.be</span></div>
+        <div class="screen"><img src="img/stb-desk.webp" width="1440" height="900" alt="Homepage of Start to Business, a website designed and built by DRP BuildLab" fetchpriority="high" decoding="async"></div>
+      </div>
+      <div class="phone" aria-hidden="true"><div class="pscreen"><img src="img/hermosa-mob.webp" width="420" height="909" alt="" decoding="async"></div></div>
+      <a class="stage-tag" href="https://start-to-business.be/" target="_blank" rel="noopener"><span class="live" aria-hidden="true"></span>Live: start-to-business.be ↗</a>
+    </div>
+  </div>
+</section>
+
+<div class="marq" aria-hidden="true"><div class="marq-t">
+  <span>Custom websites</span><b>✦</b><span>Webshops</span><b>✦</b><span>Shopify</span><b>✦</b><span>Redesigns</span><b>✦</b><span>SEO</span><b>✦</b><span>Multilingual</span><b>✦</b><span>Care plans</span><b>✦</b>
+  <span>Custom websites</span><b>✦</b><span>Webshops</span><b>✦</b><span>Shopify</span><b>✦</b><span>Redesigns</span><b>✦</b><span>SEO</span><b>✦</b><span>Multilingual</span><b>✦</b><span>Care plans</span><b>✦</b>
+</div></div>
+
+<!-- ═══ WORK ═══ -->
+<section class="sec" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker mono">Selected work</p><h2 class="h2 rv">Proof, <em>not</em> promises.</h2></div>
+      <p class="sub rv">Real businesses, live right now. Hover a project to scroll through it on desktop and phone, or open the case to see what we did.</p>
+    </div>
+    <p class="cn" data-n="2">Every project gets a real desktop and mobile mockup made from the live site, a hover that scrolls through the whole page, and its own case page (click "View case"). This list grows as you send us projects. Two are shown here because these are the two we can show today.</p>
+
+    <div class="cases">
+      <article class="case rv">
+        <a class="case-media" href="#case-stb" data-case="stb" aria-label="Open the Start to Business case study">
+          <div class="browser">
+            <div class="bar"><i></i><i></i><i></i><span class="url">start-to-business.be</span></div>
+            <div class="screen"><img src="img/stb-desk-full.webp" width="1200" height="3943" loading="lazy" decoding="async" alt="Full homepage of Start to Business on desktop"></div>
+          </div>
+          <div class="phone"><div class="pscreen"><img src="img/stb-mob-full.webp" width="420" height="3600" loading="lazy" decoding="async" alt="Start to Business on a phone"></div></div>
+        </a>
+        <div>
+          <div class="case-idx mono"><span>Case 01</span><span>Coaching · Belgium</span></div>
+          <h3>Start to Business</h3>
+          <p>A website for Petra Vanhandenhoven’s coaching practice for entrepreneurs, with her e-books, workshops and one-to-one guidance in one place. We designed and built it, and we still maintain it.</p>
+          <ul class="tags"><li>Design</li><li>Development</li><li>Responsive</li><li>Maintenance</li></ul>
+          <div class="case-acts">
+            <a class="btn sm ghost" href="#case-stb" data-case="stb">View case <span class="arr" aria-hidden="true">→</span></a>
+            <a class="tlink" href="https://start-to-business.be/" target="_blank" rel="noopener">Visit live site ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="case rv">
+        <a class="case-media" href="#case-hermosa" data-case="hermosa" aria-label="Open the Hermosa Antwerp case study">
+          <div class="browser">
+            <div class="bar"><i></i><i></i><i></i><span class="url">hermosa-antwerp.myshopify.com</span></div>
+            <div class="screen"><img src="img/hermosa-desk-full.webp" width="1200" height="5200" loading="lazy" decoding="async" alt="Full homepage of the Hermosa Antwerp webshop on desktop"></div>
+          </div>
+          <div class="phone"><div class="pscreen"><img src="img/hermosa-mob-full.webp" width="420" height="3600" loading="lazy" decoding="async" alt="Hermosa Antwerp webshop on a phone"></div></div>
+        </a>
+        <div>
+          <div class="case-idx mono"><span>Case 02</span><span>E-commerce · Antwerp</span></div>
+          <h3>Hermosa Antwerp</h3>
+          <p>A Shopify webshop for handmade BIAB press-on nails, shipped to customers worldwide. We are Hermosa’s IT maintenance partner and keep the shop running, up to date and ready to sell.</p>
+          <ul class="tags"><li>Shopify</li><li>E-commerce</li><li>IT maintenance</li></ul>
+          <div class="case-acts">
+            <a class="btn sm ghost" href="#case-hermosa" data-case="hermosa">View case <span class="arr" aria-hidden="true">→</span></a>
+            <a class="tlink" href="https://hermosa-antwerp.myshopify.com/" target="_blank" rel="noopener">Visit live site ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="case next rv">
+        <a class="slot" href="#contact"><span><span class="mono" style="color:var(--mute-d)">Case 03</span><br><span class="big">Your business<br><em>goes here.</em></span></span></a>
+        <div>
+          <div class="case-idx mono"><span>Next</span><span>Anywhere</span></div>
+          <h3>Could be yours</h3>
+          <p>Tell us what you do. We’ll build a demo of your new website and walk you through it on a call, for free and with no obligation.</p>
+          <div class="case-acts"><a class="btn sm" href="#contact">Request your free demo <span class="arr" aria-hidden="true">→</span></a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATEMENT / ABOUT ═══ -->
+<section class="sec light" id="about">
+  <div class="wrap stmt-grid">
+    <p class="kicker mono">Who we are</p>
+    <div>
+      <p class="statement" id="stmt">DRP BuildLab is a small studio of builders. We make websites that look as good as the businesses behind them, we price them honestly, and we pick up the phone long after launch.</p>
+      <p class="cn" data-n="3">The words light up as you scroll, a nod to REJOUICE. It is a single sentence on purpose: this is the "who are we" moment, and the team section below backs it up with faces.</p>
+      <div class="stmt-foot">
+        <p>Based in Belgium, working with businesses wherever they are.</p>
+        <a class="tlink" href="#team">Meet the founders →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="sec light" id="services" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker mono">Services</p><h2 class="h2 rv">What we <em>build.</em></h2></div>
+      <p class="sub rv">Every service has its own page with what’s included, examples and a price. Prices are shown up front and confirmed in a written quote.</p>
+    </div>
+    <ul class="svc">
+      <li><a href="#contact"><h3>Custom websites</h3><p>A site designed around your business, never a template. From a sharp one-pager to a full multi-page site.</p><span class="price">from €499 <span class="ar" aria-hidden="true">→</span></span></a></li>
+      <li><a href="#contact"><h3>Webshops &amp; Shopify</h3><p>Product catalogue, cart, checkout and order management, or a complete redesign of your existing Shopify store.</p><span class="price">from €799 <span class="ar" aria-hidden="true">→</span></span></a></li>
+      <li><a href="#contact"><h3>Redesign &amp; refresh</h3><p>Your current site, modernised. We keep your content and brand and fix what holds it back.</p><span class="price">from €349 <span class="ar" aria-hidden="true">→</span></span></a></li>
+      <li><a href="#contact"><h3>Care plans</h3><p>Updates, monitoring and changes when you need them. Urgent issues get a response within one working day.</p><span class="price">€29 / month <span class="ar" aria-hidden="true">→</span></span></a></li>
+      <li><a href="#contact"><h3>Growth add-ons</h3><p>SEO, multilingual sites, payments, invoicing and booking integrations, Google reviews and custom calculators.</p><span class="price">from €149 <span class="ar" aria-hidden="true">→</span></span></a></li>
+    </ul>
+    <p class="cn" data-n="4">One list instead of a grid of cards, in the Ramotion and Clay style: easy to scan, with the price visible straight away. Each row links to its own service page, which is new and good for SEO.</p>
+  </div>
+</section>
+
+<!-- ═══ WHY ═══ -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker mono">Why DRP BuildLab</p><h2 class="h2 rv">No surprises. <em>Ever.</em></h2></div>
+      <p class="sub rv">What you can hold us to, from the first call to years after launch.</p>
+    </div>
+    <div class="why">
+      <div class="rv"><span class="n">01</span><h3>See it before you sign.</h3><p>On our first call we already show you an example made for your business. A free demo, with no obligation.</p></div>
+      <div class="rv"><span class="n">02</span><h3>One person to call.</h3><p>No ticket systems and no rotating account managers. You know who is building your site, and you can reach them.</p></div>
+      <div class="rv"><span class="n">03</span><h3>Prices on the table.</h3><p>Websites from €499, published openly. Two revision rounds included, and a written quote that is valid for 14 days.</p></div>
+      <div class="rv"><span class="n">04</span><h3>We stay after launch.</h3><p>Care plans from €29 a month keep your site fast, secure and current. Hermosa and Start to Business still rely on us today.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TEAM ═══ -->
+<section class="sec light" id="team">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker mono">The founders</p><h2 class="h2 rv">The D, the R <em>and the P.</em></h2></div>
+      <p class="sub rv">Three founders, one studio. These are the people you talk to, from the first call to launch day and after.</p>
+    </div>
+    <div class="team">
+      <figure class="person rv">
+        <div class="portrait"><img src="img/dries.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Portrait of Dries De Smedt"><span class="init" aria-hidden="true">D</span></div>
+        <figcaption><div><h3>Dries De Smedt</h3><p class="role">Co-founder &amp; VP of Legal</p></div></figcaption>
+      </figure>
+      <figure class="person rv">
+        <div class="portrait"><img src="img/roan.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Portrait of Roan Bal"><span class="init" aria-hidden="true">R</span></div>
+        <figcaption><div><h3>Roan Bal</h3><p class="role">Co-founder &amp; VP of Operations</p></div></figcaption>
+      </figure>
+      <figure class="person rv">
+        <div class="portrait"><img src="img/par.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Portrait of Par Volckaerts"><span class="init" aria-hidden="true">P</span></div>
+        <figcaption><div><h3>Par Volckaerts</h3><p class="role">Co-founder &amp; VP of Marketing &amp; Communications</p></div></figcaption>
+      </figure>
+    </div>
+    <p class="cn" data-n="5">Black and white portraits that switch to colour on hover, and the founder’s initial appears in electric blue. Together the initials spell D-R-P, the name of the studio. On phones the three portraits become a swipeable row.</p>
+    <div class="team-foot">
+      <div class="builder"><img src="img/lathif.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Portrait of Lathif Dewantoro"><p><strong>Lathif Dewantoro</strong>, Lead Developer, builds every site with them.</p></div>
+      <a class="tlink" href="#about">More about us →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PARTNERS ═══ -->
+<section class="sec fog" id="partners">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker mono">Collaborations</p><h2 class="h2 rv">Built on <em>trust.</em></h2></div>
+      <p class="sub rv">The businesses that build on us, and an open invitation to grow with us.</p>
+    </div>
+    <div class="prt">
+      <a class="prt-card rv" href="https://start-to-business.be/" target="_blank" rel="noopener">
+        <div class="img"><img src="img/p-stb.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Partnership visual: DRP BuildLab and Start to Business"></div>
+        <div class="body"><h3>Start to Business</h3><p>We developed their website and still maintain it.</p><p class="q" lang="en">“Ideas deserve a strong online foundation.”</p></div>
+      </a>
+      <a class="prt-card rv" href="https://hermosa-antwerp.myshopify.com/" target="_blank" rel="noopener">
+        <div class="img"><img src="img/p-hermosa.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Partnership visual: DRP BuildLab and Hermosa Antwerp"></div>
+        <div class="body"><h3>Hermosa Antwerp</h3><p>DRP BuildLab is Hermosa’s IT maintenance partner.</p><p class="q" lang="en">“Technology supports beauty.”</p></div>
+      </a>
+      <div class="prt-card prt-cta rv">
+        <p class="mono" style="margin:0">Partner programme</p>
+        <h3>Refer a client, <em>earn on it.</em></h3>
+        <p>Creators, consultants and agencies get a personal link. Every client who signs through it earns you a commission, and your link never expires.</p>
+        <a class="btn" href="#contact">Become a partner <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="sec blue cta" id="contact">
+  <div class="wrap cta-grid">
+    <div>
+      <p class="kicker mono" style="color:#fff">Free demo website</p>
+      <h2 class="h2">Let’s build <em>yours.</em></h2>
+      <ol class="steps">
+        <li><b>You tell us about your business</b><span>Fill in the form. It takes about a minute.</span></li>
+        <li><b>We call you with a demo</b><span>We show you an example made for your business. Free, with no obligation.</span></li>
+        <li><b>Preview and approve</b><span>You see your site before it goes live. Two revision rounds are included.</span></li>
+        <li><b>Live, and we stay</b><span>Your own domain, and a team you can call when you need a change.</span></li>
+      </ol>
+      <div class="alt"><span>info@drpbuildlab.com</span><span>WhatsApp +32 473 74 44 31</span></div>
+    </div>
+    <form class="form" id="demoForm" novalidate>
+      <h3>Request your free demo website</h3>
+      <div class="row">
+        <div class="fld"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="fld"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="fld"><label for="f-biz">Business name or current website</label><input id="f-biz" name="business" autocomplete="organization" placeholder="e.g. hermosa-antwerp.com"></div>
+      <fieldset class="chips">
+        <legend>What do you need?</legend>
+        <input type="radio" name="need" id="n1" value="website" checked><label for="n1">New website</label>
+        <input type="radio" name="need" id="n2" value="webshop"><label for="n2">Webshop</label>
+        <input type="radio" name="need" id="n3" value="redesign"><label for="n3">Redesign</label>
+        <input type="radio" name="need" id="n4" value="care"><label for="n4">Maintenance</label>
+        <input type="radio" name="need" id="n5" value="unsure"><label for="n5">Not sure yet</label>
+      </fieldset>
+      <button class="btn dark" type="submit">Request my free demo <span class="arr" aria-hidden="true">→</span></button>
+      <p class="ok" id="ok" role="status" aria-live="polite"></p>
+      <small>We reply within one working day. Your details are only used to contact you about this request.</small>
+      <p class="cn" data-n="6" style="margin:0">Five fields instead of nine. Company number, phone, partner code and message move to the follow-up call or to an optional "more details" step. On the live site this form sends to the same address as today’s quote form.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div><a class="logo" href="#top" aria-label="DRP BuildLab, back to top" style="margin-bottom:20px"><span class="l1">DRP</span><span class="l2">BUILDLAB</span></a><p>Custom websites and webshops for businesses worldwide.</p><a class="btn sm" href="#contact">Free demo website <span class="arr" aria-hidden="true">→</span></a></div>
+      <div><h4>Studio</h4><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#services">Pricing</a><a href="#partners">Partner programme</a></div>
+      <div><h4>Contact</h4><a href="#contact">info@drpbuildlab.com</a><a href="#contact">+32 473 74 44 31</a><a href="#contact">WhatsApp</a></div>
+      <div><h4>Follow</h4><a href="https://www.instagram.com/drp_buildlab/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.facebook.com/share/1Hz1mJG22E/" target="_blank" rel="noopener">Facebook ↗</a><a href="https://www.tiktok.com/@drpbuildlab" target="_blank" rel="noopener">TikTok ↗</a></div>
+    </div>
+    <div class="wordmark" aria-hidden="true">DRP <span>BuildLab</span></div>
+    <div class="ft-bot"><span>© 2026 DRP BuildLab · Honingstraat 1D, 2220 Hallaar, Belgium · VAT BE 1033.313.383</span><span><a href="#top">Terms</a> · <a href="#top">Privacy</a></span></div>
+  </div>
+</footer>
+
+<div class="cur" id="cur" aria-hidden="true">View</div>
+
+<!-- ═══ CASE PAGE ═══ -->
+<div class="case-pg" id="casePg" role="dialog" aria-modal="true" aria-labelledby="cpTitle" tabindex="-1">
+  <div class="cp-top"><span class="logo" style="color:var(--ink)"><span class="l1">DRP</span><span class="l2" style="color:var(--electric)">BUILDLAB</span></span><button class="cp-x" type="button" id="cpX">← Back to work</button></div>
+  <div id="cpBody"></div>
+</div>
+
+<script>
+document.documentElement.classList.add('js');
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* concept notes */
+$('#notesBtn').addEventListener('click', e => {
+  const on = document.body.classList.toggle('notes');
+  e.currentTarget.setAttribute('aria-pressed', on);
+  e.currentTarget.textContent = on ? 'Hide concept notes' : 'Show concept notes';
+});
+
+/* header: solid after hero, hides on scroll down */
+const hdr = $('#hdr'); let lastY = 0;
+addEventListener('scroll', () => {
+  const y = scrollY;
+  hdr.classList.toggle('solid', y > 40);
+  hdr.classList.toggle('hide', y > 400 && y > lastY && !document.body.classList.contains('menu-open'));
+  lastY = y;
+}, { passive: true });
+
+/* mobile menu */
+const menu = $('#menu'), burger = $('#burger');
+const setMenu = open => { menu.classList.toggle('open', open); burger.setAttribute('aria-expanded', open); document.body.classList.toggle('menu-open', open); if (open) $('#menuX').focus(); else burger.focus(); };
+burger.addEventListener('click', () => setMenu(true));
+$('#menuX').addEventListener('click', () => setMenu(false));
+$$('#menu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+/* reveals */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+$$('.rv').forEach(el => io.observe(el));
+
+/* hero device: grows to full size as you scroll into it */
+const stage = $('#stage'), stageIn = $('#stageIn');
+/* statement words light up with scroll */
+const stmt = $('#stmt');
+const hl = new Set(['honestly,', 'phone']);
+stmt.innerHTML = stmt.textContent.split(' ').map(w => `<span class="w${hl.has(w) ? ' hl' : ''}">${w}</span>`).join(' ');
+const words = $$('.w', stmt);
+function onScroll() {
+  const vh = innerHeight;
+  if (!reduce) {
+    const r = stage.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.9)));
+    stageIn.style.setProperty('--s', (0.9 + p * 0.1).toFixed(4));
+  }
+  const sr = stmt.getBoundingClientRect();
+  const q = reduce ? 1 : Math.min(1, Math.max(0, (vh * 0.85 - sr.top) / (sr.height + vh * 0.35)));
+  const n = Math.round(q * words.length);
+  words.forEach((w, i) => w.classList.toggle('on', i < n));
+}
+addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', onScroll); onScroll();
+
+/* screenshot scroll distance for hover */
+function sizeShots() {
+  $$('.case-media').forEach(m => {
+    const s = $('.screen', m), p = $('.pscreen', m);
+    m.style.setProperty('--sh', s.clientHeight + 'px');
+    m.style.setProperty('--ph', p.clientHeight + 'px');
+  });
+}
+addEventListener('resize', sizeShots); addEventListener('load', sizeShots); sizeShots();
+
+/* cursor bubble over projects */
+const cur = $('#cur');
+if (matchMedia('(hover:hover)').matches && !reduce) {
+  addEventListener('pointermove', e => { cur.style.setProperty('--x', e.clientX + 'px'); cur.style.setProperty('--y', e.clientY + 'px'); }, { passive: true });
+  $$('.case-media').forEach(m => { m.addEventListener('pointerenter', () => cur.classList.add('on')); m.addEventListener('pointerleave', () => cur.classList.remove('on')); });
+}
+
+/* case pages */
+const CASES = {
+  stb: {
+    name: 'Start to <em>Business</em>', plain: 'Start to Business', url: 'start-to-business.be', href: 'https://start-to-business.be/',
+    sector: 'Coaching for entrepreneurs', scope: 'Design, development, maintenance', desk: 'img/stb-desk-full.webp', dh: 3943,
+    mobs: ['img/stb-mob.webp', 'img/stb-mob-full.webp'],
+    intro: 'Petra Vanhandenhoven helps entrepreneurs take the right steps with their business through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together and feels as personal as her coaching.',
+    did: ['We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers: e-books, workshops, guidance and her Dreamteam.', 'The site works just as well on a phone as on a desktop, and we still maintain it, so updates and new offers go live without Petra having to touch any code.'],
+    next: 'hermosa'
+  },
+  hermosa: {
+    name: 'Hermosa <em>Antwerp</em>', plain: 'Hermosa Antwerp', url: 'hermosa-antwerp.myshopify.com', href: 'https://hermosa-antwerp.myshopify.com/',
+    sector: 'E-commerce, beauty', scope: 'Shopify maintenance & IT', desk: 'img/hermosa-desk-full.webp', dh: 5200,
+    mobs: ['img/hermosa-mob.webp', 'img/hermosa-mob-full.webp'],
+    intro: 'Hermosa Antwerp sells handmade BIAB press-on nails and treatments, shipped to customers worldwide. Their Shopify store is the business, so it has to work every day.',
+    did: ['DRP BuildLab is Hermosa’s IT maintenance partner. We keep the store up to date, fix problems before customers notice them, and make changes when the shop needs them.', 'Technology supports beauty: Hermosa focuses on the product, and we look after everything behind the checkout.'],
+    next: 'stb'
+  }
+};
+const pg = $('#casePg'), body = $('#cpBody'); let opener = null;
+function render(k) {
+  const c = CASES[k], n = CASES[c.next];
+  body.innerHTML = `
+  <section class="wrap cp-hero"><p class="kicker mono">Case study</p><h2 class="h2" id="cpTitle">${c.name}</h2>
+    <dl class="meta"><div><dt>Client</dt><dd>${c.plain}</dd></div><div><dt>Sector</dt><dd>${c.sector}</dd></div><div><dt>What we did</dt><dd>${c.scope}</dd></div><div><dt>Live site</dt><dd><a class="tlink" href="${c.href}" target="_blank" rel="noopener">${c.url} ↗</a></dd></div></dl></section>
+  <div class="cp-shot"><div class="wrap"><div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">${c.url}</span></div><div class="screen" tabindex="0" aria-label="Scrollable full page screenshot"><img src="${c.desk}" width="1200" height="${c.dh}" alt="Full desktop page of ${c.plain}" decoding="async"></div></div></div></div>
+  <section class="wrap cp-body"><h3>The brief</h3><div><p>${c.intro}</p></div><h3>What we did</h3><div>${c.did.map(p => `<p>${p}</p>`).join('')}<p><a class="btn sm dark" href="${c.href}" target="_blank" rel="noopener">Visit the live site <span class="arr" aria-hidden="true">↗</span></a></p></div></section>
+  <div class="wrap cp-phones">${c.mobs.map(m => `<div class="phone"><div class="pscreen"><img src="${m}" width="420" alt="${c.plain} on a phone" decoding="async"></div></div>`).join('')}</div>
+  <a class="cp-next" href="#case-${c.next}" data-case="${c.next}"><div class="wrap"><p class="kicker mono">Next case</p><p class="h2" style="margin:0">${n.name} →</p></div></a>`;
+  $('.cp-next', body).addEventListener('click', e => { e.preventDefault(); pg.scrollTo({ top: 0 }); render(c.next); });
+}
+function openCase(k, x, y) {
+  render(k); pg.scrollTop = 0;
+  pg.style.setProperty('--cx', x + 'px'); pg.style.setProperty('--cy', y + 'px');
+  pg.classList.add('open'); document.documentElement.style.overflow = 'hidden';
+  setTimeout(() => pg.focus(), 50);
+}
+function closeCase() { pg.classList.remove('open'); document.documentElement.style.overflow = ''; if (opener) opener.focus(); }
+$$('[data-case]').forEach(a => a.addEventListener('click', e => {
+  e.preventDefault(); opener = a;
+  const x = e.clientX || innerWidth / 2, y = e.clientY || innerHeight / 2;
+  openCase(a.dataset.case, x, y);
+}));
+$('#cpX').addEventListener('click', closeCase);
+addEventListener('keydown', e => { if (e.key === 'Escape') { if (pg.classList.contains('open')) closeCase(); else if (menu.classList.contains('open')) setMenu(false); } });
+
+/* demo form (concept only) */
+$('#demoForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.currentTarget, ok = $('#ok');
+  const bad = ['#f-name', '#f-email'].map(s => $(s, f)).find(i => !i.value.trim() || (i.type === 'email' && !i.checkValidity()));
+  if (bad) { ok.textContent = bad.id === 'f-email' ? 'Please enter a valid email address so we can reach you.' : 'Please tell us your name.'; ok.classList.add('show'); bad.focus(); return; }
+  ok.textContent = 'This is a concept, so nothing was sent. On the live site this request goes straight to the team and you get a reply within one working day.';
+  ok.classList.add('show');
+});
+</script>
+</body>
+</html>
