@@ -11,7 +11,10 @@
 # rule being edited in one place and missed in the other.
 
 [build]
-  publish = "."
+  # STAGING BRANCH ONLY (concept/homepage-v1): staging serves the redesign
+  # concept from concept/ as the whole site. Never merge this line into the
+  # production repo; production publishes "." as before.
+  publish = "concept"
 
 # The edge functions are NOT declared here. netlify/edge-functions/ is already
 # where Netlify looks by default, so the setting was redundant -- and it was

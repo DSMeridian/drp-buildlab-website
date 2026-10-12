@@ -14,7 +14,8 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
 const OUT = path.join(ROOT, 'concept');
-const B = '/concept';
+/* On the staging branch, netlify.toml publishes this folder as the site root. */
+const B = process.env.CONCEPT_BASE ?? ''; // '' = served at the site root; '/concept' = in a subfolder
 const V = Date.now().toString(36); // cache-buster for the shared assets
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -130,14 +131,28 @@ function header(cur) {
 }
 
 const footer = () => `<footer class="ftr"><div class="wrap">
-  <div class="ft-grid">
-    <div>${logo()}<p>Custom websites and webshops for businesses worldwide.</p><a class="btn sm" href="${B}/contact/">Free demo website ${arr}</a></div>
-    <div><h4>Studio</h4><a href="${B}/werk/">Work</a><a href="${B}/diensten/">Services</a><a href="${B}/over-ons/">About</a><a href="${B}/prijzen/">Pricing</a><a href="${B}/partner-worden/">Partner programme</a></div>
-    <div><h4>Contact</h4><a href="mailto:info@drpbuildlab.com">info@drpbuildlab.com</a><a href="tel:+32473744431">+32 473 74 44 31</a><a href="https://wa.me/32473744431" target="_blank" rel="noopener">WhatsApp</a></div>
-    <div><h4>Follow</h4><a href="https://www.instagram.com/drp_buildlab/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.facebook.com/share/1Hz1mJG22E/" target="_blank" rel="noopener">Facebook ↗</a><a href="https://www.tiktok.com/@drpbuildlab" target="_blank" rel="noopener">TikTok ↗</a></div>
+  <div class="ft-top">
+    <div>
+      <p class="ft-ask">Have a project in mind? Tell us about it.</p>
+      <a class="ft-mail" href="mailto:info@drpbuildlab.com">info@drpbuildlab.com</a>
+    </div>
+    <div class="ft-acts">
+      <a class="btn" href="${B}/contact/">Free demo website ${arr}</a>
+      <a class="btn ghost" href="https://wa.me/32473744431" target="_blank" rel="noopener">WhatsApp us</a>
+    </div>
   </div>
-  <div class="wordmark" aria-hidden="true">DRP <span>BuildLab</span></div>
-  <div class="ft-bot"><span>© 2026 DRP BuildLab · Honingstraat 1D, 2220 Hallaar, Belgium · VAT BE 1033.313.383</span><span><a href="${B}/algemene-voorwaarden/">Terms</a> · <a href="${B}/privacy/">Privacy</a></span></div>
+  <div class="ft-cols">
+    <nav aria-label="Footer"><h2>Site</h2><ul>${NAV.map(([, t, h]) => `<li><a href="${B}${h}">${t}</a></li>`).join('')}<li><a href="${B}/partner-worden/">Partner programme</a></li></ul></nav>
+    <div><h2>Services</h2><ul>${SERVICES.map(s => `<li><a href="${B}/diensten/${s.slug}/">${s.name}</a></li>`).join('')}</ul></div>
+    <div><h2>Studio</h2><address>Honingstraat 1D<br>2220 Hallaar, Belgium</address><p>Monday to Friday, 9:00 to 18:00<br><a href="tel:+32473744431">+32 473 74 44 31</a></p><p class="ft-small">Pay by Bancontact, Visa, Mastercard or bank transfer</p></div>
+    <div><h2>Follow</h2><ul class="ft-social"><li><a href="https://www.instagram.com/drp_buildlab/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/share/1Hz1mJG22E/" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.tiktok.com/@drpbuildlab" target="_blank" rel="noopener">TikTok</a></li></ul></div>
+  </div>
+  <div class="ft-bot">
+    ${logo()}
+    <p>© 2026 DRP BuildLab · VAT BE 1033.313.383</p>
+    <p><a href="${B}/algemene-voorwaarden/">Terms</a><a href="${B}/privacy/">Privacy</a></p>
+    <a class="ft-top-link" href="#main">Back to top ↑</a>
+  </div>
 </div></footer>`;
 
 function page({ title, desc, nav, body, cursor }) {
@@ -150,7 +165,7 @@ function page({ title, desc, nav, body, cursor }) {
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <meta name="theme-color" content="#0b0b0c">
-<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="${B}/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap">
@@ -609,10 +624,16 @@ function legal(slug, title) {
 pages['algemene-voorwaarden'] = legal('algemene-voorwaarden', 'Terms and conditions');
 pages['privacy'] = legal('privacy', 'Privacy policy');
 
+const notFound = page({
+  title: 'Page not found | DRP BuildLab', desc: 'This page does not exist.', nav: '',
+  body: `${phero({ h1: 'Page not <em>found</em>', lede: 'The page you were looking for does not exist, or it has moved.', acts: `<a class="btn" href="${B}/">Back to the homepage ${arr}</a><a class="btn ghost" href="${B}/contact/">Contact us</a>` })}`
+});
+
 /* ── Write ────────────────────────────────────────────────────────────── */
 for (const [p, html] of Object.entries(pages)) {
   const dir = path.join(OUT, p);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), html);
 }
+fs.writeFileSync(path.join(OUT, '404.html'), notFound);
 console.log(`concept: wrote ${Object.keys(pages).length} pages to ${path.relative(ROOT, OUT)}/`);
