@@ -74,6 +74,56 @@ const CASES_RAW = [
     brief: ['De Smedt Meridian works as an embedded sales force for brands that want to sell abroad, connecting them to distributors and buyers across more than 30 markets.', 'The site needed to feel as international as the service, and turn interest into a booked call.'],
     did: ['We designed a dark, editorial site with a meridian globe as its signature, the key numbers up front, and one clear action throughout: book an intro call.'],
     hDesk: 1286, hMob: 2418, phoneImg: 'dsm-mob'
+  },
+  {
+    slug: 'one-man-agency', name: 'One Man Agency', em: 'One Man <em>Agency</em>',
+    url: 'onemanagency.be', href: 'https://onemanagency.be/', img: 'onemanagency',
+    sector: 'Marketing agency for SMEs', where: 'Dendermonde, Belgium', scope: 'Design and development',
+    tags: ['Design', 'Development', 'Lead generation', 'Responsive'], kinds: 'Website',
+    short: 'A website for Niels Van de Meersch’s marketing agency for small businesses: one person and one point of contact, from strategy to campaigns.',
+    brief: ['One Man Agency is a marketing agency from Dendermonde, run by Niels Van de Meersch. He takes over the full marketing of small and medium-sized businesses: strategy, branding, website, SEO, social media, campaigns and print.', 'The pitch is personal: one number, one email address, one person who knows your file. The website had to say that in a few seconds and lead to a free introductory meeting.'],
+    did: ['We built the site around that promise: a bold headline for business owners with little time, the proof up front (25 years of experience, 100+ SMEs in East Flanders) and every service on its own short card.', 'Every page leads to the same next step: plan a free introductory meeting.'],
+    hDesk: 5189, hMob: 3600, phoneImg: 'onemanagency-mob'
+  },
+  {
+    slug: 'prestige-automotive', name: 'Prestige Automotive', em: 'Prestige <em>Automotive</em>',
+    url: 'prestige-automotive.be', href: 'https://prestige-automotive.be/', img: 'prestige',
+    sector: 'Car detailing', where: 'Heist-op-den-Berg, Belgium', scope: 'Design and development',
+    tags: ['Design', 'Development', 'WhatsApp quotes', 'Responsive'], kinds: 'Website',
+    short: 'A website for a premium car detailing studio: exterior, interior, paint correction and ceramic coating, with prices up front and quotes by WhatsApp.',
+    brief: ['Prestige Automotive cleans, corrects and protects cars at its own location in Heist-op-den-Berg, from a hand wash to a full ceramic coating.', 'Customers want to know two things: what it costs, and how quickly they can book.'],
+    did: ['We built a bold, dark site with the three packages and their starting prices (from €65, €85 and €250) side by side, and a WhatsApp button that is always in reach.', 'A quote request gets a personal answer within the hour, so the site leads every visitor to that one message.'],
+    hDesk: 2511, hMob: 3600, phoneImg: 'prestige-mob'
+  },
+  {
+    slug: 'terro-vastgoed', name: 'TÈRRO Vastgoed', em: 'TÈRRO <em>Vastgoed</em>',
+    url: 'terro.be', href: 'https://terro.be/', img: 'terro',
+    sector: 'Real estate', where: 'Overmere and Berlare, Belgium', scope: 'Design and development',
+    tags: ['Design', 'Development', 'Real estate', 'Responsive'], kinds: 'Website',
+    short: 'A website for an estate agency that starts with the person, not the property. Calm, warm and personal, with a free value scan as the first step.',
+    brief: ['TÈRRO is not a classic estate agency: no rushed viewings and no listings on a conveyor belt. It takes the time to understand why people move and where they want to go next, in Overmere, Berlare and the area around.'],
+    did: ['We gave the site the pace of the service: warm photography, a serif headline that reads “Hier begint thuis” (this is where home begins), and a three-step route from the first conversation to a sealed deal.', 'The free value scan is the call to action on every page.'],
+    hDesk: 5200, hMob: 3600, phoneImg: 'terro-mob'
+  },
+  {
+    slug: 'welkomthuis', name: 'WelkomThuis', em: 'Welkom<em>Thuis</em>',
+    url: 'welkomthuisinterieur.com', href: 'https://welkomthuisinterieur.com/', img: 'welkomthuis',
+    sector: 'Moving support for seniors', where: 'Mortsel, Belgium', scope: 'Design and development',
+    tags: ['Design', 'Development', 'Easy to read', 'Responsive'], kinds: 'Website',
+    short: 'A website for Kato Vermeulen’s moving support for seniors: the interior design, the move and everything in between, as one personal journey.',
+    brief: ['WelkomThuis helps people, mostly seniors, move from a large family home to a smaller house, apartment or service flat. Kato Vermeulen combines the work of an interior designer and a moving company in one personal journey.'],
+    did: ['We designed the site for the people who read it: large type, plain words and a calm layout. It explains the three phases, before, during and after the move, and makes a free phone call with no obligation the next step.'],
+    hDesk: 5200, hMob: 3600, phoneImg: 'welkomthuis-mob'
+  },
+  {
+    slug: '0-procent-experiment', name: '0% Experiment', em: '0% <em>Experiment</em>',
+    url: '0procentexperiment.com', href: 'https://0procentexperiment.com/', img: 'nulprocent',
+    sector: 'Digital workbook', where: 'Online', scope: 'Design and development',
+    tags: ['Design', 'Development', 'Digital product', 'Responsive'], kinds: 'Website',
+    short: 'A website for a 30-day digital workbook that pauses alcohol as an experiment. No detox and no ban: one question a day.',
+    brief: ['0% Experiment is a digital workbook that guides you through 30 days without alcohol, with one question each day. It is curious, not preachy: you are the test subject and the researcher.'],
+    did: ['We designed a bright, confident site with a neon accent and big type that states the idea in one line: take one thing away and see what is left. It explains what the workbook is, how it works and who it is for, then leads straight to starting the experiment.'],
+    hDesk: 4212, hMob: 3600, phoneImg: 'nulprocent-mob'
   }
 ];
 
@@ -125,7 +175,7 @@ const SERVICES = [
   }
 ];
 
-const CASE_ORDER = ['kasteel-warmelo', 'start-to-business', 'vonckx-performance', 'hermosa-antwerp', 'de-smedt-meridian'];
+const CASE_ORDER = ['kasteel-warmelo', 'one-man-agency', 'prestige-automotive', 'start-to-business', 'terro-vastgoed', 'vonckx-performance', 'welkomthuis', 'hermosa-antwerp', '0-procent-experiment', 'de-smedt-meridian'];
 const CASES = CASE_ORDER.map(k => CASES_RAW.find(c => c.slug === k));
 const caseBy = k => CASES.find(c => c.slug === k);
 
@@ -323,7 +373,7 @@ pages[''] = page({
 
 <section class="reel-sec" id="reel" aria-label="Showreel">
   <div class="reel" id="reelBox">
-    <video id="reelVid" muted loop playsinline preload="none" poster="${B}/media/reel-poster.webp" data-src-sm="${B}/media/reel-960.mp4" data-src-mp4="${B}/media/reel.mp4" aria-label="Showreel: ${CASES.length} client websites by DRP BuildLab, scrolling on desktop and phone"></video>
+    <video id="reelVid" muted loop playsinline preload="none" poster="${B}/media/reel-poster.webp" data-src-sm="${B}/media/reel-960.mp4" data-src-mp4="${B}/media/reel.mp4" aria-label="Showreel: ${CASES.length} client websites by DRP BuildLab"></video>
     <div class="reel-ui">
       <p>Showreel · ${CASES.length} client websites</p>
       <button type="button" class="reel-btn" id="reelBtn" aria-pressed="false">Pause</button>
@@ -333,7 +383,7 @@ pages[''] = page({
 
 <section class="sec" id="work"><div class="wrap">
   <div class="sec-head"><h2 class="h2 rv">Our work</h2><p class="sub rv">Real businesses, live right now. Hover a project to scroll through it on desktop and phone, or open it to see what we did.</p></div>
-  <div class="cases">${caseRow(caseBy('kasteel-warmelo'), false)}${caseRow(caseBy('start-to-business'), true)}${caseRow(caseBy('vonckx-performance'), false)}</div>
+  <div class="cases">${caseRow(caseBy('kasteel-warmelo'), false)}${caseRow(caseBy('one-man-agency'), true)}${caseRow(caseBy('prestige-automotive'), false)}</div>
   <p class="all-work rv"><a class="btn ghost" href="${B}/werk/">See all ${CASES.length} projects ${arr}</a></p>
 </div></section>
 
@@ -397,7 +447,7 @@ pages['werk'] = page({
   body: `${phero({ h1: 'Our <em>work</em>', lede: 'Websites and webshops we designed, built or look after, all live today. Open a project to see the brief and what we did.' })}
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="wgrid">
   ${CASES.map(c => `<article class="wtile rv">${caseMedia(c)}<h2><a href="${B}/werk/${c.slug}/" style="text-decoration:none">${c.name}</a></h2><p>${c.kinds} · ${c.sector}</p></article>`).join('')}
-  <article class="wtile rv"><a class="slot" href="${B}/contact/" style="margin:0 7% 8% 0"><span class="big">Your business<br><em>goes here.</em></span></a><h2>Could be yours</h2><p>Request a free demo website. No obligation.</p></article>
+  <article class="wtile wide rv"><a class="slot" href="${B}/contact/"><span class="big">Your business<br><em>goes here.</em></span></a><div><h2>Could be yours</h2><p>Tell us what you do and we’ll build a free demo of your new website, with no obligation.</p><p style="margin-top:22px"><a class="btn" href="${B}/contact/">Request your free demo ${arr}</a></p></div></article>
 </div>
 </div></section>
 ${ctaBand()}`
