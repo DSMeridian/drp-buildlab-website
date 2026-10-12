@@ -191,7 +191,7 @@ const NOT_DONE = ['Printed matter such as business cards, flyers and brochures. 
 
 /* ── Shared pieces ────────────────────────────────────────────────────── */
 
-const NAV = [['work', 'Work', '/werk/'], ['services', 'Services', '/diensten/'], ['about', 'About', '/over-ons/'], ['pricing', 'Pricing', '/prijzen/'], ['contact', 'Contact', '/contact/']];
+const NAV = [['work', 'Work', '/werk/'], ['services', 'Services', '/diensten/'], ['about', 'About', '/over-ons/'], ['pricing', 'Pricing', '/prijzen/'], ['partner', 'Partners', '/partner-worden/'], ['contact', 'Contact', '/contact/']];
 const LANGS = [['NL', 'Nederlands'], ['EN', 'English'], ['FR', 'Français'], ['ES', 'Español'], ['DE', 'Deutsch'], ['ID', 'Bahasa Indonesia'], ['JA', '日本語']];
 
 
@@ -223,7 +223,7 @@ function header(cur) {
 </div></header>
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="menu-top">${logo()}<button class="menu-x" type="button" id="menuX" aria-label="Close menu">×</button></div>
-  <nav aria-label="Mobile">${links}<a href="${B}/partner-worden/"${cur === 'partner' ? ' aria-current="page"' : ''}>Partners</a></nav>
+  <nav aria-label="Mobile">${links}</nav>
   <a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a>
 </div>`;
 }
@@ -240,7 +240,7 @@ const footer = () => `<footer class="ftr"><div class="wrap">
     </div>
   </div>
   <div class="ft-cols">
-    <nav aria-label="Footer"><h2>Site</h2><ul>${NAV.map(([, t, h]) => `<li><a href="${B}${h}">${t}</a></li>`).join('')}<li><a href="${B}/partner-worden/">Partner programme</a></li></ul></nav>
+    <nav aria-label="Footer"><h2>Site</h2><ul>${NAV.map(([, t, h]) => `<li><a href="${B}${h}">${t}</a></li>`).join('')}</ul></nav>
     <div><h2>Services</h2><ul>${SERVICES.map(s => `<li><a href="${B}/diensten/${s.slug}/">${s.name}</a></li>`).join('')}</ul></div>
     <div><h2>Studio</h2><address>Honingstraat 1D<br>2220 Hallaar, Belgium</address><p>Monday to Friday, 9:00 to 18:00<br><a href="tel:+32473744431">+32 473 74 44 31</a></p><h2 class="ft-pay-h">We accept</h2><ul class="ft-pay">${PAY.map(([n, svg]) => `<li title="${n}">${svg}</li>`).join('')}</ul></div>
     <div><h2>Follow</h2><ul class="ft-social">${[['instagram', 'Instagram', '@drp_buildlab', 'https://www.instagram.com/drp_buildlab/'], ['facebook', 'Facebook', 'DRP BuildLab', 'https://www.facebook.com/share/1Hz1mJG22E/'], ['tiktok', 'TikTok', '@drpbuildlab', 'https://www.tiktok.com/@drpbuildlab']].map(([k, n, h, u]) => `<li><a href="${u}" target="_blank" rel="noopener"><span class="ico">${ICON[k]}</span><span><b>${n}</b><small>${h}</small></span></a></li>`).join('')}</ul></div>

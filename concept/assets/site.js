@@ -3,13 +3,24 @@ const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [..
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* header: solid once scrolled, hides on the way down, back on the way up */
-const hdr = $('#hdr'); let lastY = scrollY;
-addEventListener('scroll', () => {
-  const y = scrollY;
+/* Hidden while reading down the page, back the moment you scroll up,
+   reach the top edge with the mouse, or tab into it. Small jitters from
+   trackpads and momentum scrolling are ignored. */
+const hdr = $('#hdr'); let lastY = scrollY, ticking = false;
+const setHidden = h => hdr.classList.toggle('hide', h && !document.body.classList.contains('menu-open') && !hdr.contains(document.activeElement));
+function onHdrScroll() {
+  const y = Math.max(0, scrollY), d = y - lastY;
   hdr.classList.toggle('solid', y > 40);
-  hdr.classList.toggle('hide', y > 400 && y > lastY && !document.body.classList.contains('menu-open'));
-  lastY = y;
-}, { passive: true });
+  if (y < 160) setHidden(false);
+  else if (d > 6) setHidden(true);
+  else if (d < -6) setHidden(false);
+  if (Math.abs(d) > 6 || y < 160) lastY = y;
+  ticking = false;
+}
+addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onHdrScroll); } }, { passive: true });
+addEventListener('pointermove', e => { if (e.pointerType === 'mouse' && e.clientY < 72) setHidden(false); }, { passive: true });
+hdr.addEventListener('focusin', () => setHidden(false));
+onHdrScroll();
 
 /* mobile menu */
 const menu = $('#menu'), burger = $('#burger');

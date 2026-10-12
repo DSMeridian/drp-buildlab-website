@@ -65,7 +65,8 @@ button,input,select,textarea{font:inherit;color:inherit}
 .lang p{margin:6px 10px 4px;font-size:12px;color:var(--mute-d)}
 .burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-d);background:none;cursor:pointer;place-items:center}
 .burger span{display:block;width:16px;height:1.5px;background:#fff;box-shadow:0 5px 0 #fff}
-@media (max-width:980px){.nav,.hdr .lang,.hdr .btn{display:none}.burger{display:grid}}
+@media (max-width:1180px){.nav{gap:22px}}
+@media (max-width:1080px){.nav,.hdr .lang,.hdr .btn{display:none}.burger{display:grid}}
 
 .menu{position:fixed;inset:0;z-index:70;background:var(--ink);padding:calc(env(safe-area-inset-top,0px) + 14px) var(--gut) calc(env(safe-area-inset-bottom,0px) + 28px);display:flex;flex-direction:column;clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .7s var(--ease),visibility 0s .7s}
 .menu.open{clip-path:inset(0);visibility:visible;transition:clip-path .7s var(--ease),visibility 0s}
