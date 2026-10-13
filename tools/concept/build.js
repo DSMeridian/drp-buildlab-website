@@ -49,7 +49,7 @@ const CASES_RAW = [
   },
   {
     slug: 'hermosa-antwerp', name: 'Hermosa Antwerp', em: 'Hermosa <em>Antwerp</em>',
-    url: 'hermosa-antwerp.myshopify.com', href: 'https://hermosa-antwerp.myshopify.com/', img: 'hermosa',
+    url: 'hermosa-antwerp.myshopify.com', href: 'https://hermosa-antwerp.myshopify.com/', img: 'hermosa', imgV: 2,
     sector: 'E-commerce, beauty', where: 'Antwerp', scope: 'Shopify maintenance and IT',
     tags: ['Shopify', 'E-commerce', 'IT maintenance'], kinds: 'Maintenance',
     short: 'A Shopify webshop for handmade BIAB press-on nails, shipped to customers worldwide. We are Hermosa’s IT maintenance partner and keep the shop running, up to date and ready to sell.',
@@ -287,8 +287,8 @@ const ctaBand = (h = 'Let’s build <em>your website.</em>', sub = 'Tell us abou
 function caseMedia(c, { tile = false } = {}) {
   return `<a class="case-media" href="${B}/werk/${c.slug}/" aria-label="${esc(c.name)} case study">
     <div class="browser" style="view-transition-name:shot-${c.img}"><div class="bar"><i></i><i></i><i></i><span class="url" translate="no">${c.url}</span></div>
-      <div class="screen"><img src="${B}/img/${c.img}-desk-full.webp" width="1200" height="${c.hDesk}" loading="lazy" decoding="async" alt="${esc(c.name)} homepage on desktop"></div></div>
-    <div class="phone"><div class="pscreen"><img src="${B}/img/${c.img}-mob-full.webp" width="420" height="${c.hMob}" loading="lazy" decoding="async" alt="${esc(c.name)} on a phone"></div></div>
+      <div class="screen"><img src="${B}/img/${c.img}-desk-full.webp${c.imgV ? "?v=" + c.imgV : ""}" width="1200" height="${c.hDesk}" loading="lazy" decoding="async" alt="${esc(c.name)} homepage on desktop"></div></div>
+    <div class="phone"><div class="pscreen"><img src="${B}/img/${c.img}-mob-full.webp${c.imgV ? "?v=" + c.imgV : ""}" width="420" height="${c.hMob}" loading="lazy" decoding="async" alt="${esc(c.name)} on a phone"></div></div>
   </a>`;
 }
 
@@ -460,11 +460,11 @@ CASES.forEach((c, i) => {
   <dl class="facts-dl"><div><dt>Client</dt><dd translate="no">${c.name}</dd></div><div><dt>Sector</dt><dd>${c.sector}</dd></div><div><dt>What we did</dt><dd>${c.scope}</dd></div><div><dt>Live site</dt><dd><a class="tlink" href="${c.href}" target="_blank" rel="noopener" translate="no">${c.url} ↗</a></dd></div></dl>
 </div></section>
 <div class="shot-band"><div class="wrap"><div class="browser" style="view-transition-name:shot-${c.img}"><div class="bar"><i></i><i></i><i></i><span class="url" translate="no">${c.url}</span></div>
-  <div class="screen tall" tabindex="0" aria-label="Full page, scroll to see more"><img src="${B}/img/${c.img}-desk-full.webp" width="1200" height="${c.hDesk}" decoding="async" alt="The full ${esc(c.name)} homepage on desktop"></div></div></div></div>
+  <div class="screen tall" tabindex="0" aria-label="Full page, scroll to see more"><img src="${B}/img/${c.img}-desk-full.webp${c.imgV ? "?v=" + c.imgV : ""}" width="1200" height="${c.hDesk}" decoding="async" alt="The full ${esc(c.name)} homepage on desktop"></div></div></div></div>
 <section class="light"><div class="wrap">
   <div class="two"><h2>The brief</h2><div>${c.brief.map(p => `<p>${p}</p>`).join('')}</div></div>
   <div class="two"><h2>What we did</h2><div>${c.did.map(p => `<p>${p}</p>`).join('')}<ul class="tags" style="margin-top:24px">${c.tags.map(t => `<li>${t}</li>`).join('')}</ul></div></div>
-  <div class="two"><h2>On a phone</h2><div class="phones" style="justify-content:start"><div class="phone static"><div class="pscreen"><img src="${B}/img/${c.phoneImg}.webp" width="420" height="909" loading="lazy" decoding="async" alt="${esc(c.name)} on a phone, top of the page"></div></div><div class="phone static"><div class="pscreen"><img src="${B}/img/${c.img}-mob-full.webp" width="420" height="${c.hMob}" loading="lazy" decoding="async" alt="${esc(c.name)} on a phone, further down the page" style="transform:translateY(-38%)"></div></div></div></div>
+  <div class="two"><h2>On a phone</h2><div class="phones" style="justify-content:start"><div class="phone static"><div class="pscreen"><img src="${B}/img/${c.phoneImg}.webp" width="420" height="909" loading="lazy" decoding="async" alt="${esc(c.name)} on a phone, top of the page"></div></div><div class="phone static"><div class="pscreen"><img src="${B}/img/${c.img}-mob-full.webp${c.imgV ? "?v=" + c.imgV : ""}" width="420" height="${c.hMob}" loading="lazy" decoding="async" alt="${esc(c.name)} on a phone, further down the page" style="transform:translateY(-38%)"></div></div></div></div>
   ${c.quote ? `<div class="two"><h2>In their words</h2><div><p class="statement" style="max-width:none;font-size:clamp(28px,3.4vw,48px)" translate="no" lang="en">“${c.quote}”</p><p class="muted" style="margin-top:16px" translate="no">${c.name}</p></div></div>` : ''}
 </div></section>
 <a class="next" href="${B}/werk/${n.slug}/"><div class="wrap"><small>Next project</small><p class="h2" style="margin:0" translate="no">${n.em} →</p></div></a>
