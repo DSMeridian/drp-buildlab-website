@@ -76,16 +76,6 @@ const CASES_RAW = [
     hDesk: 1286, hMob: 2418, phoneImg: 'dsm-mob'
   },
   {
-    slug: 'one-man-agency', name: 'One Man Agency', em: 'One Man <em>Agency</em>',
-    url: 'onemanagency.be', href: 'https://onemanagency.be/', img: 'onemanagency',
-    sector: 'Marketing agency for SMEs', where: 'Dendermonde, Belgium', scope: 'Design and development',
-    tags: ['Design', 'Development', 'Lead generation', 'Responsive'], kinds: 'Website',
-    short: 'A website for Niels Van de Meersch’s marketing agency for small businesses: one person and one point of contact, from strategy to campaigns.',
-    brief: ['One Man Agency is a marketing agency from Dendermonde, run by Niels Van de Meersch. He takes over the full marketing of small and medium-sized businesses: strategy, branding, website, SEO, social media, campaigns and print.', 'The pitch is personal: one number, one email address, one person who knows your file. The website had to say that in a few seconds and lead to a free introductory meeting.'],
-    did: ['We built the site around that promise: a bold headline for business owners with little time, the proof up front (25 years of experience, 100+ SMEs in East Flanders) and every service on its own short card.', 'Every page leads to the same next step: plan a free introductory meeting.'],
-    hDesk: 5189, hMob: 3600, phoneImg: 'onemanagency-mob'
-  },
-  {
     slug: 'prestige-automotive', name: 'Prestige Automotive', em: 'Prestige <em>Automotive</em>',
     url: 'prestige-automotive.be', href: 'https://prestige-automotive.be/', img: 'prestige',
     sector: 'Car detailing', where: 'Heist-op-den-Berg, Belgium', scope: 'Design and development',
@@ -94,16 +84,6 @@ const CASES_RAW = [
     brief: ['Prestige Automotive cleans, corrects and protects cars at its own location in Heist-op-den-Berg, from a hand wash to a full ceramic coating.', 'Customers want to know two things: what it costs, and how quickly they can book.'],
     did: ['We built a bold, dark site with the three packages and their starting prices (from €65, €85 and €250) side by side, and a WhatsApp button that is always in reach.', 'A quote request gets a personal answer within the hour, so the site leads every visitor to that one message.'],
     hDesk: 2511, hMob: 3600, phoneImg: 'prestige-mob'
-  },
-  {
-    slug: 'terro-vastgoed', name: 'TÈRRO Vastgoed', em: 'TÈRRO <em>Vastgoed</em>',
-    url: 'terro.be', href: 'https://terro.be/', img: 'terro',
-    sector: 'Real estate', where: 'Overmere and Berlare, Belgium', scope: 'Design and development',
-    tags: ['Design', 'Development', 'Real estate', 'Responsive'], kinds: 'Website',
-    short: 'A website for an estate agency that starts with the person, not the property. Calm, warm and personal, with a free value scan as the first step.',
-    brief: ['TÈRRO is not a classic estate agency: no rushed viewings and no listings on a conveyor belt. It takes the time to understand why people move and where they want to go next, in Overmere, Berlare and the area around.'],
-    did: ['We gave the site the pace of the service: warm photography, a serif headline that reads “Hier begint thuis” (this is where home begins), and a three-step route from the first conversation to a sealed deal.', 'The free value scan is the call to action on every page.'],
-    hDesk: 5200, hMob: 3600, phoneImg: 'terro-mob'
   },
   {
     slug: 'welkomthuis', name: 'WelkomThuis', em: 'Welkom<em>Thuis</em>',
@@ -175,7 +155,7 @@ const SERVICES = [
   }
 ];
 
-const CASE_ORDER = ['kasteel-warmelo', 'one-man-agency', 'prestige-automotive', 'start-to-business', 'terro-vastgoed', 'vonckx-performance', 'welkomthuis', 'hermosa-antwerp', '0-procent-experiment', 'de-smedt-meridian'];
+const CASE_ORDER = ['kasteel-warmelo', 'prestige-automotive', 'start-to-business', 'vonckx-performance', 'welkomthuis', 'hermosa-antwerp', '0-procent-experiment', 'de-smedt-meridian'];
 const CASES = CASE_ORDER.map(k => CASES_RAW.find(c => c.slug === k));
 const caseBy = k => CASES.find(c => c.slug === k);
 
@@ -373,7 +353,7 @@ pages[''] = page({
 
 <section class="reel-sec" id="reel" aria-label="Showreel">
   <div class="reel" id="reelBox">
-    <video id="reelVid" muted loop playsinline preload="none" poster="${B}/media/reel-poster.webp" data-src-sm="${B}/media/reel-960.mp4" data-src-mp4="${B}/media/reel.mp4" aria-label="Showreel of client websites by DRP BuildLab"></video>
+    <video id="reelVid" muted loop playsinline preload="none" poster="${B}/media/reel-poster.webp" data-base="${B}/media/reel" aria-label="Showreel of client websites by DRP BuildLab"></video>
     <div class="reel-ui">
       <p>Showreel · Client websites by DRP BuildLab</p>
       <button type="button" class="reel-btn" id="reelBtn" aria-pressed="false">Pause</button>
@@ -383,7 +363,7 @@ pages[''] = page({
 
 <section class="sec" id="work"><div class="wrap">
   <div class="sec-head"><h2 class="h2 rv">Our work</h2><p class="sub rv">Real businesses, live right now. Hover a project to scroll through it on desktop and phone, or open it to see what we did.</p></div>
-  <div class="cases">${caseRow(caseBy('kasteel-warmelo'), false)}${caseRow(caseBy('one-man-agency'), true)}${caseRow(caseBy('prestige-automotive'), false)}</div>
+  <div class="cases">${caseRow(caseBy('kasteel-warmelo'), false)}${caseRow(caseBy('prestige-automotive'), true)}${caseRow(caseBy('0-procent-experiment'), false)}</div>
   <p class="all-work rv"><a class="btn ghost" href="${B}/werk/">See all projects ${arr}</a></p>
 </div></section>
 

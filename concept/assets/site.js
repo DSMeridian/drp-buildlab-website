@@ -110,8 +110,12 @@ if (reelBox && vid) {
   const setBtn = () => { const paused = vid.paused; reelBtn.textContent = paused ? 'Play' : 'Pause'; reelBtn.setAttribute('aria-pressed', paused); };
   const load = () => {
     if (loaded) return; loaded = true;
-    vid.src = innerWidth < 760 ? vid.dataset.srcSm : vid.dataset.srcMp4;
-    vid.addEventListener('error', () => { if (vid.src.indexOf(vid.dataset.srcSm) === -1) { vid.src = vid.dataset.srcSm; if (!userPaused) play(); } }, { once: true });
+    /* 1080p60 on larger screens, 720p60 on phones; AV1 where the browser
+       decodes it (a third smaller), H.264 everywhere else and as a fallback */
+    const size = innerWidth < 900 ? '720' : '1080', base = vid.dataset.base + '-' + size;
+    const av1 = vid.canPlayType('video/mp4; codecs="av01.0.09M.08"') === 'probably';
+    vid.src = base + (av1 ? '-av1.mp4' : '.mp4');
+    if (av1) vid.addEventListener('error', () => { vid.src = base + '.mp4'; if (!userPaused) play(); }, { once: true });
   };
   const play = () => { load(); const pr = vid.play(); if (pr) pr.catch(() => {}); };
   vid.addEventListener('play', setBtn); vid.addEventListener('pause', setBtn);
