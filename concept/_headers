@@ -1,0 +1,133 @@
+# Netlify _headers — Security, cache & SEO optimizations for DRP BuildLab
+
+/*
+  # Security headers — boost trust & SEO ranking
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+  # SEO & crawler hints
+  X-Robots-Tag: index, follow, max-image-preview:large, max-snippet:-1
+
+# HTML — short cache so updates go live fast
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Sitemap & robots — always fresh
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+  Content-Type: application/xml; charset=utf-8
+
+/robots.txt
+  Cache-Control: public, max-age=3600
+  Content-Type: text/plain; charset=utf-8
+
+# Web app manifest — Netlify serves .webmanifest as application/octet-stream,
+# which every browser rejects (and X-Content-Type-Options: nosniff above stops
+# them guessing). Without this the manifest, and its icon, never load.
+/site.webmanifest
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+# Fonts, images, SVG — long cache (improves repeat visits / Core Web Vitals)
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Type: image/svg+xml
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+
+# CSS & JS (if added later) — long cache with content hashing in mind
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# Everything under /assets/ has an unversioned filename, so none of it may
+# inherit the immutable year above -- a returning visitor would be stuck on
+# whatever they cached until 2027.
+#
+# This was written as three named files, and the list did not keep up. Six
+# more assets arrived since -- locale.js, markets.js, the per-language i18n
+# payloads, rates.boot.js, lang-offer.js -- and every one of them silently
+# inherited `immutable` for a year:
+#
+#   locale.js      does every currency conversion, so no fix to it reached
+#                  anyone who had already visited
+#   markets.js     lists the markets, so a returning visitor would not see
+#                  Chile or Brazil in the picker at all
+#   rates.boot.js  carries the day's exchange rate and was pinned for a year,
+#                  which is the exact opposite of what it is for
+#
+# So it is a pattern now, not a list. A new asset is covered the day it is
+# added rather than the day someone remembers this file.
+#
+# They revalidate on every load rather than holding a max-age, because the
+# HTML above is already `max-age=0, must-revalidate` and these files change
+# *with* it. Caching one side of that pair and not the other serves a visitor
+# new HTML against old JavaScript -- which is exactly what happened here.
+#
+# The cost is one conditional request per asset, answered with a 304 and no
+# body: the file still comes from the browser cache.
+#
+# That was the holding position. The filenames now carry a content hash, so
+# the rules below this pair are the real answer and these two only cover what
+# is left in /assets/ that is not content-addressed: the hand-edited sources,
+# which nothing on a page references any more.
+/assets/*.css
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Type: text/css; charset=utf-8
+
+/assets/*.js
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Type: text/javascript; charset=utf-8
+
+# Content-addressed build output. styles.a3f9c1.css is that stylesheet and
+# can never be another one, so a year of immutable is not a gamble -- a
+# change produces a different filename and the old entry is simply never
+# asked for again. This is what ends the stale-asset class of bug: there is
+# no longer any way to serve new HTML against old CSS, because the HTML names
+# the exact CSS it was built with.
+#
+# `immutable` matters as much as the year: it stops the revalidation request
+# entirely, where max-age alone still lets a reload send one.
+#
+# Only this directory. /assets/img/, /assets/icons/ and the favicons keep
+# fixed names, and freezing those for a year is the same trap in a different
+# coat -- replace the logo and nobody sees it until their cache expires.
+
+
+# Images under /assets/img/ are safe to cache hard — replacing one means a
+# new filename in practice.
+/assets/img/*
+  Cache-Control: public, max-age=604800
+
+# Icons & social card. 7 days, not `immutable` — long enough to be cheap,
+# short enough that a corrected icon reaches people who cached the old one.
+/assets/icons/favicon.svg
+  Cache-Control: public, max-age=604800
+  Content-Type: image/svg+xml
+
+/favicon.ico
+  Cache-Control: public, max-age=604800
+  Content-Type: image/x-icon
+
+/*.png
+  Cache-Control: public, max-age=604800
+  Content-Type: image/png
+
+# Redesign: screenshots and the showreel change rarely; the reel is large
+/img/*
+  Cache-Control: public, max-age=604800
+/media/*
+  Cache-Control: public, max-age=604800

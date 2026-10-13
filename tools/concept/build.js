@@ -13,11 +13,13 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
-const OUT = path.join(ROOT, 'concept');
+const OUT = path.join(ROOT, '.concept-base');
+const SITE = path.join(ROOT, 'concept');
 /* On the staging branch, netlify.toml publishes this folder as the site root. */
-const B = process.env.CONCEPT_BASE ?? ''; // '' = served at the site root; '/concept' = in a subfolder
+const B = ''; // links are written root-relative here and given their market prefix by localize.js
 const V = Date.now().toString(36); // cache-buster for the shared assets
 
+const N = s => `<span translate="no">${s}</span>`;
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const eur = n => '€' + n.toLocaleString('en-GB', { minimumFractionDigits: Number.isInteger(n) ? 0 : 2 });
 const arr = '<span class="arr" aria-hidden="true">→</span>';
@@ -79,7 +81,7 @@ const CASES_RAW = [
     slug: 'prestige-automotive', name: 'Prestige Automotive', em: 'Prestige <em>Automotive</em>',
     url: 'prestige-automotive.be', href: 'https://prestige-automotive.be/', img: 'prestige',
     sector: 'Car detailing', where: 'Heist-op-den-Berg, Belgium', scope: 'Design and development',
-    tags: ['Design', 'Development', 'WhatsApp quotes', 'Responsive'], kinds: 'Website',
+    tags: ['Design', 'Development', 'Quotes by WhatsApp', 'Responsive'], kinds: 'Website',
     short: 'A website for a premium car detailing studio: exterior, interior, paint correction and ceramic coating, with prices up front and quotes by WhatsApp.',
     brief: ['Prestige Automotive cleans, corrects and protects cars at its own location in Heist-op-den-Berg, from a hand wash to a full ceramic coating.', 'Customers want to know two things: what it costs, and how quickly they can book.'],
     did: ['We built a bold, dark site with the three packages and their starting prices (from €65, €85 and €250) side by side, and a WhatsApp button that is always in reach.', 'A quote request gets a personal answer within the hour, so the site leads every visitor to that one message.'],
@@ -136,11 +138,11 @@ const SERVICES = [
     faq: [['Will I lose my Google ranking?', 'No. We keep your existing page addresses or redirect them properly, so the ranking you built carries over to the new design.'], ['Can you work with my current hosting?', 'Usually, yes. If your hosting holds the site back, we advise you and help you move it.']]
   },
   {
-    slug: 'onderhoud', name: 'Care plans', em: 'Care <em>plans</em>', from: '€29 / month',
+    slug: 'onderhoud', name: 'Maintenance plans', em: 'Maintenance <em>plans</em>', from: '€29 / month',
     short: 'Updates, monitoring and changes when you need them. Urgent issues get a response within one working day.',
-    intro: 'A website is never finished. With a care plan we keep it safe, fast and findable, and you have a team to call when something needs changing. It is optional, and you can cancel any month.',
+    intro: 'A website is never finished. With a maintenance plan we keep it safe, fast and findable, and you have a team to call when something needs changing. It is optional, and you can cancel any month.',
     incl: ['Software and security updates', 'Backups', 'Uptime and error monitoring', 'Regular SEO checks', 'Urgent issues: response within 1 working day', 'Normal requests: response within 3 working days'],
-    opts: [['onderhoud-maandelijks', 'Care plan, monthly', 'Management, updates and monitoring of your website or webshop.'], ['noodreparatie', 'Emergency repair', 'Urgent repair of a problem on a live website, within 24 to 48 hours.'], ['hosting-advies', 'Hosting advice and move', 'An analysis of your hosting and help moving it.']],
+    opts: [['onderhoud-maandelijks', 'Maintenance plan, monthly', 'Management, updates and monitoring of your website or webshop.'], ['noodreparatie', 'Emergency repair', 'Urgent repair of a problem on a live website, within 24 to 48 hours.'], ['hosting-advies', 'Hosting advice and move', 'An analysis of your hosting and help moving it.']],
     caseSlug: 'hermosa-antwerp',
     faq: [['Am I tied to a contract?', 'No. You can cancel the monthly plan any month, and the website always stays yours.'], ['Do you maintain websites you did not build?', 'Yes. Hermosa Antwerp is an example: we are their IT maintenance partner for a Shopify store we did not build.']]
   },
@@ -165,7 +167,7 @@ const PRICE = {};
 for (const d of CAT.diensten) PRICE[d.id] = { p: d.prijs, u: d.eenheid };
 for (const d of CAT.onderhoud) PRICE[d.id] = { p: d.prijs, u: d.eenheid };
 const UNIT = { 'per pagina': ' / page', 'per maand': ' / month', 'per jaar': ' / year', integratie: ' / integration' };
-/* Only the one-pager and the monthly care plan are priced publicly;
+/* Only the one-pager and the monthly maintenance plan are priced publicly;
    everything else is quoted on demand. */
 const PUBLIC_PRICES = ['onepager', 'onderhoud-maandelijks'];
 const priceOf = id => { const x = PRICE[id]; if (!x) throw new Error('No price for ' + id); return PUBLIC_PRICES.includes(id) ? eur(x.p) + (UNIT[x.u] || '') : 'On demand'; };
@@ -177,7 +179,7 @@ const NOT_DONE = ['Printed matter such as business cards, flyers and brochures. 
 
 /* ── Shared pieces ────────────────────────────────────────────────────── */
 
-const NAV = [['work', 'Work', '/werk/'], ['services', 'Services', '/diensten/'], ['about', 'About', '/over-ons/'], ['pricing', 'Pricing', '/prijzen/'], ['partner', 'Partners', '/partner-worden/'], ['contact', 'Contact', '/contact/']];
+const NAV = [['work', 'Work', '/werk/'], ['services', 'Services', '/diensten/'], ['about', 'About us', '/over-ons/'], ['pricing', 'Pricing', '/prijzen/'], ['partner', 'Partners', '/partner-worden/'], ['contact', 'Contact', '/contact/']];
 const LANGS = [['NL', 'Nederlands'], ['EN', 'English'], ['FR', 'Français'], ['ES', 'Español'], ['DE', 'Deutsch'], ['ID', 'Bahasa Indonesia'], ['JA', '日本語']];
 
 
@@ -194,22 +196,21 @@ const PAY = [
   ['Bank transfer', '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#1a1f36" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><path d="M5 10v8M9.7 10v8M14.3 10v8M19 10v8"/><path d="M3 20h18"/></svg><span>Bank transfer</span>']
 ];
 
-const logo = (label = 'DRP BuildLab home') => `<a class="logo" href="${B}/" aria-label="${label}"><span class="l1">DRP</span><span class="l2">BUILDLAB</span></a>`;
+const logo = (label = 'DRP BuildLab home') => `<a class="logo" href="${B}/" aria-label="${label}" translate="no"><span class="l1">DRP</span><span class="l2">BUILDLAB</span></a>`;
 
 function header(cur) {
   const links = NAV.map(([k, t, h]) => `<a href="${B}${h}"${k === cur ? ' aria-current="page"' : ''}>${t}</a>`).join('');
   return `<a class="skip" href="#main">Skip to content</a>
-<div class="review" role="note">Site concept v1, for review by the founders. Not the live site · <a href="${B}/">Home</a></div>
 <header class="hdr" id="hdr"><div class="wrap hdr-in">
   ${logo()}
-  <nav class="nav" aria-label="Main">${links}</nav>
-  <details class="lang"><summary aria-label="Language: English">EN</summary><ul>${LANGS.map(([c, n]) => `<li lang="${c.toLowerCase()}"${c === 'EN' ? ' aria-current="true"' : ''}>${n}</li>`).join('')}</ul></details>
+  <nav class="nav" aria-label="Main menu">${links}</nav>
+  <!--LANGMENU-->
   <a class="btn sm" href="${B}/contact/">Free demo website ${arr}</a>
   <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span></button>
 </div></header>
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="menu-top">${logo()}<button class="menu-x" type="button" id="menuX" aria-label="Close menu">×</button></div>
-  <nav aria-label="Mobile">${links}</nav>
+  <nav aria-label="Mobile menu">${links}</nav>
   <a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a>
 </div>`;
 }
@@ -218,7 +219,7 @@ const footer = () => `<footer class="ftr"><div class="wrap">
   <div class="ft-top">
     <div>
       <p class="ft-ask">Have a project in mind? Tell us about it.</p>
-      <a class="ft-mail" href="mailto:info@drpbuildlab.com">info@drpbuildlab.com</a>
+      <a class="ft-mail" href="mailto:info@drpbuildlab.com" translate="no">info@drpbuildlab.com</a>
     </div>
     <div class="ft-acts">
       <a class="btn" href="${B}/contact/">Free demo website ${arr}</a>
@@ -226,15 +227,16 @@ const footer = () => `<footer class="ftr"><div class="wrap">
     </div>
   </div>
   <div class="ft-cols">
-    <nav aria-label="Footer"><h2>Site</h2><ul>${NAV.map(([, t, h]) => `<li><a href="${B}${h}">${t}</a></li>`).join('')}</ul></nav>
+    <nav aria-label="Footer menu"><h2>Site</h2><ul>${NAV.map(([, t, h]) => `<li><a href="${B}${h}">${t}</a></li>`).join('')}</ul></nav>
     <div><h2>Services</h2><ul>${SERVICES.map(s => `<li><a href="${B}/diensten/${s.slug}/">${s.name}</a></li>`).join('')}</ul></div>
-    <div><h2>Studio</h2><address>Honingstraat 1D<br>2220 Hallaar, Belgium</address><p>Monday to Friday, 9:00 to 18:00<br><a href="tel:+32473744431">+32 473 74 44 31</a></p><h2 class="ft-pay-h">We accept</h2><ul class="ft-pay">${PAY.map(([n, svg]) => `<li title="${n}">${svg}</li>`).join('')}</ul></div>
-    <div><h2>Follow</h2><ul class="ft-social">${[['instagram', 'Instagram', '@drp_buildlab', 'https://www.instagram.com/drp_buildlab/'], ['facebook', 'Facebook', 'DRP BuildLab', 'https://www.facebook.com/share/1Hz1mJG22E/'], ['tiktok', 'TikTok', '@drpbuildlab', 'https://www.tiktok.com/@drpbuildlab']].map(([k, n, h, u]) => `<li><a href="${u}" target="_blank" rel="noopener"><span class="ico">${ICON[k]}</span><span><b>${n}</b><small>${h}</small></span></a></li>`).join('')}</ul></div>
+    <div><h2>Studio</h2><address><span translate="no">Honingstraat 1D<br>2220 Hallaar,</span> Belgium</address><p>Monday to Friday, 9:00 to 18:00<br><a href="tel:+32473744431" translate="no">+32 473 74 44 31</a></p><h2 class="ft-pay-h">We accept</h2><ul class="ft-pay" translate="no">${PAY.map(([n, svg]) => `<li title="${n}">${svg}</li>`).join('')}</ul></div>
+    <div><h2>Follow</h2><ul class="ft-social" translate="no">${[['instagram', 'Instagram', '@drp_buildlab', 'https://www.instagram.com/drp_buildlab/'], ['facebook', 'Facebook', 'DRP BuildLab', 'https://www.facebook.com/share/1Hz1mJG22E/'], ['tiktok', 'TikTok', '@drpbuildlab', 'https://www.tiktok.com/@drpbuildlab']].map(([k, n, h, u]) => `<li><a href="${u}" target="_blank" rel="noopener"><span class="ico">${ICON[k]}</span><span><b>${n}</b><small>${h}</small></span></a></li>`).join('')}</ul></div>
   </div>
   <div class="ft-bot">
     ${logo()}
     <p>© 2026 DRP BuildLab · VAT BE 1033.313.383</p>
-    <p><a href="${B}/algemene-voorwaarden/">Terms</a><a href="${B}/privacy/">Privacy</a></p>
+    <p class="ft-legal"><a href="${B}/algemene-voorwaarden/">Terms</a><a href="${B}/privacy/">Privacy</a></p>
+    <!--MARKETS-->
     <a class="ft-top-link" href="#main">Back to top ↑</a>
   </div>
 </div></footer>`;
@@ -245,7 +247,7 @@ function page({ title, desc, nav, body, cursor }) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex, nofollow">
+<!--HEAD-->
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <meta name="theme-color" content="#0b0b0c">
@@ -257,6 +259,9 @@ function page({ title, desc, nav, body, cursor }) {
 <script defer src="${B}/assets/site.js?v=${V}"></script>
 <link rel="stylesheet" href="${B}/assets/chat.css?v=${V}">
 <script defer src="${B}/assets/chat.js?v=${V}"></script>
+<link rel="stylesheet" href="${B}/assets/consent.css?v=${V}">
+<script defer src="${B}/assets/referral.js?v=${V}"></script>
+<script defer src="${B}/assets/consent.js?v=${V}"></script>
 </head>
 <body>
 ${header(nav)}
@@ -265,13 +270,14 @@ ${body}
 </main>
 ${footer()}
 ${cursor ? '<div class="cur" id="cur" aria-hidden="true">View</div>' : ''}
+<div id="ui" hidden><span data-k="play">Play</span><span data-k="pause">Pause</span><span data-k="email">Please enter a valid email address so we can reach you.</span><span data-k="tick">Please tick the box so we may contact you about this request.</span><span data-k="fill">Please fill in this field:</span><span data-k="sent">Thank you, your request has been received. We will contact you within 24 hours.</span><span data-k="psent">Thank you, your application has been received. We review it personally and send your link within a few working days.</span><span data-k="failed">Sending failed. Please try again, or email us at info@drpbuildlab.com.</span></div>
 <a href="https://wa.me/32473744431" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp us"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.782 6.86L2 30l7.347-1.758A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.25-4.36 1.043 1.072-4.25-.276-.436A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.66c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.232.348-.898 1.132-1.1 1.364-.202.232-.404.26-.752.086-.348-.174-1.468-.54-2.796-1.724-1.034-.92-1.73-2.056-1.934-2.404-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.434-.028-.608-.086-.174-.78-1.882-1.07-2.576-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.608.086-.926.434-.318.348-1.216 1.188-1.216 2.896s1.244 3.356 1.418 3.588c.174.232 2.448 3.736 5.932 5.238.83.358 1.478.572 1.982.732.832.264 1.59.226 2.188.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.204-1.656-.086-.144-.318-.232-.666-.406z"/></svg></a>
 </body>
 </html>
 `;
 }
 
-const ctaBand = (h = 'Let’s build <em>yours.</em>', sub = 'Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.') => `
+const ctaBand = (h = 'Let’s build <em>your website.</em>', sub = 'Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.') => `
 <section class="sec blue tight"><div class="wrap cta-band">
   <div><h2 class="h2 cta">${h.replace('<em>', '<em style="color:var(--ink)">')}</h2><p class="lede" style="color:#fff;margin-top:20px">${sub}</p></div>
   <a class="btn dark" href="${B}/contact/">Request your free demo website ${arr}</a>
@@ -279,7 +285,7 @@ const ctaBand = (h = 'Let’s build <em>yours.</em>', sub = 'Tell us about your 
 
 function caseMedia(c, { tile = false } = {}) {
   return `<a class="case-media" href="${B}/werk/${c.slug}/" aria-label="${esc(c.name)} case study">
-    <div class="browser" style="view-transition-name:shot-${c.img}"><div class="bar"><i></i><i></i><i></i><span class="url">${c.url}</span></div>
+    <div class="browser" style="view-transition-name:shot-${c.img}"><div class="bar"><i></i><i></i><i></i><span class="url" translate="no">${c.url}</span></div>
       <div class="screen"><img src="${B}/img/${c.img}-desk-full.webp" width="1200" height="${c.hDesk}" loading="lazy" decoding="async" alt="${esc(c.name)} homepage on desktop"></div></div>
     <div class="phone"><div class="pscreen"><img src="${B}/img/${c.img}-mob-full.webp" width="420" height="${c.hMob}" loading="lazy" decoding="async" alt="${esc(c.name)} on a phone"></div></div>
   </a>`;
@@ -290,10 +296,10 @@ function caseRow(c, flip) {
     ${caseMedia(c)}
     <div>
       <p class="meta-line"><span>${c.sector}</span><span>${c.where}</span></p>
-      <h3>${c.name}</h3>
+      <h3 translate="no">${c.name}</h3>
       <p>${c.short}</p>
       <ul class="tags">${c.tags.map(t => `<li>${t}</li>`).join('')}</ul>
-      <div class="case-acts"><a class="btn sm ghost" href="${B}/werk/${c.slug}/">View case ${arr}</a><a class="tlink" href="${c.href}" target="_blank" rel="noopener">Visit live site ↗</a></div>
+      <div class="case-acts"><a class="btn sm ghost" href="${B}/werk/${c.slug}/">View project ${arr}</a><a class="tlink" href="${c.href}" target="_blank" rel="noopener">Visit live site ↗</a></div>
     </div>
   </article>`;
 }
@@ -317,23 +323,29 @@ const phero = ({ crumbs, h1, lede, acts = '', md = true }) => `
   <div class="phero-row"><p class="lede">${lede}</p>${acts ? `<div class="acts">${acts}</div>` : ''}</div>
 </div></section>`;
 
-const demoForm = (id, title = 'Request your free demo website') => `<form class="form" id="${id}" novalidate data-concept="This is a concept, so nothing was sent. On the live site this request goes straight to the team, and we contact you within 24 hours.">
+const demoForm = (id, title = 'Request your free demo website') => `<form class="form" id="${id}" name="offerte-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate data-event="demo_request" data-sent="sent">
+  <input type="hidden" name="form-name" value="offerte-aanvraag">
+  <input type="hidden" name="subject" value="Nieuwe offerteaanvraag — DRP BuildLab">
+  <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
   <h3>${title}</h3>
   <div class="frow">
-    <div class="fld"><label for="${id}-name">Your name</label><input id="${id}-name" name="name" autocomplete="name" required></div>
-    <div class="fld"><label for="${id}-email">Email</label><input id="${id}-email" name="email" type="email" autocomplete="email" required></div>
+    <div class="fld"><label for="${id}-name">Your name</label><input id="${id}-name" name="voornaam" autocomplete="name" required></div>
+    <div class="fld"><label for="${id}-tel">Phone</label><input id="${id}-tel" name="telefoon" type="tel" autocomplete="tel" required></div>
   </div>
-  <div class="fld"><label for="${id}-biz">Business name or current website</label><input id="${id}-biz" name="business" autocomplete="organization"></div>
+  <div class="fld"><label for="${id}-email">Email</label><input id="${id}-email" name="email" type="email" autocomplete="email" required></div>
+  <div class="fld"><label for="${id}-biz">Business name or current website <small>(optional)</small></label><input id="${id}-biz" name="bedrijf" autocomplete="organization"></div>
   <fieldset class="chips"><legend>What do you need?</legend>
-    <input type="radio" name="need" id="${id}-n1" value="website" checked><label for="${id}-n1">New website</label>
-    <input type="radio" name="need" id="${id}-n2" value="webshop"><label for="${id}-n2">Webshop</label>
-    <input type="radio" name="need" id="${id}-n3" value="redesign"><label for="${id}-n3">Redesign</label>
-    <input type="radio" name="need" id="${id}-n4" value="care"><label for="${id}-n4">Maintenance</label>
-    <input type="radio" name="need" id="${id}-n5" value="unsure"><label for="${id}-n5">Not sure yet</label>
+    <input type="radio" name="dienst" id="${id}-n1" value="Nieuwe website" data-slug="starter" checked><label for="${id}-n1">New website</label>
+    <input type="radio" name="dienst" id="${id}-n2" value="Webshop" data-slug="webshop"><label for="${id}-n2">Webshop</label>
+    <input type="radio" name="dienst" id="${id}-n3" value="Redesign" data-slug="update"><label for="${id}-n3">Redesign</label>
+    <input type="radio" name="dienst" id="${id}-n4" value="Onderhoud" data-slug="care"><label for="${id}-n4">Maintenance</label>
+    <input type="radio" name="dienst" id="${id}-n5" value="Nog niet zeker" data-slug="undecided"><label for="${id}-n5">Not sure yet</label>
   </fieldset>
+  <input type="hidden" name="ref" value="">
+  <label class="check" for="${id}-consent"><input type="checkbox" id="${id}-consent" name="toestemming" value="ja" required><span>I agree that DRP BuildLab uses the details in this form to contact me about this request. <a href="${B}/privacy/">Privacy policy</a></span></label>
   <button class="btn dark" type="submit">Request my free demo ${arr}</button>
   <p class="ok" role="status" aria-live="polite"></p>
-  <small>We reply within 24 hours. Your details are only used to contact you about this request. <a href="${B}/privacy/">Privacy policy</a></small>
+  <small>We reply within 24 hours.</small>
 </form>`;
 
 /* ── Pages ────────────────────────────────────────────────────────────── */
@@ -351,7 +363,7 @@ pages[''] = page({
     <p class="lede">We design and build <strong>custom websites and webshops</strong> for businesses worldwide. Tell us about yours and we’ll show you a <strong>free demo website</strong> before you commit to anything.</p>
     <div class="acts"><a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a><a class="btn ghost" href="${B}/werk/">See our work</a></div>
   </div>
-  <ul class="facts"><li>Custom built, no templates</li><li>Websites from €499</li><li>Care plans at €29 a month</li><li>One point of contact</li></ul>
+  <ul class="facts"><li>Custom built, no templates</li><li>Websites from €499</li><li>Maintenance plans at €29 a month</li><li>One point of contact</li></ul>
 </div>
 <div class="wrap stage" id="stage"><div class="stage-in" id="stageIn">
   <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">kasteelwarmelo.nl</span></div>
@@ -394,38 +406,38 @@ pages[''] = page({
   <div class="rows">
     <div class="row rv"><h3>See it before you sign</h3><p>On the first call we already show you an example made for your business. The demo is free, with no obligation.</p></div>
     <div class="row rv"><h3>One person to call</h3><p>No ticket systems and no rotating account managers. You know who is building your site, and you can reach them.</p></div>
-    <div class="row rv"><h3>Prices on the table</h3><p>A one-page website from €499, everything else in a clear written quote. Two revision rounds included, and a written quote that is valid for 14 days.</p></div>
-    <div class="row rv"><h3>We stay after launch</h3><p>Care plans at €29 a month keep your site fast, secure and current. Hermosa Antwerp and Start to Business still rely on us today.</p></div>
+    <div class="row rv"><h3>Clear prices, up front</h3><p>A one-page website from €499, everything else in a clear written quote. Two revision rounds included, and a written quote that is valid for 14 days.</p></div>
+    <div class="row rv"><h3>We stay after launch</h3><p>Maintenance plans at €29 a month keep your site fast, secure and current. Hermosa Antwerp and Start to Business still rely on us today.</p></div>
   </div>
 </div></section>
 
 <section class="sec light"><div class="wrap">
   <div class="sec-head"><h2 class="h2 rv">The D, the R <em>and the P</em></h2><p class="sub rv">Three founders, one studio. These are the people you talk to, from the first call to launch day and after.</p></div>
   <div class="team">
-    ${[['dries', 'Dries De Smedt', 'Co-founder &amp; VP of Legal', 'D'], ['roan', 'Roan Bal', 'Co-founder &amp; VP of Operations', 'R'], ['par', 'Par Volckaerts', 'Co-founder &amp; VP of Marketing &amp; Communications', 'P']].map(([f, n, r, i]) => `<figure class="person rv"><div class="portrait"><img src="${B}/img/${f}.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Portrait of ${n}"><span class="init" aria-hidden="true">${i}</span></div><figcaption><h3>${n}</h3><p class="role">${r}</p></figcaption></figure>`).join('')}
+    ${[['dries', 'Dries De Smedt', 'Co-founder &amp; VP of Legal', 'D'], ['roan', 'Roan Bal', 'Co-founder &amp; VP of Operations', 'R'], ['par', 'Par Volckaerts', 'Co-founder &amp; VP of Marketing &amp; Communications', 'P']].map(([f, n, r, i]) => `<figure class="person rv"><div class="portrait"><img src="${B}/img/${f}.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Portrait of ${n}"><span class="init" aria-hidden="true">${i}</span></div><figcaption><h3 translate="no">${n}</h3><p class="role" translate="no">${r}</p></figcaption></figure>`).join('')}
   </div>
-  <div class="team-foot"><div class="builder"><img src="${B}/img/lathif.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Portrait of Lathif Dewantoro"><p><strong>Lathif Dewantoro</strong>, Lead Developer, builds every site with them.</p></div><a class="tlink" href="${B}/over-ons/">More about us →</a></div>
+  <div class="team-foot"><div class="builder"><img src="${B}/img/lathif.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Portrait of Lathif Dewantoro"><p><strong translate="no">Lathif Dewantoro</strong>, Lead Developer, builds every one of our websites together with the founders.</p></div><a class="tlink" href="${B}/over-ons/">More about us →</a></div>
 </div></section>
 
 <section class="sec fog"><div class="wrap">
   <div class="sec-head"><h2 class="h2 rv">Who we <em>work with</em></h2><p class="sub rv">The businesses that rely on us, and an open invitation to grow with us.</p></div>
   <div class="prt">
-    <a class="prt-card rv" href="${B}/werk/start-to-business/"><div class="img"><img src="${B}/img/p-stb.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Partnership visual: DRP BuildLab and Start to Business"></div><div class="body"><h3>Start to Business</h3><p>We developed their website and still maintain it.</p><p class="q">“Ideas deserve a strong online foundation.”</p></div></a>
-    <a class="prt-card rv" href="${B}/werk/hermosa-antwerp/"><div class="img"><img src="${B}/img/p-hermosa.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Partnership visual: DRP BuildLab and Hermosa Antwerp"></div><div class="body"><h3>Hermosa Antwerp</h3><p>DRP BuildLab is Hermosa’s IT maintenance partner.</p><p class="q">“Technology supports beauty.”</p></div></a>
+    <a class="prt-card rv" href="${B}/werk/start-to-business/"><div class="img"><img src="${B}/img/p-stb.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Partnership visual: DRP BuildLab and Start to Business"></div><div class="body"><h3 translate="no">Start to Business</h3><p>We developed their website and still maintain it.</p><p class="q" translate="no" lang="en">“Ideas deserve a strong online foundation.”</p></div></a>
+    <a class="prt-card rv" href="${B}/werk/hermosa-antwerp/"><div class="img"><img src="${B}/img/p-hermosa.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Partnership visual: DRP BuildLab and Hermosa Antwerp"></div><div class="body"><h3 translate="no">Hermosa Antwerp</h3><p>DRP BuildLab is Hermosa’s IT maintenance partner.</p><p class="q" translate="no" lang="en">“Technology supports beauty.”</p></div></a>
     <div class="prt-card prt-cta rv"><h3>Refer a client, <em>earn on it.</em></h3><p>Your contacts get 10% off their quote, and you earn 5% of every invoice they pay. Your link never expires.</p><a class="btn" href="${B}/partner-worden/">Become a partner ${arr}</a></div>
   </div>
 </div></section>
 
 <section class="sec blue cta" id="demo"><div class="wrap cta-grid">
   <div>
-    <h2 class="h2">Let’s build <em>yours.</em></h2>
+    <h2 class="h2">Let’s build <em>your website.</em></h2>
     <ol class="steps">
       <li><b>You tell us about your business</b><span>Fill in the form. It takes about a minute.</span></li>
       <li><b>We call you with a demo</b><span>We show you an example made for your business. Free, with no obligation.</span></li>
       <li><b>Preview and approve</b><span>You see your site before it goes live. Two revision rounds are included.</span></li>
       <li><b>Live, and we stay</b><span>Your own domain, and a team you can call when you need a change.</span></li>
     </ol>
-    <p class="alt"><span>info@drpbuildlab.com</span><span>WhatsApp +32 473 74 44 31</span></p>
+    <p class="alt" translate="no"><span>info@drpbuildlab.com</span><span>WhatsApp +32 473 74 44 31</span></p>
   </div>
   ${demoForm('home')}
 </div></section>`
@@ -435,7 +447,7 @@ pages['werk'] = page({
   title: 'Our work | DRP BuildLab', desc: 'Websites and webshops designed, built and maintained by DRP BuildLab, with links to the live sites.', nav: 'work', cursor: true,
   body: `${phero({ h1: 'Our <em>work</em>', lede: 'Websites and webshops we designed, built or look after, all live today. Open a project to see the brief and what we did.' })}
 <section class="sec" style="padding-top:0"><div class="wrap"><div class="wgrid">
-  ${CASES.map(c => `<article class="wtile rv">${caseMedia(c)}<h2><a href="${B}/werk/${c.slug}/" style="text-decoration:none">${c.name}</a></h2><p>${c.kinds} · ${c.sector}</p></article>`).join('')}
+  ${CASES.map(c => `<article class="wtile rv">${caseMedia(c)}<h2 translate="no"><a href="${B}/werk/${c.slug}/" style="text-decoration:none">${c.name}</a></h2><p>${c.kinds} · ${c.sector}</p></article>`).join('')}
   <article class="wtile wide rv"><a class="slot" href="${B}/contact/"><span class="big">Your business<br><em>goes here.</em></span></a><div><h2>Could be yours</h2><p>Tell us what you do and we’ll build a free demo of your new website, with no obligation.</p><p style="margin-top:22px"><a class="btn" href="${B}/contact/">Request your free demo ${arr}</a></p></div></article>
 </div>
 </div></section>
@@ -448,25 +460,25 @@ CASES.forEach((c, i) => {
     title: `${c.name} | Work | DRP BuildLab`, desc: c.short, nav: 'work',
     body: `
 <section class="phero"><div class="wrap">
-  <ol class="crumb"><li><a href="${B}/werk/">Work</a></li><li aria-current="page">${c.name}</li></ol>
-  <h1 class="h1 md">${c.em}</h1>
-  <dl class="facts-dl"><div><dt>Client</dt><dd>${c.name}</dd></div><div><dt>Sector</dt><dd>${c.sector}</dd></div><div><dt>What we did</dt><dd>${c.scope}</dd></div><div><dt>Live site</dt><dd><a class="tlink" href="${c.href}" target="_blank" rel="noopener">${c.url} ↗</a></dd></div></dl>
+  <ol class="crumb"><li><a href="${B}/werk/">Work</a></li><li aria-current="page" translate="no">${c.name}</li></ol>
+  <h1 class="h1 md" translate="no">${c.em}</h1>
+  <dl class="facts-dl"><div><dt>Client</dt><dd translate="no">${c.name}</dd></div><div><dt>Sector</dt><dd>${c.sector}</dd></div><div><dt>What we did</dt><dd>${c.scope}</dd></div><div><dt>Live site</dt><dd><a class="tlink" href="${c.href}" target="_blank" rel="noopener" translate="no">${c.url} ↗</a></dd></div></dl>
 </div></section>
-<div class="shot-band"><div class="wrap"><div class="browser" style="view-transition-name:shot-${c.img}"><div class="bar"><i></i><i></i><i></i><span class="url">${c.url}</span></div>
+<div class="shot-band"><div class="wrap"><div class="browser" style="view-transition-name:shot-${c.img}"><div class="bar"><i></i><i></i><i></i><span class="url" translate="no">${c.url}</span></div>
   <div class="screen tall" tabindex="0" aria-label="Full page, scroll to see more"><img src="${B}/img/${c.img}-desk-full.webp" width="1200" height="${c.hDesk}" decoding="async" alt="The full ${esc(c.name)} homepage on desktop"></div></div></div></div>
 <section class="light"><div class="wrap">
   <div class="two"><h2>The brief</h2><div>${c.brief.map(p => `<p>${p}</p>`).join('')}</div></div>
   <div class="two"><h2>What we did</h2><div>${c.did.map(p => `<p>${p}</p>`).join('')}<ul class="tags" style="margin-top:24px">${c.tags.map(t => `<li>${t}</li>`).join('')}</ul></div></div>
   <div class="two"><h2>On a phone</h2><div class="phones" style="justify-content:start"><div class="phone static"><div class="pscreen"><img src="${B}/img/${c.phoneImg}.webp" width="420" height="909" loading="lazy" decoding="async" alt="${esc(c.name)} on a phone, top of the page"></div></div><div class="phone static"><div class="pscreen"><img src="${B}/img/${c.img}-mob-full.webp" width="420" height="${c.hMob}" loading="lazy" decoding="async" alt="${esc(c.name)} on a phone, further down the page" style="transform:translateY(-38%)"></div></div></div></div>
-  ${c.quote ? `<div class="two"><h2>In their words</h2><div><p class="statement" style="max-width:none;font-size:clamp(28px,3.4vw,48px)">“${c.quote}”</p><p class="muted" style="margin-top:16px">${c.name}</p></div></div>` : ''}
+  ${c.quote ? `<div class="two"><h2>In their words</h2><div><p class="statement" style="max-width:none;font-size:clamp(28px,3.4vw,48px)" translate="no" lang="en">“${c.quote}”</p><p class="muted" style="margin-top:16px" translate="no">${c.name}</p></div></div>` : ''}
 </div></section>
-<a class="next" href="${B}/werk/${n.slug}/"><div class="wrap"><small>Next project</small><p class="h2" style="margin:0">${n.em} →</p></div></a>
+<a class="next" href="${B}/werk/${n.slug}/"><div class="wrap"><small>Next project</small><p class="h2" style="margin:0" translate="no">${n.em} →</p></div></a>
 ${ctaBand()}`
   });
 });
 
 pages['diensten'] = page({
-  title: 'Services | DRP BuildLab', desc: 'Custom websites, webshops and Shopify, redesigns, care plans and add-ons, with prices shown up front.', nav: 'services',
+  title: 'Services | DRP BuildLab', desc: 'Custom websites, webshops and Shopify, redesigns, maintenance plans and add-ons, with prices shown up front.', nav: 'services',
   body: `${phero({ h1: 'What we <em>build</em>', lede: 'Five services, each with its own page, what is included and a starting price. Every price is confirmed in a written quote.', acts: `<a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a><a class="btn ghost" href="${B}/prijzen/">See all prices</a>` })}
 <section class="sec light"><div class="wrap">
   <ul class="svc">${[...SERVICES, OTHER].map(svcRow).join('')}</ul>
@@ -528,9 +540,9 @@ pages['over-ons'] = page({
     <figcaption>
       <p class="bc-cap">The name is the founders.</p>
       <ul class="bc-letters">
-        <li><b>D</b><span>Dries De Smedt</span></li>
-        <li><b>R</b><span>Roan Bal</span></li>
-        <li><b>P</b><span>Par Volckaerts</span></li>
+        <li translate="no"><b>D</b><span>Dries De Smedt</span></li>
+        <li translate="no"><b>R</b><span>Roan Bal</span></li>
+        <li translate="no"><b>P</b><span>Par Volckaerts</span></li>
       </ul>
     </figcaption>
   </figure>
@@ -557,7 +569,7 @@ pages['over-ons'] = page({
     <div class="rv"><h3>Fair, clear prices</h3><p>A one-page site from €499. Everything else is agreed in a written quote before we start.</p></div>
     <div class="rv"><h3>Made for phones</h3><p>Every site works on every device, because that is where your customers find you.</p></div>
     <div class="rv"><h3>Built to be found</h3><p>SEO is part of the build, so Google can find, understand and index your site.</p></div>
-    <div class="rv"><h3>We stay after launch</h3><p>An optional care plan at €29 a month keeps your site safe, current and findable.</p></div>
+    <div class="rv"><h3>We stay after launch</h3><p>An optional maintenance plan at €29 a month keeps your site safe, current and findable.</p></div>
   </div>
 </div></section>
 
@@ -565,12 +577,12 @@ pages['over-ons'] = page({
   <div class="sec-head"><h2 class="h2">Four people, <em>one contact</em></h2><p class="sub">No ticket system and no rotating account managers. This is everyone who works on your website.</p></div>
   <div class="tm" id="tm">
     <div class="tm-list" role="tablist" aria-label="Team members">
-      ${TEAM.map(([f, n], i) => `<button type="button" role="tab" id="tm-t-${f}" aria-controls="tm-p-${f}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}"><span class="tm-n">${n}</span><span class="tm-r">${TEAM_SHORT[f]}</span></button>`).join('')}
+      ${TEAM.map(([f, n], i) => `<button type="button" role="tab" id="tm-t-${f}" aria-controls="tm-p-${f}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}"><span class="tm-n" translate="no">${n}</span><span class="tm-r">${TEAM_SHORT[f]}</span></button>`).join('')}
     </div>
     <div class="tm-panels">
       ${TEAM.map(([f, n, r, i, bio, mail], k) => `<div class="tm-p${k === 0 ? ' on' : ''}" role="tabpanel" id="tm-p-${f}" aria-labelledby="tm-t-${f}">
         <div class="tm-photo"><img src="${B}/img/${f}.webp" width="800" height="1000" ${k === 0 ? '' : 'loading="lazy" '}decoding="async" alt="Portrait of ${n}">${i ? `<span class="tm-init" aria-hidden="true">${i}</span>` : ''}</div>
-        <div class="tm-text"><p class="tm-role">${r}</p><h3>${n}</h3><p class="tm-bio">${bio}</p><a class="tlink" href="mailto:${mail}">${mail}</a></div>
+        <div class="tm-text"><p class="tm-role" translate="no">${r}</p><h3 translate="no">${n}</h3><p class="tm-bio">${bio}</p><a class="tlink" href="mailto:${mail}" translate="no">${mail}</a></div>
       </div>`).join('')}
     </div>
   </div>
@@ -579,7 +591,7 @@ ${ctaBand()}`
 });
 
 pages['prijzen'] = page({
-  title: 'Pricing | DRP BuildLab', desc: 'A one-page website from €499, everything else on demand. Optional care plan at €29 a month.', nav: 'pricing',
+  title: 'Pricing | DRP BuildLab', desc: 'A one-page website from €499, everything else on demand. Optional maintenance plan at €29 a month.', nav: 'pricing',
   body: `${phero({ h1: 'Fair prices, <em>no surprises</em>', lede: 'A one-page website with contact form from €499. Everything else is priced on demand, in a quote made to measure. Maintenance is optional at €29 a month.', acts: `<a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a>` })}
 <section class="sec fog"><div class="wrap">
   <div class="plans">
@@ -590,7 +602,7 @@ pages['prijzen'] = page({
       <ul><li>As many pages as you need</li><li>Webshop, booking system or member portal</li><li>Advanced SEO and Google Ads</li><li>Multilingual websites</li><li>Custom integrations</li></ul>
       <a class="btn" href="${B}/contact/">Request a quote ${arr}</a></div>
   </div>
-  <div class="care rv"><div><h2>Care plan, optional</h2><p>Updates, backups, security and SEO checks. Not included in the packages: you choose whether to add it, and you can cancel any month.</p></div><p class="amt">€29<small> / month</small></p></div>
+  <div class="care rv"><div><h2>Maintenance plan, optional</h2><p>Updates, backups, security and SEO checks. Not included in the packages: you choose whether to add it, and you can cancel any month.</p></div><p class="amt">€29<small> / month</small></p></div>
 </div></section>
 <section class="sec light"><div class="wrap">
   <div class="sec-head"><h2 class="h2">Extra <em>services</em></h2><p class="sub">Order them separately or with your website. Each is priced on demand and confirmed in your quote.</p></div>
@@ -620,14 +632,14 @@ pages['contact'] = page({
   <div>
     <h2 class="h3" style="margin-bottom:20px">Reach us directly</h2>
     <ul class="clist">
-      <li><span>Phone</span><a href="tel:+32473744431">+32 473 74 44 31</a></li>
-      <li><span>WhatsApp</span><a href="https://wa.me/32473744431" target="_blank" rel="noopener">+32 473 74 44 31</a></li>
-      <li><span>Email</span><a href="mailto:info@drpbuildlab.com">info@drpbuildlab.com</a></li>
-      <li><span>Address</span>Honingstraat 1D, 2220 Hallaar, Belgium</li>
-      <li><span>Company no.</span>BE 1033.313.383</li>
-      <li><span>Instagram</span><a href="https://www.instagram.com/drp_buildlab/" target="_blank" rel="noopener">@drp_buildlab</a></li>
-      <li><span>Facebook</span><a href="https://www.facebook.com/share/1Hz1mJG22E/" target="_blank" rel="noopener">DRP BuildLab</a></li>
-      <li><span>TikTok</span><a href="https://www.tiktok.com/@drpbuildlab" target="_blank" rel="noopener">@drpbuildlab</a></li>
+      <li><span>Phone</span><a translate="no" href="tel:+32473744431">+32 473 74 44 31</a></li>
+      <li><span>WhatsApp</span><a translate="no" href="https://wa.me/32473744431" target="_blank" rel="noopener">+32 473 74 44 31</a></li>
+      <li><span>Email</span><a translate="no" href="mailto:info@drpbuildlab.com">info@drpbuildlab.com</a></li>
+      <li><span>Address</span><span><span translate="no">Honingstraat 1D, 2220 Hallaar,</span> Belgium</span></li>
+      <li><span>Company no.</span><span translate="no">BE 1033.313.383</span></li>
+      <li><span>Instagram</span><a translate="no" href="https://www.instagram.com/drp_buildlab/" target="_blank" rel="noopener">@drp_buildlab</a></li>
+      <li><span>Facebook</span><a translate="no" href="https://www.facebook.com/share/1Hz1mJG22E/" target="_blank" rel="noopener">DRP BuildLab</a></li>
+      <li><span>TikTok</span><a translate="no" href="https://www.tiktok.com/@drpbuildlab" target="_blank" rel="noopener">@drpbuildlab</a></li>
     </ul>
     <ol class="steps" style="margin-top:48px">
       <li><b>You send the form</b><span>It takes about a minute.</span></li>
@@ -635,31 +647,31 @@ pages['contact'] = page({
       <li><b>You decide</b><span>No obligation. You only pay once you approve a quote.</span></li>
     </ol>
   </div>
-  <form class="form" id="quote" novalidate data-concept="This is a concept, so nothing was sent. On the live site this goes to the same inbox as today’s quote form, and we contact you within 24 hours.">
+  <form class="form" id="quote" name="offerte-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate data-event="demo_request" data-sent="sent">
+    <input type="hidden" name="form-name" value="offerte-aanvraag">
+  <input type="hidden" name="subject" value="Nieuwe offerteaanvraag — DRP BuildLab">
+  <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
     <h3>Request your free demo website</h3>
     <div class="frow">
-      <div class="fld"><label for="q-first">First name</label><input id="q-first" name="first" autocomplete="given-name" required></div>
-      <div class="fld"><label for="q-last">Last name</label><input id="q-last" name="last" autocomplete="family-name" required></div>
+      <div class="fld"><label for="q-first">First name</label><input id="q-first" name="voornaam" autocomplete="given-name" required></div>
+      <div class="fld"><label for="q-last">Last name</label><input id="q-last" name="achternaam" autocomplete="family-name"></div>
     </div>
     <fieldset class="chips"><legend>You are asking as</legend>
-      <input type="radio" name="clienttype" id="q-t1" value="business" checked><label for="q-t1">Business</label>
-      <input type="radio" name="clienttype" id="q-t2" value="private"><label for="q-t2">Private person</label>
+      <input type="radio" name="klanttype" id="q-t1" value="bedrijf" checked required><label for="q-t1">Business</label>
+      <input type="radio" name="klanttype" id="q-t2" value="particulier"><label for="q-t2">Private person</label>
     </fieldset>
     <div class="frow biz-only">
-      <div class="fld"><label for="q-company">Company name</label><input id="q-company" name="company" autocomplete="organization"></div>
-      <div class="fld"><label for="q-vat">Company or VAT number <small>(optional)</small></label><input id="q-vat" name="vat"></div>
+      <div class="fld"><label for="q-company">Company name</label><input id="q-company" name="bedrijf" autocomplete="organization"></div>
+      <div class="fld"><label for="q-vat">Company or VAT number <small>(optional)</small></label><input id="q-vat" name="ondernemingsnummer" spellcheck="false"></div>
     </div>
     <div class="frow">
-      <div class="fld"><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" autocomplete="tel" required></div>
+      <div class="fld"><label for="q-phone">Phone</label><input id="q-phone" name="telefoon" type="tel" autocomplete="tel" required></div>
       <div class="fld"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required></div>
     </div>
-    <div class="fld"><label for="q-service">Which service do you have in mind?</label><select id="q-service" name="service" required><option value="">Choose a service</option><option>Starter package, €499</option><option>Made to measure, quote</option><option>Update an existing website</option><option>Extra services only (logo, SEO, …)</option><option>I don’t know yet</option></select></div>
-    <div class="frow">
-      <div class="fld"><label for="q-ref">Partner code <small>(optional)</small></label><input id="q-ref" name="ref"></div>
-      <div class="fld"><label for="q-web">Current website <small>(optional)</small></label><input id="q-web" name="web" type="url" inputmode="url"></div>
-    </div>
-    <div class="fld"><label for="q-msg">Message <small>(optional)</small></label><textarea id="q-msg" name="message"></textarea></div>
-    <label class="check" for="q-consent"><input type="checkbox" id="q-consent" name="consent" required><span>I agree that DRP BuildLab uses the details in this form to contact me about this request. <a href="${B}/privacy/">Privacy policy</a></span></label>
+    <div class="fld"><label for="q-service">Which service do you have in mind?</label><select id="q-service" name="dienst" required><option value="">Choose a service</option><option>Starter package, €499</option><option>Made to measure, quote</option><option>Update an existing website</option><option>Extra services only (logo, SEO, …)</option><option>I don’t know yet</option></select></div>
+    <div class="fld"><label for="q-ref">Partner code <small>(optional)</small></label><input id="q-ref" name="ref" spellcheck="false" maxlength="32"></div>
+    <div class="fld"><label for="q-msg">Message <small>(optional)</small></label><textarea id="q-msg" name="bericht"></textarea></div>
+    <label class="check" for="q-consent"><input type="checkbox" id="q-consent" name="toestemming" value="ja" required><span>I agree that DRP BuildLab uses the details in this form to contact me about this request. <a href="${B}/privacy/">Privacy policy</a></span></label>
     <button class="btn dark" type="submit">Request my free demo ${arr}</button>
     <p class="ok" role="status" aria-live="polite"></p>
   </form>
@@ -694,20 +706,23 @@ pages['partner-worden'] = page({
     <p class="sub" style="margin-top:24px">Tell us briefly who you reach. We review every request personally and send your link once approved.</p>
     <p class="muted" style="margin-top:24px">Who can join: influencers, consultants, accountants, coaches, anyone with an audience of business owners. Prefer email? <a class="tlink" href="mailto:info@drpbuildlab.com">info@drpbuildlab.com</a></p>
   </div>
-  <form class="form" id="partner" novalidate data-concept="This is a concept, so nothing was sent. On the live site we review your request and send your personal link within a few working days.">
+  <form class="form" id="partner" name="partner-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate data-event="partner_request" data-sent="psent">
+    <input type="hidden" name="form-name" value="partner-aanvraag">
+  <input type="hidden" name="subject" value="Nieuwe partneraanvraag — DRP BuildLab">
+  <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
     <div class="frow">
-      <div class="fld"><label for="p-first">First name</label><input id="p-first" name="first" autocomplete="given-name" required></div>
-      <div class="fld"><label for="p-last">Last name</label><input id="p-last" name="last" autocomplete="family-name" required></div>
+      <div class="fld"><label for="p-first">First name</label><input id="p-first" name="voornaam" autocomplete="given-name" required></div>
+      <div class="fld"><label for="p-last">Last name</label><input id="p-last" name="achternaam" autocomplete="family-name"></div>
     </div>
     <div class="fld"><label for="p-email">Email</label><input id="p-email" name="email" type="email" autocomplete="email" required></div>
     <div class="frow">
-      <div class="fld"><label for="p-channel">Where do you reach your audience?</label><select id="p-channel" name="channel" required><option value="">Choose a channel</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>LinkedIn</option><option>Newsletter or blog</option><option>Offline network</option><option>Other</option></select></div>
-      <div class="fld"><label for="p-size">Roughly how big is your audience?</label><select id="p-size" name="size" required><option value="">Choose a size</option><option>Under 1,000</option><option>1,000 – 10,000</option><option>10,000 – 50,000</option><option>50,000 – 250,000</option><option>Over 250,000</option></select></div>
+      <div class="fld"><label for="p-channel">Where do you reach your audience?</label><select id="p-channel" name="kanaal" required><option value="">Choose a channel</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>LinkedIn</option><option>Newsletter or blog</option><option>Offline network</option><option>Other</option></select></div>
+      <div class="fld"><label for="p-size">Roughly how big is your audience?</label><select id="p-size" name="bereik" required><option value="">Choose a size</option><option>Under 1,000</option><option>1,000 – 10,000</option><option>10,000 – 50,000</option><option>50,000 – 250,000</option><option>Over 250,000</option></select></div>
     </div>
-    <div class="fld"><label for="p-profile">Link to your profile or website</label><input id="p-profile" name="profile" type="url" inputmode="url" required></div>
-    <div class="fld"><label for="p-code">Preferred code <small>(optional)</small></label><input id="p-code" name="code"></div>
-    <div class="fld"><label for="p-msg">Tell us briefly about your audience <small>(optional)</small></label><textarea id="p-msg" name="message"></textarea></div>
-    <label class="check" for="p-consent"><input type="checkbox" id="p-consent" name="consent" required><span>I agree that DRP BuildLab uses the details in this form to contact me about this request. <a href="${B}/privacy/">Privacy policy</a></span></label>
+    <div class="fld"><label for="p-profile">Link to your profile or website</label><input id="p-profile" name="profiel" type="url" inputmode="url" required></div>
+    <div class="fld"><label for="p-code">Preferred code <small>(optional)</small></label><input id="p-code" name="gewenste_code" spellcheck="false"></div>
+    <div class="fld"><label for="p-msg">Tell us briefly about your audience <small>(optional)</small></label><textarea id="p-msg" name="bericht"></textarea></div>
+    <label class="check" for="p-consent"><input type="checkbox" id="p-consent" name="toestemming" value="ja" required><span>I agree that DRP BuildLab uses the details in this form to contact me about this request. <a href="${B}/privacy/">Privacy policy</a></span></label>
     <button class="btn dark" type="submit">Request my link ${arr}</button>
     <p class="ok" role="status" aria-live="polite"></p>
   </form>
@@ -728,13 +743,14 @@ pages['partner-worden'] = page({
 function legal(slug, title) {
   const html = fs.readFileSync(path.join(ROOT, 'src', slug, 'index.html'), 'utf8');
   const en = html.match(/<article class="legal-body" id="en" lang="en">([\s\S]*?)<\/article>/);
-  if (!en) throw new Error('No English legal text in src/' + slug);
+  const nl = html.match(/<article class="legal-body" lang="nl">([\s\S]*?)<\/article>/);
+  if (!en || !nl) throw new Error('No legal text in src/' + slug);
   const ver = (html.match(/Versie \/ Version: ([^<·]+)/) || [])[1];
-  const bodyHtml = en[1].replace(/<h2 class="legal-lang">[\s\S]*?<\/h2>/, '').replace(/href="\/(privacy|algemene-voorwaarden|contact)"/g, `href="${B}/$1/"`);
+  const fix = t => t.replace(/<h2 class="legal-lang">[\s\S]*?<\/h2>/, '').replace(/href="\/(privacy|algemene-voorwaarden|contact)"/g, `href="${B}/$1/"`);
   return page({
     title: `${title} | DRP BuildLab`, desc: `${title} of DRP BuildLab.`, nav: '',
-    body: `${phero({ h1: title, lede: ver ? `Version: ${ver.trim()}. The Dutch version on the live site is the binding one.` : 'The Dutch version on the live site is the binding one.' })}
-<section class="sec light"><div class="wrap"><article class="legal">${bodyHtml}</article></div></section>`
+    body: `${phero({ h1: title, lede: ver ? `Version: <span translate="no">${ver.trim()}</span>. The Dutch text is the binding version.` : 'The Dutch text is the binding version.' })}
+<section class="sec light"><div class="wrap"><article class="legal" data-legal="en" lang="en" translate="no">${fix(en[1])}</article><article class="legal" data-legal="nl" lang="nl" translate="no">${fix(nl[1])}</article></div></section>`
   });
 }
 pages['algemene-voorwaarden'] = legal('algemene-voorwaarden', 'Terms and conditions');
@@ -746,7 +762,7 @@ const notFound = page({
 });
 
 {
-  const css = fs.readFileSync(path.join(OUT, 'assets', 'site.css'), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+  const css = fs.readFileSync(path.join(SITE, 'assets', 'site.css'), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
   let depth = 0; for (const ch of css) { if (ch === '{') depth++; if (ch === '}') depth--; if (depth < 0) break; }
   if (depth !== 0) throw new Error('concept/assets/site.css has unbalanced braces (' + depth + '); not building.');
 }
@@ -757,5 +773,6 @@ for (const [p, html] of Object.entries(pages)) {
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), html);
 }
-fs.writeFileSync(path.join(OUT, '404.html'), notFound);
-console.log(`concept: wrote ${Object.keys(pages).length} pages to ${path.relative(ROOT, OUT)}/`);
+fs.mkdirSync(path.join(OUT, '404'), { recursive: true });
+fs.writeFileSync(path.join(OUT, '404', 'index.html'), notFound);
+console.log(`concept: wrote ${Object.keys(pages).length} English base pages to ${path.relative(ROOT, OUT)}/ (run tools/concept/localize.js next)`);

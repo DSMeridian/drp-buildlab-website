@@ -83,31 +83,76 @@ if (cur && matchMedia('(hover:hover)').matches && !reduce) {
   });
 }
 
-/* contact page: company fields only for businesses */
-$$('input[name="clienttype"]').forEach(r => r.addEventListener('change', () => {
-  const biz = $('input[name="clienttype"]:checked').value === 'business';
-  $$('.biz-only').forEach(el => { el.hidden = !biz; });
+/* strings the scripts show, translated with the page (#ui in every page) */
+const ui = k => ($(`#ui [data-k="${k}"]`) || {}).textContent || '';
+
+/* quote form: company fields only for a business, and disabled otherwise so
+   a company typed before switching to "private" is not submitted */
+(() => {
+  const radios = $$('input[name="klanttype"]');
+  if (!radios.length) return;
+  const sync = () => {
+    const biz = ($('input[name="klanttype"]:checked') || {}).value === 'bedrijf';
+    $$('.biz-only').forEach(el => { el.hidden = !biz; $$('input', el).forEach(i => { i.disabled = !biz; }); });
+  };
+  radios.forEach(r => r.addEventListener('change', sync)); sync();
+})();
+
+/* Netlify forms over fetch, as on the previous site: post to this page's own
+   path (the root carries forced geo redirects, and a 302 turns a POST into a
+   GET), and only a 2xx counts as sent. The analytics event carries which
+   option was picked, the market and the language; never what was typed. */
+const DEMO_SERVICE = ['none', 'starter', 'custom', 'update', 'extras', 'undecided'];
+const PARTNER_CHANNEL = ['none', 'instagram', 'tiktok', 'youtube', 'linkedin', 'newsletter', 'offline', 'other'];
+function track(f) {
+  const base = { demo_market: window.__DRP_MARKET__ || '', demo_language: document.documentElement.lang || '' };
+  let ev;
+  if (f.dataset.event === 'partner_request') {
+    const ch = $('select[name="kanaal"]', f), reach = $('select[name="bereik"]', f);
+    ev = { event: 'partner_request', partner_channel: PARTNER_CHANNEL[ch ? ch.selectedIndex : -1] || 'unknown', partner_reach: reach && reach.selectedIndex > 0 ? reach.selectedIndex : 0, ...base };
+  } else {
+    const sel = $('select[name="dienst"]', f), chip = $('input[name="dienst"]:checked', f);
+    ev = { event: 'demo_request', demo_service: sel ? (DEMO_SERVICE[sel.selectedIndex] || 'unknown') : (chip ? chip.dataset.slug : 'unknown'), demo_form: f.id, ...base };
+  }
+  window.dataLayer = window.dataLayer || []; window.dataLayer.push(ev);
+}
+$$('form[data-netlify]').forEach(f => f.addEventListener('submit', e => {
+  e.preventDefault();
+  const msg = $('.ok', f), btn = $('button[type="submit"]', f);
+  const bad = $$('[required]', f).find(i => !i.disabled && ((i.type === 'checkbox' ? !i.checked : !String(i.value).trim()) || !i.checkValidity()));
+  if (bad) {
+    const name = (f.querySelector(`label[for="${bad.id}"]`)?.childNodes[0]?.textContent || '').trim();
+    msg.textContent = bad.type === 'email' ? ui('email') : bad.type === 'checkbox' ? ui('tick') : `${ui('fill')} ${name}`;
+    msg.classList.add('show'); bad.focus(); return;
+  }
+  btn.disabled = true; msg.classList.remove('show');
+  fetch(location.pathname, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(f)).toString() })
+    .then(res => {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      track(f);
+      const done = document.createElement('p'); done.className = 'ok show sent'; done.setAttribute('role', 'status'); done.textContent = ui(f.dataset.sent || 'sent');
+      $$(':scope > *:not(h3)', f).forEach(el => { el.hidden = true; }); f.append(done); done.focus?.();
+    })
+    .catch(() => { btn.disabled = false; msg.textContent = ui('failed'); msg.classList.add('show'); });
 }));
 
-/* forms: this is a concept, so nothing is sent */
-$$('form[data-concept]').forEach(f => f.addEventListener('submit', e => {
-  e.preventDefault();
-  const ok = $('.ok', f);
-  const bad = $$('[required]', f).find(i => (i.type === 'checkbox' ? !i.checked : !i.value.trim()) || !i.checkValidity());
-  if (bad) {
-    const name = (f.querySelector(`label[for="${bad.id}"]`)?.textContent || 'this field').replace(/\s*\(.*\)\s*/, '').trim();
-    ok.textContent = bad.type === 'email' ? 'Please enter a valid email address so we can reach you.' : bad.type === 'checkbox' ? 'Please tick the box so we may contact you about this request.' : `Please fill in: ${name}.`;
-    ok.classList.add('show'); bad.focus(); return;
-  }
-  ok.textContent = f.dataset.concept;
-  ok.classList.add('show');
-}));
+/* prices: written in euro, shown in the market's own currency when it has
+   another one, from the same /api/rates the previous site used */
+(() => {
+  const cur = document.documentElement.dataset.currency, els = $$('.money[data-eur]');
+  if (!els.length || !cur || cur === 'EUR') return;
+  fetch('/api/rates').then(r => r.json()).then(d => {
+    const rate = d && d.rates && d.rates[cur]; if (!rate) return;
+    const fmt = new Intl.NumberFormat(document.documentElement.lang, { style: 'currency', currency: cur, maximumFractionDigits: 0 });
+    els.forEach(el => { el.textContent = fmt.format(Math.round(+el.dataset.eur * rate)); el.title = '€' + el.dataset.eur; });
+  }).catch(() => {});
+})();
 
 /* showreel: expands with scroll, loads when near, plays only in view */
 const reelBox = $('#reelBox'), vid = $('#reelVid'), reelBtn = $('#reelBtn');
 if (reelBox && vid) {
   let userPaused = reduce, loaded = false, inView = false;
-  const setBtn = () => { const paused = vid.paused; reelBtn.textContent = paused ? 'Play' : 'Pause'; reelBtn.setAttribute('aria-pressed', paused); };
+  const setBtn = () => { const paused = vid.paused; reelBtn.textContent = paused ? (ui('play') || 'Play') : (ui('pause') || 'Pause'); reelBtn.setAttribute('aria-pressed', paused); };
   const load = () => {
     if (loaded) return; loaded = true;
     /* 1080p60 on larger screens, 720p60 on phones; AV1 where the browser
