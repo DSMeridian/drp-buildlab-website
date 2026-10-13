@@ -95,7 +95,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 /* type */
 .h1{font-family:var(--display);font-weight:800;font-stretch:72%;font-size:clamp(54px,11vw,184px);line-height:.88;letter-spacing:-.025em;margin:0;text-transform:uppercase;text-wrap:balance}
 .h1.md{font-size:clamp(50px,8.6vw,140px)}
-.h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.h1 .ln{display:block;overflow:hidden;padding-bottom:.04em;padding-top:.2em;margin-top:-.2em}
 .h1 .ln>span{display:block;animation:rise 1.1s var(--ease) both}
 .h1 .ln:nth-child(2)>span{animation-delay:.09s}.h1 .ln:nth-child(3)>span{animation-delay:.18s}
 .h1 em,.h2 em{font-style:italic;font-weight:900;color:var(--electric-hi)}
