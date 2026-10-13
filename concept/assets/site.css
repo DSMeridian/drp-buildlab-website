@@ -95,7 +95,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 /* type */
 .h1{font-family:var(--display);font-weight:800;font-stretch:72%;font-size:clamp(54px,11vw,184px);line-height:.88;letter-spacing:-.025em;margin:0;text-transform:uppercase;text-wrap:balance}
 .h1.md{font-size:clamp(50px,8.6vw,140px)}
-.h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.h1 .ln{display:block;overflow:hidden;padding-bottom:.04em;padding-top:.2em;margin-top:-.2em}
 .h1 .ln>span{display:block;animation:rise 1.1s var(--ease) both}
 .h1 .ln:nth-child(2)>span{animation-delay:.09s}.h1 .ln:nth-child(3)>span{animation-delay:.18s}
 .h1 em,.h2 em{font-style:italic;font-weight:900;color:var(--electric-hi)}
@@ -611,5 +611,14 @@ a[href^="tel:"],a[href^="mailto:"],a[href*="wa.me"],.url,.money,.clist a,.clist 
 :root:is([lang="ja"],[lang="ar"]) :is(em,.h1 em,.h2 em,.bc-drp,.logo .l1,.statement){font-style:normal}
 :root:is([lang="ja"],[lang="ar"]) :is(.h1,.h2,.svc h3,.case h3,.row h3,.vgrid h3,.wtile h2,.two h2,.plan h2,.care h2,.tm-text h3,.tm-list .tm-n,.terms dd,.prt-cta h3,.slot .big){text-transform:none;letter-spacing:0;line-height:1.15}
 :root[lang="ja"] :is(.h1,.h2){line-height:1.2;word-break:keep-all;overflow-wrap:anywhere}
+/* the home hero headline is three short lines in English; longer translations get a smaller size
+   so they keep the same footprint instead of running to five or six lines. Factors measured per
+   language against the English height at 375, 768, 1280 and 1900px -- recheck if the copy changes. */
+.hero .h1{font-size:calc(var(--hero-k,1)*clamp(54px,11vw,184px))}
+@media (max-width:600px){.hero .h1{font-size:calc(var(--hero-k,1)*clamp(44px,13vw,80px))}}
+:root:is([lang="es"],[lang="pt"]){--hero-k:.87}
+:root:is([lang="nl"],[lang="de"],[lang="fr"],[lang="it"],[lang="pl"],[lang="ar"]){--hero-k:.78}
+:root[lang="ja"]{--hero-k:.6}
+:root[lang="ja"] .hero .h1{word-break:auto-phrase}
 [dir="rtl"] .logo{direction:ltr}
 .ft-pay li.klarna{background:#ffa8cd}
