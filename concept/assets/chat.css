@@ -2,9 +2,11 @@
    (assets/chat.js, src/css/47-chat.css, 21-whatsapp-float.css) and
    recoloured to the concept palette. The widget talks to the same
    /api/chat edge function. */
-:root{--dock-right:2rem;--dock-bottom:2rem;--dock-size:54px;--dock-gap:18px;--dock-step:calc(var(--dock-size) + var(--dock-gap))}
-@media (max-width:480px){:root{--dock-right:1rem;--dock-bottom:1rem}}
-.wa-float{position:fixed;bottom:calc(var(--dock-bottom) + env(safe-area-inset-bottom,0px));right:var(--dock-right);z-index:800;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 22px rgba(37,211,102,.42);transition:transform .22s,box-shadow .22s}
+/* --dock-bottom carries the iPhone home-bar inset, so every rung of the dock rises with it.
+   Only the WhatsApp button used to add it; on an iPhone it rose 34px into the chat launcher. */
+:root{--dock-right:2rem;--dock-bottom:calc(2rem + env(safe-area-inset-bottom,0px));--dock-size:54px;--dock-gap:18px;--dock-step:calc(var(--dock-size) + var(--dock-gap))}
+@media (max-width:480px){:root{--dock-right:1rem;--dock-bottom:calc(1rem + env(safe-area-inset-bottom,0px))}}
+.wa-float{position:fixed;bottom:var(--dock-bottom);right:var(--dock-right);z-index:800;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 22px rgba(37,211,102,.42);transition:transform .22s,box-shadow .22s}
 .wa-float:hover{transform:scale(1.08);box-shadow:0 8px 32px rgba(37,211,102,.58)}
 .wa-float svg{width:28px;height:28px;fill:#fff}
 .menu-open .wa-float,.menu-open .chat-toggle,.menu-open .chat-panel{display:none!important}
