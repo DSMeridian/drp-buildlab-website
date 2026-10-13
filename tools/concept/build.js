@@ -509,6 +509,8 @@ const TEAM = [
   ['lathif', 'Lathif Dewantoro', 'Lead Developer', '', 'A website is only as good as what happens when someone opens it. Lathif builds the sites, from the first design to the day they go live, and makes sure they load fast, work on every phone and are easy to find on Google. After launch he keeps them running, so you never have to think about the technical side.', 'lathif.dewantoro@drpbuildlab.com']
 ];
 
+const TEAM_SHORT = { dries: 'Co-founder · Legal', roan: 'Co-founder · Operations', par: 'Co-founder · Marketing', lathif: 'Lead Developer' };
+
 pages['over-ons'] = page({
   title: 'About us | DRP BuildLab', desc: 'Meet the founders of DRP BuildLab: a small web studio from Belgium building custom websites for businesses worldwide.', nav: 'about',
   body: `
@@ -517,41 +519,57 @@ pages['over-ons'] = page({
   <div class="phero-row"><p class="lede">Who we are, why we started and what you can expect from us.</p><div class="acts"><a class="btn ghost" href="#team">Meet the team ${arr}</a></div></div>
 </div></section>
 
-<section class="sec light"><div class="wrap stmt-grid">
-  <p class="side-label">Our story</p>
-  <div>
+<section class="sec light"><div class="wrap story">
+  <figure class="brand-card rv">
+    <div class="bc-logo" aria-hidden="true"><span class="bc-drp">DRP</span><span class="bc-bl">BUILDLAB</span></div>
+    <figcaption>
+      <p class="bc-cap">The name is the founders.</p>
+      <ul class="bc-letters">
+        <li><b>D</b><span>Dries De Smedt</span></li>
+        <li><b>R</b><span>Roan Bal</span></li>
+        <li><b>P</b><span>Par Volckaerts</span></li>
+      </ul>
+    </figcaption>
+  </figure>
+  <div class="story-text">
+    <p class="side-label" style="margin:0 0 22px">Our story</p>
     <p class="statement" id="stmt" data-hl="fair|online.">Every business deserves a fair chance to be found online.</p>
-    <div class="prose" style="margin-top:48px;font-size:18px;color:#2b2d33">
+    <div class="prose story-prose">
       <p>It started with a frustration. We saw good businesses that were almost invisible online, and agencies that asked €5,000 for a website that then took months to arrive.</p>
-      <p>So we built DRP BuildLab: a studio that believes every business deserves a website made to measure. Affordable, honest, and priced on the work that actually goes into it. We work remotely from Belgium, so where you are does not decide whether we can build for you.</p>
+      <p>So we built DRP BuildLab: a studio that believes every business deserves a website made to measure. Affordable, honest, and priced on the work that actually goes into it.</p>
     </div>
+    <dl class="story-facts">
+      <div><dt>Based in</dt><dd>Hallaar, Belgium</dd></div>
+      <div><dt>Working for</dt><dd>Clients worldwide</dd></div>
+      <div><dt>You talk to</dt><dd>One fixed contact</dd></div>
+    </dl>
   </div>
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <div class="sec-head"><h2 class="h2">What we <em>stand for</em></h2><p class="sub">Three promises behind every project.</p></div>
-  <div class="rows">
-    <div class="row"><h3>Honesty above all</h3><p>What we promise, we deliver. No hidden costs and no vague quotes.</p></div>
-    <div class="row"><h3>Care when you want it</h3><p>Maintenance is optional, at €29 a month. Take it and your site stays safe, up to date and findable, without you having to think about it.</p></div>
-    <div class="row"><h3>Worldwide, built personally</h3><p>We build for businesses wherever their customers are searching. You get the same small team, wherever you are.</p></div>
+  <div class="sec-head"><h2 class="h2">What you can <em>expect</em></h2><p class="sub">The promises behind every project, from the first call to years after launch.</p></div>
+  <div class="vgrid">
+    <div class="rv"><h3>Honesty above all</h3><p>What we promise, we deliver. No hidden costs and no vague quotes.</p></div>
+    <div class="rv"><h3>One fixed contact</h3><p>You have our names and our number. No ticket system, no rotating account managers.</p></div>
+    <div class="rv"><h3>Fair, clear prices</h3><p>A one-page site from €499. Everything else is agreed in a written quote before we start.</p></div>
+    <div class="rv"><h3>Made for phones</h3><p>Every site works on every device, because that is where your customers find you.</p></div>
+    <div class="rv"><h3>Built to be found</h3><p>SEO is part of the build, so Google can find, understand and index your site.</p></div>
+    <div class="rv"><h3>We stay after launch</h3><p>An optional care plan at €29 a month keeps your site safe, current and findable.</p></div>
   </div>
 </div></section>
 
 <section class="sec light" id="team"><div class="wrap">
   <div class="sec-head"><h2 class="h2">Four people, <em>one contact</em></h2><p class="sub">No ticket system and no rotating account managers. This is everyone who works on your website.</p></div>
-  <div class="team four">
-    ${TEAM.map(([f, n, r, i, bio, mail]) => `<figure class="person rv"><div class="portrait"><img src="${B}/img/${f}.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Portrait of ${n}">${i ? `<span class="init" aria-hidden="true">${i}</span>` : ''}</div><figcaption><h3>${n}</h3><p class="role">${r}</p><p class="bio">${bio}</p><p class="mail"><a class="tlink" href="mailto:${mail}">${mail}</a></p></figcaption></figure>`).join('')}
-  </div>
-</div></section>
-
-<section class="sec fog"><div class="wrap">
-  <div class="sec-head"><h2 class="h2">Why <em>DRP BuildLab</em></h2><p class="sub">For businesses that want to be online without the hassle and without surprises.</p></div>
-  <div class="rows">
-    <div class="row"><h3>One fixed contact</h3><p>You have our names and our number, from the first call to years after launch.</p></div>
-    <div class="row"><h3>Fair prices</h3><p>No hidden costs. Agreed in advance, so you know exactly what you pay.</p></div>
-    <div class="row"><h3>Made for phones</h3><p>Every DRP BuildLab site works on every device, because that is where your customers find you.</p></div>
-    <div class="row"><h3>Built to be found</h3><p>SEO is part of the build, so Google can find, understand and index your site.</p></div>
-    <div class="row"><h3>A partner for the long run</h3><p>After launch we are still there. Not a one-off supplier, but a team you keep.</p></div>
+  <div class="tm" id="tm">
+    <div class="tm-list" role="tablist" aria-label="Team members">
+      ${TEAM.map(([f, n], i) => `<button type="button" role="tab" id="tm-t-${f}" aria-controls="tm-p-${f}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}"><span class="tm-n">${n}</span><span class="tm-r">${TEAM_SHORT[f]}</span></button>`).join('')}
+    </div>
+    <div class="tm-panels">
+      ${TEAM.map(([f, n, r, i, bio, mail], k) => `<div class="tm-p${k === 0 ? ' on' : ''}" role="tabpanel" id="tm-p-${f}" aria-labelledby="tm-t-${f}">
+        <div class="tm-photo"><img src="${B}/img/${f}.webp" width="800" height="1000" ${k === 0 ? '' : 'loading="lazy" '}decoding="async" alt="Portrait of ${n}">${i ? `<span class="tm-init" aria-hidden="true">${i}</span>` : ''}</div>
+        <div class="tm-text"><p class="tm-role">${r}</p><h3>${n}</h3><p class="tm-bio">${bio}</p><a class="tlink" href="mailto:${mail}">${mail}</a></div>
+      </div>`).join('')}
+    </div>
   </div>
 </div></section>
 ${ctaBand()}`
@@ -723,6 +741,12 @@ const notFound = page({
   title: 'Page not found | DRP BuildLab', desc: 'This page does not exist.', nav: '',
   body: `${phero({ h1: 'Page not <em>found</em>', lede: 'The page you were looking for does not exist, or it has moved.', acts: `<a class="btn" href="${B}/">Back to the homepage ${arr}</a><a class="btn ghost" href="${B}/contact/">Contact us</a>` })}`
 });
+
+{
+  const css = fs.readFileSync(path.join(OUT, 'assets', 'site.css'), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+  let depth = 0; for (const ch of css) { if (ch === '{') depth++; if (ch === '}') depth--; if (depth < 0) break; }
+  if (depth !== 0) throw new Error('concept/assets/site.css has unbalanced braces (' + depth + '); not building.');
+}
 
 /* ── Write ────────────────────────────────────────────────────────────── */
 for (const [p, html] of Object.entries(pages)) {

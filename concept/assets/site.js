@@ -132,3 +132,27 @@ if (reelBox && vid) {
   };
   addEventListener('scroll', grow, { passive: true }); addEventListener('resize', grow); grow();
 }
+
+/* about: team tabs (click, arrow keys, and hover with a mouse) */
+const tm = $('#tm');
+if (tm) {
+  const tabs = $$('[role="tab"]', tm);
+  const select = (tab, focus) => {
+    tabs.forEach(t => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1;
+      $('#' + t.getAttribute('aria-controls')).classList.toggle('on', on);
+    });
+    if (focus) tab.focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse' && t.getAttribute('aria-selected') !== 'true') select(t); });
+    t.addEventListener('keydown', e => {
+      const k = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+      if (k) { e.preventDefault(); select(tabs[(i + k + tabs.length) % tabs.length], true); }
+      if (e.key === 'Home') { e.preventDefault(); select(tabs[0], true); }
+      if (e.key === 'End') { e.preventDefault(); select(tabs[tabs.length - 1], true); }
+    });
+  });
+}
