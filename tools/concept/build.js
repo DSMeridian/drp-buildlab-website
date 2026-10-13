@@ -373,9 +373,9 @@ pages[''] = page({
 
 <section class="reel-sec" id="reel" aria-label="Showreel">
   <div class="reel" id="reelBox">
-    <video id="reelVid" muted loop playsinline preload="none" poster="${B}/media/reel-poster.webp" data-src-sm="${B}/media/reel-960.mp4" data-src-mp4="${B}/media/reel.mp4" aria-label="Showreel: ${CASES.length} client websites by DRP BuildLab"></video>
+    <video id="reelVid" muted loop playsinline preload="none" poster="${B}/media/reel-poster.webp" data-src-sm="${B}/media/reel-960.mp4" data-src-mp4="${B}/media/reel.mp4" aria-label="Showreel of client websites by DRP BuildLab"></video>
     <div class="reel-ui">
-      <p>Showreel · ${CASES.length} client websites</p>
+      <p>Showreel · Client websites by DRP BuildLab</p>
       <button type="button" class="reel-btn" id="reelBtn" aria-pressed="false">Pause</button>
     </div>
   </div>
@@ -384,7 +384,7 @@ pages[''] = page({
 <section class="sec" id="work"><div class="wrap">
   <div class="sec-head"><h2 class="h2 rv">Our work</h2><p class="sub rv">Real businesses, live right now. Hover a project to scroll through it on desktop and phone, or open it to see what we did.</p></div>
   <div class="cases">${caseRow(caseBy('kasteel-warmelo'), false)}${caseRow(caseBy('one-man-agency'), true)}${caseRow(caseBy('prestige-automotive'), false)}</div>
-  <p class="all-work rv"><a class="btn ghost" href="${B}/werk/">See all ${CASES.length} projects ${arr}</a></p>
+  <p class="all-work rv"><a class="btn ghost" href="${B}/werk/">See all projects ${arr}</a></p>
 </div></section>
 
 <section class="sec light"><div class="wrap stmt-grid">
