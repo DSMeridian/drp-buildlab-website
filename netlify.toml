@@ -11,7 +11,13 @@
 # rule being edited in one place and missed in the other.
 
 [build]
-  publish = "."
+  # The site is the redesign, generated into concept/ by
+  #   node tools/concept/build.js && node tools/concept/localize.js
+  # and committed, like the market pages before it. concept/ carries its own
+  # _redirects and _headers (sources in tools/concept/site/). The old src/
+  # pages and the market folders at the repository root are no longer
+  # published; they stay in git for reference until they are removed.
+  publish = "concept"
 
 # The edge functions are NOT declared here. netlify/edge-functions/ is already
 # where Netlify looks by default, so the setting was redundant -- and it was

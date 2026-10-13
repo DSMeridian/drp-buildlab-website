@@ -111,29 +111,10 @@
 }
 
 /* ─────────────────────────────────────────────
-   THE TEAM  --  not on the page at the moment
+   THE TEAM
 
-   The markup is out of src/over-ons/index.html until the four portraits
-   have been taken. It is not lost: it is on the branch `our-team-section`
-   of the drp-compro remote, with that page as it stood with the section in.
-
-       git checkout our-team-section -- src/over-ons/index.html
-       npm run build
-
-   Everything the section needs is still here and costs nothing without it:
-   the rules below, the team.* keys in all twelve languages in
-   assets/i18n.js, and the block in applyLang() that fills them. Only the
-   markup went, and only because placeholder names reading "Naam
-   Achternaam" in the shipped HTML of thirty-four markets is not a thing to
-   leave lying around while it waits. Comments in src/ are served verbatim,
-   so this note lives here rather than in the page.
-
-
-   Four people, set the way the rest of the site sets a list: hairline rules,
-   a counted number, caps headings. The portraits are placeholders -- a
-   monogram over a drawn bust -- and they are sized and framed exactly as a
-   photograph will be, so replacing one is swapping the contents of .tm-ph
-   for an <img> and nothing else moves. See the note in the markup.
+   Four people, set the way the rest of the site sets a list: hairline
+   rules, a counted number, caps headings, and a portrait in a fixed frame.
 ───────────────────────────────────────────── */
 .team-grid{
   display:grid;
@@ -145,53 +126,28 @@
 .tm{counter-increment:tm;min-width:0}
 
 /* The frame. 4:5 because that is the crop a portrait is taken in, and fixing
-   it here means four photographs of four different shapes still line up
-   along the bottom.
-
-   The ground is flat. The graph paper the page headers are drawn on was
-   tried here and did not survive being repeated four times across a row:
-   at this size it stopped being a backdrop and became the loudest thing in
-   the section. The frames carry a gradient instead, and the crop marks do
-   the work of saying a picture belongs here. */
+   it here means four photographs still line up along the bottom. The
+   photos are shot on white; the hairline is what keeps them from bleeding
+   into the section's ground. */
 .tm-ph{
   position:relative;
   aspect-ratio:4/5;
   border:1px solid var(--line);
-  background:
-    linear-gradient(180deg,rgba(26,31,54,.02) 0%,rgba(26,31,54,.055) 100%),
-    var(--bg2);
+  background:#fff;
   overflow:hidden;
 }
-/* Crop marks in two corners, the way a photograph is marked up for the
-   printer -- the thing that says "a picture belongs here" without a word of
-   copy to translate. They go when a real portrait lands. */
-.tm-ph::before,.tm-ph::after{
-  content:'';position:absolute;width:14px;height:14px;
-  border:1px solid var(--blue);opacity:.55;
-}
-.tm-ph::before{top:10px;left:10px;border-right:0;border-bottom:0}
-.tm-ph::after{bottom:10px;right:10px;border-left:0;border-top:0}
+.tm-ph img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:transform .9s cubic-bezier(.16,1,.3,1),opacity .55s ease}
 
-/* Drop a real photograph in and it fills the same frame -- and covers the
-   crop marks and the figure, because it is painted over both. */
-.tm-ph img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:cover}
-
-/* The placeholder figure. Centred and held to a fraction of the frame, so
-   it stays a small drawing on a large ground instead of growing into a
-   pictogram the size of the card. */
-.tm-fig{
-  position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);
-  width:56%;height:auto;max-width:150px;
+/* On hover a card with a second portrait crossfades to it; one without
+   eases its photo in a little. Hover only, and keyboard focus inside the
+   card counts, so the same thing happens when the email link is tabbed to.
+   The second portrait is laid over the first, so the frame never moves. */
+.tm-ph .tm-alt{position:absolute;inset:0;opacity:0}
+@media(hover:hover){
+  .tm:hover .tm-ph img:only-child{transform:scale(1.05)}
+  .tm:hover .tm-alt{opacity:1}
 }
-
-/* The monogram, bottom-left inside the frame, where a caption would sit. */
-.tm-mono{
-  position:absolute;z-index:2;left:0;bottom:0;
-  padding:.5rem .7rem;
-  font-size:.62rem;font-weight:700;letter-spacing:.2em;
-  color:var(--blue-t);
-  background:var(--bg);
-}
+.tm:focus-within .tm-alt{opacity:1}
 
 .tm-n{
   display:block;margin:1.1rem 0 .5rem;
@@ -210,26 +166,39 @@
 }
 .tm-body{margin-top:.75rem;font-size:.84rem;line-height:1.6;color:var(--muted)}
 
-/* Two up on a tablet, one up on a phone. Four 1fr columns at 600px gives
-   each portrait about 120px, at which point the monogram is wider than the
-   face it sits on. */
+/* The way to reach them, under a hairline so it reads as the card's footer
+   rather than a fourth sentence of bio. The address may break anywhere:
+   dries.de-smedt@drpbuildlab.com is one 30-character word, wider than a
+   phone column at this size. */
+.tm-mail{
+  margin-top:1rem;padding-top:.9rem;border-top:1px solid var(--line);
+  font-size:.8rem;line-height:1.6;color:var(--muted);
+}
+.tm-mail a{color:var(--blue-t);font-weight:600;overflow-wrap:anywhere;text-decoration:none}
+.tm-mail a:hover,.tm-mail a:focus-visible{text-decoration:underline}
+
+/* Four columns need a wide screen for bios this long: two up on a laptop,
+   then below 900px the cards stack, each a portrait beside its text. */
+@media(max-width:1200px){
+  .team-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem clamp(1.4rem,3vw,2.4rem)}
+}
 @media(max-width:900px){
-  .team-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 1.6rem}
+  .team-grid{grid-template-columns:1fr;gap:2.6rem}
+  .tm{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);column-gap:1.8rem;align-items:start}
+  .tm-ph{grid-row:1 / span 6}
+  .tm-n{margin-top:0}
 }
+/* On a phone the portrait goes back on top, cropped wide so a card is not
+   mostly picture, and anchored near the top so the crop keeps the head. */
 @media(max-width:520px){
-  .team-grid{grid-template-columns:1fr;gap:2.4rem}
+  .team-grid{gap:2.4rem}
+  .tm{display:block}
   .tm-ph{aspect-ratio:3/2}
+  .tm-ph img{object-position:50% 8%}
+  .tm-n{margin-top:1.1rem}
 }
 
-/* ── Right to left ───────────────────────────────────────────────────────
-   The drawings read across the page: the partner link runs from the link
-   out to its two ends, the contact drawing puts the site first and the call
-   second. In Arabic that order is back to front, so the whole drawing is
-   mirrored. Safe to do bluntly because none of them contains a glyph -- the
-   one thing a scaleX would reverse. The monogram in a team portrait is
-   text, and it sits outside the SVG.
-
-   Stacked on the float transform rather than replacing it: an animation on
-   the same element would win, so the flip goes on the <svg> and the motion
-   stays on the wrapper. */
-[dir="rtl"] .phero-art svg{transform:scaleX(-1)}
+/* The founders together, in the About section's left column above the line
+   they sign. Same treatment as a portrait frame: white ground, hairline. */
+.ab-photo{margin:0 0 2.6rem;border:1px solid var(--line);background:#fff}
+.ab-photo img{display:block;width:100%;height:auto}

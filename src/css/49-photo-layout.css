@@ -1,0 +1,349 @@
+/* ─────────────────────────────────────────────
+   PHOTO LAYOUT -- Home and About, told in pictures
+
+   The two most-visited pages, rebuilt around photography the way the
+   [IMPACT] site is: a full-bleed photo behind each headline, a strip of
+   the businesses we build for, photo cards for the steps, and the reasons
+   on About as a carousel with a counter. DRP blue, the existing type.
+
+   The photos are Unsplash, under the Unsplash License (free to use, no
+   attribution required); who took each one is in docs/photo-credits.md.
+
+   Motion lives behind html.ph-motion, which app.js (PHOTO MOTION) sets
+   only when the visitor has not asked for reduced motion. Without it --
+   reduced motion, no JavaScript, or the prerendered HTML -- every photo is
+   simply in place and still.
+
+   Placement in the cascade: last, because it overrides the hero (07, 40),
+   the steps (13), the why grid (15, 37), the social card (19) and the page
+   header (39, 41, 44), including their breakpoints in 26.
+───────────────────────────────────────────── */
+
+/* ── Full-bleed header photos: home hero, About header ───────────────── */
+.hero-media,.phero-media,.cta-media{
+  position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;
+}
+/* Taller than the frame by a fifth, so the parallax drift never shows an
+   edge. --py is written by app.js; it is 0 without motion. */
+.hero-media img,.phero-media img,.cta-media img{
+  position:absolute;left:0;top:-10%;
+  width:100%;height:120%;object-fit:cover;
+  transform:translate3d(0,var(--py,0px),0);
+}
+.hero-media img{object-position:68% 35%}
+.phero-media img{object-position:62% 30%}
+.cta-media img{object-position:50% 50%}
+
+/* The shade that makes white type readable over any photo: dark from the
+   side the headline is on, and from the bottom where the buttons sit. */
+.hero-media::after,.phero-media::after,.cta-media::after{
+  content:'';position:absolute;inset:0;
+}
+.hero-media::after,.phero-media::after{
+  background:
+    linear-gradient(90deg,rgba(6,9,20,.9) 0%,rgba(6,9,20,.66) 42%,rgba(6,9,20,.22) 100%),
+    linear-gradient(0deg,rgba(6,9,20,.78) 0%,rgba(6,9,20,0) 46%);
+}
+[dir="rtl"] .hero-media::after,[dir="rtl"] .phero-media::after{
+  background:
+    linear-gradient(270deg,rgba(6,9,20,.9) 0%,rgba(6,9,20,.66) 42%,rgba(6,9,20,.22) 100%),
+    linear-gradient(0deg,rgba(6,9,20,.78) 0%,rgba(6,9,20,0) 46%);
+}
+.cta-media::after{background:rgba(6,9,20,.74)}
+
+/* Slow settle on arrival: the frame starts a tenth too large and eases
+   back once the photo has loaded. On the wrapper, so it never fights the
+   parallax on the image inside it. */
+html.ph-motion .hero-media,html.ph-motion .phero-media{
+  transform:scale(1.1);
+  transition:transform 2.4s cubic-bezier(.16,1,.3,1);
+}
+html.ph-motion .hero-media.ph-in,html.ph-motion .phero-media.ph-in{transform:none}
+
+/* On a wide screen the photo takes the right of the frame and fades into
+   the black behind the headline, the way the lattice used to sit: full
+   width, the headline covered the faces. Below 900px it goes back to full
+   bleed under a darker shade (see the end of this file). The top of the
+   photo is kept clear of the fixed navigation, where faces would be cut. */
+@media(min-width:901px){
+  /* The frame stays full width and the shade with it, so the black
+     behind the headline is one surface; only the photo moves right. */
+  .hero-media img,.phero-media img{left:36%;width:64%;top:4%;height:112%;object-position:50% 0%}
+  [dir="rtl"] .hero-media img,[dir="rtl"] .phero-media img{left:0}
+  /* The photo's inner edge dissolves rather than ends: at 36% the shade is
+     not yet fully opaque, and a bright photo (paper, a window) drew a
+     hard vertical line there. */
+  .hero-media img,.phero-media img{
+    -webkit-mask-image:linear-gradient(to right,transparent 0,#000 18%);
+            mask-image:linear-gradient(to right,transparent 0,#000 18%);
+  }
+  [dir="rtl"] .hero-media img,[dir="rtl"] .phero-media img{
+    -webkit-mask-image:linear-gradient(to left,transparent 0,#000 18%);
+            mask-image:linear-gradient(to left,transparent 0,#000 18%);
+  }
+  .hero-media::after,.phero-media::after{
+    background:
+      linear-gradient(90deg,#000 0%,#000 35%,rgba(0,0,0,.7) 46%,rgba(0,0,0,.18) 72%,rgba(0,0,0,.06) 100%),
+      linear-gradient(0deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,0) 38%);
+  }
+  [dir="rtl"] .hero-media::after,[dir="rtl"] .phero-media::after{
+    background:
+      linear-gradient(270deg,#000 0%,#000 35%,rgba(0,0,0,.7) 46%,rgba(0,0,0,.18) 72%,rgba(0,0,0,.06) 100%),
+      linear-gradient(0deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,0) 38%);
+  }
+}
+
+/* The 3D lattice's canvas is gone, and the hero text sits over the photo. */
+.hero .hero-content,.hero .shint{z-index:2}
+.hero .h-light{color:rgba(255,255,255,.78)}
+.hero .trust li{color:rgba(255,255,255,.9)}
+
+/* The About header: a photo band rather than type on black. */
+.phero.has-media{
+  position:relative;
+  min-height:min(80vh,760px);
+  display:flex;align-items:flex-end;
+}
+.phero.has-media .phero-grid{
+  position:relative;z-index:1;width:100%;
+  grid-template-columns:minmax(0,1fr);
+}
+.phero.has-media .phero-copy{max-width:780px}
+.phero.has-media .phero-h1{font-size:clamp(2.6rem,6.4vw,5.6rem)}
+.phero.has-media .phero-sub{color:rgba(255,255,255,.82)}
+
+/* The closing call to action, over a café at closing time. */
+.ctastrip.has-media{position:relative;overflow:hidden;isolation:isolate}
+.ctastrip.has-media > :not(.cta-media){position:relative;z-index:1}
+.ctastrip.has-media .ssub{color:rgba(255,255,255,.82)}
+
+/* ── Photo strip ─────────────────────────────────────────────────────────
+   One set of photos written twice; the track slides exactly one set to
+   the left and starts again. The spacing is a margin on every photo rather
+   than a gap, so half the track is exactly one set including its spacing
+   and the loop has no jump. Left-to-right in every language: it carries
+   no reading order. */
+.ph-strip{
+  overflow:hidden;direction:ltr;
+  background:#000;padding:14px 0;
+}
+.ph-track{display:flex;width:max-content}
+.ph-track img{
+  display:block;flex:none;
+  height:clamp(150px,17vw,250px);width:auto;aspect-ratio:3/2;object-fit:cover;
+  margin-right:14px;
+  filter:saturate(.92);
+  transition:filter .5s;
+}
+.ph-track img:hover{filter:saturate(1.08)}
+html.ph-motion .ph-track{animation:phStrip 70s linear infinite}
+html.ph-motion .ph-strip:hover .ph-track{animation-play-state:paused}
+@keyframes phStrip{to{transform:translate3d(-50%,0,0)}}
+
+/* ── Wipe-in, for photos inside the page ─────────────────────────────────
+   The photo opens from the bottom edge of its frame while it settles from
+   a slight zoom. Hover then eases the same photo in a little.
+
+   The clip is on the photo, not on the frame, on purpose: Chrome measures
+   an IntersectionObserver target after its own clip-path, so a frame
+   clipped shut reports 0% visible forever and never opens. Clipping the
+   child leaves the frame -- the observed element -- whole. */
+.ph-rv,.w-ph,.s-ph,.soc-ph{overflow:hidden}
+.ph-rv img,.w-ph img{transition:transform .9s cubic-bezier(.16,1,.3,1)}
+html.ph-motion .ph-rv img,html.ph-motion .w-ph img{
+  clip-path:inset(100% 0 0 0);transform:scale(1.18);
+  transition:clip-path 1.1s cubic-bezier(.77,0,.18,1),transform 1.5s cubic-bezier(.16,1,.3,1);
+}
+html.ph-motion .ph-rv.ph-in img,html.ph-motion .w-ph.ph-in img{clip-path:inset(0 0 0 0);transform:none}
+@media(hover:hover){
+  .srow:hover .s-ph img,.wcard:hover .w-ph img,.soc-ph:hover img,.prt-shot:hover img{transform:scale(1.05);transition-duration:.9s}
+}
+
+/* ── How it works: four photo cards ──────────────────────────────────────
+   Was four ruled rows. The classes stay -- applyLang fills .stitle, .stxt
+   and .stime by them -- and each row becomes a card with its photo on top. */
+.steps{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(1rem,1.6vw,1.6rem);
+}
+.srow,.srow:first-child{
+  display:flex;flex-direction:column;
+  padding:0;border:1px solid var(--line);
+  background:var(--bg);
+  grid-template-columns:none;gap:0;
+}
+.srow::before{display:none}
+.s-ph{aspect-ratio:4/3;background:var(--bg3)}
+.s-ph img{display:block;width:100%;height:100%;object-fit:cover}
+.srow .sn{padding:1.3rem 1.5rem 0}
+.srow .sbody{padding:.6rem 1.5rem 0}
+.srow .stxt{max-width:none}
+.srow .stime{
+  margin-top:auto;padding:1.2rem 1.5rem 1.4rem;text-align:start;opacity:.7;
+}
+@media(max-width:1100px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.steps{grid-template-columns:minmax(0,1fr)}}
+
+/* ── Partners: the shots ease in on hover like every other photo ─────── */
+.prt-shot{display:block;overflow:hidden}
+.prt-shot img{transition:transform .9s cubic-bezier(.16,1,.3,1)}
+
+/* ── Social: a photo where the blue DRP block was ────────────────────── */
+.soc-ph{
+  position:relative;max-width:480px;aspect-ratio:4/5;
+  background:var(--bg3);
+}
+.soc-ph img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.soc-tag{
+  position:absolute;left:0;bottom:0;z-index:1;
+  padding:.65rem 1rem;
+  background:var(--blue-d);color:#fff;
+  font-size:.7rem;font-weight:700;letter-spacing:.12em;
+}
+[dir="rtl"] .soc-tag{left:auto;right:0}
+
+/* ── About: the reasons as a carousel ────────────────────────────────────
+   A row of cards that scrolls sideways and snaps, bleeding off the right
+   edge so the next card always shows. Arrows, counter and bar sit above
+   and below; they are hidden until app.js has wired them. */
+.car-ctl{display:flex;align-items:center;gap:.7rem;margin-top:2.8rem}
+.car-ctl[hidden]{display:none}
+.car-count{
+  margin-inline-end:auto;
+  font-size:.72rem;font-weight:700;letter-spacing:.2em;
+  font-variant-numeric:tabular-nums;color:var(--muted2);
+}
+.car-count b{color:var(--ink)}
+.car-btn{
+  width:48px;height:48px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid var(--line-b);background:transparent;color:var(--ink);
+  cursor:pointer;transition:background .25s,border-color .25s,opacity .25s;
+}
+.car-btn svg{width:20px;height:20px}
+[dir="rtl"] .car-btn svg{transform:scaleX(-1)}
+.car-btn:hover:not(:disabled){background:var(--blue-d);border-color:var(--blue-d);color:#fff}
+.car-btn:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.car-btn:disabled{opacity:.3;cursor:default}
+
+.wgrid.car-track,.dark .wgrid.car-track{
+  display:grid;grid-auto-flow:column;
+  grid-template-columns:none;grid-auto-columns:min(400px,82vw);
+  gap:clamp(1rem,1.6vw,1.5rem);
+  margin:1.4rem -5vw 0 0;padding:0 5vw 6px 0;
+  background:none;border:0;
+  overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory;scrollbar-width:none;
+}
+[dir="rtl"] .wgrid.car-track{margin:1.4rem 0 0 -5vw;padding:0 0 6px 5vw}
+.car-track::-webkit-scrollbar{display:none}
+.car-track:focus-visible{outline:2px solid var(--blue);outline-offset:6px}
+@media(pointer:fine){.car-track{cursor:grab}}
+.car-track.dragging{cursor:grabbing;scroll-snap-type:none;user-select:none}
+.car-track img{-webkit-user-drag:none;user-select:none}
+
+/* The number 39-editorial.css draws above every why card moves below the
+   photo: a flex order on the pseudo-element, the photo first. */
+.car-track .wcard::before{order:1;margin:1.4rem 1.6rem .9rem}
+.car-track .wcard > *{order:2}
+.car-track .wcard > .w-ph{order:0}
+.car-track .wcard,.dark .car-track .wcard{
+  scroll-snap-align:start;
+  display:flex;flex-direction:column;
+  padding:0;
+  background:rgba(255,255,255,.035);
+  border:1px solid var(--line);
+}
+.dark .car-track .wcard:hover{background:rgba(255,255,255,.06)}
+.w-ph{aspect-ratio:4/3;background:var(--bg3)}
+.w-ph img{display:block;width:100%;height:100%;object-fit:cover}
+.car-track .wico{margin:1.5rem 1.6rem 1rem}
+.car-track .wtitle{padding:0 1.6rem;font-size:1.05rem}
+.car-track .wbody{padding:0 1.6rem 1.9rem}
+
+.car-bar{height:2px;margin-top:2rem;background:var(--line)}
+.car-bar span{
+  display:block;height:100%;background:var(--blue);
+  transform:scaleX(.1667);transform-origin:left;
+  transition:transform .5s cubic-bezier(.16,1,.3,1);
+}
+[dir="rtl"] .car-bar span{transform-origin:right}
+
+/* ── Phones ──────────────────────────────────────────────────────────── */
+@media(max-width:900px){
+  .hero-media img{object-position:72% 30%}
+  .hero-media::after,[dir="rtl"] .hero-media::after{
+    background:linear-gradient(0deg,rgba(6,9,20,.92) 0%,rgba(6,9,20,.7) 45%,rgba(6,9,20,.35) 100%);
+  }
+  .phero.has-media{min-height:min(70vh,620px)}
+  .phero-media::after,[dir="rtl"] .phero-media::after{
+    background:linear-gradient(0deg,rgba(6,9,20,.92) 0%,rgba(6,9,20,.6) 50%,rgba(6,9,20,.3) 100%);
+  }
+  .soc-ph{max-width:none;aspect-ratio:4/3}
+  .car-ctl{margin-top:2rem}
+}
+
+/* ── About header: the founders, full screen ─────────────────────────────
+   The image is a finished scene (see the note in the markup): lit, graded
+   and vignetted to pure black at every edge. So it needs no shade, glow or
+   filter here, and it never has to fill the frame -- it is pinned to the
+   bottom corner on the founders' side and the header's own black does the
+   rest, at any screen shape.
+
+   Its height is capped at 52vw so the group stays clear of the headline
+   column from a 4:3 laptop up to a wide monitor. The header itself is not
+   flat black -- it carries the faint grid and grain of every dark section
+   -- so the image's own top and inner edges are masked to transparent,
+   and the scene dissolves into that texture instead of ending on a line. */
+.phero.phero-full{min-height:100vh;min-height:100svh;align-items:center}
+.phero-media.phero-scene::after{display:none}
+.phero-scene picture{display:contents}
+.phero-scene .ph-rtl{display:none}
+[dir="rtl"] .phero-scene .ph-ltr{display:none}
+[dir="rtl"] .phero-scene .ph-rtl{display:contents}
+.phero-media.phero-scene img{
+  position:absolute;top:auto;bottom:0;right:0;left:auto;
+  width:auto;height:min(100%,52vw);max-width:none;
+  object-fit:contain;transform:none;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 24%),linear-gradient(to right,transparent 0,#000 22%);
+  -webkit-mask-composite:source-in;
+          mask-image:linear-gradient(to bottom,transparent 0,#000 24%),linear-gradient(to right,transparent 0,#000 22%);
+          mask-composite:intersect;
+}
+[dir="rtl"] .phero-media.phero-scene img{
+  right:auto;left:0;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 24%),linear-gradient(to left,transparent 0,#000 22%);
+          mask-image:linear-gradient(to bottom,transparent 0,#000 24%),linear-gradient(to left,transparent 0,#000 22%);
+}
+.phero.phero-full .phero-copy{max-width:min(620px,36vw)}
+.phero.phero-full .phero-h1{font-size:clamp(2.4rem,4.8vw,5.2rem)}
+@media(max-width:900px){
+  .phero.phero-full{align-items:flex-start;padding-top:7.5rem}
+  .phero.phero-full .phero-copy{max-width:none}
+  .phero.phero-full .phero-h1{font-size:clamp(2.2rem,10vw,3.6rem)}
+  .phero-media.phero-scene img,[dir="rtl"] .phero-media.phero-scene img{
+    left:0;right:0;width:100%;height:auto;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 30%);
+            mask-image:linear-gradient(to bottom,transparent 0,#000 30%);
+  }
+}
+
+/* ── Prijzen, Contact, Partner worden: full-screen photo headers ─────────
+   The same full-screen header as About, with an ordinary photo of the
+   work instead of the founders' scene: it fills the right of the frame
+   under the shade every header photo gets (.phero-media above), and the
+   headline column is wider than About's, because these headlines are
+   longer -- "Faire Preise, keine Überraschungen" has to fit in caps.
+   Each photo is held on its subject with object-position. */
+.phero.phero-full.phero-photo .phero-copy{max-width:min(680px,44vw)}
+.phero.phero-full.phero-photo .phero-h1{font-size:clamp(2.4rem,4.4vw,5rem)}
+.phero-photo .phero-media img[src*="web-prijzen"]{object-position:68% 40%}
+.phero-photo .phero-media img[src*="web-contact"]{object-position:60% 45%}
+.phero-photo .phero-media img[src*="web-partner"]{object-position:55% 30%}
+@media(max-width:900px){
+  /* On a phone the photo fills the screen and is darkest at the bottom,
+     so the headline sits there rather than at the top. */
+  .phero.phero-full.phero-photo{align-items:flex-end;padding-top:6rem;padding-bottom:3.5rem}
+  .phero.phero-full.phero-photo .phero-copy{max-width:none}
+  .phero.phero-full.phero-photo .phero-h1{font-size:clamp(2.1rem,9.4vw,3.4rem)}
+}

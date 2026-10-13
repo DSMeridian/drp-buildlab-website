@@ -515,9 +515,9 @@ function marketSchema(html, code) {
    * Dutch in src and the schema quietly stops being translated. */
   if (html.includes('"@type": "ProfessionalService"')) {
   setJson('description', tr('meta.desc'),
-    'DRP BuildLab ontwerpt en bouwt websites volledig op maat voor lokale ondernemers in België. Beginnerspakket vanaf €499 of quotatie op maat voor geavanceerde projecten — met optioneel maandelijks onderhoud vanaf €29 per maand.');
+    'DRP BuildLab ontwerpt en bouwt websites volledig op maat voor ondernemers, waar ter wereld ze ook zitten. Beginnerspakket vanaf €499 of quotatie op maat voor geavanceerde projecten — met optioneel maandelijks onderhoud vanaf €29 per maand.');
   setJson('description', tr('meta.desc'),
-    'Websites op maat voor lokale ondernemers in België.');
+    'Websites op maat voor ondernemers wereldwijd.');
   setJson('alternateName', 'DRP BuildLab — ' + plain(tr('ab.logotag')),
     'DRP BuildLab — Webdesign op maat');
 

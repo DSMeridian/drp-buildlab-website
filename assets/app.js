@@ -786,11 +786,13 @@ function applyLang(lang,persist){
     const pl=ab.querySelectorAll('.pillar'); t['ab.pillars'].forEach((p,i)=>{ if(!pl[i]) return; const pt=pl[i].querySelector('.ptitle');if(pt)pt.textContent=p.t; const pb=pl[i].querySelector('.pbody');if(pb)pb.textContent=p.b; });
   }
   /* ── The team ─────────────────────────────────────────────────────────
-     Every lookup is guarded, the way the partner programme's are: the four
-     entries are placeholders and were written in Dutch and English only, so
-     on the other ten languages the section keeps the words it was
-     prerendered with rather than emptying itself. The names are not
-     translated on purpose -- a person's name is the same in every market. */
+     Every lookup is guarded, the way the partner programme's are, so a
+     language missing a key keeps the words the page was prerendered with
+     rather than emptying itself. Name, role and address are not translated
+     on purpose: they are the same in every market, so they live in the
+     markup. The contact line carries {mail}, which becomes the link to the
+     address on the card's data-mail -- the sentence moves around it from
+     language to language ("…までご連絡ください" puts it first). */
   const tmw=document.getElementById('team');
   if(tmw){
     const tt=tmw.querySelector('.stag'); if(tt&&t['team.tag']) tt.textContent=t['team.tag'];
@@ -799,8 +801,9 @@ function applyLang(lang,persist){
     const tc=tmw.querySelectorAll('.tm');
     (t['team.members']||[]).forEach((p,i)=>{
       if(!tc[i]) return;
-      const r=tc[i].querySelector('.tm-role'); if(r) r.innerHTML=p.r;
-      const b=tc[i].querySelector('.tm-body'); if(b) b.innerHTML=p.b;
+      const b=tc[i].querySelector('.tm-body'); if(b&&p.b) b.textContent=p.b;
+      const c=tc[i].querySelector('.tm-mail'), m=tc[i].dataset.mail;
+      if(c&&p.c&&m) c.innerHTML=p.c.replace('{mail}','<a href="mailto:'+m+'" dir="ltr">'+m+'</a>');
     });
   }
   const wy=document.getElementById('waarom');
@@ -809,6 +812,8 @@ function applyLang(lang,persist){
     const wh=wy.querySelector('.sh'); if(wh){resetSh(wh);wh.textContent=t['why.h2'];}
     const ws=wy.querySelector('.ssub'); if(ws) ws.textContent=t['why.sub'];
     const wc=wy.querySelectorAll('.wcard'); t['why.cards'].forEach((c,i)=>{ if(!wc[i]) return; const wtt=wc[i].querySelector('.wtitle');if(wtt)wtt.textContent=c.t; const wb=wc[i].querySelector('.wbody');if(wb)wb.textContent=c.b; });
+    const cp=wy.querySelector('.car-prev'); if(cp&&t['car.prev']) cp.setAttribute('aria-label',t['car.prev']);
+    const cn=wy.querySelector('.car-next'); if(cn&&t['car.next']) cn.setAttribute('aria-label',t['car.next']);
   }
   qsa('.opt-title').forEach((el,i)=>{ const p=t['opp.pts'][i]; if(p) el.textContent=p.t; });
   qsa('.opt-body').forEach((el,i)=>{ const p=t['opp.pts'][i]; if(p) el.textContent=p.b; });
@@ -1117,7 +1122,11 @@ function pickLang(marketLang){
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const MAX = 6;   // degrees at the corner
+  /* Not the why cards inside a carousel: a card leaning toward the pointer
+     while the row under it is dragged sideways reads as two motions
+     fighting. */
   document.querySelectorAll('.wcard,.plan,.prt,.opp-box').forEach(function(el){
+    if(el.closest('.car-track')) return;
     el.classList.add('tilt');
     let queued = false, px = 0, py = 0;
 
@@ -1143,4 +1152,165 @@ function pickLang(marketLang){
       el.style.setProperty('--ry','0deg');
     });
   });
+})();
+
+/* ══════════════════════════════════════════
+   PHOTO MOTION
+   The image-led sections on Home and About: photos that wipe in as they
+   arrive, drift against the scroll, and the why-carousel's arrows, counter
+   and bar. See src/css/49-photo-layout.css.
+
+   Everything that moves is opt-in through html.ph-motion, which is only
+   set when the visitor has not asked for reduced motion. prerender.js
+   renders with reducedMotion 'reduce', so none of it is ever baked into
+   the committed HTML: without the class the photos are simply there, still.
+══════════════════════════════════════════ */
+(function photoMotion(){
+  const still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* The carousel works with or without motion: it is the visitor's own
+     navigation. Only its smooth scrolling depends on the preference. */
+  document.querySelectorAll('.car').forEach(function(sec){
+    const track = sec.querySelector('.car-track');
+    const ctl = sec.querySelector('.car-ctl');
+    if(!track || !ctl) return;
+    const cards = Array.prototype.slice.call(track.children);
+    const count = ctl.querySelector('.car-count b');
+    const total = ctl.querySelector('.car-count');
+    const bar = sec.querySelector('.car-bar span');
+    const prev = ctl.querySelector('.car-prev'), next = ctl.querySelector('.car-next');
+    const pad = function(n){ return (n < 10 ? '0' : '') + n; };
+    if(total) total.lastChild.textContent = ' / ' + pad(cards.length);
+    ctl.hidden = false;
+    const rtl = function(){ return getComputedStyle(track).direction === 'rtl'; };
+
+    /* Which card is at the start edge. Measured against the track rather
+       than read off scrollLeft, because scrollLeft runs negative in a
+       right-to-left page. */
+    function current(){
+      const tb = track.getBoundingClientRect();
+      const r = rtl();
+      let best = 0, bestD = Infinity;
+      cards.forEach(function(c, i){
+        const b = c.getBoundingClientRect();
+        const d = Math.abs(r ? tb.right - b.right : b.left - tb.left);
+        if(d < bestD){ bestD = d; best = i; }
+      });
+      return best;
+    }
+    let queued = false;
+    function update(){
+      queued = false;
+      const max = track.scrollWidth - track.clientWidth;
+      const pos = Math.abs(track.scrollLeft);
+      /* At the far end the last card cannot reach the start edge, so the
+         counter would stop short of 06; count the end as the last card. */
+      const i = pos > max - 4 ? cards.length - 1 : current();
+      if(count) count.textContent = pad(i + 1);
+      if(bar) bar.style.transform = 'scaleX(' + ((i + 1) / cards.length).toFixed(3) + ')';
+      prev.disabled = pos < 4;
+      next.disabled = pos > max - 4;
+    }
+    /* A second click while the first is still gliding counts from where
+       the first one is going, not from where the row happens to be. */
+    let target = null, settle = 0;
+    function go(step){
+      const from = target === null ? current() : target;
+      const i = Math.min(cards.length - 1, Math.max(0, from + step));
+      target = i;
+      /* Scrolls the row only. scrollIntoView would also scroll every
+         ancestor that can move, and the page itself can be scrolled
+         sideways by script even with overflow hidden -- the whole section
+         slid left by the row's bleed on the first click. */
+      const tb = track.getBoundingClientRect(), cb = cards[i].getBoundingClientRect();
+      const d = rtl() ? cb.right - tb.right : cb.left - tb.left;
+      track.scrollBy({ left: d, behavior: still ? 'auto' : 'smooth' });
+      clearTimeout(settle); settle = setTimeout(function(){ target = null; }, 700);
+    }
+    prev.addEventListener('click', function(){ go(-1); });
+    next.addEventListener('click', function(){ go(1); });
+    track.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowRight'){ e.preventDefault(); go(rtl() ? -1 : 1); }
+      if(e.key === 'ArrowLeft'){ e.preventDefault(); go(rtl() ? 1 : -1); }
+    });
+    track.addEventListener('scroll', function(){
+      if(!queued){ queued = true; requestAnimationFrame(update); }
+      if(target !== null){ clearTimeout(settle); settle = setTimeout(function(){ target = null; }, 160); }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+
+    /* Drag with a mouse, the way the reference does. Touch already scrolls
+       natively; this only takes over for a mouse, and a drag that moved
+       more than a few pixels swallows the click that ends it. */
+    let down = false, x0 = 0, s0 = 0, moved = false;
+    track.addEventListener('pointerdown', function(e){
+      if(e.pointerType !== 'mouse' || e.button !== 0) return;
+      down = true; moved = false; x0 = e.clientX; s0 = track.scrollLeft;
+      track.classList.add('dragging');
+    });
+    window.addEventListener('pointermove', function(e){
+      if(!down) return;
+      const dx = e.clientX - x0;
+      if(Math.abs(dx) > 4) moved = true;
+      track.scrollLeft = s0 - dx;
+    });
+    window.addEventListener('pointerup', function(){
+      if(!down) return;
+      down = false;
+      track.classList.remove('dragging');
+      if(moved) go(0);
+    });
+    track.addEventListener('click', function(e){
+      if(moved){ e.preventDefault(); e.stopPropagation(); moved = false; }
+    }, true);
+    track.addEventListener('dragstart', function(e){ e.preventDefault(); });
+    update();
+  });
+
+  if(still) return;
+  document.documentElement.classList.add('ph-motion');
+
+  /* Wipe-in: the frame opens from the bottom and the photo settles from a
+     slight zoom. Once per photo, then the observer lets it go. */
+  const wipe = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('ph-in'); wipe.unobserve(e.target); }
+    });
+  }, { threshold: .18, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.ph-rv,.w-ph').forEach(function(el){ wipe.observe(el); });
+
+  /* The header photos settle from a slow zoom once they have loaded, so a
+     half-decoded image is never what moves. */
+  document.querySelectorAll('.hero-media img,.phero-media img').forEach(function(img){
+    const on = function(){ img.parentNode.classList.add('ph-in'); };
+    if(img.complete) on(); else { img.addEventListener('load', on); img.addEventListener('error', on); }
+  });
+
+  /* Parallax: each [data-parallax] photo drifts by that fraction of how far
+     its frame is from the middle of the screen. Only while on screen, and
+     all of them in one animation frame. */
+  const items = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
+  if(!items.length) return;
+  const live = new Set();
+  let raf = 0;
+  function frame(){
+    raf = 0;
+    const vh = window.innerHeight;
+    live.forEach(function(img){
+      const b = img.parentNode.getBoundingClientRect();
+      const off = (b.top + b.height / 2) - vh / 2;
+      img.style.setProperty('--py', (-off * parseFloat(img.dataset.parallax)).toFixed(1) + 'px');
+    });
+  }
+  function tick(){ if(!raf) raf = requestAnimationFrame(frame); }
+  const seen = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      const img = e.target.querySelector('[data-parallax]');
+      if(e.isIntersecting) live.add(img); else live.delete(img);
+    });
+    tick();
+  });
+  items.forEach(function(img){ seen.observe(img.parentNode); });
+  window.addEventListener('scroll', tick, { passive: true });
+  window.addEventListener('resize', tick);
 })();

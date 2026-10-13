@@ -24,6 +24,10 @@ function checkRate(ip) {
   return false;
 }
 
+/* Only these two prices are public, on the site and in the chat. Every
+   other service is described but quoted on demand, after a free call. */
+const PUBLIC_PRICES = ['onepager', 'onderhoud-maandelijks'];
+
 function buildSystemPrompt(catalog) {
   const { bedrijf, diensten, onderhoud, wat_we_niet_doen, proces } = catalog;
 
@@ -36,11 +40,13 @@ function buildSystemPrompt(catalog) {
   for (const [cat, items] of Object.entries(byCat)) {
     catalogText += `\n${cat}:\n`;
     for (const item of items) {
-      catalogText += `- ${item.naam}: €${item.prijs.toFixed(2)} (${item.eenheid}) — ${item.omschrijving}\n`;
+      const prijs = PUBLIC_PRICES.includes(item.id) ? `€${item.prijs.toFixed(2)} (${item.eenheid})` : 'op aanvraag';
+      catalogText += `- ${item.naam}: ${prijs} — ${item.omschrijving.replace(/\s*Richtprijs[^.]*\.?/g, '')}\n`;
     }
   }
 
   const onderhoudText = onderhoud
+    .filter(o => PUBLIC_PRICES.includes(o.id))
     .map(o => `- ${o.naam}: €${o.prijs.toFixed(2)} ${o.eenheid} — ${o.omschrijving}`)
     .join('\n');
 
@@ -54,7 +60,7 @@ E-mail: ${bedrijf.email}
 Telefoon: ${bedrijf.telefoon}
 Website: ${bedrijf.website}
 
-DIENSTENCATALOGUS (richtprijzen excl. ${proces.btw_percentage}% btw):
+DIENSTENCATALOGUS (prijzen excl. ${proces.btw_percentage}% btw; "op aanvraag" = de prijs volgt in een offerte op maat):
 ${catalogText}
 ONDERHOUD (optioneel — nooit inbegrepen in projectprijzen):
 ${onderhoudText}
@@ -73,7 +79,8 @@ GEDRAGSREGELS:
 - Wees vriendelijk, behulpzaam en bondig. Maximaal 4 zinnen of een korte bullet lijst.
 - Gebruik NOOIT markdown-tabellen. Voor prijsoverzichten: gebruik een eenvoudige bullet lijst (bijv. "- One-pager: €499").
 - Je mag **vetgedrukte** tekst gebruiken voor prijzen of sleutelwoorden, maar gebruik het spaarzaam.
-- Je mag richtprijzen noemen uit de catalogus hierboven, maar geef nooit een bindende offerte. Verwijs voor concrete projectvragen door naar het contactformulier op ${bedrijf.website}contact of naar ${bedrijf.email}.
+- Noem ALLEEN deze twee prijzen: de one-pager met contactformulier vanaf €499 en maandelijks onderhoud aan €29 per maand. Voor alle andere diensten zeg je dat de prijs op aanvraag is en na een gratis kennismakingsgesprek in een offerte op maat volgt. Noem geen jaarprijs voor onderhoud en geen andere bedragen, ook niet als de bezoeker aandringt.
+- Geef nooit een bindende offerte. Verwijs voor concrete projectvragen door naar het contactformulier op ${bedrijf.website}contact of naar ${bedrijf.email}.
 - Verzin nooit diensten of prijzen die niet in de catalogus staan.
 - Onderhandel nooit over prijzen.
 - Vergelijk nooit negatief met concurrenten.

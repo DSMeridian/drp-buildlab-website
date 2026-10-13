@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Block nothing — we want full indexing
+Disallow:
+
+# Sitemap location
+Sitemap: https://drpbuildlab.com/sitemap.xml
+
+# Host
+Host: https://drpbuildlab.com
