@@ -1955,10 +1955,6 @@
   "en": "<span translate=\"no\">Honingstraat 1D<br>2220 Hallaar,</span> Belgium",
   "t": "<span translate=\"no\">Honingstraat 1D<br>2220 Hallaar,</span> België"
  },
- "4481ebc7379a0683": {
-  "en": "Monday to Friday, 9:00 to 18:00<br><a href=\"tel:+32473744431\" translate=\"no\">+32 473 74 44 31</a>",
-  "t": "Maandag tot en met vrijdag, van 9.00 tot 18.00<br>uur <a href=\"tel:+32473744431\" translate=\"no\">+32 473 74 44 31</a>"
- },
  "99946bc775b53baf": {
   "en": "Terms",
   "t": "Voorwaarden"
@@ -2474,5 +2470,17 @@
  "11e32ce8b809b40b": {
   "en": "A one-page website from €499, everything else on demand. Optional maintenance plan at €29 a month.",
   "t": "Een website van één pagina vanaf € 499, al het overige op aanvraag. Optioneel onderhoudspakket voor € 29 per maand."
+ },
+ "73ea2e0637dadfad": {
+  "en": "Monday to Friday, 9:00 to 18:00",
+  "t": "Maandag tot en met vrijdag, van 9.00 tot 18.00 uur"
+ },
+ "d9950c3eccd548e9": {
+  "en": "Bank transfer",
+  "t": "Bankoverschrijving"
+ },
+ "e3483f0be12820b1": {
+  "en": "Bank transfer",
+  "t": "Bankoverschrijving"
  }
 }

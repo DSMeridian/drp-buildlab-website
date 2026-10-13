@@ -451,10 +451,6 @@
   "en": "<span translate=\"no\">Honingstraat 1D<br>2220 Hallaar,</span> Belgium",
   "t": "<span translate=\"no\">Honingstraat 1D<br>2220 Hallaar,</span> Belgique"
  },
- "4481ebc7379a0683": {
-  "en": "Monday to Friday, 9:00 to 18:00<br><a href=\"tel:+32473744431\" translate=\"no\">+32 473 74 44 31</a>",
-  "t": "Du lundi au vendredi, de 9 h à 18 h<br><a href=\"tel:+32473744431\" translate=\"no\">+32 473 74 44 31</a>"
- },
  "e92550d91d8a8cdd": {
   "en": "We accept",
   "t": "Nous acceptons"
@@ -2474,5 +2470,17 @@
  "08571ddf1801a625": {
   "en": "A website for Kato Vermeulen’s moving support for seniors: the interior design, the move and everything in between, as one personal journey.",
   "t": "Un site web consacré au service d'aide au déménagement pour seniors proposé par Kato Vermeulen : l'aménagement intérieur, le déménagement et tout ce qui se trouve entre les deux, le tout considéré comme un parcours personnel."
+ },
+ "73ea2e0637dadfad": {
+  "en": "Monday to Friday, 9:00 to 18:00",
+  "t": "Du lundi au vendredi, de 9 h à 18 h"
+ },
+ "d9950c3eccd548e9": {
+  "en": "Bank transfer",
+  "t": "Virement bancaire"
+ },
+ "e3483f0be12820b1": {
+  "en": "Bank transfer",
+  "t": "Virement bancaire"
  }
 }

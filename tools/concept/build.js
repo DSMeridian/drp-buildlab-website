@@ -193,6 +193,7 @@ const PAY = [
   ['Bancontact', '<svg viewBox="0 0 92 24" role="img" aria-label="Bancontact"><path fill="#005498" d="M6 6h14l-5 6H1z"/><path fill="#FFD800" d="M17 12h14l-5 6H12z"/><text x="34" y="15.5" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#1e3764">Bancontact</text></svg>'],
   ['Visa', '<svg viewBox="0 0 48 24" role="img" aria-label="Visa"><text x="24" y="17" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="13" font-weight="900" font-style="italic" fill="#1A1F71" letter-spacing=".5">VISA</text></svg>'],
   ['Mastercard', '<svg viewBox="0 0 40 24" role="img" aria-label="Mastercard"><circle cx="15" cy="12" r="8" fill="#EB001B"/><circle cx="25" cy="12" r="8" fill="#F79E1B"/><path fill="#FF5F00" d="M20 5.75a8 8 0 0 1 0 12.5 8 8 0 0 1 0-12.5z"/></svg>'],
+  ['Klarna', '<svg viewBox="0 0 52 24" role="img" aria-label="Klarna"><text x="26" y="16.5" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="13" font-weight="900" fill="#0b051d" letter-spacing="-.3">Klarna.</text></svg>', 'klarna'],
   ['Bank transfer', '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#1a1f36" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><path d="M5 10v8M9.7 10v8M14.3 10v8M19 10v8"/><path d="M3 20h18"/></svg><span>Bank transfer</span>']
 ];
 
@@ -229,7 +230,7 @@ const footer = () => `<footer class="ftr"><div class="wrap">
   <div class="ft-cols">
     <nav aria-label="Footer menu"><h2>Site</h2><ul>${NAV.map(([, t, h]) => `<li><a href="${B}${h}">${t}</a></li>`).join('')}</ul></nav>
     <div><h2>Services</h2><ul>${SERVICES.map(s => `<li><a href="${B}/diensten/${s.slug}/">${s.name}</a></li>`).join('')}</ul></div>
-    <div><h2>Studio</h2><address><span translate="no">Honingstraat 1D<br>2220 Hallaar,</span> Belgium</address><p>Monday to Friday, 9:00 to 18:00<br><a href="tel:+32473744431" translate="no">+32 473 74 44 31</a></p><h2 class="ft-pay-h">We accept</h2><ul class="ft-pay" translate="no">${PAY.map(([n, svg]) => `<li title="${n}">${svg}</li>`).join('')}</ul></div>
+    <div><h2>Studio</h2><address><span translate="no">Honingstraat 1D<br>2220 Hallaar,</span> Belgium</address><p>Monday to Friday, 9:00 to 18:00</p><p><a href="tel:+32473744431" translate="no">+32 473 74 44 31</a></p><h2 class="ft-pay-h">We accept</h2><ul class="ft-pay">${PAY.map(([n, svg, cls]) => `<li title="${n}"${cls ? ` class="${cls}"` : ''}${n === 'Bank transfer' ? '' : ' translate="no"'}>${svg}</li>`).join('')}</ul></div>
     <div><h2>Follow</h2><ul class="ft-social" translate="no">${[['instagram', 'Instagram', '@drp_buildlab', 'https://www.instagram.com/drp_buildlab/'], ['facebook', 'Facebook', 'DRP BuildLab', 'https://www.facebook.com/share/1Hz1mJG22E/'], ['tiktok', 'TikTok', '@drpbuildlab', 'https://www.tiktok.com/@drpbuildlab']].map(([k, n, h, u]) => `<li><a href="${u}" target="_blank" rel="noopener"><span class="ico">${ICON[k]}</span><span><b>${n}</b><small>${h}</small></span></a></li>`).join('')}</ul></div>
   </div>
   <div class="ft-bot">
@@ -368,7 +369,7 @@ pages[''] = page({
 <div class="wrap stage" id="stage"><div class="stage-in" id="stageIn">
   <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">kasteelwarmelo.nl</span></div>
     <div class="screen"><img src="${B}/img/warmelo-desk.webp" width="1440" height="900" alt="Homepage of Kasteel Warmelo, designed and built by DRP BuildLab" fetchpriority="high" decoding="async"></div></div>
-  <div class="phone" aria-hidden="true"><div class="pscreen"><img src="${B}/img/stb-mob.webp" width="420" height="909" alt="" decoding="async"></div></div>
+  <div class="phone" aria-hidden="true"><div class="pscreen"><img src="${B}/img/warmelo-mob.webp" width="420" height="909" alt="" decoding="async"></div></div>
   <a class="stage-tag" href="https://kasteelwarmelo.nl/" target="_blank" rel="noopener">Live at kasteelwarmelo.nl ↗</a>
 </div></div></section>
 
