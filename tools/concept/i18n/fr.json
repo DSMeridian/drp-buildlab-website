@@ -259,10 +259,6 @@
   "en": "Clear prices, up front",
   "t": "Des prix clairs, dès le départ"
  },
- "4aa7bb24da1bf3dd": {
-  "en": "A one-page website from €499, everything else in a clear written quote. Two revision rounds included, and a written quote that is valid for 14 days.",
-  "t": "Un site web d&#x27;une page à partir de 499 €, toutes les autres prestations étant détaillées dans un devis écrit clair. Deux cycles de révision sont inclus, et le devis écrit est valable pendant 14 jours."
- },
  "1d2c7dcc15336a64": {
   "en": "We stay after launch",
   "t": "Nous restons après le déjeuner"
@@ -1319,10 +1315,6 @@
   "en": "Fair, clear prices",
   "t": "Des prix équitables et transparents"
  },
- "220eb309931beb97": {
-  "en": "A one-page site from €499. Everything else is agreed in a written quote before we start.",
-  "t": "Un site d&#x27;une page à partir de 499 €. Tous les autres éléments sont convenus dans un devis écrit avant le début des travaux."
- },
  "1dbcaf7cb0ebfe4f": {
   "en": "Made for phones",
   "t": "Conçu pour les téléphones"
@@ -1607,10 +1599,6 @@
   "en": "Fair prices, <em>no surprises</em>",
   "t": "Des prix raisonnables, <em>sans mauvaise surprise</em>"
  },
- "918cbdbfbd392051": {
-  "en": "A one-page website with contact form from €499. Everything else is priced on demand, in a quote made to measure. Maintenance is optional at <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
-  "t": "Un site web d&#x27;une page avec formulaire de contact à partir de 499 €. Le reste fait l&#x27;objet d&#x27;un devis sur mesure, établi à la demande. La maintenance est en option, au prix de <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> par mois."
- },
  "1da522336bc6260b": {
   "en": "For new and small businesses",
   "t": "Pour les nouvelles entreprises et les petites entreprises"
@@ -1738,10 +1726,6 @@
  "af1e0e8f342f67a2": {
   "en": "What does a website from DRP BuildLab cost?",
   "t": "Combien coûte un site web créé par DRP BuildLab ?"
- },
- "a7a83484cb58347c": {
-  "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at €499. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
-  "t": "Chaque site web est réalisé sur mesure ; son prix dépend donc du travail nécessaire à sa création. Pour les nouvelles entreprises ou celles qui souhaitent mettre à jour un site existant, notre formule de base est proposée à partir de 499 €. Pour tout autre projet, le prix est établi sur demande, dans le cadre d&#x27;un devis sur mesure. La maintenance est facultative : <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> par mois."
  },
  "8a14b2a9e780c91d": {
   "en": "Who is the <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> starter package for?",
@@ -2474,5 +2458,21 @@
  "db9479d61819d0e1": {
   "en": "Starter package, €499",
   "t": "Pack de démarrage, 499 €"
+ },
+ "d58e24e0d4f40910": {
+  "en": "A one-page website from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, everything else in a clear written quote. Two revision rounds included, and a written quote that is valid for 14 days.",
+  "t": "Un site web d&#x27;une page à partir de <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, toutes les autres prestations étant détaillées dans un devis écrit clair. Deux cycles de révision sont inclus, et le devis écrit est valable pendant 14 jours."
+ },
+ "d43772ab9af2053c": {
+  "en": "A one-page site from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is agreed in a written quote before we start.",
+  "t": "Un site d&#x27;une seule page à partir de <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Tous les autres éléments sont convenus dans un devis écrit avant le début des travaux."
+ },
+ "aa65bf5b34b57d52": {
+  "en": "A one-page website with contact form from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional at <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
+  "t": "Un site web d&#x27;une page avec formulaire de contact à partir de <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Le reste fait l&#x27;objet d&#x27;un devis sur mesure, établi à la demande. La maintenance est facultative, au tarif de <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> par mois."
+ },
+ "4388e34194cd5e8f": {
+  "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
+  "t": "Chaque site web est conçu sur mesure ; son prix dépend donc du travail nécessaire à sa réalisation. Pour les nouvelles entreprises ou celles qui souhaitent mettre à jour un site existant, notre formule de base est proposée à partir de <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Pour tout autre projet, le prix est établi sur demande, dans le cadre d&#x27;un devis sur mesure. La maintenance est facultative : <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> par mois."
  }
 }

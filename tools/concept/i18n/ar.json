@@ -259,10 +259,6 @@
   "en": "Clear prices, up front",
   "t": "أسعار واضحة ومعلنة مسبقًا"
  },
- "4aa7bb24da1bf3dd": {
-  "en": "A one-page website from €499, everything else in a clear written quote. Two revision rounds included, and a written quote that is valid for 14 days.",
-  "t": "موقع إلكتروني من صفحة واحدة ابتداءً من 499 يورو، وجميع التفاصيل الأخرى موضحة في عرض أسعار مكتوب وواضح. يشمل العرض جولتين من المراجعة، ويظل عرض الأسعار المكتوب ساريًا لمدة 14 يومًا."
- },
  "1d2c7dcc15336a64": {
   "en": "We stay after launch",
   "t": "نبقى بعد الإطلاق"
@@ -1319,10 +1315,6 @@
   "en": "Fair, clear prices",
   "t": "أسعار عادلة وشفافة"
  },
- "220eb309931beb97": {
-  "en": "A one-page site from €499. Everything else is agreed in a written quote before we start.",
-  "t": "موقع مكون من صفحة واحدة ابتداءً من 499 يورو. ويتم الاتفاق على كل ما عدا ذلك في عرض أسعار مكتوب قبل أن نبدأ العمل."
- },
  "1dbcaf7cb0ebfe4f": {
   "en": "Made for phones",
   "t": "مصمم للهواتف"
@@ -1607,10 +1599,6 @@
   "en": "Fair prices, <em>no surprises</em>",
   "t": "أسعار عادلة، <em>بلا مفاجآت</em>"
  },
- "918cbdbfbd392051": {
-  "en": "A one-page website with contact form from €499. Everything else is priced on demand, in a quote made to measure. Maintenance is optional at <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
-  "t": "موقع إلكتروني من صفحة واحدة مع نموذج اتصال ابتداءً من 499 يورو. أما أسعار باقي الخدمات فتُحدد حسب الطلب، من خلال عرض أسعار مخصص. الصيانة اختيارية بتكلفة <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> يورو شهريًّا."
- },
  "1da522336bc6260b": {
   "en": "For new and small businesses",
   "t": "للشركات الجديدة والصغيرة"
@@ -1738,10 +1726,6 @@
  "af1e0e8f342f67a2": {
   "en": "What does a website from DRP BuildLab cost?",
   "t": "كم تبلغ تكلفة موقع ويب من DRP BuildLab؟"
- },
- "a7a83484cb58347c": {
-  "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at €499. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
-  "t": "يتم تصميم كل موقع إلكتروني حسب الطلب، لذا يعتمد السعر على حجم العمل المطلوب. بالنسبة للشركات الجديدة، أو تلك التي ترغب في تحديث موقعها الحالي، تبدأ باقة «البدء» الخاصة بنا من 499 يورو. أما باقي الخدمات، فيتم تحديد أسعارها حسب الطلب، من خلال عرض أسعار مخصص لكل حالة على حدة. الصيانة اختيارية: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> شهريًّا."
  },
  "8a14b2a9e780c91d": {
   "en": "Who is the <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> starter package for?",
@@ -2474,5 +2458,21 @@
  "db9479d61819d0e1": {
   "en": "Starter package, €499",
   "t": "الباقة المبدئية، 499 يورو"
+ },
+ "d58e24e0d4f40910": {
+  "en": "A one-page website from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, everything else in a clear written quote. Two revision rounds included, and a written quote that is valid for 14 days.",
+  "t": "موقع إلكتروني من صفحة واحدة ابتداءً من <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>، مع توضيح جميع التفاصيل الأخرى في عرض أسعار مكتوب وواضح. يشمل العرض جولتين من المراجعة، ويظل عرض الأسعار المكتوب ساريًا لمدة 14 يومًا."
+ },
+ "d43772ab9af2053c": {
+  "en": "A one-page site from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is agreed in a written quote before we start.",
+  "t": "موقع مكون من صفحة واحدة ابتداءً من <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. ويتم الاتفاق على جميع التفاصيل الأخرى في عرض أسعار مكتوب قبل بدء العمل."
+ },
+ "aa65bf5b34b57d52": {
+  "en": "A one-page website with contact form from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional at <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
+  "t": "موقع إلكتروني من صفحة واحدة مزود بنموذج اتصال ابتداءً من <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. أما أسعار باقي الخدمات فتُحدد حسب الطلب، من خلال عرض أسعار مخصص. الصيانة اختيارية بتكلفة <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> شهريًّا."
+ },
+ "4388e34194cd5e8f": {
+  "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
+  "t": "يتم تصميم كل موقع إلكتروني حسب الطلب، لذا يعتمد السعر على حجم العمل المطلوب. بالنسبة للشركات الجديدة، أو تلك التي ترغب في تحديث موقعها الحالي، تبدأ أسعار باقتنا المبدئية من <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. أما باقي الخدمات، فيتم تحديد أسعارها حسب الطلب، من خلال عرض أسعار مخصص لكل حالة على حدة. الصيانة اختيارية: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> شهريًّا."
  }
 }

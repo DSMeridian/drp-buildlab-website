@@ -86,7 +86,7 @@ function pageExtract() {
   while (walker.nextNode()) { const n = walker.currentNode; if (/€\s?\d/.test(n.nodeValue) && !n.parentElement.closest('script,style,.money,option,select,textarea,title')) hits.push(n); }
   hits.forEach(n => {
     const frag = document.createDocumentFragment(); let last = 0; const s = n.nodeValue;
-    s.replace(/€\s?(\d[\d.,]*)/g, (m, num, i) => {
+    s.replace(/€\s?(\d+(?:[.,]\d{3})*)/g, (m, num, i) => {
       if (!PUBLIC.has(num)) return m;
       frag.append(s.slice(last, i));
       const sp = document.createElement('span'); sp.className = 'money'; sp.dataset.eur = num; sp.setAttribute('translate', 'no'); sp.textContent = m;

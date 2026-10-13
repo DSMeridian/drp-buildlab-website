@@ -145,6 +145,8 @@ $$('form[data-netlify]').forEach(f => f.addEventListener('submit', e => {
     const rate = d && d.rates && d.rates[cur]; if (!rate) return;
     const fmt = new Intl.NumberFormat(document.documentElement.lang, { style: 'currency', currency: cur, maximumFractionDigits: 0 });
     els.forEach(el => { el.textContent = fmt.format(Math.round(+el.dataset.eur * rate)); el.title = '€' + el.dataset.eur; });
+    /* dropdown options cannot hold a .money element, so their text is converted in place */
+    $$('option').forEach(o => { if (/€\s?(499|29)/.test(o.textContent)) o.textContent = o.textContent.replace(/€\s?(499|29)/g, (m, n) => fmt.format(Math.round(+n * rate))); });
   }).catch(() => {});
 })();
 

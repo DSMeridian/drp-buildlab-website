@@ -175,10 +175,6 @@
   "en": "No ticket systems and no rotating account managers. You know who is building your site, and you can reach them.",
   "t": "Geen ticketsystemen en geen wisselende accountmanagers. U weet wie uw website bouwt en u kunt rechtstreeks contact met hen opnemen."
  },
- "4aa7bb24da1bf3dd": {
-  "en": "A one-page website from €499, everything else in a clear written quote. Two revision rounds included, and a written quote that is valid for 14 days.",
-  "t": "Een website van één pagina vanaf € 499, alle overige details worden vermeld in een duidelijke schriftelijke offerte. Twee revisierondes zijn inbegrepen, en de schriftelijke offerte is 14 dagen geldig."
- },
  "1d2c7dcc15336a64": {
   "en": "We stay after launch",
   "t": "Wij blijven na de lancering"
@@ -811,10 +807,6 @@
   "en": "Fair, clear prices",
   "t": "Eerlijke, duidelijke prijzen"
  },
- "220eb309931beb97": {
-  "en": "A one-page site from €499. Everything else is agreed in a written quote before we start.",
-  "t": "Een website van één pagina vanaf € 499. Over alle overige zaken wordt overeenstemming bereikt in een schriftelijke offerte voordat wij aan de slag gaan."
- },
  "1dbcaf7cb0ebfe4f": {
   "en": "Made for phones",
   "t": "Ontworpen voor telefoons"
@@ -1055,10 +1047,6 @@
   "en": "Fair prices, <em>no surprises</em>",
   "t": "Eerlijke prijzen, <em>geen verrassingen</em>"
  },
- "918cbdbfbd392051": {
-  "en": "A one-page website with contact form from €499. Everything else is priced on demand, in a quote made to measure. Maintenance is optional at <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
-  "t": "Een website van één pagina met contactformulier vanaf € 499. Voor alle overige diensten wordt de prijs op aanvraag bepaald in een offerte op maat. Onderhoud is optioneel voor <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> per maand."
- },
  "1da522336bc6260b": {
   "en": "For new and small businesses",
   "t": "Voor nieuwe en kleine ondernemingen"
@@ -1154,10 +1142,6 @@
  "af1e0e8f342f67a2": {
   "en": "What does a website from DRP BuildLab cost?",
   "t": "Wat kost een website van DRP BuildLab?"
- },
- "a7a83484cb58347c": {
-  "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at €499. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
-  "t": "Elke website wordt op maat gemaakt, dus de prijs is afhankelijk van de hoeveelheid werk die erin wordt gestoken. Voor startende bedrijven of bedrijven die een bestaande website willen vernieuwen, begint ons starterspakket bij € 499. Voor alle overige diensten wordt de prijs op aanvraag bepaald in een offerte op maat. Onderhoud is optioneel: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> per maand."
  },
  "8a14b2a9e780c91d": {
   "en": "Who is the <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> starter package for?",
@@ -2474,5 +2458,21 @@
  "db9479d61819d0e1": {
   "en": "Starter package, €499",
   "t": "Startpakket, € 499"
+ },
+ "d58e24e0d4f40910": {
+  "en": "A one-page website from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, everything else in a clear written quote. Two revision rounds included, and a written quote that is valid for 14 days.",
+  "t": "Een website van één pagina vanaf <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, alle overige details worden duidelijk uiteengezet in een schriftelijke offerte. Twee revisierondes zijn inbegrepen, en de schriftelijke offerte is 14 dagen geldig."
+ },
+ "d43772ab9af2053c": {
+  "en": "A one-page site from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is agreed in a written quote before we start.",
+  "t": "Een website van één pagina vanaf <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Over alle overige zaken wordt overeenstemming bereikt in een schriftelijke offerte voordat wij van start gaan."
+ },
+ "aa65bf5b34b57d52": {
+  "en": "A one-page website with contact form from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional at <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
+  "t": "Een website van één pagina met contactformulier vanaf <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. De prijzen voor alle overige diensten worden op aanvraag vastgesteld in een offerte op maat. Onderhoud is optioneel voor <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> per maand."
+ },
+ "4388e34194cd5e8f": {
+  "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
+  "t": "Elke website wordt op maat gemaakt, dus de prijs is afhankelijk van de hoeveelheid werk die erin wordt gestoken. Voor startende bedrijven of bedrijven die een bestaande website willen vernieuwen, begint ons starterspakket bij <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Voor alle overige diensten wordt de prijs op aanvraag vastgesteld in een offerte op maat. Onderhoud is optioneel: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> per maand."
  }
 }
