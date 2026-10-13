@@ -132,7 +132,6 @@ button,input,select,textarea{font:inherit;color:inherit}
 .acts{display:flex;flex-wrap:wrap;gap:12px}
 .phero-row .acts{justify-content:flex-end}
 @media (max-width:860px){.phero-row{grid-template-columns:1fr}.phero-row .acts{justify-content:flex-start}}
-@media (max-width:760px){
 /* home hero */
 .hero{position:relative;padding-top:clamp(40px,8vh,100px);overflow:clip}
 .hero::before{content:"";position:absolute;right:-18%;top:-30%;width:70vw;height:70vw;max-width:1100px;max-height:1100px;background:radial-gradient(closest-side,rgba(31,94,255,.26),rgba(31,94,255,0));pointer-events:none}
