@@ -543,3 +543,28 @@ a.prt-card:hover .img img{transform:scale(1.05)}
   .tm-photo{max-width:440px}
 }
 @media (prefers-reduced-motion:reduce){.tm-p.on .tm-photo img,.tm-p.on .tm-text{animation:none}}
+
+/* phones: tighter rhythm so the homepage is not an endless scroll */
+@media (max-width:600px){
+  .sec{padding-block:64px}
+  .sec.tight{padding-block:52px}
+  .sec-head{margin-bottom:36px;gap:16px}
+  .cases{gap:64px}
+  .case{gap:24px}
+  .case .tags{display:none}
+  .case p{margin-bottom:18px}
+  .case-media{padding:0 8% 8% 0}
+  .svc a{padding:24px 0}
+  .stage{margin-top:36px;padding-bottom:40px}
+  .facts{margin-top:32px}
+  .stmt-foot{margin-top:32px}
+  .team-foot{margin-top:28px}
+  .all-work{margin-top:48px}
+  .prt{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:84%;overflow-x:auto;scroll-snap-type:x mandatory;margin-right:calc(var(--gut) * -1);padding:0 var(--gut) 10px 0;scrollbar-width:none}
+  .prt::-webkit-scrollbar{display:none}
+  .prt-card{scroll-snap-align:start}
+  .prt-cta{grid-column:auto}
+  .prt-card .img{aspect-ratio:4/3}
+  .reel-btn{padding:7px 12px;font-size:12.5px}
+  .ftr{padding-top:56px}
+}

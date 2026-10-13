@@ -255,6 +255,8 @@ function page({ title, desc, nav, body, cursor }) {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="${B}/assets/site.css?v=${V}">
 <script defer src="${B}/assets/site.js?v=${V}"></script>
+<link rel="stylesheet" href="${B}/assets/chat.css?v=${V}">
+<script defer src="${B}/assets/chat.js?v=${V}"></script>
 </head>
 <body>
 ${header(nav)}
@@ -263,6 +265,7 @@ ${body}
 </main>
 ${footer()}
 ${cursor ? '<div class="cur" id="cur" aria-hidden="true">View</div>' : ''}
+<a href="https://wa.me/32473744431" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp us"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.782 6.86L2 30l7.347-1.758A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.25-4.36 1.043 1.072-4.25-.276-.436A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.66c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.232.348-.898 1.132-1.1 1.364-.202.232-.404.26-.752.086-.348-.174-1.468-.54-2.796-1.724-1.034-.92-1.73-2.056-1.934-2.404-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.434-.028-.608-.086-.174-.78-1.882-1.07-2.576-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.608.086-.926.434-.318.348-1.216 1.188-1.216 2.896s1.244 3.356 1.418 3.588c.174.232 2.448 3.736 5.932 5.238.83.358 1.478.572 1.982.732.832.264 1.59.226 2.188.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.204-1.656-.086-.144-.318-.232-.666-.406z"/></svg></a>
 </body>
 </html>
 `;
