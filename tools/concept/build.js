@@ -512,9 +512,9 @@ const TEAM = [
 pages['over-ons'] = page({
   title: 'About us | DRP BuildLab', desc: 'Meet the founders of DRP BuildLab: a small web studio from Belgium building custom websites for businesses worldwide.', nav: 'about',
   body: `
-<section class="phero media"><div class="bg" aria-hidden="true"><img src="${B}/img/founders-wide.webp" width="1920" height="1080" alt="" fetchpriority="high" decoding="async"></div><div class="wrap">
+<section class="phero"><div class="wrap">
   <h1 class="h1 md"><span class="ln"><span>The people</span></span><span class="ln"><span>behind your</span></span><span class="ln"><span><em>website.</em></span></span></h1>
-  <div class="phero-row"><p class="lede">Who we are, why we started and what you can expect from us.</p></div>
+  <div class="phero-row"><p class="lede">Who we are, why we started and what you can expect from us.</p><div class="acts"><a class="btn ghost" href="#team">Meet the team ${arr}</a></div></div>
 </div></section>
 
 <section class="sec light"><div class="wrap stmt-grid">
