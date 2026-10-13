@@ -2455,10 +2455,6 @@
   "en": "from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
   "t": "vanaf <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>"
  },
- "db9479d61819d0e1": {
-  "en": "Starter package, €499",
-  "t": "Beginpakket, €499"
- },
  "d58e24e0d4f40910": {
   "en": "A one-page website from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, everything else in a clear written quote. Two revision rounds included, and a written quote that is valid for 14 days.",
   "t": "&#x27;n Eenbladsy-webwerf vanaf <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, alles anders in &#x27;n duidelike geskrewe kwotasie. Twee hersieningsrondtes ingesluit, en &#x27;n geskrewe kwotasie wat 14 dae geldig is."
@@ -2474,5 +2470,9 @@
  "4388e34194cd5e8f": {
   "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
   "t": "Elke webwerf word op maat gemaak, so die prys hang af van die werk wat daaraan bestee word. Vir nuwe besighede, of dié wat &#x27;n bestaande webwerf opdateer, begin ons beginpakket by <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Alles anders word op versoek geprys, in &#x27;n op maat gemaakte kwotasie. Onderhoud is opsioneel: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> per maand."
+ },
+ "77f6952ee45c3cad": {
+  "en": "Starter package (one-page website)",
+  "t": "Beginpakket (eenbladsy-webwerf)"
  }
 }

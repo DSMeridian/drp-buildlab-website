@@ -669,7 +669,7 @@ pages['contact'] = page({
       <div class="fld"><label for="q-phone">Phone</label><input id="q-phone" name="telefoon" type="tel" autocomplete="tel" required></div>
       <div class="fld"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required></div>
     </div>
-    <div class="fld"><label for="q-service">Which service do you have in mind?</label><select id="q-service" name="dienst" required><option value="">Choose a service</option><option>Starter package, €499</option><option>Made to measure, quote</option><option>Update an existing website</option><option>Extra services only (logo, SEO, …)</option><option>I don’t know yet</option></select></div>
+    <div class="fld"><label for="q-service">Which service do you have in mind?</label><select id="q-service" name="dienst" required><option value="">Choose a service</option><option>Starter package (one-page website)</option><option>Made to measure, quote</option><option>Update an existing website</option><option>Extra services only (logo, SEO, …)</option><option>I don’t know yet</option></select></div>
     <div class="fld"><label for="q-ref">Partner code <small>(optional)</small></label><input id="q-ref" name="ref" spellcheck="false" maxlength="32"></div>
     <div class="fld"><label for="q-msg">Message <small>(optional)</small></label><textarea id="q-msg" name="bericht"></textarea></div>
     <label class="check" for="q-consent"><input type="checkbox" id="q-consent" name="toestemming" value="ja" required><span>I agree that DRP BuildLab uses the details in this form to contact me about this request. <a href="${B}/privacy/">Privacy policy</a></span></label>

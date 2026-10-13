@@ -2455,10 +2455,6 @@
   "en": "from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
   "t": "ابتداءً من <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>"
  },
- "db9479d61819d0e1": {
-  "en": "Starter package, €499",
-  "t": "الباقة المبدئية، 499 يورو"
- },
  "d58e24e0d4f40910": {
   "en": "A one-page website from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, everything else in a clear written quote. Two revision rounds included, and a written quote that is valid for 14 days.",
   "t": "موقع إلكتروني من صفحة واحدة ابتداءً من <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>، مع توضيح جميع التفاصيل الأخرى في عرض أسعار مكتوب وواضح. يشمل العرض جولتين من المراجعة، ويظل عرض الأسعار المكتوب ساريًا لمدة 14 يومًا."
@@ -2474,5 +2470,9 @@
  "4388e34194cd5e8f": {
   "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
   "t": "يتم تصميم كل موقع إلكتروني حسب الطلب، لذا يعتمد السعر على حجم العمل المطلوب. بالنسبة للشركات الجديدة، أو تلك التي ترغب في تحديث موقعها الحالي، تبدأ أسعار باقتنا المبدئية من <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. أما باقي الخدمات، فيتم تحديد أسعارها حسب الطلب، من خلال عرض أسعار مخصص لكل حالة على حدة. الصيانة اختيارية: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> شهريًّا."
+ },
+ "77f6952ee45c3cad": {
+  "en": "Starter package (one-page website)",
+  "t": "الباقة المبدئية (موقع إلكتروني من صفحة واحدة)"
  }
 }

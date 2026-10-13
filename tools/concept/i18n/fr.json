@@ -2455,10 +2455,6 @@
   "en": "from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
   "t": "à partir de <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>"
  },
- "db9479d61819d0e1": {
-  "en": "Starter package, €499",
-  "t": "Pack de démarrage, 499 €"
- },
  "d58e24e0d4f40910": {
   "en": "A one-page website from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, everything else in a clear written quote. Two revision rounds included, and a written quote that is valid for 14 days.",
   "t": "Un site web d&#x27;une page à partir de <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, toutes les autres prestations étant détaillées dans un devis écrit clair. Deux cycles de révision sont inclus, et le devis écrit est valable pendant 14 jours."
@@ -2474,5 +2470,9 @@
  "4388e34194cd5e8f": {
   "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
   "t": "Chaque site web est conçu sur mesure ; son prix dépend donc du travail nécessaire à sa réalisation. Pour les nouvelles entreprises ou celles qui souhaitent mettre à jour un site existant, notre formule de base est proposée à partir de <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Pour tout autre projet, le prix est établi sur demande, dans le cadre d&#x27;un devis sur mesure. La maintenance est facultative : <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> par mois."
+ },
+ "77f6952ee45c3cad": {
+  "en": "Starter package (one-page website)",
+  "t": "Offre de démarrage (site web d&#x27;une page)"
  }
 }

@@ -2455,10 +2455,6 @@
   "en": "from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
   "t": "vanaf <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>"
  },
- "db9479d61819d0e1": {
-  "en": "Starter package, €499",
-  "t": "Startpakket, € 499"
- },
  "d58e24e0d4f40910": {
   "en": "A one-page website from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, everything else in a clear written quote. Two revision rounds included, and a written quote that is valid for 14 days.",
   "t": "Een website van één pagina vanaf <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, alle overige details worden duidelijk uiteengezet in een schriftelijke offerte. Twee revisierondes zijn inbegrepen, en de schriftelijke offerte is 14 dagen geldig."
@@ -2474,5 +2470,9 @@
  "4388e34194cd5e8f": {
   "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
   "t": "Elke website wordt op maat gemaakt, dus de prijs is afhankelijk van de hoeveelheid werk die erin wordt gestoken. Voor startende bedrijven of bedrijven die een bestaande website willen vernieuwen, begint ons starterspakket bij <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Voor alle overige diensten wordt de prijs op aanvraag vastgesteld in een offerte op maat. Onderhoud is optioneel: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> per maand."
+ },
+ "77f6952ee45c3cad": {
+  "en": "Starter package (one-page website)",
+  "t": "Startpakket (website van één pagina)"
  }
 }

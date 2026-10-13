@@ -2455,10 +2455,6 @@
   "en": "from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
   "t": "<span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>から"
  },
- "db9479d61819d0e1": {
-  "en": "Starter package, €499",
-  "t": "スターターパッケージ、499ユーロ"
- },
  "d58e24e0d4f40910": {
   "en": "A one-page website from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, everything else in a clear written quote. Two revision rounds included, and a written quote that is valid for 14 days.",
   "t": "1ページのウェブサイトは<span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>から、その他すべては明瞭な書面による見積書に記載されています。2回の修正が含まれており、書面による見積書の有効期間は14日間です。"
@@ -2474,5 +2470,9 @@
  "4388e34194cd5e8f": {
   "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
   "t": "すべてのウェブサイトはオーダーメイドで制作されるため、価格は制作にかかる作業量によって異なります。新規事業や既存サイトの更新をご検討中の場合、当社のスターターパッケージは<span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>からご利用いただけます。それ以外のご依頼については、ご要望に応じて個別に作成するお見積もりに基づき、価格を決定いたします。メンテナンスはオプションで、月額<span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span>です。"
+ },
+ "77f6952ee45c3cad": {
+  "en": "Starter package (one-page website)",
+  "t": "スターターパッケージ（1ページのウェブサイト）"
  }
 }
