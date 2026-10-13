@@ -135,10 +135,6 @@
   "en": "A website for a premium car detailing studio: exterior, interior, paint correction and ceramic coating, with prices up front and quotes by WhatsApp.",
   "t": "Um site para um estúdio especializado em detalhamento automotivo premium: exterior, interior, correção de pintura e revestimento cerâmico, com preços divulgados antecipadamente e orçamentos por WhatsApp."
  },
- "6f5395a5d3725016": {
-  "en": "Quotes by WhatsApp",
-  "t": "Citações pelo WhatsApp"
- },
  "acb23f861e8f2f05": {
   "en": "Digital workbook",
   "t": "Caderno de exercícios digital"
@@ -1559,10 +1555,6 @@
   "en": "Who can become a partner?",
   "t": "Quem pode se tornar um parceiro?"
  },
- "6a77b4a8451dc7e0": {
-  "en": "Anyone with an audience of business owners: social media creators, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.",
-  "t": "Qualquer pessoa que tenha um público composto por empresários: criadores de conteúdo nas redes sociais, consultores, contadores, coaches, profissionais de networking. Não é necessário ter um alcance enorme, basta ter um público para o qual um site personalizado faça sentido. Analisamos cada solicitação pessoalmente."
- },
  "4a4f8e4921255724": {
   "en": "When do I earn my commission?",
   "t": "Quando recebo minha comissão?"
@@ -1603,10 +1595,6 @@
   "en": "For new and small businesses",
   "t": "Para empresas novas e de pequeno porte"
  },
- "8a89ab7ca27d9c58": {
-  "en": "Starter",
-  "t": "Entrada"
- },
  "b6ef41843cc4bf60": {
   "en": "one-off",
   "t": "único"
@@ -1634,10 +1622,6 @@
  "d67910a817930520": {
   "en": "Made to measure",
   "t": "Feito sob medida"
- },
- "7ddc35f393b5e9ad": {
-  "en": "Quote",
-  "t": "Citação"
  },
  "06f1fa7bf7a73b59": {
   "en": "Webshops, booking systems, multilingual sites, integrations or features nobody else has. We price it on the scope of your project.",
@@ -1926,10 +1910,6 @@
  "47d124e66a7941fd": {
   "en": "We built a bold, dark site with the three packages and their starting prices (from €65, €85 and €250) side by side, and a WhatsApp button that is always in reach.",
   "t": "Criamos um site ousado e em tons escuros, apresentando os três pacotes e seus preços iniciais (a partir de €65, €85 e €250) lado a lado, além de um botão do WhatsApp que está sempre à disposição."
- },
- "692f3ad97fc47e16": {
-  "en": "A quote request gets a personal answer within the hour, so the site leads every visitor to that one message.",
-  "t": "Uma solicitação de orçamento recebe uma resposta personalizada em até uma hora; por isso, o site direciona todos os visitantes para essa mensagem específica."
  },
  "73a595578a9bc0eb": {
   "en": "Coaching for entrepreneurs",
@@ -2474,5 +2454,21 @@
  "77f6952ee45c3cad": {
   "en": "Starter package (one-page website)",
   "t": "Pacote inicial (site de uma página)"
+ },
+ "7ca4618712abfd02": {
+  "en": "Price quotes via WhatsApp",
+  "t": "Cotações de preços pelo WhatsApp"
+ },
+ "d390cbfc484f6b6c": {
+  "en": "Anyone with an audience of business owners: influencers, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.",
+  "t": "Qualquer pessoa que tenha um público composto por empresários: influenciadores, consultores, contadores, coaches, profissionais de networking. Não é necessário ter um alcance enorme, basta ter um público para o qual um site personalizado faça sentido. Analisamos cada solicitação pessoalmente."
+ },
+ "a81243a0181dfeff": {
+  "en": "Starter package",
+  "t": "Pacote inicial"
+ },
+ "fbac89ebaa470a3d": {
+  "en": "A request for a price quote gets a personal answer within the hour, so the site leads every visitor to that one message.",
+  "t": "Uma solicitação de cotação recebe uma resposta personalizada em até uma hora; por isso, o site direciona todos os visitantes para essa mensagem específica."
  }
 }

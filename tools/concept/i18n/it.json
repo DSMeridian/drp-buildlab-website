@@ -135,10 +135,6 @@
   "en": "A website for a premium car detailing studio: exterior, interior, paint correction and ceramic coating, with prices up front and quotes by WhatsApp.",
   "t": "Un sito web dedicato a un centro di cura dell’auto di alta gamma: cura degli esterni, degli interni, correzione della verniciatura e rivestimento ceramico, con prezzi chiari e preventivi tramite WhatsApp."
  },
- "6f5395a5d3725016": {
-  "en": "Quotes by WhatsApp",
-  "t": "Citazioni su WhatsApp"
- },
  "acb23f861e8f2f05": {
   "en": "Digital workbook",
   "t": "Quaderno di esercizi digitale"
@@ -1559,10 +1555,6 @@
   "en": "Who can become a partner?",
   "t": "Chi può diventare socio?"
  },
- "6a77b4a8451dc7e0": {
-  "en": "Anyone with an audience of business owners: social media creators, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.",
-  "t": "Chiunque abbia un pubblico composto da imprenditori: creatori di contenuti sui social media, consulenti, commercialisti, coach, professionisti del networking. Non è necessario avere una portata enorme, basta un pubblico per il quale un sito web personalizzato sia una scelta sensata. Esaminiamo personalmente ogni richiesta."
- },
  "4a4f8e4921255724": {
   "en": "When do I earn my commission?",
   "t": "Quando riceverò la mia commissione?"
@@ -1603,10 +1595,6 @@
   "en": "For new and small businesses",
   "t": "Per le imprese di nuova costituzione e di piccole dimensioni"
  },
- "8a89ab7ca27d9c58": {
-  "en": "Starter",
-  "t": "Antipasto"
- },
  "b6ef41843cc4bf60": {
   "en": "one-off",
   "t": "una tantum"
@@ -1634,10 +1622,6 @@
  "d67910a817930520": {
   "en": "Made to measure",
   "t": "Su misura"
- },
- "7ddc35f393b5e9ad": {
-  "en": "Quote",
-  "t": "Citazione"
  },
  "06f1fa7bf7a73b59": {
   "en": "Webshops, booking systems, multilingual sites, integrations or features nobody else has. We price it on the scope of your project.",
@@ -1926,10 +1910,6 @@
  "47d124e66a7941fd": {
   "en": "We built a bold, dark site with the three packages and their starting prices (from €65, €85 and €250) side by side, and a WhatsApp button that is always in reach.",
   "t": "Abbiamo realizzato un sito dal design audace e dai toni scuri, in cui sono presentati fianco a fianco i tre pacchetti con i rispettivi prezzi di partenza (a partire da 65 €, 85 € e 250 €), insieme a un pulsante WhatsApp sempre a portata di mano."
- },
- "692f3ad97fc47e16": {
-  "en": "A quote request gets a personal answer within the hour, so the site leads every visitor to that one message.",
-  "t": "A ogni richiesta di preventivo viene fornita una risposta personalizzata entro un’ora, pertanto il sito indirizza ogni visitatore verso quel messaggio specifico."
  },
  "73a595578a9bc0eb": {
   "en": "Coaching for entrepreneurs",
@@ -2474,5 +2454,21 @@
  "77f6952ee45c3cad": {
   "en": "Starter package (one-page website)",
   "t": "Pacchetto base (sito web di una pagina)"
+ },
+ "7ca4618712abfd02": {
+  "en": "Price quotes via WhatsApp",
+  "t": "Preventivi tramite WhatsApp"
+ },
+ "d390cbfc484f6b6c": {
+  "en": "Anyone with an audience of business owners: influencers, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.",
+  "t": "Chiunque abbia un pubblico composto da imprenditori: influencer, consulenti, commercialisti, coach, professionisti del networking. Non è necessario avere una portata enorme, basta un pubblico per il quale un sito web personalizzato sia una scelta sensata. Esaminiamo personalmente ogni richiesta."
+ },
+ "a81243a0181dfeff": {
+  "en": "Starter package",
+  "t": "Pacchetto iniziale"
+ },
+ "fbac89ebaa470a3d": {
+  "en": "A request for a price quote gets a personal answer within the hour, so the site leads every visitor to that one message.",
+  "t": "A ogni richiesta di preventivo viene fornita una risposta personalizzata entro un’ora; pertanto, il sito indirizza ogni visitatore proprio a quel messaggio."
  }
 }

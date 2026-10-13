@@ -81,10 +81,10 @@ const CASES_RAW = [
     slug: 'prestige-automotive', name: 'Prestige Automotive', em: 'Prestige <em>Automotive</em>',
     url: 'prestige-automotive.be', href: 'https://prestige-automotive.be/', img: 'prestige',
     sector: 'Car detailing', where: 'Heist-op-den-Berg, Belgium', scope: 'Design and development',
-    tags: ['Design', 'Development', 'Quotes by WhatsApp', 'Responsive'], kinds: 'Website',
+    tags: ['Design', 'Development', 'Price quotes via WhatsApp', 'Responsive'], kinds: 'Website',
     short: 'A website for a premium car detailing studio: exterior, interior, paint correction and ceramic coating, with prices up front and quotes by WhatsApp.',
     brief: ['Prestige Automotive cleans, corrects and protects cars at its own location in Heist-op-den-Berg, from a hand wash to a full ceramic coating.', 'Customers want to know two things: what it costs, and how quickly they can book.'],
-    did: ['We built a bold, dark site with the three packages and their starting prices (from €65, €85 and €250) side by side, and a WhatsApp button that is always in reach.', 'A quote request gets a personal answer within the hour, so the site leads every visitor to that one message.'],
+    did: ['We built a bold, dark site with the three packages and their starting prices (from €65, €85 and €250) side by side, and a WhatsApp button that is always in reach.', 'A request for a price quote gets a personal answer within the hour, so the site leads every visitor to that one message.'],
     hDesk: 2511, hMob: 3600, phoneImg: 'prestige-mob'
   },
   {
@@ -596,10 +596,10 @@ pages['prijzen'] = page({
   body: `${phero({ h1: 'Fair prices, <em>no surprises</em>', lede: 'A one-page website with contact form from €499. Everything else is priced on demand, in a quote made to measure. Maintenance is optional at €29 a month.', acts: `<a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a>` })}
 <section class="sec fog"><div class="wrap">
   <div class="plans">
-    <div class="plan rv"><p class="for">For new and small businesses</p><h2>Starter</h2><p class="amount">€499<small>one-off</small></p><p class="note">A one-page website with a contact form, made for your business. For businesses that have just started, or want their current site turned into a modern, professional one.</p>
+    <div class="plan rv"><p class="for">For new and small businesses</p><h2>Starter package</h2><p class="amount">€499<small>one-off</small></p><p class="note">A one-page website with a contact form, made for your business. For businesses that have just started, or want their current site turned into a modern, professional one.</p>
       <ul><li>A website fully made for your business</li><li>Works on every phone and tablet</li><li>Contact form and WhatsApp button</li><li>Google Maps and basic SEO</li><li>Personal guidance from start to launch</li></ul>
       <a class="btn dark" href="${B}/contact/">Request a free quote ${arr}</a></div>
-    <div class="plan dark rv"><p class="for">For bigger or more complex projects</p><h2>Made to measure</h2><p class="amount" style="font-size:clamp(48px,5vw,76px)">Quote</p><p class="note">Webshops, booking systems, multilingual sites, integrations or features nobody else has. We price it on the scope of your project.</p>
+    <div class="plan dark rv"><p class="for">For bigger or more complex projects</p><h2>Made to measure</h2><p class="amount" style="font-size:clamp(48px,5vw,76px)">On demand</p><p class="note">Webshops, booking systems, multilingual sites, integrations or features nobody else has. We price it on the scope of your project.</p>
       <ul><li>As many pages as you need</li><li>Webshop, booking system or member portal</li><li>Advanced SEO and Google Ads</li><li>Multilingual websites</li><li>Custom integrations</li></ul>
       <a class="btn" href="${B}/contact/">Request a quote ${arr}</a></div>
   </div>
@@ -731,7 +731,7 @@ pages['partner-worden'] = page({
 <section class="sec light"><div class="wrap">
   <div class="sec-head"><h2 class="h2">What partners <em>ask</em></h2><p class="sub">The short answers.</p></div>
   ${faqBlock([
-    ['Who can become a partner?', 'Anyone with an audience of business owners: social media creators, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.'],
+    ['Who can become a partner?', 'Anyone with an audience of business owners: influencers, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.'],
     ['When do I earn my commission?', 'Only when the client actually pays the invoice in the client portal. A request or an approved quote earns nothing yet: we pay on what comes in, not on what is promised.'],
     ['What is the 5% calculated on?', 'On the amount the client actually pays, so after the 10% discount your link gave them, and excluding VAT. If a project is invoiced in instalments, you earn on every paid instalment.'],
     ['What if someone uses two partner links?', 'The first link counts. A link does not expire: whoever clicked it stays linked to that partner until we revoke the link, and a later link does not overwrite it.'],

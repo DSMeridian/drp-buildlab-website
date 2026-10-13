@@ -135,10 +135,6 @@
   "en": "A website for a premium car detailing studio: exterior, interior, paint correction and ceramic coating, with prices up front and quotes by WhatsApp.",
   "t": "高級車向けディテーリングスタジオのウェブサイトです。外装、内装、塗装補正、セラミックコーティングなどのサービスを提供しており、料金は明示されており、WhatsAppでの見積もりも承っております。"
  },
- "6f5395a5d3725016": {
-  "en": "Quotes by WhatsApp",
-  "t": "WhatsAppの名言"
- },
  "acb23f861e8f2f05": {
   "en": "Digital workbook",
   "t": "デジタルワークブック"
@@ -1559,10 +1555,6 @@
   "en": "Who can become a partner?",
   "t": "どのような方がパートナーになることができますか？"
  },
- "6a77b4a8451dc7e0": {
-  "en": "Anyone with an audience of business owners: social media creators, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.",
-  "t": "事業主をターゲットにしている方ならどなたでも：ソーシャルメディアクリエイター、コンサルタント、会計士、コーチ、ネットワーキング専門家など。膨大なリーチは必要ありません。オーダーメイドのウェブサイトが適していると思われる読者層がいれば十分です。ご依頼はすべて、私たち自身が丁寧に確認させていただきます。"
- },
  "4a4f8e4921255724": {
   "en": "When do I earn my commission?",
   "t": "コミッションはいつ支払われますか？"
@@ -1603,10 +1595,6 @@
   "en": "For new and small businesses",
   "t": "新規・小規模事業者の方へ"
  },
- "8a89ab7ca27d9c58": {
-  "en": "Starter",
-  "t": "スターター"
- },
  "b6ef41843cc4bf60": {
   "en": "one-off",
   "t": "単発の"
@@ -1634,10 +1622,6 @@
  "d67910a817930520": {
   "en": "Made to measure",
   "t": "オーダーメイド"
- },
- "7ddc35f393b5e9ad": {
-  "en": "Quote",
-  "t": "引用"
  },
  "06f1fa7bf7a73b59": {
   "en": "Webshops, booking systems, multilingual sites, integrations or features nobody else has. We price it on the scope of your project.",
@@ -1926,10 +1910,6 @@
  "47d124e66a7941fd": {
   "en": "We built a bold, dark site with the three packages and their starting prices (from €65, €85 and €250) side by side, and a WhatsApp button that is always in reach.",
   "t": "3つのプランとその基本価格（65ユーロ、85ユーロ、250ユーロから）を並べて表示し、いつでも簡単にアクセスできるWhatsAppボタンを配置した、大胆でダークなデザインのサイトを作成いたしました。"
- },
- "692f3ad97fc47e16": {
-  "en": "A quote request gets a personal answer within the hour, so the site leads every visitor to that one message.",
-  "t": "お見積りのお問い合わせには1時間以内に個別にお返事いたしますので、当サイトではすべての訪問者にそのメッセージをご覧いただけるよう案内しています。"
  },
  "73a595578a9bc0eb": {
   "en": "Coaching for entrepreneurs",
@@ -2474,5 +2454,21 @@
  "77f6952ee45c3cad": {
   "en": "Starter package (one-page website)",
   "t": "スターターパッケージ（1ページのウェブサイト）"
+ },
+ "7ca4618712abfd02": {
+  "en": "Price quotes via WhatsApp",
+  "t": "WhatsAppを通じたお見積り"
+ },
+ "d390cbfc484f6b6c": {
+  "en": "Anyone with an audience of business owners: influencers, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.",
+  "t": "事業主をターゲットとしている方ならどなたでも：インフルエンサー、コンサルタント、会計士、コーチ、ネットワーキング活動家など。膨大なリーチは必要ありません。オーダーメイドのウェブサイトが適していると思われる読者層がいれば十分です。お問い合わせはすべて、私たち自身が丁寧に確認させていただきます。"
+ },
+ "a81243a0181dfeff": {
+  "en": "Starter package",
+  "t": "スターターパッケージ"
+ },
+ "fbac89ebaa470a3d": {
+  "en": "A request for a price quote gets a personal answer within the hour, so the site leads every visitor to that one message.",
+  "t": "お見積りのご依頼には1時間以内に個別にお返事いたしますので、当サイトではすべての訪問者にそのメッセージをご覧いただけるようになっています。"
  }
 }

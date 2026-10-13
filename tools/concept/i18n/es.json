@@ -135,10 +135,6 @@
   "en": "A website for a premium car detailing studio: exterior, interior, paint correction and ceramic coating, with prices up front and quotes by WhatsApp.",
   "t": "Una página web para un taller especializado en el cuidado de vehículos de alta gama: exterior, interior, corrección de la pintura y recubrimiento cerámico, con precios claros desde el primer momento y presupuestos a través de WhatsApp."
  },
- "6f5395a5d3725016": {
-  "en": "Quotes by WhatsApp",
-  "t": "Citas de WhatsApp"
- },
  "acb23f861e8f2f05": {
   "en": "Digital workbook",
   "t": "Cuaderno de ejercicios digital"
@@ -1559,10 +1555,6 @@
   "en": "Who can become a partner?",
   "t": "¿Quién puede convertirse en socio?"
  },
- "6a77b4a8451dc7e0": {
-  "en": "Anyone with an audience of business owners: social media creators, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.",
-  "t": "Cualquier persona cuya audiencia esté compuesta por empresarios: creadores de contenido en redes sociales, consultores, contables, coaches y profesionales del networking. No es necesario que tenga un gran alcance, basta con que cuente con una audiencia para la que tenga sentido disponer de una página web a medida. Revisamos cada solicitud personalmente."
- },
  "4a4f8e4921255724": {
   "en": "When do I earn my commission?",
   "t": "¿Cuándo se me abonará la comisión?"
@@ -1603,10 +1595,6 @@
   "en": "For new and small businesses",
   "t": "Para empresas nuevas y pequeñas"
  },
- "8a89ab7ca27d9c58": {
-  "en": "Starter",
-  "t": "Entrante"
- },
  "b6ef41843cc4bf60": {
   "en": "one-off",
   "t": "único"
@@ -1634,10 +1622,6 @@
  "d67910a817930520": {
   "en": "Made to measure",
   "t": "A medida"
- },
- "7ddc35f393b5e9ad": {
-  "en": "Quote",
-  "t": "Cita"
  },
  "06f1fa7bf7a73b59": {
   "en": "Webshops, booking systems, multilingual sites, integrations or features nobody else has. We price it on the scope of your project.",
@@ -1926,10 +1910,6 @@
  "47d124e66a7941fd": {
   "en": "We built a bold, dark site with the three packages and their starting prices (from €65, €85 and €250) side by side, and a WhatsApp button that is always in reach.",
   "t": "Hemos creado una página web llamativa y con un diseño oscuro en la que se muestran, uno al lado del otro, los tres paquetes y sus precios iniciales (a partir de 65 €, 85 € y 250 €), además de un botón de WhatsApp que está siempre a su alcance."
- },
- "692f3ad97fc47e16": {
-  "en": "A quote request gets a personal answer within the hour, so the site leads every visitor to that one message.",
-  "t": "Las solicitudes de presupuesto reciben una respuesta personalizada en menos de una hora, por lo que la página web dirige a todos los visitantes hacia ese mensaje concreto."
  },
  "73a595578a9bc0eb": {
   "en": "Coaching for entrepreneurs",
@@ -2474,5 +2454,21 @@
  "77f6952ee45c3cad": {
   "en": "Starter package (one-page website)",
   "t": "Paquete básico (página web de una sola página)"
+ },
+ "7ca4618712abfd02": {
+  "en": "Price quotes via WhatsApp",
+  "t": "Presupuestos a través de WhatsApp"
+ },
+ "d390cbfc484f6b6c": {
+  "en": "Anyone with an audience of business owners: influencers, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.",
+  "t": "Cualquier persona que cuente con una audiencia compuesta por empresarios: influencers, consultores, contables, coaches y profesionales del networking. No es necesario que tenga un gran alcance, basta con que cuente con una audiencia para la que tenga sentido disponer de una página web a medida. Revisamos personalmente cada solicitud."
+ },
+ "a81243a0181dfeff": {
+  "en": "Starter package",
+  "t": "Paquete de inicio"
+ },
+ "fbac89ebaa470a3d": {
+  "en": "A request for a price quote gets a personal answer within the hour, so the site leads every visitor to that one message.",
+  "t": "Las solicitudes de presupuesto reciben una respuesta personalizada en menos de una hora, por lo que la página web dirige a todos los visitantes hacia ese mensaje concreto."
  }
 }

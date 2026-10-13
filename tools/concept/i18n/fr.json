@@ -135,10 +135,6 @@
   "en": "A website for a premium car detailing studio: exterior, interior, paint correction and ceramic coating, with prices up front and quotes by WhatsApp.",
   "t": "Un site web dédié à un atelier de nettoyage et d&#x27;entretien automobile haut de gamme : extérieur, intérieur, correction de la peinture et revêtement céramique, avec des tarifs affichés dès le départ et des devis par WhatsApp."
  },
- "6f5395a5d3725016": {
-  "en": "Quotes by WhatsApp",
-  "t": "Citations sur WhatsApp"
- },
  "acb23f861e8f2f05": {
   "en": "Digital workbook",
   "t": "Cahier d&#x27;exercices numérique"
@@ -1559,10 +1555,6 @@
   "en": "Who can become a partner?",
   "t": "Qui peut devenir partenaire ?"
  },
- "6a77b4a8451dc7e0": {
-  "en": "Anyone with an audience of business owners: social media creators, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.",
-  "t": "Toute personne dont le public est composé de chefs d&#x27;entreprise : créateurs de contenu sur les réseaux sociaux, consultants, comptables, coachs, professionnels du réseautage. Vous n&#x27;avez pas besoin d&#x27;une audience très large, il suffit que votre public soit susceptible de bénéficier d&#x27;un site web sur mesure. Nous examinons personnellement chaque demande."
- },
  "4a4f8e4921255724": {
   "en": "When do I earn my commission?",
   "t": "Quand vais-je percevoir ma commission ?"
@@ -1603,10 +1595,6 @@
   "en": "For new and small businesses",
   "t": "Pour les nouvelles entreprises et les petites entreprises"
  },
- "8a89ab7ca27d9c58": {
-  "en": "Starter",
-  "t": "Entrée"
- },
  "b6ef41843cc4bf60": {
   "en": "one-off",
   "t": "ponctuel"
@@ -1634,10 +1622,6 @@
  "d67910a817930520": {
   "en": "Made to measure",
   "t": "Sur mesure"
- },
- "7ddc35f393b5e9ad": {
-  "en": "Quote",
-  "t": "Citation"
  },
  "06f1fa7bf7a73b59": {
   "en": "Webshops, booking systems, multilingual sites, integrations or features nobody else has. We price it on the scope of your project.",
@@ -1926,10 +1910,6 @@
  "47d124e66a7941fd": {
   "en": "We built a bold, dark site with the three packages and their starting prices (from €65, €85 and €250) side by side, and a WhatsApp button that is always in reach.",
   "t": "Nous avons créé un site au design audacieux et aux couleurs sombres, présentant côte à côte les trois formules et leurs prix de départ (à partir de 65 €, 85 € et 250 €), ainsi qu&#x27;un bouton WhatsApp toujours à portée de main."
- },
- "692f3ad97fc47e16": {
-  "en": "A quote request gets a personal answer within the hour, so the site leads every visitor to that one message.",
-  "t": "Toute demande de devis reçoit une réponse personnalisée dans l&#x27;heure qui suit ; le site oriente donc chaque visiteur vers ce message précis."
  },
  "73a595578a9bc0eb": {
   "en": "Coaching for entrepreneurs",
@@ -2474,5 +2454,21 @@
  "77f6952ee45c3cad": {
   "en": "Starter package (one-page website)",
   "t": "Offre de démarrage (site web d&#x27;une page)"
+ },
+ "7ca4618712abfd02": {
+  "en": "Price quotes via WhatsApp",
+  "t": "Devis via WhatsApp"
+ },
+ "d390cbfc484f6b6c": {
+  "en": "Anyone with an audience of business owners: influencers, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.",
+  "t": "Toute personne dont le public est composé de chefs d&#x27;entreprise : influenceurs, consultants, experts-comptables, coachs, professionnels du réseautage. Vous n&#x27;avez pas besoin d&#x27;une audience très large, il suffit que votre public soit susceptible de bénéficier d&#x27;un site web sur mesure. Nous examinons chaque demande personnellement."
+ },
+ "a81243a0181dfeff": {
+  "en": "Starter package",
+  "t": "Kit de démarrage"
+ },
+ "fbac89ebaa470a3d": {
+  "en": "A request for a price quote gets a personal answer within the hour, so the site leads every visitor to that one message.",
+  "t": "Toute demande de devis reçoit une réponse personnalisée dans l&#x27;heure qui suit ; le site oriente donc chaque visiteur vers ce message précis."
  }
 }

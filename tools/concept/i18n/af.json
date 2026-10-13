@@ -135,10 +135,6 @@
   "en": "A website for a premium car detailing studio: exterior, interior, paint correction and ceramic coating, with prices up front and quotes by WhatsApp.",
   "t": "&#x27;n webwerf vir &#x27;n premium motor-detailing-studio: eksterieur, interieur, verfkorreksie en keramiese bedekking, met pryse vooraf en kwotasies via WhatsApp."
  },
- "6f5395a5d3725016": {
-  "en": "Quotes by WhatsApp",
-  "t": "Aanhalings per WhatsApp"
- },
  "acb23f861e8f2f05": {
   "en": "Digital workbook",
   "t": "Digitale werkboek"
@@ -1559,10 +1555,6 @@
   "en": "Who can become a partner?",
   "t": "Wie kan &#x27;n vennoot word?"
  },
- "6a77b4a8451dc7e0": {
-  "en": "Anyone with an audience of business owners: social media creators, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.",
-  "t": "Enigiemand met &#x27;n gehoor van sake-eienaars: sosiale media-skeppers, konsultante, rekenmeesters, afrigters, netwerkers. Jy het nie &#x27;n groot bereik nodig nie, net &#x27;n gehoor vir wie &#x27;n pasgemaakte webwerf sin maak. Ons hersien elke versoek persoonlik."
- },
  "4a4f8e4921255724": {
   "en": "When do I earn my commission?",
   "t": "Wanneer verdien ek my kommissie?"
@@ -1603,10 +1595,6 @@
   "en": "For new and small businesses",
   "t": "Vir nuwe en klein besighede"
  },
- "8a89ab7ca27d9c58": {
-  "en": "Starter",
-  "t": "Begin"
- },
  "b6ef41843cc4bf60": {
   "en": "one-off",
   "t": "eenmalig"
@@ -1634,10 +1622,6 @@
  "d67910a817930520": {
   "en": "Made to measure",
   "t": "Maatgemaak"
- },
- "7ddc35f393b5e9ad": {
-  "en": "Quote",
-  "t": "Aanhaling"
  },
  "06f1fa7bf7a73b59": {
   "en": "Webshops, booking systems, multilingual sites, integrations or features nobody else has. We price it on the scope of your project.",
@@ -1926,10 +1910,6 @@
  "47d124e66a7941fd": {
   "en": "We built a bold, dark site with the three packages and their starting prices (from €65, €85 and €250) side by side, and a WhatsApp button that is always in reach.",
   "t": "Ons het &#x27;n gewaagde, donker webwerf gebou met die drie pakkette en hul beginpryse (vanaf €65, €85 en €250) langs mekaar, en &#x27;n WhatsApp-knoppie wat altyd byderhand is."
- },
- "692f3ad97fc47e16": {
-  "en": "A quote request gets a personal answer within the hour, so the site leads every visitor to that one message.",
-  "t": "&#x27;n Aanhalingsversoek kry binne &#x27;n uur &#x27;n persoonlike antwoord, sodat die webwerf elke besoeker na daardie een boodskap lei."
  },
  "73a595578a9bc0eb": {
   "en": "Coaching for entrepreneurs",
@@ -2474,5 +2454,21 @@
  "77f6952ee45c3cad": {
   "en": "Starter package (one-page website)",
   "t": "Beginpakket (eenbladsy-webwerf)"
+ },
+ "7ca4618712abfd02": {
+  "en": "Price quotes via WhatsApp",
+  "t": "Pryskwotasies via WhatsApp"
+ },
+ "d390cbfc484f6b6c": {
+  "en": "Anyone with an audience of business owners: influencers, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.",
+  "t": "Enigiemand met &#x27;n gehoor van sake-eienaars: beïnvloeders, konsultante, rekenmeesters, afrigters, netwerkers. Jy het nie &#x27;n groot bereik nodig nie, net &#x27;n gehoor vir wie &#x27;n pasgemaakte webwerf sin maak. Ons hersien elke versoek persoonlik."
+ },
+ "a81243a0181dfeff": {
+  "en": "Starter package",
+  "t": "Beginpakket"
+ },
+ "fbac89ebaa470a3d": {
+  "en": "A request for a price quote gets a personal answer within the hour, so the site leads every visitor to that one message.",
+  "t": "&#x27;n versoek om &#x27;n pryskwotasie kry binne &#x27;n uur &#x27;n persoonlike antwoord, sodat die webwerf elke besoeker na daardie een boodskap lei."
  }
 }

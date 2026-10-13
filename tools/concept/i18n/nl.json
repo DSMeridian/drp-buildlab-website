@@ -1007,10 +1007,6 @@
   "en": "Who can become a partner?",
   "t": "Wie kan partner worden?"
  },
- "6a77b4a8451dc7e0": {
-  "en": "Anyone with an audience of business owners: social media creators, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.",
-  "t": "Iedereen met een doelgroep van ondernemers: makers van sociale media, adviseurs, accountants, coaches, netwerkers. U hoeft geen enorm bereik te hebben; het volstaat dat u een doelgroep heeft voor wie een op maat gemaakte website zinvol is. Wij beoordelen elk verzoek persoonlijk."
- },
  "4a4f8e4921255724": {
   "en": "When do I earn my commission?",
   "t": "Wanneer ontvang ik mijn commissie?"
@@ -1051,10 +1047,6 @@
   "en": "For new and small businesses",
   "t": "Voor nieuwe en kleine ondernemingen"
  },
- "8a89ab7ca27d9c58": {
-  "en": "Starter",
-  "t": "Voorgerecht"
- },
  "0076ad90633031ae": {
   "en": "A one-page website with a contact form, made for your business. For businesses that have just started, or want their current site turned into a modern, professional one.",
   "t": "Een website van één pagina met een contactformulier, speciaal voor uw bedrijf. Voor bedrijven die net zijn gestart, of die hun huidige website willen omzetten in een moderne, professionele website."
@@ -1078,10 +1070,6 @@
  "d67910a817930520": {
   "en": "Made to measure",
   "t": "Op maat gemaakt"
- },
- "7ddc35f393b5e9ad": {
-  "en": "Quote",
-  "t": "Citaat"
  },
  "06f1fa7bf7a73b59": {
   "en": "Webshops, booking systems, multilingual sites, integrations or features nobody else has. We price it on the scope of your project.",
@@ -1350,10 +1338,6 @@
  "47d124e66a7941fd": {
   "en": "We built a bold, dark site with the three packages and their starting prices (from €65, €85 and €250) side by side, and a WhatsApp button that is always in reach.",
   "t": "Wij hebben een opvallende, donkere website ontworpen waarop de drie pakketten en hun vanafprijzen (vanaf € 65, € 85 en € 250) naast elkaar worden weergegeven, met een WhatsApp-knop die altijd binnen handbereik is."
- },
- "692f3ad97fc47e16": {
-  "en": "A quote request gets a personal answer within the hour, so the site leads every visitor to that one message.",
-  "t": "Een offerteaanvraag wordt binnen een uur persoonlijk beantwoord, zodat de website elke bezoeker naar dat ene bericht leidt."
  },
  "73a595578a9bc0eb": {
   "en": "Coaching for entrepreneurs",
@@ -2383,10 +2367,6 @@
   "en": "View project <span class=\"arr\" aria-hidden=\"true\">→</span>",
   "t": "Bekijk het project <span class=\"arr\" aria-hidden=\"true\">→</span>"
  },
- "6f5395a5d3725016": {
-  "en": "Quotes by WhatsApp",
-  "t": "Citaten via WhatsApp"
- },
  "974cacecb4914f70": {
   "en": "Maintenance plans",
   "t": "Onderhoudsplannen"
@@ -2474,5 +2454,21 @@
  "77f6952ee45c3cad": {
   "en": "Starter package (one-page website)",
   "t": "Startpakket (website van één pagina)"
+ },
+ "7ca4618712abfd02": {
+  "en": "Price quotes via WhatsApp",
+  "t": "Prijsopgaven via WhatsApp"
+ },
+ "d390cbfc484f6b6c": {
+  "en": "Anyone with an audience of business owners: influencers, consultants, accountants, coaches, networkers. You don’t need a huge reach, just an audience for whom a custom website makes sense. We review every request personally.",
+  "t": "Iedereen met een doelgroep van ondernemers: influencers, consultants, accountants, coaches, netwerkers. U hoeft geen enorm bereik te hebben; het volstaat dat u een doelgroep heeft voor wie een op maat gemaakte website zinvol is. Wij beoordelen elke aanvraag persoonlijk."
+ },
+ "a81243a0181dfeff": {
+  "en": "Starter package",
+  "t": "Startpakket"
+ },
+ "fbac89ebaa470a3d": {
+  "en": "A request for a price quote gets a personal answer within the hour, so the site leads every visitor to that one message.",
+  "t": "Een aanvraag voor een prijsopgave wordt binnen een uur persoonlijk beantwoord, zodat de website elke bezoeker naar die ene boodschap leidt."
  }
 }
