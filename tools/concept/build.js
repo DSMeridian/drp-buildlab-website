@@ -365,13 +365,7 @@ pages[''] = page({
     <div class="acts"><a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a><a class="btn ghost" href="${B}/werk/">See our work</a></div>
   </div>
   <ul class="facts"><li>Custom built, no templates</li><li>Websites from €499</li><li>Maintenance plans at €29 a month</li><li>One point of contact</li></ul>
-</div>
-<div class="wrap stage" id="stage"><div class="stage-in" id="stageIn">
-  <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">kasteelwarmelo.nl</span></div>
-    <div class="screen"><img src="${B}/img/warmelo-desk.webp" width="1440" height="900" alt="Homepage of Kasteel Warmelo, designed and built by DRP BuildLab" fetchpriority="high" decoding="async"></div></div>
-  <div class="phone" aria-hidden="true"><div class="pscreen"><img src="${B}/img/warmelo-mob.webp" width="420" height="909" alt="" decoding="async"></div></div>
-  <a class="stage-tag" href="https://kasteelwarmelo.nl/" target="_blank" rel="noopener">Live at kasteelwarmelo.nl ↗</a>
-</div></div></section>
+</div></section>
 
 <section class="reel-sec" id="reel" aria-label="Showreel">
   <div class="reel" id="reelBox">
