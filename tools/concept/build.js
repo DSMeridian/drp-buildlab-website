@@ -173,7 +173,7 @@ const PUBLIC_PRICES = ['onepager', 'onderhoud-maandelijks'];
 const priceOf = id => { const x = PRICE[id]; if (!x) throw new Error('No price for ' + id); return PUBLIC_PRICES.includes(id) ? eur(x.p) + (UNIT[x.u] || '') : 'On demand'; };
 
 const OTHER = { href: '/contact/', name: 'Other services', short: 'Logo design, photography, Google Ads, hosting moves, integrations and whatever else your site needs. Just ask.', from: 'On demand' };
-const svcRow = s => `<li><a href="${B}${s.href || `/diensten/${s.slug}/`}"><h3>${s.name}</h3><p>${s.short}</p><span class="price">${s.from} <span class="ar" aria-hidden="true">→</span></span></a></li>`;
+const svcRow = s => `<li><a href="${B}${s.href || `/diensten/${s.slug}/`}"><h3>${s.name}</h3><p>${s.short}</p><span class="price"><span>${s.from}</span> <span class="ar" aria-hidden="true">→</span></span></a></li>`;
 
 const NOT_DONE = ['Printed matter such as business cards, flyers and brochures. We design the logo itself.', 'Mobile apps. We build websites and webshops only.', 'Day-to-day management of ad campaigns. We set up your first Google Ads campaign.', 'Accounting, legal or financial advice.', 'Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.'];
 
@@ -315,7 +315,7 @@ const nextSlot = () => `<article class="case rv">
     </div>
   </article>`;
 
-const faqBlock = items => `<div class="faq">${items.map(([q, a]) => `<details><summary>${q}</summary><div class="a"><p>${a}</p></div></details>`).join('')}</div>`;
+const faqBlock = items => `<div class="faq">${items.map(([q, a]) => `<details><summary><span>${q}</span></summary><div class="a"><p>${a}</p></div></details>`).join('')}</div>`;
 
 const phero = ({ crumbs, h1, lede, acts = '', md = true }) => `
 <section class="phero"><div class="wrap">

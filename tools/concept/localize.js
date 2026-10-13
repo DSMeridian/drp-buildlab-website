@@ -83,7 +83,7 @@ function pageExtract() {
   const PUBLIC = new Set(['499', '29']);
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   const hits = [];
-  while (walker.nextNode()) { const n = walker.currentNode; if (/€\s?\d/.test(n.nodeValue) && !n.parentElement.closest('script,style,.money')) hits.push(n); }
+  while (walker.nextNode()) { const n = walker.currentNode; if (/€\s?\d/.test(n.nodeValue) && !n.parentElement.closest('script,style,.money,option,select,textarea,title')) hits.push(n); }
   hits.forEach(n => {
     const frag = document.createDocumentFragment(); let last = 0; const s = n.nodeValue;
     s.replace(/€\s?(\d[\d.,]*)/g, (m, num, i) => {

@@ -115,10 +115,6 @@
   "en": "A site designed around your business, never a template. A one-page site with contact form starts at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>; bigger sites on demand.",
   "t": "Een website die volledig op uw bedrijf is afgestemd, nooit een standaard sjabloon. Een website van één pagina met contactformulier is al verkrijgbaar vanaf <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>; grotere websites op aanvraag."
  },
- "390fde72e8a24eb0": {
-  "en": "from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> <span class=\"ar\" aria-hidden=\"true\">→</span>",
-  "t": "vanaf <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>→"
- },
  "1218763206548e09": {
   "en": "Webshops &amp; Shopify",
   "t": "Webwinkels &amp; Shopify"
@@ -126,10 +122,6 @@
  "d9a51d7410dbaf39": {
   "en": "Product catalogue, cart, checkout and order management, or a complete redesign of your existing Shopify store.",
   "t": "Productcatalogus, winkelwagen, afrekenproces en orderbeheer, of een volledige herinrichting van uw bestaande Shopify-webwinkel."
- },
- "71aed21119a52788": {
-  "en": "On demand <span class=\"ar\" aria-hidden=\"true\">→</span>",
-  "t": "Op aanvraag <span class=\"ar\" aria-hidden=\"true\">→</span>"
  },
  "c3c9b04d20e3cee4": {
   "en": "Redesign &amp; refresh",
@@ -142,10 +134,6 @@
  "62a214f8201dd0eb": {
   "en": "Updates, monitoring and changes when you need them. Urgent issues get a response within one working day.",
   "t": "Updates, monitoring en aanpassingen wanneer u die nodig hebt. Dringende zaken worden binnen één werkdag beantwoord."
- },
- "37864b70f3c99fff": {
-  "en": "<span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> / month <span class=\"ar\" aria-hidden=\"true\">→</span>",
-  "t": "<span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span>/maand <span class=\"ar\" aria-hidden=\"true\">→</span>"
  },
  "c9e8c09a5869ce9c": {
   "en": "Growth add-ons",
@@ -406,10 +394,6 @@
  "47842fe8c86e5981": {
   "en": "Choose a service",
   "t": "Kies een dienst"
- },
- "9e42afddce323fa6": {
-  "en": "Starter package, <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
-  "t": "Startpakket, <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>"
  },
  "415e43f376f985ea": {
   "en": "Made to measure, quote",
@@ -2482,5 +2466,13 @@
  "e3483f0be12820b1": {
   "en": "Bank transfer",
   "t": "Bankoverschrijving"
+ },
+ "f821d79bf71fc395": {
+  "en": "from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
+  "t": "vanaf <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>"
+ },
+ "db9479d61819d0e1": {
+  "en": "Starter package, €499",
+  "t": "Startpakket, € 499"
  }
 }

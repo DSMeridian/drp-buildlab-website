@@ -191,10 +191,6 @@
   "en": "A site designed around your business, never a template. A one-page site with contact form starts at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>; bigger sites on demand.",
   "t": "Strona internetowa zaprojektowana specjalnie dla Państwa firmy, a nie oparta na gotowym szablonie. Cena jednostronicowej witryny z formularzem kontaktowym zaczyna się od <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>; większe witryny na zamówienie."
  },
- "390fde72e8a24eb0": {
-  "en": "from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> <span class=\"ar\" aria-hidden=\"true\">→</span>",
-  "t": "z <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> <span class=\"ar\" aria-hidden=\"true\">→</span>"
- },
  "1218763206548e09": {
   "en": "Webshops &amp; Shopify",
   "t": "Sklepy internetowe i Shopify"
@@ -202,10 +198,6 @@
  "d9a51d7410dbaf39": {
   "en": "Product catalogue, cart, checkout and order management, or a complete redesign of your existing Shopify store.",
   "t": "Katalog produktów, koszyk, proces realizacji transakcji oraz zarządzanie zamówieniami, a także całkowita przebudowa Państwa istniejącego sklepu Shopify."
- },
- "71aed21119a52788": {
-  "en": "On demand <span class=\"ar\" aria-hidden=\"true\">→</span>",
-  "t": "Na żądanie <span class=\"ar\" aria-hidden=\"true\">→</span>"
  },
  "c3c9b04d20e3cee4": {
   "en": "Redesign &amp; refresh",
@@ -222,10 +214,6 @@
  "62a214f8201dd0eb": {
   "en": "Updates, monitoring and changes when you need them. Urgent issues get a response within one working day.",
   "t": "Aktualizacje, monitorowanie i zmiany wtedy, gdy ich Państwo potrzebują. Na pilne zgłoszenia udzielamy odpowiedzi w ciągu jednego dnia roboczego."
- },
- "37864b70f3c99fff": {
-  "en": "<span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> / month <span class=\"ar\" aria-hidden=\"true\">→</span>",
-  "t": "<span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span>/miesiąc <span class=\"ar\" aria-hidden=\"true\">→</span>"
  },
  "c9e8c09a5869ce9c": {
   "en": "Growth add-ons",
@@ -630,10 +618,6 @@
  "47842fe8c86e5981": {
   "en": "Choose a service",
   "t": "Proszę wybrać usługę"
- },
- "9e42afddce323fa6": {
-  "en": "Starter package, <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
-  "t": "Pakiet startowy, <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>"
  },
  "415e43f376f985ea": {
   "en": "Made to measure, quote",
@@ -2482,5 +2466,13 @@
  "e3483f0be12820b1": {
   "en": "Bank transfer",
   "t": "Przelew bankowy"
+ },
+ "f821d79bf71fc395": {
+  "en": "from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
+  "t": "od <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>"
+ },
+ "db9479d61819d0e1": {
+  "en": "Starter package, €499",
+  "t": "Pakiet startowy, 499 euro"
  }
 }
