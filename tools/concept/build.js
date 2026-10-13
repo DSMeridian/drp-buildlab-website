@@ -110,7 +110,7 @@ const CASES_RAW = [
 const SERVICES = [
   {
     slug: 'websites-op-maat', name: 'Custom websites', em: 'Custom <em>websites</em>', from: 'from €499',
-    short: 'A site designed around your business, never a template. From a sharp one-pager to a full multi-page site.',
+    short: 'A site designed around your business, never a template. A one-page site with contact form starts at €499; bigger sites on demand.',
     intro: 'Every website we make starts from your business: what you sell, who buys it and what they need to see before they contact you. No templates, no page builders that slow your site down.',
     incl: ['A design made for your business', 'Works on every phone, tablet and screen', 'Contact form and WhatsApp button', 'Google Maps and basic SEO', 'Personal guidance from start to launch', 'Two revision rounds included'],
     opts: [['onepager', 'One-page website', 'One page, including a contact form. The base for every multi-page site.'], ['extra-pagina', 'Extra page', 'Another page in the same style, on top of the base.'], ['cms', 'Edit it yourself', 'Manage texts, images and pages without technical knowledge.'], ['meertalig', 'Multilingual site', 'For example NL / FR / EN, with language detection.'], ['seo', 'SEO starter', 'Meta tags, page titles, alt texts and speed optimisation.'], ['logo', 'Logo design', 'A professional logo made for your brand.']],
@@ -118,16 +118,16 @@ const SERVICES = [
     faq: [['Who is the €499 package for?', 'For business owners who have just started and have no website yet, or who want their existing website turned into a modern, professional one.'], ['How quickly will my website be online?', 'As soon as we have your texts, photos and logo, we can move fast. At the start we agree on a delivery date that fits the scope of your project, and we keep to it. Along the way you get a preview to approve.']]
   },
   {
-    slug: 'webshops-shopify', name: 'Webshops & Shopify', em: 'Webshops <em>& Shopify</em>', from: 'from €799',
+    slug: 'webshops-shopify', name: 'Webshops & Shopify', em: 'Webshops <em>& Shopify</em>', from: 'On demand',
     short: 'Product catalogue, cart, checkout and order management, or a complete redesign of your existing Shopify store.',
     intro: 'A webshop has one job: turn visitors into orders. We build shops that are quick to browse, simple to pay in, and easy for you to run, on Shopify or built to measure.',
     incl: ['Product catalogue with clear categories', 'Cart, checkout and order management', 'Payment provider of your choice', 'Shipping and invoicing connected', 'Works on every phone', 'Training so you can run it yourself'],
-    opts: [['shopify-herontwerp', 'Shopify redesign', 'A complete redesign of an existing Shopify webshop with a new theme.'], ['webshop-medium', 'Webshop (B2C)', 'Catalogue, cart, checkout and order management. Guide price, confirmed in your quote.'], ['webshop-uitgebreid', 'Webshop, extended', 'Extended cart and checkout, weekly boxes or subscription logic. Guide price.'], ['betaling', 'Payment integration', 'Connection to the payment platform of your choice.'], ['productmigratie', 'Product migration', 'Moving your products to a new platform with clear categories.'], ['b2b-portaal', 'B2B portal', 'A closed section for business customers with their own login and prices.'], ['stockbeheer', 'Stock management', 'Custom stock management with real-time tracking across channels.']],
+    opts: [['shopify-herontwerp', 'Shopify redesign', 'A complete redesign of an existing Shopify webshop with a new theme.'], ['webshop-medium', 'Webshop (B2C)', 'Catalogue, cart, checkout and order management.'], ['webshop-uitgebreid', 'Webshop, extended', 'Extended cart and checkout, weekly boxes or subscription logic.'], ['betaling', 'Payment integration', 'Connection to the payment platform of your choice.'], ['productmigratie', 'Product migration', 'Moving your products to a new platform with clear categories.'], ['b2b-portaal', 'B2B portal', 'A closed section for business customers with their own login and prices.'], ['stockbeheer', 'Stock management', 'Custom stock management with real-time tracking across channels.']],
     caseSlug: 'hermosa-antwerp',
     faq: [['Do you only work with Shopify?', 'No. We redesign and maintain Shopify stores, and we also build webshops to measure when Shopify is not the right fit. We advise you on the first call.'], ['Is the price fixed?', 'Webshop prices are guide prices. The exact price is confirmed in your written quote, based on the number of products, features and integrations.']]
   },
   {
-    slug: 'redesign', name: 'Redesign & refresh', em: 'Redesign <em>& refresh</em>', from: 'from €349',
+    slug: 'redesign', name: 'Redesign & refresh', em: 'Redesign <em>& refresh</em>', from: 'On demand',
     short: 'Your current site, modernised. We keep your content and brand and fix what holds it back.',
     intro: 'Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.',
     incl: ['A review of what works and what does not', 'A modern design in your own brand', 'Faster loading on phones', 'Your content and URLs kept', 'Contact forms that work and stop spam', 'A preview before anything goes live'],
@@ -140,12 +140,12 @@ const SERVICES = [
     short: 'Updates, monitoring and changes when you need them. Urgent issues get a response within one working day.',
     intro: 'A website is never finished. With a care plan we keep it safe, fast and findable, and you have a team to call when something needs changing. It is optional, and you can cancel any month.',
     incl: ['Software and security updates', 'Backups', 'Uptime and error monitoring', 'Regular SEO checks', 'Urgent issues: response within 1 working day', 'Normal requests: response within 3 working days'],
-    opts: [['onderhoud-maandelijks', 'Care plan, monthly', 'Management, updates and monitoring of your website or webshop.'], ['onderhoud-jaarlijks', 'Care plan, yearly', 'The same service, paid once for the full year. Saves €98.'], ['noodreparatie', 'Emergency repair', 'Urgent repair of a problem on a live website, within 24 to 48 hours.'], ['hosting-advies', 'Hosting advice and move', 'An analysis of your hosting and help moving it.']],
+    opts: [['onderhoud-maandelijks', 'Care plan, monthly', 'Management, updates and monitoring of your website or webshop.'], ['noodreparatie', 'Emergency repair', 'Urgent repair of a problem on a live website, within 24 to 48 hours.'], ['hosting-advies', 'Hosting advice and move', 'An analysis of your hosting and help moving it.']],
     caseSlug: 'hermosa-antwerp',
     faq: [['Am I tied to a contract?', 'No. You can cancel the monthly plan any month, and the website always stays yours.'], ['Do you maintain websites you did not build?', 'Yes. Hermosa Antwerp is an example: we are their IT maintenance partner for a Shopify store we did not build.']]
   },
   {
-    slug: 'uitbreidingen', name: 'Growth add-ons', em: 'Growth <em>add-ons</em>', from: 'from €149',
+    slug: 'uitbreidingen', name: 'Growth add-ons', em: 'Growth <em>add-ons</em>', from: 'On demand',
     short: 'SEO, multilingual sites, payments, invoicing and booking integrations, Google reviews and custom calculators.',
     intro: 'Add-ons make an existing website do more: get found, sell in more languages, save you admin. Order them with a new website or add them to the one you have.',
     incl: ['Can be added to any website we build', 'Also available for existing sites', 'Fixed prices, confirmed in your quote', 'Built and tested by the same team'],
@@ -165,7 +165,13 @@ const PRICE = {};
 for (const d of CAT.diensten) PRICE[d.id] = { p: d.prijs, u: d.eenheid };
 for (const d of CAT.onderhoud) PRICE[d.id] = { p: d.prijs, u: d.eenheid };
 const UNIT = { 'per pagina': ' / page', 'per maand': ' / month', 'per jaar': ' / year', integratie: ' / integration' };
-const priceOf = id => { const x = PRICE[id]; if (!x) throw new Error('No price for ' + id); return eur(x.p) + (UNIT[x.u] || ''); };
+/* Only the one-pager and the monthly care plan are priced publicly;
+   everything else is quoted on demand. */
+const PUBLIC_PRICES = ['onepager', 'onderhoud-maandelijks'];
+const priceOf = id => { const x = PRICE[id]; if (!x) throw new Error('No price for ' + id); return PUBLIC_PRICES.includes(id) ? eur(x.p) + (UNIT[x.u] || '') : 'On demand'; };
+
+const OTHER = { href: '/contact/', name: 'Other services', short: 'Logo design, photography, Google Ads, hosting moves, integrations and whatever else your site needs. Just ask.', from: 'On demand' };
+const svcRow = s => `<li><a href="${B}${s.href || `/diensten/${s.slug}/`}"><h3>${s.name}</h3><p>${s.short}</p><span class="price">${s.from} <span class="ar" aria-hidden="true">→</span></span></a></li>`;
 
 const NOT_DONE = ['Printed matter such as business cards, flyers and brochures. We design the logo itself.', 'Mobile apps. We build websites and webshops only.', 'Day-to-day management of ad campaigns. We set up your first Google Ads campaign.', 'Accounting, legal or financial advice.', 'Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.'];
 
@@ -342,7 +348,7 @@ pages[''] = page({
     <p class="lede">We design and build <strong>custom websites and webshops</strong> for businesses worldwide. Tell us about yours and we’ll show you a <strong>free demo website</strong> before you commit to anything.</p>
     <div class="acts"><a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a><a class="btn ghost" href="${B}/werk/">See our work</a></div>
   </div>
-  <ul class="facts"><li>Custom built, no templates</li><li>Websites from €499</li><li>Care plans from €29 a month</li><li>One point of contact</li></ul>
+  <ul class="facts"><li>Custom built, no templates</li><li>Websites from €499</li><li>Care plans at €29 a month</li><li>One point of contact</li></ul>
 </div>
 <div class="wrap stage" id="stage"><div class="stage-in" id="stageIn">
   <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">kasteelwarmelo.nl</span></div>
@@ -377,7 +383,7 @@ pages[''] = page({
 
 <section class="sec light" style="padding-top:0"><div class="wrap">
   <div class="sec-head"><h2 class="h2 rv">What we <em>build</em></h2><p class="sub rv">Prices are shown up front and confirmed in a written quote.</p></div>
-  <ul class="svc">${SERVICES.map(s => `<li><a href="${B}/diensten/${s.slug}/"><h3>${s.name}</h3><p>${s.short}</p><span class="price">${s.from} <span class="ar" aria-hidden="true">→</span></span></a></li>`).join('')}</ul>
+  <ul class="svc">${[...SERVICES, OTHER].map(svcRow).join('')}</ul>
 </div></section>
 
 <section class="sec"><div class="wrap">
@@ -385,8 +391,8 @@ pages[''] = page({
   <div class="rows">
     <div class="row rv"><h3>See it before you sign</h3><p>On the first call we already show you an example made for your business. The demo is free, with no obligation.</p></div>
     <div class="row rv"><h3>One person to call</h3><p>No ticket systems and no rotating account managers. You know who is building your site, and you can reach them.</p></div>
-    <div class="row rv"><h3>Prices on the table</h3><p>Websites from €499, published openly. Two revision rounds included, and a written quote that is valid for 14 days.</p></div>
-    <div class="row rv"><h3>We stay after launch</h3><p>Care plans from €29 a month keep your site fast, secure and current. Hermosa Antwerp and Start to Business still rely on us today.</p></div>
+    <div class="row rv"><h3>Prices on the table</h3><p>A one-page website from €499, everything else in a clear written quote. Two revision rounds included, and a written quote that is valid for 14 days.</p></div>
+    <div class="row rv"><h3>We stay after launch</h3><p>Care plans at €29 a month keep your site fast, secure and current. Hermosa Antwerp and Start to Business still rely on us today.</p></div>
   </div>
 </div></section>
 
@@ -460,7 +466,7 @@ pages['diensten'] = page({
   title: 'Services | DRP BuildLab', desc: 'Custom websites, webshops and Shopify, redesigns, care plans and add-ons, with prices shown up front.', nav: 'services',
   body: `${phero({ h1: 'What we <em>build</em>', lede: 'Five services, each with its own page, what is included and a starting price. Every price is confirmed in a written quote.', acts: `<a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a><a class="btn ghost" href="${B}/prijzen/">See all prices</a>` })}
 <section class="sec light"><div class="wrap">
-  <ul class="svc">${SERVICES.map(s => `<li><a href="${B}/diensten/${s.slug}/"><h3>${s.name}</h3><p>${s.short}</p><span class="price">${s.from} <span class="ar" aria-hidden="true">→</span></span></a></li>`).join('')}</ul>
+  <ul class="svc">${[...SERVICES, OTHER].map(svcRow).join('')}</ul>
 </div></section>
 <section class="sec fog"><div class="wrap">
   <div class="sec-head"><h2 class="h2">What we <em>don’t</em> do</h2><p class="sub">So you know in advance. If you need one of these, we are happy to point you to someone who does.</p></div>
@@ -476,11 +482,11 @@ SERVICES.forEach(s => {
     title: `${s.name} | Services | DRP BuildLab`, desc: `${s.short} ${s.from.replace('from', 'From')}.`, nav: 'services',
     body: `${phero({ crumbs: [['Services', '/diensten/'], [s.name]], h1: s.em, lede: s.intro, acts: `<a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a>` })}
 <section class="sec light"><div class="wrap">
-  <div class="sec-head"><h2 class="h2">What’s <em>included</em></h2><p class="sub">Starting at <strong style="color:var(--ink)">${s.from.replace('from ', '')}</strong>. The exact price depends on your project and is confirmed in your quote.</p></div>
+  <div class="sec-head"><h2 class="h2">What’s <em>included</em></h2><p class="sub">${s.from === 'On demand' ? 'Priced on demand: tell us what you need and we confirm the price in a written quote.' : `Starting at <strong style="color:var(--ink)">${s.from.replace('from ', '')}</strong>. Anything beyond that is priced on demand and confirmed in your quote.`}</p></div>
   <ul class="incl">${s.incl.map(t => `<li>${t}</li>`).join('')}</ul>
 </div></section>
 <section class="sec fog"><div class="wrap">
-  <div class="sec-head"><h2 class="h2">Options and <em>prices</em></h2><p class="sub">Prices exclude VAT. On the live site they are shown in your own currency.</p></div>
+  <div class="sec-head"><h2 class="h2">Options and <em>prices</em></h2><p class="sub">Prices exclude VAT. Options marked on demand are priced in your quote.</p></div>
   <div class="tscroll"><table class="ptable"><thead><tr><th scope="col">Option</th><th scope="col">Price</th></tr></thead><tbody>${s.opts.map(([id, n, d]) => `<tr><td><b>${n}</b><span>${d}</span></td><td>${priceOf(id)}</td></tr>`).join('')}</tbody></table></div>
 </div></section>
 ${c ? `<section class="sec"><div class="wrap"><div class="cases">${caseRow(c, false)}</div></div></section>` : ''}
@@ -490,7 +496,7 @@ ${c ? `<section class="sec"><div class="wrap"><div class="cases">${caseRow(c, fa
 </div></section>
 <section class="sec light" style="padding-top:0"><div class="wrap">
   <h2 class="h3" style="margin-bottom:24px">Other services</h2>
-  <ul class="svc">${others.map(o => `<li><a href="${B}/diensten/${o.slug}/"><h3>${o.name}</h3><p>${o.short}</p><span class="price">${o.from} <span class="ar" aria-hidden="true">→</span></span></a></li>`).join('')}</ul>
+  <ul class="svc">${[...others, OTHER].map(svcRow).join('')}</ul>
 </div></section>
 ${ctaBand()}`
   });
@@ -526,7 +532,7 @@ pages['over-ons'] = page({
   <div class="sec-head"><h2 class="h2">What we <em>stand for</em></h2><p class="sub">Three promises behind every project.</p></div>
   <div class="rows">
     <div class="row"><h3>Honesty above all</h3><p>What we promise, we deliver. No hidden costs and no vague quotes.</p></div>
-    <div class="row"><h3>Care when you want it</h3><p>Maintenance is optional: €29 a month or €250 a year. Take it and your site stays safe, up to date and findable, without you having to think about it.</p></div>
+    <div class="row"><h3>Care when you want it</h3><p>Maintenance is optional, at €29 a month. Take it and your site stays safe, up to date and findable, without you having to think about it.</p></div>
     <div class="row"><h3>Worldwide, built personally</h3><p>We build for businesses wherever their customers are searching. You get the same small team, wherever you are.</p></div>
   </div>
 </div></section>
@@ -552,33 +558,33 @@ ${ctaBand()}`
 });
 
 pages['prijzen'] = page({
-  title: 'Pricing | DRP BuildLab', desc: 'A starter website from €499 or a quote made to measure. Optional care plan from €29 a month.', nav: 'pricing',
-  body: `${phero({ h1: 'Fair prices, <em>no surprises</em>', lede: 'A starter website from €499, or a quote made to measure for bigger projects. Maintenance is optional: you decide whether to add it.', acts: `<a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a>` })}
+  title: 'Pricing | DRP BuildLab', desc: 'A one-page website from €499, everything else on demand. Optional care plan at €29 a month.', nav: 'pricing',
+  body: `${phero({ h1: 'Fair prices, <em>no surprises</em>', lede: 'A one-page website with contact form from €499. Everything else is priced on demand, in a quote made to measure. Maintenance is optional at €29 a month.', acts: `<a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a>` })}
 <section class="sec fog"><div class="wrap">
   <div class="plans">
-    <div class="plan rv"><p class="for">For new and small businesses</p><h2>Starter</h2><p class="amount">€499<small>one-off</small></p><p class="note">For businesses that have just started without a website, or want their current site turned into a modern, professional one.</p>
+    <div class="plan rv"><p class="for">For new and small businesses</p><h2>Starter</h2><p class="amount">€499<small>one-off</small></p><p class="note">A one-page website with a contact form, made for your business. For businesses that have just started, or want their current site turned into a modern, professional one.</p>
       <ul><li>A website fully made for your business</li><li>Works on every phone and tablet</li><li>Contact form and WhatsApp button</li><li>Google Maps and basic SEO</li><li>Personal guidance from start to launch</li></ul>
       <a class="btn dark" href="${B}/contact/">Request a free quote ${arr}</a></div>
     <div class="plan dark rv"><p class="for">For bigger or more complex projects</p><h2>Made to measure</h2><p class="amount" style="font-size:clamp(48px,5vw,76px)">Quote</p><p class="note">Webshops, booking systems, multilingual sites, integrations or features nobody else has. We price it on the scope of your project.</p>
       <ul><li>As many pages as you need</li><li>Webshop, booking system or member portal</li><li>Advanced SEO and Google Ads</li><li>Multilingual websites</li><li>Custom integrations</li></ul>
       <a class="btn" href="${B}/contact/">Request a quote ${arr}</a></div>
   </div>
-  <div class="care rv"><div><h2>Care plan, optional</h2><p>Updates, backups, security and SEO checks. Not included in the packages: you choose whether to add it, and you can cancel any month.</p></div><p class="amt">€29<small> / month</small><br><span style="font-size:.5em">or €250<small> / year</small></span></p></div>
+  <div class="care rv"><div><h2>Care plan, optional</h2><p>Updates, backups, security and SEO checks. Not included in the packages: you choose whether to add it, and you can cancel any month.</p></div><p class="amt">€29<small> / month</small></p></div>
 </div></section>
 <section class="sec light"><div class="wrap">
-  <div class="sec-head"><h2 class="h2">Extra <em>services</em></h2><p class="sub">Order them separately or with your website. Prices are indicative and always confirmed in your quote.</p></div>
+  <div class="sec-head"><h2 class="h2">Extra <em>services</em></h2><p class="sub">Order them separately or with your website. Each is priced on demand and confirmed in your quote.</p></div>
   <div class="tscroll"><table class="ptable"><thead><tr><th scope="col">Service</th><th scope="col">Price</th></tr></thead><tbody>
     ${[['Logo design', 'logo'], ['Extra page', 'extra-pagina'], ['SEO starter', 'seo'], ['Google Ads setup', 'google-ads'], ['Multilingual site', 'meertalig'], ['Emergency repair (24 hours)', 'noodreparatie'], ['Integrations: booking, payments, accounting', 'koppelingen'], ['Edit it yourself (CMS)', 'cms']].map(([n, id]) => `<tr><td><b>${n}</b></td><td>${priceOf(id)}</td></tr>`).join('')}
-    <tr><td><b>Add a webshop</b></td><td>Quote</td></tr><tr><td><b>Anything else, made to measure</b></td><td>On request</td></tr>
+    <tr><td><b>Add a webshop</b></td><td>On demand</td></tr><tr><td><b>Anything else, made to measure</b></td><td>On demand</td></tr>
   </tbody></table></div>
   <p class="muted" style="margin-top:20px">Every service, with what it includes, is on its own <a class="tlink" href="${B}/diensten/">service page</a>.</p>
 </div></section>
 <section class="sec light" style="padding-top:0"><div class="wrap">
   <div class="sec-head"><h2 class="h2">Questions about <em>price</em></h2><p class="sub">The answers to what clients ask most.</p></div>
   ${faqBlock([
-    ['What does a website from DRP BuildLab cost?', 'Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at €499. For larger projects we make a quote to measure. Maintenance is optional: €29 a month or €250 a year.'],
+    ['What does a website from DRP BuildLab cost?', 'Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at €499. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: €29 a month.'],
     ['Who is the €499 starter package for?', 'For business owners who have just started without a website, or who want their existing website turned into a modern, professional one.'],
-    ['What does maintenance cost?', 'Maintenance is optional and costs €29 a month, or €250 a year, which saves you €98. For that we keep your website safe, fast and optimised for search. You are not tied in: you can cancel any month, and the website always stays yours.'],
+    ['What does maintenance cost?', 'Maintenance is optional and costs €29 a month. For that we keep your website safe, fast and optimised for search. You are not tied in: you can cancel any month, and the website always stays yours.'],
     ['How quickly will my website be online?', 'As soon as we have your texts, photos and logo, we can move fast. At the start we agree on a delivery date that fits your project, and we keep to it. Along the way you get a preview to approve, so you are never left waiting.'],
     ['How does a quote to measure work?', 'For larger projects we first discuss what you need in a free introductory call. Then we make a personal quote based on the work involved: pages, features, integrations and maintenance. No hidden costs: you know in advance what you will pay.']
   ])}
