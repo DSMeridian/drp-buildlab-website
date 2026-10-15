@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- Netlify form definitions -- never shown to visitors.
+
+     Netlify reads a form's fields and their labels from the HTML at deploy
+     time and uses those labels in the dashboard and the notification emails.
+     The visible forms exist in every site language, so the labels used to be
+     whichever translation Netlify parsed last (Arabic, at one point). They
+     now carry no data-netlify; these Dutch copies are the only definitions.
+
+     Every field a visible form posts must be listed here, or Netlify drops
+     it from the submission. localize.js checks this when it copies the file. -->
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Formulieren</title>
+</head>
+<body>
+<form name="offerte-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="subject">
+  <p><label>Niet invullen <input name="bot-field"></label></p>
+  <p><label>Voornaam <input name="voornaam"></label></p>
+  <p><label>Achternaam <input name="achternaam"></label></p>
+  <p><label>Klanttype <input name="klanttype"></label></p>
+  <p><label>Bedrijfsnaam <input name="bedrijf"></label></p>
+  <p><label>Bedrijfs- of btw-nummer <input name="ondernemingsnummer"></label></p>
+  <p><label>Telefoon <input name="telefoon" type="tel"></label></p>
+  <p><label>E-mail <input name="email" type="email"></label></p>
+  <p><label>Dienst <input name="dienst"></label></p>
+  <p><label>Partnercode <input name="ref"></label></p>
+  <p><label>Bericht <textarea name="bericht"></textarea></label></p>
+  <p><label>Toestemming privacybeleid <input name="toestemming" type="checkbox" value="ja"></label></p>
+</form>
+<form name="partner-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="subject">
+  <p><label>Niet invullen <input name="bot-field"></label></p>
+  <p><label>Voornaam <input name="voornaam"></label></p>
+  <p><label>Achternaam <input name="achternaam"></label></p>
+  <p><label>E-mail <input name="email" type="email"></label></p>
+  <p><label>Kanaal <input name="kanaal"></label></p>
+  <p><label>Bereik <input name="bereik"></label></p>
+  <p><label>Profiel of website <input name="profiel" type="url"></label></p>
+  <p><label>Gewenste code <input name="gewenste_code"></label></p>
+  <p><label>Bericht <textarea name="bericht"></textarea></label></p>
+  <p><label>Toestemming privacybeleid <input name="toestemming" type="checkbox" value="ja"></label></p>
+</form>
+</body>
+</html>

@@ -60,13 +60,13 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&amp;family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=mv6dxxci">
-<script defer="" src="/assets/site.js?v=mv6dxxci"></script>
-<link rel="stylesheet" href="/assets/chat.css?v=mv6dxxci">
-<script defer="" src="/assets/chat.js?v=mv6dxxci"></script>
-<link rel="stylesheet" href="/assets/consent.css?v=mv6dxxci">
-<script defer="" src="/assets/referral.js?v=mv6dxxci"></script>
-<script defer="" src="/assets/consent.js?v=mv6dxxci"></script>
+<link rel="stylesheet" href="/assets/site.css?v=mv9ud3nd">
+<script defer="" src="/assets/site.js?v=mv9ud3nd"></script>
+<link rel="stylesheet" href="/assets/chat.css?v=mv9ud3nd">
+<script defer="" src="/assets/chat.js?v=mv9ud3nd"></script>
+<link rel="stylesheet" href="/assets/consent.css?v=mv9ud3nd">
+<script defer="" src="/assets/referral.js?v=mv9ud3nd"></script>
+<script defer="" src="/assets/consent.js?v=mv9ud3nd"></script>
 </head>
 <body>
 <a class="skip" href="#main">コンテンツへスキップ</a>
@@ -114,7 +114,7 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
     <p class="sub" style="margin-top:24px">どのような方々にリーチしているか、簡単にご説明ください。すべての申請を個別に審査し、承認され次第、リンクをお送りいたします。</p>
     <p class="muted" style="margin-top:24px">参加対象：インフルエンサー、コンサルタント、会計士、コーチ、および事業主をターゲットとする方々。メールでのご連絡をご希望の場合は、<a class="tlink" href="mailto:info@drpbuildlab.com">info@drpbuildlab.com</a> までご連絡ください。</p>
   </div>
-  <form class="form" id="partner" name="partner-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate="" data-event="partner_request" data-sent="psent">
+  <form class="form" id="partner" name="partner-aanvraag" method="POST" novalidate="" data-event="partner_request" data-sent="psent">
     <input type="hidden" name="form-name" value="partner-aanvraag">
   <input type="hidden" name="subject" value="Nieuwe partneraanvraag — DRP BuildLab">
   <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
@@ -124,8 +124,8 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
     </div>
     <div class="fld"><label for="p-email">Eメール</label><input id="p-email" name="email" type="email" autocomplete="email" required=""></div>
     <div class="frow">
-      <div class="fld"><label for="p-channel">どこでターゲット層にアプローチしていますか？</label><select id="p-channel" name="kanaal" required=""><option value="">チャンネルをお選びください</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>LinkedIn</option><option>ニュースレターまたはブログ</option><option>オフラインネットワーク</option><option>その他</option></select></div>
-      <div class="fld"><label for="p-size">おおよその視聴者数はどれくらいですか？</label><select id="p-size" name="bereik" required=""><option value="">サイズをお選びください</option><option>1,000未満</option><option>1,000 – 10,000</option><option>10,000 – 50,000</option><option>50,000 – 250,000</option><option>25万以上</option></select></div>
+      <div class="fld"><label for="p-channel">どこでターゲット層にアプローチしていますか？</label><select id="p-channel" name="kanaal" required=""><option value="">チャンネルをお選びください</option><option value="Instagram">Instagram</option><option value="TikTok">TikTok</option><option value="YouTube">YouTube</option><option value="LinkedIn">LinkedIn</option><option value="Nieuwsbrief of blog">ニュースレターまたはブログ</option><option value="Offline netwerk">オフラインネットワーク</option><option value="Overige">その他</option></select></div>
+      <div class="fld"><label for="p-size">おおよその視聴者数はどれくらいですか？</label><select id="p-size" name="bereik" required=""><option value="">サイズをお選びください</option><option value="Minder dan 1.000">1,000未満</option><option value="1.000 – 10.000">1,000 – 10,000</option><option value="10.000 – 50.000">10,000 – 50,000</option><option value="50.000 – 250.000">50,000 – 250,000</option><option value="Meer dan 250.000">25万以上</option></select></div>
     </div>
     <div class="fld"><label for="p-profile">プロフィールやウェブサイトへのリンク</label><input id="p-profile" name="profiel" type="url" inputmode="url" required=""></div>
     <div class="fld"><label for="p-code">希望のコード<small>（任意）</small></label><input id="p-code" name="gewenste_code" spellcheck="false"></div>
