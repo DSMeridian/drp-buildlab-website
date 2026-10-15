@@ -59,13 +59,13 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&amp;family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=mv6dxxci">
-<script defer="" src="/assets/site.js?v=mv6dxxci"></script>
-<link rel="stylesheet" href="/assets/chat.css?v=mv6dxxci">
-<script defer="" src="/assets/chat.js?v=mv6dxxci"></script>
-<link rel="stylesheet" href="/assets/consent.css?v=mv6dxxci">
-<script defer="" src="/assets/referral.js?v=mv6dxxci"></script>
-<script defer="" src="/assets/consent.js?v=mv6dxxci"></script>
+<link rel="stylesheet" href="/assets/site.css?v=mv9ud3nd">
+<script defer="" src="/assets/site.js?v=mv9ud3nd"></script>
+<link rel="stylesheet" href="/assets/chat.css?v=mv9ud3nd">
+<script defer="" src="/assets/chat.js?v=mv9ud3nd"></script>
+<link rel="stylesheet" href="/assets/consent.css?v=mv9ud3nd">
+<script defer="" src="/assets/referral.js?v=mv9ud3nd"></script>
+<script defer="" src="/assets/consent.js?v=mv9ud3nd"></script>
 </head>
 <body>
 <a class="skip" href="#main">Aller directement au contenu</a>
@@ -113,7 +113,7 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
     <p class="sub" style="margin-top:24px">Décrivez-nous brièvement votre public cible. Nous examinons chaque demande personnellement et vous envoyons votre lien une fois celle-ci approuvée.</p>
     <p class="muted" style="margin-top:24px">Qui peut s'inscrire : influenceurs, consultants, experts-comptables, coachs, toute personne disposant d'une audience composée de chefs d'entreprise. Vous préférez nous contacter par e-mail ? <a class="tlink" href="mailto:info@drpbuildlab.com">info@drpbuildlab.com</a></p>
   </div>
-  <form class="form" id="partner" name="partner-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate="" data-event="partner_request" data-sent="psent">
+  <form class="form" id="partner" name="partner-aanvraag" method="POST" novalidate="" data-event="partner_request" data-sent="psent">
     <input type="hidden" name="form-name" value="partner-aanvraag">
   <input type="hidden" name="subject" value="Nieuwe partneraanvraag — DRP BuildLab">
   <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
@@ -123,8 +123,8 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
     </div>
     <div class="fld"><label for="p-email">E-mail</label><input id="p-email" name="email" type="email" autocomplete="email" required=""></div>
     <div class="frow">
-      <div class="fld"><label for="p-channel">Où touchez-vous votre public ?</label><select id="p-channel" name="kanaal" required=""><option value="">Choisissez une chaîne</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>LinkedIn</option><option>Lettre d'information ou blog</option><option>Réseau hors ligne</option><option>Autres</option></select></div>
-      <div class="fld"><label for="p-size">Quelle est, approximativement, la taille de votre public ?</label><select id="p-size" name="bereik" required=""><option value="">Choisissez une taille</option><option>Moins de 1 000</option><option>1,000 – 10,000</option><option>10,000 – 50,000</option><option>50,000 – 250,000</option><option>Plus de 250 000</option></select></div>
+      <div class="fld"><label for="p-channel">Où touchez-vous votre public ?</label><select id="p-channel" name="kanaal" required=""><option value="">Choisissez une chaîne</option><option value="Instagram">Instagram</option><option value="TikTok">TikTok</option><option value="YouTube">YouTube</option><option value="LinkedIn">LinkedIn</option><option value="Nieuwsbrief of blog">Lettre d'information ou blog</option><option value="Offline netwerk">Réseau hors ligne</option><option value="Overige">Autres</option></select></div>
+      <div class="fld"><label for="p-size">Quelle est, approximativement, la taille de votre public ?</label><select id="p-size" name="bereik" required=""><option value="">Choisissez une taille</option><option value="Minder dan 1.000">Moins de 1 000</option><option value="1.000 – 10.000">1,000 – 10,000</option><option value="10.000 – 50.000">10,000 – 50,000</option><option value="50.000 – 250.000">50,000 – 250,000</option><option value="Meer dan 250.000">Plus de 250 000</option></select></div>
     </div>
     <div class="fld"><label for="p-profile">Lien vers votre profil ou votre site web</label><input id="p-profile" name="profiel" type="url" inputmode="url" required=""></div>
     <div class="fld"><label for="p-code">Code préféré <small>(facultatif)</small></label><input id="p-code" name="gewenste_code" spellcheck="false"></div>

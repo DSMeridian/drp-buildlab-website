@@ -101,7 +101,9 @@ const ui = k => ($(`#ui [data-k="${k}"]`) || {}).textContent || '';
 /* Netlify forms over fetch, as on the previous site: post to this page's own
    path (the root carries forced geo redirects, and a 302 turns a POST into a
    GET), and only a 2xx counts as sent. The analytics event carries which
-   option was picked, the market and the language; never what was typed. */
+   option was picked, the market and the language; never what was typed.
+   Netlify knows these forms from __forms.html (Dutch labels for the
+   dashboard), so the visible ones carry no data-netlify: found by data-event. */
 const DEMO_SERVICE = ['none', 'starter', 'custom', 'update', 'extras', 'undecided'];
 const PARTNER_CHANNEL = ['none', 'instagram', 'tiktok', 'youtube', 'linkedin', 'newsletter', 'offline', 'other'];
 function track(f) {
@@ -116,7 +118,7 @@ function track(f) {
   }
   window.dataLayer = window.dataLayer || []; window.dataLayer.push(ev);
 }
-$$('form[data-netlify]').forEach(f => f.addEventListener('submit', e => {
+$$('form[data-event]').forEach(f => f.addEventListener('submit', e => {
   e.preventDefault();
   const msg = $('.ok', f), btn = $('button[type="submit"]', f);
   const bad = $$('[required]', f).find(i => !i.disabled && ((i.type === 'checkbox' ? !i.checked : !String(i.value).trim()) || !i.checkValidity()));

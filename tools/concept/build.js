@@ -324,7 +324,7 @@ const phero = ({ crumbs, h1, lede, acts = '', md = true }) => `
   <div class="phero-row"><p class="lede">${lede}</p>${acts ? `<div class="acts">${acts}</div>` : ''}</div>
 </div></section>`;
 
-const demoForm = (id, title = 'Request your free demo website') => `<form class="form" id="${id}" name="offerte-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate data-event="demo_request" data-sent="sent">
+const demoForm = (id, title = 'Request your free demo website') => `<form class="form" id="${id}" name="offerte-aanvraag" method="POST" novalidate data-event="demo_request" data-sent="sent">
   <input type="hidden" name="form-name" value="offerte-aanvraag">
   <input type="hidden" name="subject" value="Nieuwe offerteaanvraag — DRP BuildLab">
   <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
@@ -642,7 +642,7 @@ pages['contact'] = page({
       <li><b>You decide</b><span>No obligation. You only pay once you approve a quote.</span></li>
     </ol>
   </div>
-  <form class="form" id="quote" name="offerte-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate data-event="demo_request" data-sent="sent">
+  <form class="form" id="quote" name="offerte-aanvraag" method="POST" novalidate data-event="demo_request" data-sent="sent">
     <input type="hidden" name="form-name" value="offerte-aanvraag">
   <input type="hidden" name="subject" value="Nieuwe offerteaanvraag — DRP BuildLab">
   <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
@@ -663,7 +663,7 @@ pages['contact'] = page({
       <div class="fld"><label for="q-phone">Phone</label><input id="q-phone" name="telefoon" type="tel" autocomplete="tel" required></div>
       <div class="fld"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required></div>
     </div>
-    <div class="fld"><label for="q-service">Which service do you have in mind?</label><select id="q-service" name="dienst" required><option value="">Choose a service</option><option>Starter package (one-page website)</option><option>Made to measure, quote</option><option>Update an existing website</option><option>Extra services only (logo, SEO, …)</option><option>I don’t know yet</option></select></div>
+    <div class="fld"><label for="q-service">Which service do you have in mind?</label><select id="q-service" name="dienst" required><option value="">Choose a service</option><option value="Startpakket (website van één pagina)">Starter package (one-page website)</option><option value="Op maat gemaakt, offerte">Made to measure, quote</option><option value="Een bestaande website bijwerken">Update an existing website</option><option value="Alleen extra diensten (logo, SEO, …)">Extra services only (logo, SEO, …)</option><option value="Dat weet ik nog niet">I don’t know yet</option></select></div>
     <div class="fld"><label for="q-ref">Partner code <small>(optional)</small></label><input id="q-ref" name="ref" spellcheck="false" maxlength="32"></div>
     <div class="fld"><label for="q-msg">Message <small>(optional)</small></label><textarea id="q-msg" name="bericht"></textarea></div>
     <label class="check" for="q-consent"><input type="checkbox" id="q-consent" name="toestemming" value="ja" required><span>I agree that DRP BuildLab uses the details in this form to contact me about this request. <a href="${B}/privacy/">Privacy policy</a></span></label>
@@ -701,7 +701,7 @@ pages['partner-worden'] = page({
     <p class="sub" style="margin-top:24px">Tell us briefly who you reach. We review every request personally and send your link once approved.</p>
     <p class="muted" style="margin-top:24px">Who can join: influencers, consultants, accountants, coaches, anyone with an audience of business owners. Prefer email? <a class="tlink" href="mailto:info@drpbuildlab.com">info@drpbuildlab.com</a></p>
   </div>
-  <form class="form" id="partner" name="partner-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate data-event="partner_request" data-sent="psent">
+  <form class="form" id="partner" name="partner-aanvraag" method="POST" novalidate data-event="partner_request" data-sent="psent">
     <input type="hidden" name="form-name" value="partner-aanvraag">
   <input type="hidden" name="subject" value="Nieuwe partneraanvraag — DRP BuildLab">
   <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
@@ -711,8 +711,8 @@ pages['partner-worden'] = page({
     </div>
     <div class="fld"><label for="p-email">Email</label><input id="p-email" name="email" type="email" autocomplete="email" required></div>
     <div class="frow">
-      <div class="fld"><label for="p-channel">Where do you reach your audience?</label><select id="p-channel" name="kanaal" required><option value="">Choose a channel</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>LinkedIn</option><option>Newsletter or blog</option><option>Offline network</option><option>Other</option></select></div>
-      <div class="fld"><label for="p-size">Roughly how big is your audience?</label><select id="p-size" name="bereik" required><option value="">Choose a size</option><option>Under 1,000</option><option>1,000 – 10,000</option><option>10,000 – 50,000</option><option>50,000 – 250,000</option><option>Over 250,000</option></select></div>
+      <div class="fld"><label for="p-channel">Where do you reach your audience?</label><select id="p-channel" name="kanaal" required><option value="">Choose a channel</option><option value="Instagram">Instagram</option><option value="TikTok">TikTok</option><option value="YouTube">YouTube</option><option value="LinkedIn">LinkedIn</option><option value="Nieuwsbrief of blog">Newsletter or blog</option><option value="Offline netwerk">Offline network</option><option value="Overige">Other</option></select></div>
+      <div class="fld"><label for="p-size">Roughly how big is your audience?</label><select id="p-size" name="bereik" required><option value="">Choose a size</option><option value="Minder dan 1.000">Under 1,000</option><option value="1.000 – 10.000">1,000 – 10,000</option><option value="10.000 – 50.000">10,000 – 50,000</option><option value="50.000 – 250.000">50,000 – 250,000</option><option value="Meer dan 250.000">Over 250,000</option></select></div>
     </div>
     <div class="fld"><label for="p-profile">Link to your profile or website</label><input id="p-profile" name="profiel" type="url" inputmode="url" required></div>
     <div class="fld"><label for="p-code">Preferred code <small>(optional)</small></label><input id="p-code" name="gewenste_code" spellcheck="false"></div>

@@ -335,5 +335,25 @@ function finish(tpl, m, page) {
   fs.writeFileSync(path.join(SITE, 'site.webmanifest'), JSON.stringify(man, null, 2) + '\n');
   fs.copyFileSync(path.join(__dirname, 'site', '_redirects'), path.join(SITE, '_redirects'));
   fs.copyFileSync(path.join(__dirname, 'site', '_headers'), path.join(SITE, '_headers'));
+
+  /* 6. Netlify's form definitions. A field a visible form posts that is not
+     defined there is silently dropped from the submission, so refuse that. */
+  const defs = fs.readFileSync(path.join(__dirname, 'site', '__forms.html'), 'utf8');
+  const fieldsOf = html => {
+    const forms = {};
+    for (const [, attrs, body] of html.matchAll(/<form\b([^>]*)>([\s\S]*?)<\/form>/g)) {
+      const name = (attrs.match(/\bname="([^"]+)"/) || [])[1];
+      if (name) forms[name] = new Set([...forms[name] || [], ...[...body.matchAll(/<(?:input|select|textarea)\b[^>]*\bname="([^"]+)"/g)].map(x => x[1])]);
+    }
+    return forms;
+  };
+  const defined = fieldsOf(defs);
+  for (const p of pages) {
+    for (const [form, fields] of Object.entries(fieldsOf(fs.readFileSync(path.join(BASE, p, 'index.html'), 'utf8')))) {
+      const missing = [...fields].filter(f => f !== 'form-name' && !(defined[form] && defined[form].has(f)));
+      if (missing.length) throw new Error(`form "${form}" on ${p || 'home'} posts ${missing.join(', ')}, not defined in tools/concept/site/__forms.html`);
+    }
+  }
+  fs.writeFileSync(path.join(SITE, '__forms.html'), defs);
   console.log(`done: ${urls.length} pages in ${MK.length} markets, sitemap with ${urls.length} URLs`);
 })().catch(e => { console.error(e); process.exit(1); });

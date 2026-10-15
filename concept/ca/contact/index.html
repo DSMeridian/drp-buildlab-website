@@ -59,13 +59,13 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&amp;family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=mv6dxxci">
-<script defer="" src="/assets/site.js?v=mv6dxxci"></script>
-<link rel="stylesheet" href="/assets/chat.css?v=mv6dxxci">
-<script defer="" src="/assets/chat.js?v=mv6dxxci"></script>
-<link rel="stylesheet" href="/assets/consent.css?v=mv6dxxci">
-<script defer="" src="/assets/referral.js?v=mv6dxxci"></script>
-<script defer="" src="/assets/consent.js?v=mv6dxxci"></script>
+<link rel="stylesheet" href="/assets/site.css?v=mv9ud3nd">
+<script defer="" src="/assets/site.js?v=mv9ud3nd"></script>
+<link rel="stylesheet" href="/assets/chat.css?v=mv9ud3nd">
+<script defer="" src="/assets/chat.js?v=mv9ud3nd"></script>
+<link rel="stylesheet" href="/assets/consent.css?v=mv9ud3nd">
+<script defer="" src="/assets/referral.js?v=mv9ud3nd"></script>
+<script defer="" src="/assets/consent.js?v=mv9ud3nd"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -107,7 +107,7 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
       <li><b>You decide</b><span>No obligation. You only pay once you approve a quote.</span></li>
     </ol>
   </div>
-  <form class="form" id="quote" name="offerte-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate="" data-event="demo_request" data-sent="sent">
+  <form class="form" id="quote" name="offerte-aanvraag" method="POST" novalidate="" data-event="demo_request" data-sent="sent">
     <input type="hidden" name="form-name" value="offerte-aanvraag">
   <input type="hidden" name="subject" value="Nieuwe offerteaanvraag — DRP BuildLab">
   <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
@@ -128,7 +128,7 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
       <div class="fld"><label for="q-phone">Phone</label><input id="q-phone" name="telefoon" type="tel" autocomplete="tel" required=""></div>
       <div class="fld"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required=""></div>
     </div>
-    <div class="fld"><label for="q-service">Which service do you have in mind?</label><select id="q-service" name="dienst" required=""><option value="">Choose a service</option><option>Starter package (one-page website)</option><option>Made to measure, quote</option><option>Update an existing website</option><option>Extra services only (logo, SEO, …)</option><option>I don’t know yet</option></select></div>
+    <div class="fld"><label for="q-service">Which service do you have in mind?</label><select id="q-service" name="dienst" required=""><option value="">Choose a service</option><option value="Startpakket (website van één pagina)">Starter package (one-page website)</option><option value="Op maat gemaakt, offerte">Made to measure, quote</option><option value="Een bestaande website bijwerken">Update an existing website</option><option value="Alleen extra diensten (logo, SEO, …)">Extra services only (logo, SEO, …)</option><option value="Dat weet ik nog niet">I don’t know yet</option></select></div>
     <div class="fld"><label for="q-ref">Partner code <small>(optional)</small></label><input id="q-ref" name="ref" spellcheck="false" maxlength="32"></div>
     <div class="fld"><label for="q-msg">Message <small>(optional)</small></label><textarea id="q-msg" name="bericht"></textarea></div>
     <label class="check" for="q-consent"><input type="checkbox" id="q-consent" name="toestemming" value="ja" required=""><span>I agree that DRP BuildLab uses the details in this form to contact me about this request. <a href="/ca/privacy/">Privacy policy</a></span></label>
