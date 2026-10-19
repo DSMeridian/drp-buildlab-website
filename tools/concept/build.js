@@ -360,7 +360,7 @@ pages[''] = page({
   body: `
 <section class="hero"><div class="wrap">
   <h1 class="h1"><span class="ln"><span>Websites</span></span><span class="ln"><span>built to</span></span><span class="ln"><span><em>win clients.</em></span></span></h1>
-  <div class="phero-row" style="margin-top:40px">
+  <div class="phero-row">
     <p class="lede">We design and build <strong>custom websites and webshops</strong> for businesses worldwide. Tell us about yours and we’ll show you a <strong>free demo website</strong> before you commit to anything.</p>
     <div class="acts"><a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a><a class="btn ghost" href="${B}/werk/">See our work</a></div>
   </div>
