@@ -137,9 +137,17 @@ button,input,select,textarea{font:inherit;color:inherit}
 .phero-row .acts{justify-content:flex-end}
 @media (max-width:860px){.phero-row{grid-template-columns:minmax(0,1fr)}.phero-row .acts{justify-content:flex-start}}
 /* home hero */
-.hero{position:relative;padding-top:clamp(40px,8vh,100px);padding-bottom:clamp(24px,4vw,56px);overflow:clip}
+.hero{position:relative;padding-block:clamp(24px,4vh,56px);overflow:clip}
+.hero .phero-row{margin-top:clamp(20px,3.5vh,40px)}
 .hero::before{content:"";position:absolute;right:-18%;top:-30%;width:70vw;height:70vw;max-width:1100px;max-height:1100px;background:radial-gradient(closest-side,rgba(31,94,255,.26),rgba(31,94,255,0));pointer-events:none}
-.facts{display:flex;flex-wrap:wrap;gap:8px 32px;margin:44px 0 0;padding:20px 0 0;border-top:1px solid var(--line-d);color:var(--mute-d);font-size:15px;list-style:none}
+/* every hero fills the first screen (below the 72px header) and stacks like the phone layout: title, lede, buttons */
+.hero,.phero{min-height:calc(100svh - 72px - env(safe-area-inset-top,0px));display:flex;flex-direction:column;justify-content:center}
+.hero>.wrap,.phero>.wrap{width:100%}
+.phero::before{content:"";position:absolute;right:-18%;top:-30%;width:70vw;height:70vw;max-width:1100px;max-height:1100px;background:radial-gradient(closest-side,rgba(31,94,255,.2),rgba(31,94,255,0));pointer-events:none}
+.hero .phero-row,.phero .phero-row{grid-template-columns:minmax(0,1fr);justify-items:start;align-items:start}
+.hero .phero-row .acts,.phero .phero-row .acts{justify-content:flex-start}
+.hero .lede,.phero .lede{max-width:52ch}
+.facts{display:flex;flex-wrap:wrap;gap:8px 32px;margin:clamp(24px,4vh,44px) 0 0;padding:20px 0 0;border-top:1px solid var(--line-d);color:var(--mute-d);font-size:15px;list-style:none}
 
 /* devices */
 .browser{position:relative;border-radius:14px;background:#1c1d22;box-shadow:0 40px 120px -30px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.08);overflow:hidden}
@@ -623,7 +631,8 @@ a[href^="tel:"],a[href^="mailto:"],a[href*="wa.me"],.url,.money,.clist a,.clist 
 /* the home hero headline is three short lines in English; longer translations get a smaller size
    so they keep the same footprint instead of running to five or six lines. Factors measured per
    language against the English height at 375, 768, 1280 and 1900px -- recheck if the copy changes. */
-.hero .h1{font-size:calc(var(--hero-k,1)*clamp(54px,11vw,184px))}
+/* capped by height too (15svh) so the title, lede, buttons and facts all fit the first screen */
+.hero .h1{font-size:calc(var(--hero-k,1)*clamp(54px,min(11vw,15svh),184px))}
 @media (max-width:600px){.hero .h1{font-size:calc(var(--hero-k,1)*clamp(44px,13vw,80px))}}
 :root:is([lang="es"],[lang="pt"]){--hero-k:.87}
 :root:is([lang="nl"],[lang="de"],[lang="fr"],[lang="it"],[lang="pl"],[lang="ar"]){--hero-k:.78}
