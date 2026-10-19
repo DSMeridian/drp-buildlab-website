@@ -407,7 +407,7 @@ pages[''] = page({
 </div></section>
 
 <section class="sec light"><div class="wrap">
-  <div class="sec-head"><h2 class="h2 rv">The D, the R <em>and the P</em></h2><p class="sub rv">Three founders, one studio. These are the people you talk to, from the first call to launch day and after.</p></div>
+  <div class="sec-head"><p class="sub rv">Three founders, one studio. These are the people you talk to, from the first call to launch day and after.</p></div>
   <div class="team">
     ${[['dries', 'Dries De Smedt', 'Co-founder &amp; VP of Legal', 'D'], ['roan', 'Roan Bal', 'Co-founder &amp; VP of Operations', 'R'], ['par', 'Par Volckaerts', 'Co-founder &amp; VP of Marketing &amp; Communications', 'P']].map(([f, n, r, i]) => `<figure class="person rv"><div class="portrait"><img src="${B}/img/${f}.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Portrait of ${n}"><span class="init" aria-hidden="true">${i}</span></div><figcaption><h3 translate="no">${n}</h3><p class="role" translate="no">${r}</p></figcaption></figure>`).join('')}
   </div>
