@@ -387,7 +387,7 @@ pages[''] = page({
   <p class="side-label">About DRP BuildLab</p>
   <div>
     <p class="statement" id="stmt" data-hl="honestly,|phone">DRP BuildLab is a small studio of builders. We make websites that look as good as the businesses behind them, we price them honestly, and we pick up the phone long after launch.</p>
-    <div class="stmt-foot"><p>Based in Belgium, working with businesses wherever they are.</p><a class="tlink" href="${B}/over-ons/">Meet the team →</a></div>
+    <div class="stmt-foot"><p>Based in Belgium, working with businesses wherever they are.</p><a class="tlink" href="${B}/over-ons/">Meet the team</a></div>
   </div>
 </div></section>
 
@@ -411,7 +411,7 @@ pages[''] = page({
   <div class="team">
     ${[['dries', 'Dries De Smedt', 'Co-founder &amp; VP of Legal', 'D'], ['roan', 'Roan Bal', 'Co-founder &amp; VP of Operations', 'R'], ['par', 'Par Volckaerts', 'Co-founder &amp; VP of Marketing &amp; Communications', 'P']].map(([f, n, r, i]) => `<figure class="person rv"><div class="portrait"><img src="${B}/img/${f}.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Portrait of ${n}"><span class="init" aria-hidden="true">${i}</span></div><figcaption><h3 translate="no">${n}</h3><p class="role" translate="no">${r}</p></figcaption></figure>`).join('')}
   </div>
-  <div class="team-foot"><div class="builder"><img src="${B}/img/lathif.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Portrait of Lathif Dewantoro"><p><strong translate="no">Lathif Dewantoro</strong>, Lead Developer, builds every one of our websites together with the founders.</p></div><a class="tlink" href="${B}/over-ons/">More about us →</a></div>
+  <div class="team-foot"><div class="builder"><img src="${B}/img/lathif.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Portrait of Lathif Dewantoro"><p><strong translate="no">Lathif Dewantoro</strong>, Lead Developer, builds every one of our websites together with the founders.</p></div><a class="tlink" href="${B}/over-ons/">More about us</a></div>
 </div></section>
 
 <section class="sec fog"><div class="wrap">
