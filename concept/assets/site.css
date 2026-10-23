@@ -608,6 +608,8 @@ a.prt-card:hover .img img{transform:scale(1.05)}
 
 /* every language: long words break inside headings instead of widening the page */
 .h1,.h2,.h3,.statement,.svc h3,.case h3,.row h3,.vgrid h3,.wtile h2,.two h2,.plan h2,.care h2,.tm-text h3,.tm-list .tm-n,.terms dd,.faq summary,.prt-cta h3,.slot .big,.why h3,.amount,.ft-mail,.bc-drp{overflow-wrap:break-word;hyphens:auto}
+/* client names wrap whole words ("Prestige / Automotive", not "AUTOMOTI-VE"); a word too wide still breaks */
+:is(h1,h2,h3)[translate="no"]{hyphens:manual}
 .sec-head>*,.phero-row>*,.svc a>*,.case>*,.story>*,.cta-grid>*,.contact-grid>*,.tm>*,.two>*,.cta-band>*,.row>*,.plans>*,.care>*{min-width:0}
 @media (max-width:600px){
   .h1{font-size:clamp(44px,13vw,80px)}
