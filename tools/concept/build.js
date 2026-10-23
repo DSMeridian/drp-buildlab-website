@@ -59,7 +59,7 @@ const CASES_RAW = [
   },
   {
     slug: 'vonckx-performance', name: 'Vonckx Performance', em: 'Vonckx <em>Performance</em>',
-    url: 'vonckx-performance.netlify.app', href: 'https://vonckx-performance.netlify.app/', img: 'vonckx',
+    url: 'vonckxperformance.com', href: 'https://vonckx-performance.netlify.app/', img: 'vonckx',
     sector: 'Car tuning and maintenance', where: 'Booischot, Belgium', scope: 'Design and development',
     tags: ['Design', 'Development', 'Appointments', 'Responsive'], kinds: 'Website',
     short: 'A website for an independent garage in Booischot that does chiptuning, styling and regular servicing. Dark, sharp and built around one action: booking an appointment.',
