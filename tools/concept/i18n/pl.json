@@ -63,14 +63,6 @@
   "en": "One point of contact",
   "t": "Jedna osoba kontaktowa"
  },
- "1263507bce795bb1": {
-  "en": "kasteelwarmelo.nl",
-  "t": "kasteelwarmelo.nl"
- },
- "2be24c2fb7b61803": {
-  "en": "Live at kasteelwarmelo.nl ↗",
-  "t": "Na żywo na stronie kasteelwarmelo.nl ↗"
- },
  "abc2f33c7c521357": {
   "en": "Showreel · Client websites by DRP BuildLab",
   "t": "Prezentacja · Strony internetowe klientów zrealizowane przez DRP BuildLab"
@@ -262,10 +254,6 @@
  "4e4e61d7bf843a73": {
   "en": "Maintenance plans at <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month keep your site fast, secure and current. Hermosa Antwerp and Start to Business still rely on us today.",
   "t": "Plany konserwacyjne w cenie <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> miesięcznie zapewniają szybkość, bezpieczeństwo i aktualność Państwa strony internetowej. Firmy Hermosa Antwerp i Start to Business do dziś korzystają z naszych usług."
- },
- "6f7402cd40cd0d60": {
-  "en": "The D, the R <em>and the P</em>",
-  "t": "D, R <em>i P</em>"
  },
  "f79d660f1bc10d31": {
   "en": "Three founders, one studio. These are the people you talk to, from the first call to launch day and after.",
@@ -1991,10 +1979,6 @@
   "en": "Mobile menu",
   "t": "Menu mobilne"
  },
- "528895f6251a7cd8": {
-  "en": "Homepage of Kasteel Warmelo, designed and built by DRP BuildLab",
-  "t": "Strona główna zamku Warmelo, zaprojektowana i stworzona przez DRP BuildLab"
- },
  "1c2e6ab82524da66": {
   "en": "Showreel",
   "t": "Prezentacja prac"
@@ -2470,5 +2454,13 @@
  "fbac89ebaa470a3d": {
   "en": "A request for a price quote gets a personal answer within the hour, so the site leads every visitor to that one message.",
   "t": "Na zapytanie o wycenę udzielana jest indywidualna odpowiedź w ciągu godziny, dlatego strona kieruje każdego odwiedzającego właśnie do tej wiadomości."
+ },
+ "b3041c32d9cdd942": {
+  "en": "We are BarBabet’s IT maintenance partner, from gift vouchers to online reservations.",
+  "t": "Jesteśmy partnerem firmy BarBabet w zakresie obsługi informatycznej – od bonów upominkowych po rezerwacje online."
+ },
+ "126fb68c1a6ae632": {
+  "en": "Partnership visual: DRP BuildLab and BarBabet",
+  "t": "Grafika przedstawiająca partnerstwo: DRP BuildLab i BarBabet"
  }
 }

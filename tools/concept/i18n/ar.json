@@ -63,14 +63,6 @@
   "en": "One point of contact",
   "t": "جهة اتصال واحدة"
  },
- "1263507bce795bb1": {
-  "en": "kasteelwarmelo.nl",
-  "t": "kasteelwarmelo.nl"
- },
- "2be24c2fb7b61803": {
-  "en": "Live at kasteelwarmelo.nl ↗",
-  "t": "بث مباشر على kasteelwarmelo.nl ↗"
- },
  "abc2f33c7c521357": {
   "en": "Showreel · Client websites by DRP BuildLab",
   "t": "مجموعة أعمال · مواقع العملاء من تصميم DRP BuildLab"
@@ -262,10 +254,6 @@
  "4e4e61d7bf843a73": {
   "en": "Maintenance plans at <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month keep your site fast, secure and current. Hermosa Antwerp and Start to Business still rely on us today.",
   "t": "تضمن خطط الصيانة التي تبلغ تكلفتها <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> شهريًّا أن يظل موقعك سريعًا وآمنًا ومُحدَّثًا. ولا تزال شركتا «هيرموسا أنتويرب» و«ستارت تو بيزنس» تعتمدان علينا حتى اليوم."
- },
- "6f7402cd40cd0d60": {
-  "en": "The D, the R <em>and the P</em>",
-  "t": "الحرف «D» والحرف «R» <em>والحرف «P»</em>"
  },
  "f79d660f1bc10d31": {
   "en": "Three founders, one studio. These are the people you talk to, from the first call to launch day and after.",
@@ -1991,10 +1979,6 @@
   "en": "Mobile menu",
   "t": "القائمة على الهاتف المحمول"
  },
- "528895f6251a7cd8": {
-  "en": "Homepage of Kasteel Warmelo, designed and built by DRP BuildLab",
-  "t": "الصفحة الرئيسية لـ «كاستيل وارميلو»، التي صممتها وأنشأتها شركة DRP BuildLab"
- },
  "1c2e6ab82524da66": {
   "en": "Showreel",
   "t": "شريط العروض"
@@ -2470,5 +2454,13 @@
  "fbac89ebaa470a3d": {
   "en": "A request for a price quote gets a personal answer within the hour, so the site leads every visitor to that one message.",
   "t": "يحصل طلب عرض الأسعار على رد شخصي في غضون ساعة، لذا يوجه الموقع كل زائر إلى تلك الرسالة بالذات."
+ },
+ "b3041c32d9cdd942": {
+  "en": "We are BarBabet’s IT maintenance partner, from gift vouchers to online reservations.",
+  "t": "نحن شريك شركة BarBabet في مجال صيانة تكنولوجيا المعلومات، بدءًا من قسائم الهدايا وصولاً إلى الحجوزات عبر الإنترنت."
+ },
+ "126fb68c1a6ae632": {
+  "en": "Partnership visual: DRP BuildLab and BarBabet",
+  "t": "صورة توضيحية للشراكة: DRP BuildLab و BarBabet"
  }
 }
