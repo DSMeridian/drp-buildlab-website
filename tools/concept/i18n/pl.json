@@ -2462,5 +2462,125 @@
  "126fb68c1a6ae632": {
   "en": "Partnership visual: DRP BuildLab and BarBabet",
   "t": "Grafika przedstawiająca partnerstwo: DRP BuildLab i BarBabet"
+ },
+ "617c03b2aa503f0d": {
+  "en": "Website · Concrete staircases",
+  "t": "Strona internetowa · Schody betonowe"
+ },
+ "4015579284fc718d": {
+  "en": "Website · Garden maintenance",
+  "t": "Strona internetowa · Pielęgnacja ogrodu"
+ },
+ "5e0979223cdeffa4": {
+  "en": "Concrete staircases",
+  "t": "Schody betonowe"
+ },
+ "596a92e152f19191": {
+  "en": "Raf Geerts builds concrete staircases from Westerlo. They do not come from a catalogue: he builds the formwork on site, step by step, between the walls of the house, and strips it once the concrete has set.",
+  "t": "Raf Geerts zajmuje się budową betonowych klatek schodowych w Westerlo. Nie są to produkty z katalogu: szalunek buduje na miejscu, krok po kroku, pomiędzy ścianami domu, a po związaniu betonu go demontuje."
+ },
+ "3e82bec2ef59a7d9": {
+  "en": "His clients are building or renovating, so the site has to explain that craft and turn it into a request for a quote.",
+  "t": "Jego klienci zajmują się budową lub remontem, dlatego strona internetowa musi w przystępny sposób wyjaśnić istotę tych prac i przekształcić tę informację w zapytanie o wycenę."
+ },
+ "e2bbfea52b5ba883": {
+  "en": "We built a bold, dark site in concrete grey and signal red, with the work in four steps: measure, build the formwork, reinforce, strip. A gallery sorted by type of staircase shows the stairs at every stage, because the formwork is where the craft is.",
+  "t": "Stworzyliśmy odważną, mroczną stronę internetową w odcieniach szarości betonu i jaskrawej czerwieni, przedstawiającą proces budowy w czterech etapach: pomiary, montaż szalunku, zbrojenie, rozbiórka szalunku. Galeria uporządkowana według rodzajów schodów pokazuje je na każdym etapie, ponieważ to właśnie w szalunku tkwi prawdziwe rzemiosło."
+ },
+ "e33c3dfc4a2a3b3d": {
+  "en": "The quote form asks for what Raf needs to price a staircase: the type of stair, the floor-to-floor height and a plan or photo, which clients can upload straight from their phone.",
+  "t": "W formularzu wyceny należy podać informacje niezbędne firmie Raf do wyceny klatki schodowej: rodzaj schodów, wysokość między piętrami oraz rysunek lub zdjęcie, które klienci mogą przesłać bezpośrednio ze swojego telefonu."
+ },
+ "c90af30df282cc8d": {
+  "en": "Quote form with plan upload",
+  "t": "Formularz wyceny z możliwością załadowania planu"
+ },
+ "7ed6e9663fb07904": {
+  "en": "Garden maintenance",
+  "t": "Pielęgnacja ogrodu"
+ },
+ "3e94ac9a8df99cde": {
+  "en": "TuinZorg DP looks after gardens for homeowners and businesses across East Flanders, from regular mowing and pruning to new lawns, privacy screens and garden edging.",
+  "t": "Firma TuinZorg DP zajmuje się pielęgnacją ogrodów dla właścicieli domów i przedsiębiorstw w całej Flandrii Wschodniej – od regularnego koszenia i przycinania po zakładanie nowych trawników, montaż osłon zapewniających prywatność oraz obrzeża ogrodowe."
+ },
+ "48c898d35e9dc705": {
+  "en": "Most jobs start with a question about one garden, so the site has to show real work and make asking for a quote easy.",
+  "t": "Większość zleceń zaczyna się od zapytania dotyczącego jednego ogrodu, dlatego strona internetowa musi prezentować rzeczywiste realizacje oraz ułatwiać złożenie zapytania ofertowego."
+ },
+ "cd0c858d91bdf4d0": {
+  "en": "We designed a fresh, green site that lets the gardens do the talking: every service with its own photo, a gallery of real jobs sorted by type of work, and reviews from clients in the area.",
+  "t": "Stworzyliśmy świeżą, ekologiczną stronę internetową, która pozwala ogrodom przemówić same za siebie: każda usługa ma swoje własne zdjęcie, dostępna jest galeria rzeczywistych realizacji posortowanych według rodzaju prac oraz opinie klientów z okolicy."
+ },
+ "d1973ad79e055da8": {
+  "en": "The quote form asks for the job, the size of the garden and the timing, and takes photos of the garden, so the first answer can already be a concrete one.",
+  "t": "W formularzu wyceny należy podać rodzaj zlecenia, wielkość ogrodu oraz termin realizacji; ponadto formularz umożliwia wykonanie zdjęć ogrodu, dzięki czemu już pierwsza odpowiedź może być konkretna."
+ },
+ "f99aa0804b395219": {
+  "en": "Quote form with photos",
+  "t": "Formularz wyceny ze zdjęciami"
+ },
+ "e79c5ccd810a0664": {
+  "en": "Raf Geerts Betontrappen case study",
+  "t": "Studium przypadku firmy Raf Geerts Betontrappen"
+ },
+ "17d6dfb46b9258af": {
+  "en": "Raf Geerts Betontrappen homepage on desktop",
+  "t": "Strona główna firmy Raf Geerts Betontrappen na komputerze stacjonarnym"
+ },
+ "b9230f3e998d3c06": {
+  "en": "Raf Geerts Betontrappen on a phone",
+  "t": "Raf Geerts Betontrappen na telefonie"
+ },
+ "9357e1fe115538f9": {
+  "en": "TuinZorg DP case study",
+  "t": "Studium przypadku firmy TuinZorg DP"
+ },
+ "acca4c77860849f1": {
+  "en": "TuinZorg DP homepage on desktop",
+  "t": "Strona główna serwisu TuinZorg DP na komputerze stacjonarnym"
+ },
+ "3902f26b80b7f95e": {
+  "en": "TuinZorg DP on a phone",
+  "t": "Aplikacja TuinZorg DP na telefonie"
+ },
+ "db01ef5139dd6d7d": {
+  "en": "The full Raf Geerts Betontrappen homepage on desktop",
+  "t": "Pełna strona główna serwisu Raf Geerts Betontrappen na komputerze stacjonarnym"
+ },
+ "fb69ae24940175b0": {
+  "en": "Raf Geerts Betontrappen on a phone, top of the page",
+  "t": "Raf Geerts Betontrappen na telefonie, na górze strony"
+ },
+ "2eac752dade90a67": {
+  "en": "Raf Geerts Betontrappen on a phone, further down the page",
+  "t": "„Raf Geerts Betontrappen” w telefonie, w dalszej części strony"
+ },
+ "3c7026421eae13b7": {
+  "en": "Raf Geerts Betontrappen | Work | DRP BuildLab",
+  "t": "Raf Geerts – schody betonowe | Realizacje | DRP BuildLab"
+ },
+ "cb949705dae511b1": {
+  "en": "A website for Raf Geerts, who casts concrete staircases on site: indoor, outdoor and basement stairs, each one made to fit the house it stands in.",
+  "t": "Strona internetowa poświęcona Rafowi Geertsowi, który wykonuje na miejscu schody betonowe: schody wewnętrzne, zewnętrzne oraz do piwnic, z których każde jest dostosowane do konkretnego domu, w którym się znajduje."
+ },
+ "6a91021cb2c4f4ee": {
+  "en": "The full TuinZorg DP homepage on desktop",
+  "t": "Pełna strona główna serwisu TuinZorg DP na komputerze stacjonarnym"
+ },
+ "391482f62a475fa8": {
+  "en": "TuinZorg DP on a phone, top of the page",
+  "t": "Aplikacja TuinZorg DP na telefonie, górna część strony"
+ },
+ "fad65b9b278f2085": {
+  "en": "TuinZorg DP on a phone, further down the page",
+  "t": "Aplikacja TuinZorg DP na telefonie – w dalszej części strony"
+ },
+ "06b11441c32346d2": {
+  "en": "TuinZorg DP | Work | DRP BuildLab",
+  "t": "TuinZorg DP | Praca | DRP BuildLab"
+ },
+ "f6ec3b97adca51e8": {
+  "en": "A website for a garden maintenance business in East Flanders: mowing, pruning, new lawns, privacy screens and neat borders, with a free quote one tap away.",
+  "t": "Strona internetowa firmy zajmującej się pielęgnacją ogrodów we Flandrii Wschodniej: koszenie, przycinanie, zakładanie nowych trawników, osłony zapewniające prywatność oraz zadbane rabaty – bezpłatna wycena dostępna za jednym kliknięciem."
  }
 }
