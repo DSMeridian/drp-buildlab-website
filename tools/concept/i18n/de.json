@@ -63,14 +63,6 @@
   "en": "One point of contact",
   "t": "Ein Ansprechpartner"
  },
- "1263507bce795bb1": {
-  "en": "kasteelwarmelo.nl",
-  "t": "kasteelwarmelo.nl"
- },
- "2be24c2fb7b61803": {
-  "en": "Live at kasteelwarmelo.nl ↗",
-  "t": "Live auf kasteelwarmelo.nl ↗"
- },
  "abc2f33c7c521357": {
   "en": "Showreel · Client websites by DRP BuildLab",
   "t": "Showreel · Kundenwebsites von DRP BuildLab"
@@ -262,10 +254,6 @@
  "4e4e61d7bf843a73": {
   "en": "Maintenance plans at <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month keep your site fast, secure and current. Hermosa Antwerp and Start to Business still rely on us today.",
   "t": "Wartungsverträge für <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> pro Monat sorgen dafür, dass Ihre Website schnell, sicher und auf dem neuesten Stand bleibt. Hermosa Antwerp und Start to Business vertrauen auch heute noch auf uns."
- },
- "6f7402cd40cd0d60": {
-  "en": "The D, the R <em>and the P</em>",
-  "t": "Das D, das R <em>und das P</em>"
  },
  "f79d660f1bc10d31": {
   "en": "Three founders, one studio. These are the people you talk to, from the first call to launch day and after.",
@@ -1991,10 +1979,6 @@
   "en": "Mobile menu",
   "t": "Menü für Mobilgeräte"
  },
- "528895f6251a7cd8": {
-  "en": "Homepage of Kasteel Warmelo, designed and built by DRP BuildLab",
-  "t": "Homepage von Kasteel Warmelo, entworfen und erstellt von DRP BuildLab"
- },
  "1c2e6ab82524da66": {
   "en": "Showreel",
   "t": "Showreel"
@@ -2470,5 +2454,13 @@
  "fbac89ebaa470a3d": {
   "en": "A request for a price quote gets a personal answer within the hour, so the site leads every visitor to that one message.",
   "t": "Eine Preisanfrage wird innerhalb einer Stunde persönlich beantwortet, sodass die Website jeden Besucher auf genau diese Botschaft hinführt."
+ },
+ "b3041c32d9cdd942": {
+  "en": "We are BarBabet’s IT maintenance partner, from gift vouchers to online reservations.",
+  "t": "Wir sind der IT-Wartungspartner von BarBabet – von Geschenkgutscheinen bis hin zu Online-Reservierungen."
+ },
+ "126fb68c1a6ae632": {
+  "en": "Partnership visual: DRP BuildLab and BarBabet",
+  "t": "Grafik zur Partnerschaft: DRP BuildLab und BarBabet"
  }
 }
