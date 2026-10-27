@@ -98,6 +98,26 @@ const CASES_RAW = [
     hDesk: 5200, hMob: 3600, phoneImg: 'welkomthuis-mob'
   },
   {
+    slug: 'raf-geerts-betontrappen', name: 'Raf Geerts Betontrappen', em: 'Raf Geerts <em>Betontrappen</em>',
+    url: 'betontrappenraf.be', href: 'https://www.betontrappenraf.be/', img: 'raf',
+    sector: 'Concrete staircases', where: 'Westerlo, Belgium', scope: 'Design and development',
+    tags: ['Design', 'Development', 'Quote form with plan upload', 'Responsive'], kinds: 'Website',
+    short: 'A website for Raf Geerts, who casts concrete staircases on site: indoor, outdoor and basement stairs, each one made to fit the house it stands in.',
+    brief: ['Raf Geerts builds concrete staircases from Westerlo. They do not come from a catalogue: he builds the formwork on site, step by step, between the walls of the house, and strips it once the concrete has set.', 'His clients are building or renovating, so the site has to explain that craft and turn it into a request for a quote.'],
+    did: ['We built a bold, dark site in concrete grey and signal red, with the work in four steps: measure, build the formwork, reinforce, strip. A gallery sorted by type of staircase shows the stairs at every stage, because the formwork is where the craft is.', 'The quote form asks for what Raf needs to price a staircase: the type of stair, the floor-to-floor height and a plan or photo, which clients can upload straight from their phone.'],
+    hDesk: 5200, hMob: 3600, phoneImg: 'raf-mob'
+  },
+  {
+    slug: 'tuinzorg-dp', name: 'TuinZorg DP', em: 'TuinZorg <em>DP</em>',
+    url: 'tuinzorgdp.com', href: 'https://tuinzorgdp.com/', img: 'tuinzorg',
+    sector: 'Garden maintenance', where: 'Desteldonk, Belgium', scope: 'Design and development',
+    tags: ['Design', 'Development', 'Quote form with photos', 'Responsive'], kinds: 'Website',
+    short: 'A website for a garden maintenance business in East Flanders: mowing, pruning, new lawns, privacy screens and neat borders, with a free quote one tap away.',
+    brief: ['TuinZorg DP looks after gardens for homeowners and businesses across East Flanders, from regular mowing and pruning to new lawns, privacy screens and garden edging.', 'Most jobs start with a question about one garden, so the site has to show real work and make asking for a quote easy.'],
+    did: ['We designed a fresh, green site that lets the gardens do the talking: every service with its own photo, a gallery of real jobs sorted by type of work, and reviews from clients in the area.', 'The quote form asks for the job, the size of the garden and the timing, and takes photos of the garden, so the first answer can already be a concrete one.'],
+    hDesk: 5200, hMob: 3600, phoneImg: 'tuinzorg-mob'
+  },
+  {
     slug: '0-procent-experiment', name: '0% Experiment', em: '0% <em>Experiment</em>',
     url: '0procentexperiment.com', href: 'https://0procentexperiment.com/', img: 'nulprocent',
     sector: 'Digital workbook', where: 'Online', scope: 'Design and development',
@@ -157,7 +177,7 @@ const SERVICES = [
   }
 ];
 
-const CASE_ORDER = ['kasteel-warmelo', 'prestige-automotive', 'start-to-business', 'vonckx-performance', 'welkomthuis', 'hermosa-antwerp', '0-procent-experiment', 'de-smedt-meridian'];
+const CASE_ORDER = ['kasteel-warmelo', 'prestige-automotive', 'start-to-business', 'vonckx-performance', 'welkomthuis', 'raf-geerts-betontrappen', 'tuinzorg-dp', 'hermosa-antwerp', '0-procent-experiment', 'de-smedt-meridian'];
 const CASES = CASE_ORDER.map(k => CASES_RAW.find(c => c.slug === k));
 const caseBy = k => CASES.find(c => c.slug === k);
 
