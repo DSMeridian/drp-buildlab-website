@@ -2582,5 +2582,417 @@
  "f6ec3b97adca51e8": {
   "en": "A website for a garden maintenance business in East Flanders: mowing, pruning, new lawns, privacy screens and neat borders, with a free quote one tap away.",
   "t": "Een website voor een tuinonderhoudsbedrijf in Oost-Vlaanderen: gras maaien, snoeien, nieuwe gazons, zichtschermen en verzorgde borders, met een gratis offerte binnen handbereik."
+ },
+ "1676180c17b6ddd4": {
+  "en": "Blog",
+  "t": "Blog"
+ },
+ "5f9d0eef76db20a2": {
+  "en": "News and <em>insights</em>",
+  "t": "Nieuws en <em>inzichten</em>"
+ },
+ "5ee5f63ac32fafe1": {
+  "en": "How we build websites, webshops and automations, the businesses we work with, and the creators we team up with.",
+  "t": "Hoe wij websites, webwinkels en automatiseringen ontwikkelen, de bedrijven waarmee wij samenwerken en de makers met wie wij de krachten bundelen."
+ },
+ "35f0cd6a0dfe51cd": {
+  "en": "Technical",
+  "t": "Technisch"
+ },
+ "648ff62341d5334f": {
+  "en": "Morning Routine",
+  "t": "Ochtendroutine"
+ },
+ "0d9011521bacc777": {
+  "en": "There’s something quietly magical about the first hour of the morning, before the emails start rolling in and the world demands your attention. I’ve spent the past few months experimenting with how I use that time, and the results have surprised me.",
+  "t": "Er schuilt iets stilletjes magisch in het eerste uur van de ochtend, voordat de e-mails binnenstromen en de wereld uw aandacht opeist. Ik heb de afgelopen maanden geëxperimenteerd met de manier waarop ik die tijd benut, en de resultaten hebben mij verrast."
+ },
+ "2b98e7860dd66317": {
+  "en": "Checking out without the hassle: what customers expect in 2026",
+  "t": "Afrekenen zonder gedoe: wat klanten in 2026 verwachten"
+ },
+ "5a422175445cd5d0": {
+  "en": "On payment methods, drop-off moments and why the checkout of your webshop matters as much as your shop window. What customers expect in 2026, and how to build a payment flow that does not get in the way.",
+  "t": "Over betaalmethoden, het moment waarop klanten afhaken en waarom het afrekenproces van uw webwinkel net zo belangrijk is als uw etalage. Wat klanten in 2026 verwachten, en hoe u een betaalproces kunt opzetten dat hen niet in de weg staat."
+ },
+ "d5f3abfcee4bd063": {
+  "en": "There are no articles in this language yet.",
+  "t": "Er zijn nog geen artikelen in deze taal."
+ },
+ "c093bb71d773d9d4": {
+  "en": "By <span translate=\"no\">Dries De Smedt</span>",
+  "t": "Door <span translate=\"no\">Dries De Smedt</span>"
+ },
+ "bc26843c11d04bf5": {
+  "en": "3 min read",
+  "t": "Leestijd: 3 minuten"
+ },
+ "86ccd2822fbe3ae5": {
+  "en": "Jef fills his basket, taps checkout and is then faced with a form of twelve fields and one payment method he never uses. He closes the tab. You have lost him in the very last metre.",
+  "t": "Jef vult zijn winkelmandje, klikt op ‘Afrekenen’ en krijgt vervolgens een formulier te zien met twaalf invulvelden en een betaalmethode die hij nooit gebruikt. Hij sluit het venster. U bent hem op de allerlaatste meter kwijtgeraakt."
+ },
+ "c20f5ca22f7aff95": {
+  "en": "That is the nasty thing about selling online: the hardest work, convincing the customer, is done, and then the checkout throws it away.",
+  "t": "Dat is het vervelende aan online verkopen: het zwaarste werk, namelijk de klant overtuigen, is gedaan, en dan gooit het afrekenproces het allemaal over de schijnwerper."
+ },
+ "19857cf8f05dba48": {
+  "en": "A form with twelve fields is not a checkout. It is an obstacle course.",
+  "t": "Een formulier met twaalf velden is geen afrekenproces. Het is een hindernisbaan."
+ },
+ "f25dc067066e258e": {
+  "en": "Where customers drop off",
+  "t": "Waar klanten hun spullen afgeven"
+ },
+ "ab2dc0d372e90af4": {
+  "en": "Almost every webshop knows the same five reasons why a customer stops halfway:",
+  "t": "Vrijwel elke webwinkel kent dezelfde vijf redenen waarom een klant halverwege afhaakt:"
+ },
+ "f445b5c1df111791": {
+  "en": "<strong>Surprise costs.</strong> Shipping or extras that only appear in the last step.",
+  "t": "<strong>Onverwachte kosten.</strong> Verzendkosten of extra’s die pas in de laatste stap worden weergegeven."
+ },
+ "d544a11053e2daf4": {
+  "en": "<strong>A mandatory account.</strong> Someone who wants to buy something does not want a new relationship.",
+  "t": "<strong>Een verplicht account.</strong> Iemand die iets wil kopen, is niet op zoek naar een nieuwe relatie."
+ },
+ "d6eb2ca06c5624ec": {
+  "en": "<strong>Too many fields.</strong> Every extra field is a reason to hesitate.",
+  "t": "<strong>Te veel velden.</strong> Elk extra veld is een reden om te aarzelen."
+ },
+ "9da27eedba70f56b": {
+  "en": "<strong>The payment method is missing.</strong> Anyone who does not see their usual method leaves.",
+  "t": "<strong>De betaalmethode ontbreekt.</strong> Iedereen die zijn gebruikelijke betaalmethode niet ziet, vertrekt."
+ },
+ "db45b221b0e53864": {
+  "en": "<strong>An unclear error message.</strong> 'Something went wrong' helps nobody.",
+  "t": "<strong>Een onduidelijke foutmelding. Met</strong> ‘Er is iets misgegaan’ is niemand gebaat."
+ },
+ "95947c7bdc4e31ce": {
+  "en": "What customers expect",
+  "t": "Wat klanten verwachten"
+ },
+ "b8a3a22ed5d812e1": {
+  "en": "<strong>The method they use every day.</strong> In Belgium that means Bancontact, cards and payment apps on the phone.",
+  "t": "<strong>De betaalmethode die zij dagelijks gebruiken.</strong> In België zijn dat Bancontact, betaalkaarten en betaalapps op de telefoon."
+ },
+ "6ebf8ed1e155831f": {
+  "en": "<strong>As few fields as possible.</strong> Name, address, payment. Done.",
+  "t": "<strong>Zo min mogelijk velden.</strong> Naam, adres, betaling. Klaar."
+ },
+ "8352d244ab7a98ea": {
+  "en": "<strong>The total before the last click.</strong> Including shipping and VAT, with no surprises.",
+  "t": "<strong>Het totaalbedrag vóór de laatste klik.</strong> Inclusief verzendkosten en btw, zonder verrassingen."
+ },
+ "3bb53fbbd8129f39": {
+  "en": "<strong>An immediate confirmation,</strong> by email.",
+  "t": "<strong>Een onmiddellijke bevestiging</strong> per e-mail."
+ },
+ "6ce1fe4346224566": {
+  "en": "<strong>A clear way out when something goes wrong.</strong> An email address or a button, not a maze.",
+  "t": "<strong>Een duidelijke uitweg wanneer er iets misgaat.</strong> Een e-mailadres of een knop, geen doolhof."
+ },
+ "87060c3377e07a6c": {
+  "en": "Why payment integration is more than a button",
+  "t": "Waarom betalingsintegratie meer is dan alleen een knop"
+ },
+ "394385a47213d61f": {
+  "en": "A payment is rarely the end. It tells your order that the money has arrived, it prepares an invoice and it helps your bookkeeping. That is why we do not build payment as a loose button, but as a link in a chain:",
+  "t": "Een betaling is zelden het einde. Het geeft uw bestelling door dat het geld is ontvangen, het zorgt voor het opstellen van een factuur en het ondersteunt uw boekhouding. Daarom beschouwen wij een betaling niet als een losstaand onderdeel, maar als een schakel in een keten:"
+ },
+ "397262dc52cd9f39": {
+  "en": "Order",
+  "t": "Bestelling"
+ },
+ "39ab09a75a9f9080": {
+  "en": "Payment",
+  "t": "Betaling"
+ },
+ "66e344fc7d15d583": {
+  "en": "Confirmation",
+  "t": "Bevestiging"
+ },
+ "1b0d313e3f774e47": {
+  "en": "Invoice",
+  "t": "Factuur"
+ },
+ "ec625f5a53d3ef4d": {
+  "en": "Bookkeeping",
+  "t": "Boekhouding"
+ },
+ "f85245140b70c448": {
+  "en": "Each link tells the next one what has happened.",
+  "t": "Elke schakel geeft aan de volgende door wat er is gebeurd."
+ },
+ "43668f6ec83cc660": {
+  "en": "What happens behind the scenes",
+  "t": "Wat er achter de schermen gebeurt"
+ },
+ "5ac12ddc6bb1c2e8": {
+  "en": "When a customer pays, a lot happens that they never see. The payment provider confirms the payment with a signal to your website. Your website checks that signal and updates the order. The rest follows: the email, the invoice, the stock.",
+  "t": "Wanneer een klant betaalt, gebeurt er van alles achter de schermen. De betalingsprovider bevestigt de betaling door een signaal naar uw website te sturen. Uw website controleert dat signaal en werkt de bestelling bij. De rest volgt vanzelf: de e-mail, de factuur, de voorraad."
+ },
+ "c2353491e552baa0": {
+  "en": "If that signal does not arrive, or arrives twice, you end up with empty orders or duplicate invoices. That is why we build this with checks at every step and with retries for when something fails.",
+  "t": "Als dat signaal niet binnenkomt, of twee keer binnenkomt, leidt dat tot lege bestellingen of dubbele facturen. Daarom hebben wij dit systeem zo opgezet dat er bij elke stap controles plaatsvinden en dat er herhalingspogingen worden ondernomen wanneer er iets misgaat."
+ },
+ "c4ccc67b1c2b2aa5": {
+  "en": "Refunds and disputes",
+  "t": "Terugbetalingen en geschillen"
+ },
+ "b7c0d4643a13b44f": {
+  "en": "A refund should be a small action, not a project. Keep your records in good order: who, what and when. When a customer disputes a payment, a tidy administration is what wins it.",
+  "t": "Een terugbetaling zou een eenvoudige handeling moeten zijn, geen heel project. Houd uw administratie goed op orde: wie, wat en wanneer. Wanneer een klant een betaling betwist, is een overzichtelijke administratie de sleutel tot succes."
+ },
+ "5f2775f081cf14ae": {
+  "en": "Paying safely",
+  "t": "Veilig betalen"
+ },
+ "55b9b3b5edcb0b61": {
+  "en": "<strong>Strong customer authentication.</strong> In the EU it is required for most online card payments (the PSD2 rules). Choose a provider that handles it.",
+  "t": "<strong>Sterke klantauthenticatie.</strong> In de EU is dit verplicht voor de meeste online kaartbetalingen (de PSD2-regels). Kies een aanbieder die dit regelt."
+ },
+ "02943b04dde59301": {
+  "en": "<strong>Do not store card details yourself.</strong> Leave that to the provider.",
+  "t": "<strong>Sla de kaartgegevens niet zelf op.</strong> Laat dat over aan de aanbieder."
+ },
+ "d974d71cbe72b602": {
+  "en": "<strong>Always use a secure connection (https)</strong> across your whole site.",
+  "t": "<strong>Gebruik altijd een beveiligde verbinding (https)</strong> op uw gehele website."
+ },
+ "c1d5f963674cea75": {
+  "en": "<strong>Choose a provider within the EU,</strong> and put agreements about data in writing.",
+  "t": "<strong>Kies een dienstverlener binnen de EU</strong> en leg afspraken over gegevens schriftelijk vast."
+ },
+ "87fae33056b2e9ad": {
+  "en": "The payment world is shifting",
+  "t": "De betalingswereld is aan het veranderen"
+ },
+ "8a47454ed9c40576": {
+  "en": "Payment methods change faster than websites. Europe is working on its own options, such as Wero, which are meant to replace existing apps and systems over time. The details and dates keep moving, so check what your payment provider supports now and later. Ideally, choose one that adds new methods quickly.",
+  "t": "Betaalmethoden veranderen sneller dan websites. Europa werkt aan eigen oplossingen, zoals Wero, die op termijn de bestaande apps en systemen moeten vervangen. De details en data veranderen voortdurend, dus controleer wat uw betalingsprovider nu en in de toekomst ondersteunt. Kies bij voorkeur een aanbieder die snel nieuwe betaalmethoden toevoegt."
+ },
+ "e084a23e7f136531": {
+  "en": "Checkout check for your webshop",
+  "t": "Afrekenproces voor uw webwinkel"
+ },
+ "b935a1fae803bb6f": {
+  "en": "Can the customer pay with the method they choose themselves?",
+  "t": "Kan de klant betalen via de betaalmethode die hij zelf kiest?"
+ },
+ "e095ce2017f2baf4": {
+  "en": "Do they see the total before the last click?",
+  "t": "Zien zij het totaalbedrag vóór de laatste klik?"
+ },
+ "0098ebe8ac9b69d9": {
+  "en": "Does your form have fewer than seven fields?",
+  "t": "Bevat uw formulier minder dan zeven velden?"
+ },
+ "0734358a31151555": {
+  "en": "Do they get a confirmation by email straight away?",
+  "t": "Krijgen zij direct een bevestiging per e-mail?"
+ },
+ "c0235f4beb1f51cf": {
+  "en": "Can you refund an amount in one click?",
+  "t": "Kunt u een bedrag met één muisklik terugbetalen?"
+ },
+ "9d1bb4afb3ce595d": {
+  "en": "Do the money and the order land in your administration straight away?",
+  "t": "Komen het geld en de bestelling direct in uw administratie terecht?"
+ },
+ "7ec2b8cb59b420f6": {
+  "en": "Jef does not exist. His closed tab does, somewhere.",
+  "t": "Jef bestaat niet. Zijn gesloten tabblad bestaat wel, ergens."
+ },
+ "041d86c235f3b748": {
+  "en": "A checkout that does not get in the way?",
+  "t": "Een kassa die niet in de weg staat?"
+ },
+ "6d87ee94cee983b9": {
+  "en": "We build payment integrations that keep both your customer and your bookkeeping happy.",
+  "t": "Wij ontwikkelen betalingsintegraties die zowel uw klanten als uw boekhouding tevreden stellen."
+ },
+ "1387d8153b0ef6cc": {
+  "en": "info@drpbuildlab.com",
+  "t": "info@drpbuildlab.com"
+ },
+ "db5b8996700bb083": {
+  "en": "drpbuildlab.com",
+  "t": "drpbuildlab.com"
+ },
+ "e329cb8a17cd7533": {
+  "en": "payments",
+  "t": "betalingen"
+ },
+ "02b04f53a75e81f5": {
+  "en": "webshop",
+  "t": "webwinkel"
+ },
+ "fe96b3b32980832d": {
+  "en": "checkout",
+  "t": "afrekenen"
+ },
+ "b012bf442ea08b5d": {
+  "en": "e-commerce",
+  "t": "e-commerce"
+ },
+ "c1798a1b581f5469": {
+  "en": "integration",
+  "t": "integratie"
+ },
+ "f6af7ad52205a96c": {
+  "en": "Like",
+  "t": "Vind ik leuk"
+ },
+ "5c58cd85018e00c7": {
+  "en": "Share",
+  "t": "Delen"
+ },
+ "f04a64ec720335fe": {
+  "en": "Need help with your online presence?",
+  "t": "Heeft u hulp nodig bij uw online aanwezigheid?"
+ },
+ "e6d047a059ca10de": {
+  "en": "From website to webshop: we help you tell a story that is true, and that people enjoy reading.",
+  "t": "Van website tot webshop: wij helpen u een verhaal te vertellen dat authentiek is en dat mensen met plezier lezen."
+ },
+ "dbcd9b51e0f4d64c": {
+  "en": "Comments <span class=\"cm-n\" translate=\"no\"></span>",
+  "t": "Opmerkingen <span class=\"cm-n\" translate=\"no\"></span>"
+ },
+ "979a9c806342a1a4": {
+  "en": "No comments yet. Be the first to share your thoughts.",
+  "t": "Er zijn nog geen reacties. Wees de eerste om uw mening te geven."
+ },
+ "33ca11efcde9da6e": {
+  "en": "Your comment",
+  "t": "Uw opmerking"
+ },
+ "6f07d68b2ef277ba": {
+  "en": "No account needed. We read every comment before it appears, usually within one working day. Please don't share personal details.",
+  "t": "U hoeft geen account aan te maken. Wij controleren elke reactie voordat deze wordt weergegeven, doorgaans binnen één werkdag. Deel alstublieft geen persoonlijke gegevens."
+ },
+ "b5ab5643299a82b2": {
+  "en": "Post comment",
+  "t": "Reactie plaatsen"
+ },
+ "639ec264efc57977": {
+  "en": "Link copied.",
+  "t": "De link is gekopieerd."
+ },
+ "acf48e16cebbaa25": {
+  "en": "Link copied. Paste it in your Instagram story, bio or a direct message.",
+  "t": "De link is gekopieerd. Plak deze in uw Instagram-verhaal, biografie of een privébericht."
+ },
+ "de177ad61be91bc6": {
+  "en": "Please fill in your name.",
+  "t": "Gelieve uw naam in te vullen."
+ },
+ "5a34c15f0fffbcbf": {
+  "en": "Please write a comment.",
+  "t": "Schrijf alstublieft een reactie."
+ },
+ "d5b8b0dd5019f71f": {
+  "en": "Thank you! Your comment will appear here once we have read it.",
+  "t": "Hartelijk dank! Uw reactie wordt hier weergegeven zodra wij deze hebben gelezen."
+ },
+ "f01c5f797d2d6165": {
+  "en": "You are commenting a little fast. Please try again in a few minutes.",
+  "t": "U plaatst uw reactie iets te snel. Probeer het alstublieft over een paar minuten nog eens."
+ },
+ "00a3a80458bb81a5": {
+  "en": "Sending failed. Please try again later.",
+  "t": "Het verzenden is mislukt. Probeer het later nog eens."
+ },
+ "cb7069f979c05962": {
+  "en": "All articles",
+  "t": "Alle artikelen"
+ },
+ "0dcf98f684e551ce": {
+  "en": "By <span translate=\"no\">Hilmi Billah</span>",
+  "t": "Door <span translate=\"no\">Hilmi Billah</span>"
+ },
+ "a9697baaf6e5fd43": {
+  "en": "1 min read",
+  "t": "Leestijd: 1 minuut"
+ },
+ "8f1f2230a89a1bac": {
+  "en": "There’s something quietly magical about the first hour of the morning, before the emails start rolling in and the world demands your attention. I’ve spent the past few months experimenting with how I use that time, and the results have surprised me. Instead of reaching for my phone the moment I wake up, I’ve started brewing a slow pot of coffee, opening a notebook, and simply writing whatever comes to mind. Some days it’s a to-do list; other days it’s half-formed ideas for projects I may never start. But that small ritual has become an anchor, a reminder that my day can begin on my own terms. If you’ve been feeling scattered lately, try carving out just fifteen minutes of unplugged time tomorrow morning and see what happens.",
+  "t": "Er schuilt iets stilletjes magisch in het eerste uur van de ochtend, voordat de e-mails binnenstromen en de wereld uw aandacht opeist. De afgelopen maanden heb ik geëxperimenteerd met hoe ik die tijd besteed, en de resultaten hebben mij verrast. In plaats van meteen naar mijn telefoon te grijpen zodra ik wakker word, ben ik begonnen met het rustig zetten van een pot koffie, het openen van een notitieboekje en het gewoon opschrijven van alles wat in me opkomt. Sommige dagen is het een takenlijst; andere dagen zijn het nog onuitgewerkte ideeën voor projecten waar ik misschien nooit aan zal beginnen. Maar dat kleine ritueel is een houvast geworden, een herinnering dat mijn dag op mijn eigen voorwaarden kan beginnen. Als u zich de laatste tijd wat verstrooid voelt, probeer dan morgenochtend eens vijftien minuten tijd vrij te maken waarin u even helemaal offline bent, en kijk wat er gebeurt."
+ },
+ "27be6e8258c229a5": {
+  "en": "morning",
+  "t": "&#x27;s ochtends"
+ },
+ "fedbf5d04c2f91ee": {
+  "en": "routine",
+  "t": "routine"
+ },
+ "04f1cb5e6ae6bbb6": {
+  "en": "daily",
+  "t": "dagelijks"
+ },
+ "015403fb037dd71c": {
+  "en": "DRP BuildLab blog",
+  "t": "DRP BuildLab-blog"
+ },
+ "8e83778ea6a8491e": {
+  "en": "logo drpbl",
+  "t": "logo drpbl"
+ },
+ "ea4d1c278823d2e0": {
+  "en": "Blog | DRP BuildLab",
+  "t": "Blog | DRP BuildLab"
+ },
+ "3464d4a673d9b34f": {
+  "en": "How we build websites, webshops and automations, the businesses we work with and the creators we team up with.",
+  "t": "Hoe wij websites, webwinkels en automatiseringen ontwikkelen, de bedrijven waarmee wij samenwerken en de makers met wie wij de krachten bundelen."
+ },
+ "9c6152e6ce9a6889": {
+  "en": "Reactions",
+  "t": "Reacties"
+ },
+ "7e5626f99940e87b": {
+  "en": "Share on WhatsApp",
+  "t": "Delen via WhatsApp"
+ },
+ "4a14fbf54f1d692a": {
+  "en": "WhatsApp",
+  "t": "WhatsApp"
+ },
+ "0e25f125adb71705": {
+  "en": "Share on X",
+  "t": "Delen op X"
+ },
+ "05493f8800c33306": {
+  "en": "X",
+  "t": "X"
+ },
+ "bc2967d69f0c01b5": {
+  "en": "Share on Instagram",
+  "t": "Delen op Instagram"
+ },
+ "ed89ebcb6349a38e": {
+  "en": "Instagram",
+  "t": "Instagram"
+ },
+ "bad709117fa0a119": {
+  "en": "Copy the link",
+  "t": "Kopieer de link"
+ },
+ "6b1a2fa18752447e": {
+  "en": "Checking out without the hassle: what customers expect in 2026 | Blog | DRP BuildLab",
+  "t": "Vlot afrekenen: wat klanten in 2026 verwachten | Blog | DRP BuildLab"
+ },
+ "cb4f85d99edd1f29": {
+  "en": "On payment methods, drop-off moments and why the checkout of your webshop matters as much as your shop window. What customers expect in 2026, and how to build a payment flow that does not get in the way.",
+  "t": "Over betaalmethoden, het moment waarop klanten afhaken en waarom het afrekenproces van uw webwinkel net zo belangrijk is als uw etalage. Wat klanten in 2026 verwachten, en hoe u een betaalproces kunt opzetten dat hen niet in de weg staat."
+ },
+ "18d9019fb0edc98a": {
+  "en": "Morning Routine | Blog | DRP BuildLab",
+  "t": "Ochtendroutine | Blog | DRP BuildLab"
+ },
+ "504be530d49df541": {
+  "en": "There’s something quietly magical about the first hour of the morning, before the emails start rolling in and the world demands your attention. I’ve spent the past few months experimenting with how I use that time, and the results have surprised me.",
+  "t": "Er schuilt iets stilletjes magisch in het eerste uur van de ochtend, voordat de e-mails binnenstromen en de wereld uw aandacht opeist. Ik heb de afgelopen maanden geëxperimenteerd met de manier waarop ik die tijd besteed, en de resultaten hebben mij verrast."
  }
 }

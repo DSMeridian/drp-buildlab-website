@@ -2582,5 +2582,417 @@
  "f6ec3b97adca51e8": {
   "en": "A website for a garden maintenance business in East Flanders: mowing, pruning, new lawns, privacy screens and neat borders, with a free quote one tap away.",
   "t": "Un site web dédié à une entreprise d'entretien de jardins en Flandre-Orientale : tonte, taille, aménagement de nouvelles pelouses, brise-vue et bordures soignées, avec un devis gratuit accessible d'un simple clic."
+ },
+ "1676180c17b6ddd4": {
+  "en": "Blog",
+  "t": "Blog"
+ },
+ "5f9d0eef76db20a2": {
+  "en": "News and <em>insights</em>",
+  "t": "Actualités et <em>analyses</em>"
+ },
+ "5ee5f63ac32fafe1": {
+  "en": "How we build websites, webshops and automations, the businesses we work with, and the creators we team up with.",
+  "t": "Notre approche de la création de sites web, de boutiques en ligne et de solutions automatisées, les entreprises avec lesquelles nous travaillons et les créateurs avec lesquels nous collaborons."
+ },
+ "35f0cd6a0dfe51cd": {
+  "en": "Technical",
+  "t": "Technique"
+ },
+ "648ff62341d5334f": {
+  "en": "Morning Routine",
+  "t": "Routine du matin"
+ },
+ "0d9011521bacc777": {
+  "en": "There’s something quietly magical about the first hour of the morning, before the emails start rolling in and the world demands your attention. I’ve spent the past few months experimenting with how I use that time, and the results have surprised me.",
+  "t": "Il y a quelque chose de discrètement magique dans la première heure de la matinée, avant que les e-mails ne commencent à affluer et que le monde ne réclame votre attention. J’ai passé ces derniers mois à tester différentes façons d’utiliser ce temps, et les résultats m’ont surpris."
+ },
+ "2b98e7860dd66317": {
+  "en": "Checking out without the hassle: what customers expect in 2026",
+  "t": "Un passage en caisse sans tracas : ce que les clients attendent en 2026"
+ },
+ "5a422175445cd5d0": {
+  "en": "On payment methods, drop-off moments and why the checkout of your webshop matters as much as your shop window. What customers expect in 2026, and how to build a payment flow that does not get in the way.",
+  "t": "Les modes de paiement, les moments d&#x27;abandon de panier et pourquoi le processus de paiement de votre boutique en ligne est tout aussi important que votre vitrine. Ce que les clients attendent en 2026, et comment mettre en place un processus de paiement qui ne constitue pas un obstacle."
+ },
+ "d5f3abfcee4bd063": {
+  "en": "There are no articles in this language yet.",
+  "t": "Il n&#x27;y a pour l&#x27;instant aucun article dans cette langue."
+ },
+ "c093bb71d773d9d4": {
+  "en": "By <span translate=\"no\">Dries De Smedt</span>",
+  "t": "Par <span translate=\"no\">Dries De Smedt</span>"
+ },
+ "bc26843c11d04bf5": {
+  "en": "3 min read",
+  "t": "3 minutes de lecture"
+ },
+ "86ccd2822fbe3ae5": {
+  "en": "Jef fills his basket, taps checkout and is then faced with a form of twelve fields and one payment method he never uses. He closes the tab. You have lost him in the very last metre.",
+  "t": "Jef remplit son panier, clique sur « Passer à la caisse » et se retrouve alors face à un formulaire comportant douze champs et un moyen de paiement qu&#x27;il n&#x27;utilise jamais. Il ferme l&#x27;onglet. Vous l&#x27;avez perdu au tout dernier moment."
+ },
+ "c20f5ca22f7aff95": {
+  "en": "That is the nasty thing about selling online: the hardest work, convincing the customer, is done, and then the checkout throws it away.",
+  "t": "C&#x27;est là le problème avec la vente en ligne : le plus dur, à savoir convaincre le client, est fait, et ensuite, le processus de paiement réduit tout cela à néant."
+ },
+ "19857cf8f05dba48": {
+  "en": "A form with twelve fields is not a checkout. It is an obstacle course.",
+  "t": "Un formulaire comportant douze champs n&#x27;est pas un processus de paiement. C&#x27;est un parcours du combattant."
+ },
+ "f25dc067066e258e": {
+  "en": "Where customers drop off",
+  "t": "À quel endroit les clients déposent-ils leurs colis ?"
+ },
+ "ab2dc0d372e90af4": {
+  "en": "Almost every webshop knows the same five reasons why a customer stops halfway:",
+  "t": "Presque toutes les boutiques en ligne connaissent les cinq raisons suivantes pour lesquelles un client abandonne son achat en cours de route :"
+ },
+ "f445b5c1df111791": {
+  "en": "<strong>Surprise costs.</strong> Shipping or extras that only appear in the last step.",
+  "t": "<strong>Des frais imprévus.</strong> Des frais de livraison ou des suppléments qui n&#x27;apparaissent qu&#x27;à la dernière étape."
+ },
+ "d544a11053e2daf4": {
+  "en": "<strong>A mandatory account.</strong> Someone who wants to buy something does not want a new relationship.",
+  "t": "<strong>Un compte obligatoire.</strong> Une personne qui souhaite acheter quelque chose ne cherche pas à nouer une nouvelle relation."
+ },
+ "d6eb2ca06c5624ec": {
+  "en": "<strong>Too many fields.</strong> Every extra field is a reason to hesitate.",
+  "t": "<strong>Il y a trop de champs.</strong> Chaque champ supplémentaire est une raison d&#x27;hésiter."
+ },
+ "9da27eedba70f56b": {
+  "en": "<strong>The payment method is missing.</strong> Anyone who does not see their usual method leaves.",
+  "t": "<strong>Le mode de paiement n&#x27;apparaît pas.</strong> Toute personne qui ne trouve pas son mode de paiement habituel quitte le site."
+ },
+ "db45b221b0e53864": {
+  "en": "<strong>An unclear error message.</strong> 'Something went wrong' helps nobody.",
+  "t": "<strong>Un message d&#x27;erreur peu clair.</strong> « Un problème est survenu » n&#x27;aide personne."
+ },
+ "95947c7bdc4e31ce": {
+  "en": "What customers expect",
+  "t": "Ce que les clients attendent"
+ },
+ "b8a3a22ed5d812e1": {
+  "en": "<strong>The method they use every day.</strong> In Belgium that means Bancontact, cards and payment apps on the phone.",
+  "t": "<strong>Le moyen de paiement qu&#x27;ils utilisent au quotidien.</strong> En Belgique, il s&#x27;agit de Bancontact, des cartes bancaires et des applications de paiement sur téléphone."
+ },
+ "6ebf8ed1e155831f": {
+  "en": "<strong>As few fields as possible.</strong> Name, address, payment. Done.",
+  "t": "<strong>Le moins de champs possible.</strong> Nom, adresse, paiement. C&#x27;est tout."
+ },
+ "8352d244ab7a98ea": {
+  "en": "<strong>The total before the last click.</strong> Including shipping and VAT, with no surprises.",
+  "t": "<strong>Le montant total avant le dernier clic.</strong> Frais de port et TVA compris, sans mauvaise surprise."
+ },
+ "3bb53fbbd8129f39": {
+  "en": "<strong>An immediate confirmation,</strong> by email.",
+  "t": "<strong>Une confirmation immédiate,</strong> par e-mail."
+ },
+ "6ce1fe4346224566": {
+  "en": "<strong>A clear way out when something goes wrong.</strong> An email address or a button, not a maze.",
+  "t": "<strong>Une solution claire lorsque quelque chose ne fonctionne pas.</strong> Une adresse e-mail ou un bouton, pas un véritable labyrinthe."
+ },
+ "87060c3377e07a6c": {
+  "en": "Why payment integration is more than a button",
+  "t": "Pourquoi l&#x27;intégration des moyens de paiement ne se résume pas à un simple bouton"
+ },
+ "394385a47213d61f": {
+  "en": "A payment is rarely the end. It tells your order that the money has arrived, it prepares an invoice and it helps your bookkeeping. That is why we do not build payment as a loose button, but as a link in a chain:",
+  "t": "Un paiement n&#x27;est que rarement une fin en soi. Il indique à votre commande que l&#x27;argent a bien été reçu, permet d&#x27;établir une facture et facilite votre comptabilité. C&#x27;est pourquoi nous ne considérons pas le paiement comme une étape isolée, mais comme un maillon d&#x27;une chaîne :"
+ },
+ "397262dc52cd9f39": {
+  "en": "Order",
+  "t": "Commande"
+ },
+ "39ab09a75a9f9080": {
+  "en": "Payment",
+  "t": "Paiement"
+ },
+ "66e344fc7d15d583": {
+  "en": "Confirmation",
+  "t": "Confirmation"
+ },
+ "1b0d313e3f774e47": {
+  "en": "Invoice",
+  "t": "Facture"
+ },
+ "ec625f5a53d3ef4d": {
+  "en": "Bookkeeping",
+  "t": "Comptabilité"
+ },
+ "f85245140b70c448": {
+  "en": "Each link tells the next one what has happened.",
+  "t": "Chaque maillon indique au suivant ce qui s&#x27;est passé."
+ },
+ "43668f6ec83cc660": {
+  "en": "What happens behind the scenes",
+  "t": "Ce qui se passe en coulisses"
+ },
+ "5ac12ddc6bb1c2e8": {
+  "en": "When a customer pays, a lot happens that they never see. The payment provider confirms the payment with a signal to your website. Your website checks that signal and updates the order. The rest follows: the email, the invoice, the stock.",
+  "t": "Lorsqu&#x27;un client effectue un paiement, de nombreux processus se déroulent en arrière-plan, à son insu. Le prestataire de paiement confirme le paiement en envoyant un signal à votre site web. Votre site web vérifie ce signal et met à jour la commande. Le reste suit : l&#x27;e-mail, la facture, la gestion des stocks."
+ },
+ "c2353491e552baa0": {
+  "en": "If that signal does not arrive, or arrives twice, you end up with empty orders or duplicate invoices. That is why we build this with checks at every step and with retries for when something fails.",
+  "t": "Si ce signal n&#x27;arrive pas, ou s&#x27;il arrive deux fois, vous vous retrouvez avec des commandes vides ou des factures en double. C&#x27;est pourquoi nous avons conçu ce système avec des contrôles à chaque étape et des tentatives de reprise en cas d&#x27;échec."
+ },
+ "c4ccc67b1c2b2aa5": {
+  "en": "Refunds and disputes",
+  "t": "Remboursements et litiges"
+ },
+ "b7c0d4643a13b44f": {
+  "en": "A refund should be a small action, not a project. Keep your records in good order: who, what and when. When a customer disputes a payment, a tidy administration is what wins it.",
+  "t": "Un remboursement devrait être une simple formalité, et non un véritable projet. Veillez à bien tenir vos registres : qui, quoi et quand. Lorsqu&#x27;un client conteste un paiement, c&#x27;est une administration bien organisée qui fait la différence."
+ },
+ "5f2775f081cf14ae": {
+  "en": "Paying safely",
+  "t": "Payer en toute sécurité"
+ },
+ "55b9b3b5edcb0b61": {
+  "en": "<strong>Strong customer authentication.</strong> In the EU it is required for most online card payments (the PSD2 rules). Choose a provider that handles it.",
+  "t": "<strong>Authentification forte du client.</strong> Au sein de l&#x27;UE, elle est obligatoire pour la plupart des paiements par carte en ligne (règles de la directive PSD2). Choisissez un prestataire qui prend en charge cette procédure."
+ },
+ "02943b04dde59301": {
+  "en": "<strong>Do not store card details yourself.</strong> Leave that to the provider.",
+  "t": "<strong>Ne conservez pas vous-même les informations relatives à votre carte bancaire.</strong> Laissez cette tâche au prestataire."
+ },
+ "d974d71cbe72b602": {
+  "en": "<strong>Always use a secure connection (https)</strong> across your whole site.",
+  "t": "<strong>Veillez à toujours utiliser une connexion sécurisée (https)</strong> sur l&#x27;ensemble de votre site."
+ },
+ "c1d5f963674cea75": {
+  "en": "<strong>Choose a provider within the EU,</strong> and put agreements about data in writing.",
+  "t": "<strong>Choisissez un prestataire situé au sein de l&#x27;UE</strong> et consignez par écrit les accords relatifs aux données."
+ },
+ "87fae33056b2e9ad": {
+  "en": "The payment world is shifting",
+  "t": "Le monde des paiements est en pleine mutation"
+ },
+ "8a47454ed9c40576": {
+  "en": "Payment methods change faster than websites. Europe is working on its own options, such as Wero, which are meant to replace existing apps and systems over time. The details and dates keep moving, so check what your payment provider supports now and later. Ideally, choose one that adds new methods quickly.",
+  "t": "Les moyens de paiement évoluent plus rapidement que les sites web. L&#x27;Europe travaille actuellement à la mise en place de ses propres solutions, telles que Wero, qui sont destinées à remplacer progressivement les applications et les systèmes existants. Les détails et les dates ne cessent de changer ; veillez donc à vérifier quels moyens de paiement sont pris en charge par votre prestataire de paiement, tant aujourd&#x27;hui qu&#x27;à l&#x27;avenir. Dans l&#x27;idéal, choisissez-en un qui intègre rapidement de nouveaux moyens de paiement."
+ },
+ "e084a23e7f136531": {
+  "en": "Checkout check for your webshop",
+  "t": "Contrôle du processus de paiement pour votre boutique en ligne"
+ },
+ "b935a1fae803bb6f": {
+  "en": "Can the customer pay with the method they choose themselves?",
+  "t": "Le client peut-il payer en utilisant le mode de paiement de son choix ?"
+ },
+ "e095ce2017f2baf4": {
+  "en": "Do they see the total before the last click?",
+  "t": "Voyez-vous le montant total avant le dernier clic ?"
+ },
+ "0098ebe8ac9b69d9": {
+  "en": "Does your form have fewer than seven fields?",
+  "t": "Votre formulaire comporte-t-il moins de sept champs ?"
+ },
+ "0734358a31151555": {
+  "en": "Do they get a confirmation by email straight away?",
+  "t": "Reçoivent-ils immédiatement une confirmation par e-mail ?"
+ },
+ "c0235f4beb1f51cf": {
+  "en": "Can you refund an amount in one click?",
+  "t": "Est-il possible de rembourser un montant en un seul clic ?"
+ },
+ "9d1bb4afb3ce595d": {
+  "en": "Do the money and the order land in your administration straight away?",
+  "t": "L&#x27;argent et la commande parviennent-ils immédiatement à votre service ?"
+ },
+ "7ec2b8cb59b420f6": {
+  "en": "Jef does not exist. His closed tab does, somewhere.",
+  "t": "Jef n&#x27;existe pas. Son onglet fermé, lui, existe bel et bien, quelque part."
+ },
+ "041d86c235f3b748": {
+  "en": "A checkout that does not get in the way?",
+  "t": "Une caisse qui ne vous gêne pas ?"
+ },
+ "6d87ee94cee983b9": {
+  "en": "We build payment integrations that keep both your customer and your bookkeeping happy.",
+  "t": "Nous développons des solutions d&#x27;intégration de paiement qui satisfont à la fois vos clients et votre service comptable."
+ },
+ "1387d8153b0ef6cc": {
+  "en": "info@drpbuildlab.com",
+  "t": "info@drpbuildlab.com"
+ },
+ "db5b8996700bb083": {
+  "en": "drpbuildlab.com",
+  "t": "drpbuildlab.com"
+ },
+ "e329cb8a17cd7533": {
+  "en": "payments",
+  "t": "paiements"
+ },
+ "02b04f53a75e81f5": {
+  "en": "webshop",
+  "t": "boutique en ligne"
+ },
+ "fe96b3b32980832d": {
+  "en": "checkout",
+  "t": "paiement"
+ },
+ "b012bf442ea08b5d": {
+  "en": "e-commerce",
+  "t": "commerce en ligne"
+ },
+ "c1798a1b581f5469": {
+  "en": "integration",
+  "t": "intégration"
+ },
+ "f6af7ad52205a96c": {
+  "en": "Like",
+  "t": "Comme"
+ },
+ "5c58cd85018e00c7": {
+  "en": "Share",
+  "t": "Partager"
+ },
+ "f04a64ec720335fe": {
+  "en": "Need help with your online presence?",
+  "t": "Vous avez besoin d&#x27;aide pour votre présence en ligne ?"
+ },
+ "e6d047a059ca10de": {
+  "en": "From website to webshop: we help you tell a story that is true, and that people enjoy reading.",
+  "t": "Du site web à la boutique en ligne : nous vous aidons à raconter une histoire authentique, que les gens ont plaisir à lire."
+ },
+ "dbcd9b51e0f4d64c": {
+  "en": "Comments <span class=\"cm-n\" translate=\"no\"></span>",
+  "t": "Commentaires <span class=\"cm-n\" translate=\"no\"></span>"
+ },
+ "979a9c806342a1a4": {
+  "en": "No comments yet. Be the first to share your thoughts.",
+  "t": "Aucun commentaire pour l&#x27;instant. Soyez le premier à donner votre avis."
+ },
+ "33ca11efcde9da6e": {
+  "en": "Your comment",
+  "t": "Votre commentaire"
+ },
+ "6f07d68b2ef277ba": {
+  "en": "No account needed. We read every comment before it appears, usually within one working day. Please don't share personal details.",
+  "t": "Aucun compte n&#x27;est nécessaire. Nous vérifions chaque commentaire avant sa publication, généralement dans un délai d&#x27;un jour ouvré. Veuillez ne pas divulguer d&#x27;informations personnelles."
+ },
+ "b5ab5643299a82b2": {
+  "en": "Post comment",
+  "t": "Publier un commentaire"
+ },
+ "639ec264efc57977": {
+  "en": "Link copied.",
+  "t": "Le lien a été copié."
+ },
+ "acf48e16cebbaa25": {
+  "en": "Link copied. Paste it in your Instagram story, bio or a direct message.",
+  "t": "Le lien a été copié. Collez-le dans votre story Instagram, votre biographie ou un message privé."
+ },
+ "de177ad61be91bc6": {
+  "en": "Please fill in your name.",
+  "t": "Veuillez indiquer votre nom."
+ },
+ "5a34c15f0fffbcbf": {
+  "en": "Please write a comment.",
+  "t": "Veuillez rédiger un commentaire."
+ },
+ "d5b8b0dd5019f71f": {
+  "en": "Thank you! Your comment will appear here once we have read it.",
+  "t": "Merci ! Votre commentaire apparaîtra ici dès que nous l&#x27;aurons lu."
+ },
+ "f01c5f797d2d6165": {
+  "en": "You are commenting a little fast. Please try again in a few minutes.",
+  "t": "Vous postez votre commentaire un peu trop vite. Veuillez réessayer dans quelques minutes."
+ },
+ "00a3a80458bb81a5": {
+  "en": "Sending failed. Please try again later.",
+  "t": "L&#x27;envoi a échoué. Veuillez réessayer plus tard."
+ },
+ "cb7069f979c05962": {
+  "en": "All articles",
+  "t": "Tous les articles"
+ },
+ "0dcf98f684e551ce": {
+  "en": "By <span translate=\"no\">Hilmi Billah</span>",
+  "t": "Par <span translate=\"no\">Hilmi Billah</span>"
+ },
+ "a9697baaf6e5fd43": {
+  "en": "1 min read",
+  "t": "1 minute de lecture"
+ },
+ "8f1f2230a89a1bac": {
+  "en": "There’s something quietly magical about the first hour of the morning, before the emails start rolling in and the world demands your attention. I’ve spent the past few months experimenting with how I use that time, and the results have surprised me. Instead of reaching for my phone the moment I wake up, I’ve started brewing a slow pot of coffee, opening a notebook, and simply writing whatever comes to mind. Some days it’s a to-do list; other days it’s half-formed ideas for projects I may never start. But that small ritual has become an anchor, a reminder that my day can begin on my own terms. If you’ve been feeling scattered lately, try carving out just fifteen minutes of unplugged time tomorrow morning and see what happens.",
+  "t": "Il y a quelque chose de discrètement magique dans cette première heure du matin, avant que les e-mails ne commencent à affluer et que le monde ne réclame votre attention. J’ai passé ces derniers mois à tester différentes façons d’utiliser ce temps, et les résultats m’ont surpris. Au lieu de saisir mon téléphone dès mon réveil, j’ai commencé à préparer tranquillement une cafetière, à ouvrir un cahier et à écrire tout simplement ce qui me passe par la tête. Certains jours, il s’agit d’une liste de tâches ; d’autres jours, ce sont des idées encore vagues pour des projets que je ne commencerai peut-être jamais. Mais ce petit rituel est devenu un point d’ancrage, un rappel que ma journée peut commencer comme je l’entends. Si vous vous sentez un peu dispersé ces derniers temps, essayez de vous réserver seulement quinze minutes sans écran demain matin et voyez ce que cela donne."
+ },
+ "27be6e8258c229a5": {
+  "en": "morning",
+  "t": "le matin"
+ },
+ "fedbf5d04c2f91ee": {
+  "en": "routine",
+  "t": "routine"
+ },
+ "04f1cb5e6ae6bbb6": {
+  "en": "daily",
+  "t": "quotidien"
+ },
+ "015403fb037dd71c": {
+  "en": "DRP BuildLab blog",
+  "t": "Blog DRP BuildLab"
+ },
+ "8e83778ea6a8491e": {
+  "en": "logo drpbl",
+  "t": "logo drpbl"
+ },
+ "ea4d1c278823d2e0": {
+  "en": "Blog | DRP BuildLab",
+  "t": "Blog | DRP BuildLab"
+ },
+ "3464d4a673d9b34f": {
+  "en": "How we build websites, webshops and automations, the businesses we work with and the creators we team up with.",
+  "t": "Notre approche de la création de sites web, de boutiques en ligne et d'automatisations, les entreprises avec lesquelles nous travaillons et les créateurs avec lesquels nous collaborons."
+ },
+ "9c6152e6ce9a6889": {
+  "en": "Reactions",
+  "t": "Réactions"
+ },
+ "7e5626f99940e87b": {
+  "en": "Share on WhatsApp",
+  "t": "Partager sur WhatsApp"
+ },
+ "4a14fbf54f1d692a": {
+  "en": "WhatsApp",
+  "t": "WhatsApp"
+ },
+ "0e25f125adb71705": {
+  "en": "Share on X",
+  "t": "Partager sur X"
+ },
+ "05493f8800c33306": {
+  "en": "X",
+  "t": "X"
+ },
+ "bc2967d69f0c01b5": {
+  "en": "Share on Instagram",
+  "t": "Partager sur Instagram"
+ },
+ "ed89ebcb6349a38e": {
+  "en": "Instagram",
+  "t": "Instagram"
+ },
+ "bad709117fa0a119": {
+  "en": "Copy the link",
+  "t": "Copiez le lien"
+ },
+ "6b1a2fa18752447e": {
+  "en": "Checking out without the hassle: what customers expect in 2026 | Blog | DRP BuildLab",
+  "t": "Un passage en caisse sans tracas : ce que les clients attendent en 2026 | Blog | DRP BuildLab"
+ },
+ "cb4f85d99edd1f29": {
+  "en": "On payment methods, drop-off moments and why the checkout of your webshop matters as much as your shop window. What customers expect in 2026, and how to build a payment flow that does not get in the way.",
+  "t": "Les modes de paiement, les moments d'abandon de panier et pourquoi le processus de paiement de votre boutique en ligne est tout aussi important que votre vitrine. Ce que les clients attendent en 2026, et comment mettre en place un processus de paiement qui ne constitue pas un obstacle."
+ },
+ "18d9019fb0edc98a": {
+  "en": "Morning Routine | Blog | DRP BuildLab",
+  "t": "Routine du matin | Blog | DRP BuildLab"
+ },
+ "504be530d49df541": {
+  "en": "There’s something quietly magical about the first hour of the morning, before the emails start rolling in and the world demands your attention. I’ve spent the past few months experimenting with how I use that time, and the results have surprised me.",
+  "t": "Il y a quelque chose de discrètement magique dans la première heure de la matinée, avant que les e-mails ne commencent à affluer et que le monde ne réclame votre attention. J’ai passé ces derniers mois à tester différentes façons d’utiliser ce temps, et les résultats m’ont surpris."
  }
 }
