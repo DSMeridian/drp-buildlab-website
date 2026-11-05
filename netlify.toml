@@ -26,3 +26,4 @@
 # routes itself through its exported `config.path`:
 #   geo.js   -> /api/geo    visitor country, from Netlify's own edge data
 #   rates.js -> /api/rates  EUR rates, proxied and cached for an hour
+#   blog.js  -> /api/blog   likes and comments under blog articles (BLOG_DATABASE_URL)

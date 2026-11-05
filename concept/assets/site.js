@@ -191,6 +191,129 @@ if (reelBox && vid) {
   addEventListener('scroll', grow, { passive: true }); addEventListener('resize', grow); grow();
 }
 
+/* blog video: a poster until the visitor presses play, then the player from
+   the host (YouTube without cookies, Vimeo with do-not-track) or the file */
+$$('.vembed-play').forEach(btn => btn.addEventListener('click', () => {
+  const src = btn.dataset.src;
+  if (!/^https:\/\//.test(src)) return;
+  let el;
+  if (btn.dataset.kind === 'video') {
+    el = document.createElement('video');
+    Object.assign(el, { src, controls: true, autoplay: true, playsInline: true });
+  } else {
+    el = document.createElement('iframe');
+    Object.assign(el, { src, title: btn.getAttribute('aria-label') || 'Video', allowFullscreen: true });
+    el.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    el.referrerPolicy = 'strict-origin-when-cross-origin';
+  }
+  btn.replaceWith(el);
+  el.focus();
+}));
+
+/* blog: share, like and comment (build.js reactBar/comments; data from
+   netlify/edge-functions/blog.js). No account and no cookie: a like is
+   remembered by a random id in localStorage, made only when the visitor
+   presses Like. */
+const cmBox = $('#comments');
+if (cmBox) {
+  const bui = k => ($(`#bui [data-k="${k}"]`) || {}).textContent || '';
+  const slug = cmBox.dataset.slug;
+  const pageUrl = location.origin + location.pathname;
+  const title = (($('.ah1') || {}).textContent || document.title).trim();
+  const lang = document.documentElement.lang || 'en';
+  const shareMsg = $('.share-msg');
+  const say = (el, text) => { el.textContent = text; el.classList.toggle('show', !!text); };
+
+  /* share */
+  $$('.sh').forEach(el => {
+    const net = el.dataset.net;
+    if (net === 'whatsapp') el.href = 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + pageUrl);
+    if (net === 'x') el.href = 'https://x.com/intent/post?text=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(pageUrl);
+    if (el.tagName !== 'BUTTON') return;
+    el.addEventListener('click', async () => {
+      /* Instagram has no share link: on a phone the system share sheet lists
+         the app; elsewhere copy the link to paste in a story or message. */
+      if (net === 'instagram' && navigator.share && matchMedia('(pointer:coarse)').matches) {
+        try { await navigator.share({ title, url: pageUrl }); return; } catch (e) { if (e.name === 'AbortError') return; }
+      }
+      try { await navigator.clipboard.writeText(pageUrl); say(shareMsg, bui(net === 'instagram' ? 'insta' : 'copied')); }
+      catch { prompt('', pageUrl); }
+      setTimeout(() => say(shareMsg, ''), 6000);
+    });
+  });
+
+  /* likes and comments */
+  const likeBtn = $('.like'), likeN = $('.like-n');
+  const VKEY = 'drp-visitor';
+  const store = {
+    get: () => { try { return localStorage.getItem(VKEY); } catch { return null; } },
+    set: v => { try { localStorage.setItem(VKEY, v); } catch { /* private mode: the like counts, but is forgotten */ } },
+  };
+  let visitor = store.get(), likes = 0, liked = false, busy = false;
+  const showLikes = () => {
+    likeBtn.setAttribute('aria-pressed', liked);
+    likeN.textContent = likes > 0 ? new Intl.NumberFormat(lang).format(likes) : '';
+  };
+  const api = (method, body) => fetch('/api/blog' + (method === 'GET' ? `?slug=${encodeURIComponent(slug)}${visitor ? '&v=' + encodeURIComponent(visitor) : ''}` : ''), {
+    method, headers: body ? { 'Content-Type': 'application/json' } : {}, body: body ? JSON.stringify(body) : undefined,
+  });
+
+  const list = $('.cm-list'), empty = $('.cm-empty'), count = $('.cm-n');
+  const dateFmt = new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric' });
+  /* visitors' text only ever goes in as textContent */
+  const renderComments = items => {
+    list.replaceChildren(...items.map(c => {
+      const li = document.createElement('li');
+      const head = document.createElement('p'); head.className = 'cm-who';
+      const name = document.createElement('b'); name.textContent = c.name;
+      const when = document.createElement('time'); when.dateTime = c.date; when.textContent = dateFmt.format(new Date(c.date));
+      head.append(name, when);
+      const body = document.createElement('p'); body.className = 'cm-body'; body.textContent = c.body;
+      li.append(head, body);
+      return li;
+    }));
+    empty.hidden = items.length > 0;
+    count.textContent = items.length ? `(${items.length})` : '';
+  };
+
+  api('GET').then(r => r.ok ? r.json() : null).then(d => {
+    if (!d || d.disabled) return;
+    likes = d.likes; liked = d.liked; showLikes();
+    likeBtn.hidden = false;
+    renderComments(d.comments || []);
+    cmBox.hidden = false;
+  }).catch(() => {});
+
+  likeBtn.addEventListener('click', async () => {
+    if (busy) return;
+    busy = true;
+    if (!visitor && crypto.randomUUID) { visitor = crypto.randomUUID(); store.set(visitor); }
+    const undo = () => { liked = !liked; likes += liked ? 1 : -1; showLikes(); };
+    undo(); /* optimistic: flip first, put back if the server says no */
+    try {
+      const r = await api('POST', { action: liked ? 'like' : 'unlike', slug, visitor });
+      if (r.ok) { const d = await r.json(); likes = d.likes; liked = d.liked; showLikes(); } else undo();
+    } catch { undo(); }
+    busy = false;
+  });
+
+  const form = $('.cm-form'), msg = $('.cm-msg');
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const name = $('#cm-name').value.trim(), body = $('#cm-body').value.trim();
+    if (!name) { say(msg, bui('name')); return $('#cm-name').focus(); }
+    if (body.length < 2) { say(msg, bui('body')); return $('#cm-body').focus(); }
+    const btn = $('button[type="submit"]', form);
+    btn.disabled = true; say(msg, '');
+    try {
+      const r = await api('POST', { action: 'comment', slug, name, body, lang, website: $('#cm-web').value });
+      if (r.ok) { form.reset(); say(msg, bui('thanks')); }
+      else say(msg, bui(r.status === 429 ? 'slow' : 'failed'));
+    } catch { say(msg, bui('failed')); }
+    btn.disabled = false;
+  });
+}
+
 /* about: team tabs (click, arrow keys, and hover with a mouse) */
 const tm = $('#tm');
 if (tm) {

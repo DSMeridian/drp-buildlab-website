@@ -1,0 +1,75 @@
+# Rebuilds the site when a blog article changes.
+#
+# Articles land in content/blog/ from the team CMS (cms.drpbuildlab.com) or by
+# hand. This runs the same two steps as a local release —
+#   node tools/concept/build.js && node tools/concept/localize.js
+# — and commits concept/ and the translation cache, so Netlify deploys the
+# result like any other commit. The site itself still has no build step.
+#
+# Secrets (Settings → Secrets and variables → Actions):
+#   DEEPL_API_KEY   optional. Without it, new text is not translated: every
+#                   market an article lists gets the English text until the
+#                   key is added and this workflow runs again.
+name: Blog
+
+on:
+  push:
+    branches: [main]
+    paths: ['content/blog/**']
+  workflow_dispatch:
+
+# One rebuild at a time; a newer article waits instead of racing the commit.
+concurrency:
+  group: blog-rebuild
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Chromium for localize.js
+        run: |
+          npx playwright-core install --with-deps chromium
+          echo "CHROMIUM_PATH=$(find ~/.cache/ms-playwright -type f -path '*chrome-linux*/chrome' | head -1)" >> "$GITHUB_ENV"
+
+      - name: Build English base pages
+        run: node tools/concept/build.js
+
+      - name: Translate and write every market
+        env:
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+        run: |
+          if [ -n "$DEEPL_API_KEY" ]; then
+            node tools/concept/localize.js
+          else
+            echo "::warning::DEEPL_API_KEY is not set: new text stays in English in every market"
+            node tools/concept/localize.js --langs=en
+          fi
+
+      - name: Commit the rebuilt site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add concept tools/concept/i18n
+          if git diff --cached --quiet; then echo "Nothing changed."; exit 0; fi
+          git commit -m "Rebuild site for blog changes in ${GITHUB_SHA::7}"
+          # someone may have pushed while this ran; the generated files are rebuilt
+          # from scratch, so take ours for concept/ and the cache on a conflict
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push && exit 0
+            sleep 5
+          done
+          exit 1

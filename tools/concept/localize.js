@@ -48,6 +48,13 @@ const DEEPL = { nl: 'NL', fr: 'FR', de: 'DE', it: 'IT', es: 'ES', pl: 'PL', pt: 
 const FORMAL = new Set(['NL', 'FR', 'DE', 'IT', 'ES', 'PL', 'PT-BR', 'JA']);
 const LANGS = [...new Set(MK.map(m => m.lang))];
 
+/* ── blog: articles exist only in the languages they list (build.js writes __blog.json) ── */
+const BLOG = fs.existsSync(path.join(BASE, '__blog.json')) ? JSON.parse(fs.readFileSync(path.join(BASE, '__blog.json'), 'utf8')) : { pages: {}, posts: [] };
+const has = (page, l) => !BLOG.pages[page] || BLOG.pages[page].includes(l);
+const mkFor = page => MK.filter(x => has(page, x.lang));
+/* where a language or market link goes when this page is not available there */
+const linkPage = (page, l) => has(page, l) ? page : 'blog';
+
 /* ── DeepL ───────────────────────────────────────────────────────────── */
 function deeplKey() {
   if (process.env.DEEPL_API_KEY) return process.env.DEEPL_API_KEY.trim();
@@ -171,24 +178,45 @@ function orgJsonLd(m) {
   })}</script>`;
 }
 
+/* blog article: schema.org Article from the marker build.js left in the head */
+function articleJsonLd(h, m, page, title, desc) {
+  const mk = h.match(/<script type="application\/drp-article">([\s\S]*?)<\/script>\n?/);
+  if (!mk) return { h, ld: '', image: null };
+  const a = JSON.parse(mk[1]);
+  const headline = ((h.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [])[1] || title).replace(/<[^>]+>/g, '').trim();
+  const ld = `<script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline, description: desc, inLanguage: m.lang,
+    datePublished: a.date, dateModified: a.updated || a.date, articleSection: a.section,
+    author: { '@type': 'Person', name: a.author }, mainEntityOfPage: url(m, page),
+    publisher: { '@type': 'Organization', '@id': ORIGIN + '/#business', name: 'DRP BuildLab', logo: { '@type': 'ImageObject', url: ORIGIN + '/assets/icons/icon-512.png' } },
+    ...(a.image ? { image: ORIGIN + a.image } : {})
+  }).replace(/</g, '\\u003c')}</script>`;
+  return { h: h.replace(mk[0], ''), ld, image: a.image ? ORIGIN + a.image : null };
+}
+
 function finish(tpl, m, page) {
   let h = tpl;
   const title = (h.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || 'DRP BuildLab';
   const desc = (h.match(/<meta name="description" content="([^"]*)"/) || [])[1] || '';
   const canonical = url(m, page);
-  const alts = MK.map(x => `<link rel="alternate" hreflang="${x.hreflang}" href="${url(x, page)}">`).join('\n')
-    + `\n<link rel="alternate" hreflang="x-default" href="${url(MK.find(x => x.key === FALLBACK), page)}">`;
+  const art = articleJsonLd(h, m, page, title, desc);
+  h = art.h;
+  const ogImage = art.image || `${ORIGIN}/assets/img/og-image.png`;
+  const fb = has(page, 'en') ? MK.find(x => x.key === FALLBACK) : mkFor(page)[0];
+  const alts = mkFor(page).map(x => `<link rel="alternate" hreflang="${x.hreflang}" href="${url(x, page)}">`).join('\n')
+    + `\n<link rel="alternate" hreflang="x-default" href="${url(fb, page)}">`;
   const head = [
     `<script>window.__DRP_MARKET__=${JSON.stringify(m.key)};var TRANSLATIONS=${JSON.stringify({ [m.lang]: CC[m.lang] || CC.en || {} })};</script>`,
     consentHead(),
     `<link rel="canonical" href="${canonical}">`, alts,
-    `<meta property="og:type" content="website"><meta property="og:site_name" content="DRP BuildLab"><meta property="og:url" content="${canonical}">`,
+    `<meta property="og:type" content="${art.ld ? 'article' : 'website'}"><meta property="og:site_name" content="DRP BuildLab"><meta property="og:url" content="${canonical}">`,
     `<meta property="og:title" content="${title}"><meta property="og:description" content="${desc}"><meta property="og:locale" content="${m.lang}_${m.cc.toUpperCase()}">`,
-    `<meta property="og:image" content="${ORIGIN}/assets/img/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">`,
-    `<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${title}"><meta name="twitter:description" content="${desc}"><meta name="twitter:image" content="${ORIGIN}/assets/img/og-image.png">`,
+    art.image ? `<meta property="og:image" content="${ogImage}">` : `<meta property="og:image" content="${ogImage}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">`,
+    `<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${title}"><meta name="twitter:description" content="${desc}"><meta name="twitter:image" content="${ogImage}">`,
     `<link rel="manifest" href="/site.webmanifest"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico" sizes="32x32">`,
     (MARKETS.__webfonts || {})[m.lang] ? `<link rel="stylesheet" href="${MARKETS.__webfonts[m.lang].href}">` : '',
-    page === '' ? orgJsonLd(m) : ''
+    page === '' ? orgJsonLd(m) : '',
+    art.ld
   ].filter(Boolean).join('\n');
   h = h.replace('<!--HEAD-->', head);
   /* a headline line that holds only punctuation joins the line before it */
@@ -200,22 +228,51 @@ function finish(tpl, m, page) {
   h = h.replace(/<article class="legal" data-legal="(\w+)"[\s\S]*?<\/article>/g, (all, l) => l === keep ? all : '');
 
   /* internal links get the market prefix */
-  h = h.replace(/href="(\/[^"]*)"/g, (all, p) => /^\/(assets|img|media|api|favicon|apple-touch|site\.webmanifest)/.test(p) || p.startsWith('//') ? all : `href="/${m.prefix}${p}"`);
+  h = h.replace(/href="(\/[^"]*)"/g, (all, p) => /^\/(assets|img|media|api|favicon|apple-touch|site\.webmanifest|feed\.xml)/.test(p) || p.startsWith('//') ? all : `href="/${m.prefix}${p}"`);
+
+  /* blog: the index lists only the articles this language has; dates in the market's own format */
+  h = h.replace(/<li class="post-card[^"]*" data-langs="([^"]*)"[\s\S]*?<\/li><!--\/post-card-->/g, (all, ls) => ls.split(' ').includes(m.lang) ? all.replace('<!--/post-card-->', '') : '');
+  /* Chromium serialises the attribute as hidden="" */
+  if (!h.includes('class="post-card')) h = h.replace(/<p class="post-empty" hidden(?:="")?>/, '<p class="post-empty">');
+  h = h.replace(/<time class="pd" datetime="(\d{4}-\d{2}-\d{2})"([^>]*)>[^<]*<\/time>/g, (all, d, rest) => {
+    let text;
+    try { text = new Date(d + 'T12:00:00Z').toLocaleDateString(`${m.lang}-${m.cc.toUpperCase()}`, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }); } catch { text = d; }
+    return `<time class="pd" datetime="${d}"${rest}>${text}</time>`;
+  });
 
   /* language menu: this country's own variants first, then one market per language.
-     The 404 page has no counterpart elsewhere, so its menus go to each home page. */
+     The 404 page has no counterpart elsewhere, so its menus go to each home page.
+     A blog article missing in a language links to that language's blog index. */
   const lp = page === '404' ? '' : page;
+  const lpFor = l => { const t = lp && linkPage(lp, l); return t ? t + '/' : ''; };
   const siblings = MK.filter(x => x.cc === m.cc);
   const pick = l => siblings.find(x => x.lang === l) || MK.find(x => x.key === (l === 'en' ? (siblings.find(s => s.lang === 'en') || {}).key || FALLBACK : LANG_HOME[l]));
   const langs = [...new Set([...siblings.map(x => x.lang), ...Object.keys(LANG_NAME)])];
-  const langMenu = `<details class="lang"><summary aria-label="${ESC(LANG_NAME[m.lang])}" translate="no">${m.lang.toUpperCase()}</summary><ul translate="no">${langs.map(l => { const t = pick(l); return t ? `<li lang="${l}"${l === m.lang ? ' aria-current="true"' : ''}><a href="/${t.prefix}/${lp ? lp + '/' : ''}" hreflang="${t.hreflang}">${LANG_NAME[l]}</a></li>` : ''; }).join('')}</ul></details>`;
+  const langMenu = `<details class="lang"><summary aria-label="${ESC(LANG_NAME[m.lang])}" translate="no">${m.lang.toUpperCase()}</summary><ul translate="no">${langs.map(l => { const t = pick(l); return t ? `<li lang="${l}"${l === m.lang ? ' aria-current="true"' : ''}><a href="/${t.prefix}/${lpFor(l)}" hreflang="${t.hreflang}">${LANG_NAME[l]}</a></li>` : ''; }).join('')}</ul></details>`;
   h = h.replace('<!--LANGMENU-->', langMenu);
 
   /* country picker in the footer */
   const regions = [...new Set(MK.map(x => x.region))];
-  const picker = `<details class="ft-market"><summary translate="no">${ESC(m.name)} · ${LANG_NAME[m.lang]}</summary><div class="mk-list" translate="no">${regions.map(r => `<h3>${r}</h3>` + MK.filter(x => x.region === r).map(x => `<a href="/${x.prefix}/${lp ? lp + '/' : ''}" hreflang="${x.hreflang}"${x.key === m.key ? ' aria-current="true"' : ''}>${ESC(x.name)} · ${LANG_NAME[x.lang]}</a>`).join('')).join('')}</div></details>`;
+  const picker = `<details class="ft-market"><summary translate="no">${ESC(m.name)} · ${LANG_NAME[m.lang]}</summary><div class="mk-list" translate="no">${regions.map(r => `<h3>${r}</h3>` + MK.filter(x => x.region === r).map(x => `<a href="/${x.prefix}/${lpFor(x.lang)}" hreflang="${x.hreflang}"${x.key === m.key ? ' aria-current="true"' : ''}>${ESC(x.name)} · ${LANG_NAME[x.lang]}</a>`).join('')).join('')}</div></details>`;
   h = h.replace('<!--MARKETS-->', picker);
   return h;
+}
+
+/* RSS for the blog, in English: the language every article is written in */
+function writeFeed() {
+  const feed = path.join(SITE, 'feed.xml');
+  if (!BLOG.posts.length) { fs.rmSync(feed, { force: true }); return; }
+  const en = MK.find(x => x.key === FALLBACK);
+  const x = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const rfc = d => new Date(d + 'T09:00:00Z').toUTCString();
+  const items = BLOG.posts.map(p => `<item><title>${x(p.title)}</title><link>${url(en, 'blog/' + p.slug)}</link><guid isPermaLink="true">${url(en, 'blog/' + p.slug)}</guid><pubDate>${rfc(p.date)}</pubDate><category>${x(p.category)}</category><dc:creator>${x(p.author)}</dc:creator><description>${x(p.excerpt)}</description></item>`);
+  fs.writeFileSync(feed, `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel>
+<title>DRP BuildLab blog</title><link>${url(en, 'blog')}</link><description>How we build websites, webshops and automations.</description><language>en</language>
+<atom:link href="${ORIGIN}/feed.xml" rel="self" type="application/rss+xml"/><lastBuildDate>${rfc(BLOG.posts[0].updated || BLOG.posts[0].date)}</lastBuildDate>
+${items.join('\n')}
+</channel></rss>
+`);
 }
 
 /* ── run ─────────────────────────────────────────────────────────────── */
@@ -255,6 +312,7 @@ function finish(tpl, m, page) {
     if (ONLY.length && !ONLY.includes(l)) continue;
     const need = new Map();
     for (const p of pages) {
+      if (!has(p, l)) continue; // a blog article not published in this language costs nothing
       const e = extract[p];
       e.units.forEach(u => { const k = hash('h' + u); if (!cache[k]) need.set(k, { src: u, html: true }); });
       [...e.attrs.map(a => a.v), e.title, e.desc].filter(Boolean).forEach(v => { const k = hash('t' + v); if (!cache[k]) need.set(k, { src: v, html: false }); });
@@ -293,6 +351,7 @@ function finish(tpl, m, page) {
   for (const l of LANGS) {
     const cache = caches[l] || {};
     for (const p of pages) {
+      if (!has(p, l)) continue;
       const e = extract[p];
       const pg = await ctx.newPage();
       await pg.goto(pathToFileURL(path.join(BASE, p, 'index.html')).href, { waitUntil: 'domcontentloaded' });
@@ -320,10 +379,12 @@ function finish(tpl, m, page) {
   const today = new Date().toISOString().slice(0, 10);
   const sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'];
   for (const { m, p } of urls) {
-    sm.push(`<url><loc>${url(m, p)}</loc><lastmod>${today}</lastmod>${MK.map(x => `<xhtml:link rel="alternate" hreflang="${x.hreflang}" href="${url(x, p)}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${url(MK.find(x => x.key === FALLBACK), p)}"/></url>`);
+    const fb = has(p, 'en') ? MK.find(x => x.key === FALLBACK) : mkFor(p)[0];
+    sm.push(`<url><loc>${url(m, p)}</loc><lastmod>${today}</lastmod>${mkFor(p).map(x => `<xhtml:link rel="alternate" hreflang="${x.hreflang}" href="${url(x, p)}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${url(fb, p)}"/></url>`);
   }
   sm.push('</urlset>');
   fs.writeFileSync(path.join(SITE, 'sitemap.xml'), sm.join('\n') + '\n');
+  writeFeed();
 
   /* 5. the static files a site root needs */
   const copy = (from, to) => { fs.mkdirSync(path.dirname(path.join(SITE, to)), { recursive: true }); fs.copyFileSync(path.join(ROOT, from), path.join(SITE, to)); };

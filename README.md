@@ -144,7 +144,39 @@ Never commit the real key; `.env.example` shows the expected name.
 `src/css/47-chat.css` contains all widget styles (compiled into `assets/styles.css`
 by the build tool along with the rest of the CSS).
 
+## Blog
+
+Articles are Markdown files in `content/blog/`, usually committed by the team
+CMS at cms.drpbuildlab.com (repo drp_cms). `tools/concept/build.js` turns them
+into `/blog/` and `/blog/<slug>/` (via `tools/concept/blog.js`), and
+`localize.js` publishes each article only in the languages it lists. The
+format and its rules are in [content/blog/README.md](content/blog/README.md).
+
+A push that touches `content/blog/` on `main` runs
+`.github/workflows/blog.yml`: the same build and localize steps as a local
+release, then a commit of `concept/` and the translation cache. Netlify deploys
+that commit as usual.
+
+Under each article:
+
+- **Share links:** WhatsApp, X, Instagram, and copy link. Instagram has no share link, so on a phone it opens the system share sheet; elsewhere it copies the URL.
+- **Like and comment, with no account:**
+  - Both go through `netlify/edge-functions/blog.js` (`/api/blog`) to the CMS's Neon database, using the restricted `blog_site` role.
+  - A like is remembered by a random id in localStorage, created only when someone presses Like. No cookie is set, and no IP or email is stored.
+  - Comments appear only after someone approves them at cms.drpbuildlab.com/comments.
+  - Without `BLOG_DATABASE_URL` the like button and comments stay hidden.
+
+Every article page also carries `<meta name="drp-rev">` (the git hash of its `.md`). The CMS uses it to show the editor when their article is live.
+
 ## Secrets
 
 `DEEPL_API_KEY` goes in `.env`, which is gitignored.
 `ANTHROPIC_API_KEY` goes in Netlify's environment variables UI, not in any file.
+For the blog workflow, `DEEPL_API_KEY` also goes in GitHub → Settings → Secrets
+and variables → Actions. Without it the workflow still runs, but new text stays
+in English.
+
+For blog likes and comments, add these in Netlify's environment variables:
+
+- `BLOG_DATABASE_URL` (required): the `blog_site` connection string. Never use the database owner's.
+- `RESEND_API_KEY`, `MAIL_FROM` and `ADMIN_EMAIL` (optional): the same values form.js already uses. With them, the team gets an email when a comment is waiting.
