@@ -299,7 +299,7 @@ ${body}
 </main>
 ${footer()}
 ${cursor ? '<div class="cur" id="cur" aria-hidden="true">View</div>' : ''}
-<div id="ui" hidden><span data-k="play">Play</span><span data-k="pause">Pause</span><span data-k="email">Please enter a valid email address so we can reach you.</span><span data-k="tick">Please tick the box so we may contact you about this request.</span><span data-k="fill">Please fill in this field:</span><span data-k="sent">Thank you, your request has been received. We will contact you within 24 hours.</span><span data-k="psent">Thank you, your application has been received. We review it personally and send your link within a few working days.</span><span data-k="failed">Sending failed. Please try again, or email us at info@drpbuildlab.com.</span></div>
+<div id="ui" hidden><span data-k="play">Play</span><span data-k="pause">Pause</span><span data-k="email">Please enter a valid email address so we can reach you.</span><span data-k="tick">Please tick the box so we may contact you about this request.</span><span data-k="fill">Please fill in this field:</span><span data-k="sent">Thank you, your request has been received. We will contact you within 24 hours.</span><span data-k="psent">Thank you, your application has been received. We review it personally and send your link within a few working days.</span><span data-k="failed">Sending failed. Please try again, or email us at info@drpbuildlab.com.</span><span data-k="nlsent">Almost done. We have sent you an email: click the link in it to confirm your subscription.</span><span data-k="nlfail">Subscribing did not work. Please try again in a moment.</span></div>
 <a href="https://wa.me/32473744431" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp us"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.782 6.86L2 30l7.347-1.758A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.25-4.36 1.043 1.072-4.25-.276-.436A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.66c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.232.348-.898 1.132-1.1 1.364-.202.232-.404.26-.752.086-.348-.174-1.468-.54-2.796-1.724-1.034-.92-1.73-2.056-1.934-2.404-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.434-.028-.608-.086-.174-.78-1.882-1.07-2.576-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.608.086-.926.434-.318.348-1.216 1.188-1.216 2.896s1.244 3.356 1.418 3.588c.174.232 2.448 3.736 5.932 5.238.83.358 1.478.572 1.982.732.832.264 1.59.226 2.188.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.204-1.656-.086-.144-.318-.232-.666-.406z"/></svg></a>
 </body>
 </html>
@@ -376,6 +376,28 @@ const demoForm = (id, title = 'Request your free demo website') => `<form class=
   <p class="ok" role="status" aria-live="polite"></p>
   <small>We reply within 24 hours.</small>
 </form>`;
+
+/* Blog newsletter sign-up, on /blog/ and under every article. It posts to
+   /api/subscribe (netlify/edge-functions/subscribe.js), which emails a
+   confirmation link; only a confirmed address is added to Resend. No name
+   attribute and no data-event: this is not a Netlify form, and the quote-form
+   handler in site.js leaves it alone. */
+const subscribeBox = id => `<aside class="nl-box" aria-labelledby="${id}-h">
+  <div class="nl-text">
+    <h2 id="${id}-h">Get our new articles <em>by email</em></h2>
+    <p>One email whenever we publish a new article. No spam, and you can unsubscribe at any time.</p>
+  </div>
+  <form class="nl-form" id="${id}" method="POST" action="/api/subscribe" novalidate data-newsletter>
+    <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <div class="nl-row">
+      <label class="nl-label" for="${id}-email">Your email address</label>
+      <input id="${id}-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+      <button class="btn" type="submit">Subscribe to the blog</button>
+    </div>
+    <p class="nl-note">We only use your email address to send you new articles. <a href="${B}/privacy/">Privacy policy</a></p>
+    <p class="ok" role="status" aria-live="polite"></p>
+  </form>
+</aside>`;
 
 /* ── Pages ────────────────────────────────────────────────────────────── */
 
@@ -550,6 +572,7 @@ const FEED = POSTS.length ? '\n<link rel="alternate" type="application/rss+xml" 
 <section class="sec light posts-sec"><div class="wrap">
   <ul class="posts">${POSTS.map(card).join('')}</ul>
   <p class="post-empty" hidden>${POSTS.length ? 'There are no articles in this language yet.' : 'Our first articles are on their way.'}</p>
+  ${subscribeBox('nl-index')}
 </div></section>
 ${ctaBand()}`
   });
@@ -582,6 +605,7 @@ ${ctaBand()}`
     <p>From website to webshop: we help you tell a story that is true, and that people enjoy reading.</p>
     <p class="acta-links"><a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a><a class="acta-mail" href="mailto:info@drpbuildlab.com" translate="no">info@drpbuildlab.com</a></p>
   </aside>
+  ${subscribeBox('nl-post')}
   ${comments(p.slug)}
   <p class="post-back"><a class="tlink" href="${B}/blog/">All articles</a></p>
 </div></section>
@@ -589,6 +613,40 @@ ${ctaBand()}`
     });
   });
 }
+
+/* Newsletter confirmation. The email links here with the token in the URL
+   fragment (never sent to a server or an analytics tag); site.js asks for one
+   click before confirming, because mail scanners open links on their own.
+   #mail holds the email texts. It is translated with the page like #ui, and
+   read back by netlify/edge-functions/subscribe.js (confirmation email) and
+   tools/concept/newsletter.js (new-article email) from each market's copy, so
+   every email string goes through the same DeepL cache and review. */
+pages['blog/subscribe'] = page({
+  title: 'Confirm your subscription | Blog | DRP BuildLab', desc: 'Confirm that you want to receive new articles from the DRP BuildLab blog by email.', nav: 'blog',
+  head: '\n<meta name="robots" content="noindex">',
+  body: `${phero({ crumbs: [['Blog', '/blog/'], ['Newsletter']], h1: 'Confirm your <em>subscription</em>', lede: 'One click and you receive new articles from our blog by email.' })}
+<section class="sec light"><div class="wrap nl-confirm" id="nl-confirm">
+  <div data-state="ask"><button class="btn dark" type="button" id="nl-confirm-btn">Confirm my subscription ${arr}</button></div>
+  <div data-state="busy" hidden><p class="ok show" role="status">One moment, we are confirming your subscription.</p></div>
+  <div data-state="done" hidden><p class="ok show sent" role="status">You are subscribed. We will email you when we publish a new article.</p></div>
+  <div data-state="expired" hidden><p class="ok show" role="status">This confirmation link has expired. Subscribe again on the blog and we will send you a new link.</p></div>
+  <div data-state="invalid" hidden><p class="ok show" role="status">This confirmation link is not valid. Use the link from the email we sent you, or subscribe again on the blog.</p></div>
+  <div data-state="failed" hidden><p class="ok show" role="status">Something went wrong while confirming your subscription. Please try again in a moment.</p></div>
+  <p class="post-back"><a class="tlink" href="${B}/blog/">Back to the blog</a></p>
+</div></section>
+<div id="mail" hidden>
+  <span data-k="csubj">Please confirm your subscription to the DRP BuildLab blog</span>
+  <span data-k="chead">Confirm your subscription</span>
+  <span data-k="cbody">You asked to receive new articles from the DRP BuildLab blog by email. Click the button below to confirm your email address.</span>
+  <span data-k="cbtn">Confirm my subscription</span>
+  <span data-k="cvalid">This link is valid for 7 days.</span>
+  <span data-k="cignore">Did you not ask for this? Then you can ignore this email. We will not send you anything else.</span>
+  <span data-k="ahead">New on the DRP BuildLab blog</span>
+  <span data-k="abtn">Read the full article</span>
+  <span data-k="afoot">You receive this email because you subscribed to the DRP BuildLab blog.</span>
+  <span data-k="aunsub">Unsubscribe from these emails</span>
+</div>`
+});
 
 pages['diensten'] = page({
   title: 'Services | DRP BuildLab', desc: 'Custom websites, webshops and Shopify, redesigns, maintenance plans and add-ons, with prices shown up front.', nav: 'services',

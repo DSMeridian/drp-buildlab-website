@@ -378,7 +378,10 @@ ${items.join('\n')}
   /* 4. sitemap, with every market version of each page as an alternate */
   const today = new Date().toISOString().slice(0, 10);
   const sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'];
+  /* a page marked noindex (the newsletter confirmation) stays out of the sitemap */
+  const noindex = new Set(pages.filter(p => /<meta name="robots" content="noindex/.test(fs.readFileSync(path.join(BASE, p, 'index.html'), 'utf8'))));
   for (const { m, p } of urls) {
+    if (noindex.has(p)) continue;
     const fb = has(p, 'en') ? MK.find(x => x.key === FALLBACK) : mkFor(p)[0];
     sm.push(`<url><loc>${url(m, p)}</loc><lastmod>${today}</lastmod>${mkFor(p).map(x => `<xhtml:link rel="alternate" hreflang="${x.hreflang}" href="${url(x, p)}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${url(fb, p)}"/></url>`);
   }

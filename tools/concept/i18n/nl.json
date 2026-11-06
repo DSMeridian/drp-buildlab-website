@@ -3174,5 +3174,125 @@
  "4819ba9333e5ddcc": {
   "en": "On working when you are sharp, and why at our place the clock mostly ticks for the client. How we agree on results instead of hours, what can go wrong, and how to start yourself.",
   "t": "Over werken wanneer u op uw best bent, en waarom bij ons de klok meestal voor de klant tikt. Hoe wij afspraken maken over resultaten in plaats van uren, wat er mis kan gaan, en hoe u zelf aan de slag kunt gaan."
+ },
+ "14b2919dd9b02682": {
+  "en": "Version: <span translate=\"no\">6 november 2026</span>. The Dutch text is the binding version.",
+  "t": "Versie: <span translate=\"no\">6 november 2026</span>. De Nederlandse tekst is de bindende versie."
+ },
+ "673dca72d248d622": {
+  "en": "Almost done. We have sent you an email: click the link in it to confirm your subscription.",
+  "t": "Het is bijna klaar. Wij hebben u een e-mail gestuurd: klik op de link in de e-mail om uw inschrijving te bevestigen."
+ },
+ "22fb9ed7e0e7b791": {
+  "en": "Subscribing did not work. Please try again in a moment.",
+  "t": "Het abonneren is niet gelukt. Probeer het over even nog eens."
+ },
+ "6aca1eba60a1a1fb": {
+  "en": "Get our new articles <em>by email</em>",
+  "t": "Ontvang onze nieuwe artikelen <em>per e-mail</em>"
+ },
+ "45711858dfc63351": {
+  "en": "One email whenever we publish a new article. No spam, and you can unsubscribe at any time.",
+  "t": "Eén e-mail telkens wanneer wij een nieuw artikel publiceren. Geen spam, en u kunt zich op elk moment uitschrijven."
+ },
+ "0da9f02d9c1ed311": {
+  "en": "Your email address",
+  "t": "Uw e-mailadres"
+ },
+ "e51ca203ca4f00c3": {
+  "en": "Subscribe to the blog",
+  "t": "Abonneer u op de blog"
+ },
+ "e65bafbd1127c77d": {
+  "en": "We only use your email address to send you new articles. <a href=\"/privacy/\">Privacy policy</a>",
+  "t": "Wij gebruiken uw e-mailadres uitsluitend om u nieuwe artikelen toe te sturen. <a href=\"/privacy/\">Privacybeleid</a>"
+ },
+ "00e1df239ae9897a": {
+  "en": "Newsletter",
+  "t": "Nieuwsbrief"
+ },
+ "d6c250da9239af26": {
+  "en": "Confirm your <em>subscription</em>",
+  "t": "Bevestig uw <em>abonnement</em>"
+ },
+ "42ea27e2ee3d6a92": {
+  "en": "One click and you receive new articles from our blog by email.",
+  "t": "Met één klik ontvangt u nieuwe artikelen van onze blog per e-mail."
+ },
+ "31f37182527f93bd": {
+  "en": "Confirm my subscription <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "Mijn abonnement bevestigen <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "650c8873464704c9": {
+  "en": "One moment, we are confirming your subscription.",
+  "t": "Een ogenblik geduld, wij zijn bezig uw abonnement te bevestigen."
+ },
+ "3c52eaf9e800d705": {
+  "en": "You are subscribed. We will email you when we publish a new article.",
+  "t": "U bent nu geabonneerd. Wij sturen u een e-mail zodra wij een nieuw artikel publiceren."
+ },
+ "cc117ff1647fb0d8": {
+  "en": "This confirmation link has expired. Subscribe again on the blog and we will send you a new link.",
+  "t": "Deze bevestigingslink is verlopen. Schrijf u opnieuw in via de blog, dan sturen wij u een nieuwe link."
+ },
+ "0bf684b0f53de7c6": {
+  "en": "This confirmation link is not valid. Use the link from the email we sent you, or subscribe again on the blog.",
+  "t": "Deze bevestigingslink is ongeldig. Gebruik de link uit de e-mail die wij u hebben gestuurd, of meld u opnieuw aan via de blog."
+ },
+ "2ba72a0403d12bfb": {
+  "en": "Something went wrong while confirming your subscription. Please try again in a moment.",
+  "t": "Er is een fout opgetreden bij het bevestigen van uw abonnement. Probeer het alstublieft straks nog eens."
+ },
+ "017d59261d11b963": {
+  "en": "Back to the blog",
+  "t": "Terug naar de blog"
+ },
+ "8478e3715efe7def": {
+  "en": "Please confirm your subscription to the DRP BuildLab blog",
+  "t": "Bevestig alstublieft uw inschrijving op de DRP BuildLab-blog"
+ },
+ "2a216a9187bb6aa9": {
+  "en": "Confirm your subscription",
+  "t": "Bevestig uw abonnement"
+ },
+ "5ae791b09a8256c0": {
+  "en": "You asked to receive new articles from the DRP BuildLab blog by email. Click the button below to confirm your email address.",
+  "t": "U hebt aangegeven dat u nieuwe artikelen van de DRP BuildLab-blog per e-mail wilt ontvangen. Klik op de onderstaande knop om uw e-mailadres te bevestigen."
+ },
+ "7c39279ff9d2a16d": {
+  "en": "Confirm my subscription",
+  "t": "Bevestig mijn abonnement"
+ },
+ "049d0210bae380bf": {
+  "en": "This link is valid for 7 days.",
+  "t": "Deze link is 7 dagen geldig."
+ },
+ "df3612aecdb4be16": {
+  "en": "Did you not ask for this? Then you can ignore this email. We will not send you anything else.",
+  "t": "Heeft u hier niet om gevraagd? Dan kunt u deze e-mail negeren. Wij zullen u verder niets meer sturen."
+ },
+ "45e67976d33e8f88": {
+  "en": "New on the DRP BuildLab blog",
+  "t": "Nieuw op de DRP BuildLab-blog"
+ },
+ "8789b1afbd46bdce": {
+  "en": "Read the full article",
+  "t": "Lees het volledige artikel"
+ },
+ "e2298f2e9de01c3b": {
+  "en": "You receive this email because you subscribed to the DRP BuildLab blog.",
+  "t": "U ontvangt deze e-mail omdat u zich hebt aangemeld voor de DRP BuildLab-blog."
+ },
+ "295eccb47390a4cd": {
+  "en": "Unsubscribe from these emails",
+  "t": "Zich afmelden voor deze e-mails"
+ },
+ "789717bfb4e37e26": {
+  "en": "Confirm your subscription | Blog | DRP BuildLab",
+  "t": "Bevestig uw abonnement | Blog | DRP BuildLab"
+ },
+ "3f85b2cd26f9675a": {
+  "en": "Confirm that you want to receive new articles from the DRP BuildLab blog by email.",
+  "t": "Bevestig dat u nieuwe artikelen van de DRP BuildLab-blog per e-mail wilt ontvangen."
  }
 }

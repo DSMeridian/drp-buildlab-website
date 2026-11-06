@@ -63,13 +63,13 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&amp;family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=mw4ux5kw">
-<script defer="" src="/assets/site.js?v=mw4ux5kw"></script>
-<link rel="stylesheet" href="/assets/chat.css?v=mw4ux5kw">
-<script defer="" src="/assets/chat.js?v=mw4ux5kw"></script>
-<link rel="stylesheet" href="/assets/consent.css?v=mw4ux5kw">
-<script defer="" src="/assets/referral.js?v=mw4ux5kw"></script>
-<script defer="" src="/assets/consent.js?v=mw4ux5kw"></script>
+<link rel="stylesheet" href="/assets/site.css?v=mw50brz0">
+<script defer="" src="/assets/site.js?v=mw50brz0"></script>
+<link rel="stylesheet" href="/assets/chat.css?v=mw50brz0">
+<script defer="" src="/assets/chat.js?v=mw50brz0"></script>
+<link rel="stylesheet" href="/assets/consent.css?v=mw50brz0">
+<script defer="" src="/assets/referral.js?v=mw50brz0"></script>
+<script defer="" src="/assets/consent.js?v=mw50brz0"></script>
 </head>
 <body>
 <a class="skip" href="#main">Ir al contenido</a>
@@ -176,6 +176,22 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
     <p>Desde una página web hasta una tienda online: le ayudamos a contar una historia auténtica y que a la gente le guste leer.</p>
     <p class="acta-links"><a class="btn" href="/mx/contact/">Solicite su página web de demostración gratuita <span class="arr" aria-hidden="true">→</span></a><a class="acta-mail" href="mailto:info@drpbuildlab.com" translate="no">info@drpbuildlab.com</a></p>
   </aside>
+  <aside class="nl-box" aria-labelledby="nl-post-h">
+  <div class="nl-text">
+    <h2 id="nl-post-h">Reciba nuestros nuevos artículos <em>por correo electrónico</em></h2>
+    <p>Un correo electrónico cada vez que publiquemos un nuevo artículo. Sin spam, y puede darse de baja en cualquier momento.</p>
+  </div>
+  <form class="nl-form" id="nl-post" method="POST" action="/api/subscribe" novalidate="" data-newsletter="">
+    <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <div class="nl-row">
+      <label class="nl-label" for="nl-post-email">Su dirección de correo electrónico</label>
+      <input id="nl-post-email" name="email" type="email" autocomplete="email" inputmode="email" required="">
+      <button class="btn" type="submit">Suscríbase al blog</button>
+    </div>
+    <p class="nl-note">Solo utilizamos su dirección de correo electrónico para enviarle nuevos artículos. <a href="/mx/privacy/">Política de privacidad</a></p>
+    <p class="ok" role="status" aria-live="polite"></p>
+  </form>
+</aside>
   <section class="cm" id="comments" data-slug="why-we-don-t-start-at-nine-o-clock" hidden="">
   <h2 class="cm-h">Comentarios <span class="cm-n" translate="no"></span></h2>
   <ol class="cm-list" translate="no"></ol>
@@ -220,7 +236,7 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
   </div>
 </div></footer>
 
-<div id="ui" hidden=""><span data-k="play">Reproducir</span><span data-k="pause">Pausa</span><span data-k="email">Introduzca, por favor, una dirección de correo electrónico válida para que podamos ponernos en contacto con usted.</span><span data-k="tick">Marque la casilla para que podamos ponernos en contacto con usted en relación con esta solicitud.</span><span data-k="fill">Por favor, rellene este campo:</span><span data-k="sent">Gracias, hemos recibido su solicitud. Nos pondremos en contacto con usted en un plazo de 24 horas.</span><span data-k="psent">Gracias, hemos recibido su solicitud. La revisaremos personalmente y le enviaremos el enlace en unos días laborables.</span><span data-k="failed">El envío ha fallado. Inténtelo de nuevo o envíenos un correo electrónico a info@drpbuildlab.com.</span></div>
+<div id="ui" hidden=""><span data-k="play">Reproducir</span><span data-k="pause">Pausa</span><span data-k="email">Introduzca, por favor, una dirección de correo electrónico válida para que podamos ponernos en contacto con usted.</span><span data-k="tick">Marque la casilla para que podamos ponernos en contacto con usted en relación con esta solicitud.</span><span data-k="fill">Por favor, rellene este campo:</span><span data-k="sent">Gracias, hemos recibido su solicitud. Nos pondremos en contacto con usted en un plazo de 24 horas.</span><span data-k="psent">Gracias, hemos recibido su solicitud. La revisaremos personalmente y le enviaremos el enlace en unos días laborables.</span><span data-k="failed">El envío ha fallado. Inténtelo de nuevo o envíenos un correo electrónico a info@drpbuildlab.com.</span><span data-k="nlsent">Ya casi hemos terminado. Le hemos enviado un correo electrónico: haga clic en el enlace que aparece en él para confirmar su suscripción.</span><span data-k="nlfail">La suscripción no se ha realizado correctamente. Inténtelo de nuevo dentro de un momento.</span></div>
 <a href="https://wa.me/32473744431" class="wa-float" target="_blank" rel="noopener" aria-label="Envíenos un mensaje por WhatsApp"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.782 6.86L2 30l7.347-1.758A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.25-4.36 1.043 1.072-4.25-.276-.436A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.66c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.232.348-.898 1.132-1.1 1.364-.202.232-.404.26-.752.086-.348-.174-1.468-.54-2.796-1.724-1.034-.92-1.73-2.056-1.934-2.404-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.434-.028-.608-.086-.174-.78-1.882-1.07-2.576-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.608.086-.926.434-.318.348-1.216 1.188-1.216 2.896s1.244 3.356 1.418 3.588c.174.232 2.448 3.736 5.932 5.238.83.358 1.478.572 1.982.732.832.264 1.59.226 2.188.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.204-1.656-.086-.144-.318-.232-.666-.406z"></path></svg></a>
 
 

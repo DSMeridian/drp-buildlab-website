@@ -10,6 +10,16 @@
 #   DEEPL_API_KEY   optional. Without it, new text is not translated: every
 #                   market an article lists gets the English text until the
 #                   key is added and this workflow runs again.
+#   RESEND_API_KEY, MAIL_FROM
+#                   for the newsletter step: the same values as the site's
+#                   Netlify environment. Without them nothing is emailed.
+#   ADMIN_EMAIL     staging only: where the preview of a new-article email goes.
+#
+# Newsletter: an article published in this push is emailed to the blog's
+# subscribers (tools/concept/newsletter.js). Only the production repository
+# (DSMeridian/drp-buildlab-website, which serves drpbuildlab.com) emails
+# subscribers, once the article is live there. Any other copy of this
+# repository, such as staging, sends ADMIN_EMAIL a preview and nothing else.
 name: Blog
 
 on:
@@ -17,6 +27,11 @@ on:
     branches: [main]
     paths: ['content/blog/**']
   workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Email these articles to subscribers (slugs, comma-separated). Leave empty to only rebuild.'
+        required: false
+        default: ''
 
 # One rebuild at a time; a newer article waits instead of racing the commit.
 concurrency:
@@ -29,7 +44,8 @@ permissions:
 jobs:
   rebuild:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # the newsletter step may wait up to 15 minutes for Netlify to publish the article
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@v4
 
@@ -73,3 +89,21 @@ jobs:
             sleep 5
           done
           exit 1
+
+      - name: Email newly published articles
+        if: github.event_name == 'push' || inputs.slug != ''
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM }}
+          ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
+          MODE: ${{ github.repository == 'DSMeridian/drp-buildlab-website' && 'production' || 'preview' }}
+          BEFORE: ${{ github.event.before }}
+          SLUG: ${{ inputs.slug }}
+        run: |
+          if [ -z "$RESEND_API_KEY" ] || [ -z "$MAIL_FROM" ]; then
+            echo "::warning::RESEND_API_KEY or MAIL_FROM is not set: new articles are not emailed"; exit 0
+          fi
+          if [ "$MODE" = preview ] && [ -z "$ADMIN_EMAIL" ]; then
+            echo "::warning::ADMIN_EMAIL is not set: no newsletter preview on this copy of the site"; exit 0
+          fi
+          node tools/concept/newsletter.js --mode="$MODE" --before="$BEFORE" --after="$GITHUB_SHA" ${SLUG:+--slug="$SLUG"}
