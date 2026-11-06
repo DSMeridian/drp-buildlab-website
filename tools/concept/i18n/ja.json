@@ -3294,5 +3294,13 @@
  "3f85b2cd26f9675a": {
   "en": "Confirm that you want to receive new articles from the DRP BuildLab blog by email.",
   "t": "DRP BuildLabブログの新しい記事をメールで受け取ることを確認してください。"
+ },
+ "ea81fa6a5da7930f": {
+  "en": "Test Notif",
+  "t": "テスト通知"
+ },
+ "215f7172ec5c1322": {
+  "en": "this is test notif, because the displayed news in here was a dummy",
+  "t": "これはテスト通知です。ここに表示されていたニュースはダミーだったためです。"
  }
 }

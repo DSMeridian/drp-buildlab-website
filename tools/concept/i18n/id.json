@@ -3294,5 +3294,41 @@
  "3f85b2cd26f9675a": {
   "en": "Confirm that you want to receive new articles from the DRP BuildLab blog by email.",
   "t": "Konfirmasikan bahwa Anda ingin menerima artikel terbaru dari blog DRP BuildLab melalui email."
+ },
+ "ea81fa6a5da7930f": {
+  "en": "Test Notif",
+  "t": "Pemberitahuan Uji Coba"
+ },
+ "215f7172ec5c1322": {
+  "en": "this is test notif, because the displayed news in here was a dummy",
+  "t": "Ini adalah pemberitahuan uji coba, karena berita yang ditampilkan di sini hanyalah contoh."
+ },
+ "b972ad284e3a1455": {
+  "en": "By <span translate=\"no\">Lathif</span>",
+  "t": "Oleh <span translate=\"no\">Lathif</span>"
+ },
+ "a9697baaf6e5fd43": {
+  "en": "1 min read",
+  "t": "Waktu baca: 1 menit"
+ },
+ "bf9cbcc75ab40d02": {
+  "en": "Here is the notification Testing",
+  "t": "Berikut ini adalah pemberitahuan Pengujian"
+ },
+ "917ef854b7e09e70": {
+  "en": "this is a news letter testing notification, please ignore if you already submit the subs email, because the displayed news in here was a dummy",
+  "t": "Ini adalah pemberitahuan uji coba buletin berita; silakan abaikan jika Anda sudah mengirimkan alamat email langganan, karena berita yang ditampilkan di sini hanyalah contoh."
+ },
+ "62cfedf03e7e023a": {
+  "en": "notif",
+  "t": "notif"
+ },
+ "4baef9a509cccdf3": {
+  "en": "Test Notif | Blog | DRP BuildLab",
+  "t": "Pemberitahuan Pengujian | Blog | DRP BuildLab"
+ },
+ "a13cd2384e891476": {
+  "en": "this is test notif, because the displayed news in here was a dummy",
+  "t": "Ini adalah pemberitahuan uji coba, karena berita yang ditampilkan di sini hanyalah contoh."
  }
 }

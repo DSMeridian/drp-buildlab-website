@@ -3294,5 +3294,13 @@
  "3f85b2cd26f9675a": {
   "en": "Confirm that you want to receive new articles from the DRP BuildLab blog by email.",
   "t": "يرجى التأكيد على رغبتك في تلقي المقالات الجديدة من مدونة DRP BuildLab عبر البريد الإلكتروني."
+ },
+ "ea81fa6a5da7930f": {
+  "en": "Test Notif",
+  "t": "إشعار الاختبار"
+ },
+ "215f7172ec5c1322": {
+  "en": "this is test notif, because the displayed news in here was a dummy",
+  "t": "هذه إشعار تجريبي، لأن الأخبار المعروضة هنا كانت وهمية"
  }
 }
