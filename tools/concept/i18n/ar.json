@@ -2954,5 +2954,225 @@
  "cb4f85d99edd1f29": {
   "en": "On payment methods, drop-off moments and why the checkout of your webshop matters as much as your shop window. What customers expect in 2026, and how to build a payment flow that does not get in the way.",
   "t": "حول طرق الدفع، ومراحل التخلي عن عملية الشراء، وأهمية عملية الدفع في متجرك الإلكتروني بقدر أهمية واجهة متجرك. ما يتوقعه العملاء في عام 2026، وكيفية إنشاء مسار دفع لا يشكل عائقًا."
+ },
+ "60f80f4fce33ff8b": {
+  "en": "Why we don't start at nine o'clock",
+  "t": "لماذا لا نبدأ في الساعة التاسعة؟"
+ },
+ "9eb09ab8ebb27777": {
+  "en": "On working when you are sharp, and why at our place the clock mostly ticks for the client. How we agree on results instead of hours, what can go wrong, and how to start yourself.",
+  "t": "حول العمل عندما تكون في أفضل حالاتك، ولماذا تعمل ساعتنا في الغالب لصالح العميل. وكيف نتفق على النتائج بدلاً من الساعات، وما الذي قد يحدث من مشاكل، وكيف تبدأ بنفسك."
+ },
+ "130eea0d85449f7e": {
+  "en": "5 min read",
+  "t": "5 دقائق للقراءة"
+ },
+ "c6315d22d1a6ade5": {
+  "en": "At nine in the morning, most people are sitting at their screens. Some are awake. Others are reading the same sentence in an email for the third time. Everyone is at work. Not everyone is working.",
+  "t": "في التاسعة صباحًا، يجلس معظم الناس أمام شاشاتهم. بعضهم مستيقظون. والبعض الآخر يقرأون الجملة نفسها في رسالة بريد إلكتروني للمرة الثالثة. الجميع في العمل. لكن ليس الجميع يعملون."
+ },
+ "1288e0f9c1e60c76": {
+  "en": "We think that is a strange trade. You pay someone to be present, while what you actually want is results. It is like paying a baker per hour he stands in the shop, and then being surprised the bread doesn't get any better.",
+  "t": "نعتقد أن هذه صفقة غريبة. فأنت تدفع لشخص ما مقابل حضوره، في حين أن ما تريده فعليًّا هو النتائج. الأمر أشبه بدفع أجر للخباز عن كل ساعة يقضيها واقفًا في المحل، ثم تتفاجأ بأن جودة الخبز لم تتحسن."
+ },
+ "6166713ca9f95f01": {
+  "en": "That is why at DRP BuildLab we work with a simple idea: the work counts, not the clock.",
+  "t": "ولهذا السبب، فإننا في DRP BuildLab نعمل انطلاقًا من فكرة بسيطة: ما يهم هو العمل، وليس الوقت."
+ },
+ "f2e8ca7e96ff4e40": {
+  "en": "Presence is not performance. Finished work is.",
+  "t": "الحضور ليس أداءً. بل العمل المنجز هو الأداء."
+ },
+ "67d5752b55e758c9": {
+  "en": "Where the idea comes from",
+  "t": "من أين جاءت الفكرة"
+ },
+ "2dcec8ecfb0f4f48": {
+  "en": "Knowledge work is strange work. A good idea doesn't fit in a nine-to-five box, and a bad day can't be fixed by sitting there longer. People also really differ in when they are sharp: one is up at six in the morning, the other only gets going after dinner. That is not laziness. That is simply how people are wired.",
+  "t": "العمل المعرفي عمل غريب. فالفكرة الجيدة لا تتناسب مع إطار العمل من التاسعة إلى الخامسة، ولا يمكن تعويض يوم سيئ بالبقاء في المكتب لفترة أطول. كما أن الناس يختلفون كثيرًا في الأوقات التي يكونون فيها في ذروة نشاطهم: فهناك من يستيقظ في السادسة صباحًا، وآخر لا يبدأ نشاطه إلا بعد العشاء. وهذا ليس كسلاً. بل هي ببساطة طبيعة الناس."
+ },
+ "df7782bb430bd679": {
+  "en": "Most companies know that, and still put everyone on the same schedule. Out of habit, out of convenience, and because a schedule is easier to check than a result. We choose the harder option: checking the result.",
+  "t": "تدرك معظم الشركات ذلك، ومع ذلك تضع الجميع في نفس الجدول الزمني. إما بدافع العادة، أو للراحة، أو لأن مراجعة الجدول الزمني أسهل من مراجعة النتيجة. نحن نختار الخيار الأصعب: مراجعة النتيجة."
+ },
+ "c0c49bb83b8dc815": {
+  "en": "What it looks like in practice",
+  "t": "كيف يبدو الأمر في الواقع"
+ },
+ "2ef1ecda7ca6a8d9": {
+  "en": "Take Jonas, a made-up developer with a very real problem: at half past eight in the morning he is about as sharp as a chair. At ten at night he solves in twenty minutes a bug he stared at for half a day.",
+  "t": "لنأخذ جوناس مثالاً، وهو مطور خيالي يعاني من مشكلة حقيقية للغاية: في الساعة الثامنة والنصف صباحًا، يكون ذهنه بطيئًا ككرسي. أما في الساعة العاشرة مساءً، فيتمكن في غضون عشرين دقيقة من حل خطأ برمجي ظل يحدق فيه لمدة نصف يوم."
+ },
+ "ccb5e5c01980273e": {
+  "en": "His colleague Sanne (also made up, also recognisable) is the opposite. She is awake at six, three tasks in by eight and done by two. Then she goes to play padel, where, in her own words, she gets the best ideas of the week. Mostly against a wall.",
+  "t": "أما زميلته سان (شخصية خيالية أيضًا، لكن يمكن التعرف عليها أيضًا)، فهي عكس ذلك تمامًا. تستيقظ في الساعة السادسة، وتنجز ثلاث مهام بحلول الساعة الثامنة، وتنتهي من عملها بحلول الساعة الثانية. ثم تذهب للعب البادل، حيث، على حد تعبيرها، تراودها أفضل الأفكار خلال الأسبوع. وغالبًا ما يكون ذلك أمام الحائط."
+ },
+ "83ee5d105965d650": {
+  "en": "A time clock forces the two to work together in the middle: both half-hearted, both from nine o'clock. We let them work when they are good, and we ask one thing: that it is finished, that it is right, and that the client knows where they stand.",
+  "t": "تجبر ساعة الحضور والانصراف الاثنين على العمل معًا في منتصف اليوم: كلاهما يعمل بفتور، وكلاهما يبدأ العمل من الساعة التاسعة. نسمح لهما بالعمل عندما يكونان في أفضل حالاتهما، ونطلب شيئًا واحدًا: أن يُنجز العمل، وأن يكون صحيحًا، وأن يعرف العميل ما هو الوضع الحالي."
+ },
+ "3afe2249967d3c84": {
+  "en": "Sounds soft? It is actually stricter than a time clock. A time clock asks you to be there. We ask that it is done. For the client, one thing changes as a result: they get a fixed response time and a delivery date that is met, instead of office hours.",
+  "t": "يبدو الأمر مرنًا؟ في الواقع، إنه أكثر صرامة من ساعة الحضور. فساعة الحضور تطلب منك التواجد في المكان، أما نحن فنطلب إنجاز العمل. وبالنسبة للعميل، هناك تغيير واحد ينتج عن ذلك: فهو يحصل على وقت استجابة محدد وموعد تسليم يتم الالتزام به، بدلاً من ساعات العمل المكتبية."
+ },
+ "efd3b178a301d54b": {
+  "en": "How we make agreements",
+  "t": "كيف نبرم الاتفاقات"
+ },
+ "908a820c3ef9a7e0": {
+  "en": "Freedom starts with clarity. For every piece of work we answer three questions in advance:",
+  "t": "الحرية تبدأ بالوضوح. بالنسبة لكل عمل نقوم به، نجيب مسبقًا على ثلاثة أسئلة:"
+ },
+ "6b7bece09761290b": {
+  "en": "<strong>What is done?</strong> We describe the result in one sentence, so nobody can say later that they understood it differently.",
+  "t": "<strong>ما الذي تم إنجازه؟</strong> نصف النتيجة في جملة واحدة، حتى لا يستطيع أحد أن يقول لاحقًا إنه فهمها بطريقة مختلفة."
+ },
+ "a358429d954acbf2": {
+  "en": "<strong>When?</strong> A date, not 'soon'.",
+  "t": "<strong>متى؟</strong> تاريخ محدد، وليس «قريبًا»."
+ },
+ "72e38ae668c5e99f": {
+  "en": "<strong>Who decides?</strong> One owner, who knows when they may ask for help.",
+  "t": "<strong>من الذي يقرر؟</strong> مالك واحد، الذي لا يعرف متى قد يطلب المساعدة."
+ },
+ "adf208d9f3b7453b": {
+  "en": "After that it is up to the owner. When they work is their business. What they deliver is not.",
+  "t": "بعد ذلك، الأمر متروك للمالك. متى يعملون هو شأنهم الخاص. أما ما يقدمونه، فليس كذلك."
+ },
+ "ff5f672b7f1c3bd2": {
+  "en": "What it can deliver",
+  "t": "ما يمكن أن يقدمه"
+ },
+ "69c70038110779d0": {
+  "en": "<strong>Sharper work.</strong> You do the hard work when you are ready for it, not when the calendar says so.",
+  "t": "<strong>عمل أكثر تركيزًا.</strong> قم بالجهد الشاق عندما تكون مستعدًا له، وليس عندما يحدد لك التقويم ذلك."
+ },
+ "97491db715b34d7d": {
+  "en": "<strong>Less drudgery.</strong> No sitting out hours on a day when nothing comes out of your hands. We all know the day of three coffees and one line of code.",
+  "t": "<strong>أقل من العمل الشاق.</strong> لا داعي لقضاء ساعات طويلة في الجلوس في يوم لا تنجز فيه شيئًا. نحن جميعًا نعرف ذلك اليوم الذي نشرب فيه ثلاث فناجين من القهوة ونكتب سطرًا واحدًا فقط من الكود."
+ },
+ "fd6e7938e8f17e45": {
+  "en": "<strong>Fairer agreements.</strong> You measure the work, not the chair.",
+  "t": "<strong>اتفاقيات أكثر إنصافًا.</strong> أنت تقيّم العمل، لا الكرسي."
+ },
+ "9155620b018306ff": {
+  "en": "<strong>More responsibility.</strong> People who are given freedom usually handle it more carefully.",
+  "t": "<strong>مزيد من المسؤولية.</strong> عادةً ما يتعامل الأشخاص الذين يُمنحون الحرية معها بحذر أكبر."
+ },
+ "c6821b60525455ae": {
+  "en": "<strong>A wider choice of people.</strong> Talent doesn't only live within thirty kilometres and a 9-to-5 rhythm.",
+  "t": "<strong>خيارات أوسع من الأشخاص.</strong> فالمواهب لا تقتصر على من يعيشون في نطاق ثلاثين كيلومترًا ويعملون بنظام «من التاسعة إلى الخامسة»."
+ },
+ "caef9c73a5f84195": {
+  "en": "Where it goes wrong, and how to prevent it",
+  "t": "أين تكمن المشكلة، وكيفية تجنبها"
+ },
+ "8a36da7500f3d229": {
+  "en": "Freedom without agreements is called chaos. A liberal work schedule only works if the edges are sharp. These are the rules of thumb:",
+  "t": "الحرية بدون اتفاقات تُسمى فوضى. ولا ينجح جدول العمل المرن إلا إذا كانت حدوده واضحة. وهذه هي القواعد العامة:"
+ },
+ "ca9edeb587ab1a82": {
+  "en": "<strong>One owner per task.</strong> Everyone knows who signs for what.",
+  "t": "<strong>مالك واحد لكل مهمة.</strong> الجميع يعرف من الذي يوقع على ماذا."
+ },
+ "a085349f90653cb8": {
+  "en": "<strong>A short fixed check-in.</strong> So nobody sits guessing alone.",
+  "t": "<strong>تسجيل وصول سريع ومحدد.</strong> حتى لا يظل أحد يتخمين بمفرده."
+ },
+ "e9357143f9c6c011": {
+  "en": "<strong>An agreed response time for clients.</strong> Even if you work late yourself. A response time is not a reply at two in the morning.",
+  "t": "<strong>وقت استجابة متفق عليه للعملاء.</strong> حتى لو كنت تعمل حتى وقت متأخر. فوقت الاستجابة لا يعني الرد في الساعة الثانية صباحًا."
+ },
+ "5824e8d9d241091c": {
+  "en": "<strong>A tidy handover.</strong> What is done, what is open, what the next person needs.",
+  "t": "<strong>تسليم مهام منظم.</strong> ما تم إنجازه، وما لا يزال قيد التنفيذ، وما يحتاجه الشخص الذي سيخلفك."
+ },
+ "a851974bf70e172b": {
+  "en": "<strong>Trust is a credit.</strong> Whoever doesn't keep agreements gets less freedom, until it works again.",
+  "t": "<strong>الثقة هي رصيد.</strong> ومن لا يلتزم بالاتفاقات، تُقلَّص حريته تدريجيًّا، إلى أن يعود إلى الالتزام بها."
+ },
+ "282681fc99e1408c": {
+  "en": "There are also moments when fixed hours do work better: the first weeks of a new colleague, a crisis at a client, a day full of appointments. Then we simply work at the same time, and let nobody guess.",
+  "t": "وهناك أيضًا لحظات تكون فيها ساعات العمل الثابتة أكثر فعالية: الأسابيع الأولى لانضمام زميل جديد، أو أزمة لدى أحد العملاء، أو يوم مليء بالمواعيد. في تلك الحالات، نعمل ببساطة في نفس الوقت، ولا ندع أحدًا يخمن ذلك."
+ },
+ "8c65d0afbc2b1623": {
+  "en": "Questions we always get",
+  "t": "الأسئلة التي نتلقاها دائمًا"
+ },
+ "622bb9c8906ac8aa": {
+  "en": "<strong>But how do you know they are really working?</strong> By what they deliver. A warm chair proves nothing.",
+  "t": "<strong>لكن كيف تعرف إن كانت تعمل بالفعل؟</strong> من خلال النتائج التي تحققها. فمجرد وجود كرسي دافئ لا يثبت شيئًا."
+ },
+ "c61b463bc7c00a51": {
+  "en": "<strong>How do you measure performance then?</strong> By delivered work, quality and the client's reaction. Not by the number of hours in a system.",
+  "t": "<strong>كيف تُقيَّم الأداء إذن؟</strong> من خلال العمل المنجز، والجودة، ورد فعل العميل. وليس من خلال عدد الساعات المسجلة في النظام."
+ },
+ "e7ef873d91c720f9": {
+  "en": "<strong>And meetings?</strong> As few as possible, and always with an agenda. Whoever invites without an agenda buys the coffee.",
+  "t": "<strong>وماذا عن الاجتماعات؟</strong> أقل عدد ممكن، ودائمًا مع جدول أعمال. ومن يدعو إلى اجتماع دون جدول أعمال، عليه أن يدفع ثمن القهوة."
+ },
+ "d34661e92fc81e52": {
+  "en": "<strong>What if someone abuses it?</strong> Then you see it quickly, because the agreements are visible. Then we talk, and the freedom adjusts.",
+  "t": "<strong>ماذا لو أساء أحدهم استخدامها؟</strong> عندها ستلاحظ ذلك بسرعة، لأن الاتفاقات واضحة للعيان. عندها نتحدث معًا، وتُعدل الحرية وفقًا لذلك."
+ },
+ "f53657ea4c74e383": {
+  "en": "<strong>Does it suit everyone?</strong> No. For some tasks and some people fixed hours work better. That is why it is an agreement and not a dogma.",
+  "t": "<strong>هل يناسب هذا الجميع؟</strong> لا. ففي بعض المهام وبالنسبة لبعض الأشخاص، تكون ساعات العمل الثابتة أكثر ملاءمة. ولهذا السبب يُعتبر هذا اتفاقًا وليس عقيدة."
+ },
+ "268028fadc6bc2dc": {
+  "en": "How to start yourself",
+  "t": "كيف تبدأ بنفسك"
+ },
+ "c3677994a474b8f0": {
+  "en": "<strong>Start small.</strong> One team or one type of task, not the whole company at once.",
+  "t": "<strong>ابدأ بخطوات صغيرة.</strong> فريق واحد أو نوع واحد من المهام، وليس الشركة بأكملها دفعة واحدة."
+ },
+ "3f108584ccc51126": {
+  "en": "<strong>Agree a core overlap.</strong> For example two hours a day when everyone is reachable.",
+  "t": "<strong>اتفقوا على فترة تداخل أساسية.</strong> على سبيل المثال، ساعتان يوميًا يكون فيها الجميع متاحين."
+ },
+ "8cb03c1b6eb9d15b": {
+  "en": "<strong>Write down what 'done' means,</strong> per task.",
+  "t": "<strong>اكتب تعريف كلمة «تم»</strong> لكل مهمة على حدة."
+ },
+ "7f1da070620ff902": {
+  "en": "<strong>Make the handover visible.</strong> A shared board or document where everyone can see what is running.",
+  "t": "<strong>اجعل عملية التسليم واضحة للجميع. استخدم</strong> لوحة أو مستندًا مشتركًا يمكن للجميع من خلاله الاطلاع على المهام الجارية."
+ },
+ "797a568bd9f27493": {
+  "en": "<strong>Evaluate after four weeks.</strong> What went well, where did something get stuck?",
+  "t": "<strong>قم بالتقييم بعد أربعة أسابيع.</strong> ما الذي سار على ما يرام، وأين واجهت عقبات؟"
+ },
+ "68c5d063796e1fba": {
+  "en": "<strong>Adjust.</strong> A rule that doesn't work may change.",
+  "t": "<strong>تعديل.</strong> قد تتغير القاعدة التي لا تعمل."
+ },
+ "7a27df5fa57cb0f1": {
+  "en": "And yes, we also answer emails at nine in the morning. If we are awake by then.",
+  "t": "ونعم، نحن نرد أيضًا على رسائل البريد الإلكتروني في التاسعة صباحًا. إذا كنا مستيقظين في ذلك الوقت."
+ },
+ "2b5cc281d516e73a": {
+  "en": "Jonas and Sanne don't exist. Their working rhythm does.",
+  "t": "جوناس وسان لا وجود لهما. لكن إيقاع عملهما موجود."
+ },
+ "52537e8150d972a0": {
+  "en": "Fancy doing it this way?",
+  "t": "هل ترغب في القيام بذلك بهذه الطريقة؟"
+ },
+ "c2e02a43dd97a026": {
+  "en": "Do you want to work with us, or are you considering trying this in your own company? Talk to us, we are happy to explain how we approach it.",
+  "t": "هل ترغب في العمل معنا، أم أنك تفكر في تجربة هذا الأمر في شركتك؟ تواصل معنا، يسعدنا أن نوضح لك الطريقة التي نتبعها في هذا الصدد."
+ },
+ "4ee302780cdb7981": {
+  "en": "OpenAI Playground 2026 11 06 at 11.52.31",
+  "t": "OpenAI Playground 2026 11 06 الساعة 11:52:31"
+ },
+ "70a42747ffd34b74": {
+  "en": "Why we don't start at nine o'clock | Blog | DRP BuildLab",
+  "t": "لماذا لا نبدأ في الساعة التاسعة | المدونة | DRP BuildLab"
+ },
+ "4819ba9333e5ddcc": {
+  "en": "On working when you are sharp, and why at our place the clock mostly ticks for the client. How we agree on results instead of hours, what can go wrong, and how to start yourself.",
+  "t": "حول العمل عندما تكون في أفضل حالاتك، ولماذا تعمل ساعتنا في الغالب لصالح العميل. وكيف نتفق على النتائج بدلاً من الساعات، وما الذي قد يحدث من مشاكل، وكيف تبدأ بنفسك."
  }
 }

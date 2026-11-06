@@ -2954,5 +2954,225 @@
  "cb4f85d99edd1f29": {
   "en": "On payment methods, drop-off moments and why the checkout of your webshop matters as much as your shop window. What customers expect in 2026, and how to build a payment flow that does not get in the way.",
   "t": "決済方法、購入を中断するタイミング、そしてウェブショップのチェックアウトが、実店舗のショーウィンドウと同じくらい重要である理由について。2026年に顧客が何を期待しているのか、そして購入の妨げにならない決済フローを構築する方法について解説します。"
+ },
+ "60f80f4fce33ff8b": {
+  "en": "Why we don't start at nine o'clock",
+  "t": "なぜ9時から始めないのか"
+ },
+ "9eb09ab8ebb27777": {
+  "en": "On working when you are sharp, and why at our place the clock mostly ticks for the client. How we agree on results instead of hours, what can go wrong, and how to start yourself.",
+  "t": "集中力が高まっている時の働き方について、そしてなぜ当社では、時間のほとんどがクライアントのために費やされるのか。時間ではなく成果で合意する方法、起こりうる問題点、そしてご自身で始める方法について。"
+ },
+ "130eea0d85449f7e": {
+  "en": "5 min read",
+  "t": "読了時間：5分"
+ },
+ "c6315d22d1a6ade5": {
+  "en": "At nine in the morning, most people are sitting at their screens. Some are awake. Others are reading the same sentence in an email for the third time. Everyone is at work. Not everyone is working.",
+  "t": "午前9時になると、ほとんどの人が画面の前に座っています。目を覚ましている人もいれば、メールにある同じ一文を3度も読み返している人もいます。誰もが職場にいますが、全員が仕事をしているわけではありません。"
+ },
+ "1288e0f9c1e60c76": {
+  "en": "We think that is a strange trade. You pay someone to be present, while what you actually want is results. It is like paying a baker per hour he stands in the shop, and then being surprised the bread doesn't get any better.",
+  "t": "それは奇妙な取引だと思います。実際には結果を求めているにもかかわらず、ただそこにいてくれることに対して報酬を支払っているのですから。それは、パン屋が店に立っている時間ごとに時給を支払っておきながら、パンの出来が全く良くならないことに驚いているようなものです。"
+ },
+ "6166713ca9f95f01": {
+  "en": "That is why at DRP BuildLab we work with a simple idea: the work counts, not the clock.",
+  "t": "だからこそ、DRP BuildLabでは、「重要なのは作業そのものであり、時間ではない」というシンプルな考え方に基づいて活動しています。"
+ },
+ "f2e8ca7e96ff4e40": {
+  "en": "Presence is not performance. Finished work is.",
+  "t": "「そこにいること」は「成果」ではありません。「完成した作品」こそが成果なのです。"
+ },
+ "67d5752b55e758c9": {
+  "en": "Where the idea comes from",
+  "t": "そのアイデアはどこから生まれたのでしょうか"
+ },
+ "2dcec8ecfb0f4f48": {
+  "en": "Knowledge work is strange work. A good idea doesn't fit in a nine-to-five box, and a bad day can't be fixed by sitting there longer. People also really differ in when they are sharp: one is up at six in the morning, the other only gets going after dinner. That is not laziness. That is simply how people are wired.",
+  "t": "知識労働というのは不思議な仕事です。良いアイデアは「9時から5時」という枠には収まりませんし、調子の悪い日は、ただ長く座っていても解決するものではありません。 また、頭が冴える時間帯も人によって大きく異なります。ある人は朝6時に起きる一方、ある人は夕食後にようやく本調子になることもあります。それは怠けではありません。単に、人それぞれの体質や性質によるものなのです。"
+ },
+ "df7782bb430bd679": {
+  "en": "Most companies know that, and still put everyone on the same schedule. Out of habit, out of convenience, and because a schedule is easier to check than a result. We choose the harder option: checking the result.",
+  "t": "多くの企業はそのことを承知しているにもかかわらず、依然として全員に同じスケジュールを適用しています。それは、習慣や利便性のため、そして結果を確認するよりもスケジュールを確認するほうが簡単だからです。私たちは、より困難な選択肢、つまり結果を確認することを選びます。"
+ },
+ "c0c49bb83b8dc815": {
+  "en": "What it looks like in practice",
+  "t": "実際の様子はどのようなものか"
+ },
+ "2ef1ecda7ca6a8d9": {
+  "en": "Take Jonas, a made-up developer with a very real problem: at half past eight in the morning he is about as sharp as a chair. At ten at night he solves in twenty minutes a bug he stared at for half a day.",
+  "t": "架空の開発者であるジョナスを例に挙げましょう。彼には非常に現実的な問題があります。朝8時半になると、彼はまるで椅子のように頭が回らなくなってしまうのです。一方、夜10時になると、半日もの間見つめ続けていたバグを、わずか20分で解決してしまうのです。"
+ },
+ "ccb5e5c01980273e": {
+  "en": "His colleague Sanne (also made up, also recognisable) is the opposite. She is awake at six, three tasks in by eight and done by two. Then she goes to play padel, where, in her own words, she gets the best ideas of the week. Mostly against a wall.",
+  "t": "彼の同僚であるサンネ（これも架空の人物ですが、実在の人物をモデルにしています）は、彼とは正反対です。彼女は朝6時には起きており、8時までに3つの仕事をこなし、2時にはすべてを終えています。その後、パデルをプレイしに行きますが、彼女自身の言葉によれば、そこでその週で最も良いアイデアが浮かぶそうです。たいていは壁を相手にプレイしている時だそうです。"
+ },
+ "83ee5d105965d650": {
+  "en": "A time clock forces the two to work together in the middle: both half-hearted, both from nine o'clock. We let them work when they are good, and we ask one thing: that it is finished, that it is right, and that the client knows where they stand.",
+  "t": "タイムカード制のため、二人は仕方なく一緒に仕事をすることになります。二人ともやる気は半ばで、9時から仕事を始めます。彼らが調子がいいときは仕事をさせますが、私たちが求めるのはただ一つです。それは、仕事が完了していること、正しく行われていること、そしてクライアントが現状を把握していることです。"
+ },
+ "3afe2249967d3c84": {
+  "en": "Sounds soft? It is actually stricter than a time clock. A time clock asks you to be there. We ask that it is done. For the client, one thing changes as a result: they get a fixed response time and a delivery date that is met, instead of office hours.",
+  "t": "「緩い」ように聞こえますか？　実は、タイムレコーダーよりも厳しい仕組みなのです。タイムレコーダーは「その場にいてください」と求めるのに対し、私たちは「仕事を完了させてください」と求めています。クライアントにとっては、その結果として1つの点が変化します。それは、営業時間という枠組みではなく、一定の応答時間と確実に守られる納期が保証されるということです。"
+ },
+ "efd3b178a301d54b": {
+  "en": "How we make agreements",
+  "t": "合意の形成方法"
+ },
+ "908a820c3ef9a7e0": {
+  "en": "Freedom starts with clarity. For every piece of work we answer three questions in advance:",
+  "t": "自由は明確さから始まります。私たちは、あらゆる仕事において、あらかじめ次の3つの質問に答えています："
+ },
+ "6b7bece09761290b": {
+  "en": "<strong>What is done?</strong> We describe the result in one sentence, so nobody can say later that they understood it differently.",
+  "t": "<strong>どのような結果が得られたのでしょうか？</strong>結果を1文で説明しておきます。そうすれば、後で「自分はそうは理解していなかった」と言われることがなくなります。"
+ },
+ "a358429d954acbf2": {
+  "en": "<strong>When?</strong> A date, not 'soon'.",
+  "t": "<strong>いつですか？</strong>「近いうち」ではなく、具体的な日付をお願いします。"
+ },
+ "72e38ae668c5e99f": {
+  "en": "<strong>Who decides?</strong> One owner, who knows when they may ask for help.",
+  "t": "<strong>誰が決めればよいのでしょうか？</strong>　助けを求められる時期が分かっている、たった一人の所有者です。"
+ },
+ "adf208d9f3b7453b": {
+  "en": "After that it is up to the owner. When they work is their business. What they deliver is not.",
+  "t": "その後はオーナー次第です。いつ働くかは彼らの自由ですが、どのような成果を出すかはそうではありません。"
+ },
+ "ff5f672b7f1c3bd2": {
+  "en": "What it can deliver",
+  "t": "どのような成果が期待できるか"
+ },
+ "69c70038110779d0": {
+  "en": "<strong>Sharper work.</strong> You do the hard work when you are ready for it, not when the calendar says so.",
+  "t": "<strong>より集中して仕事に取り組むこと。</strong>大変な仕事は、カレンダーにそう書いてあるからという理由ではなく、自分がその準備ができた時に取り組むものです。"
+ },
+ "97491db715b34d7d": {
+  "en": "<strong>Less drudgery.</strong> No sitting out hours on a day when nothing comes out of your hands. We all know the day of three coffees and one line of code.",
+  "t": "<strong>退屈な作業が減ります。</strong>何一つ成果が出ない日に、何時間もただ座って時間を浪費する必要もありません。コーヒーを3杯飲んでも、コードを1行も書けないような日があることは、皆さんご存知でしょう。"
+ },
+ "fd6e7938e8f17e45": {
+  "en": "<strong>Fairer agreements.</strong> You measure the work, not the chair.",
+  "t": "<strong>より公平な契約。</strong>座っている時間ではなく、実際の仕事量を評価するのです。"
+ },
+ "9155620b018306ff": {
+  "en": "<strong>More responsibility.</strong> People who are given freedom usually handle it more carefully.",
+  "t": "<strong>より大きな責任です。</strong>自由を与えられた人は、たいていそれをより慎重に扱います。"
+ },
+ "c6821b60525455ae": {
+  "en": "<strong>A wider choice of people.</strong> Talent doesn't only live within thirty kilometres and a 9-to-5 rhythm.",
+  "t": "<strong>より幅広い人材の選択肢。</strong>才能は、30キロ圏内や9時から5時までの勤務リズムの中にだけ存在するわけではありません。"
+ },
+ "caef9c73a5f84195": {
+  "en": "Where it goes wrong, and how to prevent it",
+  "t": "どこで問題が発生するのか、そしてそれを防ぐにはどうすればよいか"
+ },
+ "8a36da7500f3d229": {
+  "en": "Freedom without agreements is called chaos. A liberal work schedule only works if the edges are sharp. These are the rules of thumb:",
+  "t": "合意のない自由は、混沌と呼ばれます。柔軟な勤務スケジュールが機能するのは、その境界線が明確である場合に限られます。以下が経験則です："
+ },
+ "ca9edeb587ab1a82": {
+  "en": "<strong>One owner per task.</strong> Everyone knows who signs for what.",
+  "t": "<strong>タスクごとに担当者を1名ずつ決めます。</strong>誰が何を担当するかは、全員が把握しています。"
+ },
+ "a085349f90653cb8": {
+  "en": "<strong>A short fixed check-in.</strong> So nobody sits guessing alone.",
+  "t": "<strong>短い決まったチェックインの時間です。</strong>そうすれば、誰も一人で当て推量をする必要がなくなります。"
+ },
+ "e9357143f9c6c011": {
+  "en": "<strong>An agreed response time for clients.</strong> Even if you work late yourself. A response time is not a reply at two in the morning.",
+  "t": "<strong>クライアントとの間で合意した対応時間です。</strong>たとえご自身が夜遅くまで働いていてもです。対応時間とは、午前2時に返信することではありません。"
+ },
+ "5824e8d9d241091c": {
+  "en": "<strong>A tidy handover.</strong> What is done, what is open, what the next person needs.",
+  "t": "<strong>きっちりとした引き継ぎです。</strong>完了した事項、未解決の事項、そして後任者が何が必要か。"
+ },
+ "a851974bf70e172b": {
+  "en": "<strong>Trust is a credit.</strong> Whoever doesn't keep agreements gets less freedom, until it works again.",
+  "t": "<strong>信頼とは信用のことです。</strong>約束を守らない人は、再び信頼が回復するまで、自由が制限されます。"
+ },
+ "282681fc99e1408c": {
+  "en": "There are also moments when fixed hours do work better: the first weeks of a new colleague, a crisis at a client, a day full of appointments. Then we simply work at the same time, and let nobody guess.",
+  "t": "また、決まった勤務時間の方がうまくいく場合もあります。例えば、新しい同僚が入社して最初の数週間や、クライアント先で緊急事態が発生したとき、あるいはアポイントメントがぎっしり詰まった日などです。そのようなときは、単に皆で同じ時間帯に仕事をし、誰にも気づかれないようにします。"
+ },
+ "8c65d0afbc2b1623": {
+  "en": "Questions we always get",
+  "t": "よく寄せられる質問"
+ },
+ "622bb9c8906ac8aa": {
+  "en": "<strong>But how do you know they are really working?</strong> By what they deliver. A warm chair proves nothing.",
+  "t": "<strong>しかし、それらが本当に機能しているかどうか、どうやって判断すればよいのでしょうか？</strong>　その成果を見ればわかります。ただ座っているだけでは、何の証明にもなりません。"
+ },
+ "c61b463bc7c00a51": {
+  "en": "<strong>How do you measure performance then?</strong> By delivered work, quality and the client's reaction. Not by the number of hours in a system.",
+  "t": "<strong>では、パフォーマンスはどのように測定すればよいのでしょうか？</strong>　納品された成果物、品質、そしてクライアントの反応によって<strong>測定します</strong>。システムに記録された作業時間数によってではありません。"
+ },
+ "e7ef873d91c720f9": {
+  "en": "<strong>And meetings?</strong> As few as possible, and always with an agenda. Whoever invites without an agenda buys the coffee.",
+  "t": "<strong>では、会議についてはどうでしょうか？</strong>　できるだけ少なくし、必ず議題を設けるようにしましょう。議題なしで会議を招集した人は、コーヒーをおごることになります。"
+ },
+ "d34661e92fc81e52": {
+  "en": "<strong>What if someone abuses it?</strong> Then you see it quickly, because the agreements are visible. Then we talk, and the freedom adjusts.",
+  "t": "<strong>もし誰かがそれを悪用したらどうなるでしょうか？</strong>　その場合は、取り決めが可視化されているため、すぐに気づくことができます。その後、話し合いを行い、自由度の調整を行います。"
+ },
+ "f53657ea4c74e383": {
+  "en": "<strong>Does it suit everyone?</strong> No. For some tasks and some people fixed hours work better. That is why it is an agreement and not a dogma.",
+  "t": "<strong>誰にでも合うのでしょうか？</strong>　いいえ。仕事の内容や人によっては、決まった勤務時間の方が適している場合もあります。だからこそ、これは「合意」であり、「絶対的なルール」ではないのです。"
+ },
+ "268028fadc6bc2dc": {
+  "en": "How to start yourself",
+  "t": "自分から始める方法"
+ },
+ "c3677994a474b8f0": {
+  "en": "<strong>Start small.</strong> One team or one type of task, not the whole company at once.",
+  "t": "<strong>まずは小規模から始めましょう。</strong>会社全体を一気に取り組むのではなく、1つのチームや1種類の業務から始めてください。"
+ },
+ "3f108584ccc51126": {
+  "en": "<strong>Agree a core overlap.</strong> For example two hours a day when everyone is reachable.",
+  "t": "<strong>共通の時間帯を決めましょう。</strong>例えば、全員が連絡が取れる1日2時間といった具合です。"
+ },
+ "8cb03c1b6eb9d15b": {
+  "en": "<strong>Write down what 'done' means,</strong> per task.",
+  "t": "タスクごとに<strong>、「完了」とはどういう意味なのかを書き出してください</strong>。"
+ },
+ "7f1da070620ff902": {
+  "en": "<strong>Make the handover visible.</strong> A shared board or document where everyone can see what is running.",
+  "t": "<strong>引き継ぎの状況を可視化しましょう。</strong>進行中の作業を全員が確認できる共有ボードやドキュメントを用意しましょう。"
+ },
+ "797a568bd9f27493": {
+  "en": "<strong>Evaluate after four weeks.</strong> What went well, where did something get stuck?",
+  "t": "<strong>4週間後に振り返りを行ってください。</strong>うまくいった点と、行き詰まってしまった点はどこでしょうか？"
+ },
+ "68c5d063796e1fba": {
+  "en": "<strong>Adjust.</strong> A rule that doesn't work may change.",
+  "t": "<strong>調整してください。</strong>うまく機能しないルールは変更される場合があります。"
+ },
+ "7a27df5fa57cb0f1": {
+  "en": "And yes, we also answer emails at nine in the morning. If we are awake by then.",
+  "t": "そう、朝9時にもメールにお返事しています。その時間までに起きていれば、ですが。"
+ },
+ "2b5cc281d516e73a": {
+  "en": "Jonas and Sanne don't exist. Their working rhythm does.",
+  "t": "ヨナスとサンネという人物は実在しません。しかし、彼らの仕事のリズムは実在します。"
+ },
+ "52537e8150d972a0": {
+  "en": "Fancy doing it this way?",
+  "t": "このやり方でいかがでしょうか？"
+ },
+ "c2e02a43dd97a026": {
+  "en": "Do you want to work with us, or are you considering trying this in your own company? Talk to us, we are happy to explain how we approach it.",
+  "t": "弊社とご一緒に仕事をしてみたいとお考えですか、それともご自身の会社でこれを試してみようとお考えでしょうか？ぜひご相談ください。弊社の取り組み方について、喜んでご説明させていただきます。"
+ },
+ "4ee302780cdb7981": {
+  "en": "OpenAI Playground 2026 11 06 at 11.52.31",
+  "t": "OpenAI Playground 2026年11月6日 11時52分31秒"
+ },
+ "70a42747ffd34b74": {
+  "en": "Why we don't start at nine o'clock | Blog | DRP BuildLab",
+  "t": "なぜ9時から始めないのか | ブログ | DRP BuildLab"
+ },
+ "4819ba9333e5ddcc": {
+  "en": "On working when you are sharp, and why at our place the clock mostly ticks for the client. How we agree on results instead of hours, what can go wrong, and how to start yourself.",
+  "t": "集中力が高まっている時の働き方について、そしてなぜ当社では、時間のほとんどがクライアントのために費やされるのか。時間ではなく成果で合意する方法、起こりうる問題点、そしてご自身で始める方法について。"
  }
 }
