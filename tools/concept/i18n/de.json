@@ -3306,5 +3306,17 @@
  "8e83778ea6a8491e": {
   "en": "logo drpbl",
   "t": "Logo drpbl"
+ },
+ "609c69c3e3be3d07": {
+  "en": "Testing",
+  "t": "Prüfung"
+ },
+ "215f7172ec5c1322": {
+  "en": "this is test notif, because the displayed news in here was a dummy",
+  "t": "Dies ist eine Testbenachrichtigung, da es sich bei den hier angezeigten Nachrichten um Platzhalter handelte."
+ },
+ "7cbe91bf567b1de2": {
+  "en": "Screenshot 41",
+  "t": "Screenshot 41"
  }
 }
