@@ -3294,41 +3294,5 @@
  "3f85b2cd26f9675a": {
   "en": "Confirm that you want to receive new articles from the DRP BuildLab blog by email.",
   "t": "Veuillez confirmer que vous souhaitez recevoir par e-mail les nouveaux articles du blog DRP BuildLab."
- },
- "ea81fa6a5da7930f": {
-  "en": "Test Notif",
-  "t": "Notification de test"
- },
- "215f7172ec5c1322": {
-  "en": "this is test notif, because the displayed news in here was a dummy",
-  "t": "Il s&#x27;agit d&#x27;une notification de test, car l&#x27;actualité affichée ici était factice."
- },
- "b972ad284e3a1455": {
-  "en": "By <span translate=\"no\">Lathif</span>",
-  "t": "Par <span translate=\"no\">Lathif</span>"
- },
- "a9697baaf6e5fd43": {
-  "en": "1 min read",
-  "t": "1 minute de lecture"
- },
- "bf9cbcc75ab40d02": {
-  "en": "Here is the notification Testing",
-  "t": "Voici la notification « Test »"
- },
- "917ef854b7e09e70": {
-  "en": "this is a news letter testing notification, please ignore if you already submit the subs email, because the displayed news in here was a dummy",
-  "t": "Il s&#x27;agit d&#x27;un message de test de la newsletter. Veuillez l&#x27;ignorer si vous avez déjà fourni l&#x27;adresse e-mail de l&#x27;abonné, car les actualités affichées ici sont fictives."
- },
- "62cfedf03e7e023a": {
-  "en": "notif",
-  "t": "notif"
- },
- "4baef9a509cccdf3": {
-  "en": "Test Notif | Blog | DRP BuildLab",
-  "t": "Notification de test | Blog | DRP BuildLab"
- },
- "a13cd2384e891476": {
-  "en": "this is test notif, because the displayed news in here was a dummy",
-  "t": "Il s'agit d'une notification de test, car l'actualité affichée ici était factice."
  }
 }
