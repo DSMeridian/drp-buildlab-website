@@ -2,6 +2,7 @@
 title: "Checking out without the hassle: what customers expect in 2026"
 slug: checking-out-without-the-hassle-what-customers-expect-in-2026
 date: 2026-11-04
+updated: 2026-11-06
 author: Dries De Smedt
 category: technical
 tags:
@@ -14,7 +15,19 @@ langs:
   - en
   - nl
   - fr
+  - de
+  - it
+  - es
+  - pl
+  - pt
+  - id
+  - ja
+  - ar
+  - af
 excerpt: On payment methods, drop-off moments and why the checkout of your webshop matters as much as your shop window. What customers expect in 2026, and how to build a payment flow that does not get in the way.
+cover:
+  src: ./media/checking-out-without-the-hassle-what-customers-expect-in-2026/4c874df9-pexels-500photos-com-15338-93405.jpg
+  alt: pexels 500photos com 15338 93405
 draft: false
 ---
 
