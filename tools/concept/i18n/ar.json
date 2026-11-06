@@ -2722,5 +2722,237 @@
  "bad709117fa0a119": {
   "en": "Copy the link",
   "t": "انسخ الرابط"
+ },
+ "c093bb71d773d9d4": {
+  "en": "By <span translate=\"no\">Dries De Smedt</span>",
+  "t": "بقلم دريس دي سمدت (<span translate=\"no\">Dries De Smedt</span>)"
+ },
+ "bc26843c11d04bf5": {
+  "en": "3 min read",
+  "t": "3 دقائق للقراءة"
+ },
+ "86ccd2822fbe3ae5": {
+  "en": "Jef fills his basket, taps checkout and is then faced with a form of twelve fields and one payment method he never uses. He closes the tab. You have lost him in the very last metre.",
+  "t": "يملأ جيف سلة التسوق الخاصة به، ويضغط على زر «الدفع»، ليجد أمامه نموذجًا يتألف من اثني عشر حقلًا وطريقة دفع واحدة لا يستخدمها أبدًا. فيغلق النافذة. لقد فقدته في اللحظة الأخيرة."
+ },
+ "c20f5ca22f7aff95": {
+  "en": "That is the nasty thing about selling online: the hardest work, convincing the customer, is done, and then the checkout throws it away.",
+  "t": "هذا هو الجانب السيئ في البيع عبر الإنترنت: بعد الانتهاء من أصعب جزء في العملية، وهو إقناع العميل، تأتي عملية الدفع وتُهدر كل هذا الجهد."
+ },
+ "19857cf8f05dba48": {
+  "en": "A form with twelve fields is not a checkout. It is an obstacle course.",
+  "t": "نموذج يحتوي على اثني عشر حقلًا ليس عملية دفع. إنه مسار حواجز."
+ },
+ "f25dc067066e258e": {
+  "en": "Where customers drop off",
+  "t": "الأماكن التي يتوقف فيها العملاء"
+ },
+ "ab2dc0d372e90af4": {
+  "en": "Almost every webshop knows the same five reasons why a customer stops halfway:",
+  "t": "تدرك معظم المتاجر الإلكترونية الأسباب الخمسة نفسها التي تدفع العميل إلى التوقف في منتصف الطريق:"
+ },
+ "f445b5c1df111791": {
+  "en": "<strong>Surprise costs.</strong> Shipping or extras that only appear in the last step.",
+  "t": "<strong>تكاليف غير متوقعة.</strong> تكاليف الشحن أو الإضافات التي لا تظهر إلا في الخطوة الأخيرة."
+ },
+ "d544a11053e2daf4": {
+  "en": "<strong>A mandatory account.</strong> Someone who wants to buy something does not want a new relationship.",
+  "t": "<strong>حساب إلزامي.</strong> من يرغب في شراء شيء ما لا يسعى إلى إقامة علاقة جديدة."
+ },
+ "d6eb2ca06c5624ec": {
+  "en": "<strong>Too many fields.</strong> Every extra field is a reason to hesitate.",
+  "t": "<strong>عدد الحقول كبير جدًّا.</strong> فكل حقل إضافي يمثل سببًا للتردد."
+ },
+ "9da27eedba70f56b": {
+  "en": "<strong>The payment method is missing.</strong> Anyone who does not see their usual method leaves.",
+  "t": "<strong>طريقة الدفع غير موجودة.</strong> أي شخص لا يرى طريقة الدفع التي اعتاد عليها يغادر الموقع."
+ },
+ "db45b221b0e53864": {
+  "en": "<strong>An unclear error message.</strong> 'Something went wrong' helps nobody.",
+  "t": "<strong>رسالة خطأ غير واضحة. عبارة</strong> «حدث خطأ ما» لا تفيد أحداً."
+ },
+ "95947c7bdc4e31ce": {
+  "en": "What customers expect",
+  "t": "ما يتوقعه العملاء"
+ },
+ "b8a3a22ed5d812e1": {
+  "en": "<strong>The method they use every day.</strong> In Belgium that means Bancontact, cards and payment apps on the phone.",
+  "t": "<strong>الطريقة التي يستخدمونها يوميًا.</strong> وفي بلجيكا، يشمل ذلك «بانكونتاكت» والبطاقات وتطبيقات الدفع عبر الهاتف."
+ },
+ "6ebf8ed1e155831f": {
+  "en": "<strong>As few fields as possible.</strong> Name, address, payment. Done.",
+  "t": "<strong>أقل عدد ممكن من الحقول.</strong> الاسم، العنوان، طريقة الدفع. انتهى."
+ },
+ "8352d244ab7a98ea": {
+  "en": "<strong>The total before the last click.</strong> Including shipping and VAT, with no surprises.",
+  "t": "<strong>المبلغ الإجمالي قبل النقر الأخير.</strong> شامل تكاليف الشحن وضريبة القيمة المضافة، دون أي مفاجآت."
+ },
+ "3bb53fbbd8129f39": {
+  "en": "<strong>An immediate confirmation,</strong> by email.",
+  "t": "<strong>تأكيد فوري</strong> عبر البريد الإلكتروني."
+ },
+ "6ce1fe4346224566": {
+  "en": "<strong>A clear way out when something goes wrong.</strong> An email address or a button, not a maze.",
+  "t": "<strong>مخرج واضح عندما يحدث خطأ ما.</strong> عنوان بريد إلكتروني أو زر، وليس متاهة."
+ },
+ "87060c3377e07a6c": {
+  "en": "Why payment integration is more than a button",
+  "t": "لماذا يعتبر تكامل الدفع أكثر من مجرد زر"
+ },
+ "394385a47213d61f": {
+  "en": "A payment is rarely the end. It tells your order that the money has arrived, it prepares an invoice and it helps your bookkeeping. That is why we do not build payment as a loose button, but as a link in a chain:",
+  "t": "نادرًا ما يكون الدفع هو النهاية. فهو يُعلم طلبك بوصول المبلغ، ويُعد فاتورة، ويساعد في عملية مسك الدفاتر. ولهذا السبب لا نعتبر الدفع مجرد زر منفصل، بل حلقة في سلسلة:"
+ },
+ "397262dc52cd9f39": {
+  "en": "Order",
+  "t": "الطلب"
+ },
+ "39ab09a75a9f9080": {
+  "en": "Payment",
+  "t": "الدفع"
+ },
+ "66e344fc7d15d583": {
+  "en": "Confirmation",
+  "t": "التأكيد"
+ },
+ "1b0d313e3f774e47": {
+  "en": "Invoice",
+  "t": "الفاتورة"
+ },
+ "ec625f5a53d3ef4d": {
+  "en": "Bookkeeping",
+  "t": "مسك الدفاتر"
+ },
+ "f85245140b70c448": {
+  "en": "Each link tells the next one what has happened.",
+  "t": "كل حلقة تُنقل إلى الحلقة التالية ما حدث."
+ },
+ "43668f6ec83cc660": {
+  "en": "What happens behind the scenes",
+  "t": "ماذا يحدث وراء الكواليس"
+ },
+ "5ac12ddc6bb1c2e8": {
+  "en": "When a customer pays, a lot happens that they never see. The payment provider confirms the payment with a signal to your website. Your website checks that signal and updates the order. The rest follows: the email, the invoice, the stock.",
+  "t": "عندما يقوم العميل بالدفع، تحدث العديد من العمليات التي لا يراها أبدًا. يقوم مزود خدمة الدفع بتأكيد الدفع عن طريق إرسال إشارة إلى موقعك الإلكتروني. ويقوم موقعك الإلكتروني بالتحقق من تلك الإشارة وتحديث الطلب. ثم تتبع ذلك الخطوات التالية: البريد الإلكتروني، والفاتورة، والمخزون."
+ },
+ "c2353491e552baa0": {
+  "en": "If that signal does not arrive, or arrives twice, you end up with empty orders or duplicate invoices. That is why we build this with checks at every step and with retries for when something fails.",
+  "t": "إذا لم تصل تلك الإشارة، أو وصلت مرتين، فسوف ينتهي بك الأمر بأوامر فارغة أو فواتير مكررة. ولهذا السبب قمنا بتصميم هذا النظام بحيث يتضمن عمليات تدقيق في كل خطوة، مع إعادة المحاولة في حالة حدوث أي خطأ."
+ },
+ "c4ccc67b1c2b2aa5": {
+  "en": "Refunds and disputes",
+  "t": "عمليات استرداد الأموال والنزاعات"
+ },
+ "b7c0d4643a13b44f": {
+  "en": "A refund should be a small action, not a project. Keep your records in good order: who, what and when. When a customer disputes a payment, a tidy administration is what wins it.",
+  "t": "يجب أن يكون استرداد المبلغ عملية بسيطة، وليس مشروعًا. حافظ على تنظيم سجلاتك جيدًا: من، وماذا، ومتى. فعندما يعترض أحد العملاء على دفعة ما، فإن الإدارة المنظمة هي ما يضمن الفوز في هذه الحالة."
+ },
+ "5f2775f081cf14ae": {
+  "en": "Paying safely",
+  "t": "الدفع الآمن"
+ },
+ "55b9b3b5edcb0b61": {
+  "en": "<strong>Strong customer authentication.</strong> In the EU it is required for most online card payments (the PSD2 rules). Choose a provider that handles it.",
+  "t": "<strong>المصادقة القوية للعملاء.</strong> يُشترط ذلك في الاتحاد الأوروبي لمعظم عمليات الدفع بالبطاقات عبر الإنترنت (قواعد PSD2). اختر مزودًا يدعم هذه الميزة."
+ },
+ "02943b04dde59301": {
+  "en": "<strong>Do not store card details yourself.</strong> Leave that to the provider.",
+  "t": "<strong>لا تقم بتخزين بيانات البطاقة بنفسك.</strong> اترك هذه المهمة للمزود."
+ },
+ "d974d71cbe72b602": {
+  "en": "<strong>Always use a secure connection (https)</strong> across your whole site.",
+  "t": "<strong>احرص دائمًا على استخدام اتصال آمن (https)</strong> في جميع أنحاء موقعك."
+ },
+ "c1d5f963674cea75": {
+  "en": "<strong>Choose a provider within the EU,</strong> and put agreements about data in writing.",
+  "t": "<strong>اختر مزودًا داخل الاتحاد الأوروبي،</strong> وقم بتوثيق الاتفاقات المتعلقة بالبيانات كتابةً."
+ },
+ "87fae33056b2e9ad": {
+  "en": "The payment world is shifting",
+  "t": "عالم المدفوعات يشهد تغيرات"
+ },
+ "8a47454ed9c40576": {
+  "en": "Payment methods change faster than websites. Europe is working on its own options, such as Wero, which are meant to replace existing apps and systems over time. The details and dates keep moving, so check what your payment provider supports now and later. Ideally, choose one that adds new methods quickly.",
+  "t": "تتغير طرق الدفع بوتيرة أسرع من المواقع الإلكترونية. تعمل أوروبا على تطوير خياراتها الخاصة، مثل «ويرو» (Wero)، والتي تهدف إلى استبدال التطبيقات والأنظمة الحالية بمرور الوقت. تتغير التفاصيل والمواعيد باستمرار، لذا تحقق مما يدعمه مزود خدمة الدفع الخاص بك حاليًا وفي المستقبل. ومن الأفضل اختيار مزود يضيف طرقًا جديدة بسرعة."
+ },
+ "e084a23e7f136531": {
+  "en": "Checkout check for your webshop",
+  "t": "فحص عملية الدفع لمتجرك الإلكتروني"
+ },
+ "b935a1fae803bb6f": {
+  "en": "Can the customer pay with the method they choose themselves?",
+  "t": "هل يمكن للعميل الدفع بالطريقة التي يختارها بنفسه؟"
+ },
+ "e095ce2017f2baf4": {
+  "en": "Do they see the total before the last click?",
+  "t": "هل يرون المجموع قبل النقر الأخير؟"
+ },
+ "0098ebe8ac9b69d9": {
+  "en": "Does your form have fewer than seven fields?",
+  "t": "هل يحتوي النموذج الخاص بك على أقل من سبعة حقول؟"
+ },
+ "0734358a31151555": {
+  "en": "Do they get a confirmation by email straight away?",
+  "t": "هل يتلقون تأكيدًا عبر البريد الإلكتروني على الفور؟"
+ },
+ "c0235f4beb1f51cf": {
+  "en": "Can you refund an amount in one click?",
+  "t": "هل يمكنك رد مبلغ ما بنقرة واحدة؟"
+ },
+ "9d1bb4afb3ce595d": {
+  "en": "Do the money and the order land in your administration straight away?",
+  "t": "هل تصل الأموال والطلب إلى إدارتكم على الفور؟"
+ },
+ "7ec2b8cb59b420f6": {
+  "en": "Jef does not exist. His closed tab does, somewhere.",
+  "t": "جيف غير موجود. أما علامة التبويب المغلقة الخاصة به فهي موجودة في مكان ما."
+ },
+ "041d86c235f3b748": {
+  "en": "A checkout that does not get in the way?",
+  "t": "نقطة دفع لا تعترض طريقك؟"
+ },
+ "6d87ee94cee983b9": {
+  "en": "We build payment integrations that keep both your customer and your bookkeeping happy.",
+  "t": "نحن نطور حلولاً متكاملة للدفع تضمن رضا عملائك وسلامة سجلاتك المحاسبية في آن واحد."
+ },
+ "1387d8153b0ef6cc": {
+  "en": "info@drpbuildlab.com",
+  "t": "info@drpbuildlab.com"
+ },
+ "db5b8996700bb083": {
+  "en": "drpbuildlab.com",
+  "t": "drpbuildlab.com"
+ },
+ "e329cb8a17cd7533": {
+  "en": "payments",
+  "t": "المدفوعات"
+ },
+ "02b04f53a75e81f5": {
+  "en": "webshop",
+  "t": "المتجر الإلكتروني"
+ },
+ "fe96b3b32980832d": {
+  "en": "checkout",
+  "t": "الخروج"
+ },
+ "b012bf442ea08b5d": {
+  "en": "e-commerce",
+  "t": "التجارة الإلكترونية"
+ },
+ "c1798a1b581f5469": {
+  "en": "integration",
+  "t": "التكامل"
+ },
+ "9ec89711d931e8af": {
+  "en": "pexels 500photos com 15338 93405",
+  "t": "pexels 500photos com 15338 93405"
+ },
+ "6b1a2fa18752447e": {
+  "en": "Checking out without the hassle: what customers expect in 2026 | Blog | DRP BuildLab",
+  "t": "إتمام عملية الدفع دون عناء: ما يتوقعه العملاء في عام 2026 | المدونة | DRP BuildLab"
+ },
+ "cb4f85d99edd1f29": {
+  "en": "On payment methods, drop-off moments and why the checkout of your webshop matters as much as your shop window. What customers expect in 2026, and how to build a payment flow that does not get in the way.",
+  "t": "حول طرق الدفع، ومراحل التخلي عن عملية الشراء، وأهمية عملية الدفع في متجرك الإلكتروني بقدر أهمية واجهة متجرك. ما يتوقعه العملاء في عام 2026، وكيفية إنشاء مسار دفع لا يشكل عائقًا."
  }
 }

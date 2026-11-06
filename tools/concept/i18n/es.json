@@ -2722,5 +2722,237 @@
  "bad709117fa0a119": {
   "en": "Copy the link",
   "t": "Copie el enlace"
+ },
+ "c093bb71d773d9d4": {
+  "en": "By <span translate=\"no\">Dries De Smedt</span>",
+  "t": "Por <span translate=\"no\">Dries De Smedt</span>"
+ },
+ "bc26843c11d04bf5": {
+  "en": "3 min read",
+  "t": "3 minutos de lectura"
+ },
+ "86ccd2822fbe3ae5": {
+  "en": "Jef fills his basket, taps checkout and is then faced with a form of twelve fields and one payment method he never uses. He closes the tab. You have lost him in the very last metre.",
+  "t": "Jef llena su cesta, pulsa «Finalizar compra» y se encuentra entonces con un formulario de doce campos y un método de pago que nunca utiliza. Cierra la pestaña. Lo han perdido en el último metro."
+ },
+ "c20f5ca22f7aff95": {
+  "en": "That is the nasty thing about selling online: the hardest work, convincing the customer, is done, and then the checkout throws it away.",
+  "t": "Eso es lo peor de vender por Internet: ya se ha realizado la parte más difícil, que es convencer al cliente, y luego el proceso de pago lo echa todo por la borda."
+ },
+ "19857cf8f05dba48": {
+  "en": "A form with twelve fields is not a checkout. It is an obstacle course.",
+  "t": "Un formulario con doce campos no es un proceso de pago. Es una carrera de obstáculos."
+ },
+ "f25dc067066e258e": {
+  "en": "Where customers drop off",
+  "t": "Lugares donde los clientes dejan sus pedidos"
+ },
+ "ab2dc0d372e90af4": {
+  "en": "Almost every webshop knows the same five reasons why a customer stops halfway:",
+  "t": "Casi todas las tiendas online conocen las mismas cinco razones por las que un cliente abandona el proceso de compra a mitad de camino:"
+ },
+ "f445b5c1df111791": {
+  "en": "<strong>Surprise costs.</strong> Shipping or extras that only appear in the last step.",
+  "t": "<strong>Gastos inesperados.</strong> Gastos de envío o conceptos adicionales que solo aparecen en el último paso."
+ },
+ "d544a11053e2daf4": {
+  "en": "<strong>A mandatory account.</strong> Someone who wants to buy something does not want a new relationship.",
+  "t": "<strong>Una cuenta obligatoria.</strong> Quien desea comprar algo no busca entablar una nueva relación."
+ },
+ "d6eb2ca06c5624ec": {
+  "en": "<strong>Too many fields.</strong> Every extra field is a reason to hesitate.",
+  "t": "<strong>Demasiados campos.</strong> Cada campo adicional es un motivo para dudar."
+ },
+ "9da27eedba70f56b": {
+  "en": "<strong>The payment method is missing.</strong> Anyone who does not see their usual method leaves.",
+  "t": "<strong>Falta la forma de pago.</strong> Cualquiera que no vea su forma de pago habitual se marcha."
+ },
+ "db45b221b0e53864": {
+  "en": "<strong>An unclear error message.</strong> 'Something went wrong' helps nobody.",
+  "t": "<strong>Un mensaje de error poco claro.</strong> «Ha surgido un problema» no ayuda a nadie."
+ },
+ "95947c7bdc4e31ce": {
+  "en": "What customers expect",
+  "t": "Lo que esperan los clientes"
+ },
+ "b8a3a22ed5d812e1": {
+  "en": "<strong>The method they use every day.</strong> In Belgium that means Bancontact, cards and payment apps on the phone.",
+  "t": "<strong>El método que utilizan a diario.</strong> En Bélgica, esto significa Bancontact, tarjetas y aplicaciones de pago en el móvil."
+ },
+ "6ebf8ed1e155831f": {
+  "en": "<strong>As few fields as possible.</strong> Name, address, payment. Done.",
+  "t": "<strong>El menor número posible de campos.</strong> Nombre, dirección, forma de pago. Listo."
+ },
+ "8352d244ab7a98ea": {
+  "en": "<strong>The total before the last click.</strong> Including shipping and VAT, with no surprises.",
+  "t": "<strong>El importe total antes del último clic.</strong> Incluye gastos de envío e IVA, sin sorpresas."
+ },
+ "3bb53fbbd8129f39": {
+  "en": "<strong>An immediate confirmation,</strong> by email.",
+  "t": "<strong>Una confirmación inmediata,</strong> por correo electrónico."
+ },
+ "6ce1fe4346224566": {
+  "en": "<strong>A clear way out when something goes wrong.</strong> An email address or a button, not a maze.",
+  "t": "<strong>Una salida clara cuando algo sale mal.</strong> Una dirección de correo electrónico o un botón, no un laberinto."
+ },
+ "87060c3377e07a6c": {
+  "en": "Why payment integration is more than a button",
+  "t": "Por qué la integración de pagos es algo más que un botón"
+ },
+ "394385a47213d61f": {
+  "en": "A payment is rarely the end. It tells your order that the money has arrived, it prepares an invoice and it helps your bookkeeping. That is why we do not build payment as a loose button, but as a link in a chain:",
+  "t": "Un pago rara vez es el final del proceso. Indica a su pedido que el dinero ha llegado, permite generar una factura y facilita su contabilidad. Por eso no concebimos el pago como un elemento aislado, sino como un eslabón de una cadena:"
+ },
+ "397262dc52cd9f39": {
+  "en": "Order",
+  "t": "Pedido"
+ },
+ "39ab09a75a9f9080": {
+  "en": "Payment",
+  "t": "Pago"
+ },
+ "66e344fc7d15d583": {
+  "en": "Confirmation",
+  "t": "Confirmación"
+ },
+ "1b0d313e3f774e47": {
+  "en": "Invoice",
+  "t": "Factura"
+ },
+ "ec625f5a53d3ef4d": {
+  "en": "Bookkeeping",
+  "t": "Contabilidad"
+ },
+ "f85245140b70c448": {
+  "en": "Each link tells the next one what has happened.",
+  "t": "Cada eslabón comunica al siguiente lo que ha sucedido."
+ },
+ "43668f6ec83cc660": {
+  "en": "What happens behind the scenes",
+  "t": "Lo que ocurre entre bastidores"
+ },
+ "5ac12ddc6bb1c2e8": {
+  "en": "When a customer pays, a lot happens that they never see. The payment provider confirms the payment with a signal to your website. Your website checks that signal and updates the order. The rest follows: the email, the invoice, the stock.",
+  "t": "Cuando un cliente realiza un pago, suceden muchas cosas que él nunca llega a ver. El proveedor de pagos confirma el pago mediante una señal que envía a su sitio web. Su sitio web comprueba dicha señal y actualiza el pedido. A continuación, se procesan el correo electrónico, la factura y el stock."
+ },
+ "c2353491e552baa0": {
+  "en": "If that signal does not arrive, or arrives twice, you end up with empty orders or duplicate invoices. That is why we build this with checks at every step and with retries for when something fails.",
+  "t": "Si esa señal no llega, o llega dos veces, se producen pedidos sin contenido o facturas duplicadas. Por eso hemos diseñado este sistema con comprobaciones en cada paso y con reintentos en caso de que algo falle."
+ },
+ "c4ccc67b1c2b2aa5": {
+  "en": "Refunds and disputes",
+  "t": "Reembolsos y reclamaciones"
+ },
+ "b7c0d4643a13b44f": {
+  "en": "A refund should be a small action, not a project. Keep your records in good order: who, what and when. When a customer disputes a payment, a tidy administration is what wins it.",
+  "t": "Una devolución debería ser un trámite sencillo, no un proyecto. Mantenga sus registros bien ordenados: quién, qué y cuándo. Cuando un cliente impugna un pago, una gestión administrativa ordenada es lo que le da la razón."
+ },
+ "5f2775f081cf14ae": {
+  "en": "Paying safely",
+  "t": "Pagar de forma segura"
+ },
+ "55b9b3b5edcb0b61": {
+  "en": "<strong>Strong customer authentication.</strong> In the EU it is required for most online card payments (the PSD2 rules). Choose a provider that handles it.",
+  "t": "<strong>Autenticación reforzada del cliente.</strong> En la UE es obligatoria para la mayoría de los pagos con tarjeta en línea (normativa PSD2). Elija un proveedor que se encargue de ello."
+ },
+ "02943b04dde59301": {
+  "en": "<strong>Do not store card details yourself.</strong> Leave that to the provider.",
+  "t": "<strong>No guarde usted mismo los datos de la tarjeta.</strong> Deje que se encargue de ello el proveedor."
+ },
+ "d974d71cbe72b602": {
+  "en": "<strong>Always use a secure connection (https)</strong> across your whole site.",
+  "t": "<strong>Utilice siempre una conexión segura (https)</strong> en todo su sitio web."
+ },
+ "c1d5f963674cea75": {
+  "en": "<strong>Choose a provider within the EU,</strong> and put agreements about data in writing.",
+  "t": "<strong>Elija un proveedor dentro de la UE</strong> y formalice por escrito los acuerdos relativos a los datos."
+ },
+ "87fae33056b2e9ad": {
+  "en": "The payment world is shifting",
+  "t": "El mundo de los pagos está cambiando"
+ },
+ "8a47454ed9c40576": {
+  "en": "Payment methods change faster than websites. Europe is working on its own options, such as Wero, which are meant to replace existing apps and systems over time. The details and dates keep moving, so check what your payment provider supports now and later. Ideally, choose one that adds new methods quickly.",
+  "t": "Los métodos de pago evolucionan más rápido que los sitios web. Europa está desarrollando sus propias opciones, como Wero, que están destinadas a sustituir, con el tiempo, a las aplicaciones y sistemas actuales. Los detalles y las fechas van cambiando constantemente, por lo que le recomendamos que compruebe qué opciones admite su proveedor de pagos tanto ahora como en el futuro. Lo ideal es elegir uno que incorpore nuevos métodos con rapidez."
+ },
+ "e084a23e7f136531": {
+  "en": "Checkout check for your webshop",
+  "t": "Comprobación del proceso de pago para su tienda online"
+ },
+ "b935a1fae803bb6f": {
+  "en": "Can the customer pay with the method they choose themselves?",
+  "t": "¿Puede el cliente pagar con el método que él mismo elija?"
+ },
+ "e095ce2017f2baf4": {
+  "en": "Do they see the total before the last click?",
+  "t": "¿Ven el total antes del último clic?"
+ },
+ "0098ebe8ac9b69d9": {
+  "en": "Does your form have fewer than seven fields?",
+  "t": "¿Tiene su formulario menos de siete campos?"
+ },
+ "0734358a31151555": {
+  "en": "Do they get a confirmation by email straight away?",
+  "t": "¿Reciben una confirmación por correo electrónico de inmediato?"
+ },
+ "c0235f4beb1f51cf": {
+  "en": "Can you refund an amount in one click?",
+  "t": "¿Se puede realizar un reembolso con un solo clic?"
+ },
+ "9d1bb4afb3ce595d": {
+  "en": "Do the money and the order land in your administration straight away?",
+  "t": "¿El dinero y el pedido llegan directamente a su administración?"
+ },
+ "7ec2b8cb59b420f6": {
+  "en": "Jef does not exist. His closed tab does, somewhere.",
+  "t": "Jef no existe. Su pestaña cerrada sí existe, en algún lugar."
+ },
+ "041d86c235f3b748": {
+  "en": "A checkout that does not get in the way?",
+  "t": "¿Una caja que no estorba?"
+ },
+ "6d87ee94cee983b9": {
+  "en": "We build payment integrations that keep both your customer and your bookkeeping happy.",
+  "t": "Desarrollamos integraciones de pago que satisfacen tanto a sus clientes como a su departamento de contabilidad."
+ },
+ "1387d8153b0ef6cc": {
+  "en": "info@drpbuildlab.com",
+  "t": "info@drpbuildlab.com"
+ },
+ "db5b8996700bb083": {
+  "en": "drpbuildlab.com",
+  "t": "drpbuildlab.com"
+ },
+ "e329cb8a17cd7533": {
+  "en": "payments",
+  "t": "pagos"
+ },
+ "02b04f53a75e81f5": {
+  "en": "webshop",
+  "t": "tienda online"
+ },
+ "fe96b3b32980832d": {
+  "en": "checkout",
+  "t": "finalizar la compra"
+ },
+ "b012bf442ea08b5d": {
+  "en": "e-commerce",
+  "t": "comercio electrónico"
+ },
+ "c1798a1b581f5469": {
+  "en": "integration",
+  "t": "integración"
+ },
+ "9ec89711d931e8af": {
+  "en": "pexels 500photos com 15338 93405",
+  "t": "pexels 500photos com 15338 93405"
+ },
+ "6b1a2fa18752447e": {
+  "en": "Checking out without the hassle: what customers expect in 2026 | Blog | DRP BuildLab",
+  "t": "Realizar el pago sin complicaciones: lo que esperan los clientes en 2026 | Blog | DRP BuildLab"
+ },
+ "cb4f85d99edd1f29": {
+  "en": "On payment methods, drop-off moments and why the checkout of your webshop matters as much as your shop window. What customers expect in 2026, and how to build a payment flow that does not get in the way.",
+  "t": "Sobre los métodos de pago, los momentos en los que los clientes abandonan la compra y por qué el proceso de pago de su tienda online es tan importante como su escaparate. Lo que esperan los clientes en 2026 y cómo diseñar un proceso de pago que no suponga un obstáculo."
  }
 }

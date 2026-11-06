@@ -2722,5 +2722,237 @@
  "bad709117fa0a119": {
   "en": "Copy the link",
   "t": "Kopieer die skakel"
+ },
+ "c093bb71d773d9d4": {
+  "en": "By <span translate=\"no\">Dries De Smedt</span>",
+  "t": "Deur <span translate=\"no\">Dries De Smedt</span>"
+ },
+ "bc26843c11d04bf5": {
+  "en": "3 min read",
+  "t": "3 minute leestyd"
+ },
+ "86ccd2822fbe3ae5": {
+  "en": "Jef fills his basket, taps checkout and is then faced with a form of twelve fields and one payment method he never uses. He closes the tab. You have lost him in the very last metre.",
+  "t": "Jef vul sy mandjie, tik afreken en word toe gekonfronteer met &#x27;n vorm van twaalf velde en &#x27;n betaalmetode wat hy nooit gebruik nie. Hy maak die oortjie toe. Jy het hom in die heel laaste meter verloor."
+ },
+ "c20f5ca22f7aff95": {
+  "en": "That is the nasty thing about selling online: the hardest work, convincing the customer, is done, and then the checkout throws it away.",
+  "t": "Dit is die nare ding aan aanlyn verkoop: die moeilikste werk, om die kliënt te oortuig, is klaar, en dan gooi die betaalpunt dit weg."
+ },
+ "19857cf8f05dba48": {
+  "en": "A form with twelve fields is not a checkout. It is an obstacle course.",
+  "t": "&#x27;n Vorm met twaalf velde is nie &#x27;n betaalpunt nie. Dit is &#x27;n hindernisbane."
+ },
+ "f25dc067066e258e": {
+  "en": "Where customers drop off",
+  "t": "Waar kliënte aflaai"
+ },
+ "ab2dc0d372e90af4": {
+  "en": "Almost every webshop knows the same five reasons why a customer stops halfway:",
+  "t": "Byna elke aanlynwinkel ken dieselfde vyf redes waarom &#x27;n kliënt halverwege ophou:"
+ },
+ "f445b5c1df111791": {
+  "en": "<strong>Surprise costs.</strong> Shipping or extras that only appear in the last step.",
+  "t": "<strong>Verrasende koste.</strong> Versendingskoste of bykomende koste wat eers in die laaste stap verskyn."
+ },
+ "d544a11053e2daf4": {
+  "en": "<strong>A mandatory account.</strong> Someone who wants to buy something does not want a new relationship.",
+  "t": "<strong>&#x27;n verpligte rekening.</strong> Iemand wat iets wil koop, wil nie &#x27;n nuwe verhouding hê nie."
+ },
+ "d6eb2ca06c5624ec": {
+  "en": "<strong>Too many fields.</strong> Every extra field is a reason to hesitate.",
+  "t": "<strong>Te veel velde.</strong> Elke ekstra veld is &#x27;n rede om te huiwer."
+ },
+ "9da27eedba70f56b": {
+  "en": "<strong>The payment method is missing.</strong> Anyone who does not see their usual method leaves.",
+  "t": "<strong>Die betaalmetode ontbreek.</strong> Enigiemand wat nie hul gewone metode sien nie, vertrek."
+ },
+ "db45b221b0e53864": {
+  "en": "<strong>An unclear error message.</strong> 'Something went wrong' helps nobody.",
+  "t": "<strong>&#x27;n Onduidelike foutboodskap.</strong> &#x27;Iets het verkeerd geloop&#x27; help niemand nie."
+ },
+ "95947c7bdc4e31ce": {
+  "en": "What customers expect",
+  "t": "Wat kliënte verwag"
+ },
+ "b8a3a22ed5d812e1": {
+  "en": "<strong>The method they use every day.</strong> In Belgium that means Bancontact, cards and payment apps on the phone.",
+  "t": "<strong>Die metode wat hulle elke dag gebruik.</strong> In België beteken dit Bancontact, kaarte en betaalapps op die foon."
+ },
+ "6ebf8ed1e155831f": {
+  "en": "<strong>As few fields as possible.</strong> Name, address, payment. Done.",
+  "t": "<strong>So min velde as moontlik.</strong> Naam, adres, betaling. Klaar."
+ },
+ "8352d244ab7a98ea": {
+  "en": "<strong>The total before the last click.</strong> Including shipping and VAT, with no surprises.",
+  "t": "<strong>Die totaal voor die laaste klik.</strong> Insluitend versendingskoste en BTW, sonder verrassings."
+ },
+ "3bb53fbbd8129f39": {
+  "en": "<strong>An immediate confirmation,</strong> by email.",
+  "t": "<strong>&#x27;n onmiddellike bevestiging</strong> per e-pos."
+ },
+ "6ce1fe4346224566": {
+  "en": "<strong>A clear way out when something goes wrong.</strong> An email address or a button, not a maze.",
+  "t": "<strong>&#x27;n Duidelike uitweg wanneer iets verkeerd loop.</strong> &#x27;n E-posadres of &#x27;n knoppie, nie &#x27;n doolhof nie."
+ },
+ "87060c3377e07a6c": {
+  "en": "Why payment integration is more than a button",
+  "t": "Waarom betalingintegrasie meer as net &#x27;n knoppie is"
+ },
+ "394385a47213d61f": {
+  "en": "A payment is rarely the end. It tells your order that the money has arrived, it prepares an invoice and it helps your bookkeeping. That is why we do not build payment as a loose button, but as a link in a chain:",
+  "t": "&#x27;n betaling is selde die einde. Dit laat jou bestelling weet dat die geld aangekom het, dit stel &#x27;n faktuur op en dit help met jou boekhouding. Daarom bou ons betaling nie as &#x27;n los knoppie nie, maar as &#x27;n skakel in &#x27;n ketting:"
+ },
+ "397262dc52cd9f39": {
+  "en": "Order",
+  "t": "Bestel"
+ },
+ "39ab09a75a9f9080": {
+  "en": "Payment",
+  "t": "Betaling"
+ },
+ "66e344fc7d15d583": {
+  "en": "Confirmation",
+  "t": "Bevestiging"
+ },
+ "1b0d313e3f774e47": {
+  "en": "Invoice",
+  "t": "Faktuur"
+ },
+ "ec625f5a53d3ef4d": {
+  "en": "Bookkeeping",
+  "t": "Boekehouding"
+ },
+ "f85245140b70c448": {
+  "en": "Each link tells the next one what has happened.",
+  "t": "Elke skakel vertel vir die volgende een wat gebeur het."
+ },
+ "43668f6ec83cc660": {
+  "en": "What happens behind the scenes",
+  "t": "Wat gebeur agter die skerms"
+ },
+ "5ac12ddc6bb1c2e8": {
+  "en": "When a customer pays, a lot happens that they never see. The payment provider confirms the payment with a signal to your website. Your website checks that signal and updates the order. The rest follows: the email, the invoice, the stock.",
+  "t": "Wanneer &#x27;n kliënt betaal, gebeur daar baie dinge wat hulle nooit sien nie. Die betaalverskaffer bevestig die betaling met &#x27;n sein aan jou webwerf. Jou webwerf kontroleer daardie sein en werk die bestelling by. Die res volg: die e-pos, die faktuur, die voorraad."
+ },
+ "c2353491e552baa0": {
+  "en": "If that signal does not arrive, or arrives twice, you end up with empty orders or duplicate invoices. That is why we build this with checks at every step and with retries for when something fails.",
+  "t": "As daardie sein nie aankom nie, of twee keer aankom, beland jy met leë bestellings of dubbel gefaktureerde fakture. Daarom bou ons dit met kontroles by elke stap en met herproewe wanneer iets misluk."
+ },
+ "c4ccc67b1c2b2aa5": {
+  "en": "Refunds and disputes",
+  "t": "Terugbetalings en geskille"
+ },
+ "b7c0d4643a13b44f": {
+  "en": "A refund should be a small action, not a project. Keep your records in good order: who, what and when. When a customer disputes a payment, a tidy administration is what wins it.",
+  "t": "&#x27;n Terugbetaling behoort &#x27;n klein handeling te wees, nie &#x27;n projek nie. Hou jou rekords in goeie orde: wie, wat en wanneer. Wanneer &#x27;n kliënt &#x27;n betaling betwis, is &#x27;n netjiese administrasie wat dit besleg."
+ },
+ "5f2775f081cf14ae": {
+  "en": "Paying safely",
+  "t": "Betaal veilig"
+ },
+ "55b9b3b5edcb0b61": {
+  "en": "<strong>Strong customer authentication.</strong> In the EU it is required for most online card payments (the PSD2 rules). Choose a provider that handles it.",
+  "t": "<strong>Sterk kliënt-outentikasie.</strong> In die EU word dit vereis vir die meeste aanlynkaartbetalings (die PSD2-reëls). Kies &#x27;n verskaffer wat dit hanteer."
+ },
+ "02943b04dde59301": {
+  "en": "<strong>Do not store card details yourself.</strong> Leave that to the provider.",
+  "t": "<strong>Moenie self kaartbesonderhede stoor nie.</strong> Laat dit aan die verskaffer oor."
+ },
+ "d974d71cbe72b602": {
+  "en": "<strong>Always use a secure connection (https)</strong> across your whole site.",
+  "t": "<strong>Gebruik altyd &#x27;n veilige verbinding (https)</strong> oor jou hele webwerf."
+ },
+ "c1d5f963674cea75": {
+  "en": "<strong>Choose a provider within the EU,</strong> and put agreements about data in writing.",
+  "t": "<strong>Kies &#x27;n verskaffer binne die EU</strong> en stel ooreenkomste oor data skriftelik vas."
+ },
+ "87fae33056b2e9ad": {
+  "en": "The payment world is shifting",
+  "t": "Die betaalwêreld verander."
+ },
+ "8a47454ed9c40576": {
+  "en": "Payment methods change faster than websites. Europe is working on its own options, such as Wero, which are meant to replace existing apps and systems over time. The details and dates keep moving, so check what your payment provider supports now and later. Ideally, choose one that adds new methods quickly.",
+  "t": "Betaalmetodes verander vinniger as webwerwe. Europa werk aan sy eie opsies, soos Wero, wat bedoel is om bestaande toepassings en stelsels mettertyd te vervang. Die besonderhede en datums bly verander, so kyk watter betaalmetodes jou betaalverskaffer nou en later ondersteun. Ideaal gesproke kies jy een wat nuwe metodes vinnig byvoeg."
+ },
+ "e084a23e7f136531": {
+  "en": "Checkout check for your webshop",
+  "t": "Betaalpuntkontrole vir jou webwinkel"
+ },
+ "b935a1fae803bb6f": {
+  "en": "Can the customer pay with the method they choose themselves?",
+  "t": "Kan die kliënt betaal met die metode wat hulle self kies?"
+ },
+ "e095ce2017f2baf4": {
+  "en": "Do they see the total before the last click?",
+  "t": "Sien hulle die totaal voor die laaste klik?"
+ },
+ "0098ebe8ac9b69d9": {
+  "en": "Does your form have fewer than seven fields?",
+  "t": "Het jou vorm minder as sewe velde?"
+ },
+ "0734358a31151555": {
+  "en": "Do they get a confirmation by email straight away?",
+  "t": "Kry hulle dadelik &#x27;n bevestiging per e-pos?"
+ },
+ "c0235f4beb1f51cf": {
+  "en": "Can you refund an amount in one click?",
+  "t": "Kan jy &#x27;n bedrag met een klik terugbetaal?"
+ },
+ "9d1bb4afb3ce595d": {
+  "en": "Do the money and the order land in your administration straight away?",
+  "t": "Beland die geld en die bevel onmiddellik in jou administrasie?"
+ },
+ "7ec2b8cb59b420f6": {
+  "en": "Jef does not exist. His closed tab does, somewhere.",
+  "t": "Jef bestaan nie. Sy geslote oortjie bestaan wel, êrens."
+ },
+ "041d86c235f3b748": {
+  "en": "A checkout that does not get in the way?",
+  "t": "&#x27;n betaalpunt wat nie in die pad staan nie?"
+ },
+ "6d87ee94cee983b9": {
+  "en": "We build payment integrations that keep both your customer and your bookkeeping happy.",
+  "t": "Ons bou betaalintegrasies wat beide jou kliënt en jou boekehouding gelukkig hou."
+ },
+ "1387d8153b0ef6cc": {
+  "en": "info@drpbuildlab.com",
+  "t": "info@drpbuildlab.com"
+ },
+ "db5b8996700bb083": {
+  "en": "drpbuildlab.com",
+  "t": "drpbuildlab.com"
+ },
+ "e329cb8a17cd7533": {
+  "en": "payments",
+  "t": "betalings"
+ },
+ "02b04f53a75e81f5": {
+  "en": "webshop",
+  "t": "webwinkel"
+ },
+ "fe96b3b32980832d": {
+  "en": "checkout",
+  "t": "afrekening"
+ },
+ "b012bf442ea08b5d": {
+  "en": "e-commerce",
+  "t": "e-handel"
+ },
+ "c1798a1b581f5469": {
+  "en": "integration",
+  "t": "integrasie"
+ },
+ "9ec89711d931e8af": {
+  "en": "pexels 500photos com 15338 93405",
+  "t": "pexels 500photos com 15338 93405"
+ },
+ "6b1a2fa18752447e": {
+  "en": "Checking out without the hassle: what customers expect in 2026 | Blog | DRP BuildLab",
+  "t": "Betaling sonder rompslomp: wat kliënte in 2026 verwag | Blog | DRP BuildLab"
+ },
+ "cb4f85d99edd1f29": {
+  "en": "On payment methods, drop-off moments and why the checkout of your webshop matters as much as your shop window. What customers expect in 2026, and how to build a payment flow that does not get in the way.",
+  "t": "Oor betaalmetodes, afleweringsmomente en waarom die betaalproses van jou aanlynwinkel net so belangrik is soos jou winkelvenster. Wat kliënte in 2026 verwag, en hoe om 'n betaalvloei te bou wat nie in die pad staan nie."
  }
 }
