@@ -785,3 +785,28 @@ a[href^="tel:"],a[href^="mailto:"],a[href*="wa.me"],.url,.money,.clist a,.clist 
 .cm-msg{margin:0;font-size:15px;color:var(--electric)}
 .cm-msg:empty{display:none}
 @media (max-width:560px){.share{margin-inline-start:0}}
+
+/* ── blog newsletter sign-up (build.js subscribeBox) and its confirmation page ── */
+.nl-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(20px,3vw,48px);align-items:center;margin:clamp(48px,6vw,88px) 0 0;padding:clamp(24px,3.4vw,44px);background:var(--fog);color:var(--ink);border-radius:22px}
+.post-page .nl-box{margin-top:clamp(28px,3.4vw,40px)}
+.nl-box h2{font-family:var(--display);font-weight:800;font-stretch:84%;font-size:clamp(26px,2.6vw,38px);line-height:1.02;letter-spacing:-.01em;margin:0 0 10px;text-wrap:balance}
+.nl-box h2 em{font-style:normal;color:var(--electric)}
+.nl-box .nl-text p{margin:0;color:var(--mute-l);max-width:46ch}
+.nl-form{display:grid;gap:12px;min-width:0}
+.nl-form [hidden]{display:none!important}
+.nl-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 10px}
+.nl-label{grid-column:1/-1;font-size:14px;font-weight:500}
+.nl-row input{width:100%;min-width:0;border:1px solid #c9ccd6;border-radius:99px;padding:14px 18px;background:#fff;color:var(--ink);font-size:16px;transition:border-color .2s,box-shadow .2s}
+.nl-row input:focus{outline:none;border-color:var(--electric);box-shadow:0 0 0 3px rgba(31,94,255,.18)}
+.nl-row .btn{justify-content:center;white-space:nowrap}
+.nl-row .btn:disabled{opacity:.6;cursor:progress}
+.nl-note{margin:0;font-size:13.5px;color:var(--mute-l)}
+.nl-box .ok:not(.sent){background:#fff}
+.nl-note a{color:inherit;text-underline-offset:3px}
+@media (max-width:820px){.nl-box{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.nl-row{grid-template-columns:minmax(0,1fr)}.nl-row .btn{width:100%}}
+.nl-confirm{display:grid;gap:18px;justify-items:start}
+.nl-confirm>*{max-width:640px}
+.nl-confirm .ok:focus{outline:none}
+.nl-confirm [hidden]{display:none!important}
+.nl-confirm .post-back{margin-top:12px}

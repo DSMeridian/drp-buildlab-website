@@ -146,6 +146,58 @@ $$('form[data-event]').forEach(f => f.addEventListener('submit', e => {
     .catch(() => { btn.disabled = false; msg.textContent = ui('failed'); msg.classList.add('show'); });
 }));
 
+/* blog newsletter: the sign-up only asks /api/subscribe to email a
+   confirmation link. The market goes along; the server reads that market's
+   language itself, so the emails arrive in the language the visitor reads. */
+$$('form[data-newsletter]').forEach(f => f.addEventListener('submit', e => {
+  e.preventDefault();
+  const msg = $('.ok', f), btn = $('button[type="submit"]', f), input = $('input[type="email"]', f);
+  msg.classList.remove('show');
+  if (!input.value.trim() || !input.checkValidity()) { msg.textContent = ui('email'); msg.classList.add('show'); input.focus(); return; }
+  btn.disabled = true;
+  const body = new URLSearchParams(new FormData(f));
+  body.set('market', window.__DRP_MARKET__ || '');
+  fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body.toString() })
+    .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); })
+    .then(() => {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'newsletter_signup', demo_market: window.__DRP_MARKET__ || '', demo_language: document.documentElement.lang || '' });
+      $('.nl-row', f).hidden = true; $('.nl-note', f).hidden = true;
+      msg.textContent = ui('nlsent'); msg.classList.add('show', 'sent');
+    })
+    .catch(() => { btn.disabled = false; msg.textContent = ui('nlfail'); msg.classList.add('show'); });
+}));
+
+/* newsletter confirmation page: the token is in the fragment (#t=…) and is
+   taken out of the address bar straight away. Confirming needs a click,
+   because mail scanners open links in emails by themselves. */
+(() => {
+  const box = $('#nl-confirm');
+  if (!box) return;
+  const token = (new URLSearchParams(location.hash.slice(1))).get('t') || '';
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  /* a failed attempt keeps the button, so the visitor can try again */
+  const show = s => {
+    $$('[data-state]', box).forEach(el => { el.hidden = !(el.dataset.state === s || (s === 'failed' && el.dataset.state === 'ask')); });
+    const status = $(`[data-state="${s}"] .ok`, box);
+    if (status) { status.tabIndex = -1; status.focus(); }
+  };
+  if (!/^[A-Za-z0-9_-]{40,2000}$/.test(token)) { show('invalid'); return; }
+  $('#nl-confirm-btn').addEventListener('click', () => {
+    show('busy');
+    fetch('/api/subscribe/confirm', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ t: token }).toString() })
+      .then(res => {
+        if (res.ok) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'newsletter_confirm', demo_market: window.__DRP_MARKET__ || '', demo_language: document.documentElement.lang || '' });
+          return show('done');
+        }
+        show(res.status === 410 ? 'expired' : res.status === 400 ? 'invalid' : 'failed');
+      })
+      .catch(() => show('failed'));
+  });
+})();
+
 /* prices: written in euro, shown in the market's own currency when it has
    another one, from the same /api/rates the previous site used */
 (() => {

@@ -3174,5 +3174,125 @@
  "4819ba9333e5ddcc": {
   "en": "On working when you are sharp, and why at our place the clock mostly ticks for the client. How we agree on results instead of hours, what can go wrong, and how to start yourself.",
   "t": "集中力が高まっている時の働き方について、そしてなぜ当社では、時間のほとんどがクライアントのために費やされるのか。時間ではなく成果で合意する方法、起こりうる問題点、そしてご自身で始める方法について。"
+ },
+ "14b2919dd9b02682": {
+  "en": "Version: <span translate=\"no\">6 november 2026</span>. The Dutch text is the binding version.",
+  "t": "バージョン：<span translate=\"no\">6 november 2026</span>。オランダ語の本文が正式な版となります。"
+ },
+ "673dca72d248d622": {
+  "en": "Almost done. We have sent you an email: click the link in it to confirm your subscription.",
+  "t": "あと少しで完了です。メールをお送りしましたので、メール内のリンクをクリックして登録を確定してください。"
+ },
+ "22fb9ed7e0e7b791": {
+  "en": "Subscribing did not work. Please try again in a moment.",
+  "t": "購読がうまくいきませんでした。しばらくしてからもう一度お試しください。"
+ },
+ "6aca1eba60a1a1fb": {
+  "en": "Get our new articles <em>by email</em>",
+  "t": "最新記事を<em>メールでお</em>受け取りください"
+ },
+ "45711858dfc63351": {
+  "en": "One email whenever we publish a new article. No spam, and you can unsubscribe at any time.",
+  "t": "新しい記事が公開されるたびに、メールを1通お送りいたします。スパムメールは一切ありません。また、いつでも配信停止が可能です。"
+ },
+ "0da9f02d9c1ed311": {
+  "en": "Your email address",
+  "t": "メールアドレス"
+ },
+ "e51ca203ca4f00c3": {
+  "en": "Subscribe to the blog",
+  "t": "ブログを購読する"
+ },
+ "e65bafbd1127c77d": {
+  "en": "We only use your email address to send you new articles. <a href=\"/privacy/\">Privacy policy</a>",
+  "t": "お客様のメールアドレスは、新しい記事をお送りするためのみに使用いたします。<a href=\"/privacy/\">プライバシーポリシー</a>"
+ },
+ "00e1df239ae9897a": {
+  "en": "Newsletter",
+  "t": "ニュースレター"
+ },
+ "d6c250da9239af26": {
+  "en": "Confirm your <em>subscription</em>",
+  "t": "<em>購読</em>の確認をお願いします"
+ },
+ "42ea27e2ee3d6a92": {
+  "en": "One click and you receive new articles from our blog by email.",
+  "t": "ワンクリックするだけで、当ブログの最新記事をメールでお受け取りいただけます。"
+ },
+ "31f37182527f93bd": {
+  "en": "Confirm my subscription <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "購読を確定する <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "650c8873464704c9": {
+  "en": "One moment, we are confirming your subscription.",
+  "t": "少々お待ちください。現在、ご登録内容を確認しております。"
+ },
+ "3c52eaf9e800d705": {
+  "en": "You are subscribed. We will email you when we publish a new article.",
+  "t": "購読登録が完了しました。新しい記事が公開された際には、メールでお知らせいたします。"
+ },
+ "cc117ff1647fb0d8": {
+  "en": "This confirmation link has expired. Subscribe again on the blog and we will send you a new link.",
+  "t": "この確認リンクの有効期限が切れました。ブログから再度登録していただければ、新しいリンクをお送りいたします。"
+ },
+ "0bf684b0f53de7c6": {
+  "en": "This confirmation link is not valid. Use the link from the email we sent you, or subscribe again on the blog.",
+  "t": "この確認リンクは無効です。弊社から送信したメールに記載されているリンクをご利用いただくか、ブログから再度登録してください。"
+ },
+ "2ba72a0403d12bfb": {
+  "en": "Something went wrong while confirming your subscription. Please try again in a moment.",
+  "t": "購読の確認中に問題が発生しました。しばらくしてから、もう一度お試しください。"
+ },
+ "017d59261d11b963": {
+  "en": "Back to the blog",
+  "t": "ブログに戻る"
+ },
+ "8478e3715efe7def": {
+  "en": "Please confirm your subscription to the DRP BuildLab blog",
+  "t": "DRP BuildLabブログの購読設定をご確認ください"
+ },
+ "2a216a9187bb6aa9": {
+  "en": "Confirm your subscription",
+  "t": "購読の確認をお願いします"
+ },
+ "5ae791b09a8256c0": {
+  "en": "You asked to receive new articles from the DRP BuildLab blog by email. Click the button below to confirm your email address.",
+  "t": "DRP BuildLabブログの最新記事をメールで受け取るようご登録いただきました。以下のボタンをクリックして、メールアドレスをご確認いただけます。"
+ },
+ "7c39279ff9d2a16d": {
+  "en": "Confirm my subscription",
+  "t": "購読の確認をお願いします"
+ },
+ "049d0210bae380bf": {
+  "en": "This link is valid for 7 days.",
+  "t": "このリンクの有効期間は7日間です。"
+ },
+ "df3612aecdb4be16": {
+  "en": "Did you not ask for this? Then you can ignore this email. We will not send you anything else.",
+  "t": "これをご依頼されませんでしたか？　その場合は、このメールを無視していただいて結構です。これ以上の連絡はいたしません。"
+ },
+ "45e67976d33e8f88": {
+  "en": "New on the DRP BuildLab blog",
+  "t": "DRP BuildLabブログの最新記事"
+ },
+ "8789b1afbd46bdce": {
+  "en": "Read the full article",
+  "t": "記事全文をお読みください"
+ },
+ "e2298f2e9de01c3b": {
+  "en": "You receive this email because you subscribed to the DRP BuildLab blog.",
+  "t": "このメールが届いたのは、DRP BuildLabのブログを購読されているためです。"
+ },
+ "295eccb47390a4cd": {
+  "en": "Unsubscribe from these emails",
+  "t": "これらのメールの配信を停止する"
+ },
+ "789717bfb4e37e26": {
+  "en": "Confirm your subscription | Blog | DRP BuildLab",
+  "t": "購読の確認 | ブログ | DRP BuildLab"
+ },
+ "3f85b2cd26f9675a": {
+  "en": "Confirm that you want to receive new articles from the DRP BuildLab blog by email.",
+  "t": "DRP BuildLabブログの新しい記事をメールで受け取ることを確認してください。"
  }
 }

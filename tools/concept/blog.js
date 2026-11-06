@@ -110,6 +110,8 @@ function parse(file) {
   const need = (k, ok, msg) => { if (!ok) throw new Error(`${where}: ${k} ${msg}`); };
   need('slug', SLUG_RE.test(fm.slug || ''), 'must be lowercase letters, digits and hyphens');
   need('slug', file === fm.slug + '.md', `must match the file name (${file})`);
+  /* /blog/subscribe/ is the newsletter confirmation page (build.js) */
+  need('slug', fm.slug !== 'subscribe', 'is reserved: /blog/subscribe/ is the newsletter confirmation page');
   need('title', typeof fm.title === 'string' && fm.title.trim(), 'is required');
   need('date', /^\d{4}-\d{2}-\d{2}$/.test(String(fm.date || '')), 'must be YYYY-MM-DD');
   need('category', CATEGORIES[fm.category], `must be one of ${Object.keys(CATEGORIES).join(', ')}`);
