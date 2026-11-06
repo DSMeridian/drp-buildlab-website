@@ -30,6 +30,7 @@ import { LANGS, LANG_HOME, prefixOf, segmentName, langOfSegment, mailStrings, co
 const EMAIL = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const MARKET = /^[a-z]{2}(?:-[a-z]{2})?$/;
 const TOKEN_TTL = 7 * 24 * 60 * 60 * 1000;
+const RESEND_WINDOW = 10 * 60 * 1000; // one confirmation email per address per window
 
 /* per IP, in memory: resets when the isolate restarts, like /api/form */
 const RATE = { subscribe: 5, confirm: 10 };
@@ -170,10 +171,13 @@ async function signUp(request, context, apiKey, from) {
   const link = new URL(`/${prefixOf(page.market)}/blog/subscribe/#t=${token}`, request.url).href;
   const mail = confirmEmail({ s: page.s, lang: page.lang, link });
 
-  /* At most one confirmation email per address and day: a repeated key with a
-     new token is refused by Resend (409), and the first link still works. */
-  const day = new Date().toISOString().slice(0, 10);
-  const key = `nl-confirm-${(await sha256hex(email)).slice(0, 40)}-${day}`;
+  /* At most one confirmation email per address every 10 minutes: a repeated
+     key with a new token is refused by Resend (409), and the first link still
+     works. Short enough that someone who lost the email can ask again; with
+     the per-IP limit above, nobody can flood an inbox. (It was once a day,
+     which left a visitor who signed up twice with no email until tomorrow.) */
+  const slot = Math.floor(Date.now() / RESEND_WINDOW);
+  const key = `nl-confirm-${(await sha256hex(email)).slice(0, 40)}-${slot}`;
   try {
     const r = await resend(apiKey, 'POST', '/emails', { from, to: [email], subject: mail.subject, html: mail.html, text: mail.text }, { 'idempotency-key': key });
     if (r.ok || r.status === 409) return json(200, { sent: true });
