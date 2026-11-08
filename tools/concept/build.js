@@ -615,19 +615,22 @@ ${ctaBand()}`
 }
 
 /* Newsletter confirmation. The email links here with the token in the URL
-   fragment (never sent to a server or an analytics tag); site.js asks for one
-   click before confirming, because mail scanners open links on their own.
+   fragment (never sent to a server or an analytics tag). The button in the
+   email is the confirmation: site.js confirms as soon as the page is on
+   screen, so the visitor only sees the thank-you. The button on the page is
+   shown only to retry after a failure; the error heading replaces the h1.
    #mail holds the email texts. It is translated with the page like #ui, and
    read back by netlify/edge-functions/subscribe.js (confirmation email) and
    tools/concept/newsletter.js (new-article email) from each market's copy, so
    every email string goes through the same DeepL cache and review. */
 pages['blog/subscribe'] = page({
-  title: 'Confirm your subscription | Blog | DRP BuildLab', desc: 'Confirm that you want to receive new articles from the DRP BuildLab blog by email.', nav: 'blog',
+  title: 'Thank you for subscribing | Blog | DRP BuildLab', desc: 'Confirm that you want to receive new articles from the DRP BuildLab blog by email.', nav: 'blog',
   head: '\n<meta name="robots" content="noindex">',
-  body: `${phero({ crumbs: [['Blog', '/blog/'], ['Newsletter']], h1: 'Confirm your <em>subscription</em>', lede: 'One click and you receive new articles from our blog by email.' })}
+  body: `${phero({ crumbs: [['Blog', '/blog/'], ['Newsletter']], h1: 'Thank you for <em>subscribing</em>', lede: '' })}
 <section class="sec light"><div class="wrap nl-confirm" id="nl-confirm">
-  <div data-state="ask"><button class="btn dark" type="button" id="nl-confirm-btn">Confirm my subscription ${arr}</button></div>
-  <div data-state="busy" hidden><p class="ok show" role="status">One moment, we are confirming your subscription.</p></div>
+  <span hidden data-h1="error">Your subscription is <em>not confirmed</em></span>
+  <div data-state="ask" hidden><button class="btn dark" type="button" id="nl-confirm-btn">Confirm my subscription ${arr}</button></div>
+  <div data-state="busy"><p class="ok show" role="status">One moment, we are confirming your subscription.</p></div>
   <div data-state="done" hidden><p class="ok show sent" role="status">You are subscribed. We will email you when we publish a new article.</p></div>
   <div data-state="expired" hidden><p class="ok show" role="status">This confirmation link has expired. Subscribe again on the blog and we will send you a new link.</p></div>
   <div data-state="invalid" hidden><p class="ok show" role="status">This confirmation link is not valid. Use the link from the email we sent you, or subscribe again on the blog.</p></div>

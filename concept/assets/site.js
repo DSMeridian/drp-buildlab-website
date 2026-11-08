@@ -169,21 +169,34 @@ $$('form[data-newsletter]').forEach(f => f.addEventListener('submit', e => {
 }));
 
 /* newsletter confirmation page: the token is in the fragment (#t=…) and is
-   taken out of the address bar straight away. Confirming needs a click,
-   because mail scanners open links in emails by themselves. */
+   taken out of the address bar straight away. The button in the email is the
+   confirmation, so the page confirms by itself and shows the thank-you.
+   It waits until the page is on screen, so a tab opened in the background or
+   prerendered does not confirm unseen. The token is kept for this tab, so a
+   reload confirms again (harmless) instead of calling the link invalid. */
 (() => {
   const box = $('#nl-confirm');
   if (!box) return;
-  const token = (new URLSearchParams(location.hash.slice(1))).get('t') || '';
+  let token = (new URLSearchParams(location.hash.slice(1))).get('t') || '';
   if (location.hash) history.replaceState(null, '', location.pathname + location.search);
-  /* a failed attempt keeps the button, so the visitor can try again */
+  try {
+    if (token) sessionStorage.setItem('nl-t', token);
+    else token = sessionStorage.getItem('nl-t') || '';
+  } catch (e) { /* storage blocked: a reload then shows "invalid" */ }
+  const forget = () => { try { sessionStorage.removeItem('nl-t'); } catch (e) { /* blocked */ } };
+  const h1 = $('.phero h1'), errH1 = $('[data-h1="error"]', box), thanks = h1 && h1.innerHTML;
+  /* a failed attempt shows the button, so the visitor can try again */
   const show = s => {
     $$('[data-state]', box).forEach(el => { el.hidden = !(el.dataset.state === s || (s === 'failed' && el.dataset.state === 'ask')); });
+    if (h1 && errH1) h1.innerHTML = s === 'busy' || s === 'done' ? thanks : errH1.innerHTML;
     const status = $(`[data-state="${s}"] .ok`, box);
     if (status) { status.tabIndex = -1; status.focus(); }
   };
-  if (!/^[A-Za-z0-9_-]{40,2000}$/.test(token)) { show('invalid'); return; }
-  $('#nl-confirm-btn').addEventListener('click', () => {
+  if (!/^[A-Za-z0-9_-]{40,2000}$/.test(token)) { forget(); show('invalid'); return; }
+  let running = false;
+  const confirm = () => {
+    if (running) return;
+    running = true;
     show('busy');
     fetch('/api/subscribe/confirm', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ t: token }).toString() })
       .then(res => {
@@ -192,9 +205,18 @@ $$('form[data-newsletter]').forEach(f => f.addEventListener('submit', e => {
           window.dataLayer.push({ event: 'newsletter_confirm', demo_market: window.__DRP_MARKET__ || '', demo_language: document.documentElement.lang || '' });
           return show('done');
         }
+        if (res.status === 410 || res.status === 400) forget();
         show(res.status === 410 ? 'expired' : res.status === 400 ? 'invalid' : 'failed');
       })
-      .catch(() => show('failed'));
+      .catch(() => show('failed'))
+      .finally(() => { running = false; });
+  };
+  $('#nl-confirm-btn').addEventListener('click', confirm);
+  if (document.visibilityState === 'visible') confirm();
+  else document.addEventListener('visibilitychange', function once() {
+    if (document.visibilityState !== 'visible') return;
+    document.removeEventListener('visibilitychange', once);
+    confirm();
   });
 })();
 
