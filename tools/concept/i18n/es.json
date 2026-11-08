@@ -3294,5 +3294,217 @@
  "3f85b2cd26f9675a": {
   "en": "Confirm that you want to receive new articles from the DRP BuildLab blog by email.",
   "t": "Confirme que desea recibir por correo electrónico los nuevos artículos del blog de DRP BuildLab."
+ },
+ "579dddcaf51b8d21": {
+  "en": "Is your visitor talking to a human? Say so honestly.",
+  "t": "¿Su visitante está hablando con una persona? Dígalo con sinceridad."
+ },
+ "9d8fd4837be12999": {
+  "en": "Why a chatbot on your website should play with open cards, and how to do that without it getting awkward. What the rules say, how to test your bot and which questions to ask your supplier.",
+  "t": "Por qué un chatbot en su página web debería actuar con total transparencia, y cómo hacerlo sin que resulte incómodo. Qué establecen las normas, cómo probar su bot y qué preguntas debe plantear a su proveedor."
+ },
+ "335a0776c61c97ab": {
+  "en": "A visitor types: 'Hi Sarah, can I still order today?' Sarah answers within a second, friendly and flawless. Too flawless. Sarah turns out to be a script. And the visitor doesn't feel helped, but deceived.",
+  "t": "Un visitante escribe: «Hola, Sarah, ¿aún puedo hacer un pedido hoy?». Sarah responde en un segundo, de forma amable y sin cometer ningún error. Demasiado perfecta. Resulta que Sarah es un guion. Y el visitante no se siente atendido, sino engañado."
+ },
+ "82ca628fb4b900c8": {
+  "en": "Chatbots have become much better in recent years. That makes the temptation big to give them a human name, a profile photo and a friendly little sigh. Bad idea.",
+  "t": "Los chatbots han mejorado mucho en los últimos años. Por eso, la tentación de ponerles un nombre humano, una foto de perfil y un pequeño suspiro amistoso es muy grande. Es una mala idea."
+ },
+ "825fe4c3007bbc4b": {
+  "en": "A bot that pretends to be human wins a conversation and loses a customer.",
+  "t": "Un bot que finge ser humano gana una conversación, pero pierde un cliente."
+ },
+ "927170ca75216705": {
+  "en": "What the rules say",
+  "t": "Lo que establecen las normas"
+ },
+ "c5c1493d1ce06e1b": {
+  "en": "In essence, the European AI Act requires that people know they are talking to an AI, unless that is obvious. The exact dates and exceptions are still being adjusted and your situation may differ, so check them with your legal adviser or the authorities. One thing doesn't change: being honest costs nothing.",
+  "t": "En esencia, la Ley europea sobre la IA exige que las personas sepan que están hablando con una IA, salvo que ello resulte obvio. Las fechas exactas y las excepciones aún se están ultimando y su situación puede ser diferente, por lo que le recomendamos que las consulte con su asesor jurídico o con las autoridades. Hay algo que no cambia: ser sincero no cuesta nada."
+ },
+ "4c42bb5a92e7c8fa": {
+  "en": "Why honesty is also good sales",
+  "t": "Por qué la honestidad también es sinónimo de buenas ventas"
+ },
+ "b0308d650c8bbc71": {
+  "en": "Honesty is not only an obligation. Visitors who know they are talking to a bot expect less of it and are therefore less easily disappointed. Visitors who discover they have been misled tell others.",
+  "t": "La honestidad no es solo una obligación. Los visitantes que saben que están hablando con un bot tienen menos expectativas al respecto y, por lo tanto, se sienten menos decepcionados. Los visitantes que descubren que se les ha engañado se lo cuentan a otras personas."
+ },
+ "f6a21347c6361d26": {
+  "en": "A bot that knows its limits also comes across as more reliable than a bot that has an answer for everything. 'I don't know that, I'll connect you with a colleague' is sometimes the best sentence it can say.",
+  "t": "Un bot que conoce sus límites también da la impresión de ser más fiable que uno que tiene respuesta para todo. «No lo sé, le pondré en contacto con un compañero» es, en ocasiones, la mejor frase que puede decir."
+ },
+ "d13879894791e003": {
+  "en": "Don't, do",
+  "t": "No lo haga, hágalo"
+ },
+ "9e233dd3968cf1ac": {
+  "en": "Don't",
+  "t": "No"
+ },
+ "db907b2dd303595d": {
+  "en": "'Hi, I'm Sarah!'",
+  "t": "«¡Hola, soy Sarah!»"
+ },
+ "4c92bd2b6a577881": {
+  "en": "'I think you'll definitely get twenty percent off.'",
+  "t": "«Creo que, sin duda, obtendrá un descuento del veinte por ciento»."
+ },
+ "41aaa7968cf76cf1": {
+  "en": "'I'll always help you, until the end of time.'",
+  "t": "«Siempre le ayudaré, hasta el fin de los tiempos»."
+ },
+ "5959ee951cc241bf": {
+  "en": "Do",
+  "t": "Haga"
+ },
+ "8a4cdbbd7c2cb003": {
+  "en": "'Hi, I'm this company's AI assistant. How can I help?'",
+  "t": "«Buenos días, soy el asistente de IA de esta empresa. ¿En qué puedo ayudarle?»"
+ },
+ "28acaf6d9de9968c": {
+  "en": "'For prices and discounts, a colleague will gladly help you further.'",
+  "t": "«En cuanto a los precios y descuentos, un compañero estará encantado de atenderle»."
+ },
+ "b4baf3e661396f3a": {
+  "en": "'If I can't work it out, I'll say so and bring in a human.'",
+  "t": "«Si no consigo resolverlo, lo diré y recurriré a una persona»."
+ },
+ "618c95c9a1b5fc45": {
+  "en": "What your bot had better not answer itself",
+  "t": "Lo que su bot no debería responder por sí mismo"
+ },
+ "c5b714c905ae10f7": {
+  "en": "<strong>Prices and discounts,</strong> unless they are fixed and up to date.",
+  "t": "<strong>Los precios y los descuentos,</strong> salvo que sean fijos y estén actualizados."
+ },
+ "adcf5d5bea0d58c4": {
+  "en": "Legal, medical or financial advice.",
+  "t": "Asesoramiento jurídico, médico o financiero."
+ },
+ "775d30de5d4dfe39": {
+  "en": "<strong>Complaints and conflicts.</strong> A human belongs there.",
+  "t": "<strong>Quejas y conflictos.</strong> Ahí es donde debe estar una persona."
+ },
+ "108eb59c476b9ba8": {
+  "en": "<strong>Data about other customers,</strong> in any form.",
+  "t": "<strong>Datos sobre otros clientes,</strong> en cualquier formato."
+ },
+ "e623f791f54c7929": {
+  "en": "<strong>Promises about delivery times</strong> it can't check.",
+  "t": "<strong>Promesas sobre plazos de entrega</strong> que no puede comprobar."
+ },
+ "6a2be2d10eedb045": {
+  "en": "Your checklist for an honest chatbot",
+  "t": "Su lista de verificación para un chatbot honesto"
+ },
+ "a7ecce39070abe6f": {
+  "en": "<strong>Give it an honest name.</strong> 'Assistant' or 'Concierge', not Sarah.",
+  "t": "<strong>Póngale un nombre adecuado.</strong> «Asistente» o «conserje», pero no «Sarah»."
+ },
+ "d02a87eec8850a23": {
+  "en": "<strong>Say it in the first sentence.</strong> That it is an AI, and what it can do.",
+  "t": "<strong>Indíquelo en la primera frase:</strong> que se trata de una IA y qué es capaz de hacer."
+ },
+ "29bd201d3ff4aa82": {
+  "en": "<strong>Always leave a way to a human open.</strong> A button, an email address, a phone number.",
+  "t": "<strong>Deje siempre abierta una vía de contacto con una persona.</strong> Un botón, una dirección de correo electrónico, un número de teléfono."
+ },
+ "bfb2c83a36d8ccf0": {
+  "en": "<strong>Be clear about privacy.</strong> What do you do with the conversations? And let the chat load only after consent for cookies.",
+  "t": "<strong>Sea claro en lo que respecta a la privacidad.</strong> ¿Qué hace con las conversaciones? Y haga que el chat solo se cargue una vez que se haya dado el consentimiento para las cookies."
+ },
+ "f88c1cd273a30a64": {
+  "en": "<strong>Limit what it talks about.</strong> Prices, legal and medical advice: refer onwards.",
+  "t": "<strong>Limite los temas que se tratan.</strong> Precios, asesoramiento jurídico y médico: remítalos a otros profesionales."
+ },
+ "79ec56b8ff18136a": {
+  "en": "How to test it before you let it loose",
+  "t": "Cómo probarlo antes de ponerlo en marcha"
+ },
+ "bc7b0258bb54aca8": {
+  "en": "<strong>Make a list of twenty real customer questions</strong> and look at the answers.",
+  "t": "<strong>Haga una lista con veinte preguntas reales de clientes</strong> y revise las respuestas."
+ },
+ "d51bd9918d5595a6": {
+  "en": "<strong>Try to mislead it.</strong> Ask questions it must not answer, and see if it politely declines.",
+  "t": "<strong>Intente despistarlo.</strong> Hágale preguntas a las que no deba responder y compruebe si se niega educadamente."
+ },
+ "023eb49944d89ad0": {
+  "en": "<strong>Check the tone.</strong> Does it sound like you, or like a leaflet?",
+  "t": "<strong>Compruebe el tono.</strong> ¿Suena como usted o como un folleto?"
+ },
+ "235e7f33eea2658e": {
+  "en": "<strong>Read every conversation in the first weeks,</strong> with respect for privacy.",
+  "t": "<strong>Lea todas las conversaciones de las primeras semanas,</strong> respetando la privacidad."
+ },
+ "f0f3d344ac36eaf5": {
+  "en": "<strong>Adjust and repeat.</strong> A bot is never finished.",
+  "t": "<strong>Ajuste y repita.</strong> Un bot nunca está terminado."
+ },
+ "773679df53a4dff1": {
+  "en": "Questions for your supplier",
+  "t": "Preguntas para su proveedor"
+ },
+ "02742b2856ff8298": {
+  "en": "Where is the data stored, and in which country?",
+  "t": "¿Dónde se almacenan los datos y en qué país?"
+ },
+ "7106fdeadaee763e": {
+  "en": "Are conversations used to train models?",
+  "t": "¿Se utilizan las conversaciones para entrenar modelos?"
+ },
+ "de4d31642f93f37d": {
+  "en": "Who helps with a wrong answer, and how fast?",
+  "t": "¿Quién le ayuda en caso de una respuesta incorrecta y con qué rapidez?"
+ },
+ "c9a7539f31b9fd00": {
+  "en": "Can I view, export and delete conversations?",
+  "t": "¿Puedo ver, exportar y eliminar conversaciones?"
+ },
+ "ef9d4cc4e72c0244": {
+  "en": "Does the contract say who is liable for a mistake?",
+  "t": "¿Se especifica en el contrato quién es responsable en caso de error?"
+ },
+ "a83701c307f24626": {
+  "en": "Can I set myself what the bot may not talk about?",
+  "t": "¿Puedo establecer yo mismo los temas sobre los que el bot no puede hablar?"
+ },
+ "7cd6543cee3139bd": {
+  "en": "Who is responsible if the bot gets it wrong?",
+  "t": "¿Quién es el responsable si el bot comete un error?"
+ },
+ "112fdd8d29662c92": {
+  "en": "You are. To your customer, you are the sender, even if someone else's system writes the sentences. So agree in advance who gives support for a wrong answer and how fast. A bot may be funny. It may not lie about who it is.",
+  "t": "Así es. Para su cliente, usted es el remitente, aunque sea el sistema de otra persona el que redacte las frases. Por lo tanto, acuerde de antemano quién se encargará de dar respuesta a una respuesta errónea y con qué rapidez. Un bot puede resultar divertido, pero no debe mentir sobre su identidad."
+ },
+ "e9c250d76134d7fb": {
+  "en": "These are also our own requirements when we put an assistant on a website.",
+  "t": "Estos son también nuestros propios requisitos a la hora de incorporar a un asistente a una página web."
+ },
+ "d1ec149055da28bc": {
+  "en": "Sarah doesn't exist. Her sigh of relief doesn't either.",
+  "t": "Sarah no existe. Tampoco existe su suspiro de alivio."
+ },
+ "b71db57a139445c6": {
+  "en": "An assistant on your website?",
+  "t": "¿Un asistente en su página web?"
+ },
+ "0feefa4142470f99": {
+  "en": "We are happy to think along about an approach that is honest, clear and legally sensible.",
+  "t": "Nos complace colaborar con ustedes en la búsqueda de un enfoque que sea honesto, claro y jurídicamente sensato."
+ },
+ "29ec8d63dfa0e93f": {
+  "en": "Woman talking with AI Chat",
+  "t": "Una mujer hablando con un chatbot de IA"
+ },
+ "123462fd20c5fa9c": {
+  "en": "Is your visitor talking to a human? Say so honestly. | Blog | DRP BuildLab",
+  "t": "¿Su visitante está hablando con una persona? Dígalo con sinceridad. | Blog | DRP BuildLab"
+ },
+ "ef3767c060e68a90": {
+  "en": "Why a chatbot on your website should play with open cards, and how to do that without it getting awkward. What the rules say, how to test your bot and which questions to ask your supplier.",
+  "t": "Por qué un chatbot en su página web debería actuar con total transparencia, y cómo hacerlo sin que resulte incómodo. Qué establecen las normas, cómo probar su bot y qué preguntas debe plantear a su proveedor."
  }
 }

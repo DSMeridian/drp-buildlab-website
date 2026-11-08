@@ -3294,5 +3294,217 @@
  "3f85b2cd26f9675a": {
   "en": "Confirm that you want to receive new articles from the DRP BuildLab blog by email.",
   "t": "Bevestig dat u nieuwe artikelen van de DRP BuildLab-blog per e-mail wilt ontvangen."
+ },
+ "579dddcaf51b8d21": {
+  "en": "Is your visitor talking to a human? Say so honestly.",
+  "t": "Heeft uw bezoeker contact met een medewerker? Geef dat dan eerlijk aan."
+ },
+ "9d8fd4837be12999": {
+  "en": "Why a chatbot on your website should play with open cards, and how to do that without it getting awkward. What the rules say, how to test your bot and which questions to ask your supplier.",
+  "t": "Waarom een chatbot op uw website open kaart moet spelen, en hoe u dat kunt doen zonder dat het ongemakkelijk wordt. Wat de regels voorschrijven, hoe u uw bot kunt testen en welke vragen u aan uw leverancier moet stellen."
+ },
+ "335a0776c61c97ab": {
+  "en": "A visitor types: 'Hi Sarah, can I still order today?' Sarah answers within a second, friendly and flawless. Too flawless. Sarah turns out to be a script. And the visitor doesn't feel helped, but deceived.",
+  "t": "Een bezoeker typt: ‘Hallo Sarah, kan ik vandaag nog bestellen?’ Sarah antwoordt binnen een seconde, vriendelijk en foutloos. Te foutloos. Sarah blijkt een script te zijn. En de bezoeker voelt zich niet geholpen, maar bedrogen."
+ },
+ "82ca628fb4b900c8": {
+  "en": "Chatbots have become much better in recent years. That makes the temptation big to give them a human name, a profile photo and a friendly little sigh. Bad idea.",
+  "t": "Chatbots zijn de afgelopen jaren aanzienlijk verbeterd. Daardoor is de verleiding groot om ze een menselijke naam, een profielfoto en een vriendelijk zuchtje te geven. Dat is geen goed idee."
+ },
+ "825fe4c3007bbc4b": {
+  "en": "A bot that pretends to be human wins a conversation and loses a customer.",
+  "t": "Een bot die zich voordoet als een mens wint weliswaar het gesprek, maar verliest een klant."
+ },
+ "927170ca75216705": {
+  "en": "What the rules say",
+  "t": "Wat er in de regels staat"
+ },
+ "c5c1493d1ce06e1b": {
+  "en": "In essence, the European AI Act requires that people know they are talking to an AI, unless that is obvious. The exact dates and exceptions are still being adjusted and your situation may differ, so check them with your legal adviser or the authorities. One thing doesn't change: being honest costs nothing.",
+  "t": "In wezen schrijft de Europese AI-wet voor dat mensen moeten weten dat zij met een AI communiceren, tenzij dat vanzelfsprekend is. De exacte data en uitzonderingen worden nog bijgesteld en uw situatie kan afwijken; raadpleeg daarom uw juridisch adviseur of de bevoegde autoriteiten. Eén ding blijft echter onveranderd: eerlijkheid kost niets."
+ },
+ "4c42bb5a92e7c8fa": {
+  "en": "Why honesty is also good sales",
+  "t": "Waarom eerlijkheid ook goed is voor de verkoop"
+ },
+ "b0308d650c8bbc71": {
+  "en": "Honesty is not only an obligation. Visitors who know they are talking to a bot expect less of it and are therefore less easily disappointed. Visitors who discover they have been misled tell others.",
+  "t": "Eerlijkheid is niet alleen een plicht. Bezoekers die weten dat zij met een bot spreken, verwachten hier minder van en raken daardoor minder snel teleurgesteld. Bezoekers die ontdekken dat zij zijn misleid, vertellen dit aan anderen."
+ },
+ "f6a21347c6361d26": {
+  "en": "A bot that knows its limits also comes across as more reliable than a bot that has an answer for everything. 'I don't know that, I'll connect you with a colleague' is sometimes the best sentence it can say.",
+  "t": "Een bot die zijn grenzen kent, komt ook betrouwbaarder over dan een bot die op alles een antwoord heeft. „Dat weet ik niet, ik verbind u door met een collega” is soms de beste zin die hij kan zeggen."
+ },
+ "d13879894791e003": {
+  "en": "Don't, do",
+  "t": "Niet doen, wel doen"
+ },
+ "9e233dd3968cf1ac": {
+  "en": "Don't",
+  "t": "Doe dat niet"
+ },
+ "db907b2dd303595d": {
+  "en": "'Hi, I'm Sarah!'",
+  "t": "&#x27;Hallo, ik ben Sarah!&#x27;"
+ },
+ "4c92bd2b6a577881": {
+  "en": "'I think you'll definitely get twenty percent off.'",
+  "t": "&#x27;Ik denk dat u zeker twintig procent korting krijgt.&#x27;"
+ },
+ "41aaa7968cf76cf1": {
+  "en": "'I'll always help you, until the end of time.'",
+  "t": "&#x27;Ik zal u altijd helpen, tot het einde der tijden.&#x27;"
+ },
+ "5959ee951cc241bf": {
+  "en": "Do",
+  "t": "Doe"
+ },
+ "8a4cdbbd7c2cb003": {
+  "en": "'Hi, I'm this company's AI assistant. How can I help?'",
+  "t": "&#x27;Goedendag, ik ben de AI-assistent van dit bedrijf. Waarmee kan ik u van dienst zijn?&#x27;"
+ },
+ "28acaf6d9de9968c": {
+  "en": "'For prices and discounts, a colleague will gladly help you further.'",
+  "t": "&#x27;Wat prijzen en kortingen betreft, zal een collega u graag verder helpen.&#x27;"
+ },
+ "b4baf3e661396f3a": {
+  "en": "'If I can't work it out, I'll say so and bring in a human.'",
+  "t": "&#x27;Als ik er zelf niet uitkom, zal ik dat aangeven en een medewerker erbij halen.&#x27;"
+ },
+ "618c95c9a1b5fc45": {
+  "en": "What your bot had better not answer itself",
+  "t": "Wat uw bot beter niet zelf kan beantwoorden"
+ },
+ "c5b714c905ae10f7": {
+  "en": "<strong>Prices and discounts,</strong> unless they are fixed and up to date.",
+  "t": "<strong>Prijzen en kortingen,</strong> tenzij deze vaststaan en actueel zijn."
+ },
+ "adcf5d5bea0d58c4": {
+  "en": "Legal, medical or financial advice.",
+  "t": "Juridisch, medisch of financieel advies."
+ },
+ "775d30de5d4dfe39": {
+  "en": "<strong>Complaints and conflicts.</strong> A human belongs there.",
+  "t": "<strong>Klachten en conflicten.</strong> Daar hoort een mens thuis."
+ },
+ "108eb59c476b9ba8": {
+  "en": "<strong>Data about other customers,</strong> in any form.",
+  "t": "<strong>Gegevens over andere klanten,</strong> in welke vorm dan ook."
+ },
+ "e623f791f54c7929": {
+  "en": "<strong>Promises about delivery times</strong> it can't check.",
+  "t": "<strong>Toezeggingen over levertijden die</strong> het niet kan controleren."
+ },
+ "6a2be2d10eedb045": {
+  "en": "Your checklist for an honest chatbot",
+  "t": "Uw checklist voor een betrouwbare chatbot"
+ },
+ "a7ecce39070abe6f": {
+  "en": "<strong>Give it an honest name.</strong> 'Assistant' or 'Concierge', not Sarah.",
+  "t": "<strong>Geef de functie een passende benaming.</strong> ‘Assistent’ of ‘conciërge’, niet ‘Sarah’."
+ },
+ "d02a87eec8850a23": {
+  "en": "<strong>Say it in the first sentence.</strong> That it is an AI, and what it can do.",
+  "t": "<strong>Vermeld het in de eerste zin.</strong> Dat het om een AI gaat, en wat deze kan doen."
+ },
+ "29bd201d3ff4aa82": {
+  "en": "<strong>Always leave a way to a human open.</strong> A button, an email address, a phone number.",
+  "t": "<strong>Zorg er altijd voor dat er een mogelijkheid blijft om contact op te nemen met een medewerker.</strong> Een knop, een e-mailadres, een telefoonnummer."
+ },
+ "bfb2c83a36d8ccf0": {
+  "en": "<strong>Be clear about privacy.</strong> What do you do with the conversations? And let the chat load only after consent for cookies.",
+  "t": "<strong>Wees duidelijk over privacy.</strong> Wat gebeurt er met de gesprekken? En zorg ervoor dat de chat pas wordt geladen nadat er toestemming voor cookies is gegeven."
+ },
+ "f88c1cd273a30a64": {
+  "en": "<strong>Limit what it talks about.</strong> Prices, legal and medical advice: refer onwards.",
+  "t": "<strong>Beperk de onderwerpen die aan bod komen.</strong> Prijzen, juridisch en medisch advies: verwijs door."
+ },
+ "79ec56b8ff18136a": {
+  "en": "How to test it before you let it loose",
+  "t": "Hoe u het kunt testen voordat u het in gebruik neemt"
+ },
+ "bc7b0258bb54aca8": {
+  "en": "<strong>Make a list of twenty real customer questions</strong> and look at the answers.",
+  "t": "<strong>Stel een lijst op met twintig echte vragen van klanten</strong> en bekijk de antwoorden."
+ },
+ "d51bd9918d5595a6": {
+  "en": "<strong>Try to mislead it.</strong> Ask questions it must not answer, and see if it politely declines.",
+  "t": "<strong>Probeer het te misleiden.</strong> Stel vragen waarop het geen antwoord mag geven, en kijk of het dit beleefd afwijst."
+ },
+ "023eb49944d89ad0": {
+  "en": "<strong>Check the tone.</strong> Does it sound like you, or like a leaflet?",
+  "t": "<strong>Let op de toon.</strong> Klinkt het als uzelf, of als een folder?"
+ },
+ "235e7f33eea2658e": {
+  "en": "<strong>Read every conversation in the first weeks,</strong> with respect for privacy.",
+  "t": "<strong>Lees alle gesprekken van de eerste weken door,</strong> met inachtneming van de privacy."
+ },
+ "f0f3d344ac36eaf5": {
+  "en": "<strong>Adjust and repeat.</strong> A bot is never finished.",
+  "t": "<strong>Pas aan en herhaal.</strong> Een bot is nooit helemaal af."
+ },
+ "773679df53a4dff1": {
+  "en": "Questions for your supplier",
+  "t": "Vragen voor uw leverancier"
+ },
+ "02742b2856ff8298": {
+  "en": "Where is the data stored, and in which country?",
+  "t": "Waar worden de gegevens opgeslagen, en in welk land?"
+ },
+ "7106fdeadaee763e": {
+  "en": "Are conversations used to train models?",
+  "t": "Worden gesprekken gebruikt om modellen te trainen?"
+ },
+ "de4d31642f93f37d": {
+  "en": "Who helps with a wrong answer, and how fast?",
+  "t": "Wie helpt u bij een fout antwoord, en hoe snel?"
+ },
+ "c9a7539f31b9fd00": {
+  "en": "Can I view, export and delete conversations?",
+  "t": "Kan ik gesprekken bekijken, exporteren en verwijderen?"
+ },
+ "ef9d4cc4e72c0244": {
+  "en": "Does the contract say who is liable for a mistake?",
+  "t": "Wordt in het contract vermeld wie aansprakelijk is voor een fout?"
+ },
+ "a83701c307f24626": {
+  "en": "Can I set myself what the bot may not talk about?",
+  "t": "Kan ik zelf bepalen waarover de bot niet mag praten?"
+ },
+ "7cd6543cee3139bd": {
+  "en": "Who is responsible if the bot gets it wrong?",
+  "t": "Wie is er verantwoordelijk als de bot een fout maakt?"
+ },
+ "112fdd8d29662c92": {
+  "en": "You are. To your customer, you are the sender, even if someone else's system writes the sentences. So agree in advance who gives support for a wrong answer and how fast. A bot may be funny. It may not lie about who it is.",
+  "t": "Dat bent u. Voor uw klant bent u de afzender, zelfs als het systeem van iemand anders de zinnen opstelt. Spreek daarom van tevoren af wie ondersteuning biedt bij een fout antwoord en hoe snel dat gebeurt. Een bot kan grappig zijn. Hij mag echter niet liegen over wie hij is."
+ },
+ "e9c250d76134d7fb": {
+  "en": "These are also our own requirements when we put an assistant on a website.",
+  "t": "Dit zijn tevens onze eigen eisen wanneer wij een medewerker op een website plaatsen."
+ },
+ "d1ec149055da28bc": {
+  "en": "Sarah doesn't exist. Her sigh of relief doesn't either.",
+  "t": "Sarah bestaat niet. Haar zucht van opluchting evenmin."
+ },
+ "b71db57a139445c6": {
+  "en": "An assistant on your website?",
+  "t": "Een assistent op uw website?"
+ },
+ "0feefa4142470f99": {
+  "en": "We are happy to think along about an approach that is honest, clear and legally sensible.",
+  "t": "Wij denken graag met u mee over een aanpak die eerlijk, duidelijk en juridisch verantwoord is."
+ },
+ "29ec8d63dfa0e93f": {
+  "en": "Woman talking with AI Chat",
+  "t": "Vrouw in gesprek met AI Chat"
+ },
+ "123462fd20c5fa9c": {
+  "en": "Is your visitor talking to a human? Say so honestly. | Blog | DRP BuildLab",
+  "t": "Praat uw bezoeker met een mens? Geef dat dan eerlijk aan. | Blog | DRP BuildLab"
+ },
+ "ef3767c060e68a90": {
+  "en": "Why a chatbot on your website should play with open cards, and how to do that without it getting awkward. What the rules say, how to test your bot and which questions to ask your supplier.",
+  "t": "Waarom een chatbot op uw website open kaart moet spelen, en hoe u dat kunt doen zonder dat het ongemakkelijk wordt. Wat de regels voorschrijven, hoe u uw bot kunt testen en welke vragen u aan uw leverancier moet stellen."
  }
 }
