@@ -810,3 +810,4 @@ a[href^="tel:"],a[href^="mailto:"],a[href*="wa.me"],.url,.money,.clist a,.clist 
 .nl-confirm .ok:focus{outline:none}
 .nl-confirm [hidden]{display:none!important}
 .nl-confirm .post-back{margin-top:12px}
+.phero .lede:empty{display:none}

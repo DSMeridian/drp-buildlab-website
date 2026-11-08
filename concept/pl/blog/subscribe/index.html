@@ -48,11 +48,11 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
 <link rel="alternate" hreflang="af-ZA" href="https://drpbuildlab.com/za/af/blog/subscribe/">
 <link rel="alternate" hreflang="x-default" href="https://drpbuildlab.com/ie/blog/subscribe/">
 <meta property="og:type" content="website"><meta property="og:site_name" content="DRP BuildLab"><meta property="og:url" content="https://drpbuildlab.com/pl/blog/subscribe/">
-<meta property="og:title" content="Potwierdź subskrypcję | Blog | DRP BuildLab"><meta property="og:description" content="Proszę potwierdzić, że chcą Państwo otrzymywać nowe artykuły z bloga DRP BuildLab pocztą elektroniczną."><meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="Dziękujemy za subskrypcję | Blog | DRP BuildLab"><meta property="og:description" content="Proszę potwierdzić, że chcą Państwo otrzymywać nowe artykuły z bloga DRP BuildLab pocztą elektroniczną."><meta property="og:locale" content="pl_PL">
 <meta property="og:image" content="https://drpbuildlab.com/assets/img/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Potwierdź subskrypcję | Blog | DRP BuildLab"><meta name="twitter:description" content="Proszę potwierdzić, że chcą Państwo otrzymywać nowe artykuły z bloga DRP BuildLab pocztą elektroniczną."><meta name="twitter:image" content="https://drpbuildlab.com/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Dziękujemy za subskrypcję | Blog | DRP BuildLab"><meta name="twitter:description" content="Proszę potwierdzić, że chcą Państwo otrzymywać nowe artykuły z bloga DRP BuildLab pocztą elektroniczną."><meta name="twitter:image" content="https://drpbuildlab.com/assets/img/og-image.png">
 <link rel="manifest" href="/site.webmanifest"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico" sizes="32x32">
-<title>Potwierdź subskrypcję | Blog | DRP BuildLab</title>
+<title>Dziękujemy za subskrypcję | Blog | DRP BuildLab</title>
 <meta name="description" content="Proszę potwierdzić, że chcą Państwo otrzymywać nowe artykuły z bloga DRP BuildLab pocztą elektroniczną.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0b0b0c">
@@ -60,13 +60,13 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&amp;family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=mw7jz5tz">
-<script defer="" src="/assets/site.js?v=mw7jz5tz"></script>
-<link rel="stylesheet" href="/assets/chat.css?v=mw7jz5tz">
-<script defer="" src="/assets/chat.js?v=mw7jz5tz"></script>
-<link rel="stylesheet" href="/assets/consent.css?v=mw7jz5tz">
-<script defer="" src="/assets/referral.js?v=mw7jz5tz"></script>
-<script defer="" src="/assets/consent.js?v=mw7jz5tz"></script>
+<link rel="stylesheet" href="/assets/site.css?v=mw7sq2gl">
+<script defer="" src="/assets/site.js?v=mw7sq2gl"></script>
+<link rel="stylesheet" href="/assets/chat.css?v=mw7sq2gl">
+<script defer="" src="/assets/chat.js?v=mw7sq2gl"></script>
+<link rel="stylesheet" href="/assets/consent.css?v=mw7sq2gl">
+<script defer="" src="/assets/referral.js?v=mw7sq2gl"></script>
+<script defer="" src="/assets/consent.js?v=mw7sq2gl"></script>
 </head>
 <body>
 <a class="skip" href="#main">Przejdź do treści</a>
@@ -86,12 +86,13 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
 
 <section class="phero"><div class="wrap">
   <ol class="crumb"><li><a href="/pl/blog/">Blog</a></li><li aria-current="page">Biuletyn informacyjny</li></ol>
-  <h1 class="h1 md">Potwierdź swoją <em>subskrypcję</em></h1>
-  <div class="phero-row"><p class="lede">Wystarczy jedno kliknięcie, aby otrzymywać nowe artykuły z naszego bloga pocztą elektroniczną.</p></div>
+  <h1 class="h1 md">Dziękujemy za <em>subskrypcję</em></h1>
+  <div class="phero-row"><p class="lede"></p></div>
 </div></section>
 <section class="sec light"><div class="wrap nl-confirm" id="nl-confirm">
-  <div data-state="ask"><button class="btn dark" type="button" id="nl-confirm-btn">Potwierdź moją subskrypcję <span class="arr" aria-hidden="true">→</span></button></div>
-  <div data-state="busy" hidden=""><p class="ok show" role="status">Proszę chwilę poczekać, sprawdzamy Pańską subskrypcję.</p></div>
+  <span hidden="" data-h1="error">Państwa subskrypcja <em>nie</em> została <em>potwierdzona</em></span>
+  <div data-state="ask" hidden=""><button class="btn dark" type="button" id="nl-confirm-btn">Potwierdź moją subskrypcję <span class="arr" aria-hidden="true">→</span></button></div>
+  <div data-state="busy"><p class="ok show" role="status">Proszę chwilę poczekać, sprawdzamy Pańską subskrypcję.</p></div>
   <div data-state="done" hidden=""><p class="ok show sent" role="status">Został Pan/Pani zapisany. Wyślemy Panu/Pani wiadomość e-mail, gdy opublikujemy nowy artykuł.</p></div>
   <div data-state="expired" hidden=""><p class="ok show" role="status">Ten link potwierdzający stracił ważność. Prosimy o ponowne zapisanie się na blogu, a prześlemy Państwu nowy link.</p></div>
   <div data-state="invalid" hidden=""><p class="ok show" role="status">Ten link potwierdzający jest nieprawidłowy. Prosimy skorzystać z linku zawartego w wiadomości e-mail, którą Państwu wysłaliśmy, lub ponownie zapisać się na blogu.</p></div>

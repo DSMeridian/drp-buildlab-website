@@ -3211,14 +3211,6 @@
   "en": "Newsletter",
   "t": "Lettre d&#x27;information"
  },
- "d6c250da9239af26": {
-  "en": "Confirm your <em>subscription</em>",
-  "t": "Veuillez confirmer votre <em>abonnement</em>"
- },
- "42ea27e2ee3d6a92": {
-  "en": "One click and you receive new articles from our blog by email.",
-  "t": "Un simple clic suffit pour recevoir par e-mail les nouveaux articles de notre blog."
- },
  "31f37182527f93bd": {
   "en": "Confirm my subscription <span class=\"arr\" aria-hidden=\"true\">→</span>",
   "t": "Confirmer mon abonnement <span class=\"arr\" aria-hidden=\"true\">→</span>"
@@ -3286,10 +3278,6 @@
  "295eccb47390a4cd": {
   "en": "Unsubscribe from these emails",
   "t": "Se désabonner de ces e-mails"
- },
- "789717bfb4e37e26": {
-  "en": "Confirm your subscription | Blog | DRP BuildLab",
-  "t": "Confirmez votre inscription | Blog | DRP BuildLab"
  },
  "3f85b2cd26f9675a": {
   "en": "Confirm that you want to receive new articles from the DRP BuildLab blog by email.",
@@ -3506,5 +3494,17 @@
  "ef3767c060e68a90": {
   "en": "Why a chatbot on your website should play with open cards, and how to do that without it getting awkward. What the rules say, how to test your bot and which questions to ask your supplier.",
   "t": "Pourquoi un chatbot sur votre site web devrait jouer cartes sur table, et comment y parvenir sans que cela ne devienne gênant. Ce que prévoient les règles, comment tester votre bot et quelles questions poser à votre fournisseur."
+ },
+ "b5eea3de3080bdc6": {
+  "en": "Thank you for <em>subscribing</em>",
+  "t": "Merci de vous <em>être abonné(e)</em>"
+ },
+ "bafaa0d59efa875c": {
+  "en": "Your subscription is <em>not confirmed</em>",
+  "t": "Votre inscription n&#x27;est <em>pas confirmée</em>"
+ },
+ "3b5970733445889d": {
+  "en": "Thank you for subscribing | Blog | DRP BuildLab",
+  "t": "Merci de vous être abonné | Blog | DRP BuildLab"
  }
 }
