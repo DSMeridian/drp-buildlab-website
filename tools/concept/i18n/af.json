@@ -3506,5 +3506,193 @@
  "3b5970733445889d": {
   "en": "Thank you for subscribing | Blog | DRP BuildLab",
   "t": "Dankie dat u inteken | Blog | DRP BuildLab"
+ },
+ "6943b6614ce422b7": {
+  "en": "Your customer no longer googles. They ask.",
+  "t": "Jou kliënt googel nie meer nie. Hulle vra."
+ },
+ "5f7a85efe3604494": {
+  "en": "What changes for your website when people increasingly ask an AI instead of searching, and what you can do about it tomorrow. A checklist, an example service page and a way to check whether it works.",
+  "t": "Wat verander vir jou webwerf wanneer mense toenemend &#x27;n KI vra in plaas daarvan om te soek, en wat jy daaroor môre kan doen. &#x27;n Kontrolelys, &#x27;n voorbeeld-diensbladsy en &#x27;n manier om te kyk of dit werk."
+ },
+ "646e19ee405002ed": {
+  "en": "4 min read",
+  "t": "4 min lees"
+ },
+ "b9fc8b798befebd4": {
+  "en": "Saturday evening, a quarter to nine. The water in Els's bathroom is a centimetre deep. She doesn't open Google, doesn't scroll past four ads and doesn't click through ten websites. She types one sentence into a chat window: 'My bathroom is flooding, who can still come tonight in Mechelen?' And one answer comes back. With three names.",
+  "t": "Saterdag­aand, kwart voor nege. Die water in Els se badkamer is &#x27;n sentimeter diep. Sy maak nie Google oop nie, blaai nie verby vier advertensies nie en klik nie deur tien webwerwe nie. Sy tik een sin in &#x27;n kletsvenster: &#x27;My badkamer loop oor, wie kan vanaand nog na Mechelen kom?&#x27; En daar kom een antwoord terug. Met drie name."
+ },
+ "6402dc9a705ea0f0": {
+  "en": "Whether your business is among them depends on something most entrepreneurs have never looked at: can a machine read your website?",
+  "t": "Of jou besigheid daarby ingesluit is, hang af van iets wat die meeste entrepreneurs nog nooit bekyk het nie: kan &#x27;n masjien jou webwerf lees?"
+ },
+ "c9842ff747227b14": {
+  "en": "Your website has two kinds of visitors: people, and machines that read on behalf of people.",
+  "t": "Jou webwerf het twee soorte besoekers: mense en masjiene wat namens mense lees."
+ },
+ "9a87e902228a93ea": {
+  "en": "What is changing",
+  "t": "Wat verander"
+ },
+ "99155a1c3e7f957e": {
+  "en": "More and more people let an AI assistant, such as ChatGPT, Perplexity, Gemini or Claude, look up the answer instead of browsing themselves. Such an assistant reads websites, pulls out the facts and summarises them. The clearer your facts, the easier it is for it to use them.",
+  "t": "Meer en meer mense laat &#x27;n KI-assistent, soos ChatGPT, Perplexity, Gemini of Claude, die antwoord opspoor in plaas daarvan om self te blaai. So &#x27;n assistent lees webwerwe, haal die feite uit en som dit op. Hoe duideliker jou feite is, hoe makliker is dit vir hom om dit te gebruik."
+ },
+ "255204c3f6698871": {
+  "en": "Nobody can promise that an AI will mention you. But a site that a machine understands is also understood faster by people. And a photo of your van tells a machine nothing. A sentence under that photo does.",
+  "t": "Niemand kan belowe dat &#x27;n KI jou sal noem nie. Maar &#x27;n webwerf wat &#x27;n masjien verstaan, word ook vinniger deur mense verstaan. En &#x27;n foto van jou bus vertel &#x27;n masjien niks. &#x27;n Sin onder daardie foto wel."
+ },
+ "6b21387bf0ae989a": {
+  "en": "How an assistant arrives at its answer",
+  "t": "Hoe &#x27;n assistent by sy antwoord uitkom"
+ },
+ "e00088f8355f0e7d": {
+  "en": "How an assistant works exactly differs per product and changes quickly. Some search the web live and name their sources, others answer mostly from what they learned earlier. For you it comes down to the same thing: the clearer, more current and more consistent your information is on the web, the greater the chance an assistant reflects it well. There is no guarantee.",
+  "t": "Hoe &#x27;n assistent presies werk, verskil per produk en verander vinnig. Sommige deursoek die web in realtime en noem hul bronne, ander antwoord meestal op grond van wat hulle vroeër geleer het. Vir jou kom dit op dieselfde neer: hoe duideliker, meer aktueel en meer konsekwent jou inligting op die web is, hoe groter is die kans dat &#x27;n assistent dit goed weerspieël. Daar is geen waarborg nie."
+ },
+ "a7a34ef4546e3ae2": {
+  "en": "What a machine wants to find on your site",
+  "t": "Wat &#x27;n masjien op jou webwerf wil vind"
+ },
+ "7833ffa02cc17844": {
+  "en": "What you do, in plain words.",
+  "t": "Wat jy doen, in eenvoudige woorde."
+ },
+ "eb20a39a1fb87882": {
+  "en": "Where you work: municipalities or region.",
+  "t": "Waar jy werk: munisipaliteite of streek."
+ },
+ "bcb10aea1bc0fa19": {
+  "en": "Who you work for.",
+  "t": "Vir wie jy werk."
+ },
+ "08352f8b82058e53": {
+  "en": "Roughly what it costs, or how a customer can work that out.",
+  "t": "Ongeveer wat dit kos, of hoe &#x27;n kliënt dit kan uitwerk."
+ },
+ "e40d3d6ac30188ef": {
+  "en": "How and when you can be reached.",
+  "t": "Hoe en wanneer jy bereik kan word."
+ },
+ "f93fde615ec17a5e": {
+  "en": "The questions you always get, with an honest answer.",
+  "t": "Die vrae wat jy altyd kry, met &#x27;n eerlike antwoord."
+ },
+ "6817e745234df520": {
+  "en": "A service page that machines understand",
+  "t": "&#x27;n diensbladsy wat masjiene verstaan"
+ },
+ "7d075a0b966026d3": {
+  "en": "An example, for a made-up plumber in Mechelen. Note how each part is a short, factual sentence:",
+  "t": "&#x27;n voorbeeld vir &#x27;n denkbeeldige loodgietersman in Mechelen. Let op hoe elke deel &#x27;n kort, feitelike sin is:"
+ },
+ "3d9b3d6becfddb25": {
+  "en": "<strong>What:</strong> Leak detection, repairs and emergency call-outs for homes and small businesses.",
+  "t": "<strong>Wat:</strong> Lekopsporing, herstelwerk en nooduitroepe vir huise en klein besighede."
+ },
+ "5ab9ac8a15fd3508": {
+  "en": "<strong>Where:</strong> Mechelen, Duffel and surrounding municipalities.",
+  "t": "<strong>Waar:</strong> Mechelen, Duffel en omliggende munisipaliteite."
+ },
+ "d72006170458e3d8": {
+  "en": "<strong>For whom:</strong> Private customers and small businesses.",
+  "t": "<strong>Vir wie:</strong> Privaatkliënte en klein ondernemings."
+ },
+ "f30aa740f1350efb": {
+  "en": "<strong>Price:</strong> Call-out from [amount], travel included. Quote for larger jobs.",
+  "t": "<strong>Prys:</strong> Uurloon vanaf [bedrag], reis ingesluit. Kwotasie vir groter werke."
+ },
+ "0cb90021be67f303": {
+  "en": "<strong>Reachable:</strong> Every day from 7 am to 9 pm, emergency number day and night.",
+  "t": "<strong>Bereikbaar:</strong> Elke dag van 7 vm tot 9 nm, noodnommer dag en nag."
+ },
+ "3e1318e45bb678f9": {
+  "en": "<strong>Questions:</strong> What does an emergency call-out cost? When can you be there? Does my insurance cover this?",
+  "t": "<strong>Vrae:</strong> Wat kos &#x27;n noodgeval-uitry? Wanneer kan julle daar wees? Dek my versekering dit?"
+ },
+ "12aba7d91721871a": {
+  "en": "What doesn't work",
+  "t": "Wat nie werk nie"
+ },
+ "6015aa65949fd471": {
+  "en": "<strong>Stuffing words.</strong> 'Cheap plumber Mechelen, plumber Mechelen cheap.' Nobody reads that, human or machine.",
+  "t": "<strong>Vulwoorde.</strong> &#x27;Goedkoop loodgieters Mechelen, loodgieters Mechelen goedkoop.&#x27; Niemand lees dit nie, mens of masjien."
+ },
+ "04dd82460845a935": {
+  "en": "<strong>Contradictory details.</strong> A different address on your site, your Google profile and your social media.",
+  "t": "<strong>Teenwoordige besonderhede.</strong> &#x27;n Ander adres op jou webwerf, jou Google-profiel en jou sosiale media."
+ },
+ "c3fc1bcf2df713bd": {
+  "en": "<strong>Outdated prices and hours.</strong> An assistant that repeats your old details does neither you nor your customer any favours.",
+  "t": "<strong>Verouderde pryse en openingstye.</strong> &#x27;n Assistent wat jou ou besonderhede herhaal, doen nie jou of jou kliënt &#x27;n guns nie."
+ },
+ "1b5bf0f2f11c5ff8": {
+  "en": "<strong>Everything in images or PDFs.</strong> Without plain text there is nothing to read.",
+  "t": "<strong>Alles is in beelde of PDF&#x27;s.</strong> Sonder gewone teks is daar niks om te lees nie."
+ },
+ "9e7e1fae341734d8": {
+  "en": "What you can do tomorrow",
+  "t": "Wat jy môre kan doen"
+ },
+ "389c43ee23a000e4": {
+  "en": "<strong>Put the basics in plain text on your homepage.</strong> No text that only exists inside an image.",
+  "t": "<strong>Plaas die basiese in gewone teks op jou tuisblad.</strong> Geen teks wat slegs binne &#x27;n beeld bestaan nie."
+ },
+ "b6dd8f231f80499f": {
+  "en": "<strong>Write a page with frequently asked questions.</strong> With the real questions customers ask, and honest answers.",
+  "t": "<strong>Skryf &#x27;n bladsy met gereeld gestelde vrae.</strong> Met die werklike vrae wat kliënte vra, en eerlike antwoorde."
+ },
+ "6bda111c47686653": {
+  "en": "<strong>Add structured data.</strong> These are labels that tell machines what a service is, where you are and what it costs.",
+  "t": "<strong>Voeg gestruktureerde data by.</strong> Dit is etikette wat aan masjiene vertel wat &#x27;n diens is, waar jy is en wat dit kos."
+ },
+ "8ad65de4f4868aaf": {
+  "en": "<strong>Keep your details the same everywhere.</strong> Website, Google Business Profile and social media must say the same thing.",
+  "t": "<strong>Hou jou besonderhede oral dieselfde.</strong> Jou webwerf, Google Business Profile en sosiale media moet dieselfde inligting gee."
+ },
+ "1a0010419d4c68d2": {
+  "en": "<strong>Don't block assistants.</strong> Check your robots.txt, and consider a short plain-text summary for assistants. A proposal for that is called llms.txt. Whether it works is not yet proven.",
+  "t": "<strong>Moenie assistente blokkeer nie.</strong> Kontroleer jou robots.txt en oorweeg &#x27;n kort, eenvoudige tekssamevatting vir assistente. &#x27;n Voorstel daarvoor word llms.txt genoem. Of dit werk, is nog nie bewys nie."
+ },
+ "8b3ec85d14d0206a": {
+  "en": "How to check whether it works",
+  "t": "Hoe om te kontroleer of dit werk"
+ },
+ "9145a2ab72e8f828": {
+  "en": "Ask a few assistants the questions your customers ask, for example: 'Who is a good plumber in Mechelen?' See whether you are mentioned, and above all whether the facts are right. Do this every month, write down what you see and don't count on a single result: answers differ per day and per assistant.",
+  "t": "Vra &#x27;n paar assistente die vrae wat jou kliënte vra, byvoorbeeld: &#x27;Wie is &#x27;n goeie loodgieters in Mechelen?&#x27; Kyk of jy genoem word, en veral of die feite korrek is. Doen dit elke maand, skryf neer wat jy sien en moenie op net een resultaat staatmaak nie: antwoorde verskil per dag en per assistent."
+ },
+ "740478e9866e3778": {
+  "en": "An honest note",
+  "t": "&#x27;n Eerlike nota"
+ },
+ "8af519254a734c12": {
+  "en": "Whoever promises to put you at the top of ChatGPT is selling hot air. Nobody controls the answers of an AI. What you can do is offer clear information. That always wins, with people and with machines. A website that a robot understands, your aunt understands too.",
+  "t": "Wie ook al belowe om jou bo-aan ChatGPT te plaas, verkoop warm lug. Niemand beheer die antwoorde van &#x27;n KI nie. Wat jy kan doen, is om duidelike inligting te verskaf. Dit behaal altyd sukses by mense en by masjiene. &#x27;n Webwerf wat &#x27;n robot verstaan, verstaan jou tannie ook."
+ },
+ "8410d802b61e95f4": {
+  "en": "Els doesn't exist. Her flooded bathroom does, for someone, right now.",
+  "t": "Els bestaan nie. Haar oorstroomde badkamer bestaan wel, vir iemand, reg nou."
+ },
+ "e71294b44bc5048b": {
+  "en": "How readable is your site for machines?",
+  "t": "Hoe leesbaar is jou webwerf vir masjiene?"
+ },
+ "ed978a50257e02e5": {
+  "en": "We are happy to look at your website through the eyes of an AI assistant, and tell you honestly what could be better.",
+  "t": "Ons kyk graag na jou webwerf deur die oë van &#x27;n KI-assistent en vertel jou eerlik wat beter kan wees."
+ },
+ "b17c7b5b75eef581": {
+  "en": "OpenAI Playground 2026 11 09 at 12.44.26",
+  "t": "OpenAI-speelgrond 2026 11 09 om 12.44.26"
+ },
+ "ef641c900ac9bbf0": {
+  "en": "Your customer no longer googles. They ask. | Blog | DRP BuildLab",
+  "t": "Jou kliënt googel nie meer nie. Hulle vra. | Blog | DRP BuildLab"
+ },
+ "595294e20ebc453a": {
+  "en": "What changes for your website when people increasingly ask an AI instead of searching, and what you can do about it tomorrow. A checklist, an example service page and a way to check whether it works.",
+  "t": "Wat verander vir jou webwerf wanneer mense toenemend 'n KI vra in plaas daarvan om te soek, en wat jy daaroor môre kan doen. 'n Kontrolelys, 'n voorbeeld-diensbladsy en 'n manier om te kyk of dit werk."
  }
 }

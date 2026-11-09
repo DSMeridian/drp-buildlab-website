@@ -3506,5 +3506,193 @@
  "3b5970733445889d": {
   "en": "Thank you for subscribing | Blog | DRP BuildLab",
   "t": "Terima kasih telah berlangganan | Blog | DRP BuildLab"
+ },
+ "6943b6614ce422b7": {
+  "en": "Your customer no longer googles. They ask.",
+  "t": "Pelanggan Anda tidak lagi mencari di Google. Mereka langsung bertanya."
+ },
+ "5f7a85efe3604494": {
+  "en": "What changes for your website when people increasingly ask an AI instead of searching, and what you can do about it tomorrow. A checklist, an example service page and a way to check whether it works.",
+  "t": "Apa saja perubahan yang akan terjadi pada situs web Anda ketika orang-orang semakin sering bertanya kepada AI daripada melakukan pencarian, dan apa yang dapat Anda lakukan mulai besok. Daftar periksa, contoh halaman layanan, dan cara untuk memastikan apakah hal tersebut berfungsi."
+ },
+ "646e19ee405002ed": {
+  "en": "4 min read",
+  "t": "Waktu baca: 4 menit"
+ },
+ "b9fc8b798befebd4": {
+  "en": "Saturday evening, a quarter to nine. The water in Els's bathroom is a centimetre deep. She doesn't open Google, doesn't scroll past four ads and doesn't click through ten websites. She types one sentence into a chat window: 'My bathroom is flooding, who can still come tonight in Mechelen?' And one answer comes back. With three names.",
+  "t": "Sabtu malam, pukul sembilan kurang seperempat. Air di kamar mandi Els setinggi satu sentimeter. Dia tidak membuka Google, tidak menggulir melewati empat iklan, dan tidak mengklik sepuluh situs web. Dia mengetik satu kalimat di jendela obrolan: &#x27;Kamar mandiku kebanjiran, siapa yang masih bisa datang malam ini di Mechelen?&#x27; Dan satu jawaban muncul. Dengan tiga nama."
+ },
+ "6402dc9a705ea0f0": {
+  "en": "Whether your business is among them depends on something most entrepreneurs have never looked at: can a machine read your website?",
+  "t": "Apakah bisnis Anda termasuk di antaranya bergantung pada hal yang jarang diperhatikan oleh kebanyakan pengusaha: apakah mesin dapat membaca situs web Anda?"
+ },
+ "c9842ff747227b14": {
+  "en": "Your website has two kinds of visitors: people, and machines that read on behalf of people.",
+  "t": "Situs web Anda memiliki dua jenis pengunjung: manusia, dan mesin yang membaca atas nama manusia."
+ },
+ "9a87e902228a93ea": {
+  "en": "What is changing",
+  "t": "Apa yang sedang berubah"
+ },
+ "99155a1c3e7f957e": {
+  "en": "More and more people let an AI assistant, such as ChatGPT, Perplexity, Gemini or Claude, look up the answer instead of browsing themselves. Such an assistant reads websites, pulls out the facts and summarises them. The clearer your facts, the easier it is for it to use them.",
+  "t": "Semakin banyak orang yang meminta asisten AI, seperti ChatGPT, Perplexity, Gemini, atau Claude, untuk mencari jawabannya alih-alih mencarinya sendiri. Asisten semacam itu membaca situs web, mengambil fakta-fakta yang ada, dan merangkumnya. Semakin jelas fakta-fakta yang Anda berikan, semakin mudah bagi asisten tersebut untuk menggunakannya."
+ },
+ "255204c3f6698871": {
+  "en": "Nobody can promise that an AI will mention you. But a site that a machine understands is also understood faster by people. And a photo of your van tells a machine nothing. A sentence under that photo does.",
+  "t": "Tak ada yang bisa menjamin bahwa AI akan menyebut nama Anda. Namun, situs yang dapat dipahami oleh mesin juga akan lebih cepat dipahami oleh manusia. Dan foto van Anda tidak memberikan informasi apa pun kepada mesin. Sebaliknya, kalimat di bawah foto itu justru memberikan informasi."
+ },
+ "6b21387bf0ae989a": {
+  "en": "How an assistant arrives at its answer",
+  "t": "Bagaimana seorang asisten sampai pada jawabannya"
+ },
+ "e00088f8355f0e7d": {
+  "en": "How an assistant works exactly differs per product and changes quickly. Some search the web live and name their sources, others answer mostly from what they learned earlier. For you it comes down to the same thing: the clearer, more current and more consistent your information is on the web, the greater the chance an assistant reflects it well. There is no guarantee.",
+  "t": "Cara kerja asisten bervariasi tergantung pada produknya dan dapat berubah dengan cepat. Ada yang melakukan pencarian di web secara langsung dan menyebutkan sumbernya, sementara yang lain menjawab sebagian besar berdasarkan apa yang telah mereka pelajari sebelumnya. Bagi Anda, intinya tetap sama: semakin jelas, terkini, dan konsisten informasi Anda di web, semakin besar peluang asisten tersebut menampilkannya dengan baik. Tidak ada jaminan."
+ },
+ "a7a34ef4546e3ae2": {
+  "en": "What a machine wants to find on your site",
+  "t": "Apa yang diinginkan mesin pencari dari situs Anda"
+ },
+ "7833ffa02cc17844": {
+  "en": "What you do, in plain words.",
+  "t": "Apa yang Anda lakukan, dengan kata-kata yang sederhana."
+ },
+ "eb20a39a1fb87882": {
+  "en": "Where you work: municipalities or region.",
+  "t": "Tempat Anda bekerja: pemerintah kota atau daerah."
+ },
+ "bcb10aea1bc0fa19": {
+  "en": "Who you work for.",
+  "t": "Di mana Anda bekerja."
+ },
+ "08352f8b82058e53": {
+  "en": "Roughly what it costs, or how a customer can work that out.",
+  "t": "Perkiraan biayanya, atau bagaimana pelanggan bisa menghitungnya."
+ },
+ "e40d3d6ac30188ef": {
+  "en": "How and when you can be reached.",
+  "t": "Bagaimana dan kapan Anda dapat dihubungi."
+ },
+ "f93fde615ec17a5e": {
+  "en": "The questions you always get, with an honest answer.",
+  "t": "Pertanyaan-pertanyaan yang selalu Anda dengar, beserta jawabannya yang jujur."
+ },
+ "6817e745234df520": {
+  "en": "A service page that machines understand",
+  "t": "Halaman layanan yang dapat dipahami oleh mesin"
+ },
+ "7d075a0b966026d3": {
+  "en": "An example, for a made-up plumber in Mechelen. Note how each part is a short, factual sentence:",
+  "t": "Contohnya, tentang seorang tukang ledeng fiktif di Mechelen. Perhatikan bagaimana setiap bagian berupa kalimat pendek yang faktual:"
+ },
+ "3d9b3d6becfddb25": {
+  "en": "<strong>What:</strong> Leak detection, repairs and emergency call-outs for homes and small businesses.",
+  "t": "<strong>Layanan:</strong> Deteksi kebocoran, perbaikan, dan layanan darurat untuk rumah tangga dan usaha kecil."
+ },
+ "5ab9ac8a15fd3508": {
+  "en": "<strong>Where:</strong> Mechelen, Duffel and surrounding municipalities.",
+  "t": "<strong>Lokasi:</strong> Mechelen, Duffel, dan kota-kota di sekitarnya."
+ },
+ "d72006170458e3d8": {
+  "en": "<strong>For whom:</strong> Private customers and small businesses.",
+  "t": "<strong>Ditujukan untuk:</strong> Pelanggan perorangan dan usaha kecil."
+ },
+ "f30aa740f1350efb": {
+  "en": "<strong>Price:</strong> Call-out from [amount], travel included. Quote for larger jobs.",
+  "t": "<strong>Harga:</strong> Mulai dari [jumlah], sudah termasuk biaya perjalanan. Silakan hubungi kami untuk penawaran harga pekerjaan berskala besar."
+ },
+ "0cb90021be67f303": {
+  "en": "<strong>Reachable:</strong> Every day from 7 am to 9 pm, emergency number day and night.",
+  "t": "<strong>Bisa dihubungi:</strong> Setiap hari mulai pukul 07.00 hingga 21.00, nomor darurat tersedia siang dan malam."
+ },
+ "3e1318e45bb678f9": {
+  "en": "<strong>Questions:</strong> What does an emergency call-out cost? When can you be there? Does my insurance cover this?",
+  "t": "<strong>Pertanyaan:</strong> Berapa biaya layanan panggilan darurat? Kapan Anda bisa tiba di lokasi? Apakah asuransi saya menanggung biaya ini?"
+ },
+ "12aba7d91721871a": {
+  "en": "What doesn't work",
+  "t": "Apa yang tidak berhasil"
+ },
+ "6015aa65949fd471": {
+  "en": "<strong>Stuffing words.</strong> 'Cheap plumber Mechelen, plumber Mechelen cheap.' Nobody reads that, human or machine.",
+  "t": "<strong>Kata-kata pengisi.</strong> &#x27;Tukang ledeng murah di Mechelen, tukang ledeng Mechelen murah.&#x27; Tak ada yang membaca itu, baik manusia maupun mesin."
+ },
+ "04dd82460845a935": {
+  "en": "<strong>Contradictory details.</strong> A different address on your site, your Google profile and your social media.",
+  "t": "<strong>Rincian yang saling bertentangan.</strong> Alamat yang berbeda di situs web Anda, profil Google Anda, dan media sosial Anda."
+ },
+ "c3fc1bcf2df713bd": {
+  "en": "<strong>Outdated prices and hours.</strong> An assistant that repeats your old details does neither you nor your customer any favours.",
+  "t": "<strong>Harga dan jam operasional yang sudah tidak berlaku lagi.</strong> Seorang asisten yang terus-menerus mengulangi informasi lama Anda tidak akan membantu Anda maupun pelanggan Anda."
+ },
+ "1b5bf0f2f11c5ff8": {
+  "en": "<strong>Everything in images or PDFs.</strong> Without plain text there is nothing to read.",
+  "t": "<strong>Semuanya dalam bentuk gambar atau PDF.</strong> Tanpa teks biasa, tidak ada yang bisa dibaca."
+ },
+ "9e7e1fae341734d8": {
+  "en": "What you can do tomorrow",
+  "t": "Apa yang bisa kamu lakukan besok"
+ },
+ "389c43ee23a000e4": {
+  "en": "<strong>Put the basics in plain text on your homepage.</strong> No text that only exists inside an image.",
+  "t": "<strong>Tampilkan informasi dasar dalam bentuk teks biasa di halaman beranda Anda.</strong> Jangan gunakan teks yang hanya terdapat di dalam gambar."
+ },
+ "b6dd8f231f80499f": {
+  "en": "<strong>Write a page with frequently asked questions.</strong> With the real questions customers ask, and honest answers.",
+  "t": "<strong>Buatlah halaman yang berisi pertanyaan-pertanyaan yang sering diajukan.</strong> Cantumkan pertanyaan-pertanyaan yang benar-benar diajukan oleh pelanggan, beserta jawaban-jawaban yang jujur."
+ },
+ "6bda111c47686653": {
+  "en": "<strong>Add structured data.</strong> These are labels that tell machines what a service is, where you are and what it costs.",
+  "t": "<strong>Tambahkan data terstruktur.</strong> Data ini berupa label yang memberi tahu mesin tentang apa itu layanan, di mana Anda berada, dan berapa biayanya."
+ },
+ "8ad65de4f4868aaf": {
+  "en": "<strong>Keep your details the same everywhere.</strong> Website, Google Business Profile and social media must say the same thing.",
+  "t": "<strong>Pastikan informasi Anda konsisten di semua platform.</strong> Situs web, Profil Bisnis Google, dan media sosial harus menampilkan informasi yang sama."
+ },
+ "1a0010419d4c68d2": {
+  "en": "<strong>Don't block assistants.</strong> Check your robots.txt, and consider a short plain-text summary for assistants. A proposal for that is called llms.txt. Whether it works is not yet proven.",
+  "t": "<strong>Jangan memblokir asisten.</strong> Periksa berkas robots.txt Anda, dan pertimbangkan untuk menyertakan ringkasan singkat dalam teks biasa untuk asisten. Ada usulan terkait hal itu yang disebut llms.txt. Belum terbukti apakah usulan tersebut berhasil."
+ },
+ "8b3ec85d14d0206a": {
+  "en": "How to check whether it works",
+  "t": "Cara memeriksa apakah hal tersebut berfungsi"
+ },
+ "9145a2ab72e8f828": {
+  "en": "Ask a few assistants the questions your customers ask, for example: 'Who is a good plumber in Mechelen?' See whether you are mentioned, and above all whether the facts are right. Do this every month, write down what you see and don't count on a single result: answers differ per day and per assistant.",
+  "t": "Tanyakan kepada beberapa staf pertanyaan-pertanyaan yang sering diajukan pelanggan Anda, misalnya: &#x27;Siapa tukang ledeng yang bagus di Mechelen?&#x27; Perhatikan apakah nama Anda disebutkan, dan yang terpenting, apakah informasinya akurat. Lakukan hal ini setiap bulan, catat apa yang Anda temukan, dan jangan hanya mengandalkan satu hasil saja: jawaban bisa berbeda-beda tergantung hari dan staf yang ditanyai."
+ },
+ "740478e9866e3778": {
+  "en": "An honest note",
+  "t": "Sebuah catatan jujur"
+ },
+ "8af519254a734c12": {
+  "en": "Whoever promises to put you at the top of ChatGPT is selling hot air. Nobody controls the answers of an AI. What you can do is offer clear information. That always wins, with people and with machines. A website that a robot understands, your aunt understands too.",
+  "t": "Siapa pun yang menjanjikan akan menempatkan Anda di peringkat teratas ChatGPT hanyalah omong kosong belaka. Tak ada yang bisa mengendalikan jawaban yang diberikan oleh AI. Yang bisa Anda lakukan adalah memberikan informasi yang jelas. Hal itu selalu berhasil, baik terhadap manusia maupun mesin. Situs web yang bisa dipahami oleh robot, pasti juga bisa dipahami oleh bibi Anda."
+ },
+ "8410d802b61e95f4": {
+  "en": "Els doesn't exist. Her flooded bathroom does, for someone, right now.",
+  "t": "Els itu tidak ada. Kamar mandinya yang tergenang air itu memang ada—bagi seseorang, saat ini juga."
+ },
+ "e71294b44bc5048b": {
+  "en": "How readable is your site for machines?",
+  "t": "Seberapa mudah situs Anda dibaca oleh mesin?"
+ },
+ "ed978a50257e02e5": {
+  "en": "We are happy to look at your website through the eyes of an AI assistant, and tell you honestly what could be better.",
+  "t": "Kami dengan senang hati akan meninjau situs web Anda dari sudut pandang asisten AI, dan memberi tahu Anda secara jujur hal-hal apa saja yang bisa diperbaiki."
+ },
+ "b17c7b5b75eef581": {
+  "en": "OpenAI Playground 2026 11 09 at 12.44.26",
+  "t": "OpenAI Playground 9 November 2026 pukul 12.44.26"
+ },
+ "ef641c900ac9bbf0": {
+  "en": "Your customer no longer googles. They ask. | Blog | DRP BuildLab",
+  "t": "Pelanggan Anda tidak lagi mencari di Google. Mereka langsung bertanya. | Blog | DRP BuildLab"
+ },
+ "595294e20ebc453a": {
+  "en": "What changes for your website when people increasingly ask an AI instead of searching, and what you can do about it tomorrow. A checklist, an example service page and a way to check whether it works.",
+  "t": "Apa saja perubahan yang akan terjadi pada situs web Anda ketika orang-orang semakin sering bertanya kepada AI daripada melakukan pencarian, dan apa yang dapat Anda lakukan mulai besok. Daftar periksa, contoh halaman layanan, dan cara untuk memastikan apakah hal tersebut berfungsi."
  }
 }

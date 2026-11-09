@@ -3506,5 +3506,193 @@
  "3b5970733445889d": {
   "en": "Thank you for subscribing | Blog | DRP BuildLab",
   "t": "Dziękujemy za subskrypcję | Blog | DRP BuildLab"
+ },
+ "6943b6614ce422b7": {
+  "en": "Your customer no longer googles. They ask.",
+  "t": "Państwa klienci nie szukają już informacji w Google. Po prostu pytają."
+ },
+ "5f7a85efe3604494": {
+  "en": "What changes for your website when people increasingly ask an AI instead of searching, and what you can do about it tomorrow. A checklist, an example service page and a way to check whether it works.",
+  "t": "Jakie zmiany czekają Państwa stronę internetową, gdy użytkownicy coraz częściej zwracają się do sztucznej inteligencji zamiast korzystać z wyszukiwarki, oraz co mogą Państwo z tym zrobić już jutro. Lista kontrolna, przykładowa strona z ofertą usług oraz sposób na sprawdzenie, czy rozwiązanie to działa."
+ },
+ "646e19ee405002ed": {
+  "en": "4 min read",
+  "t": "Czas czytania: 4 minuty"
+ },
+ "b9fc8b798befebd4": {
+  "en": "Saturday evening, a quarter to nine. The water in Els's bathroom is a centimetre deep. She doesn't open Google, doesn't scroll past four ads and doesn't click through ten websites. She types one sentence into a chat window: 'My bathroom is flooding, who can still come tonight in Mechelen?' And one answer comes back. With three names.",
+  "t": "Sobota wieczorem, kwadrans przed dziewiątą. W łazience Els woda sięga jednego centymetra. Nie otwiera ona przeglądarki Google, nie przewija czterech reklam ani nie klika dziesięciu stron internetowych. W oknie czatu wpisuje jedno zdanie: „Moja łazienka jest zalana, kto może jeszcze dziś wieczorem przyjechać do Mechelen?”. Otrzymuje jedną odpowiedź. Zawierającą trzy nazwiska."
+ },
+ "6402dc9a705ea0f0": {
+  "en": "Whether your business is among them depends on something most entrepreneurs have never looked at: can a machine read your website?",
+  "t": "To, czy Państwa firma znajduje się wśród nich, zależy od czynnika, na który większość przedsiębiorców nigdy nie zwróciła uwagi: czy maszyna jest w stanie odczytać Państwa stronę internetową?"
+ },
+ "c9842ff747227b14": {
+  "en": "Your website has two kinds of visitors: people, and machines that read on behalf of people.",
+  "t": "Państwa strona internetowa ma dwa rodzaje odwiedzających: ludzi oraz maszyny, które przeglądają ją w imieniu ludzi."
+ },
+ "9a87e902228a93ea": {
+  "en": "What is changing",
+  "t": "Co się zmienia"
+ },
+ "99155a1c3e7f957e": {
+  "en": "More and more people let an AI assistant, such as ChatGPT, Perplexity, Gemini or Claude, look up the answer instead of browsing themselves. Such an assistant reads websites, pulls out the facts and summarises them. The clearer your facts, the easier it is for it to use them.",
+  "t": "Coraz więcej osób zamiast samodzielnie przeszukiwać strony internetowe, zleca znalezienie odpowiedzi asystentowi opartemu na sztucznej inteligencji, takiemu jak ChatGPT, Perplexity, Gemini czy Claude. Taki asystent analizuje treści stron internetowych, wyodrębnia fakty i sporządza ich podsumowanie. Im bardziej przejrzyste są te fakty, tym łatwiej jest mu z nich skorzystać."
+ },
+ "255204c3f6698871": {
+  "en": "Nobody can promise that an AI will mention you. But a site that a machine understands is also understood faster by people. And a photo of your van tells a machine nothing. A sentence under that photo does.",
+  "t": "Nikt nie może obiecać, że sztuczna inteligencja o Państwu wspomni. Jednak strona, którą rozumie maszyna, jest również szybciej rozumiana przez ludzi. A zdjęcie Państwa furgonetki nic nie mówi maszynie. Natomiast zdanie umieszczone pod tym zdjęciem – już tak."
+ },
+ "6b21387bf0ae989a": {
+  "en": "How an assistant arrives at its answer",
+  "t": "W jaki sposób asystent dochodzi do odpowiedzi"
+ },
+ "e00088f8355f0e7d": {
+  "en": "How an assistant works exactly differs per product and changes quickly. Some search the web live and name their sources, others answer mostly from what they learned earlier. For you it comes down to the same thing: the clearer, more current and more consistent your information is on the web, the greater the chance an assistant reflects it well. There is no guarantee.",
+  "t": "Sposób działania asystenta różni się w zależności od produktu i ulega szybkim zmianom. Niektórzy z nich na bieżąco przeszukują Internet i podają źródła informacji, inni natomiast udzielają odpowiedzi głównie na podstawie wiedzy zdobytej wcześniej. Dla Państwa ma to jednak takie samo znaczenie: im jaśniejsze, aktualniejsze i spójniejsze są Państwa informacje w Internecie, tym większa jest szansa, że asystent je właściwie odzwierciedli. Nie ma jednak żadnej gwarancji."
+ },
+ "a7a34ef4546e3ae2": {
+  "en": "What a machine wants to find on your site",
+  "t": "Co robot indeksujący chce znaleźć na Państwa stronie"
+ },
+ "7833ffa02cc17844": {
+  "en": "What you do, in plain words.",
+  "t": "Czym się Państwo zajmują – mówiąc wprost."
+ },
+ "eb20a39a1fb87882": {
+  "en": "Where you work: municipalities or region.",
+  "t": "Miejsce pracy: gminy lub region."
+ },
+ "bcb10aea1bc0fa19": {
+  "en": "Who you work for.",
+  "t": "Dla kogo Pan/Pani pracuje."
+ },
+ "08352f8b82058e53": {
+  "en": "Roughly what it costs, or how a customer can work that out.",
+  "t": "W przybliżeniu, ile to kosztuje, lub w jaki sposób klient może to obliczyć."
+ },
+ "e40d3d6ac30188ef": {
+  "en": "How and when you can be reached.",
+  "t": "W jaki sposób i kiedy można się z Państwem skontaktować."
+ },
+ "f93fde615ec17a5e": {
+  "en": "The questions you always get, with an honest answer.",
+  "t": "Pytania, które zawsze Państwo słyszą, wraz z szczerą odpowiedzią."
+ },
+ "6817e745234df520": {
+  "en": "A service page that machines understand",
+  "t": "Strona serwisowa zrozumiała dla maszyn"
+ },
+ "7d075a0b966026d3": {
+  "en": "An example, for a made-up plumber in Mechelen. Note how each part is a short, factual sentence:",
+  "t": "Przykład dotyczący fikcyjnego hydraulika z Mechelen. Proszę zwrócić uwagę, że każda część stanowi krótkie, oparte na faktach zdanie:"
+ },
+ "3d9b3d6becfddb25": {
+  "en": "<strong>What:</strong> Leak detection, repairs and emergency call-outs for homes and small businesses.",
+  "t": "<strong>Zakres usług:</strong> Wykrywanie wycieków, naprawy oraz interwencje awaryjne w domach i małych firmach."
+ },
+ "5ab9ac8a15fd3508": {
+  "en": "<strong>Where:</strong> Mechelen, Duffel and surrounding municipalities.",
+  "t": "<strong>Gdzie:</strong> Mechelen, Duffel i okoliczne gminy."
+ },
+ "d72006170458e3d8": {
+  "en": "<strong>For whom:</strong> Private customers and small businesses.",
+  "t": "<strong>Dla kogo:</strong> Klienci indywidualni i małe przedsiębiorstwa."
+ },
+ "f30aa740f1350efb": {
+  "en": "<strong>Price:</strong> Call-out from [amount], travel included. Quote for larger jobs.",
+  "t": "<strong>Cena:</strong> Opłata za dojazd od [kwota], w tym koszty dojazdu. W przypadku większych zleceń prosimy o wycenę."
+ },
+ "0cb90021be67f303": {
+  "en": "<strong>Reachable:</strong> Every day from 7 am to 9 pm, emergency number day and night.",
+  "t": "<strong>Dostępność:</strong> Codziennie od godz. 7:00 do 21:00; numer alarmowy czynny przez całą dobę."
+ },
+ "3e1318e45bb678f9": {
+  "en": "<strong>Questions:</strong> What does an emergency call-out cost? When can you be there? Does my insurance cover this?",
+  "t": "<strong>Pytania:</strong> Ile kosztuje interwencja w nagłym wypadku? Kiedy mogą Państwo przybyć na miejsce? Czy moje ubezpieczenie pokrywa te koszty?"
+ },
+ "12aba7d91721871a": {
+  "en": "What doesn't work",
+  "t": "Co nie działa"
+ },
+ "6015aa65949fd471": {
+  "en": "<strong>Stuffing words.</strong> 'Cheap plumber Mechelen, plumber Mechelen cheap.' Nobody reads that, human or machine.",
+  "t": "<strong>Słowa wypełniające.</strong> „Tani hydraulik w Mechelen, hydraulik w Mechelen – tanio”. Nikt tego nie czyta – ani człowiek, ani maszyna."
+ },
+ "04dd82460845a935": {
+  "en": "<strong>Contradictory details.</strong> A different address on your site, your Google profile and your social media.",
+  "t": "<strong>Niespójne dane.</strong> Różne adresy podane na Państwa stronie internetowej, w profilu w Google oraz w mediach społecznościowych."
+ },
+ "c3fc1bcf2df713bd": {
+  "en": "<strong>Outdated prices and hours.</strong> An assistant that repeats your old details does neither you nor your customer any favours.",
+  "t": "<strong>Nieaktualne ceny i godziny otwarcia.</strong> Asystent, który powtarza nieaktualne informacje, nie wyświadcza przysługi ani Państwu, ani Państwa klientom."
+ },
+ "1b5bf0f2f11c5ff8": {
+  "en": "<strong>Everything in images or PDFs.</strong> Without plain text there is nothing to read.",
+  "t": "<strong>Wszystko jest w postaci obrazów lub plików PDF.</strong> Bez zwykłego tekstu nie ma czego czytać."
+ },
+ "9e7e1fae341734d8": {
+  "en": "What you can do tomorrow",
+  "t": "Co mogą Państwo zrobić jutro"
+ },
+ "389c43ee23a000e4": {
+  "en": "<strong>Put the basics in plain text on your homepage.</strong> No text that only exists inside an image.",
+  "t": "<strong>Proszę umieścić podstawowe informacje w postaci zwykłego tekstu na swojej stronie głównej.</strong> Proszę unikać umieszczania tekstu wyłącznie wewnątrz obrazów."
+ },
+ "b6dd8f231f80499f": {
+  "en": "<strong>Write a page with frequently asked questions.</strong> With the real questions customers ask, and honest answers.",
+  "t": "<strong>Proszę stworzyć stronę zawierającą najczęściej zadawane pytania.</strong> Należy zamieścić na niej rzeczywiste pytania zadawane przez klientów oraz szczere odpowiedzi."
+ },
+ "6bda111c47686653": {
+  "en": "<strong>Add structured data.</strong> These are labels that tell machines what a service is, where you are and what it costs.",
+  "t": "<strong>Proszę dodać dane strukturalne.</strong> Są to opisy, które informują systemy komputerowe, czym jest dana usługa, gdzie się Państwo znajdują oraz ile ona kosztuje."
+ },
+ "8ad65de4f4868aaf": {
+  "en": "<strong>Keep your details the same everywhere.</strong> Website, Google Business Profile and social media must say the same thing.",
+  "t": "<strong>Proszę zadbać o to, aby Państwa dane były wszędzie spójne. Informacje</strong> na stronie internetowej, w profilu Google Moja Firma oraz w mediach społecznościowych muszą być zgodne."
+ },
+ "1a0010419d4c68d2": {
+  "en": "<strong>Don't block assistants.</strong> Check your robots.txt, and consider a short plain-text summary for assistants. A proposal for that is called llms.txt. Whether it works is not yet proven.",
+  "t": "<strong>Proszę nie blokować asystentów.</strong> Proszę sprawdzić plik robots.txt i rozważyć dodanie krótkiego streszczenia w postaci zwykłego tekstu przeznaczonego dla asystentów. Jedną z propozycji w tym zakresie jest plik o nazwie llms.txt. Nie zostało jeszcze potwierdzone, czy rozwiązanie to jest skuteczne."
+ },
+ "8b3ec85d14d0206a": {
+  "en": "How to check whether it works",
+  "t": "Jak sprawdzić, czy to działa"
+ },
+ "9145a2ab72e8f828": {
+  "en": "Ask a few assistants the questions your customers ask, for example: 'Who is a good plumber in Mechelen?' See whether you are mentioned, and above all whether the facts are right. Do this every month, write down what you see and don't count on a single result: answers differ per day and per assistant.",
+  "t": "Zadaj kilku pracownikom pytania, które zadają Państwa klienci, na przykład: „Kto jest dobrym hydraulikiem w Mechelen?”. Sprawdź, czy padają Państwa nazwiska, a przede wszystkim, czy podane informacje są zgodne z prawdą. Proszę to robić co miesiąc, zapisywać swoje spostrzeżenia i nie opierać się na jednym wyniku: odpowiedzi różnią się w zależności od dnia i od konkretnego pracownika."
+ },
+ "740478e9866e3778": {
+  "en": "An honest note",
+  "t": "Szczera uwaga"
+ },
+ "8af519254a734c12": {
+  "en": "Whoever promises to put you at the top of ChatGPT is selling hot air. Nobody controls the answers of an AI. What you can do is offer clear information. That always wins, with people and with machines. A website that a robot understands, your aunt understands too.",
+  "t": "Każdy, kto obiecuje umieścić Państwa na pierwszym miejscu w ChatGPT, sprzedaje tylko puste obietnice. Nikt nie ma kontroli nad odpowiedziami sztucznej inteligencji. To, co mogą Państwo zrobić, to przedstawić jasne informacje. To zawsze się sprawdza – zarówno w przypadku ludzi, jak i maszyn. Strona internetowa, którą rozumie robot, jest zrozumiała również dla Państwa ciotki."
+ },
+ "8410d802b61e95f4": {
+  "en": "Els doesn't exist. Her flooded bathroom does, for someone, right now.",
+  "t": "Els nie istnieje. Jej zalana łazienka natomiast istnieje – dla kogoś, właśnie teraz."
+ },
+ "e71294b44bc5048b": {
+  "en": "How readable is your site for machines?",
+  "t": "W jakim stopniu Państwa strona internetowa jest czytelna dla maszyn?"
+ },
+ "ed978a50257e02e5": {
+  "en": "We are happy to look at your website through the eyes of an AI assistant, and tell you honestly what could be better.",
+  "t": "Z przyjemnością przyjrzymy się Państwa stronie internetowej z perspektywy asystenta opartego na sztucznej inteligencji i szczerze wskażemy, co można by poprawić."
+ },
+ "b17c7b5b75eef581": {
+  "en": "OpenAI Playground 2026 11 09 at 12.44.26",
+  "t": "OpenAI Playground, 9 listopada 2026 r., godz. 12:44:26"
+ },
+ "ef641c900ac9bbf0": {
+  "en": "Your customer no longer googles. They ask. | Blog | DRP BuildLab",
+  "t": "Państwa klienci nie szukają już informacji w Google. Po prostu pytają. | Blog | DRP BuildLab"
+ },
+ "595294e20ebc453a": {
+  "en": "What changes for your website when people increasingly ask an AI instead of searching, and what you can do about it tomorrow. A checklist, an example service page and a way to check whether it works.",
+  "t": "Jakie zmiany czekają Państwa stronę internetową, gdy użytkownicy coraz częściej zwracają się do sztucznej inteligencji zamiast korzystać z wyszukiwarki, oraz co mogą Państwo z tym zrobić już jutro. Lista kontrolna, przykładowa strona z ofertą usług oraz sposób na sprawdzenie, czy rozwiązanie to działa."
  }
 }

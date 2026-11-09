@@ -3506,5 +3506,193 @@
  "3b5970733445889d": {
   "en": "Thank you for subscribing | Blog | DRP BuildLab",
   "t": "ご購読ありがとうございます | ブログ | DRP BuildLab"
+ },
+ "6943b6614ce422b7": {
+  "en": "Your customer no longer googles. They ask.",
+  "t": "お客様はもうGoogleで検索しません。代わりに、直接尋ねてくるのです。"
+ },
+ "5f7a85efe3604494": {
+  "en": "What changes for your website when people increasingly ask an AI instead of searching, and what you can do about it tomorrow. A checklist, an example service page and a way to check whether it works.",
+  "t": "人々が検索する代わりにAIに質問することが増えていく中で、ウェブサイトにはどのような変化が生じるのでしょうか。また、明日からすぐにできる対策とは何でしょうか。チェックリスト、サービスページの例、そしてそれが機能しているかどうかを確認する方法をご紹介します。"
+ },
+ "646e19ee405002ed": {
+  "en": "4 min read",
+  "t": "読了時間：4分"
+ },
+ "b9fc8b798befebd4": {
+  "en": "Saturday evening, a quarter to nine. The water in Els's bathroom is a centimetre deep. She doesn't open Google, doesn't scroll past four ads and doesn't click through ten websites. She types one sentence into a chat window: 'My bathroom is flooding, who can still come tonight in Mechelen?' And one answer comes back. With three names.",
+  "t": "土曜日の夕方、9時15分前です。 エルスのバスルームには、1センチほどの水たまりができています。彼女はGoogleを開かず、4つの広告をスクロールして飛ばすこともなく、10のウェブサイトを次々にクリックすることもありません。彼女はチャットウィンドウに一文を入力しました。「バスルームが水浸しです。今夜、メヘレンでまだ来てくれる人はいますか？」すると、1件の返信が届きました。そこには3つの名前が書かれていました。"
+ },
+ "6402dc9a705ea0f0": {
+  "en": "Whether your business is among them depends on something most entrepreneurs have never looked at: can a machine read your website?",
+  "t": "御社のビジネスがそれらに含まれるかどうかは、多くの起業家がこれまで一度も検討したことのない点にかかっています。それは、「機械が御社のウェブサイトを読み取ることができるか」ということです。"
+ },
+ "c9842ff747227b14": {
+  "en": "Your website has two kinds of visitors: people, and machines that read on behalf of people.",
+  "t": "ウェブサイトには、2種類の訪問者がいます。それは、人間と、人間の代わりに情報を読み取る機械です。"
+ },
+ "9a87e902228a93ea": {
+  "en": "What is changing",
+  "t": "どのような変化が起きているのでしょうか"
+ },
+ "99155a1c3e7f957e": {
+  "en": "More and more people let an AI assistant, such as ChatGPT, Perplexity, Gemini or Claude, look up the answer instead of browsing themselves. Such an assistant reads websites, pulls out the facts and summarises them. The clearer your facts, the easier it is for it to use them.",
+  "t": "ChatGPT、Perplexity、Gemini、ClaudeといったAIアシスタントに、自分で検索する代わりに答えを調べてもらう人がますます増えています。こうしたアシスタントはウェブサイトを読み込み、事実を抽出して要約してくれます。事実が明確であればあるほど、アシスタントがそれを活用しやすくなります。"
+ },
+ "255204c3f6698871": {
+  "en": "Nobody can promise that an AI will mention you. But a site that a machine understands is also understood faster by people. And a photo of your van tells a machine nothing. A sentence under that photo does.",
+  "t": "AIがあなたについて言及してくれると約束できる人は誰もいません。しかし、機械が理解できるサイトは、人間にもより早く理解されます。また、あなたのバンの写真だけでは、機械には何も伝わりません。その写真の下に書かれた一文があれば、伝わります。"
+ },
+ "6b21387bf0ae989a": {
+  "en": "How an assistant arrives at its answer",
+  "t": "アシスタントがどのように答えを導き出すのか"
+ },
+ "e00088f8355f0e7d": {
+  "en": "How an assistant works exactly differs per product and changes quickly. Some search the web live and name their sources, others answer mostly from what they learned earlier. For you it comes down to the same thing: the clearer, more current and more consistent your information is on the web, the greater the chance an assistant reflects it well. There is no guarantee.",
+  "t": "アシスタントの具体的な働き方は製品ごとに異なり、また急速に変化します。ウェブ上でリアルタイムに検索を行い、情報源を明記するアシスタントもいれば、主に以前に学んだ知識に基づいて回答するアシスタントもいます。利用者様にとっては、結局のところ同じことです。ウェブ上の情報が明確で、最新であり、一貫性が高ければ高いほど、アシスタントがその情報を正確に反映してくれる可能性が高まります。ただし、保証されるものではありません。"
+ },
+ "a7a34ef4546e3ae2": {
+  "en": "What a machine wants to find on your site",
+  "t": "検索エンジンがあなたのサイトで何を見つけたいのか"
+ },
+ "7833ffa02cc17844": {
+  "en": "What you do, in plain words.",
+  "t": "ご担当されている業務内容を、分かりやすく説明してください。"
+ },
+ "eb20a39a1fb87882": {
+  "en": "Where you work: municipalities or region.",
+  "t": "勤務先：自治体または地方自治体。"
+ },
+ "bcb10aea1bc0fa19": {
+  "en": "Who you work for.",
+  "t": "どちらの会社にお勤めですか。"
+ },
+ "08352f8b82058e53": {
+  "en": "Roughly what it costs, or how a customer can work that out.",
+  "t": "おおよその費用、あるいはお客様がそれをどのように算出できるかについてです。"
+ },
+ "e40d3d6ac30188ef": {
+  "en": "How and when you can be reached.",
+  "t": "いつ、どのようにご連絡いただければよろしいでしょうか。"
+ },
+ "f93fde615ec17a5e": {
+  "en": "The questions you always get, with an honest answer.",
+  "t": "よく聞かれる質問と、その率直な答えをご紹介します。"
+ },
+ "6817e745234df520": {
+  "en": "A service page that machines understand",
+  "t": "機械が理解できるサービスページ"
+ },
+ "7d075a0b966026d3": {
+  "en": "An example, for a made-up plumber in Mechelen. Note how each part is a short, factual sentence:",
+  "t": "例として、メヘレンに住む架空の配管工について挙げてみましょう。各部分が、簡潔で事実に基づいた短い文になっている点にご注目ください："
+ },
+ "3d9b3d6becfddb25": {
+  "en": "<strong>What:</strong> Leak detection, repairs and emergency call-outs for homes and small businesses.",
+  "t": "<strong>内容：</strong>ご家庭や小規模事業者向けの漏水検知、修理、および緊急出張対応。"
+ },
+ "5ab9ac8a15fd3508": {
+  "en": "<strong>Where:</strong> Mechelen, Duffel and surrounding municipalities.",
+  "t": "<strong>場所：</strong>メヘレン、ダッフェルおよび周辺の自治体。"
+ },
+ "d72006170458e3d8": {
+  "en": "<strong>For whom:</strong> Private customers and small businesses.",
+  "t": "<strong>対象：</strong>個人のお客様および中小企業。"
+ },
+ "f30aa740f1350efb": {
+  "en": "<strong>Price:</strong> Call-out from [amount], travel included. Quote for larger jobs.",
+  "t": "<strong>料金：</strong>[金額]からの出張費（交通費込み）。大規模な作業についてはお見積もりいたします。"
+ },
+ "0cb90021be67f303": {
+  "en": "<strong>Reachable:</strong> Every day from 7 am to 9 pm, emergency number day and night.",
+  "t": "<strong>お問い合わせ時間：</strong>毎日午前7時から午後9時まで、緊急連絡先は24時間<strong>対応しております</strong>。"
+ },
+ "3e1318e45bb678f9": {
+  "en": "<strong>Questions:</strong> What does an emergency call-out cost? When can you be there? Does my insurance cover this?",
+  "t": "<strong>ご質問：</strong>緊急出動の費用はいくらですか？　いつ駆けつけていただけますか？　私の保険でこれはカバーされますか？"
+ },
+ "12aba7d91721871a": {
+  "en": "What doesn't work",
+  "t": "うまくいかないこと"
+ },
+ "6015aa65949fd471": {
+  "en": "<strong>Stuffing words.</strong> 'Cheap plumber Mechelen, plumber Mechelen cheap.' Nobody reads that, human or machine.",
+  "t": "<strong>キーワードの詰め込み。</strong>「メヘレンの格安配管工、メヘレンの配管工 格安」。人間でも機械でも、そんな文章を読む人はいません。"
+ },
+ "04dd82460845a935": {
+  "en": "<strong>Contradictory details.</strong> A different address on your site, your Google profile and your social media.",
+  "t": "<strong>情報が矛盾しています。</strong>貴社のウェブサイト、Googleプロフィール、およびソーシャルメディアに記載されている住所がそれぞれ異なります。"
+ },
+ "c3fc1bcf2df713bd": {
+  "en": "<strong>Outdated prices and hours.</strong> An assistant that repeats your old details does neither you nor your customer any favours.",
+  "t": "<strong>価格や営業時間が古くなっています。</strong>以前の情報ばかりを繰り返すアシスタントは、あなたにとってもお客様にとっても何の役にも立ちません。"
+ },
+ "1b5bf0f2f11c5ff8": {
+  "en": "<strong>Everything in images or PDFs.</strong> Without plain text there is nothing to read.",
+  "t": "<strong>すべてが画像やPDFで構成されています。</strong>プレーンテキストがなければ、読むべきものが何もありません。"
+ },
+ "9e7e1fae341734d8": {
+  "en": "What you can do tomorrow",
+  "t": "明日できること"
+ },
+ "389c43ee23a000e4": {
+  "en": "<strong>Put the basics in plain text on your homepage.</strong> No text that only exists inside an image.",
+  "t": "<strong>ホームページには、基本情報をプレーンテキストで記載してください。</strong>画像の中にしか存在しないテキストは避けてください。"
+ },
+ "b6dd8f231f80499f": {
+  "en": "<strong>Write a page with frequently asked questions.</strong> With the real questions customers ask, and honest answers.",
+  "t": "<strong>よくある質問のページを作成してください。</strong>お客様から実際に寄せられた質問と、率直な回答を掲載してください。"
+ },
+ "6bda111c47686653": {
+  "en": "<strong>Add structured data.</strong> These are labels that tell machines what a service is, where you are and what it costs.",
+  "t": "<strong>構造化データを追加してください。</strong>これらは、そのサービスがどのようなものか、現在地はどこか、料金はいくらかといった情報を機械に伝えるためのラベルです。"
+ },
+ "8ad65de4f4868aaf": {
+  "en": "<strong>Keep your details the same everywhere.</strong> Website, Google Business Profile and social media must say the same thing.",
+  "t": "<strong>すべての場所で情報を統一してください。</strong>ウェブサイト、Googleビジネスプロフィール、ソーシャルメディアでは、同じ内容が記載されている必要があります。"
+ },
+ "1a0010419d4c68d2": {
+  "en": "<strong>Don't block assistants.</strong> Check your robots.txt, and consider a short plain-text summary for assistants. A proposal for that is called llms.txt. Whether it works is not yet proven.",
+  "t": "<strong>アシスタントをブロックしないでください。</strong>robots.txt を確認し、アシスタント向けに簡潔なプレーンテキストの要約を用意することをご検討ください。そのための提案として「llms.txt」というものがあります。これが機能するかどうかは、まだ実証されていません。"
+ },
+ "8b3ec85d14d0206a": {
+  "en": "How to check whether it works",
+  "t": "動作確認の方法"
+ },
+ "9145a2ab72e8f828": {
+  "en": "Ask a few assistants the questions your customers ask, for example: 'Who is a good plumber in Mechelen?' See whether you are mentioned, and above all whether the facts are right. Do this every month, write down what you see and don't count on a single result: answers differ per day and per assistant.",
+  "t": "数人の店員に、お客様からよく寄せられる質問をしてみてください。例えば、「メヘレンで腕の良い配管工は誰ですか？」といった具合です。自社が話題に上がっているか、そして何よりも事実関係が正しいかを確認してください。これを毎月行い、その結果を書き留めておきましょう。ただし、一度の結果だけに頼らないでください。回答は日によっても、店員によっても異なるものです。"
+ },
+ "740478e9866e3778": {
+  "en": "An honest note",
+  "t": "率直な一言"
+ },
+ "8af519254a734c12": {
+  "en": "Whoever promises to put you at the top of ChatGPT is selling hot air. Nobody controls the answers of an AI. What you can do is offer clear information. That always wins, with people and with machines. A website that a robot understands, your aunt understands too.",
+  "t": "「ChatGPTであなたをトップに表示させる」と約束する人は、ただの大言壮語を並べているだけです。AIの回答をコントロールできる人は誰もいません。あなたにできることは、明確な情報を提供することです。それが、人に対しても機械に対しても、常に最善の策となります。ロボットが理解できるウェブサイトなら、あなたの叔母さんも理解できるはずです。"
+ },
+ "8410d802b61e95f4": {
+  "en": "Els doesn't exist. Her flooded bathroom does, for someone, right now.",
+  "t": "エルスという人物は実在しません。しかし、彼女の水浸しになったバスルームは、今この瞬間、誰かにとっては現実のものなのです。"
+ },
+ "e71294b44bc5048b": {
+  "en": "How readable is your site for machines?",
+  "t": "あなたのサイトは、機械にとってどの程度読みやすいでしょうか？"
+ },
+ "ed978a50257e02e5": {
+  "en": "We are happy to look at your website through the eyes of an AI assistant, and tell you honestly what could be better.",
+  "t": "AIアシスタントの視点から貴社のウェブサイトを確認し、改善すべき点を率直にご提案させていただきます。"
+ },
+ "b17c7b5b75eef581": {
+  "en": "OpenAI Playground 2026 11 09 at 12.44.26",
+  "t": "OpenAI Playground 2026年11月9日 12時44分26秒"
+ },
+ "ef641c900ac9bbf0": {
+  "en": "Your customer no longer googles. They ask. | Blog | DRP BuildLab",
+  "t": "お客様はもうGoogleで検索しません。代わりに質問するのです。 | ブログ | DRP BuildLab"
+ },
+ "595294e20ebc453a": {
+  "en": "What changes for your website when people increasingly ask an AI instead of searching, and what you can do about it tomorrow. A checklist, an example service page and a way to check whether it works.",
+  "t": "人々が検索する代わりにAIに質問することが増えていく中で、ウェブサイトにはどのような変化が生じるのでしょうか。また、明日からすぐにできる対策とは何でしょうか。チェックリスト、サービスページの例、そしてそれが機能しているかどうかを確認する方法をご紹介します。"
  }
 }

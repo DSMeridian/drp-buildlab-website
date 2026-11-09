@@ -3506,5 +3506,193 @@
  "3b5970733445889d": {
   "en": "Thank you for subscribing | Blog | DRP BuildLab",
   "t": "شكرًا على اشتراكك | المدونة | DRP BuildLab"
+ },
+ "6943b6614ce422b7": {
+  "en": "Your customer no longer googles. They ask.",
+  "t": "لم يعد عملاؤك يبحثون عبر «جوجل». بل أصبحوا يسألون."
+ },
+ "5f7a85efe3604494": {
+  "en": "What changes for your website when people increasingly ask an AI instead of searching, and what you can do about it tomorrow. A checklist, an example service page and a way to check whether it works.",
+  "t": "ما هي التغييرات التي ستطرأ على موقعك الإلكتروني عندما يزداد لجوء الناس إلى الذكاء الاصطناعي بدلاً من البحث، وما الذي يمكنك فعله حيال ذلك غدًا. قائمة مرجعية، ومثال على صفحة خدمة، وطريقة للتحقق من فعاليتها."
+ },
+ "646e19ee405002ed": {
+  "en": "4 min read",
+  "t": "4 دقائق للقراءة"
+ },
+ "b9fc8b798befebd4": {
+  "en": "Saturday evening, a quarter to nine. The water in Els's bathroom is a centimetre deep. She doesn't open Google, doesn't scroll past four ads and doesn't click through ten websites. She types one sentence into a chat window: 'My bathroom is flooding, who can still come tonight in Mechelen?' And one answer comes back. With three names.",
+  "t": "مساء السبت، الساعة التاسعة إلا ربع. يبلغ عمق الماء في حمام إلس سنتيمتراً واحداً. لم تفتح تطبيق «جوجل»، ولم تتخطّ أربعة إعلانات، ولم تنقر على عشرة مواقع إلكترونية. كتبت جملة واحدة في نافذة الدردشة: «حمامي مغمور بالمياه، من لا يزال بإمكانه الحضور الليلة في ميكلين؟» وجاءها رد واحد. مع ثلاثة أسماء."
+ },
+ "6402dc9a705ea0f0": {
+  "en": "Whether your business is among them depends on something most entrepreneurs have never looked at: can a machine read your website?",
+  "t": "ما إذا كانت شركتك من بينها أم لا، يعتمد على أمر لم ينتبه إليه معظم رواد الأعمال من قبل: هل تستطيع الآلة قراءة موقعك الإلكتروني؟"
+ },
+ "c9842ff747227b14": {
+  "en": "Your website has two kinds of visitors: people, and machines that read on behalf of people.",
+  "t": "يستقبل موقعك الإلكتروني نوعين من الزوار: الأشخاص، والآلات التي تقرأ نيابة عن الأشخاص."
+ },
+ "9a87e902228a93ea": {
+  "en": "What is changing",
+  "t": "ما الذي يتغير؟"
+ },
+ "99155a1c3e7f957e": {
+  "en": "More and more people let an AI assistant, such as ChatGPT, Perplexity, Gemini or Claude, look up the answer instead of browsing themselves. Such an assistant reads websites, pulls out the facts and summarises them. The clearer your facts, the easier it is for it to use them.",
+  "t": "يتزايد عدد الأشخاص الذين يعهدون إلى مساعد ذكي، مثل ChatGPT أو Perplexity أو Gemini أو Claude، بالبحث عن الإجابة بدلاً من البحث بأنفسهم. يقوم هذا المساعد بقراءة المواقع الإلكترونية واستخلاص الحقائق وتلخيصها. وكلما كانت الحقائق أكثر وضوحًا، كلما كان من الأسهل عليه استخدامها."
+ },
+ "255204c3f6698871": {
+  "en": "Nobody can promise that an AI will mention you. But a site that a machine understands is also understood faster by people. And a photo of your van tells a machine nothing. A sentence under that photo does.",
+  "t": "لا أحد يستطيع أن يعدك بأن الذكاء الاصطناعي سيشير إليك. لكن الموقع الذي تفهمه الآلة يُفهم أيضًا بشكل أسرع من قبل البشر. وصورة لشاحنتك لا تعني شيئًا للآلة، أما الجملة المكتوبة أسفل تلك الصورة فتعني لها الكثير."
+ },
+ "6b21387bf0ae989a": {
+  "en": "How an assistant arrives at its answer",
+  "t": "كيف يتوصل المساعد إلى إجابته"
+ },
+ "e00088f8355f0e7d": {
+  "en": "How an assistant works exactly differs per product and changes quickly. Some search the web live and name their sources, others answer mostly from what they learned earlier. For you it comes down to the same thing: the clearer, more current and more consistent your information is on the web, the greater the chance an assistant reflects it well. There is no guarantee.",
+  "t": "تختلف طريقة عمل المساعد بالضبط باختلاف المنتج، كما أنها تتغير بسرعة. فبعضهم يجري بحثًا مباشرًا على الويب ويذكر مصادره، بينما يعتمد آخرون في إجاباتهم بشكل أساسي على ما تعلموه مسبقًا. أما بالنسبة لك، فالأمر يتلخص في نفس النقطة: فكلما كانت معلوماتك على الويب أكثر وضوحًا وحداثة واتساقًا، زادت فرصة أن يعكسها المساعد بشكل جيد. ولا يوجد أي ضمان في هذا الشأن."
+ },
+ "a7a34ef4546e3ae2": {
+  "en": "What a machine wants to find on your site",
+  "t": "ما الذي تبحث عنه الآلة في موقعك"
+ },
+ "7833ffa02cc17844": {
+  "en": "What you do, in plain words.",
+  "t": "ما الذي تفعله، بعبارات بسيطة."
+ },
+ "eb20a39a1fb87882": {
+  "en": "Where you work: municipalities or region.",
+  "t": "مكان عملك: البلديات أو المنطقة."
+ },
+ "bcb10aea1bc0fa19": {
+  "en": "Who you work for.",
+  "t": "لصالح من تعمل؟"
+ },
+ "08352f8b82058e53": {
+  "en": "Roughly what it costs, or how a customer can work that out.",
+  "t": "التكلفة التقريبية، أو كيف يمكن للعميل حسابها."
+ },
+ "e40d3d6ac30188ef": {
+  "en": "How and when you can be reached.",
+  "t": "كيف ومتى يمكن الاتصال بك."
+ },
+ "f93fde615ec17a5e": {
+  "en": "The questions you always get, with an honest answer.",
+  "t": "الأسئلة التي تُطرح عليك دائمًا، مع إجابات صادقة."
+ },
+ "6817e745234df520": {
+  "en": "A service page that machines understand",
+  "t": "صفحة خدمة تفهمها الآلات"
+ },
+ "7d075a0b966026d3": {
+  "en": "An example, for a made-up plumber in Mechelen. Note how each part is a short, factual sentence:",
+  "t": "مثال على ذلك، عن سباك خيالي في ميكلين. لاحظ كيف أن كل جزء عبارة عن جملة قصيرة تستند إلى حقائق:"
+ },
+ "3d9b3d6becfddb25": {
+  "en": "<strong>What:</strong> Leak detection, repairs and emergency call-outs for homes and small businesses.",
+  "t": "<strong>ماذا:</strong> الكشف عن التسربات، والإصلاحات، وخدمات الاستجابة للطوارئ للمنازل والشركات الصغيرة."
+ },
+ "5ab9ac8a15fd3508": {
+  "en": "<strong>Where:</strong> Mechelen, Duffel and surrounding municipalities.",
+  "t": "<strong>المكان:</strong> ميكلين ودوفيل والبلديات المحيطة."
+ },
+ "d72006170458e3d8": {
+  "en": "<strong>For whom:</strong> Private customers and small businesses.",
+  "t": "<strong>الفئة المستهدفة:</strong> العملاء الأفراد والشركات الصغيرة."
+ },
+ "f30aa740f1350efb": {
+  "en": "<strong>Price:</strong> Call-out from [amount], travel included. Quote for larger jobs.",
+  "t": "<strong>السعر:</strong> تبدأ الأسعار من [المبلغ]، شاملة تكاليف التنقل. يرجى طلب عرض أسعار للمشاريع الأكبر حجمًا."
+ },
+ "0cb90021be67f303": {
+  "en": "<strong>Reachable:</strong> Every day from 7 am to 9 pm, emergency number day and night.",
+  "t": "<strong>أوقات العمل:</strong> يوميًا من الساعة 7 صباحًا حتى 9 مساءً، ورقم الطوارئ <strong>متاح</strong> على مدار الساعة."
+ },
+ "3e1318e45bb678f9": {
+  "en": "<strong>Questions:</strong> What does an emergency call-out cost? When can you be there? Does my insurance cover this?",
+  "t": "<strong>أسئلة:</strong> ما هي تكلفة الاستدعاء في حالات الطوارئ؟ متى يمكنكم الوصول إلى المكان؟ هل يغطي تأميني هذه التكلفة؟"
+ },
+ "12aba7d91721871a": {
+  "en": "What doesn't work",
+  "t": "ما الذي لا يعمل"
+ },
+ "6015aa65949fd471": {
+  "en": "<strong>Stuffing words.</strong> 'Cheap plumber Mechelen, plumber Mechelen cheap.' Nobody reads that, human or machine.",
+  "t": "<strong>الكلمات المكررة.</strong> «سباك رخيص في ميكلين، سباك في ميكلين بأسعار رخيصة». لا أحد يقرأ ذلك، سواء كان إنسانًا أم آلة."
+ },
+ "04dd82460845a935": {
+  "en": "<strong>Contradictory details.</strong> A different address on your site, your Google profile and your social media.",
+  "t": "<strong>تفاصيل متضاربة. يظهر</strong> عنوان مختلف على موقعك الإلكتروني وفي ملفك الشخصي على «جوجل» وعلى حساباتك في وسائل التواصل الاجتماعي."
+ },
+ "c3fc1bcf2df713bd": {
+  "en": "<strong>Outdated prices and hours.</strong> An assistant that repeats your old details does neither you nor your customer any favours.",
+  "t": "<strong>أسعار ومواعيد قديمة.</strong> فالمساعد الذي يكرر بياناتك القديمة لا يقدم خدمة لك ولا لعميلك."
+ },
+ "1b5bf0f2f11c5ff8": {
+  "en": "<strong>Everything in images or PDFs.</strong> Without plain text there is nothing to read.",
+  "t": "<strong>كل شيء في صور أو ملفات PDF.</strong> فبدون نص عادي، لا يوجد ما يُقرأ."
+ },
+ "9e7e1fae341734d8": {
+  "en": "What you can do tomorrow",
+  "t": "ما يمكنك فعله غدًا"
+ },
+ "389c43ee23a000e4": {
+  "en": "<strong>Put the basics in plain text on your homepage.</strong> No text that only exists inside an image.",
+  "t": "<strong>ضع المعلومات الأساسية في شكل نص عادي على صفحتك الرئيسية.</strong> تجنب وضع أي نص يظهر فقط داخل صورة."
+ },
+ "b6dd8f231f80499f": {
+  "en": "<strong>Write a page with frequently asked questions.</strong> With the real questions customers ask, and honest answers.",
+  "t": "<strong>قم بإنشاء صفحة تحتوي على الأسئلة الشائعة،</strong> تتضمن الأسئلة الفعلية التي يطرحها العملاء، مع إجابات صادقة عليها."
+ },
+ "6bda111c47686653": {
+  "en": "<strong>Add structured data.</strong> These are labels that tell machines what a service is, where you are and what it costs.",
+  "t": "<strong>أضف البيانات المنظمة.</strong> وهي عبارة عن علامات توضح للأجهزة ماهية الخدمة، وموقعك، وتكلفتها."
+ },
+ "8ad65de4f4868aaf": {
+  "en": "<strong>Keep your details the same everywhere.</strong> Website, Google Business Profile and social media must say the same thing.",
+  "t": "<strong>احرص على أن تكون بياناتك متطابقة في كل مكان.</strong> يجب أن تتضمن المعلومات الواردة في موقع الويب وملف تعريف نشاطك التجاري على Google ووسائل التواصل الاجتماعي نفس المحتوى."
+ },
+ "1a0010419d4c68d2": {
+  "en": "<strong>Don't block assistants.</strong> Check your robots.txt, and consider a short plain-text summary for assistants. A proposal for that is called llms.txt. Whether it works is not yet proven.",
+  "t": "<strong>لا تحجب المساعدات الرقمية.</strong> تحقق من ملف robots.txt الخاص بك، وفكر في إضافة ملخص قصير بنص عادي للمساعدات الرقمية. وهناك اقتراح بهذا الشأن يُسمى llms.txt. ولم يثبت بعد ما إذا كان هذا الاقتراح فعالاً أم لا."
+ },
+ "8b3ec85d14d0206a": {
+  "en": "How to check whether it works",
+  "t": "كيفية التحقق من أنه يعمل"
+ },
+ "9145a2ab72e8f828": {
+  "en": "Ask a few assistants the questions your customers ask, for example: 'Who is a good plumber in Mechelen?' See whether you are mentioned, and above all whether the facts are right. Do this every month, write down what you see and don't count on a single result: answers differ per day and per assistant.",
+  "t": "اطرح على عدد من الموظفين الأسئلة التي يطرحها عملاؤك، على سبيل المثال: «من هو السباك الجيد في ميكلين؟» وتحقق مما إذا كان اسمك قد ورد في الإجابات، وقبل كل شيء تأكد من صحة المعلومات. قم بذلك كل شهر، ودوّن ما تلاحظه، ولا تعتمد على نتيجة واحدة فقط: فالإجابات تختلف من يوم لآخر ومن موظف لآخر."
+ },
+ "740478e9866e3778": {
+  "en": "An honest note",
+  "t": "ملاحظة صادقة"
+ },
+ "8af519254a734c12": {
+  "en": "Whoever promises to put you at the top of ChatGPT is selling hot air. Nobody controls the answers of an AI. What you can do is offer clear information. That always wins, with people and with machines. A website that a robot understands, your aunt understands too.",
+  "t": "من يعدك بأن يضعك في صدارة نتائج ChatGPT، فهو يبيع كلامًا فارغًا. لا أحد يتحكم في إجابات الذكاء الاصطناعي. ما يمكنك فعله هو تقديم معلومات واضحة. فهذا هو السبيل الناجح دائمًا، سواء مع البشر أو مع الآلات. فالموقع الإلكتروني الذي يفهمه الروبوت، تفهمه خالتك أيضًا."
+ },
+ "8410d802b61e95f4": {
+  "en": "Els doesn't exist. Her flooded bathroom does, for someone, right now.",
+  "t": "إلس ليست موجودة. أما حمامها المغمور بالمياه، فهو موجود بالفعل بالنسبة لشخص ما، في هذه اللحظة بالذات."
+ },
+ "e71294b44bc5048b": {
+  "en": "How readable is your site for machines?",
+  "t": "ما مدى قابلية موقعك للقراءة من قبل الآلات؟"
+ },
+ "ed978a50257e02e5": {
+  "en": "We are happy to look at your website through the eyes of an AI assistant, and tell you honestly what could be better.",
+  "t": "يسعدنا أن نلقي نظرة على موقعك الإلكتروني من منظور مساعد يعمل بالذكاء الاصطناعي، ونخبرك بصراحة بما يمكن تحسينه."
+ },
+ "b17c7b5b75eef581": {
+  "en": "OpenAI Playground 2026 11 09 at 12.44.26",
+  "t": "OpenAI Playground 2026 11 09 الساعة 12:44:26"
+ },
+ "ef641c900ac9bbf0": {
+  "en": "Your customer no longer googles. They ask. | Blog | DRP BuildLab",
+  "t": "لم يعد عملاؤك يبحثون عبر «جوجل». بل أصبحوا يسألون. | المدونة | DRP BuildLab"
+ },
+ "595294e20ebc453a": {
+  "en": "What changes for your website when people increasingly ask an AI instead of searching, and what you can do about it tomorrow. A checklist, an example service page and a way to check whether it works.",
+  "t": "ما هي التغييرات التي ستطرأ على موقعك الإلكتروني عندما يزداد لجوء الناس إلى الذكاء الاصطناعي بدلاً من البحث، وما الذي يمكنك فعله حيال ذلك غدًا. قائمة مرجعية، وصفحة خدمة نموذجية، وطريقة للتحقق من فعاليتها."
  }
 }
