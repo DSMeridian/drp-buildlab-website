@@ -60,13 +60,13 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&amp;family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=mwah877e">
-<script defer="" src="/assets/site.js?v=mwah877e"></script>
-<link rel="stylesheet" href="/assets/chat.css?v=mwah877e">
-<script defer="" src="/assets/chat.js?v=mwah877e"></script>
-<link rel="stylesheet" href="/assets/consent.css?v=mwah877e">
-<script defer="" src="/assets/referral.js?v=mwah877e"></script>
-<script defer="" src="/assets/consent.js?v=mwah877e"></script>
+<link rel="stylesheet" href="/assets/site.css?v=mwaow2op">
+<script defer="" src="/assets/site.js?v=mwaow2op"></script>
+<link rel="stylesheet" href="/assets/chat.css?v=mwaow2op">
+<script defer="" src="/assets/chat.js?v=mwaow2op"></script>
+<link rel="stylesheet" href="/assets/consent.css?v=mwaow2op">
+<script defer="" src="/assets/referral.js?v=mwaow2op"></script>
+<script defer="" src="/assets/consent.js?v=mwaow2op"></script>
 </head>
 <body>
 <a class="skip" href="#main">Direkt zum Inhalt springen</a>
@@ -129,7 +129,9 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
       <input id="nl-index-email" name="email" type="email" autocomplete="email" inputmode="email" required="">
       <button class="btn" type="submit">Den Blog abonnieren</button>
     </div>
-    <p class="nl-note">Wir verwenden Ihre E-Mail-Adresse ausschließlich dazu, Ihnen neue Artikel zuzusenden. <a href="/lu/de/privacy/">Datenschutzerklärung</a></p>
+    
+    <label class="check nl-offers" for="nl-index-offers"><input type="checkbox" id="nl-index-offers" name="offers" value="yes"><span>Bitte senden Sie mir außerdem gelegentlich Angebote von DRP BuildLab und ausgewählten Partnern, wie beispielsweise Tinrate, basierend auf den von mir gelesenen Artikeln. Optional; Sie können diese Option jederzeit widerrufen.</span></label>
+    <p class="nl-note">Solange das Kästchen nicht angekreuzt ist, verwenden wir Ihre E-Mail-Adresse ausschließlich dazu, Ihnen neue Artikel zuzusenden. <a href="/lu/de/privacy/">Datenschutzerklärung</a> · <a href="/lu/de/offers-terms/">Angebotsbedingungen</a></p>
     <p class="ok" role="status" aria-live="polite"></p>
   </form>
 </aside>

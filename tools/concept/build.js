@@ -398,7 +398,7 @@ const subscribeBox = id => `<aside class="nl-box" aria-labelledby="${id}-h">
          subscription never depends on it, and subscribe.js ignores it until
          MARKETING_CONSENT_VERSION is set (drp_cms docs/offers-consent-contract.md). */ ''}
     <label class="check nl-offers" for="${id}-offers"><input type="checkbox" id="${id}-offers" name="offers" value="yes"><span>Also send me occasional offers from DRP BuildLab and selected partners, such as Tinrate, based on the articles I read. Optional; withdraw any time.</span></label>
-    <p class="nl-note">Without the box ticked, we only use your email address to send you new articles. <a href="${B}/privacy/">Privacy policy</a></p>
+    <p class="nl-note">Without the box ticked, we only use your email address to send you new articles. <a href="${B}/privacy/">Privacy policy</a> · <a href="${B}/offers-terms/">Offers terms</a></p>
     <p class="ok" role="status" aria-live="polite"></p>
   </form>
 </aside>`;
@@ -672,7 +672,7 @@ pages['blog/offers'] = page({
   <div data-state="ask" hidden>
     <p>You already receive every new article from the DRP BuildLab blog. That does not change, whatever you choose here.</p>
     <p>If you agree, we may also email you occasional offers from DRP BuildLab and from selected partners, such as Tinrate. To choose offers that suit you, we look at which blog articles you click in our emails. We do not give your email address to partners: offers always come from us.</p>
-    <p>This is optional. Every offer email has a link to withdraw, and then we delete the record of the articles you clicked. <a href="${B}/privacy/">Privacy policy</a></p>
+    <p>This is optional. Every offer email has a link to withdraw, and then we delete the record of the articles you clicked. <a href="${B}/offers-terms/">Offers terms</a> · <a href="${B}/privacy/">Privacy policy</a></p>
     <form class="nl-offers-form" novalidate>
       <label class="check" for="nl-offers-agree"><input type="checkbox" id="nl-offers-agree" name="agree" value="yes"><span>Yes, also send me occasional offers from DRP BuildLab and selected partners, such as Tinrate, based on the articles I read. I can withdraw any time.</span></label>
       <button class="btn dark" type="submit" id="nl-offers-btn" disabled>Save my choice ${arr}</button>
@@ -968,7 +968,7 @@ function legal(slug, title) {
   const nl = html.match(/<article class="legal-body" lang="nl">([\s\S]*?)<\/article>/);
   if (!en || !nl) throw new Error('No legal text in src/' + slug);
   const ver = (html.match(/Versie \/ Version: ([^<·]+)/) || [])[1];
-  const fix = t => t.replace(/<h2 class="legal-lang">[\s\S]*?<\/h2>/, '').replace(/href="\/(privacy|algemene-voorwaarden|contact)"/g, `href="${B}/$1/"`);
+  const fix = t => t.replace(/<h2 class="legal-lang">[\s\S]*?<\/h2>/, '').replace(/href="\/(privacy|algemene-voorwaarden|offers-terms|contact)"/g, `href="${B}/$1/"`);
   return page({
     title: `${title} | DRP BuildLab`, desc: `${title} of DRP BuildLab.`, nav: '',
     body: `${phero({ h1: title, lede: ver ? `Version: <span translate="no">${ver.trim()}</span>. The Dutch text is the binding version.` : 'The Dutch text is the binding version.' })}
@@ -977,6 +977,55 @@ function legal(slug, title) {
 }
 pages['algemene-voorwaarden'] = legal('algemene-voorwaarden', 'Terms and conditions');
 pages['privacy'] = legal('privacy', 'Privacy policy');
+
+/* Terms of the offers emails (Phase 2 of the blog newsletter). English only,
+   in every market: unlike the general terms and the privacy policy there is
+   no Dutch text. OFFERS_TERMS_VERSION is the value MARKETING_CONSENT_VERSION
+   gets on the site and in the CMS once these terms and the consent texts are
+   approved; a change to what people agree to needs a new version (and new
+   consent), see section 9.
+   LEGAL DRAFT: awaiting lawyer approval. Not to be merged before that. */
+const OFFERS_TERMS_VERSION = '2026-11-v1';
+const OFFERS_TERMS_DATE = '10 November 2026';
+pages['offers-terms'] = page({
+  title: 'Offers terms | DRP BuildLab', desc: 'The terms of the optional offers emails from DRP BuildLab and selected partners, for subscribers to the DRP BuildLab blog.', nav: '',
+  body: `${phero({ h1: 'Offers terms', lede: `Version <span translate="no">${OFFERS_TERMS_VERSION}</span>, <span translate="no">${OFFERS_TERMS_DATE}</span>. These terms exist in English only.` })}
+<section class="sec light"><div class="wrap"><article class="legal" lang="en" translate="no">
+<h2>1. Who we are</h2>
+<p>These terms apply to the offers emails of De Smedt Meridian CommV, trading as DRP BuildLab, Honingstraat 1D, 2220 Hallaar, Belgium, company number 1033.313.383 (VAT BE 1033.313.383), <a href="mailto:info@drpbuildlab.com">info@drpbuildlab.com</a> ("DRP BuildLab", "we").</p>
+<h2>2. What the offers are</h2>
+<p>Subscribers to the DRP BuildLab blog newsletter can also choose to receive occasional offers by email from DRP BuildLab and from partners we select, such as Tinrate. Taking part is free and optional.</p>
+<p>The offers are separate from the newsletter. You receive every new article whether or not you take part, and you can stop the offers without stopping the newsletter.</p>
+<h2>3. How you join</h2>
+<p>You join only by ticking the offers box yourself: when you subscribe to the newsletter, or on the page we link to in an email asking whether you would like offers. The box is never ticked in advance, and the newsletter never depends on it. An invitation link is valid for 30 days.</p>
+<p>When you join, we record which version of these terms and of the consent text you agreed to, when, and how (when subscribing or through our email), so that we can show what you agreed to.</p>
+<h2>4. What you receive</h2>
+<ul>
+<li>Offers from DRP BuildLab and from partners we select. Every offer email makes clear that it is an offer and who makes it.</li>
+<li>Always sent by us, from our own address. We do not sell, rent or give your email address to partners. A partner only learns who you are if you contact it or use its offer.</li>
+<li>Occasionally, when we have an offer we think is relevant to you. There is no fixed schedule.</li>
+<li>In the language you subscribed in, when the offer exists in that language.</li>
+</ul>
+<h2>5. How we choose offers for you</h2>
+<p>To choose offers that suit you, we look at which blog articles you click in our emails, and at the topics of those articles. We do this only for subscribers who joined the offers. It decides which offers we send you and nothing else: it has no effect on prices, on your rights, or on anything outside these emails. Our <a href="${B}/privacy/">privacy policy</a> explains how we handle this data.</p>
+<h2>6. Offers from partners</h2>
+<p>When you take up a partner's offer, your agreement is with that partner, under its own terms and privacy policy. We are not a party to it and are not responsible for the partner's products, services, delivery or support; questions about them go to the partner. A partner may pay us for including its offer.</p>
+<h2>7. The conditions of an offer</h2>
+<p>Each offer states its own conditions, such as the price or discount, how long it is valid and how to use it. Those conditions apply to that offer. An obvious mistake in an offer, such as a clearly wrong price, binds neither us nor the partner.</p>
+<h2>8. Stopping</h2>
+<p>You can stop the offers at any time, free of charge, through the link at the bottom of every offer email or by emailing <a href="mailto:info@drpbuildlab.com">info@drpbuildlab.com</a>. You keep receiving the newsletter. When you stop, we delete our record of the articles you clicked.</p>
+<p>If you unsubscribe from the newsletter altogether, the offers stop too. Subscribing again later does not restart them unless you join the offers again.</p>
+<p>We may end the offers, for everyone or for one subscriber, at any time, for example when emails to an address keep failing.</p>
+<h2>9. Changes</h2>
+<p>If we change these terms in a way that affects what you agreed to, for example a new use of your data, we ask for your consent again before the change applies to you. Other changes, such as corrections, take effect when we publish the new version on this page.</p>
+<h2>10. Liability</h2>
+<p>We choose our partners and offers with care, but we are not liable for loss caused by a partner's products or services, or for indirect loss. These limits do not apply in case of intent or gross negligence, or where the law forbids them, in particular towards consumers.</p>
+<h2>11. Law and disputes</h2>
+<p>Belgian law governs these terms. Disputes go to the courts of the judicial district of Antwerp, without prejudice to a consumer's right to choose the court of their domicile. Consumers may also contact the Consumer Ombudsman Service (consumentenombudsdienst.be).</p>
+<h2>12. Other documents</h2>
+<p>Our <a href="${B}/privacy/">privacy policy</a> describes how we process personal data. Our <a href="${B}/algemene-voorwaarden/">general terms</a> apply to orders placed with DRP BuildLab, not to these emails.</p>
+</article></div></section>`
+});
 
 const notFound = page({
   title: 'Page not found | DRP BuildLab', desc: 'This page does not exist.', nav: '',

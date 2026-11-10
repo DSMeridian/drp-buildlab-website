@@ -63,13 +63,13 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&amp;family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=mwah877e">
-<script defer="" src="/assets/site.js?v=mwah877e"></script>
-<link rel="stylesheet" href="/assets/chat.css?v=mwah877e">
-<script defer="" src="/assets/chat.js?v=mwah877e"></script>
-<link rel="stylesheet" href="/assets/consent.css?v=mwah877e">
-<script defer="" src="/assets/referral.js?v=mwah877e"></script>
-<script defer="" src="/assets/consent.js?v=mwah877e"></script>
+<link rel="stylesheet" href="/assets/site.css?v=mwaow2op">
+<script defer="" src="/assets/site.js?v=mwaow2op"></script>
+<link rel="stylesheet" href="/assets/chat.css?v=mwaow2op">
+<script defer="" src="/assets/chat.js?v=mwaow2op"></script>
+<link rel="stylesheet" href="/assets/consent.css?v=mwaow2op">
+<script defer="" src="/assets/referral.js?v=mwaow2op"></script>
+<script defer="" src="/assets/consent.js?v=mwaow2op"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -188,7 +188,9 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
       <input id="nl-post-email" name="email" type="email" autocomplete="email" inputmode="email" required="">
       <button class="btn" type="submit">Subscribe to the blog</button>
     </div>
-    <p class="nl-note">We only use your email address to send you new articles. <a href="/au/privacy/">Privacy policy</a></p>
+    
+    <label class="check nl-offers" for="nl-post-offers"><input type="checkbox" id="nl-post-offers" name="offers" value="yes"><span>Also send me occasional offers from DRP BuildLab and selected partners, such as Tinrate, based on the articles I read. Optional; withdraw any time.</span></label>
+    <p class="nl-note">Without the box ticked, we only use your email address to send you new articles. <a href="/au/privacy/">Privacy policy</a> · <a href="/au/offers-terms/">Offers terms</a></p>
     <p class="ok" role="status" aria-live="polite"></p>
   </form>
 </aside>
