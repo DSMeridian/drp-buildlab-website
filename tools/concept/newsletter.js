@@ -8,10 +8,13 @@
    "Newly published" means: published now (not a draft), and absent or a draft
    at <before>. An edit to a published article never sends again.
 
-   production  one Resend Broadcast per article and language, to that
-               language's segment ("Blog newsletter (nl)"), once the article
-               answers on drpbuildlab.com. A broadcast is named
-               blog:<slug>:<lang>, and an existing name is skipped, so running
+   production  one Resend Broadcast per article and language, to the
+               "Blog newsletter" segment limited to that language's topic
+               ("Blog newsletter (nl)"), once the article answers on
+               drpbuildlab.com. It is created unsent and read back first: if
+               Resend did not keep the topic, it would reach every language,
+               so it is deleted instead of sent. A broadcast is named
+               blog:<slug>:<lang>, and a sent name is skipped, so running
                this twice never emails anyone twice.
    preview     (staging) nothing goes to subscribers; ADMIN_EMAIL gets the
                English email, marked as a preview.
@@ -121,16 +124,16 @@ async function main() {
   }
 
   /* production */
-  const segments = await nl.listSegments(apiKey);
-  const segOf = lang => segments.filter(s => nl.langOfSegment(s.name) === lang).sort((a, b) => String(a.created_at).localeCompare(String(b.created_at)))[0];
-  const sent = new Set();
-  for (let after = '', i = 0; i < 50; i++) {
-    const r = await nl.resend(apiKey, 'GET', `/broadcasts?limit=100${after ? '&after=' + encodeURIComponent(after) : ''}`);
-    if (!r.ok) throw new Error(`newsletter: list broadcasts ${r.status}: ${JSON.stringify(r.data).slice(0, 200)}`);
-    const data = r.data.data || [];
-    data.forEach(b => b.name && sent.add(b.name));
-    if (!r.data.has_more || !data.length) break;
-    after = data[data.length - 1].id;
+  const segment = await nl.blogSegment(apiKey);
+  const topics = await nl.blogTopics(apiKey);
+  const topicOf = lang => topics.find(t => t.lang === lang);
+  /* sent ones are skipped; an unsent one with the same name is a run that
+     stopped between creating and sending, and is replaced */
+  const sent = new Set(), drafts = new Map();
+  for (const b of await nl.listAll(apiKey, '/broadcasts')) {
+    if (!b.name) continue;
+    if (b.status === 'draft') drafts.set(b.name, b.id);
+    else sent.add(b.name);
   }
 
   const live = new Map();
@@ -152,14 +155,31 @@ async function main() {
   const failed = [];
   for (const m of mails) {
     if (sent.has(m.name)) { console.log(`newsletter: ${m.name} was already sent; skipped`); continue; }
-    const seg = segOf(m.lang);
-    if (!seg) { console.log(`newsletter: no subscribers in ${m.lang} yet; ${m.name} skipped`); continue; }
+    const topic = topicOf(m.lang);
+    if (!segment || !topic) { console.log(`newsletter: no subscribers in ${m.lang} yet; ${m.name} skipped`); continue; }
     if (!(await isLive(m.url))) { failed.push(`${m.name}: ${m.url} is not live after 15 minutes`); continue; }
-    const r = await nl.resend(apiKey, 'POST', '/broadcasts', { segment_id: seg.id, from, subject: m.subject, html: m.html, text: m.text, name: m.name, send: true });
-    if (r.ok) console.log(`newsletter: ${m.name} sent to segment "${seg.name}" (broadcast ${r.data.id})`);
-    else failed.push(`${m.name}: Resend ${r.status} ${JSON.stringify(r.data).slice(0, 200)}`);
+    try {
+      const id = await sendToTopic(nl, apiKey, { segment, topic: topic.id, draft: drafts.get(m.name), from, m });
+      console.log(`newsletter: ${m.name} sent to "${nl.BLOG_SEGMENT}", topic "${topic.name}" (broadcast ${id})`);
+    } catch (e) { failed.push(`${m.name}: ${e.message}`); }
   }
   if (failed.length) throw new Error('newsletter: not sent:\n  ' + failed.join('\n  ') + '\nRun the Blog workflow again (or this script with --slug) once fixed; what was sent is skipped.');
+}
+
+/* Creates the broadcast unsent, checks Resend kept segment and topic, sends. */
+async function sendToTopic(nl, apiKey, { segment, topic, draft, from, m }) {
+  if (draft) await nl.resend(apiKey, 'DELETE', `/broadcasts/${draft}`);
+  const c = await nl.resend(apiKey, 'POST', '/broadcasts', { segment_id: segment, topic_id: topic, from, subject: m.subject, html: m.html, text: m.text, name: m.name });
+  if (!c.ok || !c.data?.id) throw new Error(`Resend ${c.status} ${JSON.stringify(c.data).slice(0, 200)}`);
+  const id = c.data.id;
+  const back = await nl.resend(apiKey, 'GET', `/broadcasts/${id}`);
+  if (!back.ok || back.data?.topic_id !== topic || back.data?.segment_id !== segment) {
+    await nl.resend(apiKey, 'DELETE', `/broadcasts/${id}`);
+    throw new Error(`Resend did not keep the language topic on the broadcast (${back.status}); deleted, nothing sent`);
+  }
+  const s = await nl.resend(apiKey, 'POST', `/broadcasts/${id}/send`, {});
+  if (!s.ok) throw new Error(`send ${s.status} ${JSON.stringify(s.data).slice(0, 200)}`);
+  return id;
 }
 
 main().catch(e => { console.error(e.message || e); process.exit(1); });

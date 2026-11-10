@@ -8,7 +8,8 @@
  *
  * POST /api/subscribe/confirm   (form body: t, the token from that link)
  *   200 { subscribed: true }  the address is a Resend contact in the segment
- *                             of its language ("Blog newsletter (nl)")
+ *                             "Blog newsletter", opted in to the topic of its
+ *                             language ("Blog newsletter (nl)")
  *   400 invalid token · 410 expired (7 days) · 5xx Resend failed
  *
  * Nothing is stored before the click on the confirmation link: the token
@@ -25,7 +26,7 @@
  * NEWSLETTER_SECRET is optional: without it the token key is derived from
  * RESEND_API_KEY, so rotating that key voids links not clicked yet.
  */
-import { LANGS, LANG_HOME, prefixOf, segmentName, langOfSegment, mailStrings, confirmEmail, resend, listSegments } from '../shared/newsletter.mjs';
+import { LANGS, LANG_HOME, prefixOf, mailStrings, confirmEmail, resend, blogSegment, blogTopics, createLangTopic, ensureLangProperty, subscribeContact } from '../shared/newsletter.mjs';
 
 const EMAIL = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const MARKET = /^[a-z]{2}(?:-[a-z]{2})?$/;
@@ -97,52 +98,25 @@ async function marketPage(request, market) {
   return (await tryOne(market)) || (await tryOne(LANG_HOME.en));
 }
 
-/* The segment of a language, created the first time someone confirms in it. */
-let segmentCache = null;
-async function segments(apiKey) {
-  if (!segmentCache) segmentCache = (await listSegments(apiKey)).filter(s => langOfSegment(s.name));
-  return segmentCache;
-}
-async function segmentFor(apiKey, lang) {
-  const all = await segments(apiKey);
-  /* the oldest one wins, should two ever be created at the same moment */
-  const found = all.filter(s => langOfSegment(s.name) === lang).sort((a, b) => String(a.created_at).localeCompare(String(b.created_at)))[0];
-  if (found) return found.id;
-  const r = await resend(apiKey, 'POST', '/segments', { name: segmentName(lang) });
-  if (!r.ok || !r.data?.id) throw new Error(`create segment ${r.status}: ${JSON.stringify(r.data).slice(0, 200)}`);
-  segmentCache = null;
-  return r.data.id;
-}
-
-/* Subscribed, in one language's segment only. A returning contact (who once
-   unsubscribed, or signs up again in another language) is updated: they
-   confirmed again, so they are subscribed again. */
-async function addContact(apiKey, email, lang) {
-  const seg = await segmentFor(apiKey, lang);
-  const path = '/contacts/' + encodeURIComponent(email);
-  const found = await resend(apiKey, 'GET', path);
-  if (found.status === 404) {
-    const created = await resend(apiKey, 'POST', '/contacts', { email, unsubscribed: false, segments: [{ id: seg }] });
-    if (created.ok) return;
-    if (![409, 422].includes(created.status)) throw new Error(`create contact ${created.status}: ${JSON.stringify(created.data).slice(0, 200)}`);
-    /* created by a parallel click in the meantime: update it below */
-  } else if (!found.ok) {
-    throw new Error(`get contact ${found.status}: ${JSON.stringify(found.data).slice(0, 200)}`);
+/* Where a subscriber goes: the "Blog newsletter" segment and the topic of
+   each language, created the first time they are needed. Kept for the life
+   of the isolate; forgotten after a failure, so a topic or segment removed in
+   Resend is looked up again instead of failing every confirmation. */
+let idsCache = null;
+async function blogIds(apiKey, lang) {
+  if (!idsCache) idsCache = (async () => {
+    const segment = await blogSegment(apiKey, { create: true });
+    await ensureLangProperty(apiKey);
+    return { segment, topics: await blogTopics(apiKey) };
+  })();
+  const ids = await idsCache;
+  if (!ids.topics.some(t => t.lang === lang)) {
+    const id = await createLangTopic(apiKey, lang);
+    /* a parallel confirmation may have created one too; the oldest wins */
+    ids.topics = await blogTopics(apiKey);
+    if (!ids.topics.some(t => t.lang === lang)) ids.topics.push({ id, lang });
   }
-  const upd = await resend(apiKey, 'PATCH', path, { unsubscribed: false });
-  if (!upd.ok) throw new Error(`update contact ${upd.status}: ${JSON.stringify(upd.data).slice(0, 200)}`);
-  const add = await resend(apiKey, 'POST', `${path}/segments/${seg}`);
-  if (!add.ok && add.status !== 409) throw new Error(`add to segment ${add.status}: ${JSON.stringify(add.data).slice(0, 200)}`);
-  /* out of the other languages' segments, so an article never arrives twice */
-  const blogSegs = (await segments(apiKey)).filter(s => s.id !== seg);
-  if (!blogSegs.length) return;
-  const mine = await resend(apiKey, 'GET', `${path}/segments`);
-  const inSegs = mine.ok && Array.isArray(mine.data?.data) ? new Set(mine.data.data.map(s => s.id)) : null;
-  for (const s of blogSegs) {
-    if (inSegs && !inSegs.has(s.id)) continue;
-    const del = await resend(apiKey, 'DELETE', `${path}/segments/${s.id}`);
-    if (!del.ok && del.status !== 404) console.error('subscribe: could not leave segment', s.name, del.status);
-  }
+  return ids;
 }
 
 function originOk(request) {
@@ -203,9 +177,10 @@ async function confirm(request, context, apiKey) {
   if (age > TOKEN_TTL || age < -5 * 60 * 1000) return json(410, { error: 'expired' });
 
   try {
-    await addContact(apiKey, p.e, p.l);
+    await subscribeContact(apiKey, p.e, p.l, await blogIds(apiKey, p.l));
     return json(200, { subscribed: true });
   } catch (err) {
+    idsCache = null;
     console.error('subscribe: confirm failed', err.message);
     return json(502, { error: 'could not save the subscription' });
   }

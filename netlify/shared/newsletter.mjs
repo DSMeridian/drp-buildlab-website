@@ -3,9 +3,14 @@
  *   netlify/edge-functions/subscribe.js   sign-up and confirmation (Deno, on Netlify)
  *   tools/concept/newsletter.js           new-article emails (Node, in the Blog workflow)
  *
- * Subscribers live in Resend as Contacts, one Segment per language
- * ("Blog newsletter (nl)"), so an article goes out as one Broadcast per
- * language. Unsubscribing is Resend's own link and is global per contact.
+ * Subscribers live in Resend as Contacts in ONE Segment, "Blog newsletter".
+ * Their language is a private Topic, opt-out by default ("Blog newsletter
+ * (nl)"), which only they are opted in to, plus the contact property
+ * blog_lang for reading it back. An article goes out as one Broadcast per
+ * language: to the segment, limited to that language's topic, so it reaches
+ * only the contacts opted in to it. (One segment per language ran into the
+ * free plan's 3 segments: the 4th language could not subscribe.)
+ * Unsubscribing is Resend's own link and is global per contact.
  *
  * The email texts are not written here. They are the #mail block of the
  * /blog/subscribe/ page, translated by localize.js like every other string
@@ -20,9 +25,13 @@ export const RTL = ['ar'];
 export const LANG_HOME = { nl: 'be', fr: 'fr', de: 'de', it: 'it', es: 'es', pt: 'br', pl: 'pl', en: 'ie', id: 'id', ja: 'jp', ar: 'ae', af: 'za-af' };
 export const prefixOf = marketKey => String(marketKey).replace('-', '/');
 
-export const SEGMENT_PREFIX = 'Blog newsletter (';
-export const segmentName = lang => `${SEGMENT_PREFIX}${lang})`;
-export const langOfSegment = name => { const m = /^Blog newsletter \(([a-z]{2})\)$/.exec(name || ''); return m && LANGS.includes(m[1]) ? m[1] : null; };
+/* Keep these names identical in drp_cms (src/lib/insights/newsletter.ts). */
+export const BLOG_SEGMENT = 'Blog newsletter';
+export const LANG_PROP = 'blog_lang';
+export const topicName = lang => `Blog newsletter (${lang})`;
+export const langOfTopic = name => { const m = /^Blog newsletter \(([a-z]{2})\)$/.exec(name || ''); return m && LANGS.includes(m[1]) ? m[1] : null; };
+/* the language segments of before; only the migration still reads them */
+export const langOfOldSegment = langOfTopic;
 
 export const MAIL_KEYS = ['csubj', 'chead', 'cbody', 'cbtn', 'cvalid', 'cignore', 'ahead', 'abtn', 'afoot', 'aunsub'];
 
@@ -120,17 +129,109 @@ export async function resend(apiKey, method, path, body, extraHeaders = {}) {
   }
 }
 
-/* Every segment, following has_more pages. */
-export async function listSegments(apiKey) {
+/* Every item of a list (/segments, /topics, ...), following has_more pages. */
+export async function listAll(apiKey, path) {
   const out = [];
   let after = '';
-  for (let i = 0; i < 20; i++) {
-    const r = await resend(apiKey, 'GET', `/segments?limit=100${after ? '&after=' + encodeURIComponent(after) : ''}`);
-    if (!r.ok) throw new Error(`Resend segments ${r.status}: ${JSON.stringify(r.data).slice(0, 200)}`);
+  for (let i = 0; i < 50; i++) {
+    const sep = path.includes('?') ? '&' : '?';
+    const r = await resend(apiKey, 'GET', `${path}${sep}limit=100${after ? '&after=' + encodeURIComponent(after) : ''}`);
+    if (!r.ok) throw new Error(`Resend ${path.split('?')[0].replace(/\/contacts\/[^/]+/, '/contacts/…')} ${r.status}: ${JSON.stringify(r.data).slice(0, 200)}`);
     const data = (r.data && r.data.data) || [];
     out.push(...data);
     if (!r.data.has_more || !data.length) break;
     after = data[data.length - 1].id;
   }
   return out;
+}
+
+const oldest = list => [...list].sort((a, b) => String(a.created_at).localeCompare(String(b.created_at)))[0];
+
+/* The "Blog newsletter" segment id; created when missing if `create`, else
+   null. The oldest wins, should two ever exist. */
+export async function blogSegment(apiKey, { create = false } = {}) {
+  const found = oldest((await listAll(apiKey, '/segments')).filter(s => s.name === BLOG_SEGMENT));
+  if (found) return found.id;
+  if (!create) return null;
+  const r = await resend(apiKey, 'POST', '/segments', { name: BLOG_SEGMENT });
+  if (!r.ok || !r.data?.id) throw new Error(`create segment ${r.status}: ${JSON.stringify(r.data).slice(0, 200)}`);
+  return r.data.id;
+}
+
+/* The language topics, one per language (the oldest of a name wins). */
+export async function blogTopics(apiKey) {
+  const byLang = new Map();
+  for (const t of (await listAll(apiKey, '/topics'))) {
+    const lang = langOfTopic(t.name);
+    if (lang && (!byLang.has(lang) || String(t.created_at) < String(byLang.get(lang).created_at))) byLang.set(lang, { ...t, lang });
+  }
+  return [...byLang.values()];
+}
+
+/* A new language topic: opt-out by default (which cannot change later), so a
+   broadcast limited to it reaches only the contacts opted in; private, so
+   only they see it on Resend's preference page. */
+export async function createLangTopic(apiKey, lang) {
+  const r = await resend(apiKey, 'POST', '/topics', {
+    name: topicName(lang),
+    default_subscription: 'opt_out',
+    visibility: 'private',
+    description: `New articles from the DRP BuildLab blog (${lang}).`,
+  });
+  if (!r.ok || !r.data?.id) throw new Error(`create topic ${r.status}: ${JSON.stringify(r.data).slice(0, 200)}`);
+  return r.data.id;
+}
+
+/* The blog_lang contact property, created when missing. Resend refuses a
+   property on a contact unless its key was created first. */
+export async function ensureLangProperty(apiKey) {
+  const have = (await listAll(apiKey, '/contact-properties')).some(p => p.key === LANG_PROP);
+  if (have) return;
+  const r = await resend(apiKey, 'POST', '/contact-properties', { key: LANG_PROP, type: 'string', fallback_value: '' });
+  /* 409/422: created by a parallel call in the meantime */
+  if (!r.ok && ![409, 422].includes(r.status)) throw new Error(`create property ${LANG_PROP} ${r.status}: ${JSON.stringify(r.data).slice(0, 200)}`);
+}
+
+/* Sets a contact's topic subscriptions. The API reference shows a bare
+   array; the SDKs wrap it in { topics }, so the second form is the fallback. */
+export async function setContactTopics(apiKey, emailOrId, topics) {
+  if (!topics.length) return;
+  const path = '/contacts/' + encodeURIComponent(emailOrId) + '/topics';
+  let t = await resend(apiKey, 'PATCH', path, topics);
+  if (!t.ok && t.status >= 400 && t.status < 500) t = await resend(apiKey, 'PATCH', path, { topics });
+  if (!t.ok) throw new Error(`set topics ${t.status}: ${JSON.stringify(t.data).slice(0, 200)}`);
+}
+
+/* Puts a contact on the blog newsletter in one language: subscribed, in the
+   blog segment, blog_lang set, opted in to that language's topic and out of
+   the others (so an article never arrives twice). Creates the contact when
+   missing; a returning one (unsubscribed before, or another language) is
+   updated, because they confirmed again. Answers whether the contact had
+   unsubscribed before. `ids` = { segment, topics: [{ id, lang }] }. */
+export async function subscribeContact(apiKey, email, lang, ids) {
+  const own = ids.topics.find(t => t.lang === lang);
+  if (!own) throw new Error('no topic for ' + lang);
+  const path = '/contacts/' + encodeURIComponent(email);
+  const properties = { [LANG_PROP]: lang };
+  let wasUnsubscribed = false;
+  const found = await resend(apiKey, 'GET', path);
+  let created = false;
+  if (found.status === 404) {
+    const c = await resend(apiKey, 'POST', '/contacts', { email, unsubscribed: false, segments: [{ id: ids.segment }], properties });
+    if (c.ok) created = true;
+    else if (![409, 422].includes(c.status)) throw new Error(`create contact ${c.status}: ${JSON.stringify(c.data).slice(0, 200)}`);
+    /* else: created by a parallel click in the meantime; update it below */
+  } else if (!found.ok) {
+    throw new Error(`get contact ${found.status}: ${JSON.stringify(found.data).slice(0, 200)}`);
+  } else {
+    wasUnsubscribed = found.data?.unsubscribed === true;
+  }
+  if (!created) {
+    const upd = await resend(apiKey, 'PATCH', path, { unsubscribed: false, properties });
+    if (!upd.ok) throw new Error(`update contact ${upd.status}: ${JSON.stringify(upd.data).slice(0, 200)}`);
+    const add = await resend(apiKey, 'POST', `${path}/segments/${ids.segment}`);
+    if (!add.ok && add.status !== 409) throw new Error(`add to segment ${add.status}: ${JSON.stringify(add.data).slice(0, 200)}`);
+  }
+  await setContactTopics(apiKey, email, ids.topics.map(t => ({ id: t.id, subscription: t.lang === lang ? 'opt_in' : 'opt_out' })));
+  return { wasUnsubscribed };
 }
