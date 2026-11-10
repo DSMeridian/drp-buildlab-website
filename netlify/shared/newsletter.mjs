@@ -2,6 +2,7 @@
  *
  *   netlify/edge-functions/subscribe.js   sign-up and confirmation (Deno, on Netlify)
  *   tools/concept/newsletter.js           new-article emails (Node, in the Blog workflow)
+ *   cms.drpbuildlab.com (drp_cms)          offers and offers-consent requests (Phase 2)
  *
  * Subscribers live in Resend as Contacts in ONE Segment, "Blog newsletter".
  * Their language is a private Topic, opt-out by default ("Blog newsletter
@@ -234,4 +235,102 @@ export async function subscribeContact(apiKey, email, lang, ids) {
   }
   await setContactTopics(apiKey, email, ids.topics.map(t => ({ id: t.id, subscription: t.lang === lang ? 'opt_in' : 'opt_out' })));
   return { wasUnsubscribed };
+}
+
+/* ── Offers consent (Phase 2) ───────────────────────────────────────────
+   LEGAL DRAFT: nothing here runs until MARKETING_CONSENT_VERSION is set,
+   which happens only after a lawyer approves the consent text and the
+   offers terms (/offers-terms/).
+
+   Consent to offers is a Resend Topic, opt_out by default, so only contacts
+   who explicitly opted in receive an offer broadcast; private, so only they
+   see it on Resend's preference page (where they can withdraw). The proof of
+   consent is three contact properties. The CMS (cms.drpbuildlab.com) sends
+   the offers and the consent requests; see docs/offers-consent-contract.md in
+   drp_cms. Keep the names below identical on both sides. */
+export const OFFERS_TOPIC_NAME = 'Offers from DRP BuildLab and partners';
+export const OFFERS_PROPS = {
+  version: 'offers_consent_version',
+  at: 'offers_consent_at',
+  source: 'offers_consent_source',
+};
+export const OFFERS_SOURCES = ['signup', 'reconsent'];
+
+/* Thrown when the address is not (or no longer) a subscribed contact: the
+   caller answers 409 and records nothing. */
+export class NotSubscribedError extends Error {
+  constructor() { super('not a subscribed contact'); this.name = 'NotSubscribedError'; }
+}
+
+/* The offers topic id, or null when it does not exist yet. Never creates it. */
+export async function findOffersTopic(apiKey) {
+  const found = oldest((await listAll(apiKey, '/topics')).filter(t => t.name === OFFERS_TOPIC_NAME));
+  return found ? found.id : null;
+}
+
+/* The offers topic, created when missing. default_subscription cannot change
+   after creation. */
+let topicPromise = null;
+export function findOrCreateOffersTopic(apiKey) {
+  topicPromise ||= (async () => {
+    const found = await findOffersTopic(apiKey);
+    if (found) return found;
+    const r = await resend(apiKey, 'POST', '/topics', {
+      name: OFFERS_TOPIC_NAME,
+      default_subscription: 'opt_out',
+      visibility: 'private',
+      description: 'Occasional offers from DRP BuildLab and selected partners, for subscribers who agreed to receive them.',
+    });
+    if (!r.ok || !r.data?.id) throw new Error(`create topic ${r.status}: ${JSON.stringify(r.data).slice(0, 200)}`);
+    return r.data.id;
+  })();
+  topicPromise.catch(() => { topicPromise = null; });
+  return topicPromise;
+}
+
+/* Ends consent to offers (topic opt_out). Used when someone who had
+   unsubscribed from everything subscribes again without ticking the box:
+   a global unsubscribe ended their consent, so an old opt-in must not come
+   back to life. Does nothing while the topic does not exist. */
+export async function optOutOffers(apiKey, email) {
+  const topicId = await findOffersTopic(apiKey);
+  if (topicId) await setContactTopics(apiKey, email, [{ id: topicId, subscription: 'opt_out' }]);
+}
+
+/* The three consent properties (type string), created when missing. Resend
+   refuses a property on a contact unless its key was created first. */
+let propsPromise = null;
+export function ensureOffersProperties(apiKey) {
+  propsPromise ||= (async () => {
+    const have = new Set((await listAll(apiKey, '/contact-properties')).map(p => p.key));
+    for (const key of Object.values(OFFERS_PROPS)) {
+      if (have.has(key)) continue;
+      const r = await resend(apiKey, 'POST', '/contact-properties', { key, type: 'string', fallback_value: '' });
+      /* 409/422: created by a parallel call in the meantime */
+      if (!r.ok && ![409, 422].includes(r.status)) throw new Error(`create property ${key} ${r.status}: ${JSON.stringify(r.data).slice(0, 200)}`);
+    }
+  })();
+  propsPromise.catch(() => { propsPromise = null; });
+  return propsPromise;
+}
+
+/* Records consent to offers for an existing, subscribed contact: opt in to
+   the topic, then store version, time and source as contact properties.
+   Throws NotSubscribedError when the contact is missing or unsubscribed. */
+export async function optInOffers(apiKey, email, { version, source }) {
+  if (!version) throw new Error('optInOffers: no consent version');
+  if (!OFFERS_SOURCES.includes(source)) throw new Error('optInOffers: unknown source ' + source);
+  const path = '/contacts/' + encodeURIComponent(email);
+  const contact = await resend(apiKey, 'GET', path);
+  if (contact.status === 404) throw new NotSubscribedError();
+  if (!contact.ok) throw new Error(`get contact ${contact.status}: ${JSON.stringify(contact.data).slice(0, 200)}`);
+  if (contact.data?.unsubscribed) throw new NotSubscribedError();
+
+  const [topicId] = await Promise.all([findOrCreateOffersTopic(apiKey), ensureOffersProperties(apiKey)]);
+  await setContactTopics(apiKey, email, [{ id: topicId, subscription: 'opt_in' }]);
+
+  const props = await resend(apiKey, 'PATCH', path, {
+    properties: { [OFFERS_PROPS.version]: version, [OFFERS_PROPS.at]: new Date().toISOString(), [OFFERS_PROPS.source]: source },
+  });
+  if (!props.ok) throw new Error(`consent properties ${props.status}: ${JSON.stringify(props.data).slice(0, 200)}`);
 }

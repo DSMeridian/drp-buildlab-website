@@ -810,4 +810,8 @@ a[href^="tel:"],a[href^="mailto:"],a[href*="wa.me"],.url,.money,.clist a,.clist 
 .nl-confirm .ok:focus{outline:none}
 .nl-confirm [hidden]{display:none!important}
 .nl-confirm .post-back{margin-top:12px}
+.nl-form .nl-offers{font-size:13.5px}
+.nl-offers-page p{margin:0}
+.nl-offers-page [data-state="ask"]{display:grid;gap:14px}
+.nl-offers-form{display:grid;gap:16px;justify-items:start;margin-top:6px}
 .phero .lede:empty{display:none}

@@ -394,7 +394,11 @@ const subscribeBox = id => `<aside class="nl-box" aria-labelledby="${id}-h">
       <input id="${id}-email" name="email" type="email" autocomplete="email" inputmode="email" required>
       <button class="btn" type="submit">Subscribe to the blog</button>
     </div>
-    <p class="nl-note">We only use your email address to send you new articles. <a href="${B}/privacy/">Privacy policy</a></p>
+    ${/* LEGAL DRAFT: awaiting lawyer approval. Optional and unticked: the
+         subscription never depends on it, and subscribe.js ignores it until
+         MARKETING_CONSENT_VERSION is set (drp_cms docs/offers-consent-contract.md). */ ''}
+    <label class="check nl-offers" for="${id}-offers"><input type="checkbox" id="${id}-offers" name="offers" value="yes"><span>Also send me occasional offers from DRP BuildLab and selected partners, such as Tinrate, based on the articles I read. Optional; withdraw any time.</span></label>
+    <p class="nl-note">Without the box ticked, we only use your email address to send you new articles. <a href="${B}/privacy/">Privacy policy</a></p>
     <p class="ok" role="status" aria-live="polite"></p>
   </form>
 </aside>`;
@@ -648,6 +652,50 @@ pages['blog/subscribe'] = page({
   <span data-k="abtn">Read the full article</span>
   <span data-k="afoot">You receive this email because you subscribed to the DRP BuildLab blog.</span>
   <span data-k="aunsub">Unsubscribe from these emails</span>
+</div>`
+});
+
+/* Offers consent for people who are already subscribed (Phase 2). The CMS
+   (cms.drpbuildlab.com, Insights) emails a link here with a consent-request
+   token in the fragment (#t=…). Unlike /blog/subscribe/, nothing happens on
+   load: consent needs the box ticked and the button clicked. site.js posts
+   to /api/subscribe/offers. #mail holds the consent-request email and the
+   offer-email footer, translated with the page and read back by the CMS from
+   each market's copy (drp_cms docs/offers-consent-contract.md).
+   LEGAL DRAFT: awaiting lawyer approval. Not to be merged before that. */
+pages['blog/offers'] = page({
+  title: 'Offers from DRP BuildLab and partners | Blog | DRP BuildLab', desc: 'Choose whether you also want to receive offers from DRP BuildLab and selected partners by email.', nav: 'blog',
+  head: '\n<meta name="robots" content="noindex">',
+  body: `${phero({ crumbs: [['Blog', '/blog/'], ['Offers']], h1: 'Offers from DRP BuildLab <em>and partners</em>', lede: '' })}
+<section class="sec light"><div class="wrap nl-confirm nl-offers-page" id="nl-offers">
+  <span hidden data-h1="error">Your choice is <em>not saved</em></span>
+  <div data-state="ask" hidden>
+    <p>You already receive every new article from the DRP BuildLab blog. That does not change, whatever you choose here.</p>
+    <p>If you agree, we may also email you occasional offers from DRP BuildLab and from selected partners, such as Tinrate. To choose offers that suit you, we look at which blog articles you click in our emails. We do not give your email address to partners: offers always come from us.</p>
+    <p>This is optional. Every offer email has a link to withdraw, and then we delete the record of the articles you clicked. <a href="${B}/privacy/">Privacy policy</a></p>
+    <form class="nl-offers-form" novalidate>
+      <label class="check" for="nl-offers-agree"><input type="checkbox" id="nl-offers-agree" name="agree" value="yes"><span>Yes, also send me occasional offers from DRP BuildLab and selected partners, such as Tinrate, based on the articles I read. I can withdraw any time.</span></label>
+      <button class="btn dark" type="submit" id="nl-offers-btn" disabled>Save my choice ${arr}</button>
+    </form>
+  </div>
+  <div data-state="busy" hidden><p class="ok show" role="status">One moment, we are saving your choice.</p></div>
+  <div data-state="done" hidden><p class="ok show sent" role="status">Saved. Besides new articles, we may now also email you offers. Each offer email has a link to withdraw.</p></div>
+  <div data-state="expired" hidden><p class="ok show" role="status">This link has expired, and nothing was changed. Ask us for a new link at info@drpbuildlab.com.</p></div>
+  <div data-state="invalid" hidden><p class="ok show" role="status">This link is not valid, and nothing was changed. Use the link from the email we sent you.</p></div>
+  <div data-state="notsubscribed" hidden><p class="ok show" role="status">This email address is not subscribed to the blog (any more), so nothing was saved. Subscribe again on the blog if you want our articles.</p></div>
+  <div data-state="failed" hidden><p class="ok show" role="status">Something went wrong while saving your choice. Please try again in a moment.</p></div>
+  <p class="post-back"><a class="tlink" href="${B}/blog/">Back to the blog</a></p>
+</div></section>
+<div id="mail" hidden>
+  <span data-k="osubj">Would you also like offers from DRP BuildLab and our partners?</span>
+  <span data-k="ohead">Offers that match what you read</span>
+  <span data-k="obody">You receive new articles from the DRP BuildLab blog. We would also like to email you occasional offers from DRP BuildLab and selected partners, such as Tinrate, chosen by the articles you click in our emails. This is optional: you keep receiving every new article either way. To agree, open the page below and tick the box.</span>
+  <span data-k="obtn">Choose on our website</span>
+  <span data-k="ovalid">This link is valid for 30 days.</span>
+  <span data-k="oignore">Not interested? Then ignore this email. Nothing changes.</span>
+  <span data-k="ppartner">An offer from our partner</span>
+  <span data-k="pfoot">You receive this email because you agreed to receive offers from DRP BuildLab and selected partners. We chose it based on the articles you clicked in our emails.</span>
+  <span data-k="punsub">Stop offers or manage your emails</span>
 </div>`
 });
 
