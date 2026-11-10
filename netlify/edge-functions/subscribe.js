@@ -12,6 +12,20 @@
  *                             language ("Blog newsletter (nl)")
  *   400 invalid token · 410 expired (7 days) · 5xx Resend failed
  *
+ * POST /api/subscribe/offers    (form body: t, agree=yes) — Phase 2, LEGAL DRAFT
+ *   200 { offers: true }    consent to offers recorded (Resend topic opt-in
+ *                           plus offers_consent_* contact properties)
+ *   400 invalid token or no agree · 409 not a subscribed contact
+ *   410 expired (30 days) · 503 offers not enabled · 5xx Resend failed
+ *   The token comes from cms.drpbuildlab.com (a consent request emailed to
+ *   an existing subscriber), carries p: 'offers', and is sealed with
+ *   NEWSLETTER_SECRET only. See docs/offers-consent-contract.md in drp_cms.
+ *
+ * Offers on sign-up: the form's optional, unticked `offers` box. When it is
+ * ticked and MARKETING_CONSENT_VERSION is set, the confirmation token also
+ * carries o: <version>, and confirming opts the contact in to offers.
+ * Without MARKETING_CONSENT_VERSION the box is ignored and /offers answers 503.
+ *
  * Nothing is stored before the click on the confirmation link: the token
  * carries the address, language and market, encrypted and authenticated
  * (AES-GCM), so it cannot be read or forged. The link puts it in the URL
@@ -26,15 +40,16 @@
  * NEWSLETTER_SECRET is optional: without it the token key is derived from
  * RESEND_API_KEY, so rotating that key voids links not clicked yet.
  */
-import { LANGS, LANG_HOME, prefixOf, mailStrings, confirmEmail, resend, blogSegment, blogTopics, createLangTopic, ensureLangProperty, subscribeContact } from '../shared/newsletter.mjs';
+import { LANGS, LANG_HOME, prefixOf, mailStrings, confirmEmail, resend, blogSegment, blogTopics, createLangTopic, ensureLangProperty, subscribeContact, optInOffers, optOutOffers, NotSubscribedError } from '../shared/newsletter.mjs';
 
 const EMAIL = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const MARKET = /^[a-z]{2}(?:-[a-z]{2})?$/;
 const TOKEN_TTL = 7 * 24 * 60 * 60 * 1000;
+const OFFERS_TTL = 30 * 24 * 60 * 60 * 1000;
 const RESEND_WINDOW = 10 * 60 * 1000; // one confirmation email per address per window
 
 /* per IP, in memory: resets when the isolate restarts, like /api/form */
-const RATE = { subscribe: 5, confirm: 10 };
+const RATE = { subscribe: 5, confirm: 10, offers: 10 };
 const RATE_WINDOW = 10 * 60 * 1000;
 const windows = new Map();
 function limited(kind, ip) {
@@ -54,24 +69,40 @@ const enc = new TextEncoder(), dec = new TextDecoder();
 const b64u = bytes => btoa(String.fromCharCode(...bytes)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 const unb64u = s => Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((s.length + 3) % 4)), c => c.charCodeAt(0));
 
+const deriveKey = secret => crypto.subtle.digest('SHA-256', enc.encode('drp-newsletter-token-v1:' + secret))
+  .then(raw => crypto.subtle.importKey('raw', raw, 'AES-GCM', false, ['encrypt', 'decrypt']));
+
 let keyPromise = null;
 function tokenKey() {
   const secret = Deno.env.get('NEWSLETTER_SECRET') || Deno.env.get('RESEND_API_KEY') || '';
   if (!secret) return null;
-  keyPromise ||= crypto.subtle.digest('SHA-256', enc.encode('drp-newsletter-token-v1:' + secret))
-    .then(raw => crypto.subtle.importKey('raw', raw, 'AES-GCM', false, ['encrypt', 'decrypt']));
+  keyPromise ||= deriveKey(secret);
   return keyPromise;
 }
+
+/* Consent-request tokens come from the CMS, which shares NEWSLETTER_SECRET
+   with the site. They never fall back to RESEND_API_KEY: the CMS has its
+   own Resend key, and a link must not break when either key rotates. */
+let offersKeyPromise = null;
+function offersKey() {
+  const secret = (Deno.env.get('NEWSLETTER_SECRET') || '').trim();
+  if (!secret) return null;
+  offersKeyPromise ||= deriveKey(secret);
+  return offersKeyPromise;
+}
+
+/* The approved consent text version; unset means offers are switched off. */
+const consentVersion = () => (Deno.env.get('MARKETING_CONSENT_VERSION') || '').trim();
 async function seal(payload) {
   const iv = crypto.getRandomValues(new Uint8Array(12));
   const ct = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, await tokenKey(), enc.encode(JSON.stringify(payload))));
   const out = new Uint8Array(iv.length + ct.length); out.set(iv); out.set(ct, iv.length);
   return b64u(out);
 }
-async function open(token) {
+async function open(token, key = tokenKey()) {
   try {
     const raw = unb64u(token);
-    const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: raw.slice(0, 12) }, await tokenKey(), raw.slice(12));
+    const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: raw.slice(0, 12) }, await key, raw.slice(12));
     return JSON.parse(dec.decode(pt));
   } catch { return null; }
 }
@@ -141,7 +172,9 @@ async function signUp(request, context, apiKey, from) {
   const page = await marketPage(request, get('market'));
   if (!page) { console.error('subscribe: no subscribe page for market', get('market')); return json(503, { error: 'not available' }); }
 
-  const token = await seal({ e: email, l: page.lang, m: page.market, t: Date.now() });
+  /* LEGAL DRAFT: the offers box counts only once a consent version is approved */
+  const offers = get('offers') === 'yes' && consentVersion();
+  const token = await seal({ e: email, l: page.lang, m: page.market, t: Date.now(), ...(offers ? { o: offers } : {}) });
   const link = new URL(`/${prefixOf(page.market)}/blog/subscribe/#t=${token}`, request.url).href;
   const mail = confirmEmail({ s: page.s, lang: page.lang, link });
 
@@ -172,17 +205,62 @@ async function confirm(request, context, apiKey) {
   if (limited('confirm', ip)) return json(429, { error: 'too many attempts, try again later' });
 
   const p = /^[A-Za-z0-9_-]{40,2000}$/.test(token) ? await open(token) : null;
-  if (!p || !EMAIL.test(p.e || '') || !LANGS.includes(p.l) || typeof p.t !== 'number') return json(400, { error: 'invalid token' });
+  /* a token with a purpose (p) is a consent request, never a subscription */
+  if (!p || p.p !== undefined || !EMAIL.test(p.e || '') || !LANGS.includes(p.l) || typeof p.t !== 'number') return json(400, { error: 'invalid token' });
   const age = Date.now() - p.t;
   if (age > TOKEN_TTL || age < -5 * 60 * 1000) return json(410, { error: 'expired' });
 
   try {
-    await subscribeContact(apiKey, p.e, p.l, await blogIds(apiKey, p.l));
+    const { wasUnsubscribed } = await subscribeContact(apiKey, p.e, p.l, await blogIds(apiKey, p.l));
+    /* Offers ticked at sign-up. Recorded with the version that was live when
+       they ticked it; skipped if offers were switched off since. A failure
+       here never undoes the subscription. */
+    if (typeof p.o === 'string' && p.o && consentVersion()) {
+      try { await optInOffers(apiKey, p.e, { version: p.o, source: 'signup' }); }
+      catch (err) { console.error('subscribe: offers opt-in on confirm failed', err.message); }
+    } else if (wasUnsubscribed) {
+      /* their earlier unsubscribe ended any offers consent; keep it ended */
+      try { await optOutOffers(apiKey, p.e); }
+      catch (err) { console.error('subscribe: offers opt-out on re-subscribe failed', err.message); }
+    }
     return json(200, { subscribed: true });
   } catch (err) {
     idsCache = null;
     console.error('subscribe: confirm failed', err.message);
     return json(502, { error: 'could not save the subscription' });
+  }
+}
+
+/* Consent to offers from an existing subscriber, via the CMS's consent
+   request (LEGAL DRAFT). Needs the box ticked (agree=yes): the link alone is
+   not consent. Records the version that is approved now. */
+async function offersConsent(request, context, apiKey) {
+  const version = consentVersion();
+  const key = offersKey();
+  if (!version || !key) {
+    console.error('subscribe: offers need MARKETING_CONSENT_VERSION and NEWSLETTER_SECRET');
+    return json(503, { error: 'not available' });
+  }
+  let data;
+  try { data = await request.formData(); } catch { return json(400, { error: 'unreadable form' }); }
+  const token = String(data.get('t') ?? '').trim();
+
+  const ip = context?.ip || request.headers.get('x-nf-client-connection-ip') || 'unknown';
+  if (limited('offers', ip)) return json(429, { error: 'too many attempts, try again later' });
+
+  const p = /^[A-Za-z0-9_-]{40,2000}$/.test(token) ? await open(token, key) : null;
+  if (!p || p.p !== 'offers' || !EMAIL.test(p.e || '') || !LANGS.includes(p.l) || typeof p.t !== 'number') return json(400, { error: 'invalid token' });
+  if (String(data.get('agree') ?? '') !== 'yes') return json(400, { error: 'consent not given' });
+  const age = Date.now() - p.t;
+  if (age > OFFERS_TTL || age < -5 * 60 * 1000) return json(410, { error: 'expired' });
+
+  try {
+    await optInOffers(apiKey, p.e, { version, source: 'reconsent' });
+    return json(200, { offers: true });
+  } catch (err) {
+    if (err instanceof NotSubscribedError) return json(409, { error: 'not subscribed' });
+    console.error('subscribe: offers consent failed', err.message);
+    return json(502, { error: 'could not save the choice' });
   }
 }
 
@@ -196,9 +274,10 @@ export default async (request, context) => {
     console.error('subscribe: RESEND_API_KEY or MAIL_FROM is not set');
     return json(503, { error: 'email is not configured' });
   }
-  return new URL(request.url).pathname.replace(/\/$/, '') === '/api/subscribe/confirm'
-    ? confirm(request, context, apiKey)
-    : signUp(request, context, apiKey, from);
+  const route = new URL(request.url).pathname.replace(/\/$/, '');
+  if (route === '/api/subscribe/confirm') return confirm(request, context, apiKey);
+  if (route === '/api/subscribe/offers') return offersConsent(request, context, apiKey);
+  return signUp(request, context, apiKey, from);
 };
 
-export const config = { path: ['/api/subscribe', '/api/subscribe/confirm'] };
+export const config = { path: ['/api/subscribe', '/api/subscribe/confirm', '/api/subscribe/offers'] };

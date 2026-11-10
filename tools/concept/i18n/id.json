@@ -3203,10 +3203,6 @@
   "en": "Subscribe to the blog",
   "t": "Berlangganan blog ini"
  },
- "e65bafbd1127c77d": {
-  "en": "We only use your email address to send you new articles. <a href=\"/privacy/\">Privacy policy</a>",
-  "t": "Kami hanya menggunakan alamat email Anda untuk mengirimkan artikel-artikel terbaru kepada Anda. <a href=\"/privacy/\">Kebijakan privasi</a>"
- },
  "00e1df239ae9897a": {
   "en": "Newsletter",
   "t": "Buletin"
@@ -3894,5 +3890,129 @@
  "81b1fc11a9a41ff4": {
   "en": "Why short video is here to stay for small businesses, what to film, what to skip and how to fit it into your week. A scenario in four sentences, a practical five-step guide and a note on rights and consent.",
   "t": "Mengapa video pendek akan tetap menjadi tren bagi usaha kecil, apa saja yang sebaiknya direkam, apa yang sebaiknya dihindari, dan bagaimana menyisipkannya ke dalam jadwal mingguan Anda. Sebuah skenario dalam empat kalimat, panduan praktis lima langkah, serta catatan mengenai hak cipta dan persetujuan."
+ },
+ "d12511991517cef7": {
+  "en": "Also send me occasional offers from DRP BuildLab and selected partners, such as Tinrate, based on the articles I read. Optional; withdraw any time.",
+  "t": "Kirimkan juga kepada saya penawaran sesekali dari DRP BuildLab dan mitra terpilih, seperti Tinrate, berdasarkan artikel yang saya baca. Pilihan; dapat dibatalkan kapan saja."
+ },
+ "4214127a3b866b09": {
+  "en": "Without the box ticked, we only use your email address to send you new articles. <a href=\"/privacy/\">Privacy policy</a> · <a href=\"/offers-terms/\">Offers terms</a>",
+  "t": "Jika kotak tersebut tidak dicentang, kami hanya akan menggunakan alamat email Anda untuk mengirimkan artikel-artikel terbaru kepada Anda. <a href=\"/privacy/\">Kebijakan privasi</a> · <a href=\"/offers-terms/\">Ketentuan penawaran</a>"
+ },
+ "4a1e1946b99bfdc1": {
+  "en": "Offers",
+  "t": "Penawaran"
+ },
+ "7aebf959c4012066": {
+  "en": "Offers from DRP BuildLab <em>and partners</em>",
+  "t": "Penawaran dari DRP BuildLab <em>dan mitra-mitranya</em>"
+ },
+ "5fa8aebd9955113a": {
+  "en": "Your choice is <em>not saved</em>",
+  "t": "Pilihan Anda <em>belum disimpan</em>"
+ },
+ "c3c79053b4be44fc": {
+  "en": "You already receive every new article from the DRP BuildLab blog. That does not change, whatever you choose here.",
+  "t": "Anda sudah menerima setiap artikel baru dari blog DRP BuildLab. Hal itu tidak akan berubah, apa pun pilihan Anda di sini."
+ },
+ "1c2e041b9cfc1a82": {
+  "en": "If you agree, we may also email you occasional offers from DRP BuildLab and from selected partners, such as Tinrate. To choose offers that suit you, we look at which blog articles you click in our emails. We do not give your email address to partners: offers always come from us.",
+  "t": "Jika Anda setuju, kami mungkin juga sesekali mengirimkan penawaran melalui email dari DRP BuildLab dan mitra terpilih, seperti Tinrate. Untuk memilih penawaran yang sesuai dengan Anda, kami menganalisis artikel blog mana saja yang Anda klik dalam email kami. Kami tidak memberikan alamat email Anda kepada mitra: penawaran selalu berasal dari kami."
+ },
+ "f7c1d3cf8adddb50": {
+  "en": "This is optional. Every offer email has a link to withdraw, and then we delete the record of the articles you clicked. <a href=\"/offers-terms/\">Offers terms</a> · <a href=\"/privacy/\">Privacy policy</a>",
+  "t": "Ini bersifat opsional. Setiap email penawaran memiliki tautan untuk membatalkan, dan setelah itu kami akan menghapus catatan artikel yang Anda klik. <a href=\"/offers-terms/\">Ketentuan penawaran</a> · <a href=\"/privacy/\">Kebijakan privasi</a>"
+ },
+ "3bdc0957f7fdf48d": {
+  "en": "Yes, also send me occasional offers from DRP BuildLab and selected partners, such as Tinrate, based on the articles I read. I can withdraw any time.",
+  "t": "Ya, tolong kirimkan juga penawaran sesekali dari DRP BuildLab dan mitra terpilih, seperti Tinrate, berdasarkan artikel yang saya baca. Saya bisa berhenti berlangganan kapan saja."
+ },
+ "65bf204c1bf9b148": {
+  "en": "Save my choice <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "Simpan pilihan saya <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "86c0e6335ffb00d0": {
+  "en": "One moment, we are saving your choice.",
+  "t": "Tunggu sebentar, kami sedang menyimpan pilihan Anda."
+ },
+ "75cf7de8113e96bc": {
+  "en": "Saved. Besides new articles, we may now also email you offers. Each offer email has a link to withdraw.",
+  "t": "Telah disimpan. Selain artikel baru, kami kini juga mungkin akan mengirimkan penawaran melalui email kepada Anda. Setiap email penawaran berisi tautan untuk berhenti berlangganan."
+ },
+ "b2ebd63f4648fb05": {
+  "en": "This link has expired, and nothing was changed. Ask us for a new link at info@drpbuildlab.com.",
+  "t": "Tautan ini sudah kedaluwarsa, dan tidak ada yang diubah. Silakan minta tautan baru kepada kami di info@drpbuildlab.com."
+ },
+ "6032971e17c3bf30": {
+  "en": "This link is not valid, and nothing was changed. Use the link from the email we sent you.",
+  "t": "Tautan ini tidak valid, dan tidak ada yang diubah. Silakan gunakan tautan yang tercantum dalam email yang telah kami kirimkan kepada Anda."
+ },
+ "6fffcb13bdc60736": {
+  "en": "This email address is not subscribed to the blog (any more), so nothing was saved. Subscribe again on the blog if you want our articles.",
+  "t": "Alamat email ini tidak lagi terdaftar sebagai langganan blog, jadi tidak ada yang tersimpan. Silakan berlangganan kembali di blog jika Anda ingin membaca artikel-artikel kami."
+ },
+ "6628934fda0ccf61": {
+  "en": "Something went wrong while saving your choice. Please try again in a moment.",
+  "t": "Terjadi kesalahan saat menyimpan pilihan Anda. Silakan coba lagi sebentar lagi."
+ },
+ "f39c5e07aba23f8e": {
+  "en": "Would you also like offers from DRP BuildLab and our partners?",
+  "t": "Apakah Anda juga ingin menerima penawaran dari DRP BuildLab dan mitra-mitra kami?"
+ },
+ "e1828996bd717972": {
+  "en": "Offers that match what you read",
+  "t": "Penawaran yang sesuai dengan apa yang Anda baca"
+ },
+ "3561948313899ef0": {
+  "en": "You receive new articles from the DRP BuildLab blog. We would also like to email you occasional offers from DRP BuildLab and selected partners, such as Tinrate, chosen by the articles you click in our emails. This is optional: you keep receiving every new article either way. To agree, open the page below and tick the box.",
+  "t": "Anda akan menerima artikel-artikel terbaru dari blog DRP BuildLab. Kami juga ingin sesekali mengirimkan penawaran dari DRP BuildLab dan mitra terpilih, seperti Tinrate, melalui email kepada Anda, yang disesuaikan dengan artikel-artikel yang Anda klik dalam email kami. Hal ini bersifat opsional: Anda tetap akan menerima setiap artikel baru, apa pun pilihannya. Untuk menyetujuinya, buka halaman di bawah ini dan centang kotak tersebut."
+ },
+ "3d1075b0fd2a6de0": {
+  "en": "Choose on our website",
+  "t": "Pilih di situs web kami"
+ },
+ "f393177bccae069a": {
+  "en": "This link is valid for 30 days.",
+  "t": "Tautan ini berlaku selama 30 hari."
+ },
+ "b19efcfbe22a7330": {
+  "en": "Not interested? Then ignore this email. Nothing changes.",
+  "t": "Tidak tertarik? Kalau begitu, abaikan saja email ini. Tidak ada yang berubah."
+ },
+ "811360f25e4e0da3": {
+  "en": "An offer from our partner",
+  "t": "Penawaran dari mitra kami"
+ },
+ "cb42b79759aebee1": {
+  "en": "You receive this email because you agreed to receive offers from DRP BuildLab and selected partners. We chose it based on the articles you clicked in our emails.",
+  "t": "Anda menerima email ini karena Anda telah menyetujui untuk menerima penawaran dari DRP BuildLab dan mitra-mitra terpilih. Kami memilihnya berdasarkan artikel-artikel yang Anda klik dalam email-email kami."
+ },
+ "d88513c5fa41cb86": {
+  "en": "Stop offers or manage your emails",
+  "t": "Hentikan penawaran atau kelola email Anda"
+ },
+ "153125c282ff37b3": {
+  "en": "Offers terms",
+  "t": "Ketentuan penawaran"
+ },
+ "3b3372911839c2a1": {
+  "en": "Version <span translate=\"no\">2026-11-v1</span>, <span translate=\"no\">10 November 2026</span>. These terms exist in English only.",
+  "t": "Versi <span translate=\"no\">2026-11-v1</span>, <span translate=\"no\">10 November 2026</span>. Ketentuan ini hanya tersedia dalam bahasa Inggris."
+ },
+ "0b7187dc02a8ddcb": {
+  "en": "Offers from DRP BuildLab and partners | Blog | DRP BuildLab",
+  "t": "Penawaran dari DRP BuildLab dan mitra | Blog | DRP BuildLab"
+ },
+ "2a867ba949608305": {
+  "en": "Choose whether you also want to receive offers from DRP BuildLab and selected partners by email.",
+  "t": "Pilih apakah Anda juga ingin menerima penawaran dari DRP BuildLab dan mitra terpilih melalui email."
+ },
+ "2bedd19131fc66db": {
+  "en": "Offers terms | DRP BuildLab",
+  "t": "Ketentuan penawaran | DRP BuildLab"
+ },
+ "1a240a718b4e0037": {
+  "en": "The terms of the optional offers emails from DRP BuildLab and selected partners, for subscribers to the DRP BuildLab blog.",
+  "t": "Ketentuan terkait penawaran opsional melalui email dari DRP BuildLab dan mitra terpilih, bagi para pelanggan blog DRP BuildLab."
  }
 }

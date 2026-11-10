@@ -3203,10 +3203,6 @@
   "en": "Subscribe to the blog",
   "t": "اشترك في المدونة"
  },
- "e65bafbd1127c77d": {
-  "en": "We only use your email address to send you new articles. <a href=\"/privacy/\">Privacy policy</a>",
-  "t": "نحن نستخدم عنوان بريدك الإلكتروني فقط لإرسال المقالات الجديدة إليك. <a href=\"/privacy/\">سياسة الخصوصية</a>"
- },
  "00e1df239ae9897a": {
   "en": "Newsletter",
   "t": "النشرة الإخبارية"
@@ -3894,5 +3890,113 @@
  "81b1fc11a9a41ff4": {
   "en": "Why short video is here to stay for small businesses, what to film, what to skip and how to fit it into your week. A scenario in four sentences, a practical five-step guide and a note on rights and consent.",
   "t": "لماذا ستظل مقاطع الفيديو القصيرة خيارًا راسخًا للشركات الصغيرة، وما الذي يجب تصويره، وما الذي يجب تجنبه، وكيفية دمجها في جدول أعمالك الأسبوعي. سيناريو في أربع جمل، ودليل عملي من خمس خطوات، وملاحظة حول الحقوق والموافقة."
+ },
+ "d12511991517cef7": {
+  "en": "Also send me occasional offers from DRP BuildLab and selected partners, such as Tinrate, based on the articles I read. Optional; withdraw any time.",
+  "t": "يرجى أيضًا إرسال عروض من حين لآخر من DRP BuildLab وشركاء مختارين، مثل Tinrate، بناءً على المقالات التي أقرأها. هذا خيار اختياري؛ ويمكنك إلغاء الاشتراك في أي وقت."
+ },
+ "4214127a3b866b09": {
+  "en": "Without the box ticked, we only use your email address to send you new articles. <a href=\"/privacy/\">Privacy policy</a> · <a href=\"/offers-terms/\">Offers terms</a>",
+  "t": "في حالة عدم تحديد المربع، فإننا نستخدم عنوان بريدك الإلكتروني فقط لإرسال المقالات الجديدة إليك. <a href=\"/privacy/\">سياسة الخصوصية</a> · <a href=\"/offers-terms/\">شروط العروض</a>"
+ },
+ "4a1e1946b99bfdc1": {
+  "en": "Offers",
+  "t": "العروض"
+ },
+ "7aebf959c4012066": {
+  "en": "Offers from DRP BuildLab <em>and partners</em>",
+  "t": "عروض من DRP BuildLab <em>وشركائها</em>"
+ },
+ "5fa8aebd9955113a": {
+  "en": "Your choice is <em>not saved</em>",
+  "t": "<em>لم</em> يتم <em>حفظ</em> اختيارك"
+ },
+ "c3c79053b4be44fc": {
+  "en": "You already receive every new article from the DRP BuildLab blog. That does not change, whatever you choose here.",
+  "t": "أنت تتلقى بالفعل كل مقال جديد من مدونة DRP BuildLab. ولن يتغير هذا الأمر، أياً كان اختيارك هنا."
+ },
+ "1c2e041b9cfc1a82": {
+  "en": "If you agree, we may also email you occasional offers from DRP BuildLab and from selected partners, such as Tinrate. To choose offers that suit you, we look at which blog articles you click in our emails. We do not give your email address to partners: offers always come from us.",
+  "t": "إذا وافقت على ذلك، فقد نرسل إليك أيضًا عبر البريد الإلكتروني عروضًا من حين لآخر من DRP BuildLab ومن شركاء مختارين، مثل Tinrate. وللاختيار العروض التي تناسبك، نراقب مقالات المدونة التي تنقر عليها في رسائلنا الإلكترونية. ولا نكشف عن عنوان بريدك الإلكتروني للشركاء: فالعروض تأتي دائمًا من جانبنا."
+ },
+ "f7c1d3cf8adddb50": {
+  "en": "This is optional. Every offer email has a link to withdraw, and then we delete the record of the articles you clicked. <a href=\"/offers-terms/\">Offers terms</a> · <a href=\"/privacy/\">Privacy policy</a>",
+  "t": "هذا أمر اختياري. تحتوي كل رسالة بريد إلكتروني تتضمن عرضًا على رابط للإلغاء، وعندها نقوم بحذف سجل المقالات التي نقرت عليها. <a href=\"/offers-terms/\">شروط العروض</a> · <a href=\"/privacy/\">سياسة الخصوصية</a>"
+ },
+ "3bdc0957f7fdf48d": {
+  "en": "Yes, also send me occasional offers from DRP BuildLab and selected partners, such as Tinrate, based on the articles I read. I can withdraw any time.",
+  "t": "نعم، أرسل لي أيضًا عروضًا من حين لآخر من DRP BuildLab وشركاء مختارين، مثل Tinrate، بناءً على المقالات التي أقرأها. يمكنني إلغاء الاشتراك في أي وقت."
+ },
+ "65bf204c1bf9b148": {
+  "en": "Save my choice <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "حفظ اختياري <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "86c0e6335ffb00d0": {
+  "en": "One moment, we are saving your choice.",
+  "t": "لحظة واحدة، نحن نقوم بحفظ اختيارك."
+ },
+ "75cf7de8113e96bc": {
+  "en": "Saved. Besides new articles, we may now also email you offers. Each offer email has a link to withdraw.",
+  "t": "تم الحفظ. بالإضافة إلى المقالات الجديدة، قد نرسل إليك الآن عروضًا عبر البريد الإلكتروني أيضًا. تحتوي كل رسالة بريد إلكتروني تتضمن عرضًا على رابط لإلغاء الاشتراك."
+ },
+ "b2ebd63f4648fb05": {
+  "en": "This link has expired, and nothing was changed. Ask us for a new link at info@drpbuildlab.com.",
+  "t": "لقد انتهت صلاحية هذا الرابط، ولم يتم إجراء أي تغيير. يرجى طلب رابط جديد عبر البريد الإلكتروني info@drpbuildlab.com."
+ },
+ "6032971e17c3bf30": {
+  "en": "This link is not valid, and nothing was changed. Use the link from the email we sent you.",
+  "t": "هذا الرابط غير صالح، ولم يتم إجراء أي تغيير. يرجى استخدام الرابط الوارد في الرسالة الإلكترونية التي أرسلناها إليك."
+ },
+ "6fffcb13bdc60736": {
+  "en": "This email address is not subscribed to the blog (any more), so nothing was saved. Subscribe again on the blog if you want our articles.",
+  "t": "هذا العنوان البريدي الإلكتروني لم يعد مشتركًا في المدونة، لذا لم يتم حفظ أي شيء. اشترك مرة أخرى في المدونة إذا كنت ترغب في تلقي مقالاتنا."
+ },
+ "6628934fda0ccf61": {
+  "en": "Something went wrong while saving your choice. Please try again in a moment.",
+  "t": "حدث خطأ ما أثناء حفظ اختيارك. يرجى المحاولة مرة أخرى بعد قليل."
+ },
+ "f39c5e07aba23f8e": {
+  "en": "Would you also like offers from DRP BuildLab and our partners?",
+  "t": "هل ترغب أيضًا في تلقي عروض من DRP BuildLab وشركائنا؟"
+ },
+ "e1828996bd717972": {
+  "en": "Offers that match what you read",
+  "t": "عروض تتوافق مع ما قرأته"
+ },
+ "3561948313899ef0": {
+  "en": "You receive new articles from the DRP BuildLab blog. We would also like to email you occasional offers from DRP BuildLab and selected partners, such as Tinrate, chosen by the articles you click in our emails. This is optional: you keep receiving every new article either way. To agree, open the page below and tick the box.",
+  "t": "ستتلقى مقالات جديدة من مدونة DRP BuildLab. ونود أيضًا أن نرسل إليك عبر البريد الإلكتروني عروضًا من حين لآخر من DRP BuildLab وشركاء مختارين، مثل Tinrate، يتم اختيارها بناءً على المقالات التي تنقر عليها في رسائلنا الإلكترونية. هذا الأمر اختياري: ستستمر في تلقي كل مقال جديد في كلتا الحالتين. للموافقة، افتح الصفحة أدناه وقم بوضع علامة في المربع."
+ },
+ "3d1075b0fd2a6de0": {
+  "en": "Choose on our website",
+  "t": "اختر من موقعنا الإلكتروني"
+ },
+ "f393177bccae069a": {
+  "en": "This link is valid for 30 days.",
+  "t": "هذا الرابط صالح لمدة 30 يومًا."
+ },
+ "b19efcfbe22a7330": {
+  "en": "Not interested? Then ignore this email. Nothing changes.",
+  "t": "ألا يهمك الأمر؟ إذاً تجاهل هذه الرسالة الإلكترونية. لن يتغير شيء."
+ },
+ "811360f25e4e0da3": {
+  "en": "An offer from our partner",
+  "t": "عرض من شريكنا"
+ },
+ "cb42b79759aebee1": {
+  "en": "You receive this email because you agreed to receive offers from DRP BuildLab and selected partners. We chose it based on the articles you clicked in our emails.",
+  "t": "لقد تلقيت هذه الرسالة الإلكترونية لأنك وافقت على تلقي العروض من DRP BuildLab والشركاء المختارين. وقد اخترنا هذه العروض بناءً على المقالات التي نقرت عليها في رسائلنا الإلكترونية."
+ },
+ "d88513c5fa41cb86": {
+  "en": "Stop offers or manage your emails",
+  "t": "إيقاف العروض أو إدارة رسائل البريد الإلكتروني الخاصة بك"
+ },
+ "153125c282ff37b3": {
+  "en": "Offers terms",
+  "t": "شروط العروض"
+ },
+ "3b3372911839c2a1": {
+  "en": "Version <span translate=\"no\">2026-11-v1</span>, <span translate=\"no\">10 November 2026</span>. These terms exist in English only.",
+  "t": "الإصدار <span translate=\"no\">2026-11-v1</span>، <span translate=\"no\">10 November 2026</span>. هذه الشروط متوفرة باللغة الإنجليزية فقط."
  }
 }

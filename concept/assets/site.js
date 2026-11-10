@@ -162,7 +162,7 @@ $$('form[data-newsletter]').forEach(f => f.addEventListener('submit', e => {
     .then(() => {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'newsletter_signup', demo_market: window.__DRP_MARKET__ || '', demo_language: document.documentElement.lang || '' });
-      $('.nl-row', f).hidden = true; $('.nl-note', f).hidden = true;
+      $$('.nl-row, .nl-note, .nl-offers', f).forEach(el => { el.hidden = true; });
       msg.textContent = ui('nlsent'); msg.classList.add('show', 'sent');
     })
     .catch(() => { btn.disabled = false; msg.textContent = ui('nlfail'); msg.classList.add('show'); });
@@ -217,6 +217,50 @@ $$('form[data-newsletter]').forEach(f => f.addEventListener('submit', e => {
     if (document.visibilityState !== 'visible') return;
     document.removeEventListener('visibilitychange', once);
     confirm();
+  });
+})();
+
+/* offers consent page (Phase 2): the CMS emails existing subscribers a link
+   with a consent-request token in the fragment (#t=…). Unlike the
+   subscription confirmation above, nothing is sent on load: consent is the
+   visitor ticking the box and pressing the button. */
+(() => {
+  const box = $('#nl-offers');
+  if (!box) return;
+  let token = (new URLSearchParams(location.hash.slice(1))).get('t') || '';
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  try {
+    if (token) sessionStorage.setItem('nl-o', token);
+    else token = sessionStorage.getItem('nl-o') || '';
+  } catch (e) { /* storage blocked: a reload then shows "invalid" */ }
+  const forget = () => { try { sessionStorage.removeItem('nl-o'); } catch (e) { /* blocked */ } };
+  const h1 = $('.phero h1'), errH1 = $('[data-h1="error"]', box), title = h1 && h1.innerHTML;
+  const form = $('.nl-offers-form', box), agree = $('#nl-offers-agree', box), btn = $('#nl-offers-btn', box);
+  /* a failed attempt shows the form again, so the visitor can retry */
+  const show = s => {
+    $$('[data-state]', box).forEach(el => { el.hidden = !(el.dataset.state === s || (s === 'failed' && el.dataset.state === 'ask')); });
+    if (h1 && errH1) h1.innerHTML = ['ask', 'busy', 'done'].includes(s) ? title : errH1.innerHTML;
+    const status = $(`[data-state="${s}"] .ok`, box);
+    if (status) { status.tabIndex = -1; status.focus(); }
+  };
+  if (!/^[A-Za-z0-9_-]{40,2000}$/.test(token)) { forget(); show('invalid'); return; }
+  show('ask');
+  agree.addEventListener('change', () => { btn.disabled = !agree.checked; });
+  let running = false;
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (running || !agree.checked) return;
+    running = true;
+    btn.disabled = true;
+    show('busy');
+    fetch('/api/subscribe/offers', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ t: token, agree: 'yes' }).toString() })
+      .then(res => {
+        if (res.ok) { forget(); return show('done'); }
+        if (res.status === 410 || res.status === 400 || res.status === 409) forget();
+        show(res.status === 410 ? 'expired' : res.status === 400 ? 'invalid' : res.status === 409 ? 'notsubscribed' : 'failed');
+      })
+      .catch(() => show('failed'))
+      .finally(() => { running = false; btn.disabled = !agree.checked; });
   });
 })();
 

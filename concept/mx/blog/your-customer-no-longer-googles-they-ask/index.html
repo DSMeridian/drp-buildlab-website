@@ -63,13 +63,13 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&amp;family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=mwah877e">
-<script defer="" src="/assets/site.js?v=mwah877e"></script>
-<link rel="stylesheet" href="/assets/chat.css?v=mwah877e">
-<script defer="" src="/assets/chat.js?v=mwah877e"></script>
-<link rel="stylesheet" href="/assets/consent.css?v=mwah877e">
-<script defer="" src="/assets/referral.js?v=mwah877e"></script>
-<script defer="" src="/assets/consent.js?v=mwah877e"></script>
+<link rel="stylesheet" href="/assets/site.css?v=mwaow2op">
+<script defer="" src="/assets/site.js?v=mwaow2op"></script>
+<link rel="stylesheet" href="/assets/chat.css?v=mwaow2op">
+<script defer="" src="/assets/chat.js?v=mwaow2op"></script>
+<link rel="stylesheet" href="/assets/consent.css?v=mwaow2op">
+<script defer="" src="/assets/referral.js?v=mwaow2op"></script>
+<script defer="" src="/assets/consent.js?v=mwaow2op"></script>
 </head>
 <body>
 <a class="skip" href="#main">Ir al contenido</a>
@@ -178,7 +178,9 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
       <input id="nl-post-email" name="email" type="email" autocomplete="email" inputmode="email" required="">
       <button class="btn" type="submit">Suscríbase al blog</button>
     </div>
-    <p class="nl-note">Solo utilizamos su dirección de correo electrónico para enviarle nuevos artículos. <a href="/mx/privacy/">Política de privacidad</a></p>
+    
+    <label class="check nl-offers" for="nl-post-offers"><input type="checkbox" id="nl-post-offers" name="offers" value="yes"><span>Envíenme también ofertas puntuales de DRP BuildLab y de socios seleccionados, como Tinrate, en función de los artículos que lea. Opcional; puede darse de baja en cualquier momento.</span></label>
+    <p class="nl-note">Si no ha marcado la casilla, solo utilizaremos su dirección de correo electrónico para enviarle nuevos artículos. <a href="/mx/privacy/">Política de privacidad</a> · <a href="/mx/offers-terms/">Condiciones de las ofertas</a></p>
     <p class="ok" role="status" aria-live="polite"></p>
   </form>
 </aside>
