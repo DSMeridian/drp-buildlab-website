@@ -4014,5 +4014,177 @@
  "1a240a718b4e0037": {
   "en": "The terms of the optional offers emails from DRP BuildLab and selected partners, for subscribers to the DRP BuildLab blog.",
   "t": "Die Bedingungen für die E-Mails mit optionalen Angeboten von DRP BuildLab und ausgewählten Partnern für Abonnenten des DRP BuildLab-Blogs."
+ },
+ "07bab5adae42eaa0": {
+  "en": "Small business, big target? Cybersecurity in plain language",
+  "t": "Kleine Unternehmen – ein großes Ziel? Cybersicherheit in verständlicher Sprache"
+ },
+ "013cc87e86b9ca17": {
+  "en": "Why small businesses are in the picture too, why most attacks start with a person, and what you can do about it. Plus what we check and set up on your website, explained in plain language.",
+  "t": "Warum auch kleine Unternehmen betroffen sind, warum die meisten Angriffe von einer Person ausgehen und was Sie dagegen tun können. Außerdem erklären wir Ihnen in verständlicher Sprache, was wir auf Ihrer Website überprüfen und einrichten."
+ },
+ "f4fd5b726ceefbdc": {
+  "en": "Most people picture a cyberattack as hackers in hoodies breaking into a bank. Reality is more mundane. It is an email that looks like an invoice. A password used on five different sites. A message 'from the boss' asking for an urgent payment.",
+  "t": "Die meisten Menschen stellen sich einen Cyberangriff so vor, dass Hacker in Kapuzenpullis in eine Bank einbrechen. Die Realität ist jedoch weitaus banaler. Es handelt sich um eine E-Mail, die wie eine Rechnung aussieht. Ein Passwort, das auf fünf verschiedenen Websites verwendet wird. Eine Nachricht „vom Chef“, in der um eine dringende Zahlung gebeten wird."
+ },
+ "4683a1ff931b9225": {
+  "en": "The weak point is rarely the software. It is usually a Tuesday afternoon and someone in a hurry.",
+  "t": "Die Schwachstelle liegt selten in der Software. Meistens ist es ein Dienstagnachmittag und jemand, der es eilig hat."
+ },
+ "92fe5fbe2ee09b6f": {
+  "en": "Why small businesses are in the picture too",
+  "t": "Warum auch kleine Unternehmen eine Rolle spielen"
+ },
+ "9f5ee380cfcd0e91": {
+  "en": "Criminals scan the internet automatically. They don't care how big you are, only how easy you are to get into. A small business with a forgotten admin page, a reused password or an outdated plugin is as interesting as a big one, and sometimes a stepping stone to a bigger partner.",
+  "t": "Kriminelle durchsuchen das Internet automatisch. Es ist ihnen egal, wie groß Ihr Unternehmen ist – wichtig ist ihnen nur, wie leicht sie sich Zugang verschaffen können. Ein kleines Unternehmen mit einer vergessenen Administrationsseite, einem wiederverwendeten Passwort oder einem veralteten Plugin ist genauso interessant wie ein großes und dient manchmal als Sprungbrett zu einem größeren Partner."
+ },
+ "ab4c37422ee5ffb7": {
+  "en": "Cyberattacks keep making the news, and that is a good reason to look at your own situation calmly, not with panic.",
+  "t": "Cyberangriffe sorgen immer wieder für Schlagzeilen, und das ist ein guter Grund, Ihre eigene Situation in aller Ruhe und ohne Panik zu betrachten."
+ },
+ "cfaa4bddb2e4f877": {
+  "en": "Most attacks start with a person",
+  "t": "Die meisten Angriffe gehen von einer Person aus"
+ },
+ "3bd3087991b516f3": {
+  "en": "Industry reports consistently find a human element in most breaches. In daily life that looks like this:",
+  "t": "Branchenberichte stellen immer wieder fest, dass bei den meisten Sicherheitsverletzungen ein menschlicher Faktor eine Rolle spielt. Im Alltag sieht das wie folgt aus:"
+ },
+ "5c4ce99e480ff976": {
+  "en": "<strong>A convincing email</strong> that asks you to log in, pay or open an attachment.",
+  "t": "<strong>Eine überzeugend wirkende E-Mail</strong>, in der Sie aufgefordert werden, sich anzumelden, eine Zahlung zu leisten oder einen Anhang zu öffnen."
+ },
+ "3c49748493196614": {
+  "en": "<strong>A password used everywhere,</strong> so one leak opens many doors.",
+  "t": "<strong>Ein Passwort, das überall verwendet wird –</strong> daher öffnet ein einziger Datenleck viele Türen."
+ },
+ "67f6a13df63cf6ac": {
+  "en": "<strong>A fake invoice,</strong> or a real one with changed bank details.",
+  "t": "<strong>Eine gefälschte Rechnung</strong> oder eine echte Rechnung mit geänderten Bankverbindungen."
+ },
+ "7fd02739aa247fc6": {
+  "en": "<strong>Access given by mistake,</strong> such as a shared login or a link clicked in a hurry.",
+  "t": "<strong>Versehentlich gewährter Zugriff,</strong> beispielsweise durch eine gemeinsam genutzte Anmeldung oder einen in Eile angeklickten Link."
+ },
+ "8ecab51cf1debb48": {
+  "en": "Fixing the website alone isn't enough. Protection has to cover both the systems and the people who use them.",
+  "t": "Es reicht nicht aus, lediglich die Website zu sichern. Der Schutz muss sowohl die Systeme als auch die Personen, die diese nutzen, umfassen."
+ },
+ "b867539b1e4d7785": {
+  "en": "AI makes scams look better",
+  "t": "KI lässt Betrugsversuche überzeugender erscheinen"
+ },
+ "77f3a5eb6c78c593": {
+  "en": "Criminals also use AI tools to write emails with no typos, in fluent Dutch, French or English, and some experiment with tools that have fewer safeguards. Voices can be imitated too.",
+  "t": "Kriminelle nutzen zudem KI-Tools, um E-Mails ohne Rechtschreibfehler in fließendem Niederländisch, Französisch oder Englisch zu verfassen, und einige experimentieren mit Tools, die über weniger Sicherheitsvorkehrungen verfügen. Auch Stimmen lassen sich imitieren."
+ },
+ "b2bf3e3dac7fbee1": {
+  "en": "That changes one rule of thumb: <strong>looking professional is no longer proof that something is real.</strong> What helps is checking through a second channel. A message from the boss asking for an urgent payment is confirmed by a phone call to a number you already know.",
+  "t": "Dadurch ändert sich eine Faustregel: <strong>Ein professionelles Erscheinungsbild ist kein Beweis mehr dafür, dass etwas echt ist.</strong> Hilfreich ist es, die Angaben über einen zweiten Kanal zu überprüfen. Eine Nachricht des Chefs, in der um eine dringende Zahlung gebeten wird, lässt sich durch einen Anruf bei einer Ihnen bereits bekannten Nummer bestätigen."
+ },
+ "046def236adbe50d": {
+  "en": "Six habits that help this week",
+  "t": "Sechs Gewohnheiten, die Ihnen in dieser Woche helfen"
+ },
+ "447b276485168b71": {
+  "en": "<strong>Use a password manager</strong> and a unique password for every account.",
+  "t": "<strong>Verwenden Sie einen Passwort-Manager</strong> und für jedes Konto ein individuelles Passwort."
+ },
+ "4f64db2a1d38aa65": {
+  "en": "<strong>Turn on two-step login</strong> (MFA), especially for email and for admin accounts.",
+  "t": "<strong>Aktivieren Sie die zweistufige Anmeldung</strong> (MFA), insbesondere für E-Mail-Konten und Administratorkonten."
+ },
+ "5e98aee348c23bfe": {
+  "en": "<strong>Check every change of bank details by phone,</strong> using a number you already have.",
+  "t": "<strong>Bitte überprüfen Sie jede Änderung der Bankverbindung telefonisch</strong> unter einer Ihnen bereits bekannten Nummer."
+ },
+ "db365c4e08b95bdb": {
+  "en": "<strong>Make it easy to report suspicious mail,</strong> and never blame the person who clicked.",
+  "t": "<strong>Machen Sie es einfach, verdächtige E-Mails zu melden,</strong> und geben Sie niemals der Person die Schuld, die darauf geklickt hat."
+ },
+ "f4dc554d34de2119": {
+  "en": "<strong>Keep software up to date,</strong> including plugins and the system behind your website.",
+  "t": "<strong>Halten Sie Ihre Software auf dem neuesten Stand,</strong> einschließlich der Plugins und des Systems, auf dem Ihre Website basiert."
+ },
+ "c44b8af839107262": {
+  "en": "<strong>Have a backup that has been tested,</strong> not only one that exists.",
+  "t": "<strong>Sorgen Sie für ein Backup, das getestet wurde, und</strong> nicht nur <strong>für</strong> eines, das lediglich vorhanden ist."
+ },
+ "7c9ee7fbf41c7eea": {
+  "en": "What we do for your website, in plain words",
+  "t": "Was wir für Ihre Website tun – in einfachen Worten"
+ },
+ "399b110d8e6d4ea1": {
+  "en": "We look at the part of security we can influence: your website and the systems behind it.",
+  "t": "Wir befassen uns mit dem Teil der Sicherheit, auf den wir Einfluss nehmen können: Ihre Website und die dahinterstehenden Systeme."
+ },
+ "5a012c768b020585": {
+  "en": "<strong>Forms that resist abuse.</strong> Input is checked on the server, the number of requests is limited and bot protection stops automated spam and attacks.",
+  "t": "<strong>Formulare, die gegen Missbrauch geschützt sind.</strong> Die Eingaben werden auf dem Server überprüft, die Anzahl der Anfragen ist begrenzt, und der Bot-Schutz verhindert automatisierten Spam und Angriffe."
+ },
+ "ee658d5e55bef41a": {
+  "en": "<strong>A check of what is exposed.</strong> We look at databases, API access rules, admin pages and dashboards, and make sure important accounts use two-step login.",
+  "t": "<strong>Eine Überprüfung der offengelegten Daten.</strong> Wir untersuchen Datenbanken, API-Zugriffsregeln, Administrationsseiten und Dashboards und stellen sicher, dass für wichtige Konten die Zwei-Faktor-Authentifizierung verwendet wird."
+ },
+ "82ca1cf03883a5ed": {
+  "en": "<strong>A firewall that is set up properly.</strong> We put a protective layer in front of your site (Cloudflare) and tune its rules, instead of leaving defaults on.",
+  "t": "<strong>Eine ordnungsgemäß eingerichtete Firewall.</strong> Wir richten vor Ihrer Website eine Schutzschicht (Cloudflare) ein und passen deren Regeln individuell an, anstatt die Standardeinstellungen beizubehalten."
+ },
+ "024997123f656982": {
+  "en": "<strong>Updates and alerts.</strong> We monitor the building blocks of your site and warn you when one has a known weak spot.",
+  "t": "<strong>Aktualisierungen und Warnmeldungen.</strong> Wir überwachen die Bausteine Ihrer Website und warnen Sie, sobald bei einem davon eine bekannte Sicherheitslücke festgestellt wird."
+ },
+ "818684d0ce60d4bd": {
+  "en": "<strong>Backups we actually test.</strong> We check the backups your provider makes, keep independent copies and test restoring them on a regular basis.",
+  "t": "<strong>Backups, die wir tatsächlich testen.</strong> Wir überprüfen die von Ihrem Anbieter erstellten Backups, bewahren unabhängige Kopien auf und testen regelmäßig deren Wiederherstellung."
+ },
+ "7388a071cdad0462": {
+  "en": "<strong>A monthly report in plain language,</strong> built from the data of the tools we use, so you can see what happened and what we did.",
+  "t": "<strong>Ein monatlicher Bericht in verständlicher Sprache,</strong> der auf den Daten der von uns verwendeten Tools basiert, damit Sie nachvollziehen können, was geschehen ist und welche Maßnahmen wir ergriffen haben."
+ },
+ "ae0e906c778060f0": {
+  "en": "An honest note: nobody can promise zero risk. The goal is to make you a harder target, to notice problems sooner and to recover quickly when something goes wrong.",
+  "t": "Eine ehrliche Anmerkung: Niemand kann Ihnen ein Nullrisiko versprechen. Das Ziel besteht darin, Sie als Ziel schwieriger anzugreifen, Probleme früher zu erkennen und sich schnell wieder zu erholen, wenn etwas schiefgeht."
+ },
+ "daa792eaca9cc1b1": {
+  "en": "If something does go wrong",
+  "t": "Sollte doch einmal etwas schiefgehen"
+ },
+ "feff65a5cc87c32a": {
+  "en": "<strong>Stay calm and stop the damage.</strong> Disconnect the affected device, change passwords and tell your colleagues.",
+  "t": "<strong>Bewahren Sie Ruhe und begrenzen Sie den Schaden.</strong> Trennen Sie das betroffene Gerät vom Netzwerk, ändern Sie die Passwörter und informieren Sie Ihre Kollegen."
+ },
+ "4c5053d865a2e63e": {
+  "en": "<strong>Call your bank straight away</strong> if money or payment details are involved.",
+  "t": "<strong>Rufen Sie unverzüglich Ihre Bank an,</strong> wenn es um Geld oder Zahlungsdaten geht."
+ },
+ "9d693a17e1c6ad2c": {
+  "en": "<strong>Report suspicious emails</strong> to <a href=\"mailto:suspect@safeonweb.be\">suspect@safeonweb.be</a>, the address of the Belgian Centre for Cybersecurity (check safeonweb.be for the current instructions).",
+  "t": "<strong>Bitte melden Sie verdächtige E-Mails</strong> an <a href=\"mailto:suspect@safeonweb.be\">suspect@safeonweb.be</a>, die E-Mail-Adresse des Belgischen Zentrums für Cybersicherheit (die aktuellen Anweisungen finden Sie unter safeonweb.be)."
+ },
+ "01bc8b433be9a8a0": {
+  "en": "<strong>Think about personal data.</strong> If customer data may be affected, you may have to notify the Data Protection Authority within 72 hours. Ask your adviser.",
+  "t": "<strong>Denken Sie an personenbezogene Daten.</strong> Falls Kundendaten betroffen sein könnten, müssen Sie dies möglicherweise innerhalb von 72 Stunden der Datenschutzbehörde melden. Fragen Sie Ihren Berater."
+ },
+ "bb315f3aaba922f7": {
+  "en": "How exposed is your website?",
+  "t": "Wie anfällig ist Ihre Website?"
+ },
+ "ef350a55805704cb": {
+  "en": "We are happy to look at your website with you and explain what we find in plain language.",
+  "t": "Gerne sehen wir uns Ihre Website gemeinsam mit Ihnen an und erläutern Ihnen unsere Erkenntnisse in verständlicher Sprache."
+ },
+ "d8ce0e4269354452": {
+  "en": "Cyberattack protection, woman behind laptop with hacker",
+  "t": "Schutz vor Cyberangriffen: Eine Frau hinter einem Laptop mit einem Hacker"
+ },
+ "fa1585d8796aa250": {
+  "en": "Small business, big target? Cybersecurity in plain language | Blog | DRP BuildLab",
+  "t": "Kleine Unternehmen – große Zielscheibe? Cybersicherheit in verständlicher Sprache | Blog | DRP BuildLab"
+ },
+ "f59308c3a43d9f36": {
+  "en": "Why small businesses are in the picture too, why most attacks start with a person, and what you can do about it. Plus what we check and set up on your website, explained in plain language.",
+  "t": "Warum auch kleine Unternehmen betroffen sind, warum die meisten Angriffe von einer Person ausgehen und was Sie dagegen tun können. Außerdem erklären wir Ihnen in verständlicher Sprache, was wir auf Ihrer Website überprüfen und einrichten."
  }
 }
