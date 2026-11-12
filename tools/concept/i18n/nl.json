@@ -4186,5 +4186,181 @@
  "f59308c3a43d9f36": {
   "en": "Why small businesses are in the picture too, why most attacks start with a person, and what you can do about it. Plus what we check and set up on your website, explained in plain language.",
   "t": "Waarom ook kleine bedrijven hiermee te maken hebben, waarom de meeste aanvallen bij een persoon beginnen en wat u hiertegen kunt doen. Daarnaast leggen wij in begrijpelijke taal uit wat wij op uw website controleren en instellen."
+ },
+ "27b842ac3d41707c": {
+  "en": "What a CRM actually does for a small business (and when you don't need one)",
+  "t": "Wat een CRM-systeem daadwerkelijk voor een klein bedrijf doet (en wanneer u er geen nodig hebt)"
+ },
+ "9d611f519aa67130": {
+  "en": "What a CRM really does for a small business, five signs you have outgrown the spreadsheet, when you don't need one yet, and how to start in one week.",
+  "t": "Wat een CRM-systeem daadwerkelijk voor een klein bedrijf betekent, vijf tekenen dat u de spreadsheet bent ontgroeid, wanneer u er nog geen nodig hebt, en hoe u binnen een week aan de slag kunt gaan."
+ },
+ "c00740f2ac6f6273": {
+  "en": "Ask ten small business owners what a CRM is and you will get eleven answers. A fancy address book. An expensive spreadsheet. Something the sales team of a big company uses.",
+  "t": "Vraag tien eigenaren van kleine bedrijven wat een CRM is en u krijgt elf verschillende antwoorden. Een luxe adresboek. Een dure spreadsheet. Iets wat het verkoopteam van een groot bedrijf gebruikt."
+ },
+ "0432f9631cd852cb": {
+  "en": "The honest answer is simpler: a CRM is a shared memory. It remembers who you talked to, what you promised and what happens next, so that it does not all live in one person's head.",
+  "t": "Het eerlijke antwoord is eenvoudiger: een CRM-systeem is een gedeeld geheugen. Het onthoudt met wie u hebt gesproken, wat u hebt beloofd en wat er vervolgens moet gebeuren, zodat dit niet allemaal in het hoofd van één persoon blijft zitten."
+ },
+ "70a7f0086bdb457a": {
+  "en": "A CRM does not win you customers. It stops you from forgetting the ones you already have.",
+  "t": "Een CRM-systeem zorgt er niet voor dat u klanten wint. Het zorgt ervoor dat u de klanten die u al heeft, niet uit het oog verliest."
+ },
+ "5df7b932d9cf80a5": {
+  "en": "Signs you have outgrown the spreadsheet",
+  "t": "Tekenen dat u de spreadsheet bent ontgroeid"
+ },
+ "06a42c4579fee014": {
+  "en": "If three of these sound familiar, your customers deserve better than a tab called 'Sheet2':",
+  "t": "Als drie van deze punten u bekend voorkomen, verdienen uw klanten beter dan een tabblad met de naam &#x27;Sheet2&#x27;:"
+ },
+ "6d70dd919f3a3859": {
+  "en": "Two people keep their own list of the same customers.",
+  "t": "Twee personen houden elk hun eigen lijst bij van dezelfde klanten."
+ },
+ "00b7b2258c159487": {
+  "en": "Follow-ups depend on someone remembering to 'call them next week'.",
+  "t": "Of er een vervolg komt, hangt ervan af of iemand eraan denkt om ‘hen volgende week te bellen’."
+ },
+ "8947f59e902f1221": {
+  "en": "You cannot answer 'how many quotes are still open?' without asking around.",
+  "t": "U kunt de vraag ‘Hoeveel offertes zijn er nog open?’ niet beantwoorden zonder navraag te doen."
+ },
+ "e504ebd6e6cc31b6": {
+  "en": "A customer asks for a copy of an invoice and it takes three people and two inboxes.",
+  "t": "Een klant vraagt om een kopie van een factuur en daarvoor zijn drie personen en twee inboxen nodig."
+ },
+ "cb354cb739b7db35": {
+  "en": "When someone goes on holiday, their customers go quiet.",
+  "t": "Wanneer iemand op vakantie gaat, laten zijn of haar klanten even niets van zich horen."
+ },
+ "5a7f444ca9d6e4fb": {
+  "en": "What a good CRM does for a small business",
+  "t": "Wat een goed CRM-systeem voor een klein bedrijf kan betekenen"
+ },
+ "88520cb1c248b182": {
+  "en": "Five things, in plain words:",
+  "t": "Vijf punten, in eenvoudige bewoordingen:"
+ },
+ "5c4844f95f431ba3": {
+  "en": "<strong>One place per customer.</strong> Contact details, emails, quotes, invoices and notes together.",
+  "t": "<strong>Eén plek per klant.</strong> Contactgegevens, e-mails, offertes, facturen en notities allemaal bij elkaar."
+ },
+ "dfc0fb3c24c2b682": {
+  "en": "<strong>A history you can read in thirty seconds.</strong> Before a call you see what was said last time.",
+  "t": "<strong>Een overzicht dat u in dertig seconden kunt doorlezen.</strong> Voorafgaand aan een gesprek ziet u wat er de vorige keer is gezegd."
+ },
+ "41cc07e5fecdb5fb": {
+  "en": "<strong>Follow-ups that remind you.</strong> You set a date once, and the system nudges you instead of your memory.",
+  "t": "<strong>Herinneringen die u erop wijzen.</strong> U stelt één keer een datum in, en het systeem herinnert u eraan in plaats van dat u er zelf aan moet denken."
+ },
+ "a055809f11bd2d53": {
+  "en": "<strong>A simple pipeline.</strong> Stages such as new request, quote sent, accepted and done, so you can see where work gets stuck.",
+  "t": "<strong>Een eenvoudige workflow.</strong> Fasen zoals ‘nieuwe aanvraag’, ‘offerte verzonden’, ‘geaccepteerd’ en ‘afgerond’, zodat u kunt zien waar het werk vastloopt."
+ },
+ "0615f11f0cafed06": {
+  "en": "<strong>Connections to the tools you already use.</strong> Website forms, email, calendar, invoicing and payments, so nobody retypes the same data.",
+  "t": "<strong>Koppelingen met de tools die u al gebruikt.</strong> Websiteformulieren, e-mail, agenda, facturering en betalingen, zodat niemand dezelfde gegevens nogmaals hoeft in te voeren."
+ },
+ "6e55d72b6004b437": {
+  "en": "A small example",
+  "t": "Een klein voorbeeld"
+ },
+ "876ef0ab47d2fe70": {
+  "en": "Marc runs a three-person tiling company. (Marc is made up, his problem is not.) Requests arrive through the website form, WhatsApp and the phone. Quotes live in Word documents with names like quote_final_v3_FINAL.docx.",
+  "t": "Marc runt een tegelbedrijf met drie medewerkers. (Marc is een fictief personage, maar zijn probleem is dat niet.) Aanvragen komen binnen via het formulier op de website, WhatsApp en de telefoon. Offertes worden opgeslagen in Word-documenten met namen als quote_final_v3_FINAL.docx."
+ },
+ "519a800eeeb204eb": {
+  "en": "With a CRM, every request becomes one card. A website request appears automatically, the quote is attached, a reminder is set for three days later and the status moves to 'accepted' when the customer says yes. An accepted quote can start an invoice draft. What used to be a weekly hunt through messages becomes a short look at one screen.",
+  "t": "Met een CRM-systeem wordt elke aanvraag omgezet in een kaart. Een aanvraag via de website verschijnt automatisch, de offerte wordt bijgevoegd, er wordt een herinnering ingesteld voor drie dagen later en de status verandert in ‘geaccepteerd’ zodra de klant akkoord gaat. Een geaccepteerde offerte kan aanleiding geven tot het opstellen van een factuurconcept. Wat voorheen een wekelijkse zoektocht door berichten was, wordt nu een snelle blik op één scherm."
+ },
+ "df246e01df469fc4": {
+  "en": "When you don't need a CRM",
+  "t": "Wanneer u geen CRM nodig hebt"
+ },
+ "1099d027ba5a8496": {
+  "en": "Be honest with yourself. You can skip it if:",
+  "t": "Wees eerlijk tegen uzelf. U kunt dit overslaan als:"
+ },
+ "eb7134e99aee2a22": {
+  "en": "You have a handful of repeat customers and know them all by heart.",
+  "t": "U hebt een handvol vaste klanten en kent hen allemaal door en door."
+ },
+ "c36457a2a3c57cfc": {
+  "en": "Only one person ever talks to customers.",
+  "t": "Er is slechts één persoon die ooit met klanten spreekt."
+ },
+ "a7bcba95f4a8c9a0": {
+  "en": "You will not keep it up to date. A CRM with empty fields is worse than a spreadsheet.",
+  "t": "U zult het niet up-to-date houden. Een CRM-systeem met lege velden is nog erger dan een spreadsheet."
+ },
+ "00283a8542104f76": {
+  "en": "Start with a plain spreadsheet that has five columns: name, contact details, last contact, next step and the date of that next step. If you keep that tidy for a month, you know what you need.",
+  "t": "Begin met een eenvoudige spreadsheet met vijf kolommen: naam, contactgegevens, laatste contact, volgende stap en de datum van die volgende stap. Als u die een maand lang netjes bijhoudt, weet u wat u nodig hebt."
+ },
+ "9c8cfea56f2ba73f": {
+  "en": "Buy or build?",
+  "t": "Kopen of bouwen?"
+ },
+ "08196bb834341a85": {
+  "en": "Ready-made tools are cheap to start with and fine for standard sales processes. They get awkward when your process is not standard: you quote by area, you need an approval step, or you have to connect to a supplier system. Then you spend more time bending the tool than using it.",
+  "t": "Kant-en-klare tools zijn in eerste instantie goedkoop en volstaan voor standaardverkoopprocessen. Ze blijken echter onhandig wanneer uw proces niet standaard is: u brengt offertes uit per regio, u hebt een goedkeuringsstap nodig of u moet verbinding maken met een leverancierssysteem. Dan bent u meer tijd kwijt met het aanpassen van de tool dan met het gebruik ervan."
+ },
+ "56de7c83cd54083f": {
+  "en": "A custom CRM is built around your process. It holds only the fields and steps you actually use and connects directly to your website, invoicing and payments. The price is a higher upfront cost and someone who maintains it. Whether that is worth it depends on how much of your day goes into admin that a system could do.",
+  "t": "Een op maat gemaakt CRM-systeem is volledig afgestemd op uw processen. Het bevat uitsluitend de velden en stappen die u daadwerkelijk gebruikt en is rechtstreeks gekoppeld aan uw website, facturering en betalingen. De prijs bestaat uit hogere initiële kosten en de inzet van iemand die het systeem onderhoudt. Of dat de moeite waard is, hangt af van hoeveel tijd u dagelijks besteedt aan administratieve taken die door een systeem zouden kunnen worden uitgevoerd."
+ },
+ "8b4194c38d4aefec": {
+  "en": "Start in one week",
+  "t": "Over een week van start"
+ },
+ "424255555b69e8c6": {
+  "en": "<strong>Monday:</strong> write down your real process in five steps, from first request to paid invoice.",
+  "t": "<strong>Maandag:</strong> schrijf uw daadwerkelijke proces in vijf stappen op, van de eerste aanvraag tot de betaalde factuur."
+ },
+ "01cb68d36159accf": {
+  "en": "<strong>Tuesday:</strong> list what you want to see at a glance, such as open quotes and overdue follow-ups.",
+  "t": "<strong>Dinsdag:</strong> breng in één oogopslag in kaart wat u wilt zien, zoals openstaande offertes en achterstallige opvolgingen."
+ },
+ "80ab7ff25b5b1409": {
+  "en": "<strong>Wednesday:</strong> move your customers into one list and remove duplicates.",
+  "t": "<strong>Woensdag:</strong> voeg uw klanten samen in één lijst en verwijder dubbele vermeldingen."
+ },
+ "bc1460c88dd8d1a3": {
+  "en": "<strong>Thursday:</strong> make one rule: every contact gets a next step and a date.",
+  "t": "<strong>Donderdag:</strong> stel één regel vast: voor elk contact wordt een volgende stap en een datum vastgesteld."
+ },
+ "3accd850ff4be1b8": {
+  "en": "<strong>Friday:</strong> review for ten minutes. Decide whether a spreadsheet is enough or whether you need a tool.",
+  "t": "<strong>Vrijdag:</strong> besteed tien minuten aan het doornemen van de stof. Bepaal of een spreadsheet voldoende is of dat u een hulpmiddel nodig hebt."
+ },
+ "42ffed47c87a5ba9": {
+  "en": "No tool fixes a process nobody follows. A CRM only works if the habit comes first: write it down, set the next step, look at it once a week. The software just makes that habit easier.",
+  "t": "Geen enkel hulpmiddel kan een proces verbeteren dat niemand volgt. Een CRM-systeem werkt alleen als de gewoonte al aanwezig is: noteer het, bepaal de volgende stap, bekijk het eens per week. De software maakt die gewoonte alleen maar gemakkelijker."
+ },
+ "c75be7156da7daa4": {
+  "en": "Marc does not exist. His quote_final_v3_FINAL.docx does, in someone's folder.",
+  "t": "Marc bestaat niet. Zijn bestand „quote_final_v3_FINAL.docx“ staat wel in de map van iemand."
+ },
+ "91950f4987446089": {
+  "en": "Not sure what you need?",
+  "t": "Weet u niet precies wat u nodig heeft?"
+ },
+ "5f4f954266c1bd92": {
+  "en": "We are happy to look at your process with you and tell you honestly whether a spreadsheet is enough or whether a custom CRM would pay off.",
+  "t": "Wij bekijken graag samen met u uw werkwijze en geven u eerlijk advies of een spreadsheet volstaat of dat een op maat gemaakt CRM-systeem de moeite waard zou zijn."
+ },
+ "e4cb6fde468e384c": {
+  "en": "pexels b s 78158866 27155428",
+  "t": "pexels b s 78158866 27155428"
+ },
+ "d9bad97dcce274d3": {
+  "en": "What a CRM actually does for a small business (and when you don't need one) | Blog | DRP BuildLab",
+  "t": "Wat een CRM-systeem daadwerkelijk voor een klein bedrijf doet (en wanneer u er geen nodig hebt) | Blog | DRP BuildLab"
+ },
+ "e99e0c4794ea55c7": {
+  "en": "What a CRM really does for a small business, five signs you have outgrown the spreadsheet, when you don't need one yet, and how to start in one week.",
+  "t": "Wat een CRM-systeem daadwerkelijk voor een klein bedrijf betekent, vijf tekenen dat u de spreadsheet bent ontgroeid, wanneer u er nog geen nodig hebt, en hoe u binnen een week aan de slag kunt gaan."
  }
 }

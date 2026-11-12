@@ -4186,5 +4186,181 @@
  "f59308c3a43d9f36": {
   "en": "Why small businesses are in the picture too, why most attacks start with a person, and what you can do about it. Plus what we check and set up on your website, explained in plain language.",
   "t": "なぜ中小企業も標的となるのか、なぜ攻撃の多くが「人」を起点として始まるのか、そしてそれに対してどのような対策が取れるのか。さらに、当社がお客様のウェブサイトでどのような確認や設定を行うのかについても、わかりやすい言葉で解説いたします。"
+ },
+ "27b842ac3d41707c": {
+  "en": "What a CRM actually does for a small business (and when you don't need one)",
+  "t": "CRMが中小企業に実際にどのような役割を果たすのか（そして、いつ必要ないのか）"
+ },
+ "9d611f519aa67130": {
+  "en": "What a CRM really does for a small business, five signs you have outgrown the spreadsheet, when you don't need one yet, and how to start in one week.",
+  "t": "中小企業にとってCRMが実際にどのような役割を果たすのか、スプレッドシートでは対応しきれなくなっている5つの兆候、まだCRMが必要ない場合、そして1週間で導入を始める方法についてご紹介します。"
+ },
+ "c00740f2ac6f6273": {
+  "en": "Ask ten small business owners what a CRM is and you will get eleven answers. A fancy address book. An expensive spreadsheet. Something the sales team of a big company uses.",
+  "t": "10人の中小企業の経営者に「CRMとは何か」と尋ねれば、11通りの答えが返ってくるでしょう。「豪華なアドレス帳」「高価なスプレッドシート」「大企業の営業チームが使うもの」などです。"
+ },
+ "0432f9631cd852cb": {
+  "en": "The honest answer is simpler: a CRM is a shared memory. It remembers who you talked to, what you promised and what happens next, so that it does not all live in one person's head.",
+  "t": "率直に言えば、答えはもっと単純です。CRMとは、共有メモリのようなものです。誰と話をしたか、何を約束したか、次に何をするべきかを記憶しておくことで、そのすべてが特定の1人の頭の中だけに頼る必要がなくなるのです。"
+ },
+ "70a7f0086bdb457a": {
+  "en": "A CRM does not win you customers. It stops you from forgetting the ones you already have.",
+  "t": "CRMは顧客を獲得してくれるわけではありません。すでに獲得している顧客を忘れないようにしてくれるのです。"
+ },
+ "5df7b932d9cf80a5": {
+  "en": "Signs you have outgrown the spreadsheet",
+  "t": "スプレッドシートでは物足りなくなってきたという兆候"
+ },
+ "06a42c4579fee014": {
+  "en": "If three of these sound familiar, your customers deserve better than a tab called 'Sheet2':",
+  "t": "このうち3つが心当たりがあるなら、お客様のニーズに応えるには、「Sheet2」といったタブ名では不十分です："
+ },
+ "6d70dd919f3a3859": {
+  "en": "Two people keep their own list of the same customers.",
+  "t": "2人が、同じ顧客のリストをそれぞれ別々に管理しています。"
+ },
+ "00b7b2258c159487": {
+  "en": "Follow-ups depend on someone remembering to 'call them next week'.",
+  "t": "フォローアップは、誰かが「来週電話しよう」と覚えていてくれるかどうかにかかっています。"
+ },
+ "8947f59e902f1221": {
+  "en": "You cannot answer 'how many quotes are still open?' without asking around.",
+  "t": "周囲の人に聞いてみなければ、「まだ未決の見積もりはいくつあるか」という質問には答えられません。"
+ },
+ "e504ebd6e6cc31b6": {
+  "en": "A customer asks for a copy of an invoice and it takes three people and two inboxes.",
+  "t": "あるお客様が請求書のコピーを求められましたが、その対応には3人と2つの受信トレイが必要でした。"
+ },
+ "cb354cb739b7db35": {
+  "en": "When someone goes on holiday, their customers go quiet.",
+  "t": "誰かが休暇に入ると、その顧客からの連絡が途絶えてしまいます。"
+ },
+ "5a7f444ca9d6e4fb": {
+  "en": "What a good CRM does for a small business",
+  "t": "優れたCRMが中小企業にもたらすメリット"
+ },
+ "88520cb1c248b182": {
+  "en": "Five things, in plain words:",
+  "t": "平易な言葉で説明すると、次の5つのことです："
+ },
+ "5c4844f95f431ba3": {
+  "en": "<strong>One place per customer.</strong> Contact details, emails, quotes, invoices and notes together.",
+  "t": "<strong>お客様1名につき1か所です。</strong>連絡先、メールアドレス、見積書、請求書、およびメモをまとめて管理できます。"
+ },
+ "dfc0fb3c24c2b682": {
+  "en": "<strong>A history you can read in thirty seconds.</strong> Before a call you see what was said last time.",
+  "t": "<strong>30秒で読める履歴です。</strong>通話の前に、前回の会話内容を確認できます。"
+ },
+ "41cc07e5fecdb5fb": {
+  "en": "<strong>Follow-ups that remind you.</strong> You set a date once, and the system nudges you instead of your memory.",
+  "t": "<strong>リマインダー機能。</strong>一度日付を設定すれば、記憶に頼るのではなく、システムが適宜お知らせします。"
+ },
+ "a055809f11bd2d53": {
+  "en": "<strong>A simple pipeline.</strong> Stages such as new request, quote sent, accepted and done, so you can see where work gets stuck.",
+  "t": "<strong>シンプルなパイプラインです。</strong>「新規依頼」「見積書の送付」「承諾」「完了」といった各段階が明確になっているため、作業がどこで滞っているのかを確認できます。"
+ },
+ "0615f11f0cafed06": {
+  "en": "<strong>Connections to the tools you already use.</strong> Website forms, email, calendar, invoicing and payments, so nobody retypes the same data.",
+  "t": "<strong>普段お使いのツールとの連携が可能です。</strong>ウェブサイトのフォーム、メール、カレンダー、請求書発行、支払い機能など、同じデータを何度も入力し直す必要がなくなります。"
+ },
+ "6e55d72b6004b437": {
+  "en": "A small example",
+  "t": "簡単な例"
+ },
+ "876ef0ab47d2fe70": {
+  "en": "Marc runs a three-person tiling company. (Marc is made up, his problem is not.) Requests arrive through the website form, WhatsApp and the phone. Quotes live in Word documents with names like quote_final_v3_FINAL.docx.",
+  "t": "マークさんは、3人で運営するタイル工事会社を経営しています。（マークさんは架空の人物ですが、彼が抱えている問題は実在します。）依頼は、ウェブサイトのフォーム、WhatsApp、そして電話を通じて寄せられます。見積書は、「quote_final_v3_FINAL.docx」といった名前のWord文書で管理されています。"
+ },
+ "519a800eeeb204eb": {
+  "en": "With a CRM, every request becomes one card. A website request appears automatically, the quote is attached, a reminder is set for three days later and the status moves to 'accepted' when the customer says yes. An accepted quote can start an invoice draft. What used to be a weekly hunt through messages becomes a short look at one screen.",
+  "t": "CRMを利用すれば、すべての問い合わせが1つのカードとして管理されます。ウェブサイトからの問い合わせは自動的に表示され、見積書が添付され、3日後にリマインダーが設定され、お客様が承諾されるとステータスが「承認済み」に切り替わります。承認された見積書をもとに、請求書の草案を作成することができます。以前は毎週メッセージをくまなく探す必要がありましたが、今では1つの画面をさっと確認するだけで済むようになります。"
+ },
+ "df246e01df469fc4": {
+  "en": "When you don't need a CRM",
+  "t": "CRMが必要ない場合"
+ },
+ "1099d027ba5a8496": {
+  "en": "Be honest with yourself. You can skip it if:",
+  "t": "自分に正直になってください。以下の場合は、スキップしても構いません："
+ },
+ "eb7134e99aee2a22": {
+  "en": "You have a handful of repeat customers and know them all by heart.",
+  "t": "常連客が数人おり、その方々のことは全員、よく把握しております。"
+ },
+ "c36457a2a3c57cfc": {
+  "en": "Only one person ever talks to customers.",
+  "t": "お客様と話すのは、たった一人だけです。"
+ },
+ "a7bcba95f4a8c9a0": {
+  "en": "You will not keep it up to date. A CRM with empty fields is worse than a spreadsheet.",
+  "t": "それを最新の状態に保ち続けることはできません。入力欄が空のままのCRMは、スプレッドシートよりも役に立ちません。"
+ },
+ "00283a8542104f76": {
+  "en": "Start with a plain spreadsheet that has five columns: name, contact details, last contact, next step and the date of that next step. If you keep that tidy for a month, you know what you need.",
+  "t": "まず、「名前」「連絡先」「最後の連絡日」「次のアクション」「次のアクションの日付」という5つの列がある、シンプルなスプレッドシートを用意してください。これを1か月間きちんと管理していれば、何が必要かが分かります。"
+ },
+ "9c8cfea56f2ba73f": {
+  "en": "Buy or build?",
+  "t": "買うか、作るか？"
+ },
+ "08196bb834341a85": {
+  "en": "Ready-made tools are cheap to start with and fine for standard sales processes. They get awkward when your process is not standard: you quote by area, you need an approval step, or you have to connect to a supplier system. Then you spend more time bending the tool than using it.",
+  "t": "既製のツールは、導入コストが安く、標準的な販売プロセスには問題なく使えます。しかし、プロセスが標準的でない場合――例えば、地域ごとに見積もりを出したり、承認ステップが必要だったり、サプライヤーのシステムと連携したりする必要がある場合――には、使い勝手が悪くなります。そうなると、ツールを使うよりも、ツールに合わせて調整するのに多くの時間を費やすことになってしまいます。"
+ },
+ "56de7c83cd54083f": {
+  "en": "A custom CRM is built around your process. It holds only the fields and steps you actually use and connects directly to your website, invoicing and payments. The price is a higher upfront cost and someone who maintains it. Whether that is worth it depends on how much of your day goes into admin that a system could do.",
+  "t": "カスタムCRMは、貴社の業務プロセスに合わせて構築されます。実際に使用するフィールドや手順のみを備え、ウェブサイトや請求書発行、決済システムと直接連携します。その代償として、初期費用が高くなり、システムの保守担当者を配置する必要があります。それが価値ある投資となるかどうかは、システムに任せることができる事務作業に、1日のうちどれだけの時間を費やしているかによって異なります。"
+ },
+ "8b4194c38d4aefec": {
+  "en": "Start in one week",
+  "t": "1週間後に開始します"
+ },
+ "424255555b69e8c6": {
+  "en": "<strong>Monday:</strong> write down your real process in five steps, from first request to paid invoice.",
+  "t": "<strong>月曜日：</strong>最初の依頼から請求書の支払い完了まで、実際のプロセスを5つのステップに分けて書き出してください。"
+ },
+ "01cb68d36159accf": {
+  "en": "<strong>Tuesday:</strong> list what you want to see at a glance, such as open quotes and overdue follow-ups.",
+  "t": "<strong>火曜日：</strong>未解決の案件や期限を過ぎたフォローアップ事項など、一目で確認したい項目をリストアップしましょう。"
+ },
+ "80ab7ff25b5b1409": {
+  "en": "<strong>Wednesday:</strong> move your customers into one list and remove duplicates.",
+  "t": "<strong>水曜日：</strong>顧客を1つのリストにまとめ、重複を削除してください。"
+ },
+ "bc1460c88dd8d1a3": {
+  "en": "<strong>Thursday:</strong> make one rule: every contact gets a next step and a date.",
+  "t": "<strong>木曜日：</strong>ルールを1つ決めます。すべての連絡先に対して、次のアクションと日付を明確にします。"
+ },
+ "3accd850ff4be1b8": {
+  "en": "<strong>Friday:</strong> review for ten minutes. Decide whether a spreadsheet is enough or whether you need a tool.",
+  "t": "<strong>金曜日：</strong>10分間、復習を行います。スプレッドシートだけで十分か、それとも別のツールが必要かを判断してください。"
+ },
+ "42ffed47c87a5ba9": {
+  "en": "No tool fixes a process nobody follows. A CRM only works if the habit comes first: write it down, set the next step, look at it once a week. The software just makes that habit easier.",
+  "t": "誰も守らないプロセスを、どんなツールでも改善することはできません。CRMが機能するのは、まず「記録する」「次のステップを決める」「週に一度確認する」という習慣が身についてからに過ぎません。ソフトウェアは、その習慣を定着させるのを助けるに過ぎません。"
+ },
+ "c75be7156da7daa4": {
+  "en": "Marc does not exist. His quote_final_v3_FINAL.docx does, in someone's folder.",
+  "t": "マークという人物は存在しません。しかし、誰かのフォルダには「quote_final_v3_FINAL.docx」というファイルが存在します。"
+ },
+ "91950f4987446089": {
+  "en": "Not sure what you need?",
+  "t": "何が必要かお分かりになりませんか？"
+ },
+ "5f4f954266c1bd92": {
+  "en": "We are happy to look at your process with you and tell you honestly whether a spreadsheet is enough or whether a custom CRM would pay off.",
+  "t": "お客様の業務プロセスを一緒に検討させていただき、スプレッドシートで十分か、それともカスタムCRMを導入した方が効果的かについて、率直にご提案させていただきます。"
+ },
+ "e4cb6fde468e384c": {
+  "en": "pexels b s 78158866 27155428",
+  "t": "pexels b s 78158866 27155428"
+ },
+ "d9bad97dcce274d3": {
+  "en": "What a CRM actually does for a small business (and when you don't need one) | Blog | DRP BuildLab",
+  "t": "CRMが中小企業に実際にどのような役割を果たすのか（そして、必要ない場合） | ブログ | DRP BuildLab"
+ },
+ "e99e0c4794ea55c7": {
+  "en": "What a CRM really does for a small business, five signs you have outgrown the spreadsheet, when you don't need one yet, and how to start in one week.",
+  "t": "中小企業にとってCRMが実際にどのような役割を果たすのか、スプレッドシートでは対応しきれなくなっている5つの兆候、まだCRMが必要ない場合、そして1週間で導入を始める方法についてご紹介します。"
  }
 }

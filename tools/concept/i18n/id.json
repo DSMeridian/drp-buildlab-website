@@ -4186,5 +4186,181 @@
  "f59308c3a43d9f36": {
   "en": "Why small businesses are in the picture too, why most attacks start with a person, and what you can do about it. Plus what we check and set up on your website, explained in plain language.",
   "t": "Mengapa usaha kecil juga turut terlibat, mengapa sebagian besar serangan bermula dari seseorang, dan apa yang dapat Anda lakukan untuk mengatasinya. Ditambah lagi, hal-hal yang kami periksa dan atur di situs web Anda, dijelaskan dengan bahasa yang mudah dipahami."
+ },
+ "27b842ac3d41707c": {
+  "en": "What a CRM actually does for a small business (and when you don't need one)",
+  "t": "Apa Sebenarnya Manfaat CRM bagi Usaha Kecil (dan Kapan Anda Tidak Membutuhkannya)"
+ },
+ "9d611f519aa67130": {
+  "en": "What a CRM really does for a small business, five signs you have outgrown the spreadsheet, when you don't need one yet, and how to start in one week.",
+  "t": "Apa sebenarnya manfaat CRM bagi usaha kecil, lima tanda bahwa Anda sudah tidak lagi cocok menggunakan spreadsheet, kapan Anda belum membutuhkannya, dan cara memulainya dalam satu minggu."
+ },
+ "c00740f2ac6f6273": {
+  "en": "Ask ten small business owners what a CRM is and you will get eleven answers. A fancy address book. An expensive spreadsheet. Something the sales team of a big company uses.",
+  "t": "Tanyakan kepada sepuluh pemilik usaha kecil apa itu CRM, dan Anda akan mendapat sebelas jawaban. Buku alamat yang mewah. Lembar kerja yang mahal. Sesuatu yang digunakan oleh tim penjualan perusahaan besar."
+ },
+ "0432f9631cd852cb": {
+  "en": "The honest answer is simpler: a CRM is a shared memory. It remembers who you talked to, what you promised and what happens next, so that it does not all live in one person's head.",
+  "t": "Jawaban yang jujur sebenarnya lebih sederhana: CRM adalah memori bersama. Sistem ini mencatat dengan siapa Anda pernah berbicara, apa yang telah Anda janjikan, dan langkah selanjutnya, sehingga semua informasi tersebut tidak hanya tersimpan di benak satu orang saja."
+ },
+ "70a7f0086bdb457a": {
+  "en": "A CRM does not win you customers. It stops you from forgetting the ones you already have.",
+  "t": "CRM tidak akan mendatangkan pelanggan baru bagi Anda. CRM justru mencegah Anda melupakan pelanggan yang sudah Anda miliki."
+ },
+ "5df7b932d9cf80a5": {
+  "en": "Signs you have outgrown the spreadsheet",
+  "t": "Tanda-tanda bahwa Anda sudah tidak lagi membutuhkan spreadsheet"
+ },
+ "06a42c4579fee014": {
+  "en": "If three of these sound familiar, your customers deserve better than a tab called 'Sheet2':",
+  "t": "Jika tiga di antaranya terdengar familiar, pelanggan Anda layak mendapatkan yang lebih baik daripada tab bernama &#x27;Sheet2&#x27;:"
+ },
+ "6d70dd919f3a3859": {
+  "en": "Two people keep their own list of the same customers.",
+  "t": "Dua orang masing-masing memiliki daftar pelanggan yang sama."
+ },
+ "00b7b2258c159487": {
+  "en": "Follow-ups depend on someone remembering to 'call them next week'.",
+  "t": "Tindak lanjut bergantung pada apakah ada yang ingat untuk &#x27;menelepon mereka minggu depan&#x27;."
+ },
+ "8947f59e902f1221": {
+  "en": "You cannot answer 'how many quotes are still open?' without asking around.",
+  "t": "Anda tidak bisa menjawab pertanyaan &#x27;berapa banyak penawaran yang masih berlaku?&#x27; tanpa menanyakan kepada orang lain."
+ },
+ "e504ebd6e6cc31b6": {
+  "en": "A customer asks for a copy of an invoice and it takes three people and two inboxes.",
+  "t": "Seorang pelanggan meminta salinan faktur, dan hal itu membutuhkan tiga orang serta dua kotak masuk."
+ },
+ "cb354cb739b7db35": {
+  "en": "When someone goes on holiday, their customers go quiet.",
+  "t": "Ketika seseorang pergi berlibur, pelanggannya jadi sepi."
+ },
+ "5a7f444ca9d6e4fb": {
+  "en": "What a good CRM does for a small business",
+  "t": "Manfaat CRM yang baik bagi usaha kecil"
+ },
+ "88520cb1c248b182": {
+  "en": "Five things, in plain words:",
+  "t": "Lima hal, dengan bahasa yang sederhana:"
+ },
+ "5c4844f95f431ba3": {
+  "en": "<strong>One place per customer.</strong> Contact details, emails, quotes, invoices and notes together.",
+  "t": "<strong>Satu tempat untuk setiap pelanggan.</strong> Rincian kontak, email, penawaran harga, faktur, dan catatan disatukan di satu tempat."
+ },
+ "dfc0fb3c24c2b682": {
+  "en": "<strong>A history you can read in thirty seconds.</strong> Before a call you see what was said last time.",
+  "t": "<strong>Sebuah riwayat yang bisa Anda baca dalam tiga puluh detik.</strong> Sebelum menelepon, Anda bisa melihat apa yang dibicarakan terakhir kali."
+ },
+ "41cc07e5fecdb5fb": {
+  "en": "<strong>Follow-ups that remind you.</strong> You set a date once, and the system nudges you instead of your memory.",
+  "t": "<strong>Pengingat tindak lanjut.</strong> Anda <strong>cukup</strong> mengatur tanggal sekali saja, dan sistemlah yang akan mengingatkan Anda, bukan ingatan Anda sendiri."
+ },
+ "a055809f11bd2d53": {
+  "en": "<strong>A simple pipeline.</strong> Stages such as new request, quote sent, accepted and done, so you can see where work gets stuck.",
+  "t": "<strong>Alur kerja yang sederhana.</strong> Tahapan seperti permintaan baru, penawaran dikirim, diterima, dan selesai, sehingga Anda dapat melihat di mana pekerjaan terhambat."
+ },
+ "0615f11f0cafed06": {
+  "en": "<strong>Connections to the tools you already use.</strong> Website forms, email, calendar, invoicing and payments, so nobody retypes the same data.",
+  "t": "<strong>Terintegrasi dengan alat-alat yang sudah Anda gunakan.</strong> Formulir situs web, email, kalender, penagihan, dan pembayaran, sehingga tidak ada yang perlu mengetik ulang data yang sama."
+ },
+ "6e55d72b6004b437": {
+  "en": "A small example",
+  "t": "Contoh kecil"
+ },
+ "876ef0ab47d2fe70": {
+  "en": "Marc runs a three-person tiling company. (Marc is made up, his problem is not.) Requests arrive through the website form, WhatsApp and the phone. Quotes live in Word documents with names like quote_final_v3_FINAL.docx.",
+  "t": "Marc mengelola sebuah perusahaan pemasangan ubin yang beranggotakan tiga orang. (Nama Marc adalah fiktif, namun masalahnya nyata.) Permintaan masuk melalui formulir situs web, WhatsApp, dan telepon. Penawaran harga disimpan dalam dokumen Word dengan nama seperti quote_final_v3_FINAL.docx."
+ },
+ "519a800eeeb204eb": {
+  "en": "With a CRM, every request becomes one card. A website request appears automatically, the quote is attached, a reminder is set for three days later and the status moves to 'accepted' when the customer says yes. An accepted quote can start an invoice draft. What used to be a weekly hunt through messages becomes a short look at one screen.",
+  "t": "Dengan CRM, setiap permintaan diubah menjadi satu kartu. Permintaan dari situs web muncul secara otomatis, penawaran harga dilampirkan, pengingat diatur untuk tiga hari kemudian, dan statusnya berubah menjadi &#x27;diterima&#x27; saat pelanggan menyetujuinya. Penawaran harga yang telah diterima dapat digunakan untuk membuat draf faktur. Apa yang dulunya merupakan proses pencarian mingguan di antara pesan-pesan kini cukup dilihat sekilas di satu layar."
+ },
+ "df246e01df469fc4": {
+  "en": "When you don't need a CRM",
+  "t": "Kapan Anda tidak memerlukan CRM"
+ },
+ "1099d027ba5a8496": {
+  "en": "Be honest with yourself. You can skip it if:",
+  "t": "Jujurlah pada diri sendiri. Kamu bisa melewatkannya jika:"
+ },
+ "eb7134e99aee2a22": {
+  "en": "You have a handful of repeat customers and know them all by heart.",
+  "t": "Anda memiliki beberapa pelanggan setia dan hafal betul siapa saja mereka."
+ },
+ "c36457a2a3c57cfc": {
+  "en": "Only one person ever talks to customers.",
+  "t": "Hanya ada satu orang yang pernah berbicara dengan pelanggan."
+ },
+ "a7bcba95f4a8c9a0": {
+  "en": "You will not keep it up to date. A CRM with empty fields is worse than a spreadsheet.",
+  "t": "Anda tidak akan memperbaruinya secara berkala. Sistem CRM dengan kolom-kolom kosong lebih buruk daripada spreadsheet."
+ },
+ "00283a8542104f76": {
+  "en": "Start with a plain spreadsheet that has five columns: name, contact details, last contact, next step and the date of that next step. If you keep that tidy for a month, you know what you need.",
+  "t": "Mulailah dengan lembar kerja kosong yang memiliki lima kolom: nama, detail kontak, kontak terakhir, langkah selanjutnya, dan tanggal langkah selanjutnya tersebut. Jika Anda menjaganya tetap rapi selama sebulan, Anda akan tahu apa yang Anda butuhkan."
+ },
+ "9c8cfea56f2ba73f": {
+  "en": "Buy or build?",
+  "t": "Membeli atau membangun?"
+ },
+ "08196bb834341a85": {
+  "en": "Ready-made tools are cheap to start with and fine for standard sales processes. They get awkward when your process is not standard: you quote by area, you need an approval step, or you have to connect to a supplier system. Then you spend more time bending the tool than using it.",
+  "t": "Alat siap pakai memang murah di awal dan cocok untuk proses penjualan standar. Namun, alat tersebut menjadi tidak praktis ketika proses Anda tidak standar: misalnya, Anda membuat penawaran berdasarkan wilayah, memerlukan tahap persetujuan, atau harus terhubung ke sistem pemasok. Akibatnya, Anda justru menghabiskan lebih banyak waktu untuk menyesuaikan alat tersebut daripada menggunakannya."
+ },
+ "56de7c83cd54083f": {
+  "en": "A custom CRM is built around your process. It holds only the fields and steps you actually use and connects directly to your website, invoicing and payments. The price is a higher upfront cost and someone who maintains it. Whether that is worth it depends on how much of your day goes into admin that a system could do.",
+  "t": "CRM khusus dirancang sesuai dengan proses bisnis Anda. Sistem ini hanya mencakup kolom dan langkah-langkah yang benar-benar Anda gunakan serta terintegrasi langsung dengan situs web, sistem penagihan, dan pembayaran Anda. Biayanya berupa biaya awal yang lebih tinggi serta kebutuhan akan seseorang yang mengelolanya. Apakah hal itu sepadan atau tidak, bergantung pada seberapa banyak waktu Anda setiap hari yang dihabiskan untuk urusan administrasi yang sebenarnya bisa ditangani oleh sistem tersebut."
+ },
+ "8b4194c38d4aefec": {
+  "en": "Start in one week",
+  "t": "Dimulai dalam satu minggu"
+ },
+ "424255555b69e8c6": {
+  "en": "<strong>Monday:</strong> write down your real process in five steps, from first request to paid invoice.",
+  "t": "<strong>Senin:</strong> tuliskan proses sebenarnya yang Anda lalui dalam lima langkah, mulai dari permintaan pertama hingga faktur yang telah dibayar."
+ },
+ "01cb68d36159accf": {
+  "en": "<strong>Tuesday:</strong> list what you want to see at a glance, such as open quotes and overdue follow-ups.",
+  "t": "<strong>Selasa:</strong> buat daftar hal-hal yang ingin Anda lihat sekilas, seperti penawaran yang masih terbuka dan tindak lanjut yang sudah lewat batas waktu."
+ },
+ "80ab7ff25b5b1409": {
+  "en": "<strong>Wednesday:</strong> move your customers into one list and remove duplicates.",
+  "t": "<strong>Rabu:</strong> gabungkan pelanggan Anda ke dalam satu daftar dan hapus duplikatnya."
+ },
+ "bc1460c88dd8d1a3": {
+  "en": "<strong>Thursday:</strong> make one rule: every contact gets a next step and a date.",
+  "t": "<strong>Kamis:</strong> tetapkan satu aturan: setiap kontak harus diberi langkah selanjutnya dan tanggal."
+ },
+ "3accd850ff4be1b8": {
+  "en": "<strong>Friday:</strong> review for ten minutes. Decide whether a spreadsheet is enough or whether you need a tool.",
+  "t": "<strong>Jumat:</strong> luangkan waktu sepuluh menit untuk meninjau. Putuskan apakah spreadsheet sudah cukup atau apakah Anda memerlukan alat bantu."
+ },
+ "42ffed47c87a5ba9": {
+  "en": "No tool fixes a process nobody follows. A CRM only works if the habit comes first: write it down, set the next step, look at it once a week. The software just makes that habit easier.",
+  "t": "Tidak ada alat yang bisa memperbaiki proses yang tidak dijalankan oleh siapa pun. Sistem CRM hanya akan berfungsi jika kebiasaan itu sudah tertanam terlebih dahulu: catat, tentukan langkah selanjutnya, dan periksa sekali seminggu. Perangkat lunak tersebut hanya mempermudah penerapan kebiasaan tersebut."
+ },
+ "c75be7156da7daa4": {
+  "en": "Marc does not exist. His quote_final_v3_FINAL.docx does, in someone's folder.",
+  "t": "Marc tidak ada. Berkas quote_final_v3_FINAL.docx miliknya memang ada, di dalam folder milik seseorang."
+ },
+ "91950f4987446089": {
+  "en": "Not sure what you need?",
+  "t": "Belum yakin apa yang Anda butuhkan?"
+ },
+ "5f4f954266c1bd92": {
+  "en": "We are happy to look at your process with you and tell you honestly whether a spreadsheet is enough or whether a custom CRM would pay off.",
+  "t": "Kami dengan senang hati akan meninjau proses Anda bersama Anda dan memberi tahu Anda secara jujur apakah spreadsheet sudah cukup atau apakah CRM yang disesuaikan akan lebih menguntungkan."
+ },
+ "e4cb6fde468e384c": {
+  "en": "pexels b s 78158866 27155428",
+  "t": "pexels b s 78158866 27155428"
+ },
+ "d9bad97dcce274d3": {
+  "en": "What a CRM actually does for a small business (and when you don't need one) | Blog | DRP BuildLab",
+  "t": "Apa Sebenarnya Manfaat CRM bagi Usaha Kecil (dan Kapan Anda Tidak Membutuhkannya) | Blog | DRP BuildLab"
+ },
+ "e99e0c4794ea55c7": {
+  "en": "What a CRM really does for a small business, five signs you have outgrown the spreadsheet, when you don't need one yet, and how to start in one week.",
+  "t": "Apa sebenarnya manfaat CRM bagi usaha kecil, lima tanda bahwa Anda sudah tidak lagi cocok menggunakan spreadsheet, kapan Anda belum membutuhkannya, dan cara memulainya dalam satu minggu."
  }
 }

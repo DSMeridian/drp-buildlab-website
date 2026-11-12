@@ -4186,5 +4186,181 @@
  "1a240a718b4e0037": {
   "en": "The terms of the optional offers emails from DRP BuildLab and selected partners, for subscribers to the DRP BuildLab blog.",
   "t": "شروط الرسائل الإلكترونية المتعلقة بالعروض الاختيارية المرسلة من DRP BuildLab وشركائها المختارين، والموجهة إلى المشتركين في مدونة DRP BuildLab."
+ },
+ "27b842ac3d41707c": {
+  "en": "What a CRM actually does for a small business (and when you don't need one)",
+  "t": "ما الذي يقدمه نظام إدارة علاقات العملاء (CRM) فعليًّا للشركات الصغيرة (ومتى لا تكون هناك حاجة إليه)"
+ },
+ "9d611f519aa67130": {
+  "en": "What a CRM really does for a small business, five signs you have outgrown the spreadsheet, when you don't need one yet, and how to start in one week.",
+  "t": "ما الذي يقدمه نظام إدارة علاقات العملاء (CRM) فعليًّا للشركات الصغيرة، وخمس علامات تدل على أن أعمالك قد تجاوزت مرحلة استخدام جداول البيانات، ومتى لا تكون بحاجة إلى نظام CRM بعد، وكيفية البدء في استخدامه خلال أسبوع واحد."
+ },
+ "c00740f2ac6f6273": {
+  "en": "Ask ten small business owners what a CRM is and you will get eleven answers. A fancy address book. An expensive spreadsheet. Something the sales team of a big company uses.",
+  "t": "اسأل عشرة من أصحاب الشركات الصغيرة عن معنى مصطلح «CRM»، وستحصل على أحد عشر إجابة مختلفة. دفتر عناوين متطور. جدول بيانات باهظ الثمن. شيء يستخدمه فريق المبيعات في شركة كبيرة."
+ },
+ "0432f9631cd852cb": {
+  "en": "The honest answer is simpler: a CRM is a shared memory. It remembers who you talked to, what you promised and what happens next, so that it does not all live in one person's head.",
+  "t": "الإجابة الصريحة أبسط من ذلك: نظام إدارة علاقات العملاء (CRM) هو ذاكرة مشتركة. فهو يتذكر مع من تحدثت، وماذا وعدت، وما هي الخطوة التالية، بحيث لا يظل كل ذلك محصوراً في ذهن شخص واحد."
+ },
+ "70a7f0086bdb457a": {
+  "en": "A CRM does not win you customers. It stops you from forgetting the ones you already have.",
+  "t": "نظام إدارة علاقات العملاء (CRM) لا يجلب لك عملاءً جددًا، بل يمنعك من نسيان العملاء الذين لديك بالفعل."
+ },
+ "5df7b932d9cf80a5": {
+  "en": "Signs you have outgrown the spreadsheet",
+  "t": "علامات تدل على أنك تجاوزت مرحلة استخدام جداول البيانات"
+ },
+ "06a42c4579fee014": {
+  "en": "If three of these sound familiar, your customers deserve better than a tab called 'Sheet2':",
+  "t": "إذا كانت ثلاثة من هذه العناصر تبدو مألوفة لك، فإن عملاءك يستحقون ما هو أفضل من علامة تبويب باسم «Sheet2»:"
+ },
+ "6d70dd919f3a3859": {
+  "en": "Two people keep their own list of the same customers.",
+  "t": "يحتفظ شخصان بقائمتين منفصلتين تضمّان نفس العملاء."
+ },
+ "00b7b2258c159487": {
+  "en": "Follow-ups depend on someone remembering to 'call them next week'.",
+  "t": "تعتمد المتابعة على أن يتذكر أحدهم «الاتصال بهم الأسبوع المقبل»."
+ },
+ "8947f59e902f1221": {
+  "en": "You cannot answer 'how many quotes are still open?' without asking around.",
+  "t": "لا يمكنك الإجابة عن سؤال «كم عدد عروض الأسعار التي لا تزال سارية؟» دون الاستفسار من الآخرين."
+ },
+ "e504ebd6e6cc31b6": {
+  "en": "A customer asks for a copy of an invoice and it takes three people and two inboxes.",
+  "t": "يطلب أحد العملاء نسخة من فاتورة، فيتطلب الأمر ثلاثة أشخاص وصندوقي بريد إلكتروني."
+ },
+ "cb354cb739b7db35": {
+  "en": "When someone goes on holiday, their customers go quiet.",
+  "t": "عندما يذهب شخص ما في إجازة، يتوقف عملاؤه عن التواصل معه."
+ },
+ "5a7f444ca9d6e4fb": {
+  "en": "What a good CRM does for a small business",
+  "t": "ما الذي يقدمه نظام إدارة علاقات العملاء (CRM) الجيد للشركات الصغيرة"
+ },
+ "88520cb1c248b182": {
+  "en": "Five things, in plain words:",
+  "t": "خمسة أمور، بعبارات بسيطة:"
+ },
+ "5c4844f95f431ba3": {
+  "en": "<strong>One place per customer.</strong> Contact details, emails, quotes, invoices and notes together.",
+  "t": "<strong>مكان واحد لكل عميل.</strong> بيانات الاتصال، ورسائل البريد الإلكتروني، وعروض الأسعار، والفواتير، والملاحظات، كلها في <strong>مكان</strong> واحد."
+ },
+ "dfc0fb3c24c2b682": {
+  "en": "<strong>A history you can read in thirty seconds.</strong> Before a call you see what was said last time.",
+  "t": "<strong>قصة يمكنك قراءتها في ثلاثين ثانية.</strong> قبل إجراء المكالمة، يمكنك الاطلاع على ما قيل في المرة السابقة."
+ },
+ "41cc07e5fecdb5fb": {
+  "en": "<strong>Follow-ups that remind you.</strong> You set a date once, and the system nudges you instead of your memory.",
+  "t": "<strong>تذكيرات للمتابعة.</strong> ما عليك سوى تحديد موعد مرة واحدة، وسيقوم النظام بتذكيرك بدلاً من الاعتماد على ذاكرتك."
+ },
+ "a055809f11bd2d53": {
+  "en": "<strong>A simple pipeline.</strong> Stages such as new request, quote sent, accepted and done, so you can see where work gets stuck.",
+  "t": "<strong>مسار عمل بسيط.</strong> يتضمن مراحل مثل «طلب جديد»، و«إرسال عرض الأسعار»، و«الموافقة»، و«الإنجاز»، حتى تتمكن من معرفة أين يتعثر سير العمل."
+ },
+ "0615f11f0cafed06": {
+  "en": "<strong>Connections to the tools you already use.</strong> Website forms, email, calendar, invoicing and payments, so nobody retypes the same data.",
+  "t": "<strong>التكامل مع الأدوات التي تستخدمها بالفعل.</strong> نماذج المواقع الإلكترونية، والبريد الإلكتروني، والتقويم، وإصدار الفواتير، والمدفوعات، حتى لا يضطر أحد إلى إعادة إدخال نفس البيانات."
+ },
+ "6e55d72b6004b437": {
+  "en": "A small example",
+  "t": "مثال بسيط"
+ },
+ "876ef0ab47d2fe70": {
+  "en": "Marc runs a three-person tiling company. (Marc is made up, his problem is not.) Requests arrive through the website form, WhatsApp and the phone. Quotes live in Word documents with names like quote_final_v3_FINAL.docx.",
+  "t": "يدير مارك شركة متخصصة في تركيب البلاط تضم ثلاثة موظفين. (مارك شخصية خيالية، لكن مشكلته حقيقية.) تصل الطلبات عبر نموذج الموقع الإلكتروني و«واتساب» والهاتف. وتُحفظ عروض الأسعار في مستندات «وورد» تحمل أسماءً مثل quote_final_v3_FINAL.docx."
+ },
+ "519a800eeeb204eb": {
+  "en": "With a CRM, every request becomes one card. A website request appears automatically, the quote is attached, a reminder is set for three days later and the status moves to 'accepted' when the customer says yes. An accepted quote can start an invoice draft. What used to be a weekly hunt through messages becomes a short look at one screen.",
+  "t": "باستخدام نظام إدارة علاقات العملاء (CRM)، يتحول كل طلب إلى بطاقة واحدة. يظهر طلب من الموقع الإلكتروني تلقائيًا، ويتم إرفاق عرض الأسعار به، ويتم تعيين تذكير بعد ثلاثة أيام، وتنتقل الحالة إلى «مقبول» عندما يوافق العميل. ويمكن أن يؤدي عرض الأسعار المقبول إلى إنشاء مسودة فاتورة. وما كان في السابق عملية بحث أسبوعية بين الرسائل أصبح الآن مجرد نظرة سريعة على شاشة واحدة."
+ },
+ "df246e01df469fc4": {
+  "en": "When you don't need a CRM",
+  "t": "عندما لا تكون هناك حاجة إلى نظام إدارة علاقات العملاء (CRM)"
+ },
+ "1099d027ba5a8496": {
+  "en": "Be honest with yourself. You can skip it if:",
+  "t": "كن صادقًا مع نفسك. يمكنك تخطي هذا إذا:"
+ },
+ "eb7134e99aee2a22": {
+  "en": "You have a handful of repeat customers and know them all by heart.",
+  "t": "لديك عدد قليل من العملاء الدائمين، وأنت تعرفهم جميعًا عن ظهر قلب."
+ },
+ "c36457a2a3c57cfc": {
+  "en": "Only one person ever talks to customers.",
+  "t": "هناك شخص واحد فقط يتحدث مع العملاء."
+ },
+ "a7bcba95f4a8c9a0": {
+  "en": "You will not keep it up to date. A CRM with empty fields is worse than a spreadsheet.",
+  "t": "لن تتمكن من تحديثه باستمرار. نظام إدارة علاقات العملاء (CRM) الذي يحتوي على حقول فارغة أسوأ من جدول البيانات."
+ },
+ "00283a8542104f76": {
+  "en": "Start with a plain spreadsheet that has five columns: name, contact details, last contact, next step and the date of that next step. If you keep that tidy for a month, you know what you need.",
+  "t": "ابدأ بجدول بيانات بسيط يتكون من خمسة أعمدة: الاسم، وتفاصيل الاتصال، وآخر اتصال، والخطوة التالية، وتاريخ تلك الخطوة التالية. إذا حافظت على تنظيم هذا الجدول لمدة شهر، فستعرف ما تحتاج إليه."
+ },
+ "9c8cfea56f2ba73f": {
+  "en": "Buy or build?",
+  "t": "الشراء أم البناء؟"
+ },
+ "08196bb834341a85": {
+  "en": "Ready-made tools are cheap to start with and fine for standard sales processes. They get awkward when your process is not standard: you quote by area, you need an approval step, or you have to connect to a supplier system. Then you spend more time bending the tool than using it.",
+  "t": "تتميز الأدوات الجاهزة بأسعارها المنخفضة في البداية، وهي مناسبة لعمليات المبيعات القياسية. لكنها تصبح غير ملائمة عندما تكون عمليتك غير قياسية: مثلاً، إذا كنت تقدم عروض الأسعار حسب المنطقة، أو تحتاج إلى خطوة موافقة، أو تضطر إلى الاتصال بنظام أحد الموردين. وعندها، ستقضي وقتًا أطول في تكييف الأداة بدلاً من استخدامها."
+ },
+ "56de7c83cd54083f": {
+  "en": "A custom CRM is built around your process. It holds only the fields and steps you actually use and connects directly to your website, invoicing and payments. The price is a higher upfront cost and someone who maintains it. Whether that is worth it depends on how much of your day goes into admin that a system could do.",
+  "t": "يتم تصميم نظام إدارة علاقات العملاء (CRM) المخصص خصيصًا ليتناسب مع إجراءاتك. فهو لا يحتوي إلا على الحقول والخطوات التي تستخدمها فعليًّا، ويتصل مباشرةً بموقعك الإلكتروني وأنظمة إصدار الفواتير والمدفوعات. ويترتب على ذلك تكلفة أولية أعلى، بالإضافة إلى الحاجة إلى شخص يتولى صيانته. أما ما إذا كان ذلك يستحق العناء، فيعتمد على مقدار الوقت الذي تقضيه يوميًا في الأعمال الإدارية التي يمكن للنظام أن يتولاها بدلاً منك."
+ },
+ "8b4194c38d4aefec": {
+  "en": "Start in one week",
+  "t": "يبدأ بعد أسبوع واحد"
+ },
+ "424255555b69e8c6": {
+  "en": "<strong>Monday:</strong> write down your real process in five steps, from first request to paid invoice.",
+  "t": "<strong>الاثنين:</strong> قم بتدوين مسار العملية الفعلي الخاص بك في خمس خطوات، بدءًا من الطلب الأول وحتى الفاتورة المدفوعة."
+ },
+ "01cb68d36159accf": {
+  "en": "<strong>Tuesday:</strong> list what you want to see at a glance, such as open quotes and overdue follow-ups.",
+  "t": "<strong>الثلاثاء:</strong> قم بإدراج ما تريد الاطلاع عليه في لمحة سريعة، مثل العروض المفتوحة والمتابعات المتأخرة."
+ },
+ "80ab7ff25b5b1409": {
+  "en": "<strong>Wednesday:</strong> move your customers into one list and remove duplicates.",
+  "t": "<strong>الأربعاء:</strong> قم بدمج عملائك في قائمة واحدة وحذف التكرارات."
+ },
+ "bc1460c88dd8d1a3": {
+  "en": "<strong>Thursday:</strong> make one rule: every contact gets a next step and a date.",
+  "t": "<strong>الخميس:</strong> ضع قاعدة واحدة: كل جهة اتصال يجب أن تحدد لها الخطوة التالية وموعدًا."
+ },
+ "3accd850ff4be1b8": {
+  "en": "<strong>Friday:</strong> review for ten minutes. Decide whether a spreadsheet is enough or whether you need a tool.",
+  "t": "<strong>الجمعة:</strong> قم بالمراجعة لمدة عشر دقائق. قرر ما إذا كانت جدول البيانات كافية أم أنك بحاجة إلى أداة أخرى."
+ },
+ "42ffed47c87a5ba9": {
+  "en": "No tool fixes a process nobody follows. A CRM only works if the habit comes first: write it down, set the next step, look at it once a week. The software just makes that habit easier.",
+  "t": "لا توجد أداة قادرة على إصلاح عملية لا يتبعها أحد. لا يعمل نظام إدارة علاقات العملاء (CRM) إلا إذا كانت العادة هي الأساس: قم بتدوينها، وحدد الخطوة التالية، وراجعها مرة واحدة في الأسبوع. أما البرنامج، فهو يسهل عليك ممارسة هذه العادة فحسب."
+ },
+ "c75be7156da7daa4": {
+  "en": "Marc does not exist. His quote_final_v3_FINAL.docx does, in someone's folder.",
+  "t": "مارك ليس شخصًا حقيقيًّا. لكن ملفه quote_final_v3_FINAL.docx موجود بالفعل في مجلد أحدهم."
+ },
+ "91950f4987446089": {
+  "en": "Not sure what you need?",
+  "t": "ألست متأكدًا مما تحتاج إليه؟"
+ },
+ "5f4f954266c1bd92": {
+  "en": "We are happy to look at your process with you and tell you honestly whether a spreadsheet is enough or whether a custom CRM would pay off.",
+  "t": "يسعدنا أن ندرس معك إجراءات عملك ونخبرك بصراحة ما إذا كانت جدول البيانات كافية أم أن نظام إدارة علاقات العملاء (CRM) المخصص سيكون خيارًا مجديًّا."
+ },
+ "e4cb6fde468e384c": {
+  "en": "pexels b s 78158866 27155428",
+  "t": "pexels b s 78158866 27155428"
+ },
+ "d9bad97dcce274d3": {
+  "en": "What a CRM actually does for a small business (and when you don't need one) | Blog | DRP BuildLab",
+  "t": "ما الذي يقدمه نظام إدارة علاقات العملاء (CRM) فعليًّا للشركات الصغيرة (ومتى لا تحتاج إليه) | المدونة | DRP BuildLab"
+ },
+ "e99e0c4794ea55c7": {
+  "en": "What a CRM really does for a small business, five signs you have outgrown the spreadsheet, when you don't need one yet, and how to start in one week.",
+  "t": "ما الذي يقدمه نظام إدارة علاقات العملاء (CRM) فعليًّا للشركات الصغيرة، وخمس علامات تدل على أنك تجاوزت مرحلة استخدام جداول البيانات، ومتى لا تكون بحاجة إلى نظام CRM بعد، وكيفية البدء في استخدامه خلال أسبوع واحد."
  }
 }

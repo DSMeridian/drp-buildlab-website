@@ -4186,5 +4186,181 @@
  "f59308c3a43d9f36": {
   "en": "Why small businesses are in the picture too, why most attacks start with a person, and what you can do about it. Plus what we check and set up on your website, explained in plain language.",
   "t": "Por qué las pequeñas empresas también se ven afectadas, por qué la mayoría de los ataques comienzan con una persona y qué puede hacer al respecto. Además, le explicamos en un lenguaje sencillo qué aspectos revisamos y configuramos en su página web."
+ },
+ "27b842ac3d41707c": {
+  "en": "What a CRM actually does for a small business (and when you don't need one)",
+  "t": "Qué aporta realmente un CRM a una pequeña empresa (y cuándo no es necesario contar con uno)"
+ },
+ "9d611f519aa67130": {
+  "en": "What a CRM really does for a small business, five signs you have outgrown the spreadsheet, when you don't need one yet, and how to start in one week.",
+  "t": "Qué aporta realmente un CRM a una pequeña empresa, cinco señales de que ya ha dejado atrás la hoja de cálculo, cuándo aún no necesita uno y cómo empezar en una semana."
+ },
+ "c00740f2ac6f6273": {
+  "en": "Ask ten small business owners what a CRM is and you will get eleven answers. A fancy address book. An expensive spreadsheet. Something the sales team of a big company uses.",
+  "t": "Si pregunta a diez propietarios de pequeñas empresas qué es un CRM, obtendrá once respuestas diferentes. Una agenda de contactos sofisticada. Una hoja de cálculo cara. Algo que utiliza el equipo de ventas de una gran empresa."
+ },
+ "0432f9631cd852cb": {
+  "en": "The honest answer is simpler: a CRM is a shared memory. It remembers who you talked to, what you promised and what happens next, so that it does not all live in one person's head.",
+  "t": "La respuesta sincera es más sencilla: un CRM es una memoria compartida. Recuerda con quién ha hablado, qué ha prometido y qué va a pasar a continuación, de modo que no todo quede solo en la cabeza de una persona."
+ },
+ "70a7f0086bdb457a": {
+  "en": "A CRM does not win you customers. It stops you from forgetting the ones you already have.",
+  "t": "Un CRM no le ayuda a conseguir clientes. Le impide olvidarse de los que ya tiene."
+ },
+ "5df7b932d9cf80a5": {
+  "en": "Signs you have outgrown the spreadsheet",
+  "t": "Señales de que ya ha dejado atrás las hojas de cálculo"
+ },
+ "06a42c4579fee014": {
+  "en": "If three of these sound familiar, your customers deserve better than a tab called 'Sheet2':",
+  "t": "Si tres de estas situaciones le resultan familiares, sus clientes se merecen algo mejor que una pestaña llamada «Hoja 2»:"
+ },
+ "6d70dd919f3a3859": {
+  "en": "Two people keep their own list of the same customers.",
+  "t": "Dos personas llevan su propia lista de los mismos clientes."
+ },
+ "00b7b2258c159487": {
+  "en": "Follow-ups depend on someone remembering to 'call them next week'.",
+  "t": "Los seguimientos dependen de que alguien se acuerde de «llamarles la semana que viene»."
+ },
+ "8947f59e902f1221": {
+  "en": "You cannot answer 'how many quotes are still open?' without asking around.",
+  "t": "No puede responder a la pregunta «¿cuántos presupuestos siguen pendientes?» sin preguntar a los demás."
+ },
+ "e504ebd6e6cc31b6": {
+  "en": "A customer asks for a copy of an invoice and it takes three people and two inboxes.",
+  "t": "Un cliente solicita una copia de una factura y para ello se necesitan tres personas y dos bandejas de entrada."
+ },
+ "cb354cb739b7db35": {
+  "en": "When someone goes on holiday, their customers go quiet.",
+  "t": "Cuando alguien se va de vacaciones, sus clientes dejan de dar señales de vida."
+ },
+ "5a7f444ca9d6e4fb": {
+  "en": "What a good CRM does for a small business",
+  "t": "Qué aporta un buen CRM a una pequeña empresa"
+ },
+ "88520cb1c248b182": {
+  "en": "Five things, in plain words:",
+  "t": "Cinco cosas, en palabras sencillas:"
+ },
+ "5c4844f95f431ba3": {
+  "en": "<strong>One place per customer.</strong> Contact details, emails, quotes, invoices and notes together.",
+  "t": "<strong>Un único espacio por cliente.</strong> Datos de contacto, correos electrónicos, presupuestos, facturas y notas, todo en un mismo lugar."
+ },
+ "dfc0fb3c24c2b682": {
+  "en": "<strong>A history you can read in thirty seconds.</strong> Before a call you see what was said last time.",
+  "t": "<strong>Un historial que puede consultar en treinta segundos.</strong> Antes de una llamada, podrá ver lo que se dijo la última vez."
+ },
+ "41cc07e5fecdb5fb": {
+  "en": "<strong>Follow-ups that remind you.</strong> You set a date once, and the system nudges you instead of your memory.",
+  "t": "<strong>Recordatorios de seguimiento.</strong> Usted establece una fecha una sola vez y es el sistema el que le avisa, en lugar de tener que confiar en su memoria."
+ },
+ "a055809f11bd2d53": {
+  "en": "<strong>A simple pipeline.</strong> Stages such as new request, quote sent, accepted and done, so you can see where work gets stuck.",
+  "t": "<strong>Un proceso sencillo.</strong> Etapas como «nueva solicitud», «presupuesto enviado», «aceptado» y «finalizado», para que pueda ver en qué punto se atasca el trabajo."
+ },
+ "0615f11f0cafed06": {
+  "en": "<strong>Connections to the tools you already use.</strong> Website forms, email, calendar, invoicing and payments, so nobody retypes the same data.",
+  "t": "<strong>Integración con las herramientas que ya utiliza.</strong> Formularios web, correo electrónico, calendario, facturación y pagos, para que nadie tenga que volver a introducir los mismos datos."
+ },
+ "6e55d72b6004b437": {
+  "en": "A small example",
+  "t": "Un pequeño ejemplo"
+ },
+ "876ef0ab47d2fe70": {
+  "en": "Marc runs a three-person tiling company. (Marc is made up, his problem is not.) Requests arrive through the website form, WhatsApp and the phone. Quotes live in Word documents with names like quote_final_v3_FINAL.docx.",
+  "t": "Marc dirige una empresa de alicatado formada por tres personas. (Marc es un personaje ficticio, pero su problema no lo es.) Las solicitudes llegan a través del formulario de la página web, de WhatsApp y por teléfono. Los presupuestos se guardan en documentos de Word con nombres como «presupuesto_final_v3_FINAL.docx»."
+ },
+ "519a800eeeb204eb": {
+  "en": "With a CRM, every request becomes one card. A website request appears automatically, the quote is attached, a reminder is set for three days later and the status moves to 'accepted' when the customer says yes. An accepted quote can start an invoice draft. What used to be a weekly hunt through messages becomes a short look at one screen.",
+  "t": "Con un CRM, cada solicitud se convierte en una ficha. Una solicitud procedente de la página web aparece automáticamente, se adjunta el presupuesto, se programa un recordatorio para tres días después y el estado pasa a «aceptado» cuando el cliente da su visto bueno. Un presupuesto aceptado puede dar lugar a un borrador de factura. Lo que antes suponía una búsqueda semanal entre los mensajes se convierte en un breve vistazo a una sola pantalla."
+ },
+ "df246e01df469fc4": {
+  "en": "When you don't need a CRM",
+  "t": "Cuándo no se necesita un CRM"
+ },
+ "1099d027ba5a8496": {
+  "en": "Be honest with yourself. You can skip it if:",
+  "t": "Sea sincero consigo mismo. Puede saltárselo si:"
+ },
+ "eb7134e99aee2a22": {
+  "en": "You have a handful of repeat customers and know them all by heart.",
+  "t": "Tiene un puñado de clientes habituales y se los sabe a la perfección."
+ },
+ "c36457a2a3c57cfc": {
+  "en": "Only one person ever talks to customers.",
+  "t": "Solo hay una persona que se encarga de atender a los clientes."
+ },
+ "a7bcba95f4a8c9a0": {
+  "en": "You will not keep it up to date. A CRM with empty fields is worse than a spreadsheet.",
+  "t": "No lo mantendrá actualizado. Un CRM con campos vacíos es peor que una hoja de cálculo."
+ },
+ "00283a8542104f76": {
+  "en": "Start with a plain spreadsheet that has five columns: name, contact details, last contact, next step and the date of that next step. If you keep that tidy for a month, you know what you need.",
+  "t": "Empiece con una hoja de cálculo sencilla que tenga cinco columnas: nombre, datos de contacto, último contacto, siguiente paso y la fecha de ese siguiente paso. Si la mantiene en orden durante un mes, sabrá lo que necesita."
+ },
+ "9c8cfea56f2ba73f": {
+  "en": "Buy or build?",
+  "t": "¿Comprar o construir?"
+ },
+ "08196bb834341a85": {
+  "en": "Ready-made tools are cheap to start with and fine for standard sales processes. They get awkward when your process is not standard: you quote by area, you need an approval step, or you have to connect to a supplier system. Then you spend more time bending the tool than using it.",
+  "t": "Las herramientas ya preparadas son económicas al principio y resultan adecuadas para los procesos de venta estándar. Sin embargo, resultan poco prácticas cuando su proceso no es estándar: por ejemplo, si elabora presupuestos por zonas, necesita un paso de aprobación o tiene que conectarse al sistema de un proveedor. En esos casos, dedicará más tiempo a adaptar la herramienta que a utilizarla."
+ },
+ "56de7c83cd54083f": {
+  "en": "A custom CRM is built around your process. It holds only the fields and steps you actually use and connects directly to your website, invoicing and payments. The price is a higher upfront cost and someone who maintains it. Whether that is worth it depends on how much of your day goes into admin that a system could do.",
+  "t": "Un CRM a medida se diseña en función de sus procesos. Solo incluye los campos y pasos que realmente utiliza y se conecta directamente con su página web, la facturación y los pagos. El precio supone un coste inicial más elevado y la necesidad de contar con alguien que se encargue de su mantenimiento. Que merezca la pena o no depende de cuánto tiempo de su jornada dedica a tareas administrativas que podría realizar un sistema."
+ },
+ "8b4194c38d4aefec": {
+  "en": "Start in one week",
+  "t": "Comienza dentro de una semana"
+ },
+ "424255555b69e8c6": {
+  "en": "<strong>Monday:</strong> write down your real process in five steps, from first request to paid invoice.",
+  "t": "<strong>Lunes:</strong> describa su proceso real en cinco pasos, desde la primera solicitud hasta la factura pagada."
+ },
+ "01cb68d36159accf": {
+  "en": "<strong>Tuesday:</strong> list what you want to see at a glance, such as open quotes and overdue follow-ups.",
+  "t": "<strong>Martes:</strong> haga una lista de lo que desea ver de un vistazo, como los presupuestos pendientes y los seguimientos atrasados."
+ },
+ "80ab7ff25b5b1409": {
+  "en": "<strong>Wednesday:</strong> move your customers into one list and remove duplicates.",
+  "t": "<strong>Miércoles:</strong> agrupe a sus clientes en una sola lista y elimine los duplicados."
+ },
+ "bc1460c88dd8d1a3": {
+  "en": "<strong>Thursday:</strong> make one rule: every contact gets a next step and a date.",
+  "t": "<strong>Jueves:</strong> establezca una norma: a cada contacto se le asignará un siguiente paso y una fecha."
+ },
+ "3accd850ff4be1b8": {
+  "en": "<strong>Friday:</strong> review for ten minutes. Decide whether a spreadsheet is enough or whether you need a tool.",
+  "t": "<strong>Viernes:</strong> dedique diez minutos a repasar. Decida si le basta con una hoja de cálculo o si necesita una herramienta."
+ },
+ "42ffed47c87a5ba9": {
+  "en": "No tool fixes a process nobody follows. A CRM only works if the habit comes first: write it down, set the next step, look at it once a week. The software just makes that habit easier.",
+  "t": "Ninguna herramienta puede solucionar un proceso que nadie sigue. Un CRM solo funciona si primero se adquiere el hábito: anotarlo, establecer el siguiente paso y revisarlo una vez a la semana. El software simplemente facilita ese hábito."
+ },
+ "c75be7156da7daa4": {
+  "en": "Marc does not exist. His quote_final_v3_FINAL.docx does, in someone's folder.",
+  "t": "Marc no existe. Su archivo «quote_final_v3_FINAL.docx» sí existe, en la carpeta de alguien."
+ },
+ "91950f4987446089": {
+  "en": "Not sure what you need?",
+  "t": "¿No está seguro de lo que necesita?"
+ },
+ "5f4f954266c1bd92": {
+  "en": "We are happy to look at your process with you and tell you honestly whether a spreadsheet is enough or whether a custom CRM would pay off.",
+  "t": "Estaremos encantados de analizar su proceso junto con usted y de indicarle con total sinceridad si basta con una hoja de cálculo o si le resultaría rentable contar con un CRM a medida."
+ },
+ "e4cb6fde468e384c": {
+  "en": "pexels b s 78158866 27155428",
+  "t": "pexels b s 78158866 27155428"
+ },
+ "d9bad97dcce274d3": {
+  "en": "What a CRM actually does for a small business (and when you don't need one) | Blog | DRP BuildLab",
+  "t": "Qué aporta realmente un CRM a una pequeña empresa (y cuándo no se necesita uno) | Blog | DRP BuildLab"
+ },
+ "e99e0c4794ea55c7": {
+  "en": "What a CRM really does for a small business, five signs you have outgrown the spreadsheet, when you don't need one yet, and how to start in one week.",
+  "t": "Qué aporta realmente un CRM a una pequeña empresa, cinco señales de que ya ha dejado atrás la hoja de cálculo, cuándo aún no necesita uno y cómo empezar en una semana."
  }
 }
