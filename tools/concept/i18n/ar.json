@@ -4362,5 +4362,173 @@
  "e99e0c4794ea55c7": {
   "en": "What a CRM really does for a small business, five signs you have outgrown the spreadsheet, when you don't need one yet, and how to start in one week.",
   "t": "ما الذي يقدمه نظام إدارة علاقات العملاء (CRM) فعليًّا للشركات الصغيرة، وخمس علامات تدل على أنك تجاوزت مرحلة استخدام جداول البيانات، ومتى لا تكون بحاجة إلى نظام CRM بعد، وكيفية البدء في استخدامه خلال أسبوع واحد."
+ },
+ "8fd92af153d7bda8": {
+  "en": "Your new intern never sleeps, never doubts and has no idea what 'confidential' means",
+  "t": "المتدرب الجديد لديك لا ينام أبدًا، ولا يشك أبدًا، ولا يملك أدنى فكرة عن معنى كلمة «سري»"
+ },
+ "1837a886063d8fd5": {
+  "en": "Your team is probably already using AI. Treat it like a brilliant intern: five simple rules to keep customer data safe and your company out of trouble.",
+  "t": "من المحتمل أن فريقك يستخدم الذكاء الاصطناعي بالفعل. تعامل معه كأنه متدرب متميز: خمس قواعد بسيطة للحفاظ على أمان بيانات العملاء وحماية شركتك من المشاكل."
+ },
+ "0a82afc2c20767e4": {
+  "en": "Meet the best intern you have ever had. Starts at six in the morning. Never complains. Has read most of the internet. Writes a decent email in four seconds.",
+  "t": "تعرّف على أفضل متدرب عملت معه على الإطلاق. يبدأ العمل في السادسة صباحًا. لا يشكو أبدًا. قرأ معظم محتويات الإنترنت. يكتب رسالة بريد إلكتروني جيدة في أربع ثوانٍ."
+ },
+ "596d6732925edb37": {
+  "en": "There are three small problems. The intern is very sure of itself, even when it is wrong. It does not know what 'confidential' means. And it will happily work with whatever you hand over, without asking who else might see it.",
+  "t": "هناك ثلاث مشكلات بسيطة. البرنامج التدريبي واثق جدًّا من نفسه، حتى عندما يكون مخطئًا. ولا يعرف معنى كلمة «سري». كما أنه سيعمل بكل سرور على أي شيء تسلمه إليه، دون أن يسأل عمن قد يطلع عليه غيرك."
+ },
+ "bd48d7756412aec8": {
+  "en": "Congratulations, you have an AI tool. And your team is probably already using it.",
+  "t": "تهانينا، لديك الآن أداة تعمل بالذكاء الاصطناعي. ومن المرجح أن فريقك يستخدمها بالفعل."
+ },
+ "2f8ec3c26ba373cc": {
+  "en": "Treat AI like a brilliant intern. Not like a vault.",
+  "t": "تعامل مع الذكاء الاصطناعي كمتدرب متميز، لا كخزنة."
+ },
+ "1b34e9b8bea13206": {
+  "en": "What the intern is great at",
+  "t": "ما الذي يجيده المتدرب"
+ },
+ "6341c0a7c58b8ecb": {
+  "en": "First drafts. Summaries. Brainstorming ten titles when you have none. Turning your messy notes into something a human can read. For this kind of work it is fast, tireless and surprisingly good.",
+  "t": "المسودات الأولى. الملخصات. طرح عشرة عناوين في جلسة عصف ذهني عندما لا يكون لديك أي عنوان. تحويل ملاحظاتك الفوضوية إلى نص يمكن للإنسان قراءته. بالنسبة لهذا النوع من العمل، فهو سريع ولا يعرف الكلل، كما أنه جيد بشكل مدهش."
+ },
+ "f1e0e093e8c1c7bb": {
+  "en": "What it is not good at: knowing your rules, your clients, or when to say 'I'm not sure'. It sounds equally confident when it is right and when it is making things up. That is the thing to remember.",
+  "t": "ما لا يجيده: معرفة قواعدك، أو عملائك، أو متى يقول «لست متأكدًا». فهو يبدو واثقًا بنفس القدر سواء كان على صواب أو كان يختلق الأمور. هذا هو الأمر الذي يجب تذكره."
+ },
+ "2a95e4dd1b393a33": {
+  "en": "Rule one: do not hand over the keys",
+  "t": "القاعدة الأولى: لا تسلم المفاتيح"
+ },
+ "b1e7e704eb230c4d": {
+  "en": "You would not give an intern on day one the company bank card, the passwords and the client list. Same here.",
+  "t": "لن تقوم بإعطاء متدرب في أول يوم له البطاقة المصرفية الخاصة بالشركة، وكلمات المرور، وقائمة العملاء. الأمر نفسه ينطبق هنا."
+ },
+ "99337929e5607176": {
+  "en": "Noor works in accounting. (Noor is made up, the situation is not.) A supplier sends a long email about a disputed invoice. Noor pastes the whole thing into a free chatbot to get 'a polite reply'. The reply is excellent. The email also contained the supplier's name, bank details and an invoice number, which are now in a place Noor no longer controls.",
+  "t": "تعمل نور في مجال المحاسبة. (اسم «نور» خيالي، لكن الموقف حقيقي.) أرسل أحد الموردين رسالة بريد إلكتروني طويلة بشأن فاتورة متنازع عليها. قامت نور بلصق النص بالكامل في روبوت دردشة مجاني للحصول على «رد مهذب». وكان الرد ممتازًا. كما احتوت الرسالة الإلكترونية على اسم المورد وبياناته المصرفية ورقم الفاتورة، وهي معلومات أصبحت الآن في مكان لا تستطيع نور التحكم فيه."
+ },
+ "1e19dd5fa33d2e82": {
+  "en": "Nothing dramatic happens. But it did not have to happen at all. The simple test: do not paste anything you would not email to a stranger.",
+  "t": "لا يحدث شيء درامي. لكن لم يكن من الضروري أن يحدث ذلك أصلاً. الاختبار البسيط: لا تلصق أي شيء لن ترسله عبر البريد الإلكتروني إلى شخص غريب."
+ },
+ "20ffead591d95826": {
+  "en": "Rule two: check the work",
+  "t": "القاعدة الثانية: راجع عملك"
+ },
+ "9eb1b4909d69118c": {
+  "en": "The intern's best skill is sounding right. So check what matters: names, numbers, dates and promises.",
+  "t": "أفضل مهارة يمتلكها المتدرب هي التأكد من صحة المعلومات. لذا، تحقق من الأمور المهمة: الأسماء، والأرقام، والتواريخ، والوعود."
+ },
+ "02d67fbb3ad7887e": {
+  "en": "This is not only about embarrassment. In 2024 a tribunal in Canada held Air Canada responsible for what the chatbot on its own website had told a customer about a refund. If your AI says it, it is your company saying it.",
+  "t": "الأمر لا يقتصر على الإحراج فحسب. ففي عام 2024، قضت محكمة في كندا بمسؤولية شركة «إير كندا» عما قاله روبوت الدردشة على موقعها الإلكتروني لأحد العملاء بشأن استرداد المبلغ. فإذا قاله الذكاء الاصطناعي الخاص بك، فهذا يعني أن شركتك هي التي تقوله."
+ },
+ "e659107647393d35": {
+  "en": "Rule three: start with the boring jobs",
+  "t": "القاعدة الثالثة: ابدأ بالأعمال المملة"
+ },
+ "5a36bfded2b05d1b": {
+  "en": "Nobody gives a new intern the biggest client in week one. Let the AI prove itself on low-stakes work first: summarising your own meeting notes, drafting a first version of a blog post, suggesting subject lines. When the results are reliable, give it bigger jobs, with a human still reading the output.",
+  "t": "لا أحد يعهد إلى متدرب جديد بأهم عميل في الأسبوع الأول. دع الذكاء الاصطناعي يثبت كفاءته أولاً في مهام بسيطة: تلخيص ملاحظات اجتماعاتك، وصياغة مسودة أولية لمنشور مدونة، واقتراح عناوين للرسائل الإلكترونية. وعندما تصبح النتائج موثوقة، كلفه بمهام أكبر، مع استمرار مراجعة النتائج من قبل شخص حقيقي."
+ },
+ "ffa68b00d41b09eb": {
+  "en": "Rule four: tell people when the intern is talking",
+  "t": "القاعدة الرابعة: أبلغ الحاضرين عندما يتحدث المتدرب"
+ },
+ "b72b44224a0a7c3c": {
+  "en": "If a customer chats with an AI on your website, say so in the first sentence. People forgive a bot for not knowing something. They do not forgive being tricked. (We wrote a whole article about that, because it matters.)",
+  "t": "إذا تواصل أحد العملاء عبر الدردشة مع ذكاء اصطناعي على موقعك الإلكتروني، فاذكر ذلك في الجملة الأولى. فالناس يتسامحون مع عدم معرفة الروبوت لبعض الأمور، لكنهم لا يتسامحون مع خداعهم. (لقد كتبنا مقالاً كاملاً حول هذا الموضوع، لأنه أمر مهم.)"
+ },
+ "6cdbe30a95ed9cce": {
+  "en": "Rule five: give the intern a proper desk",
+  "t": "القاعدة الخامسة: وفر للمتدرب مكتبًا مناسبًا"
+ },
+ "4703720c80070c47": {
+  "en": "Right now, your team probably uses AI the way people use a stray pen: whichever tab is open, whichever account they signed up for. A proper desk looks different:",
+  "t": "في الوقت الحالي، من المرجح أن فريقك يستخدم الذكاء الاصطناعي بنفس الطريقة التي يستخدم بها الناس قلمًا ضائعًا: أي علامة تبويب مفتوحة، وأي حساب قاموا بالتسجيل فيه. أما المكتب المنظم فيبدو مختلفًا:"
+ },
+ "fdb1adfece6b5f0b": {
+  "en": "A short list of approved tools, on business plans, with the data settings checked.",
+  "t": "قائمة موجزة بالأدوات المعتمدة، المتعلقة بخطط الأعمال، مع التحقق من إعدادات البيانات."
+ },
+ "208f44770553b654": {
+  "en": "Clear rules about what never goes in.",
+  "t": "قواعد واضحة بشأن ما لا يُسمح بإدخاله أبدًا."
+ },
+ "d3630b2f9dc132e2": {
+  "en": "Where it makes sense, AI connected to your own systems, such as your CRM or documents, with access rules and a log of what it did, and with personal data removed before anything leaves.",
+  "t": "وحيثما كان ذلك مناسبًا، يتم ربط الذكاء الاصطناعي بأنظمتك الخاصة، مثل نظام إدارة علاقات العملاء (CRM) أو المستندات، مع تطبيق قواعد الوصول وتسجيل الأنشطة التي قام بها، مع حذف البيانات الشخصية قبل إرسال أي شيء."
+ },
+ "1f4200eda65760ab": {
+  "en": "That last step is more work than opening a browser tab. It is also the difference between hoping nothing goes wrong and knowing where the data goes.",
+  "t": "تتطلب تلك الخطوة الأخيرة جهدًا أكبر من مجرد فتح علامة تبويب في المتصفح. كما أنها تمثل الفرق بين الأمل في ألا يحدث أي خطأ، وبين معرفة الوجهة التي تذهب إليها البيانات."
+ },
+ "81a2c0a6198fed88": {
+  "en": "The version for the fridge",
+  "t": "النسخة المخصصة للثلاجة"
+ },
+ "eb754187b86a1645": {
+  "en": "If you remember only five sentences:",
+  "t": "إذا كنت ستتذكر خمس جمل فقط:"
+ },
+ "0db3bcc91d35d71c": {
+  "en": "No passwords, no personal data, no contracts.",
+  "t": "لا كلمات مرور، ولا بيانات شخصية، ولا عقود."
+ },
+ "fe885d7df72be01e": {
+  "en": "Check names, numbers and promises.",
+  "t": "تحقق من الأسماء والأرقام والوعود."
+ },
+ "d1dca945ebdd015a": {
+  "en": "Start with low-risk tasks.",
+  "t": "ابدأ بالمهام ذات المخاطر المنخفضة."
+ },
+ "d413da38fc7d6fc1": {
+  "en": "Say it when AI is talking.",
+  "t": "قلها عندما يتحدث الذكاء الاصطناعي."
+ },
+ "e24985300338daae": {
+  "en": "If you slip, say so right away. Nobody gets in trouble for being quick.",
+  "t": "إذا تعثرت، فقل ذلك على الفور. لا يتعرض أحد للمشاكل لكونه سريعًا في الإبلاغ."
+ },
+ "d4359655bc5dcb85": {
+  "en": "A fair note",
+  "t": "ملاحظة عادلة"
+ },
+ "f3a8a9e8825d046e": {
+  "en": "To be fair to the intern: good AI tools on a business plan do not gossip. Reputable providers usually promise that your input is not used for training and give you controls. But 'usually' is not 'always', and the settings differ per tool, so check yours.",
+  "t": "ولكي نكون منصفين تجاه المتدرب: أدوات الذكاء الاصطناعي الجيدة التي تعمل بنظام الاشتراك التجاري لا تنشر الشائعات. وعادةً ما يتعهد مقدمو الخدمة ذوو السمعة الطيبة بعدم استخدام المدخلات التي تدخلها في عملية التدريب، كما يمنحونك إمكانية التحكم في ذلك. لكن كلمة «عادةً» لا تعني «دائمًا»، وتختلف الإعدادات من أداة إلى أخرى، لذا تأكد من مراجعة إعدادات الأداة التي تستخدمها."
+ },
+ "aad050d639a11398": {
+  "en": "There is also a rule on the books. The EU AI Act expects organisations that use AI to make sure their people understand it well enough for their job. A short team session with real examples is a good start. Ask your adviser what applies to you.",
+  "t": "هناك أيضًا قاعدة منصوص عليها في القانون. ينص قانون الاتحاد الأوروبي بشأن الذكاء الاصطناعي على أن تضمن المؤسسات التي تستخدم الذكاء الاصطناعي أن موظفيها يفهمونه بشكل كافٍ لأداء مهامهم الوظيفية. وتعد جلسة قصيرة مع الفريق تتضمن أمثلة حقيقية بداية جيدة. اسأل مستشارك عن ما ينطبق عليك."
+ },
+ "847b59ffeee4ab8c": {
+  "en": "Noor does not exist. The intern is real, and starts at six.",
+  "t": "نور غير موجودة. أما المتدربة فهي حقيقية، وستبدأ العمل في الساعة السادسة."
+ },
+ "a4c3a51c4fb8048a": {
+  "en": "Want your AI intern at a proper desk?",
+  "t": "هل تريد أن يجلس متدرب الذكاء الاصطناعي الخاص بك على مكتب مناسب؟"
+ },
+ "e754f5600ceed4e8": {
+  "en": "We connect AI to your own systems, with access rules and logging, so you decide what it sees and what it does. Tell us what you want it to do. And what you absolutely do not.",
+  "t": "نقوم بربط الذكاء الاصطناعي بأنظمتكم الخاصة، مع تطبيق قواعد الوصول وتسجيل الأنشطة، بحيث تكونوا أنتم من يقرر ما يراه وما يفعله. أخبرونا بما تريدونه أن يفعله، وما لا تريدونه على الإطلاق."
+ },
+ "624c37c3ae0cb12b": {
+  "en": "Corporate",
+  "t": "الشركات"
+ },
+ "52873611d4666788": {
+  "en": "Your new intern never sleeps, never doubts and has no idea what 'confidential' means | Blog | DRP BuildLab",
+  "t": "المتدرب الجديد لديك لا ينام أبدًا، ولا يشك أبدًا، ولا يملك أدنى فكرة عن معنى كلمة «سري» | المدونة | DRP BuildLab"
+ },
+ "9157960da56da5af": {
+  "en": "Your team is probably already using AI. Treat it like a brilliant intern: five simple rules to keep customer data safe and your company out of trouble.",
+  "t": "من المحتمل أن فريقك يستخدم الذكاء الاصطناعي بالفعل. تعامل معه كأنه متدرب متميز: خمس قواعد بسيطة للحفاظ على أمان بيانات العملاء وحماية شركتك من المشاكل."
  }
 }

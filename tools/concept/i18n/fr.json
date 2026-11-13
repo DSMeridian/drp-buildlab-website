@@ -4362,5 +4362,173 @@
  "e99e0c4794ea55c7": {
   "en": "What a CRM really does for a small business, five signs you have outgrown the spreadsheet, when you don't need one yet, and how to start in one week.",
   "t": "Ce qu'un CRM apporte réellement à une petite entreprise, cinq signes indiquant que vous avez dépassé le stade du tableur, quand vous n'en avez pas encore besoin, et comment vous lancer en une semaine."
+ },
+ "8fd92af153d7bda8": {
+  "en": "Your new intern never sleeps, never doubts and has no idea what 'confidential' means",
+  "t": "Votre nouveau stagiaire ne dort jamais, ne doute jamais et n'a aucune idée de ce que signifie le mot « confidentiel »"
+ },
+ "1837a886063d8fd5": {
+  "en": "Your team is probably already using AI. Treat it like a brilliant intern: five simple rules to keep customer data safe and your company out of trouble.",
+  "t": "Votre équipe utilise sans doute déjà l'IA. Considérez-la comme un stagiaire brillant : cinq règles simples pour protéger les données de vos clients et éviter des ennuis à votre entreprise."
+ },
+ "0a82afc2c20767e4": {
+  "en": "Meet the best intern you have ever had. Starts at six in the morning. Never complains. Has read most of the internet. Writes a decent email in four seconds.",
+  "t": "Voici le meilleur stagiaire que vous ayez jamais eu. Il commence à six heures du matin. Il ne se plaint jamais. Il a lu la quasi-totalité du contenu disponible sur Internet. Il rédige un e-mail correct en quatre secondes."
+ },
+ "596d6732925edb37": {
+  "en": "There are three small problems. The intern is very sure of itself, even when it is wrong. It does not know what 'confidential' means. And it will happily work with whatever you hand over, without asking who else might see it.",
+  "t": "Il y a trois petits problèmes. Le stagiaire est très sûr de lui, même lorsqu'il a tort. Il ne sait pas ce que signifie le terme « confidentiel ». Et il se chargera volontiers de tout ce que vous lui confierez, sans se demander qui d'autre pourrait en prendre connaissance."
+ },
+ "bd48d7756412aec8": {
+  "en": "Congratulations, you have an AI tool. And your team is probably already using it.",
+  "t": "Félicitations, vous disposez désormais d'un outil d'IA. Et votre équipe l'utilise sans doute déjà."
+ },
+ "2f8ec3c26ba373cc": {
+  "en": "Treat AI like a brilliant intern. Not like a vault.",
+  "t": "Considérez l'IA comme un stagiaire brillant. Pas comme un coffre-fort."
+ },
+ "1b34e9b8bea13206": {
+  "en": "What the intern is great at",
+  "t": "Ce dans quoi le stagiaire excelle"
+ },
+ "6341c0a7c58b8ecb": {
+  "en": "First drafts. Summaries. Brainstorming ten titles when you have none. Turning your messy notes into something a human can read. For this kind of work it is fast, tireless and surprisingly good.",
+  "t": "Premières ébauches. Résumés. Trouver dix titres à partir de rien. Transformer vos notes désordonnées en un texte lisible. Pour ce genre de travail, cet outil est rapide, infatigable et étonnamment efficace."
+ },
+ "f1e0e093e8c1c7bb": {
+  "en": "What it is not good at: knowing your rules, your clients, or when to say 'I'm not sure'. It sounds equally confident when it is right and when it is making things up. That is the thing to remember.",
+  "t": "Ce qu'il ne sait pas faire : connaître vos règles, vos clients, ou savoir quand dire « Je ne sais pas ». Il semble tout aussi sûr de lui lorsqu'il a raison que lorsqu'il invente des choses. C'est ce qu'il faut retenir."
+ },
+ "2a95e4dd1b393a33": {
+  "en": "Rule one: do not hand over the keys",
+  "t": "Règle n° 1 : ne remettez pas les clés"
+ },
+ "b1e7e704eb230c4d": {
+  "en": "You would not give an intern on day one the company bank card, the passwords and the client list. Same here.",
+  "t": "Vous ne confieriez pas à un stagiaire, dès son premier jour, la carte bancaire de l'entreprise, les mots de passe et la liste des clients. C'est la même chose ici."
+ },
+ "99337929e5607176": {
+  "en": "Noor works in accounting. (Noor is made up, the situation is not.) A supplier sends a long email about a disputed invoice. Noor pastes the whole thing into a free chatbot to get 'a polite reply'. The reply is excellent. The email also contained the supplier's name, bank details and an invoice number, which are now in a place Noor no longer controls.",
+  "t": "Noor travaille dans la comptabilité. (Noor est un personnage fictif, mais la situation est bien réelle.) Un fournisseur lui envoie un long e-mail concernant une facture contestée. Noor copie-colle l'intégralité du message dans un chatbot gratuit afin d'obtenir « une réponse polie ». La réponse est excellente. L'e-mail contenait également le nom du fournisseur, ses coordonnées bancaires et un numéro de facture, qui se trouvent désormais dans un endroit sur lequel Noor n'a plus aucun contrôle."
+ },
+ "1e19dd5fa33d2e82": {
+  "en": "Nothing dramatic happens. But it did not have to happen at all. The simple test: do not paste anything you would not email to a stranger.",
+  "t": "Il ne se passe rien de grave. Mais cela n'aurait pas dû se produire du tout. Le test est simple : ne collez rien que vous n'enverriez pas par e-mail à un inconnu."
+ },
+ "20ffead591d95826": {
+  "en": "Rule two: check the work",
+  "t": "Règle n° 2 : vérifiez votre travail"
+ },
+ "9eb1b4909d69118c": {
+  "en": "The intern's best skill is sounding right. So check what matters: names, numbers, dates and promises.",
+  "t": "Le principal atout du stagiaire, c'est de donner l'impression d'être à la hauteur. Vérifiez donc ce qui compte vraiment : les noms, les chiffres, les dates et les engagements."
+ },
+ "02d67fbb3ad7887e": {
+  "en": "This is not only about embarrassment. In 2024 a tribunal in Canada held Air Canada responsible for what the chatbot on its own website had told a customer about a refund. If your AI says it, it is your company saying it.",
+  "t": "Il ne s'agit pas seulement d'une question d'embarras. En 2024, un tribunal canadien a jugé Air Canada responsable de ce que le chatbot de son propre site web avait indiqué à un client au sujet d'un remboursement. Si votre IA le dit, c'est votre entreprise qui le dit."
+ },
+ "e659107647393d35": {
+  "en": "Rule three: start with the boring jobs",
+  "t": "Règle n° 3 : commencez par les tâches ennuyeuses"
+ },
+ "5a36bfded2b05d1b": {
+  "en": "Nobody gives a new intern the biggest client in week one. Let the AI prove itself on low-stakes work first: summarising your own meeting notes, drafting a first version of a blog post, suggesting subject lines. When the results are reliable, give it bigger jobs, with a human still reading the output.",
+  "t": "Personne ne confie au nouveau stagiaire le client le plus important dès la première semaine. Laissez d'abord l'IA faire ses preuves sur des tâches à faible enjeu : résumer vos propres notes de réunion, rédiger une première version d'un article de blog, proposer des objets d'e-mail. Lorsque les résultats s'avèrent fiables, confiez-lui des tâches plus importantes, en veillant à ce qu'un humain continue de relire le résultat."
+ },
+ "ffa68b00d41b09eb": {
+  "en": "Rule four: tell people when the intern is talking",
+  "t": "Règle n° 4 : prévenez vos interlocuteurs lorsque le stagiaire prend la parole"
+ },
+ "b72b44224a0a7c3c": {
+  "en": "If a customer chats with an AI on your website, say so in the first sentence. People forgive a bot for not knowing something. They do not forgive being tricked. (We wrote a whole article about that, because it matters.)",
+  "t": "Si un client discute avec une IA sur votre site web, précisez-le dès la première phrase. Les gens pardonnent à un bot de ne pas savoir quelque chose. En revanche, ils ne pardonnent pas d'avoir été trompés. (Nous avons consacré tout un article à ce sujet, car c'est important.)"
+ },
+ "6cdbe30a95ed9cce": {
+  "en": "Rule five: give the intern a proper desk",
+  "t": "Règle n° 5 : mettez un vrai bureau à la disposition du stagiaire"
+ },
+ "4703720c80070c47": {
+  "en": "Right now, your team probably uses AI the way people use a stray pen: whichever tab is open, whichever account they signed up for. A proper desk looks different:",
+  "t": "À l'heure actuelle, votre équipe utilise probablement l'IA comme on utilise un stylo qui traîne : quel que soit l'onglet ouvert, quel que soit le compte sur lequel elle s'est inscrite. Un bureau bien rangé, c'est tout autre chose :"
+ },
+ "fdb1adfece6b5f0b": {
+  "en": "A short list of approved tools, on business plans, with the data settings checked.",
+  "t": "Une liste succincte des outils approuvés, dans le cadre des plans d'affaires, dont les paramètres de données ont été vérifiés."
+ },
+ "208f44770553b654": {
+  "en": "Clear rules about what never goes in.",
+  "t": "Des règles claires sur ce qu'il ne faut jamais y mettre."
+ },
+ "d3630b2f9dc132e2": {
+  "en": "Where it makes sense, AI connected to your own systems, such as your CRM or documents, with access rules and a log of what it did, and with personal data removed before anything leaves.",
+  "t": "Lorsque cela s'avère pertinent, l'IA est connectée à vos propres systèmes, tels que votre CRM ou vos documents, avec des règles d'accès et un journal de ses activités, et les données à caractère personnel sont supprimées avant toute transmission."
+ },
+ "1f4200eda65760ab": {
+  "en": "That last step is more work than opening a browser tab. It is also the difference between hoping nothing goes wrong and knowing where the data goes.",
+  "t": "Cette dernière étape demande plus d'efforts que d'ouvrir un onglet dans un navigateur. C'est aussi la différence entre espérer que tout se passe bien et savoir où vont les données."
+ },
+ "81a2c0a6198fed88": {
+  "en": "The version for the fridge",
+  "t": "La version pour le réfrigérateur"
+ },
+ "eb754187b86a1645": {
+  "en": "If you remember only five sentences:",
+  "t": "Si vous ne deviez retenir que cinq phrases :"
+ },
+ "0db3bcc91d35d71c": {
+  "en": "No passwords, no personal data, no contracts.",
+  "t": "Pas de mot de passe, pas de données personnelles, pas de contrat."
+ },
+ "fe885d7df72be01e": {
+  "en": "Check names, numbers and promises.",
+  "t": "Vérifiez les noms, les chiffres et les promesses."
+ },
+ "d1dca945ebdd015a": {
+  "en": "Start with low-risk tasks.",
+  "t": "Commencez par des tâches présentant peu de risques."
+ },
+ "d413da38fc7d6fc1": {
+  "en": "Say it when AI is talking.",
+  "t": "Dites-le lorsque l'IA parle."
+ },
+ "e24985300338daae": {
+  "en": "If you slip, say so right away. Nobody gets in trouble for being quick.",
+  "t": "Si vous faites une erreur, signalez-la immédiatement. Personne n'aura d'ennuis pour avoir réagi rapidement."
+ },
+ "d4359655bc5dcb85": {
+  "en": "A fair note",
+  "t": "Une remarque pertinente"
+ },
+ "f3a8a9e8825d046e": {
+  "en": "To be fair to the intern: good AI tools on a business plan do not gossip. Reputable providers usually promise that your input is not used for training and give you controls. But 'usually' is not 'always', and the settings differ per tool, so check yours.",
+  "t": "Pour être juste envers le stagiaire : les bons outils d'IA proposés dans le cadre d'un forfait professionnel ne colportent pas de ragots. Les fournisseurs réputés promettent généralement que vos données ne sont pas utilisées à des fins d'apprentissage et vous offrent des options de contrôle. Mais « généralement » ne signifie pas « toujours », et les paramètres varient d'un outil à l'autre ; veillez donc à vérifier les vôtres."
+ },
+ "aad050d639a11398": {
+  "en": "There is also a rule on the books. The EU AI Act expects organisations that use AI to make sure their people understand it well enough for their job. A short team session with real examples is a good start. Ask your adviser what applies to you.",
+  "t": "Il existe également une disposition légale en la matière. La loi européenne sur l’IA impose aux organisations qui utilisent l’IA de veiller à ce que leurs collaborateurs la comprennent suffisamment bien pour exercer leurs fonctions. Une brève réunion d’équipe s’appuyant sur des exemples concrets constitue un bon point de départ. Renseignez-vous auprès de votre conseiller pour savoir ce qui s’applique à votre situation."
+ },
+ "847b59ffeee4ab8c": {
+  "en": "Noor does not exist. The intern is real, and starts at six.",
+  "t": "Noor n'existe pas. La stagiaire, elle, existe bel et bien, et commence à six heures."
+ },
+ "a4c3a51c4fb8048a": {
+  "en": "Want your AI intern at a proper desk?",
+  "t": "Vous souhaitez que votre stagiaire en IA dispose d'un véritable bureau ?"
+ },
+ "e754f5600ceed4e8": {
+  "en": "We connect AI to your own systems, with access rules and logging, so you decide what it sees and what it does. Tell us what you want it to do. And what you absolutely do not.",
+  "t": "Nous intégrons l'IA à vos propres systèmes, avec des règles d'accès et une journalisation, afin que vous puissiez décider de ce qu'elle voit et de ce qu'elle fait. Dites-nous ce que vous souhaitez qu'elle fasse. Et ce que vous ne voulez absolument pas qu'elle fasse."
+ },
+ "624c37c3ae0cb12b": {
+  "en": "Corporate",
+  "t": "Entreprise"
+ },
+ "52873611d4666788": {
+  "en": "Your new intern never sleeps, never doubts and has no idea what 'confidential' means | Blog | DRP BuildLab",
+  "t": "Votre nouveau stagiaire ne dort jamais, ne doute jamais et n'a aucune idée de ce que signifie le mot « confidentiel » | Blog | DRP BuildLab"
+ },
+ "9157960da56da5af": {
+  "en": "Your team is probably already using AI. Treat it like a brilliant intern: five simple rules to keep customer data safe and your company out of trouble.",
+  "t": "Votre équipe utilise sans doute déjà l'IA. Considérez-la comme un stagiaire brillant : cinq règles simples pour protéger les données de vos clients et éviter des ennuis à votre entreprise."
  }
 }

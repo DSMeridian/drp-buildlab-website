@@ -4362,5 +4362,173 @@
  "e99e0c4794ea55c7": {
   "en": "What a CRM really does for a small business, five signs you have outgrown the spreadsheet, when you don't need one yet, and how to start in one week.",
   "t": "中小企業にとってCRMが実際にどのような役割を果たすのか、スプレッドシートでは対応しきれなくなっている5つの兆候、まだCRMが必要ない場合、そして1週間で導入を始める方法についてご紹介します。"
+ },
+ "8fd92af153d7bda8": {
+  "en": "Your new intern never sleeps, never doubts and has no idea what 'confidential' means",
+  "t": "新しく入ったインターンは、決して眠らず、決して疑うこともなく、「機密」という言葉の意味を全く理解していません"
+ },
+ "1837a886063d8fd5": {
+  "en": "Your team is probably already using AI. Treat it like a brilliant intern: five simple rules to keep customer data safe and your company out of trouble.",
+  "t": "御社のチームでは、おそらくすでにAIを活用されていることでしょう。AIを優秀なインターンのように扱ってください。顧客データを安全に守り、会社をトラブルから守るための5つの簡単なルールをご紹介します。"
+ },
+ "0a82afc2c20767e4": {
+  "en": "Meet the best intern you have ever had. Starts at six in the morning. Never complains. Has read most of the internet. Writes a decent email in four seconds.",
+  "t": "これまでで最高のインターンをご紹介します。朝6時から仕事を始めます。決して文句を言いません。インターネット上の情報のほとんどを読み尽くしています。4秒でまともなメールを書き上げます。"
+ },
+ "596d6732925edb37": {
+  "en": "There are three small problems. The intern is very sure of itself, even when it is wrong. It does not know what 'confidential' means. And it will happily work with whatever you hand over, without asking who else might see it.",
+  "t": "3つの小さな問題があります。そのインターンは、たとえ間違っていても、非常に自信満々です。また、「機密」という言葉の意味を理解していません。さらに、他に誰がそれを見る可能性があるかを確認することなく、渡されたものは何でも喜んで処理してしまいます。"
+ },
+ "bd48d7756412aec8": {
+  "en": "Congratulations, you have an AI tool. And your team is probably already using it.",
+  "t": "おめでとうございます。AIツールを導入されましたね。おそらく、チームではすでに活用されていることでしょう。"
+ },
+ "2f8ec3c26ba373cc": {
+  "en": "Treat AI like a brilliant intern. Not like a vault.",
+  "t": "AIを、優秀なインターンのように扱ってください。金庫のように扱うのではなく。"
+ },
+ "1b34e9b8bea13206": {
+  "en": "What the intern is great at",
+  "t": "そのインターンが得意なこと"
+ },
+ "6341c0a7c58b8ecb": {
+  "en": "First drafts. Summaries. Brainstorming ten titles when you have none. Turning your messy notes into something a human can read. For this kind of work it is fast, tireless and surprisingly good.",
+  "t": "初稿。要約。タイトルが思いつかないときに10個の候補をブレインストーミングすること。乱雑なメモを、人が読める形にまとめること。こうした作業においては、このツールは高速で、疲れを知らず、驚くほど優秀です。"
+ },
+ "f1e0e093e8c1c7bb": {
+  "en": "What it is not good at: knowing your rules, your clients, or when to say 'I'm not sure'. It sounds equally confident when it is right and when it is making things up. That is the thing to remember.",
+  "t": "苦手なこと：ルールやクライアントのことを理解すること、あるいは「よくわかりません」と言うべきタイミングを見極めることです。正しいときも、でたらめを言っているときも、同じように自信満々に聞こえてしまいます。この点は覚えておく必要があります。"
+ },
+ "2a95e4dd1b393a33": {
+  "en": "Rule one: do not hand over the keys",
+  "t": "ルールその1：鍵を渡してはいけません"
+ },
+ "b1e7e704eb230c4d": {
+  "en": "You would not give an intern on day one the company bank card, the passwords and the client list. Same here.",
+  "t": "インターン生に、入社初日に会社の銀行カードやパスワード、顧客リストを渡すようなことはしないでしょう。ここでも同じことです。"
+ },
+ "99337929e5607176": {
+  "en": "Noor works in accounting. (Noor is made up, the situation is not.) A supplier sends a long email about a disputed invoice. Noor pastes the whole thing into a free chatbot to get 'a polite reply'. The reply is excellent. The email also contained the supplier's name, bank details and an invoice number, which are now in a place Noor no longer controls.",
+  "t": "ヌールさんは経理の仕事に就いています。（ヌールという名前は架空のものですが、この状況は実話です。）ある取引先から、請求書の不備に関する長いメールが届きました。ヌールさんはそのメール全文を無料のチャットボットに貼り付け、「丁寧な返信」をもらおうとしました。その返信は素晴らしいものでした。 そのメールには、仕入先の社名、銀行口座情報、請求書番号も含まれていましたが、これらは今やヌールが管理できない場所に保存されてしまいました。"
+ },
+ "1e19dd5fa33d2e82": {
+  "en": "Nothing dramatic happens. But it did not have to happen at all. The simple test: do not paste anything you would not email to a stranger.",
+  "t": "劇的な出来事は何も起こりません。しかし、そもそもそんなことが起こる必要は全くなかったのです。簡単なチェック方法があります。見知らぬ人にメールで送らないような内容は、貼り付けないようにしましょう。"
+ },
+ "20ffead591d95826": {
+  "en": "Rule two: check the work",
+  "t": "ルール2：作業内容を確認する"
+ },
+ "9eb1b4909d69118c": {
+  "en": "The intern's best skill is sounding right. So check what matters: names, numbers, dates and promises.",
+  "t": "インターンの最大の強みは、的確な発言ができることです。ですから、重要な点――名前、数字、日付、約束――を確認してください。"
+ },
+ "02d67fbb3ad7887e": {
+  "en": "This is not only about embarrassment. In 2024 a tribunal in Canada held Air Canada responsible for what the chatbot on its own website had told a customer about a refund. If your AI says it, it is your company saying it.",
+  "t": "これは単なる恥ずかしい話というだけではありません。2024年、カナダの裁判所は、エア・カナダの自社ウェブサイト上のチャットボットが顧客に返金について伝えた内容について、同社に責任があると判断しました。AIがそう発言したのであれば、それは貴社がそう言っているのと同じことです。"
+ },
+ "e659107647393d35": {
+  "en": "Rule three: start with the boring jobs",
+  "t": "ルール3：まずは退屈な仕事から手をつける"
+ },
+ "5a36bfded2b05d1b": {
+  "en": "Nobody gives a new intern the biggest client in week one. Let the AI prove itself on low-stakes work first: summarising your own meeting notes, drafting a first version of a blog post, suggesting subject lines. When the results are reliable, give it bigger jobs, with a human still reading the output.",
+  "t": "新入のインターンに、入社1週目で最大のクライアントを任せるようなことは誰もしません。まずはリスクの低い業務でAIの実力を証明させましょう。例えば、自身の会議メモの要約、ブログ記事の初稿作成、件名の提案などです。結果が信頼できるようになったら、より重要な業務を任せていきますが、その際も人間が出力を確認するようにしてください。"
+ },
+ "ffa68b00d41b09eb": {
+  "en": "Rule four: tell people when the intern is talking",
+  "t": "ルール4：インターンが話しているときは、周囲の人にその旨を伝えてください"
+ },
+ "b72b44224a0a7c3c": {
+  "en": "If a customer chats with an AI on your website, say so in the first sentence. People forgive a bot for not knowing something. They do not forgive being tricked. (We wrote a whole article about that, because it matters.)",
+  "t": "もし顧客が貴社のウェブサイト上でAIとチャットをした場合は、そのことを最初の文で明記してください。人は、ボットが何かを知らないことについては許してくれますが、だまされたことについては決して許しません。（これは重要な点ですので、この件については別の記事で詳しく解説しています。）"
+ },
+ "6cdbe30a95ed9cce": {
+  "en": "Rule five: give the intern a proper desk",
+  "t": "ルール5：インターンにきちんとしたデスクを用意する"
+ },
+ "4703720c80070c47": {
+  "en": "Right now, your team probably uses AI the way people use a stray pen: whichever tab is open, whichever account they signed up for. A proper desk looks different:",
+  "t": "現在、御社のチームでは、おそらくAIを、まるで置き忘れたペンを扱うのと同じように、開いているタブや登録したアカウントが何であれ、その都度利用しているのではないでしょうか。整然としたデスクは、次のようなものです："
+ },
+ "fdb1adfece6b5f0b": {
+  "en": "A short list of approved tools, on business plans, with the data settings checked.",
+  "t": "ビジネスプランに関する、承認済みのツールの短いリストで、データ設定が確認済みのものです。"
+ },
+ "208f44770553b654": {
+  "en": "Clear rules about what never goes in.",
+  "t": "絶対に持ち込んではいけないものについて、明確なルールを定めてください。"
+ },
+ "d3630b2f9dc132e2": {
+  "en": "Where it makes sense, AI connected to your own systems, such as your CRM or documents, with access rules and a log of what it did, and with personal data removed before anything leaves.",
+  "t": "適切な場合には、CRMや文書など、自社のシステムと連携したAIを導入し、アクセスルールを設定し、実行内容のログを記録するとともに、データが外部に送信される前に個人情報を削除するようにします。"
+ },
+ "1f4200eda65760ab": {
+  "en": "That last step is more work than opening a browser tab. It is also the difference between hoping nothing goes wrong and knowing where the data goes.",
+  "t": "その最後のステップは、ブラウザのタブを開くよりも手間がかかります。また、それは「何も問題が起きないことを願う」ことと、「データがどこへ送られるのかを知る」こととの違いでもあります。"
+ },
+ "81a2c0a6198fed88": {
+  "en": "The version for the fridge",
+  "t": "冷蔵庫用バージョン"
+ },
+ "eb754187b86a1645": {
+  "en": "If you remember only five sentences:",
+  "t": "もし5つの文だけ覚えておきたいのであれば："
+ },
+ "0db3bcc91d35d71c": {
+  "en": "No passwords, no personal data, no contracts.",
+  "t": "パスワードも、個人情報も、契約も一切不要です。"
+ },
+ "fe885d7df72be01e": {
+  "en": "Check names, numbers and promises.",
+  "t": "名前、数字、約束を確認してください。"
+ },
+ "d1dca945ebdd015a": {
+  "en": "Start with low-risk tasks.",
+  "t": "まずはリスクの低い作業から始めましょう。"
+ },
+ "d413da38fc7d6fc1": {
+  "en": "Say it when AI is talking.",
+  "t": "AIが話しているときに、そう言ってください。"
+ },
+ "e24985300338daae": {
+  "en": "If you slip, say so right away. Nobody gets in trouble for being quick.",
+  "t": "もしミスをしたら、すぐにそのことをお伝えください。素早く対応したからといって、誰かが咎められることはありません。"
+ },
+ "d4359655bc5dcb85": {
+  "en": "A fair note",
+  "t": "公正な指摘"
+ },
+ "f3a8a9e8825d046e": {
+  "en": "To be fair to the intern: good AI tools on a business plan do not gossip. Reputable providers usually promise that your input is not used for training and give you controls. But 'usually' is not 'always', and the settings differ per tool, so check yours.",
+  "t": "インターンの方を擁護するならば、ビジネスプランで利用できる優れたAIツールは、他人の噂話をしません。信頼できるプロバイダーは通常、入力された情報がトレーニングに使用されないことを保証し、ユーザーが設定を管理できるようにしています。しかし、「通常」は「常に」とは限りませんし、設定はツールごとに異なりますので、ご自身のツールをご確認ください。"
+ },
+ "aad050d639a11398": {
+  "en": "There is also a rule on the books. The EU AI Act expects organisations that use AI to make sure their people understand it well enough for their job. A short team session with real examples is a good start. Ask your adviser what applies to you.",
+  "t": "また、関連する規則も定められています。EUのAI法では、AIを利用する組織に対し、従業員がその業務に必要な範囲でAIを十分に理解できるようにすることを求めています。実際の事例を用いた短いチームミーティングは、良い第一歩となるでしょう。ご自身の組織にどのような規定が適用されるかについては、担当のアドバイザーにご相談ください。"
+ },
+ "847b59ffeee4ab8c": {
+  "en": "Noor does not exist. The intern is real, and starts at six.",
+  "t": "ヌールという人物は存在しません。インターンは実在しており、6時から勤務を開始します。"
+ },
+ "a4c3a51c4fb8048a": {
+  "en": "Want your AI intern at a proper desk?",
+  "t": "AIインターンにきちんとしたデスクを用意してあげたいですか？"
+ },
+ "e754f5600ceed4e8": {
+  "en": "We connect AI to your own systems, with access rules and logging, so you decide what it sees and what it does. Tell us what you want it to do. And what you absolutely do not.",
+  "t": "AIを貴社のシステムと連携させ、アクセスルールやログ記録を設定することで、AIが何を認識し、どのような動作を行うかを貴社ご自身で決定いただけます。AIにどのような動作をさせたいか、また絶対にさせてほしくないことは何かをお知らせください。"
+ },
+ "624c37c3ae0cb12b": {
+  "en": "Corporate",
+  "t": "企業"
+ },
+ "52873611d4666788": {
+  "en": "Your new intern never sleeps, never doubts and has no idea what 'confidential' means | Blog | DRP BuildLab",
+  "t": "新しく入ったインターンは、決して眠らず、決して疑うこともなく、「機密」という言葉の意味も全く理解していません | ブログ | DRP BuildLab"
+ },
+ "9157960da56da5af": {
+  "en": "Your team is probably already using AI. Treat it like a brilliant intern: five simple rules to keep customer data safe and your company out of trouble.",
+  "t": "御社のチームでは、おそらくすでにAIを活用されていることでしょう。AIを優秀なインターンのように扱ってください。顧客データを安全に守り、会社をトラブルから守るための5つの簡単なルールをご紹介します。"
  }
 }
