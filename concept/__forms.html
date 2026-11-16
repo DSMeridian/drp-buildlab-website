@@ -8,7 +8,11 @@
      now carry no data-netlify; these Dutch copies are the only definitions.
 
      Every field a visible form posts must be listed here, or Netlify drops
-     it from the submission. localize.js checks this when it copies the file. -->
+     it from the submission. localize.js checks this when it copies the file.
+
+     submission-id is added by site.js, not by the visible forms: one id per
+     filled-in form, also sent to /api/form, so the client zone makes one
+     lead of Netlify's delivery and the website's own. -->
 <html lang="nl">
 <head>
 <meta charset="utf-8">
@@ -18,6 +22,7 @@
 <body>
 <form name="offerte-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
   <input type="hidden" name="subject">
+  <input type="hidden" name="submission-id">
   <p><label>Niet invullen <input name="bot-field"></label></p>
   <p><label>Voornaam <input name="voornaam"></label></p>
   <p><label>Achternaam <input name="achternaam"></label></p>
@@ -33,6 +38,7 @@
 </form>
 <form name="partner-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
   <input type="hidden" name="subject">
+  <input type="hidden" name="submission-id">
   <p><label>Niet invullen <input name="bot-field"></label></p>
   <p><label>Voornaam <input name="voornaam"></label></p>
   <p><label>Achternaam <input name="achternaam"></label></p>
