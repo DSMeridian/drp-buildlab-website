@@ -128,16 +128,17 @@ $$('form[data-event]').forEach(f => f.addEventListener('submit', e => {
     msg.classList.add('show'); bad.focus(); return;
   }
   btn.disabled = true; msg.classList.remove('show');
-  /* The same body also goes to /api/form, which emails it through Resend:
-     Netlify's spam filter files real enquiries under Spam without a word, so
-     its notification can't be the only one. Either one arriving counts as
-     sent. The id stays with this filled-in form, so a retry is not emailed twice. */
-  const body = new URLSearchParams(new FormData(f));
+  /* The same body also goes to /api/form, which emails it through Resend
+     and hands it to the client zone itself: Netlify's spam filter files real
+     enquiries under Spam without a word, and never forwards those. Either
+     one arriving counts as sent. Both get the same submission-id, kept with
+     this filled-in form: a retry is not emailed twice, and the client zone
+     makes one lead of the two deliveries. */
   f.dataset.sid = f.dataset.sid || (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2));
+  const body = new URLSearchParams(new FormData(f)); body.set('submission-id', f.dataset.sid);
   const post = (url, b) => fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: b.toString() })
     .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); });
-  const mail = new URLSearchParams(body); mail.set('submission-id', f.dataset.sid);
-  Promise.any([post(location.pathname, body), post('/api/form', mail)])
+  Promise.any([post(location.pathname, body), post('/api/form', body)])
     .then(() => {
       track(f);
       const done = document.createElement('p'); done.className = 'ok show sent'; done.setAttribute('role', 'status'); done.textContent = ui(f.dataset.sent || 'sent');
