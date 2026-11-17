@@ -3175,10 +3175,6 @@
   "en": "On working when you are sharp, and why at our place the clock mostly ticks for the client. How we agree on results instead of hours, what can go wrong, and how to start yourself.",
   "t": "Über das Arbeiten, wenn man in Bestform ist, und warum bei uns die Uhr meist zugunsten des Kunden tickt. Wie wir uns auf Ergebnisse statt auf Stunden einigen, was dabei schiefgehen kann und wie Sie selbst den Einstieg finden."
  },
- "14b2919dd9b02682": {
-  "en": "Version: <span translate=\"no\">6 november 2026</span>. The Dutch text is the binding version.",
-  "t": "Stand: <span translate=\"no\">6 november 2026</span>. Der niederländische Text ist maßgebend."
- },
  "673dca72d248d622": {
   "en": "Almost done. We have sent you an email: click the link in it to confirm your subscription.",
   "t": "Fast fertig. Wir haben Ihnen eine E-Mail gesendet: Klicken Sie auf den darin enthaltenen Link, um Ihr Abonnement zu bestätigen."
@@ -4530,5 +4526,9 @@
  "9157960da56da5af": {
   "en": "Your team is probably already using AI. Treat it like a brilliant intern: five simple rules to keep customer data safe and your company out of trouble.",
   "t": "Ihr Team nutzt wahrscheinlich bereits KI. Behandeln Sie sie wie einen brillanten Praktikanten: Fünf einfache Regeln, um Kundendaten zu schützen und Ihr Unternehmen vor Problemen zu bewahren."
+ },
+ "df94f2a2cb379fc4": {
+  "en": "Version: <span translate=\"no\">17 november 2026</span>. The Dutch text is the binding version.",
+  "t": "Stand: <span translate=\"no\">17 november 2026</span>. Der niederländische Text ist maßgebend."
  }
 }

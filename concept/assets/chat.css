@@ -311,3 +311,12 @@
    refuses keeps this chat. */
 html:has([id^="tinrate-embed-wrap-"][data-tin-shown]) .chat-toggle,
 html:has([id^="tinrate-embed-wrap-"][data-tin-shown]) .chat-panel{display:none!important}
+
+/* Tinrate consent card (chat.js): shown on top of our chat to a visitor who
+   has not allowed Analytics. Both buttons weigh the same, as in the banner. */
+.chat-tin{flex-shrink:0;padding:.8rem 1rem;background:#f4f6fb;border-bottom:1px solid #e3e7ef;color:#0b0b0c;font-size:.8rem;line-height:1.45}
+.chat-tin[hidden]{display:none}
+.chat-tin p{margin:0 0 .55rem}
+.chat-tin-btns{display:flex;flex-wrap:wrap;gap:.4rem}
+.chat-tin-btns button{flex:1 1 auto;font:inherit;font-size:.78rem;font-weight:600;padding:.4rem .8rem;border-radius:20px;border:1px solid #c9d0de;background:#fff;color:#0b0b0c;cursor:pointer}
+.chat-tin-btns button:hover{border-color:var(--electric,#1f5eff);color:var(--electric,#1f5eff)}
