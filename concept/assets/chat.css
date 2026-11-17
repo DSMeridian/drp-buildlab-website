@@ -300,3 +300,14 @@
 .chat-toggle:hover{background:#3b72ff!important}
 /* phones: the panel has its own close button, so the launcher steps aside */
 @media (max-width:480px){.chat-panel-open .chat-toggle{display:none}}
+
+/* Tinrate Concierge (loaded by a Custom HTML tag in Google Tag Manager,
+   GTM-T5V7GG6G, only after the visitor allows Analytics): while its widget
+   is on the page, our own chat steps aside so visitors see one assistant,
+   not two. Tied to the widget being visible (Tinrate sets data-tin-shown
+   once the widget reports ready), not to its script loading, so our chat
+   stays when the embed never comes up and returns when Tinrate unmounts:
+   consent withdrawn, or the widget stops (trial ended). A visitor who
+   refuses keeps this chat. */
+html:has([id^="tinrate-embed-wrap-"][data-tin-shown]) .chat-toggle,
+html:has([id^="tinrate-embed-wrap-"][data-tin-shown]) .chat-panel{display:none!important}
