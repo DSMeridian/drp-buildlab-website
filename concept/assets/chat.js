@@ -10,6 +10,7 @@
       sub:      'Assistent · Normaal binnen 1 min',
       input:    'Stel een vraag…',
       err:      'Er ging iets mis. Probeer opnieuw of mail naar info@drpbuildlab.com.',
+      tin:      ['Chatten met onze Tinrate-assistent? Die gebruikt analytische cookies.', 'Toestaan en chatten', 'Nee, hier chatten'],
     },
     en: {
       greeting: 'Hello! I am the assistant of DRP BuildLab. Feel free to ask about our services, pricing or approach.',
@@ -17,6 +18,7 @@
       sub:      'Assistant · Usually within 1 min',
       input:    'Ask a question…',
       err:      'Something went wrong. Please try again or email info@drpbuildlab.com.',
+      tin:      ['Chat with our Tinrate assistant? It uses analytics cookies.', 'Allow and chat', 'No, chat here'],
     },
     fr: {
       greeting: 'Bonjour ! Je suis l\'assistant de DRP BuildLab. N\'hésitez pas à poser des questions sur nos services, tarifs ou approche.',
@@ -24,6 +26,7 @@
       sub:      'Assistant · Généralement en moins d\'1 min',
       input:    'Posez une question…',
       err:      'Quelque chose s\'est mal passé. Réessayez ou écrivez à info@drpbuildlab.com.',
+      tin:      ['Discuter avec notre assistant Tinrate ? Il utilise des cookies analytiques.', 'Autoriser et discuter', 'Non, discuter ici'],
     },
     es: {
       greeting: '¡Hola! Soy el asistente de DRP BuildLab. No dudes en preguntar sobre nuestros servicios, precios o enfoque.',
@@ -31,6 +34,7 @@
       sub:      'Asistente · Normalmente en menos de 1 min',
       input:    'Haz una pregunta…',
       err:      'Algo salió mal. Inténtalo de nuevo o escribe a info@drpbuildlab.com.',
+      tin:      ['¿Chatear con nuestro asistente de Tinrate? Utiliza cookies analíticas.', 'Permitir y chatear', 'No, chatear aquí'],
     },
     de: {
       greeting: 'Hallo! Ich bin der Assistent von DRP BuildLab. Stellen Sie gerne Fragen zu unseren Leistungen, Preisen oder unserem Ansatz.',
@@ -38,6 +42,7 @@
       sub:      'Assistent · Normalerweise innerhalb von 1 Min.',
       input:    'Eine Frage stellen…',
       err:      'Etwas ist schiefgelaufen. Bitte erneut versuchen oder schreiben Sie an info@drpbuildlab.com.',
+      tin:      ['Mit unserem Tinrate-Assistenten chatten? Er verwendet Analyse-Cookies.', 'Zulassen und chatten', 'Nein, hier chatten'],
     },
     id: {
       greeting: 'Halo! Saya asisten DRP BuildLab. Silakan bertanya tentang layanan, harga, atau pendekatan kami.',
@@ -45,6 +50,7 @@
       sub:      'Asisten · Biasanya dalam 1 menit',
       input:    'Ajukan pertanyaan…',
       err:      'Terjadi kesalahan. Coba lagi atau email info@drpbuildlab.com.',
+      tin:      ['Mengobrol dengan asisten Tinrate kami? Asisten ini menggunakan cookie analitik.', 'Izinkan dan mengobrol', 'Tidak, mengobrol di sini'],
     },
     ja: {
       greeting: 'こんにちは！DRP BuildLabのアシスタントです。サービス、料金、アプローチについてお気軽にお問いください。',
@@ -52,6 +58,7 @@
       sub:      'アシスタント · 通序1分以内',
       input:    '質問を入力…',
       err:      'エラーが発生しました。再度お試しいただくか、info@drpbuildlab.comまでお問い合わせください。',
+      tin:      ['Tinrateのアシスタントとチャットしますか？分析用Cookieを使用します。', '許可してチャット', 'いいえ、ここでチャット'],
     },
     ar: {
       greeting: 'مرحباً! أنا مساعد DRP BuildLab. لا تتردد في السؤال عن خدماتنا أو أسعارنا!',
@@ -60,6 +67,7 @@
       input:    'اطرح سؤالاً…',
       err:      'حدث خطأ! حاول مرة أخرى أو راسلنا عبر info@drpbuildlab.com',
       rtl:      true,
+      tin:      ['هل تريد الدردشة مع مساعد Tinrate لدينا؟ يستخدم ملفات تعريف الارتباط التحليلية.', 'السماح والدردشة', 'لا، الدردشة هنا'],
     },
     it: {
       greeting: 'Ciao! Sono l\'assistente di DRP BuildLab. Sentiti libero di chiedere dei nostri servizi, prezzi o approccio.',
@@ -67,6 +75,7 @@
       sub:      'Assistente · Di solito entro 1 min',
       input:    'Fai una domanda…',
       err:      'Qualcosa è andato storto. Riprova o scrivi a info@drpbuildlab.com.',
+      tin:      ['Chattare con il nostro assistente Tinrate? Utilizza cookie analitici.', 'Consenti e chatta', 'No, chatta qui'],
     },
     pt: {
       greeting: 'Olá! Sou o assistente da DRP BuildLab. Fique à vontade para perguntar sobre os nossos serviços, preços ou abordagem.',
@@ -74,6 +83,7 @@
       sub:      'Assistente · Normalmente em menos de 1 min',
       input:    'Faça uma pergunta…',
       err:      'Algo correu mal. Tente novamente ou escreva para info@drpbuildlab.com.',
+      tin:      ['Conversar com o nosso assistente Tinrate? Ele usa cookies analíticos.', 'Permitir e conversar', 'Não, conversar aqui'],
     },
     pl: {
       greeting: 'Cześć! Jestem asystentem DRP BuildLab. Śmiało pytaj o nasze usługi, ceny lub podejście do pracy.',
@@ -81,6 +91,7 @@
       sub:      'Asystent · Zazwyczaj w ciągu 1 min',
       input:    'Zadaj pytanie…',
       err:      'Coś poszło nie tak. Spróbuj ponownie lub napisz na info@drpbuildlab.com.',
+      tin:      ['Porozmawiać z naszym asystentem Tinrate? Korzysta on z analitycznych plików cookie.', 'Zezwól i rozmawiaj', 'Nie, rozmawiaj tutaj'],
     },
     af: {
       greeting: 'Hallo! Ek is die assistent van DRP BuildLab. Vra gerus oor ons dienste, pryse of benadering.',
@@ -88,6 +99,7 @@
       sub:      'Assistent · Gewoonlik binne 1 min',
       input:    'Stel \'n vraag…',
       err:      'Iets het fout gegaan. Probeer weer of e-pos info@drpbuildlab.com.',
+      tin:      ['Klets met ons Tinrate-assistent? Dit gebruik analitiese koekies.', 'Laat toe en klets', 'Nee, klets hier'],
     },
   };
 
@@ -188,6 +200,93 @@
   });
   badge(true);
 
+  /* ── Tinrate Concierge, with consent ──
+     GTM (GTM-T5V7GG6G) loads Tinrate only after Analytics consent, because
+     its widget sets a lasting anonymous ID (cdp_anonymous_id) and sends
+     analytics events as soon as it loads. A visitor without that consent
+     who opens this chat sees a card on top of it: allow Analytics and chat
+     with Tinrate, or keep chatting here. Both choices weigh the same, as in
+     the cookie banner. "Allow" goes through DRP_CONSENT.set, so it is the
+     same Analytics consent as the banner's, and then loads pill.js with the
+     GTM tag's attributes (unless GTM got there first). pill.js has no public
+     way to open the chat, so its pill is left on screen to tap. "Chat here"
+     is remembered for the visit (sessionStorage, our own key). If pill.js
+     cannot load (blocked, offline), our chat opens instead. */
+  var TINRATE_EMBED = '6qd4xoaCnGUX';
+  var BASIC_KEY = 'drp-chat-basic';
+  var tinrateFailed = false;
+
+  function analyticsGranted() {
+    try {
+      var c = window.DRP_CONSENT.get();
+      return !!(c && c.analytics);
+    } catch (err) { return false; }
+  }
+  function basicChosen() {
+    try { return sessionStorage.getItem(BASIC_KEY) === '1'; } catch (err) { return false; }
+  }
+  function wantsCard() {
+    return !!(window.DRP_CONSENT && window.DRP_CONSENT.set) &&
+      !tinrateFailed && !window.__drpTinrateLoaded && !analyticsGranted() && !basicChosen();
+  }
+
+  /* The same style the GTM tag adds once pill.js has loaded. */
+  function hideOwnChat() {
+    if (document.getElementById('drp-hide-own-chat')) return;
+    var st = document.createElement('style');
+    st.id = 'drp-hide-own-chat';
+    st.textContent = '.chat-toggle,.chat-panel{display:none!important}';
+    (document.head || document.documentElement).appendChild(st);
+  }
+
+  function loadTinrate() {
+    if (window.__drpTinrateLoaded) return; // already loading, or GTM's copy
+    window.__drpTinrateLoaded = true;     // set first: the GTM tag checks it
+    var sc = document.createElement('script');
+    sc.async = true;
+    sc.src = 'https://business.tinrate.com/embed/pill.js';
+    sc.setAttribute('data-tinrate-embed', TINRATE_EMBED);
+    sc.setAttribute('data-tinrate-consent', 'statistics');
+    sc.setAttribute('data-tinrate-consent-source', 'consent_mode');
+    sc.onload = hideOwnChat;
+    sc.onerror = function () { tinrateFailed = true; open(); };
+    (document.head || document.documentElement).appendChild(sc);
+  }
+
+  var card = document.createElement('div');
+  card.className = 'chat-tin';
+  card.hidden = true;
+  var cardText = document.createElement('p');
+  cardText.textContent = s.tin[0];
+  var cardBtns = document.createElement('div');
+  cardBtns.className = 'chat-tin-btns';
+  var allowBtn = document.createElement('button');
+  allowBtn.type = 'button';
+  allowBtn.textContent = s.tin[1];
+  var stayBtn = document.createElement('button');
+  stayBtn.type = 'button';
+  stayBtn.textContent = s.tin[2];
+  cardBtns.appendChild(allowBtn);
+  cardBtns.appendChild(stayBtn);
+  card.appendChild(cardText);
+  card.appendChild(cardBtns);
+  panel.insertBefore(card, msgsEl);
+
+  allowBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var c = window.DRP_CONSENT.get();
+    window.DRP_CONSENT.set(true, !!(c && c.marketing));
+    card.hidden = true;
+    close();
+    loadTinrate();
+  });
+  stayBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    try { sessionStorage.setItem(BASIC_KEY, '1'); } catch (err) { /* private mode */ }
+    card.hidden = true;
+    input.focus();
+  });
+
   /* ── Events ── */
   toggle.addEventListener('click', function (e) {
     e.stopPropagation();
@@ -220,6 +319,7 @@
 
   /* ── Open / close ── */
   function open() {
+    card.hidden = !wantsCard();
     opened = true;
     document.body.classList.add('chat-panel-open');
     panel.setAttribute('aria-modal', 'true');
