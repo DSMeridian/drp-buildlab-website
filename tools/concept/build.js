@@ -996,7 +996,7 @@ pages['partner-worden'] = page({
   ];
   pages['tinrate'] = page({
     title: 'Tinrate Concierge | Official reseller | DRP BuildLab', desc: 'Order Tinrate Concierge through DRP BuildLab, an official Tinrate reseller. An AI assistant that answers your visitors in seconds. We set it up on your website, and you try it free for 14 days.', nav: 'partner',
-    body: `
+    body: `<div class="tr-page">
 <section class="phero tr-hero"><div class="wrap tr-hero-in">
   <div>
     <p class="tr-badge">Official Tinrate reseller</p>
@@ -1048,7 +1048,7 @@ pages['partner-worden'] = page({
   <div class="care tr-year rv"><div><h2>Pay yearly, pay less</h2><p>A yearly contract costs 15 to 17% less than paying for twelve separate months. Tinrate sends the invoice; we stay your point of contact.</p></div><a class="btn dark" href="#order" data-bill="t-bill-year">Order with yearly billing ${arr}</a></div>
 </div></section>
 
-<section class="sec blue cta" id="order"><div class="wrap cta-grid">
+<section class="sec blue cta tr-order" id="order"><div class="wrap cta-grid">
   <div>
     <h2 class="h2">Order <em>${TC}</em></h2>
     <ol class="steps">
@@ -1102,7 +1102,8 @@ pages['partner-worden'] = page({
     ['Which plan do I need?', `${N('Starter')} gets you going. From ${N('Business')} up, the Tinrate logo no longer shows on your website. ${N('Scale')} is for larger organisations. Not sure? Choose “Help me choose” in the form and we advise you.`],
     ['Can you also improve my website itself?', 'Yes, that is our main work. If your website needs an update before the assistant goes on it, we can do that too, in a separate quote.']
   ])}
-</div></section>`
+</div></section>
+</div>`
   });
 }
 
