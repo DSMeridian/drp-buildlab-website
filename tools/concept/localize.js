@@ -170,7 +170,7 @@ function orgJsonLd(m) {
     logo: ORIGIN + '/assets/icons/icon-512.png', image: ORIGIN + '/assets/img/og-image.png', telephone: '+32473744431', email: 'info@drpbuildlab.com', vatID: 'BE1033313383',
     address: { '@type': 'PostalAddress', streetAddress: 'Honingstraat 1D', addressLocality: 'Hallaar', postalCode: '2220', addressRegion: 'Antwerpen', addressCountry: 'BE' },
     areaServed: 'Worldwide', knowsLanguage: Object.keys(LANG_NAME),
-    sameAs: ['https://www.instagram.com/drp_buildlab/', 'https://www.facebook.com/share/1Hz1mJG22E/', 'https://www.tiktok.com/@drpbuildlab'],
+    sameAs: ['https://www.instagram.com/drp_buildlab/', 'https://www.facebook.com/share/1Hz1mJG22E/', 'https://www.tiktok.com/@drpbuildlab', 'https://www.linkedin.com/company/drpbuildlab/'],
     makesOffer: [
       { '@type': 'Offer', name: 'One-page website with contact form', price: '499', priceCurrency: 'EUR' },
       { '@type': 'Offer', name: 'Website care plan', priceSpecification: { '@type': 'UnitPriceSpecification', price: '29', priceCurrency: 'EUR', unitCode: 'MON' } }
