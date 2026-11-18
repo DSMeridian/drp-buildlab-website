@@ -322,7 +322,17 @@ a.prt-card:hover .img img{transform:scale(1.05)}
 @media (max-width:600px){.tr-stat{grid-template-columns:minmax(0,1fr)}}
 .plans.tr-plans{grid-template-columns:repeat(3,minmax(0,1fr))}
 .tr-plans h2{font-size:clamp(34px,3.2vw,50px)}
-@media (max-width:980px){.plans.tr-plans{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:1180px){.plans.tr-plans{grid-template-columns:minmax(0,1fr)}}
+/* Headings here wrap between words only. The site-wide hyphens:auto
+   hyphenates whenever a line is full, which split "Concierge" and long
+   translated words ("abonnementen", "funktioniert") mid-word. */
+.tr-page :is(h1,h2,h3,.faq summary,.btn),.prt-feat h3{hyphens:manual}
+/* and small enough that the longest translated word fits a half-width
+   column ("ABONNEMENTEN", "POŚREDNICTWEM") */
+.tr-page .sec-head .h2{font-size:clamp(38px,5vw,80px)}
+/* "Order Concierge": the home CTA size (up to 150px) is too big for a
+   half-width column, so "Concierge" broke as CONCIERG/E. */
+.cta.tr-order .h2{font-size:clamp(44px,6.2vw,96px)}
 /* a product name kept out of translation stays one run of text with the
    words around it, instead of a separate flex item with the button's gap */
 .btn span[translate="no"]{display:contents}
@@ -481,7 +491,7 @@ html:has([id^="tinrate-embed-wrap-"]) .ftr{padding-bottom:96px}
 @media (max-width:600px){html:has([id^="tinrate-embed-wrap-"]) .ftr{padding-bottom:156px}}
 .ft-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:32px 48px;padding-bottom:clamp(48px,6vw,80px);border-bottom:1px solid var(--line-d)}
 .ft-ask{margin:0 0 14px;color:var(--mute-d);font-size:17px}
-.ft-mail{display:inline-block;font-family:var(--display);font-weight:700;font-stretch:84%;font-size:clamp(34px,6.2vw,92px);line-height:1;letter-spacing:-.025em;text-decoration:none;overflow-wrap:anywhere;background:linear-gradient(var(--electric-hi),var(--electric-hi)) 0 100%/0 2px no-repeat;padding-bottom:8px;transition:background-size .6s var(--ease),color .3s}
+.ft-mail{display:inline-block;font-family:var(--display);font-weight:700;font-stretch:84%;font-size:min(clamp(34px,6.2vw,92px),8.2vw);line-height:1;letter-spacing:-.025em;text-decoration:none;overflow-wrap:anywhere;background:linear-gradient(var(--electric-hi),var(--electric-hi)) 0 100%/0 2px no-repeat;padding-bottom:8px;transition:background-size .6s var(--ease),color .3s}
 .ft-mail:hover{background-size:100% 2px;color:var(--electric-hi)}
 .ft-acts{display:flex;flex-wrap:wrap;gap:12px}
 .ft-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 32px;padding-block:clamp(44px,5vw,64px)}
