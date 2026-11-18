@@ -147,6 +147,13 @@ $$('form[data-event]').forEach(f => f.addEventListener('submit', e => {
     .catch(() => { btn.disabled = false; msg.textContent = ui('failed'); msg.classList.add('show'); });
 }));
 
+/* Tinrate page: a plan card's button (or the yearly band) jumps to the order
+   form with that plan, or yearly billing, already selected. */
+$$('a[data-plan],a[data-bill]').forEach(a => a.addEventListener('click', () => {
+  const r = document.getElementById(a.dataset.plan || a.dataset.bill);
+  if (r) r.checked = true;
+}));
+
 /* blog newsletter: the sign-up only asks /api/subscribe to email a
    confirmation link. The market goes along; the server reads that market's
    language itself, so the emails arrive in the language the visitor reads. */

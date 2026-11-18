@@ -199,6 +199,14 @@ const PUBLIC_PRICES = ['onepager', 'onderhoud-maandelijks'];
 const priceOf = id => { const x = PRICE[id]; if (!x) throw new Error('No price for ' + id); return PUBLIC_PRICES.includes(id) ? eur(x.p) + (UNIT[x.u] || '') : 'On demand'; };
 
 const OTHER = { href: '/contact/', name: 'Other services', short: 'Logo design, photography, Google Ads, hosting moves, integrations and whatever else your site needs. Just ask.', from: 'On demand' };
+/* Tinrate Concierge, which we sell as an official Tinrate reseller (since
+   18 Nov 2026). Its page /tinrate/ has the order form; the home page features
+   it under "Who we work with", and the services lists and the footer link to
+   it. "Concierge" is a word in Dutch and French, so the product name always
+   carries translate="no". No Tinrate prices: the site shows only the €499
+   one-pager and the €29 plan (PUBLIC_PRICES). Tinrate bills the client. */
+const TC = N('Concierge'), TTC = N('Tinrate Concierge');
+const TINRATE = { href: '/tinrate/', name: TTC, short: 'An AI assistant on your website that answers visitors in seconds and turns conversations into leads. We are an official Tinrate reseller.', from: 'Free 14-day trial' };
 const svcRow = s => `<li><a href="${B}${s.href || `/diensten/${s.slug}/`}"><h3>${s.name}</h3><p>${s.short}</p><span class="price"><span>${s.from}</span> <span class="ar" aria-hidden="true">→</span></span></a></li>`;
 
 const NOT_DONE = ['Printed matter such as business cards, flyers and brochures. We design the logo itself.', 'Mobile apps. We build websites and webshops only.', 'Day-to-day management of ad campaigns. We set up your first Google Ads campaign.', 'Accounting, legal or financial advice.', 'Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.'];
@@ -258,7 +266,7 @@ const footer = () => `<footer class="ftr"><div class="wrap">
   </div>
   <div class="ft-cols">
     <nav aria-label="Footer menu"><h2>Site</h2><ul>${NAV.map(([, t, h]) => `<li><a href="${B}${h}">${t}</a></li>`).join('')}</ul></nav>
-    <div><h2>Services</h2><ul>${SERVICES.map(s => `<li><a href="${B}/diensten/${s.slug}/">${s.name}</a></li>`).join('')}</ul></div>
+    <div><h2>Services</h2><ul>${SERVICES.map(s => `<li><a href="${B}/diensten/${s.slug}/">${s.name}</a></li>`).join('')}<li><a href="${B}/tinrate/" translate="no">Tinrate Concierge</a></li></ul></div>
     <div><h2>Studio</h2><address><span translate="no">Honingstraat 1D<br>2220 Hallaar,</span> Belgium</address><p>Monday to Friday, 9:00 to 18:00</p><p><a href="tel:+32473744431" translate="no">+32 473 74 44 31</a></p><h2 class="ft-pay-h">We accept</h2><ul class="ft-pay">${PAY.map(([n, svg, cls]) => `<li title="${n}"${cls ? ` class="${cls}"` : ''}${n === 'Bank transfer' ? '' : ' translate="no"'}>${svg}</li>`).join('')}</ul></div>
     <div><h2>Follow</h2><ul class="ft-social" translate="no">${[['instagram', 'Instagram', '@drp_buildlab', 'https://www.instagram.com/drp_buildlab/'], ['facebook', 'Facebook', 'DRP BuildLab', 'https://www.facebook.com/share/1Hz1mJG22E/'], ['tiktok', 'TikTok', '@drpbuildlab', 'https://www.tiktok.com/@drpbuildlab'], ['linkedin', 'LinkedIn', 'DRP BuildLab', 'https://www.linkedin.com/company/drpbuildlab/']].map(([k, n, h, u]) => `<li><a href="${u}" target="_blank" rel="noopener"><span class="ico">${ICON[k]}</span><span><b>${n}</b><small>${h}</small></span></a></li>`).join('')}</ul></div>
   </div>
@@ -300,7 +308,7 @@ ${body}
 </main>
 ${footer()}
 ${cursor ? '<div class="cur" id="cur" aria-hidden="true">View</div>' : ''}
-<div id="ui" hidden><span data-k="play">Play</span><span data-k="pause">Pause</span><span data-k="email">Please enter a valid email address so we can reach you.</span><span data-k="tick">Please tick the box so we may contact you about this request.</span><span data-k="fill">Please fill in this field:</span><span data-k="sent">Thank you, your request has been received. We will contact you within 24 hours.</span><span data-k="psent">Thank you, your application has been received. We review it personally and send your link within a few working days.</span><span data-k="failed">Sending failed. Please try again, or email us at info@drpbuildlab.com.</span><span data-k="nlsent">Almost done. We have sent you an email: click the link in it to confirm your subscription.</span><span data-k="nlfail">Subscribing did not work. Please try again in a moment.</span></div>
+<div id="ui" hidden><span data-k="play">Play</span><span data-k="pause">Pause</span><span data-k="email">Please enter a valid email address so we can reach you.</span><span data-k="tick">Please tick the box so we may contact you about this request.</span><span data-k="fill">Please fill in this field:</span><span data-k="sent">Thank you, your request has been received. We will contact you within 24 hours.</span><span data-k="psent">Thank you, your application has been received. We review it personally and send your link within a few working days.</span><span data-k="tsent">Thank you, your order has been received. We will contact you within 24 hours to set up ${TC} on your website.</span><span data-k="failed">Sending failed. Please try again, or email us at info@drpbuildlab.com.</span><span data-k="nlsent">Almost done. We have sent you an email: click the link in it to confirm your subscription.</span><span data-k="nlfail">Subscribing did not work. Please try again in a moment.</span></div>
 <a href="https://wa.me/32473744431" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp us"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.782 6.86L2 30l7.347-1.758A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.25-4.36 1.043 1.072-4.25-.276-.436A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.66c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.232.348-.898 1.132-1.1 1.364-.202.232-.404.26-.752.086-.348-.174-1.468-.54-2.796-1.724-1.034-.92-1.73-2.056-1.934-2.404-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.434-.028-.608-.086-.174-.78-1.882-1.07-2.576-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.608.086-.926.434-.318.348-1.216 1.188-1.216 2.896s1.244 3.356 1.418 3.588c.174.232 2.448 3.736 5.932 5.238.83.358 1.478.572 1.982.732.832.264 1.59.226 2.188.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.204-1.656-.086-.144-.318-.232-.666-.406z"/></svg></a>
 </body>
 </html>
@@ -471,6 +479,15 @@ pages[''] = page({
 
 <section class="sec fog"><div class="wrap">
   <div class="sec-head"><h2 class="h2 rv">Who we <em>work with</em></h2><p class="sub rv">The businesses that rely on us, and an open invitation to grow with us.</p></div>
+  <div class="prt-feat rv">
+    <a class="img" href="${B}/tinrate/" tabindex="-1"><img src="${B}/img/p-tinrate.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Partnership visual: DRP BuildLab and Tinrate"></a>
+    <div class="body">
+      <p class="tr-badge">Official Tinrate reseller</p>
+      <h3>Order ${TTC} <em>through us.</em></h3>
+      <p>An AI assistant on your website that answers visitors in seconds, day and night, with your own documents, and turns conversations into leads. We set it up on your website, and you try it free for 14 days.</p>
+      <div class="acts"><a class="btn" href="${B}/tinrate/#order">Order ${TC} ${arr}</a><a class="tlink" href="${B}/tinrate/">How it works</a></div>
+    </div>
+  </div>
   <div class="prt">
     <a class="prt-card rv" href="${B}/werk/start-to-business/"><div class="img"><img src="${B}/img/p-stb.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Partnership visual: DRP BuildLab and Start to Business"></div><div class="body"><h3 translate="no">Start to Business</h3><p>We developed their website and still maintain it.</p><p class="q" translate="no" lang="en">“Ideas deserve a strong online foundation.”</p></div></a>
     <a class="prt-card rv" href="${B}/werk/hermosa-antwerp/"><div class="img"><img src="${B}/img/p-hermosa.webp" width="1000" height="1200" loading="lazy" decoding="async" alt="Partnership visual: DRP BuildLab and Hermosa Antwerp"></div><div class="body"><h3 translate="no">Hermosa Antwerp</h3><p>DRP BuildLab is Hermosa’s IT maintenance partner.</p><p class="q" translate="no" lang="en">“Technology supports beauty.”</p></div></a>
@@ -704,7 +721,7 @@ pages['diensten'] = page({
   title: 'Services | DRP BuildLab', desc: 'Custom websites, webshops and Shopify, redesigns, maintenance plans and add-ons, with prices shown up front.', nav: 'services',
   body: `${phero({ h1: 'What we <em>build</em>', lede: 'Five services, each with its own page, what is included and a starting price. Every price is confirmed in a written quote.', acts: `<a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a><a class="btn ghost" href="${B}/prijzen/">See all prices</a>` })}
 <section class="sec light"><div class="wrap">
-  <ul class="svc">${[...SERVICES, OTHER].map(svcRow).join('')}</ul>
+  <ul class="svc">${[...SERVICES, TINRATE, OTHER].map(svcRow).join('')}</ul>
 </div></section>
 <section class="sec fog"><div class="wrap">
   <div class="sec-head"><h2 class="h2">What we <em>don’t</em> do</h2><p class="sub">So you know in advance. If you need one of these, we are happy to point you to someone who does.</p></div>
@@ -734,7 +751,7 @@ ${c ? `<section class="sec"><div class="wrap"><div class="cases">${caseRow(c, fa
 </div></section>
 <section class="sec light" style="padding-top:0"><div class="wrap">
   <h2 class="h3" style="margin-bottom:24px">Other services</h2>
-  <ul class="svc">${[...others, OTHER].map(svcRow).join('')}</ul>
+  <ul class="svc">${[...others, TINRATE, OTHER].map(svcRow).join('')}</ul>
 </div></section>
 ${ctaBand()}`
   });
@@ -961,6 +978,133 @@ pages['partner-worden'] = page({
   ])}
 </div></section>`
 });
+
+/* Tinrate Concierge, sold by us as an official Tinrate reseller. The order
+   form is the quote form (offerte-aanvraag), so an order reaches the client
+   zone and the Resend email like any other request: the plan goes in
+   "dienst", plus two fields of its own, "website" and "facturatie" (only the
+   form email and Netlify keep those two). A plan card's button selects its
+   plan in the form (site.js, a[data-plan]). Product facts come from Tinrate's
+   reseller one-pager (Nov 2026): 14-day free trial, one tag on any website,
+   answers from the client's own documents, no Tinrate logo from Business up,
+   Tinrate bills the client, a yearly contract is 15 to 17% cheaper. */
+{
+  const PLANS = [
+    ['starter', 'Starter', 'To get started', `${TC} on your website, answering from your own documents and collecting leads.`],
+    ['business', 'Business', 'For most businesses', `Everything in ${N('Starter')}, without the Tinrate logo on your website.`],
+    ['scale', 'Scale', 'For larger organisations', `For larger organisations, with a plan sized to what you need.`]
+  ];
+  pages['tinrate'] = page({
+    title: 'Tinrate Concierge | Official reseller | DRP BuildLab', desc: 'Order Tinrate Concierge through DRP BuildLab, an official Tinrate reseller. An AI assistant that answers your visitors in seconds. We set it up on your website, and you try it free for 14 days.', nav: 'partner',
+    body: `
+<section class="phero tr-hero"><div class="wrap tr-hero-in">
+  <div>
+    <p class="tr-badge">Official Tinrate reseller</p>
+    <h1 class="h1 md">Your website, <em>answering in seconds.</em></h1>
+    <p class="lede">${TTC} is an AI assistant on your website. It answers visitors day and night with your own documents, books appointments and turns conversations into leads. Order it through DRP BuildLab: we set it up on your website, and you try it free for 14 days.</p>
+    <div class="acts"><a class="btn" href="#order">Order ${TC} ${arr}</a><a class="btn ghost" href="#how">How it works</a></div>
+  </div>
+  <figure class="tr-visual"><img src="${B}/img/p-tinrate.webp" width="1000" height="1200" decoding="async" alt="Partnership visual: DRP BuildLab and Tinrate"></figure>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><h2 class="h2 rv">What ${TC} <em>does</em></h2><p class="sub rv">Visitors who don’t find an answer leave, and nobody knows they were there. ${TC} answers them while they are still on your website.</p></div>
+  <div class="rows">
+    <div class="row rv"><h3>Answers in seconds</h3><p>Day and night, also at the weekend. No form that waits until the next working day.</p></div>
+    <div class="row rv"><h3>Knows your business</h3><p>Unlike a general chatbot, it answers with the documents and information you give it.</p></div>
+    <div class="row rv"><h3>Turns questions into leads</h3><p>It collects contact details and books appointments, so a question at 11 at night is a lead in the morning.</p></div>
+    <div class="row rv"><h3>Shows what visitors ask</h3><p>You see every conversation, every lead and what visitors ask most, so you know what your website brings in.</p></div>
+  </div>
+  <div class="tr-stat rv"><b translate="no">21×</b><p>more likely to qualify a lead when you answer within 5 minutes instead of 30. A form waits until the next working day.<small>Source: Lead Response Management Study, MIT and InsideSales.com.</small></p></div>
+</div></section>
+
+<section class="sec light"><div class="wrap">
+  <div class="sec-head"><h2 class="h2">Why order <em>through us</em></h2><p class="sub">The same ${TTC}, with a team that sets it up for you and stays when you need a change.</p></div>
+  <ul class="incl">
+    <li>We are an official Tinrate reseller</li>
+    <li>We set up ${TC} on your website for you</li>
+    <li>It works on any website, also one we did not build</li>
+    <li>We help you choose the documents it answers from</li>
+    <li>One point of contact when you want to change something</li>
+    <li>You try it free for 14 days on your own website</li>
+  </ul>
+</div></section>
+
+<section class="sec light" id="how" style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><h2 class="h2">How ordering <em>works</em></h2><p class="sub">From the form to a working assistant on your website.</p></div>
+  <ol class="steps" style="margin:0">
+    <li><b>You send the order form</b><span>Choose a plan, or let us help you choose. It takes about a minute.</span></li>
+    <li><b>We contact you within 24 hours</b><span>We look at your website and the documents ${TC} will answer from.</span></li>
+    <li><b>We set it up on your website</b><span>One tag, no rebuild: your website stays as it is.</span></li>
+    <li><b>You try it free for 14 days</b><span>After the trial, Tinrate bills your plan directly, monthly or yearly.</span></li>
+  </ol>
+</div></section>
+
+<section class="sec fog"><div class="wrap">
+  <div class="sec-head"><h2 class="h2">Three <em>plans</em></h2><p class="sub">Not sure which plan fits? Choose “Help me choose” in the form and we advise you. We confirm the price before you start.</p></div>
+  <div class="plans tr-plans">
+    ${PLANS.map(([k, n, f, d]) => `<div class="plan${k === 'business' ? ' dark' : ''} rv"><p class="for">${f}</p><h2 translate="no">${n}</h2><p class="note">${d}</p><a class="btn${k === 'business' ? '' : ' dark'}" href="#order" data-plan="t-plan-${k}">Order the <span translate="no">${n}</span> plan ${arr}</a></div>`).join('')}
+  </div>
+  <div class="care tr-year rv"><div><h2>Pay yearly, pay less</h2><p>A yearly contract costs 15 to 17% less than paying for twelve separate months. Tinrate sends the invoice; we stay your point of contact.</p></div><a class="btn dark" href="#order" data-bill="t-bill-year">Order with yearly billing ${arr}</a></div>
+</div></section>
+
+<section class="sec blue cta" id="order"><div class="wrap cta-grid">
+  <div>
+    <h2 class="h2">Order <em>${TC}</em></h2>
+    <ol class="steps">
+      <li><b>Fill in the form</b><span>It takes about a minute. Nothing is charged yet.</span></li>
+      <li><b>We contact you within 24 hours</b><span>To go through your website and your documents.</span></li>
+      <li><b>Try it free for 14 days</b><span>On your own website, set up by us.</span></li>
+    </ol>
+    <p class="alt" translate="no"><span>info@drpbuildlab.com</span><span>WhatsApp +32 473 74 44 31</span></p>
+  </div>
+  <form class="form" id="tinrate-order" name="offerte-aanvraag" method="POST" novalidate data-event="demo_request" data-sent="tsent">
+    <input type="hidden" name="form-name" value="offerte-aanvraag">
+    <input type="hidden" name="subject" value="Nieuwe bestelling Tinrate Concierge — DRP BuildLab">
+    <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <h3>Order ${TTC}</h3>
+    <div class="frow">
+      <div class="fld"><label for="t-name">Your name</label><input id="t-name" name="voornaam" autocomplete="name" required></div>
+      <div class="fld"><label for="t-tel">Phone</label><input id="t-tel" name="telefoon" type="tel" autocomplete="tel" required></div>
+    </div>
+    <div class="fld"><label for="t-email">Email</label><input id="t-email" name="email" type="email" autocomplete="email" required></div>
+    <div class="frow">
+      <div class="fld"><label for="t-company">Company name</label><input id="t-company" name="bedrijf" autocomplete="organization" required></div>
+      <div class="fld"><label for="t-site">Your website address</label><input id="t-site" name="website" inputmode="url" autocomplete="url" spellcheck="false" maxlength="200" required></div>
+    </div>
+    <fieldset class="chips"><legend>Which plan would you like?</legend>
+      <input type="radio" name="dienst" id="t-plan-starter" value="Tinrate Concierge — Starter" data-slug="tinrate-starter"><label for="t-plan-starter" translate="no">Starter</label>
+      <input type="radio" name="dienst" id="t-plan-business" value="Tinrate Concierge — Business" data-slug="tinrate-business"><label for="t-plan-business" translate="no">Business</label>
+      <input type="radio" name="dienst" id="t-plan-scale" value="Tinrate Concierge — Scale" data-slug="tinrate-scale"><label for="t-plan-scale" translate="no">Scale</label>
+      <input type="radio" name="dienst" id="t-plan-help" value="Tinrate Concierge — advies over het plan" data-slug="tinrate-undecided" checked><label for="t-plan-help">Help me choose</label>
+    </fieldset>
+    <fieldset class="chips"><legend>How would you like to pay Tinrate?</legend>
+      <input type="radio" name="facturatie" id="t-bill-year" value="Jaarlijks" checked><label for="t-bill-year">Yearly, 15 to 17% cheaper</label>
+      <input type="radio" name="facturatie" id="t-bill-month" value="Maandelijks"><label for="t-bill-month">Every month</label>
+    </fieldset>
+    <input type="hidden" name="ref" value="">
+    <div class="fld"><label for="t-msg">Anything we should know? <small>(optional)</small></label><textarea id="t-msg" name="bericht"></textarea></div>
+    <label class="check" for="t-consent"><input type="checkbox" id="t-consent" name="toestemming" value="ja" required><span>I agree that DRP BuildLab uses the details in this form to contact me about this request. <a href="${B}/privacy/">Privacy policy</a></span></label>
+    <p class="fnote">${TC} is a Tinrate service: your subscription is with Tinrate, under Tinrate’s own terms. You try it free for 14 days first.</p>
+    <button class="btn dark" type="submit">Send my order ${arr}</button>
+    <p class="ok" role="status" aria-live="polite"></p>
+    <small>We reply within 24 hours.</small>
+  </form>
+</div></section>
+
+<section class="sec light"><div class="wrap">
+  <div class="sec-head"><h2 class="h2">Questions about <em>${TC}</em></h2><p class="sub">Something else? Write to info@drpbuildlab.com or send us a WhatsApp message.</p></div>
+  ${faqBlock([
+    ['Why order through DRP BuildLab and not directly from Tinrate?', `You get the same ${TTC}, plus a team that sets it up on your website, helps you choose what it answers from and is there when you want to change something. We are an official Tinrate reseller.`],
+    ['Does it work on a website you did not build?', `Yes. ${TC} is one tag that works on any website, without a rebuild. We look at your website first and set it up for you.`],
+    ['Can I try it before I pay?', `Yes. You try ${TC} free for 14 days, on your own website.`],
+    ['Who sends the invoice?', 'Tinrate bills your plan directly, monthly or yearly. A yearly contract costs 15 to 17% less than paying for twelve separate months.'],
+    ['Which plan do I need?', `${N('Starter')} gets you going. From ${N('Business')} up, the Tinrate logo no longer shows on your website. ${N('Scale')} is for larger organisations. Not sure? Choose “Help me choose” in the form and we advise you.`],
+    ['Can you also improve my website itself?', 'Yes, that is our main work. If your website needs an update before the assistant goes on it, we can do that too, in a separate quote.']
+  ])}
+</div></section>`
+  });
+}
 
 /* legal pages: the English half of the live pages, as they are today */
 function legal(slug, title) {

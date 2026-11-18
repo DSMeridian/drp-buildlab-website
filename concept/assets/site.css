@@ -287,6 +287,48 @@ a.prt-card:hover .img img{transform:scale(1.05)}
 @media (max-width:1180px){.prt{grid-template-columns:repeat(2,minmax(0,1fr))}.prt-cta h3{font-size:clamp(38px,4.2vw,60px)}}
 @media (max-width:560px){.prt{grid-template-columns:minmax(0,1fr)}}
 
+/* Tinrate Concierge (we are an official reseller): the featured card on the
+   home page and the /tinrate/ page. Tinrate's own violet, only here. */
+.prt-feat,.tr-hero,.tr-stat{--tin:#6c4dff;--tin-hi:#b3a3ff}
+.prt-feat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);border-radius:22px;overflow:hidden;background:#120d2f;color:#fff;margin-bottom:clamp(14px,2vw,28px);box-shadow:0 40px 80px -50px rgba(108,77,255,.7)}
+.prt-feat .img{position:relative;display:block;min-height:100%;overflow:hidden}
+.prt-feat .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%;transition:transform 1.2s var(--ease)}
+.prt-feat .img:hover img{transform:scale(1.04)}
+.prt-feat .body{padding:clamp(28px,4.4vw,72px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:20px}
+.prt-feat h3{font-family:var(--display);font-weight:800;font-stretch:76%;font-size:clamp(36px,4.6vw,76px);line-height:.92;letter-spacing:-.02em;text-transform:uppercase;margin:0;text-wrap:balance}
+.prt-feat h3 em{color:var(--tin-hi);font-weight:900}
+.prt-feat p{margin:0;color:#cdc9e3;max-width:54ch;font-size:17px}
+.prt-feat .acts{align-items:center;gap:14px 24px;margin-top:6px}
+.prt-feat .btn,.tr-hero .btn:not(.ghost){--b:var(--tin)}
+.prt-feat .tlink:hover{color:var(--tin-hi)}
+.tr-badge{display:inline-flex;align-items:center;gap:10px;margin:0;padding:7px 14px;border-radius:99px;font-size:14px;font-weight:500;background:rgba(108,77,255,.18);color:#d4cbff;box-shadow:inset 0 0 0 1px rgba(108,77,255,.55)}
+.tr-badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--tin);box-shadow:0 0 0 4px rgba(108,77,255,.25)}
+@media (max-width:760px){.prt-feat{grid-template-columns:minmax(0,1fr)}.prt-feat .img{aspect-ratio:5/4}}
+
+.tr-hero::before{background:radial-gradient(closest-side,rgba(108,77,255,.28),rgba(108,77,255,0))}
+.tr-hero-in{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:44px 72px;align-items:center}
+.tr-hero .tr-badge{margin-bottom:28px}
+.tr-hero .h1{font-size:clamp(48px,7vw,124px)}
+.tr-hero .h1 em{color:var(--tin-hi)}
+.tr-hero .lede{margin-top:32px;max-width:52ch}
+.tr-hero .acts{margin-top:32px}
+.tr-visual{margin:0;border-radius:22px;overflow:hidden;aspect-ratio:5/6;box-shadow:0 40px 90px -40px rgba(108,77,255,.65)}
+.tr-visual img{width:100%;height:100%;object-fit:cover}
+@media (max-width:900px){.tr-hero-in{grid-template-columns:minmax(0,1fr)}.tr-visual{max-width:440px}}
+.tr-stat{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 40px;align-items:center;margin-top:clamp(48px,6vw,88px)}
+.tr-stat b{font-family:var(--display);font-weight:800;font-stretch:72%;font-size:clamp(96px,13vw,200px);line-height:.85;color:var(--tin-hi)}
+.tr-stat p{margin:0;font-size:clamp(18px,1.7vw,23px);max-width:42ch}
+.tr-stat small{display:block;margin-top:12px;color:var(--mute-d);font-size:14px}
+@media (max-width:600px){.tr-stat{grid-template-columns:minmax(0,1fr)}}
+.plans.tr-plans{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tr-plans h2{font-size:clamp(34px,3.2vw,50px)}
+@media (max-width:980px){.plans.tr-plans{grid-template-columns:minmax(0,1fr)}}
+/* a product name kept out of translation stays one run of text with the
+   words around it, instead of a separate flex item with the button's gap */
+.btn span[translate="no"]{display:contents}
+.tr-year .btn{white-space:normal}
+.form .fnote{margin:0;font-size:14px;color:var(--mute-l)}
+
 /* call to action */
 .cta-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px 72px;align-items:start}
 .cta .h2{font-size:clamp(56px,9vw,150px)}

@@ -48,7 +48,8 @@ const FORMS = {
     fields: [
       ['voornaam', 'Voornaam'], ['achternaam', 'Achternaam'], ['klanttype', 'Klanttype'],
       ['bedrijf', 'Bedrijfsnaam'], ['ondernemingsnummer', 'Bedrijfs- of btw-nummer'],
-      ['telefoon', 'Telefoon'], ['email', 'E-mail'], ['dienst', 'Dienst'],
+      ['telefoon', 'Telefoon'], ['email', 'E-mail'], ['website', 'Website'],
+      ['dienst', 'Dienst'], ['facturatie', 'Facturatie (Tinrate)'],
       ['ref', 'Partnercode'], ['bericht', 'Bericht'], ['toestemming', 'Toestemming privacybeleid'],
     ],
   },

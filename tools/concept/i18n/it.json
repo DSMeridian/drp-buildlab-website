@@ -4638,5 +4638,353 @@
  "ca111c360956834c": {
   "en": "Nobody reads websites anymore, they ask. We’ve teamed up with Tinrate and are putting its Concierge on our own website before we recommend it to anyone.",
   "t": "«Nessuno legge più i siti web», si chiedono. Abbiamo avviato una collaborazione con Tinrate e stiamo integrando il suo servizio Concierge nel nostro sito web prima ancora di consigliarlo a chiunque."
+ },
+ "2b5ca6cc0c0f49a9": {
+  "en": "Official Tinrate reseller",
+  "t": "Rivenditore ufficiale Tinrate"
+ },
+ "0190459c8809231f": {
+  "en": "Order <span translate=\"no\">Tinrate Concierge</span> <em>through us.</em>",
+  "t": "Attivi <span translate=\"no\">Tinrate Concierge</span> <em>tramite noi.</em>"
+ },
+ "94dd1bd8dc9fe993": {
+  "en": "An AI assistant on your website that answers visitors in seconds, day and night, with your own documents, and turns conversations into leads. We set it up on your website, and you try it free for 14 days.",
+  "t": "Un assistente IA sul Suo sito web che risponde ai visitatori in pochi secondi, giorno e notte, sulla base dei Suoi documenti, e trasforma le conversazioni in potenziali clienti. Lo configuriamo noi sul Suo sito web e Lei lo prova gratis per 14 giorni."
+ },
+ "559f9a8fb9c8e43c": {
+  "en": "Order <span translate=\"no\">Concierge</span> <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "Attivi <span translate=\"no\">Concierge</span> <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "6954367c47da31ec": {
+  "en": "How it works",
+  "t": "Come funziona"
+ },
+ "4fc536b4a5483838": {
+  "en": "Thank you, your order has been received. We will contact you within 24 hours to set up <span translate=\"no\">Concierge</span> on your website.",
+  "t": "Grazie, il Suo ordine è stato ricevuto. La contatteremo entro 24 ore per configurare <span translate=\"no\">Concierge</span> sul Suo sito web."
+ },
+ "66f8a2de77dad977": {
+  "en": "<span translate=\"no\">Tinrate Concierge</span>",
+  "t": "<span translate=\"no\">Tinrate Concierge</span>"
+ },
+ "57590bd92cabe7a0": {
+  "en": "An AI assistant on your website that answers visitors in seconds and turns conversations into leads. We are an official Tinrate reseller.",
+  "t": "Un assistente IA sul Suo sito web che risponde ai visitatori in pochi secondi e trasforma le conversazioni in potenziali clienti. Siamo rivenditore ufficiale Tinrate."
+ },
+ "884c2557f5f72198": {
+  "en": "Free 14-day trial",
+  "t": "Prova gratuita di 14 giorni"
+ },
+ "0a12bd96e4d55760": {
+  "en": "Your website, <em>answering in seconds.</em>",
+  "t": "Il Suo sito web <em>risponde in pochi secondi.</em>"
+ },
+ "2cc7905df7ce8045": {
+  "en": "<span translate=\"no\">Tinrate Concierge</span> is an AI assistant on your website. It answers visitors day and night with your own documents, books appointments and turns conversations into leads. Order it through DRP BuildLab: we set it up on your website, and you try it free for 14 days.",
+  "t": "<span translate=\"no\">Tinrate Concierge</span> è un assistente IA sul Suo sito web. Risponde ai visitatori giorno e notte sulla base dei Suoi documenti, fissa appuntamenti e trasforma le conversazioni in potenziali clienti. Lo attivi tramite DRP BuildLab: lo configuriamo noi sul Suo sito web e Lei lo prova gratis per 14 giorni."
+ },
+ "bd6a3bd4c635d1e2": {
+  "en": "What <span translate=\"no\">Concierge</span> <em>does</em>",
+  "t": "<span translate=\"no\">Concierge</span>: <em>cosa fa</em>"
+ },
+ "cfdb099ef8294735": {
+  "en": "Visitors who don’t find an answer leave, and nobody knows they were there. <span translate=\"no\">Concierge</span> answers them while they are still on your website.",
+  "t": "I visitatori che non trovano una risposta se ne vanno, e nessuno sa che sono passati. <span translate=\"no\">Concierge</span> risponde loro mentre sono ancora sul Suo sito web."
+ },
+ "6517b5a770c8ee5a": {
+  "en": "Answers in seconds",
+  "t": "Risponde in pochi secondi"
+ },
+ "5f750a24becf6391": {
+  "en": "Day and night, also at the weekend. No form that waits until the next working day.",
+  "t": "Giorno e notte, anche nel fine settimana. Nessun modulo che resta in attesa fino al giorno lavorativo successivo."
+ },
+ "fc3d7a571f708e64": {
+  "en": "Knows your business",
+  "t": "Conosce la Sua attività"
+ },
+ "6a1bbf33ec5593bf": {
+  "en": "Unlike a general chatbot, it answers with the documents and information you give it.",
+  "t": "A differenza di un chatbot generico, risponde sulla base dei documenti e delle informazioni che Lei gli fornisce."
+ },
+ "e01b5cdd29557d86": {
+  "en": "Turns questions into leads",
+  "t": "Trasforma le domande in potenziali clienti"
+ },
+ "b217570af00d0d9b": {
+  "en": "It collects contact details and books appointments, so a question at 11 at night is a lead in the morning.",
+  "t": "Raccoglie i dati di contatto e fissa appuntamenti, così una domanda delle 11 di sera diventa un potenziale cliente al mattino."
+ },
+ "4caf792e73f1968c": {
+  "en": "Shows what visitors ask",
+  "t": "Mostra cosa chiedono i visitatori"
+ },
+ "007c6665927a80a3": {
+  "en": "You see every conversation, every lead and what visitors ask most, so you know what your website brings in.",
+  "t": "Vede ogni conversazione, ogni potenziale cliente e le domande più frequenti dei visitatori, così sa cosa Le porta il Suo sito web."
+ },
+ "ccdfb344cd20d758": {
+  "en": "more likely to qualify a lead when you answer within 5 minutes instead of 30. A form waits until the next working day.<small>Source: Lead Response Management Study, MIT and InsideSales.com.</small>",
+  "t": "più probabilità di qualificare un potenziale cliente se risponde entro 5 minuti invece che entro 30. Un modulo resta in attesa fino al giorno lavorativo successivo.<small>Fonte: Lead Response Management Study, MIT e InsideSales.com.</small>"
+ },
+ "2fa510f93d4702c0": {
+  "en": "Why order <em>through us</em>",
+  "t": "Perché attivarlo <em>tramite noi</em>"
+ },
+ "a642c9e044d9196c": {
+  "en": "The same <span translate=\"no\">Tinrate Concierge</span>, with a team that sets it up for you and stays when you need a change.",
+  "t": "Lo stesso <span translate=\"no\">Tinrate Concierge</span>, con un team che lo configura per Lei e resta al Suo fianco quando serve una modifica."
+ },
+ "92f1282cb8781adf": {
+  "en": "We are an official Tinrate reseller",
+  "t": "Siamo rivenditore ufficiale Tinrate"
+ },
+ "1ab91aa3eaf1f2d8": {
+  "en": "We set up <span translate=\"no\">Concierge</span> on your website for you",
+  "t": "Configuriamo noi <span translate=\"no\">Concierge</span> sul Suo sito web"
+ },
+ "3dc94dc5bc9fc6e2": {
+  "en": "It works on any website, also one we did not build",
+  "t": "Funziona su qualsiasi sito web, anche su uno che non abbiamo realizzato noi"
+ },
+ "0386a4730741bd49": {
+  "en": "We help you choose the documents it answers from",
+  "t": "La aiutiamo a scegliere i documenti su cui si basano le risposte"
+ },
+ "df36b37c8286084d": {
+  "en": "One point of contact when you want to change something",
+  "t": "Un unico referente quando vuole modificare qualcosa"
+ },
+ "aeb3521ecbd9125b": {
+  "en": "You try it free for 14 days on your own website",
+  "t": "Lo prova gratis per 14 giorni sul Suo sito web"
+ },
+ "b61aad5215c04ec9": {
+  "en": "How ordering <em>works</em>",
+  "t": "Come funziona <em>l’ordine</em>"
+ },
+ "c6e86f004bb774bf": {
+  "en": "From the form to a working assistant on your website.",
+  "t": "Dal modulo a un assistente operativo sul Suo sito web."
+ },
+ "a5ad29fa8a2440f6": {
+  "en": "You send the order form",
+  "t": "Lei invia il modulo d’ordine"
+ },
+ "a9b181eb0c0cfc4f": {
+  "en": "Choose a plan, or let us help you choose. It takes about a minute.",
+  "t": "Scelga un piano oppure lasci che La aiutiamo a scegliere. Ci vuole circa un minuto."
+ },
+ "c697586925292259": {
+  "en": "We contact you within 24 hours",
+  "t": "La contattiamo entro 24 ore"
+ },
+ "33a4c81b012a65e3": {
+  "en": "We look at your website and the documents <span translate=\"no\">Concierge</span> will answer from.",
+  "t": "Esaminiamo il Suo sito web e i documenti su cui <span translate=\"no\">Concierge</span> baserà le risposte."
+ },
+ "8097f024ea09bac0": {
+  "en": "We set it up on your website",
+  "t": "Lo configuriamo sul Suo sito web"
+ },
+ "256088defb5e78e1": {
+  "en": "One tag, no rebuild: your website stays as it is.",
+  "t": "Un solo tag, nessun rifacimento: il Suo sito web resta com’è."
+ },
+ "34b4f704479b12da": {
+  "en": "You try it free for 14 days",
+  "t": "Lo prova gratis per 14 giorni"
+ },
+ "f7a6eee9702df972": {
+  "en": "After the trial, Tinrate bills your plan directly, monthly or yearly.",
+  "t": "Dopo la prova, Tinrate Le fattura direttamente il piano, mensilmente o annualmente."
+ },
+ "4654b1487694a1e6": {
+  "en": "Three <em>plans</em>",
+  "t": "Tre <em>piani</em>"
+ },
+ "0a756b501d3e18ed": {
+  "en": "Not sure which plan fits? Choose “Help me choose” in the form and we advise you. We confirm the price before you start.",
+  "t": "Non sa quale piano fa per Lei? Scelga “Aiutatemi a scegliere” nel modulo e La consigliamo noi. Confermiamo il prezzo prima di iniziare."
+ },
+ "bb432eaabac0943c": {
+  "en": "To get started",
+  "t": "Per iniziare"
+ },
+ "cb3d21b78dd4231f": {
+  "en": "<span translate=\"no\">Concierge</span> on your website, answering from your own documents and collecting leads.",
+  "t": "<span translate=\"no\">Concierge</span> sul Suo sito web, con risposte basate sui Suoi documenti e raccolta di potenziali clienti."
+ },
+ "0a0768f063a031a3": {
+  "en": "Order the <span translate=\"no\">Starter</span> plan <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "Attivi il piano <span translate=\"no\">Starter</span> <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "ea191783b237a572": {
+  "en": "For most businesses",
+  "t": "Per la maggior parte delle aziende"
+ },
+ "3a5858d2bb59cf33": {
+  "en": "Everything in <span translate=\"no\">Starter</span>, without the Tinrate logo on your website.",
+  "t": "Tutto ciò che include <span translate=\"no\">Starter</span>, senza il logo Tinrate sul Suo sito web."
+ },
+ "f20120837137179a": {
+  "en": "Order the <span translate=\"no\">Business</span> plan <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "Attivi il piano <span translate=\"no\">Business</span> <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "6e909f15dfb4df23": {
+  "en": "For larger organisations",
+  "t": "Per organizzazioni più grandi"
+ },
+ "358b094e56885a5d": {
+  "en": "For larger organisations, with a plan sized to what you need.",
+  "t": "Per organizzazioni più grandi, con un piano dimensionato in base alle Sue esigenze."
+ },
+ "01081c824f821e4f": {
+  "en": "Order the <span translate=\"no\">Scale</span> plan <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "Attivi il piano <span translate=\"no\">Scale</span> <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "13ef9344e5d2a3a4": {
+  "en": "Pay yearly, pay less",
+  "t": "Paghi annualmente, paghi meno"
+ },
+ "21744f7a5aa98a60": {
+  "en": "A yearly contract costs 15 to 17% less than paying for twelve separate months. Tinrate sends the invoice; we stay your point of contact.",
+  "t": "Un contratto annuale costa dal 15 al 17% in meno rispetto al pagamento di dodici mesi separati. Tinrate invia la fattura; noi restiamo il Suo referente."
+ },
+ "cf215fc6fc3981bc": {
+  "en": "Order with yearly billing <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "Attivi con fatturazione annuale <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "7d03814354b66697": {
+  "en": "Order <em><span translate=\"no\">Concierge</span></em>",
+  "t": "Attivi <em><span translate=\"no\">Concierge</span></em>"
+ },
+ "8b79d51a05a34d31": {
+  "en": "Fill in the form",
+  "t": "Compili il modulo"
+ },
+ "2de0cafd56eac90b": {
+  "en": "It takes about a minute. Nothing is charged yet.",
+  "t": "Ci vuole circa un minuto. Non viene ancora addebitato nulla."
+ },
+ "dbe4342fc956d38c": {
+  "en": "To go through your website and your documents.",
+  "t": "Per esaminare il Suo sito web e i Suoi documenti."
+ },
+ "ab4b92d1e5a0508b": {
+  "en": "Try it free for 14 days",
+  "t": "Lo provi gratis per 14 giorni"
+ },
+ "b3d33de4ecff7a9e": {
+  "en": "On your own website, set up by us.",
+  "t": "Sul Suo sito web, configurato da noi."
+ },
+ "2b2f8f9380b221c1": {
+  "en": "Order <span translate=\"no\">Tinrate Concierge</span>",
+  "t": "Attivi <span translate=\"no\">Tinrate Concierge</span>"
+ },
+ "8f55197fa38fdd1f": {
+  "en": "Your website address",
+  "t": "Indirizzo del Suo sito web"
+ },
+ "d5db002ca855571a": {
+  "en": "Which plan would you like?",
+  "t": "Quale piano desidera?"
+ },
+ "4d782faf560ab509": {
+  "en": "Help me choose",
+  "t": "Aiutatemi a scegliere"
+ },
+ "90a866d5baa20d0d": {
+  "en": "How would you like to pay Tinrate?",
+  "t": "Come desidera pagare Tinrate?"
+ },
+ "b2ab45303e0e238a": {
+  "en": "Yearly, 15 to 17% cheaper",
+  "t": "Annuale, dal 15 al 17% in meno"
+ },
+ "9bd2bd2718922b58": {
+  "en": "Every month",
+  "t": "Mensile"
+ },
+ "503f6a23444d5f5d": {
+  "en": "Anything we should know? <small>(optional)</small>",
+  "t": "C’è qualcosa che dovremmo sapere? <small>(facoltativo)</small>"
+ },
+ "de1c17bc4a54c60a": {
+  "en": "<span translate=\"no\">Concierge</span> is a Tinrate service: your subscription is with Tinrate, under Tinrate’s own terms. You try it free for 14 days first.",
+  "t": "<span translate=\"no\">Concierge</span> è un servizio di Tinrate: il Suo abbonamento è con Tinrate, alle condizioni di Tinrate. Prima lo prova gratis per 14 giorni."
+ },
+ "3e1b729f00092f7e": {
+  "en": "Send my order <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "Invia il mio ordine <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "337f315cc5e074ba": {
+  "en": "Questions about <em><span translate=\"no\">Concierge</span></em>",
+  "t": "Domande su <em><span translate=\"no\">Concierge</span></em>"
+ },
+ "b83740dca6a6f3a3": {
+  "en": "Something else? Write to info@drpbuildlab.com or send us a WhatsApp message.",
+  "t": "Altre domande? Ci scriva a info@drpbuildlab.com o ci invii un messaggio su WhatsApp."
+ },
+ "cf006e729154dddf": {
+  "en": "Why order through DRP BuildLab and not directly from Tinrate?",
+  "t": "Perché attivarlo tramite DRP BuildLab e non direttamente da Tinrate?"
+ },
+ "4dc0389b4dce6fd9": {
+  "en": "You get the same <span translate=\"no\">Tinrate Concierge</span>, plus a team that sets it up on your website, helps you choose what it answers from and is there when you want to change something. We are an official Tinrate reseller.",
+  "t": "Riceve lo stesso <span translate=\"no\">Tinrate Concierge</span>, più un team che lo configura sul Suo sito web, La aiuta a scegliere su cosa basare le risposte ed è a disposizione quando vuole modificare qualcosa. Siamo rivenditore ufficiale Tinrate."
+ },
+ "ac440dde37eb8b6a": {
+  "en": "Does it work on a website you did not build?",
+  "t": "Funziona su un sito web che non avete realizzato voi?"
+ },
+ "098211ab7c958367": {
+  "en": "Yes. <span translate=\"no\">Concierge</span> is one tag that works on any website, without a rebuild. We look at your website first and set it up for you.",
+  "t": "Sì. <span translate=\"no\">Concierge</span> è un solo tag che funziona su qualsiasi sito web, senza rifacimenti. Prima esaminiamo il Suo sito web, poi lo configuriamo per Lei."
+ },
+ "749db68ae71583ce": {
+  "en": "Can I try it before I pay?",
+  "t": "Posso provarlo prima di pagare?"
+ },
+ "a5ef7c91fb86a292": {
+  "en": "Yes. You try <span translate=\"no\">Concierge</span> free for 14 days, on your own website.",
+  "t": "Sì. Prova <span translate=\"no\">Concierge</span> gratis per 14 giorni, sul Suo sito web."
+ },
+ "afecadeadd00cca3": {
+  "en": "Who sends the invoice?",
+  "t": "Chi invia la fattura?"
+ },
+ "90e62389da695861": {
+  "en": "Tinrate bills your plan directly, monthly or yearly. A yearly contract costs 15 to 17% less than paying for twelve separate months.",
+  "t": "Tinrate Le fattura direttamente il piano, mensilmente o annualmente. Un contratto annuale costa dal 15 al 17% in meno rispetto al pagamento di dodici mesi separati."
+ },
+ "9500a89d681b3a59": {
+  "en": "Which plan do I need?",
+  "t": "Di quale piano ho bisogno?"
+ },
+ "4a665e6fa455044a": {
+  "en": "<span translate=\"no\">Starter</span> gets you going. From <span translate=\"no\">Business</span> up, the Tinrate logo no longer shows on your website. <span translate=\"no\">Scale</span> is for larger organisations. Not sure? Choose “Help me choose” in the form and we advise you.",
+  "t": "Con <span translate=\"no\">Starter</span> si parte. Da <span translate=\"no\">Business</span> in su, il logo Tinrate non compare più sul Suo sito web. <span translate=\"no\">Scale</span> è pensato per organizzazioni più grandi. Ha dei dubbi? Scelga “Aiutatemi a scegliere” nel modulo e La consigliamo noi."
+ },
+ "edf1401ef7861d2e": {
+  "en": "Can you also improve my website itself?",
+  "t": "Potete anche migliorare il mio sito web?"
+ },
+ "57837badf9705c77": {
+  "en": "Yes, that is our main work. If your website needs an update before the assistant goes on it, we can do that too, in a separate quote.",
+  "t": "Sì, è il nostro lavoro principale. Se il Suo sito web ha bisogno di un aggiornamento prima di inserire l’assistente, possiamo occuparcene noi, con un preventivo separato."
+ },
+ "20d26dc3964ab63a": {
+  "en": "Partnership visual: DRP BuildLab and Tinrate",
+  "t": "Immagine relativa alla partnership: DRP BuildLab e Tinrate"
+ },
+ "5fb4b5ba182b0efd": {
+  "en": "Tinrate Concierge | Official reseller | DRP BuildLab",
+  "t": "Tinrate Concierge | Rivenditore ufficiale | DRP BuildLab"
+ },
+ "1370b96b2378e362": {
+  "en": "Order Tinrate Concierge through DRP BuildLab, an official Tinrate reseller. An AI assistant that answers your visitors in seconds. We set it up on your website, and you try it free for 14 days.",
+  "t": "Attivi Tinrate Concierge tramite DRP BuildLab, rivenditore ufficiale Tinrate. Un assistente IA che risponde ai Suoi visitatori in pochi secondi. Lo configuriamo sul Suo sito web e Lei lo prova gratis per 14 giorni."
  }
 }

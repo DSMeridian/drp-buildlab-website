@@ -73,6 +73,8 @@ https://www.drpbuildlab.com/*    https://drpbuildlab.com/:splat    301!
 /contact.html                     /be/contact/                      301!
 /partner-worden                   /be/partner-worden/               301!
 /partner-worden/                  /be/partner-worden/               301!
+/tinrate                          /be/tinrate/                      301!
+/tinrate/                         /be/tinrate/                      301!
 /algemene-voorwaarden             /be/algemene-voorwaarden/         301!
 /algemene-voorwaarden/            /be/algemene-voorwaarden/         301!
 /privacy                          /be/privacy/                      301!
