@@ -14,7 +14,8 @@
                drpbuildlab.com. It is created unsent and read back first: if
                Resend did not keep the topic, it would reach every language,
                so it is deleted instead of sent. A broadcast is named
-               blog:<slug>:<lang>, and a sent name is skipped, so running
+               blog:<slug>:<lang> (shortened when over Resend's 70
+               characters, see broadcastName), and a sent name is skipped, so running
                this twice never emails anyone twice.
    preview     (staging) nothing goes to subscribers; ADMIN_EMAIL gets the
                English email, marked as a preview.
@@ -65,6 +66,23 @@ function newlyPublished(published) {
   return out;
 }
 
+/* Resend refuses a broadcast name over 70 characters, and a slug can run to 80.
+   A slug too long for blog:<slug>:<lang> is cut, and a hash of the whole slug
+   keeps it unique: blog:<start of slug>~<8 hex>:<lang>. Names that fit are
+   unchanged, so what was sent before is still recognised and skipped.
+   drp_cms reads these names back (src/lib/insights/newsletter.ts,
+   broadcastSlugKey); change both together. */
+const NAME_MAX = 70;
+function broadcastName(slug, lang) {
+  const name = `blog:${slug}:${lang}`;
+  if (name.length <= NAME_MAX) return name;
+  let h = 0x811c9dc5; // FNV-1a, 32 bits
+  for (let i = 0; i < slug.length; i++) h = Math.imul(h ^ slug.charCodeAt(i), 0x01000193) >>> 0;
+  const tag = '~' + h.toString(16).padStart(8, '0');
+  const start = slug.slice(0, NAME_MAX - `blog:${tag}:${lang}`.length).replace(/-+$/, '');
+  return `blog:${start}${tag}:${lang}`;
+}
+
 const read = p => fs.readFileSync(path.join(SITE, p), 'utf8');
 const text = s => String(s || '').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 
@@ -89,7 +107,7 @@ async function main() {
       const s = nl.mailStrings(read(`${prefix}/blog/subscribe/index.html`));
       const url = `${ORIGIN}/${prefix}/blog/${slug}/`;
       const input = { s, lang, title, excerpt, url, image: post.cover ? ORIGIN + post.cover.src : null };
-      mails.push({ slug, lang, url, input, name: `blog:${slug}:${lang}`, ...nl.articleEmail(input) });
+      mails.push({ slug, lang, url, input, name: broadcastName(slug, lang), ...nl.articleEmail(input) });
     }
   }
   console.log(`newsletter: ${mails.length} email(s): ${mails.map(m => m.name).join(', ')}`);
