@@ -178,13 +178,17 @@ async function main() {
     if (!(await isLive(m.url))) { failed.push(`${m.name}: ${m.url} is not live after 15 minutes`); continue; }
     try {
       const id = await sendToTopic(nl, apiKey, { segment, topic: topic.id, draft: drafts.get(m.name), from, m });
+      if (!id) { console.log(`newsletter: no subscribers in ${m.lang} yet; ${m.name} skipped`); continue; }
       console.log(`newsletter: ${m.name} sent to "${nl.BLOG_SEGMENT}", topic "${topic.name}" (broadcast ${id})`);
     } catch (e) { failed.push(`${m.name}: ${e.message}`); }
   }
   if (failed.length) throw new Error('newsletter: not sent:\n  ' + failed.join('\n  ') + '\nRun the Blog workflow again (or this script with --slug) once fixed; what was sent is skipped.');
 }
 
-/* Creates the broadcast unsent, checks Resend kept segment and topic, sends. */
+/* Creates the broadcast unsent, checks Resend kept segment and topic, sends.
+   A language topic can exist with nobody opted in (everyone left, or it was
+   made ahead of its first subscriber); Resend refuses to send to it, so the
+   broadcast is deleted and null returned: nothing to send, not a failure. */
 async function sendToTopic(nl, apiKey, { segment, topic, draft, from, m }) {
   if (draft) await nl.resend(apiKey, 'DELETE', `/broadcasts/${draft}`);
   const c = await nl.resend(apiKey, 'POST', '/broadcasts', { segment_id: segment, topic_id: topic, from, subject: m.subject, html: m.html, text: m.text, name: m.name });
@@ -196,6 +200,10 @@ async function sendToTopic(nl, apiKey, { segment, topic, draft, from, m }) {
     throw new Error(`Resend did not keep the language topic on the broadcast (${back.status}); deleted, nothing sent`);
   }
   const s = await nl.resend(apiKey, 'POST', `/broadcasts/${id}/send`, {});
+  if (s.status === 422 && /has no contacts/i.test(String(s.data?.message))) {
+    await nl.resend(apiKey, 'DELETE', `/broadcasts/${id}`);
+    return null;
+  }
   if (!s.ok) throw new Error(`send ${s.status} ${JSON.stringify(s.data).slice(0, 200)}`);
   return id;
 }
