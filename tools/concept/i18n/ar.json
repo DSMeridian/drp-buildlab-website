@@ -4530,5 +4530,113 @@
  "df94f2a2cb379fc4": {
   "en": "Version: <span translate=\"no\">17 november 2026</span>. The Dutch text is the binding version.",
   "t": "الإصدار:<span translate=\"no\">17 november 2026</span>. النص الهولندي هو النص الملزم."
+ },
+ "304ba0a22af17423": {
+  "en": "Clients and partners",
+  "t": "العملاء والشركاء"
+ },
+ "a48dabbe70b877eb": {
+  "en": "We’re partnering with Tinrate, and we’re testing it on our own website first",
+  "t": "نحن نتعاون مع Tinrate، ونقوم باختبارها على موقعنا الإلكتروني أولاً"
+ },
+ "77e9c6e19a3ce1d7": {
+  "en": "Nobody reads websites anymore, they ask. We’ve teamed up with Tinrate and are putting its Concierge on our own website before we recommend it to anyone.",
+  "t": "\"لم يعد أحد يقرأ مواقع الويب\"، هكذا يقولون. لقد تعاونا مع شركة «Tinrate» ونقوم حالياً بدمج خدمة «Concierge» الخاصة بها في موقعنا الإلكتروني قبل أن نوصي بها لأي شخص."
+ },
+ "e4fbdd40e56c55d3": {
+  "en": "2 min read",
+  "t": "مدة القراءة: دقيقتان"
+ },
+ "e0525c70feee5f84": {
+  "en": "Nobody wants to read an entire website anymore. They want to ask a question and get an answer, quickly.",
+  "t": "لم يعد أحد يرغب في قراءة موقع إلكتروني بأكمله. بل يريدون طرح سؤال والحصول على إجابة بسرعة."
+ },
+ "615a560f03f53231": {
+  "en": "That is why I sat down with Gunther Ghysels, the founder of <a href=\"https://tinrate.com/\" target=\"_blank\" rel=\"noopener\">Tinrate</a>, to talk about where we could work together. The result: we are becoming a Tinrate partner, and before we bring it to a single client, we are running it on our own website first.",
+  "t": "ولهذا السبب التقيتُ بغونتر غيسيلز، مؤسس شركة <a href=\"https://tinrate.com/\" target=\"_blank\" rel=\"noopener\">تينريت</a>، للتحدث عن المجالات التي يمكننا التعاون فيها. والنتيجة: أصبحنا شركاءً لشركة «تينريت»، وقبل أن نقدم هذه الخدمة لأي عميل، سنقوم بتشغيلها أولاً على موقعنا الإلكتروني."
+ },
+ "6e016be217cc36a3": {
+  "en": "What Tinrate does",
+  "t": "ما الذي تقدمه Tinrate"
+ },
+ "43d064bc7f659a0f": {
+  "en": "<a href=\"https://tinrate.com/\" target=\"_blank\" rel=\"noopener\">Tinrate</a> is an AI startup from Ghent, built around one idea: connecting knowledge. Its main product is the marketplace where you can find all sorts of expertise and advise and their newest product is the <strong>Concierge</strong>.",
+  "t": "<a href=\"https://tinrate.com/\" target=\"_blank\" rel=\"noopener\">Tinrate</a> هي شركة ناشئة متخصصة في الذكاء الاصطناعي مقرها مدينة غنت، وتقوم على فكرة واحدة هي: ربط المعرفة. ويتمثل منتجها الرئيسي في منصة تتيح لك العثور على جميع أنواع الخبرات والمشورة، أما أحدث منتجاتها فهو <strong>Concierge</strong>."
+ },
+ "2d3506422726efc1": {
+  "en": "The Concierge lives on your website and answers visitors on the spot, from your own knowledge. It qualifies them, and it gets every request to the right person in your organisation. If a conversation needs a call, it can book one, free or paid. No more \"we’ll get back to you\", and no more manually forwarding what lands in the info@ inbox. Also connections with every CRM is included.",
+  "t": "يعمل «الكونسيرج» على موقعك الإلكتروني ويجيب على استفسارات الزوار فوراً، مستنداً إلى معرفتك الخاصة. كما يقوم بتصنيف الاستفسارات، ويوجه كل طلب إلى الشخص المناسب في مؤسستك. وإذا تطلبت المحادثة إجراء مكالمة هاتفية، فيمكنه حجزها، سواء كانت مجانية أو مدفوعة. لن تضطر بعد الآن إلى قول «سنتواصل معك لاحقًا»، ولن تحتاج إلى إعادة توجيه الرسائل الواردة إلى صندوق البريد «info@» يدويًّا. كما يتضمن النظام إمكانية الربط مع جميع أنظمة إدارة علاقات العملاء (CRM)."
+ },
+ "b103b8cb161d91d1": {
+  "en": "Apart from conversion Tinrate concierge also gives customer data insights, now you really know what your customers need or what the trends are.",
+  "t": "بالإضافة إلى معدل التحويل، توفر خدمة «Tinrate Concierge» أيضًا رؤى حول بيانات العملاء، وبذلك يمكنك الآن معرفة احتياجات عملائك أو اتجاهات السوق بشكل دقيق."
+ },
+ "80810786b4db55e0": {
+  "en": "Why this fits how people search now",
+  "t": "لماذا يتوافق هذا مع الطريقة التي يبحث بها الناس حالياً"
+ },
+ "79bd608e604c3ed1": {
+  "en": "Our customers no longer browse menus and skim pages. Just like with GEO (generative engine optimization), they want to ask a question, simplify the process, and speed it up. A website that makes people dig for the answer loses to one that simply answers.",
+  "t": "لم يعد عملاؤنا يتصفحون القوائم أو يقرؤون الصفحات سريعًا. تمامًا كما هو الحال مع GEO (تحسين محركات البحث التوليدي)، فإنهم يرغبون في طرح سؤال، وتبسيط العملية، وتسريعها. فالموقع الإلكتروني الذي يجبر المستخدمين على البحث عن الإجابة يخسر أمام الموقع الذي يقدم الإجابة مباشرةً."
+ },
+ "c9525e89a0336b8d": {
+  "en": "What sets Tinrate apart in our opinion",
+  "t": "ما يميز Tinrate في رأينا"
+ },
+ "4597e95eeace05cc": {
+  "en": "This morning, our head software engineer, Lathif Sihab Dewantoro, shared his view with me. What stands out to him is that Tinrate distinguishes itself with a workflow configuration that is not technical. The people who know your customers best can decide how questions are handled and who they get routed to, without waiting for a developer.",
+  "t": "هذا الصباح، شاركني كبير مهندسي البرمجيات لدينا، لطيف سيهاب ديوانتورو، برأيه. وما يلفت انتباهه هو أن «تينريت» تتميز بتكوين سير عمل لا يتطلب خبرة تقنية. فالأشخاص الذين يعرفون عملاءكم أفضل من غيرهم يمكنهم تحديد كيفية التعامل مع الأسئلة وإلى من يتم توجيهها، دون الحاجة إلى انتظار مطور برمجيات."
+ },
+ "d3261b0f86c79f57": {
+  "en": "That was the deciding factor for us. A tool that only engineers can configure stays a side project. A tool that the whole team can shape actually gets used.",
+  "t": "كان ذلك هو العامل الحاسم بالنسبة لنا. فالأداة التي لا يستطيع تهيئتها سوى المهندسين تظل مجرد مشروع جانبي، أما الأداة التي يمكن للفريق بأكمله المشاركة في تطويرها، فهي التي تُستخدم فعليًّا."
+ },
+ "69156b2a94be0e2c": {
+  "en": "Why we test it on ourselves first",
+  "t": "لماذا نجربه على أنفسنا أولاً"
+ },
+ "4e4a9cb86838c099": {
+  "en": "We will not recommend something we have not lived with. So the Concierge is going onto our own website, and we will be looking at:",
+  "t": "لن نوصي بأي شيء لم نجربه بأنفسنا. لذا، سيتم إدراج خدمة «الكونسيرج» على موقعنا الإلكتروني الخاص، وسنستعرض ما يلي:"
+ },
+ "d4f1ec50eac6f452": {
+  "en": "how well it answers real visitor questions",
+  "t": "مدى فعالية إجابتها على أسئلة الزوار الفعلية"
+ },
+ "4a9401964c8e5a13": {
+  "en": "how much faster visitors get what they came for",
+  "t": "مدى السرعة التي يحصل بها الزوار على ما جاءوا من أجله"
+ },
+ "ec400af4cb44f33a": {
+  "en": "how easy the configuration is for people who are not engineers",
+  "t": "مدى سهولة عملية التهيئة بالنسبة للأشخاص غير المهندسين"
+ },
+ "732ebfe7d51a6998": {
+  "en": "what needs to improve before we roll it out to clients",
+  "t": "ما الذي يجب تحسينه قبل طرحه للعملاء؟"
+ },
+ "41dc6acfef4d8f48": {
+  "en": "how it affects lead conversion and workflow automation",
+  "t": "كيف يؤثر ذلك على تحويل العملاء المحتملين وأتمتة سير العمل"
+ },
+ "6c1fedbc0f094499": {
+  "en": "What’s next",
+  "t": "ماذا بعد؟"
+ },
+ "41384633e976341a": {
+  "en": "We will share what we learn along the way, including what does not work. In the meantime, try it on our website and tell us what you think. And if you would like to see the Concierge on your own site, get in touch.",
+  "t": "سوف نشارككم ما نتعلمه خلال هذه الرحلة، بما في ذلك ما لا ينجح. في غضون ذلك، جربوا الخدمة على موقعنا الإلكتروني وأخبرونا برأيكم. وإذا كنتم ترغبون في عرض خدمة «كونسيرج» على موقعكم الخاص، فلا تترددوا في الاتصال بنا."
+ },
+ "c515ef85df437ff6": {
+  "en": "Tinrate DRP BuildLab collaboration partnership",
+  "t": "شراكة التعاون بين Tinrate وDRP وBuildLab"
+ },
+ "d8b12afde196d8ed": {
+  "en": "We’re partnering with Tinrate, and we’re testing it on our own website first | Blog | DRP BuildLab",
+  "t": "نحن نتعاون مع Tinrate، ونقوم باختبارها على موقعنا الإلكتروني أولاً | المدونة | DRP BuildLab"
+ },
+ "ca111c360956834c": {
+  "en": "Nobody reads websites anymore, they ask. We’ve teamed up with Tinrate and are putting its Concierge on our own website before we recommend it to anyone.",
+  "t": "\"لم يعد أحد يقرأ مواقع الويب\"، هكذا يقولون. لقد تعاونا مع شركة «Tinrate» ونقوم حالياً بدمج خدمة «Concierge» الخاصة بها في موقعنا الإلكتروني قبل أن نوصي بها لأي شخص."
  }
 }

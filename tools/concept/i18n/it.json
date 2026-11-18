@@ -4530,5 +4530,113 @@
  "df94f2a2cb379fc4": {
   "en": "Version: <span translate=\"no\">17 november 2026</span>. The Dutch text is the binding version.",
   "t": "Versione: <span translate=\"no\">17 november 2026</span>. Il testo in olandese è la versione facente fede."
+ },
+ "304ba0a22af17423": {
+  "en": "Clients and partners",
+  "t": "Clienti e partner"
+ },
+ "a48dabbe70b877eb": {
+  "en": "We’re partnering with Tinrate, and we’re testing it on our own website first",
+  "t": "Abbiamo avviato una collaborazione con Tinrate e stiamo testando il servizio innanzitutto sul nostro sito web"
+ },
+ "77e9c6e19a3ce1d7": {
+  "en": "Nobody reads websites anymore, they ask. We’ve teamed up with Tinrate and are putting its Concierge on our own website before we recommend it to anyone.",
+  "t": "«Nessuno legge più i siti web», si chiedono. Abbiamo avviato una collaborazione con Tinrate e stiamo integrando il suo servizio Concierge nel nostro sito web prima ancora di consigliarlo a chiunque."
+ },
+ "e4fbdd40e56c55d3": {
+  "en": "2 min read",
+  "t": "2 minuti di lettura"
+ },
+ "e0525c70feee5f84": {
+  "en": "Nobody wants to read an entire website anymore. They want to ask a question and get an answer, quickly.",
+  "t": "Ormai nessuno ha più voglia di leggere un intero sito web. Gli utenti vogliono porre una domanda e ottenere una risposta, in tempi rapidi."
+ },
+ "615a560f03f53231": {
+  "en": "That is why I sat down with Gunther Ghysels, the founder of <a href=\"https://tinrate.com/\" target=\"_blank\" rel=\"noopener\">Tinrate</a>, to talk about where we could work together. The result: we are becoming a Tinrate partner, and before we bring it to a single client, we are running it on our own website first.",
+  "t": "Ecco perché mi sono incontrato con Gunther Ghysels, fondatore di <a href=\"https://tinrate.com/\" target=\"_blank\" rel=\"noopener\">Tinrate</a>, per discutere delle possibili collaborazioni. Il risultato: stiamo diventando partner di Tinrate e, prima di proporlo a un singolo cliente, lo stiamo testando innanzitutto sul nostro sito web."
+ },
+ "6e016be217cc36a3": {
+  "en": "What Tinrate does",
+  "t": "Cosa fa Tinrate"
+ },
+ "43d064bc7f659a0f": {
+  "en": "<a href=\"https://tinrate.com/\" target=\"_blank\" rel=\"noopener\">Tinrate</a> is an AI startup from Ghent, built around one idea: connecting knowledge. Its main product is the marketplace where you can find all sorts of expertise and advise and their newest product is the <strong>Concierge</strong>.",
+  "t": "<a href=\"https://tinrate.com/\" target=\"_blank\" rel=\"noopener\">Tinrate</a> è una startup specializzata in intelligenza artificiale con sede a Gand, fondata su un’unica idea: mettere in rete le conoscenze. Il suo prodotto principale è una piattaforma in cui è possibile trovare competenze e consulenze di ogni tipo, mentre il suo prodotto più recente è il <strong>Concierge</strong>."
+ },
+ "2d3506422726efc1": {
+  "en": "The Concierge lives on your website and answers visitors on the spot, from your own knowledge. It qualifies them, and it gets every request to the right person in your organisation. If a conversation needs a call, it can book one, free or paid. No more \"we’ll get back to you\", and no more manually forwarding what lands in the info@ inbox. Also connections with every CRM is included.",
+  "t": "Il Concierge è integrato nel Vostro sito web e risponde immediatamente ai visitatori, attingendo alle Vostre conoscenze. Valuta le richieste e le inoltra alla persona giusta all’interno della Vostra organizzazione. Se una conversazione richiede una telefonata, può fissarne una, gratuita o a pagamento. Niente più «La ricontatteremo» e niente più inoltri manuali di ciò che arriva nella casella di posta info@. Sono inoltre incluse le integrazioni con qualsiasi sistema CRM."
+ },
+ "b103b8cb161d91d1": {
+  "en": "Apart from conversion Tinrate concierge also gives customer data insights, now you really know what your customers need or what the trends are.",
+  "t": "Oltre alla conversione, Tinrate Concierge fornisce anche approfondimenti sui dati dei clienti: ora potrete davvero capire di cosa hanno bisogno i vostri clienti e quali sono le tendenze."
+ },
+ "80810786b4db55e0": {
+  "en": "Why this fits how people search now",
+  "t": "Perché questo si adatta al modo in cui le persone effettuano le ricerche oggi"
+ },
+ "79bd608e604c3ed1": {
+  "en": "Our customers no longer browse menus and skim pages. Just like with GEO (generative engine optimization), they want to ask a question, simplify the process, and speed it up. A website that makes people dig for the answer loses to one that simply answers.",
+  "t": "I nostri clienti non sfogliano più i menu né danno una rapida occhiata alle pagine. Proprio come nel caso del GEO (ottimizzazione generativa dei motori di ricerca), desiderano porre una domanda, semplificare il processo e velocizzarlo. Un sito web che costringe gli utenti a cercare la risposta perde terreno rispetto a uno che fornisce semplicemente la risposta."
+ },
+ "c9525e89a0336b8d": {
+  "en": "What sets Tinrate apart in our opinion",
+  "t": "A nostro avviso, ciò che contraddistingue Tinrate è"
+ },
+ "4597e95eeace05cc": {
+  "en": "This morning, our head software engineer, Lathif Sihab Dewantoro, shared his view with me. What stands out to him is that Tinrate distinguishes itself with a workflow configuration that is not technical. The people who know your customers best can decide how questions are handled and who they get routed to, without waiting for a developer.",
+  "t": "Questa mattina, il nostro capo ingegnere software, Lathif Sihab Dewantoro, mi ha illustrato il suo punto di vista. Ciò che gli colpisce maggiormente è che Tinrate si distingue per una configurazione del flusso di lavoro che non è di natura tecnica. Le persone che conoscono meglio i vostri clienti possono decidere come gestire le richieste e a chi indirizzarle, senza dover attendere l’intervento di uno sviluppatore."
+ },
+ "d3261b0f86c79f57": {
+  "en": "That was the deciding factor for us. A tool that only engineers can configure stays a side project. A tool that the whole team can shape actually gets used.",
+  "t": "Questo è stato per noi il fattore decisivo. Uno strumento che solo gli ingegneri sono in grado di configurare rimane un progetto secondario. Uno strumento che l’intero team può modellare viene effettivamente utilizzato."
+ },
+ "69156b2a94be0e2c": {
+  "en": "Why we test it on ourselves first",
+  "t": "Perché lo testiamo prima su noi stessi"
+ },
+ "4e4a9cb86838c099": {
+  "en": "We will not recommend something we have not lived with. So the Concierge is going onto our own website, and we will be looking at:",
+  "t": "Non raccomanderemo nulla che non abbiamo provato in prima persona. Pertanto, il servizio Concierge sarà disponibile sul nostro sito web e vi presenteremo:"
+ },
+ "d4f1ec50eac6f452": {
+  "en": "how well it answers real visitor questions",
+  "t": "in che misura risponde alle domande effettive dei visitatori"
+ },
+ "4a9401964c8e5a13": {
+  "en": "how much faster visitors get what they came for",
+  "t": "con quanta maggiore rapidità i visitatori ottengono ciò che stanno cercando"
+ },
+ "ec400af4cb44f33a": {
+  "en": "how easy the configuration is for people who are not engineers",
+  "t": "quanto sia semplice la configurazione per chi non è un ingegnere"
+ },
+ "732ebfe7d51a6998": {
+  "en": "what needs to improve before we roll it out to clients",
+  "t": "Cosa occorre migliorare prima di renderlo disponibile ai clienti?"
+ },
+ "41dc6acfef4d8f48": {
+  "en": "how it affects lead conversion and workflow automation",
+  "t": "in che modo influisce sulla conversione dei lead e sull’automazione del flusso di lavoro"
+ },
+ "6c1fedbc0f094499": {
+  "en": "What’s next",
+  "t": "Quali saranno i prossimi passi?"
+ },
+ "41384633e976341a": {
+  "en": "We will share what we learn along the way, including what does not work. In the meantime, try it on our website and tell us what you think. And if you would like to see the Concierge on your own site, get in touch.",
+  "t": "Condivideremo ciò che impareremo lungo il percorso, comprese le soluzioni che non funzionano. Nel frattempo, provatelo sul nostro sito web e fateci sapere cosa ne pensate. E se desiderate integrare il Concierge nel vostro sito, non esitate a contattarci."
+ },
+ "c515ef85df437ff6": {
+  "en": "Tinrate DRP BuildLab collaboration partnership",
+  "t": "Partnership di collaborazione tra Tinrate, DRP e BuildLab"
+ },
+ "d8b12afde196d8ed": {
+  "en": "We’re partnering with Tinrate, and we’re testing it on our own website first | Blog | DRP BuildLab",
+  "t": "Abbiamo avviato una collaborazione con Tinrate e stiamo testando il servizio innanzitutto sul nostro sito web | Blog | DRP BuildLab"
+ },
+ "ca111c360956834c": {
+  "en": "Nobody reads websites anymore, they ask. We’ve teamed up with Tinrate and are putting its Concierge on our own website before we recommend it to anyone.",
+  "t": "«Nessuno legge più i siti web», si chiedono. Abbiamo avviato una collaborazione con Tinrate e stiamo integrando il suo servizio Concierge nel nostro sito web prima ancora di consigliarlo a chiunque."
  }
 }
