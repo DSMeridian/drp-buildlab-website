@@ -891,9 +891,9 @@ a[href^="tel:"],a[href^="mailto:"],a[href*="wa.me"],.url,.money,.clist a,.clist 
 .deal .lede{margin-top:24px;max-width:44ch}
 .deal .acts{margin-top:34px}
 .deal-offers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.deal-offers li{display:flex;flex-direction:column;gap:10px;background:var(--ink-2);border:1px solid var(--line-d);border-radius:22px;padding:clamp(24px,2.6vw,36px)}
+.deal-offers li{container-type:inline-size;display:flex;flex-direction:column;gap:10px;background:var(--ink-2);border:1px solid var(--line-d);border-radius:22px;padding:clamp(24px,2.6vw,36px)}
 .deal-offers li:first-child{background:var(--electric);border-color:var(--electric)}
-.deal-big{font-family:var(--display);font-weight:800;font-stretch:74%;font-size:clamp(52px,5.4vw,84px);line-height:.88;letter-spacing:-.02em;text-transform:uppercase;color:var(--electric-hi);margin-bottom:12px;overflow-wrap:anywhere}
+.deal-big{font-family:var(--display);font-weight:800;font-stretch:74%;font-size:min(84px,26cqi);line-height:.88;letter-spacing:-.02em;text-transform:uppercase;color:var(--electric-hi);margin-bottom:12px;white-space:nowrap;hyphens:none}
 .deal-offers li:first-child .deal-big{color:#fff}
 .deal-offers h3{margin:0;font-size:20px;font-weight:600;line-height:1.25}
 .deal-offers p{margin:0;color:var(--mute-d);font-size:15.5px;line-height:1.5}
