@@ -24,6 +24,31 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const eur = n => '€' + n.toLocaleString('en-GB', { minimumFractionDigits: Number.isInteger(n) ? 0 : 2 });
 const arr = '<span class="arr" aria-hidden="true">→</span>';
 
+/* Black Friday 2026: a free extra page (the catalogue's €79 "extra-pagina")
+   with every €499 starter package, and 10% off all extra services, until
+   Monday 30 November, Brussels time. site.js removes everything marked
+   data-deal once DEAL_END has passed, and tags quote requests sent before
+   then; take these and their uses out after the deal. */
+const DEAL_END = '2026-12-01T00:00:00+01:00';
+const dealBar = () => `<div class="deal-bar" data-deal data-deal-end="${DEAL_END}"><div class="wrap deal-bar-in"><p><b>Black Friday:</b> a free extra page with every €499 starter package, plus 10% off all extra services. Until Monday 30 November.</p><a href="${B}/#deal">Claim the deal</a></div></div>`;
+const dealNote = '<p class="deal-note" data-deal><b>Black Friday deal:</b> a free extra page and 10% off extra services, added to your quote.</p>';
+const dealSection = () => `
+<section class="sec deal" id="deal" data-deal aria-labelledby="deal-h"><div class="wrap deal-in">
+  <div>
+    <p class="deal-tag">Black Friday · until Monday 30 November</p>
+    <h2 class="h2" id="deal-h">More website, <em>same price.</em></h2>
+    <p class="lede">Order your website before the deal ends and get more for the same budget. We write the deal into your quote.</p>
+    <div class="acts"><a class="btn" href="#demo">Claim the Black Friday deal ${arr}</a><a class="btn ghost" href="https://wa.me/32473744431" target="_blank" rel="noopener">Ask us on WhatsApp</a></div>
+  </div>
+  <div>
+    <ul class="deal-offers">
+      <li><span class="deal-big">Free</span><h3>An extra page</h3><p>Worth €79. With every €499 starter package we add a second page, for your services, prices or portfolio.</p></li>
+      <li><span class="deal-big" dir="ltr">−10%</span><h3>On all extra services</h3><p>SEO, a logo, a multilingual site or a booking integration: 10% off every extra service you order.</p></li>
+    </ul>
+    <p class="deal-small">Request your quote by Monday 30 November, 23:59 (Brussels time).</p>
+  </div>
+</div></section>`;
+
 /* blog articles from content/blog/ (see tools/concept/blog.js); throws on a malformed file */
 const blog = require('./blog');
 const POSTS = blog.loadPosts();
@@ -239,6 +264,7 @@ const logo = (label = 'DRP BuildLab home') => `<a class="logo" href="${B}/" aria
 function header(cur) {
   const links = NAV.map(([k, t, h]) => `<a href="${B}${h}"${k === cur ? ' aria-current="page"' : ''}>${t}</a>`).join('');
   return `<a class="skip" href="#main">Skip to content</a>
+${dealBar()}
 <header class="hdr" id="hdr"><div class="wrap hdr-in">
   ${logo()}
   <nav class="nav" aria-label="Main menu">${links}</nav>
@@ -366,6 +392,7 @@ const demoForm = (id, title = 'Request your free demo website') => `<form class=
   <input type="hidden" name="subject" value="Nieuwe offerteaanvraag — DRP BuildLab">
   <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
   <h3>${title}</h3>
+  ${dealNote}
   <div class="frow">
     <div class="fld"><label for="${id}-name">Your name</label><input id="${id}-name" name="voornaam" autocomplete="name" required></div>
     <div class="fld"><label for="${id}-tel">Phone</label><input id="${id}-tel" name="telefoon" type="tel" autocomplete="tel" required></div>
@@ -429,6 +456,7 @@ pages[''] = page({
   </div>
   <ul class="facts"><li>Custom built, no templates</li><li>Websites from €499</li><li>Maintenance plans at €29 a month</li><li>One point of contact</li></ul>
 </div></section>
+${dealSection()}
 
 <section class="reel-sec" id="reel" aria-label="Showreel">
   <div class="reel" id="reelBox">
@@ -835,7 +863,7 @@ pages['prijzen'] = page({
   body: `${phero({ h1: 'Fair prices, <em>no surprises</em>', lede: 'A one-page website with contact form from €499. Everything else is priced on demand, in a quote made to measure. Maintenance is optional at €29 a month.', acts: `<a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a>` })}
 <section class="sec fog"><div class="wrap">
   <div class="plans">
-    <div class="plan rv"><p class="for">For new and small businesses</p><h2>Starter package</h2><p class="amount">€499<small>one-off</small></p><p class="note">A one-page website with a contact form, made for your business. For businesses that have just started, or want their current site turned into a modern, professional one.</p>
+    <div class="plan rv"><p class="for">For new and small businesses</p><h2>Starter package</h2><p class="amount">€499<small>one-off</small></p><p class="deal-note" data-deal><b>Black Friday:</b> a free extra page, worth €79, until Monday 30 November.</p><p class="note">A one-page website with a contact form, made for your business. For businesses that have just started, or want their current site turned into a modern, professional one.</p>
       <ul><li>A website fully made for your business</li><li>Works on every phone and tablet</li><li>Contact form and WhatsApp button</li><li>Google Maps and basic SEO</li><li>Personal guidance from start to launch</li></ul>
       <a class="btn dark" href="${B}/contact/">Request a free quote ${arr}</a></div>
     <div class="plan dark rv"><p class="for">For bigger or more complex projects</p><h2>Made to measure</h2><p class="amount" style="font-size:clamp(48px,5vw,76px)">On demand</p><p class="note">Webshops, booking systems, multilingual sites, integrations or features nobody else has. We price it on the scope of your project.</p>
@@ -892,6 +920,7 @@ pages['contact'] = page({
   <input type="hidden" name="subject" value="Nieuwe offerteaanvraag — DRP BuildLab">
   <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
     <h3>Request your free demo website</h3>
+    ${dealNote}
     <div class="frow">
       <div class="fld"><label for="q-first">First name</label><input id="q-first" name="voornaam" autocomplete="given-name" required></div>
       <div class="fld"><label for="q-last">Last name</label><input id="q-last" name="achternaam" autocomplete="family-name"></div>

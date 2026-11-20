@@ -4986,5 +4986,65 @@
  "1370b96b2378e362": {
   "en": "Order Tinrate Concierge through DRP BuildLab, an official Tinrate reseller. An AI assistant that answers your visitors in seconds. We set it up on your website, and you try it free for 14 days.",
   "t": "Tinrateの正規販売代理店であるDRP BuildLabを通じて、Tinrate Conciergeをご注文いただけます。訪問者に数秒で回答するAIアシスタントです。当社がお客様のウェブサイトに設置し、14日間無料でお試しいただけます。"
+ },
+ "0e203dd283dc4f23": {
+  "en": "<b>Black Friday:</b> a free extra page with every <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> starter package, plus 10% off all extra services. Until Monday 30 November.",
+  "t": "<b>ブラックフライデー：</b><span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>のスターターパッケージに追加ページを1ページ無料でお付けし、さらにすべての追加サービスが10%オフ。11月30日（月）まで。"
+ },
+ "1f01e8ad9d815676": {
+  "en": "Claim the deal",
+  "t": "特典を受け取る"
+ },
+ "8a90c37cebcd6f5e": {
+  "en": "Black Friday · until Monday 30 November",
+  "t": "ブラックフライデー · 11月30日（月）まで"
+ },
+ "3440d22e7918a9b0": {
+  "en": "More website, <em>same price.</em>",
+  "t": "ページは多く、<em>価格はそのまま。</em>"
+ },
+ "19196e34c3d0dcb8": {
+  "en": "Order your website before the deal ends and get more for the same budget. We write the deal into your quote.",
+  "t": "キャンペーン終了前にウェブサイトをご注文いただくと、同じご予算でより多くを手に入れられます。特典はお見積もりに明記いたします。"
+ },
+ "0c7f4e48920aa645": {
+  "en": "Claim the Black Friday deal <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "ブラックフライデー特典を受け取る <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "0766d2635330638a": {
+  "en": "Ask us on WhatsApp",
+  "t": "WhatsAppでお問い合わせ"
+ },
+ "38e5432df5157e1a": {
+  "en": "Free",
+  "t": "無料"
+ },
+ "4884c440fea83ecd": {
+  "en": "An extra page",
+  "t": "追加ページ1ページ"
+ },
+ "68f85c212cd078fb": {
+  "en": "Worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>. With every <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> starter package we add a second page, for your services, prices or portfolio.",
+  "t": "通常<span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>相当。<span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>のスターターパッケージごとに、サービス紹介、料金表、ポートフォリオなどに使える2ページ目を追加します。"
+ },
+ "cd9128160a3e2fbd": {
+  "en": "On all extra services",
+  "t": "すべての追加サービスが対象"
+ },
+ "fa0097435de114df": {
+  "en": "SEO, a logo, a multilingual site or a booking integration: 10% off every extra service you order.",
+  "t": "SEO、ロゴ、多言語サイト、予約システムの連携など、ご注文いただくすべての追加サービスが10%オフになります。"
+ },
+ "bdedc6b08ebf115b": {
+  "en": "Request your quote by Monday 30 November, 23:59 (Brussels time).",
+  "t": "11月30日（月）23:59（ブリュッセル時間）までにお見積もりをご依頼ください。"
+ },
+ "ff8eb09e8c67b9f0": {
+  "en": "<b>Black Friday deal:</b> a free extra page and 10% off extra services, added to your quote.",
+  "t": "<b>ブラックフライデー特典：</b>追加ページ1ページ無料と追加サービス10%オフを、お見積もりに反映いたします。"
+ },
+ "c00d8b960f07e69c": {
+  "en": "<b>Black Friday:</b> a free extra page, worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, until Monday 30 November.",
+  "t": "<b>ブラックフライデー：</b>追加ページ1ページ（<span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>相当）を無料で。11月30日（月）まで。"
  }
 }

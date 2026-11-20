@@ -87,7 +87,7 @@ const saveCache = (l, c) => { fs.mkdirSync(I18N, { recursive: true }); fs.writeF
 /* ── in-page work (runs inside Chromium) ─────────────────────────────── */
 function pageExtract() {
   /* prices that convert per market */
-  const PUBLIC = new Set(['499', '29']);
+  const PUBLIC = new Set(['499', '29', '79']); // 79: the Black Friday extra page, until 30 Nov 2026
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   const hits = [];
   while (walker.nextNode()) { const n = walker.currentNode; if (/€\s?\d/.test(n.nodeValue) && !n.parentElement.closest('script,style,.money,option,select,textarea,title')) hits.push(n); }

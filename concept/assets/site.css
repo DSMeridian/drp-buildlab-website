@@ -872,3 +872,43 @@ a[href^="tel:"],a[href^="mailto:"],a[href*="wa.me"],.url,.money,.clist a,.clist 
 .nl-offers-page [data-state="ask"]{display:grid;gap:14px}
 .nl-offers-form{display:grid;gap:16px;justify-items:start;margin-top:6px}
 .phero .lede:empty{display:none}
+
+/* Black Friday 2026 (until 30 Nov): bar above the header, home section, form and plan notes.
+   site.js removes the [data-deal] elements after the deal; delete this block with them. */
+.deal-bar{background:var(--electric);color:#fff;font-size:14.5px;line-height:1.4}
+.deal-bar-in{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 18px;padding-block:10px;text-align:center}
+.deal-bar p{margin:0}
+.deal-bar b{font-weight:700}
+.deal-bar a{font-weight:700;color:#fff;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px;white-space:nowrap}
+.deal-bar a:hover{color:var(--ink)}
+:root:has(.deal-bar) .hero{min-height:calc(100svh - 72px - 42px - env(safe-area-inset-top,0px))}
+.deal{border-top:1px solid var(--line-d);padding-block:clamp(64px,8vw,120px)}
+.deal-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:44px 72px;align-items:center}
+.deal-tag{display:inline-flex;align-items:center;gap:10px;margin:0 0 24px;padding:8px 15px;border-radius:99px;background:rgba(31,94,255,.18);color:var(--electric-hi);font-family:var(--mono);font-size:13px;letter-spacing:.05em;text-transform:uppercase}
+.deal-tag::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--electric-hi)}
+.deal .h2,.deal h3{hyphens:manual}
+.deal .h2{font-size:clamp(40px,5.6vw,92px)}
+.deal .lede{margin-top:24px;max-width:44ch}
+.deal .acts{margin-top:34px}
+.deal-offers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.deal-offers li{display:flex;flex-direction:column;gap:10px;background:var(--ink-2);border:1px solid var(--line-d);border-radius:22px;padding:clamp(24px,2.6vw,36px)}
+.deal-offers li:first-child{background:var(--electric);border-color:var(--electric)}
+.deal-big{font-family:var(--display);font-weight:800;font-stretch:74%;font-size:clamp(52px,5.4vw,84px);line-height:.88;letter-spacing:-.02em;text-transform:uppercase;color:var(--electric-hi);margin-bottom:12px;overflow-wrap:anywhere}
+.deal-offers li:first-child .deal-big{color:#fff}
+.deal-offers h3{margin:0;font-size:20px;font-weight:600;line-height:1.25}
+.deal-offers p{margin:0;color:var(--mute-d);font-size:15.5px;line-height:1.5}
+.deal-offers li:first-child p{color:#dfe6ff}
+.deal-small{margin:16px 0 0;color:var(--mute-d);font-size:13.5px}
+.deal-note{margin:0;padding:12px 16px;border-radius:12px;background:#eef3ff;border-inline-start:3px solid var(--electric);color:var(--ink);font-size:14.5px;line-height:1.45}
+.deal-note b{font-weight:700}
+@media (max-width:960px){.deal-in{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:600px){
+  .deal-bar{font-size:13px;line-height:1.35}
+  .deal-bar-in{display:block;padding-block:8px}
+  .deal-bar p{display:inline}
+  .deal-bar a{margin-inline-start:6px}
+  .deal-tag{font-size:11.5px;letter-spacing:.02em;padding:7px 12px}
+  :root:has(.deal-bar) .hero{min-height:calc(100svh - 72px - 70px - env(safe-area-inset-top,0px))}
+  .deal-offers{grid-template-columns:minmax(0,1fr)}
+}
+[dir="rtl"] .deal-big[dir="ltr"]{text-align:right}

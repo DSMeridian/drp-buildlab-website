@@ -86,6 +86,14 @@ if (cur && matchMedia('(hover:hover)').matches && !reduce) {
 /* strings the scripts show, translated with the page (#ui in every page) */
 const ui = k => ($(`#ui [data-k="${k}"]`) || {}).textContent || '';
 
+/* Black Friday 2026 (DEAL_END in tools/concept/build.js): the deal bar,
+   section and notes go once the deal has ended. While it runs, every quote
+   request says so in its message, for the team and the client zone. */
+const dealEnd = Date.parse(($('[data-deal-end]') || { dataset: {} }).dataset.dealEnd);
+const dealOn = dealEnd > Date.now();
+if (!dealOn) $$('[data-deal]').forEach(el => el.remove());
+const DEAL_TAG = 'Black Friday-actie: gratis extra pagina bij het startpakket + 10% korting op extra diensten';
+
 /* quote form: company fields only for a business, and disabled otherwise so
    a company typed before switching to "private" is not submitted */
 (() => {
@@ -114,7 +122,7 @@ function track(f) {
     ev = { event: 'partner_request', partner_channel: PARTNER_CHANNEL[ch ? ch.selectedIndex : -1] || 'unknown', partner_reach: reach && reach.selectedIndex > 0 ? reach.selectedIndex : 0, ...base };
   } else {
     const sel = $('select[name="dienst"]', f), chip = $('input[name="dienst"]:checked', f);
-    ev = { event: 'demo_request', demo_service: sel ? (DEMO_SERVICE[sel.selectedIndex] || 'unknown') : (chip ? chip.dataset.slug : 'unknown'), demo_form: f.id, ...base };
+    ev = { event: 'demo_request', demo_service: sel ? (DEMO_SERVICE[sel.selectedIndex] || 'unknown') : (chip ? chip.dataset.slug : 'unknown'), demo_form: f.id, demo_offer: dealOn && f.dataset.sent === 'sent' ? 'black_friday' : '', ...base };
   }
   window.dataLayer = window.dataLayer || []; window.dataLayer.push(ev);
 }
@@ -136,6 +144,7 @@ $$('form[data-event]').forEach(f => f.addEventListener('submit', e => {
      makes one lead of the two deliveries. */
   f.dataset.sid = f.dataset.sid || (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2));
   const body = new URLSearchParams(new FormData(f)); body.set('submission-id', f.dataset.sid);
+  if (dealOn && f.dataset.event === 'demo_request' && f.dataset.sent === 'sent') body.set('bericht', [DEAL_TAG, body.get('bericht')].filter(Boolean).join('\n\n'));
   const post = (url, b) => fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: b.toString() })
     .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); });
   Promise.any([post(location.pathname, body), post('/api/form', body)])
