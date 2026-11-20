@@ -5015,49 +5015,13 @@
   "en": "<b>Black Friday:</b> a free extra page, worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, until Monday 30 November.",
   "t": "<b>Black Friday:</b> eine zusätzliche Seite gratis, im Wert von <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, bis Montag, 30. November."
  },
- "3d20d6ecf4a59756": {
-  "en": "Free website scan",
-  "t": "Kostenloser Website-Scan"
- },
  "6195bd7100ae82e3": {
   "en": "Please choose one of the options to continue.",
   "t": "Bitte wählen Sie eine der Optionen, um fortzufahren."
  },
- "8ff053114ba8741c": {
-  "en": "Thank you. We will email you the full report within one working day.",
-  "t": "Vielen Dank. Wir senden Ihnen den vollständigen Bericht innerhalb eines Werktags per E-Mail."
- },
  "7782c7cf814aff6d": {
   "en": "Get a free quote",
   "t": "Kostenloses Angebot anfordern"
- },
- "0a217503d63347dc": {
-  "en": "Before you go: how does <em>your website</em> score?",
-  "t": "Bevor Sie gehen: Wie schneidet <em>Ihre Website</em> ab?"
- },
- "42ab92972d9ddaf8": {
-  "en": "Speed, use on phones and the basics Google looks at, tested in about 30 seconds. Free, and you do not need to leave your email.",
-  "t": "Geschwindigkeit, Nutzung auf dem Smartphone und die Grundlagen, auf die Google achtet – in etwa 30 Sekunden geprüft. Kostenlos und ohne Angabe Ihrer E-Mail-Adresse."
- },
- "26a68e397d99e70a": {
-  "en": "Scan my website",
-  "t": "Meine Website scannen"
- },
- "a0818b6afba49e1d": {
-  "en": "No thanks",
-  "t": "Nein, danke"
- },
- "462e1f87399018fc": {
-  "en": "Close",
-  "t": "Schließen"
- },
- "3c37e5c02b890869": {
-  "en": "Your website address",
-  "t": "Ihre Website-Adresse"
- },
- "58734f0025244a30": {
-  "en": "www.your-business.com",
-  "t": "www.ihre-firma.de"
  },
  "138f1528250349e4": {
   "en": "Get your free quote",
@@ -5279,104 +5243,8 @@
   "en": "Free and without obligation. We reply within 24 hours.",
   "t": "Kostenlos und unverbindlich. Wir antworten innerhalb von 24 Stunden."
  },
- "b57aba218bef0736": {
-  "en": "Not ready to ask for a quote?",
-  "t": "Noch nicht bereit für ein Angebot?"
- },
- "36100859ca54da9b": {
-  "en": "Scan your current website for free: speed, phones and Google, in about 30 seconds.",
-  "t": "Prüfen Sie Ihre aktuelle Website kostenlos: Geschwindigkeit, Smartphones und Google, in etwa 30 Sekunden."
- },
- "cc1f36f2349f796f": {
-  "en": "Scan my website <span class=\"arr\" aria-hidden=\"true\">→</span>",
-  "t": "Meine Website scannen <span class=\"arr\" aria-hidden=\"true\">→</span>"
- },
  "40548849b73f09a5": {
   "en": "www.example.com",
   "t": "www.beispiel.de"
- },
- "31566e98c71c2456": {
-  "en": "How good is <em>your website?</em>",
-  "t": "Wie gut ist <em>Ihre Website?</em>"
- },
- "496e4e7a9c80ba09": {
-  "en": "A free scan of your website’s speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
-  "t": "Ein kostenloser Scan Ihrer Website: Geschwindigkeit, Nutzung auf dem Smartphone, Barrierefreiheit und Auffindbarkeit bei Google. Ergebnisse in etwa 30 Sekunden."
- },
- "f1499d03f64ebd4b": {
-  "en": "We test the mobile version with Lighthouse, Google’s own website test. Nothing is installed or changed on your website.",
-  "t": "Wir testen die mobile Version mit Lighthouse, dem Website-Test von Google selbst. Auf Ihrer Website wird nichts installiert oder verändert."
- },
- "d475b5ee0e77ea2a": {
-  "en": "Scanning <b class=\"scan-host\" translate=\"no\"></b>. This takes about 30 seconds.",
-  "t": "Wir scannen <b class=\"scan-host\" translate=\"no\"></b>. Das dauert etwa 30 Sekunden."
- },
- "1fb04d3b42744de2": {
-  "en": "Results for <span class=\"scan-host\" translate=\"no\"></span>",
-  "t": "Ergebnisse für <span class=\"scan-host\" translate=\"no\"></span>"
- },
- "6dc331e5783411fe": {
-  "en": "Speed",
-  "t": "Geschwindigkeit"
- },
- "2536968a71b96d41": {
-  "en": "Accessibility",
-  "t": "Barrierefreiheit"
- },
- "8178a30ad09687dc": {
-  "en": "Technical health",
-  "t": "Technischer Zustand"
- },
- "eacf70e328fb36c2": {
-  "en": "SEO basics",
-  "t": "SEO-Grundlagen"
- },
- "6acc1ebceb756a35": {
-  "en": "90–100 good",
-  "t": "90–100 gut"
- },
- "335824fcff1c494b": {
-  "en": "50–89 needs work",
-  "t": "50–89 ausbaufähig"
- },
- "776bc2cb3376d434": {
-  "en": "0–49 poor",
-  "t": "0–49 schwach"
- },
- "c90ff2d44c0cc98a": {
-  "en": "What holds your website back most",
-  "t": "Was Ihre Website am meisten ausbremst"
- },
- "2eec911adf8f9945": {
-  "en": "Get the full report, with what to fix first",
-  "t": "Erhalten Sie den vollständigen Bericht – mit dem, was Sie zuerst beheben sollten"
- },
- "14e50f76860e8773": {
-  "en": "The scan is busy right now. Leave your email and we’ll send you the report.",
-  "t": "Der Scan ist gerade ausgelastet. Hinterlassen Sie Ihre E-Mail-Adresse, und wir senden Ihnen den Bericht."
- },
- "ddb58a72bc3a8511": {
-  "en": "A person from our team goes through your results and emails you a short, clear report. Free, with no obligation.",
-  "t": "Ein Mitglied unseres Teams sieht sich Ihre Ergebnisse an und sendet Ihnen einen kurzen, verständlichen Bericht per E-Mail. Kostenlos und unverbindlich."
- },
- "7c65642d7a176e87": {
-  "en": "Send me the full report <span class=\"arr\" aria-hidden=\"true\">→</span>",
-  "t": "Vollständigen Bericht anfordern <span class=\"arr\" aria-hidden=\"true\">→</span>"
- },
- "ba635a2640d0c6a8": {
-  "en": "Please enter a website address, for example www.your-business.com.",
-  "t": "Bitte geben Sie eine Website-Adresse ein, zum Beispiel www.ihre-firma.de."
- },
- "c1063279af00c2b7": {
-  "en": "We could not scan this address. Check that the website is online and try again.",
-  "t": "Diese Adresse konnte nicht gescannt werden. Bitte prüfen Sie, ob die Website online ist, und versuchen Sie es erneut."
- },
- "c28b1ce14123c352": {
-  "en": "Free website scan | DRP BuildLab",
-  "t": "Kostenloser Website-Scan | DRP BuildLab"
- },
- "ce762a4db9ead82d": {
-  "en": "Test your website for free: speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
-  "t": "Testen Sie Ihre Website kostenlos: Geschwindigkeit, Nutzung auf dem Smartphone, Barrierefreiheit und Auffindbarkeit bei Google. Ergebnisse in etwa 30 Sekunden."
  }
 }

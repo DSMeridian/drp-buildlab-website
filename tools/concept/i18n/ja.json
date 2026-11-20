@@ -5015,49 +5015,13 @@
   "en": "<b>Black Friday:</b> a free extra page, worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, until Monday 30 November.",
   "t": "<b>ブラックフライデー：</b>追加ページ1ページ（<span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>相当）を無料で。11月30日（月）まで。"
  },
- "3d20d6ecf4a59756": {
-  "en": "Free website scan",
-  "t": "無料ウェブサイト診断"
- },
  "6195bd7100ae82e3": {
   "en": "Please choose one of the options to continue.",
   "t": "続行するには、いずれかの項目を選択してください。"
  },
- "8ff053114ba8741c": {
-  "en": "Thank you. We will email you the full report within one working day.",
-  "t": "ありがとうございます。1営業日以内に詳細レポートをメールでお送りします。"
- },
  "7782c7cf814aff6d": {
   "en": "Get a free quote",
   "t": "無料でお見積もり"
- },
- "0a217503d63347dc": {
-  "en": "Before you go: how does <em>your website</em> score?",
-  "t": "お帰りの前に：<em>あなたのウェブサイト</em>の評価は？"
- },
- "42ab92972d9ddaf8": {
-  "en": "Speed, use on phones and the basics Google looks at, tested in about 30 seconds. Free, and you do not need to leave your email.",
-  "t": "表示速度、スマートフォンでの使いやすさ、Googleが重視する基本項目を約30秒でチェックします。無料で、メールアドレスの入力も不要です。"
- },
- "26a68e397d99e70a": {
-  "en": "Scan my website",
-  "t": "サイトを診断する"
- },
- "a0818b6afba49e1d": {
-  "en": "No thanks",
-  "t": "結構です"
- },
- "462e1f87399018fc": {
-  "en": "Close",
-  "t": "閉じる"
- },
- "3c37e5c02b890869": {
-  "en": "Your website address",
-  "t": "ウェブサイトのURL"
- },
- "58734f0025244a30": {
-  "en": "www.your-business.com",
-  "t": "www.example.com"
  },
  "138f1528250349e4": {
   "en": "Get your free quote",
@@ -5279,104 +5243,8 @@
   "en": "Free and without obligation. We reply within 24 hours.",
   "t": "無料で、ご契約の義務はありません。24時間以内にご返信いたします。"
  },
- "b57aba218bef0736": {
-  "en": "Not ready to ask for a quote?",
-  "t": "お見積もりはまだ早いとお考えですか？"
- },
- "36100859ca54da9b": {
-  "en": "Scan your current website for free: speed, phones and Google, in about 30 seconds.",
-  "t": "現在のウェブサイトを無料で診断：表示速度、スマホ対応、Google対策を約30秒でチェックします。"
- },
- "cc1f36f2349f796f": {
-  "en": "Scan my website <span class=\"arr\" aria-hidden=\"true\">→</span>",
-  "t": "サイトを診断する <span class=\"arr\" aria-hidden=\"true\">→</span>"
- },
  "40548849b73f09a5": {
   "en": "www.example.com",
   "t": "www.example.com"
- },
- "31566e98c71c2456": {
-  "en": "How good is <em>your website?</em>",
-  "t": "<em>あなたのウェブサイト</em>の実力は？"
- },
- "496e4e7a9c80ba09": {
-  "en": "A free scan of your website’s speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
-  "t": "ウェブサイトの表示速度、スマートフォンでの使いやすさ、アクセシビリティ、Googleでの見つけやすさを無料で診断します。結果は約30秒で表示されます。"
- },
- "f1499d03f64ebd4b": {
-  "en": "We test the mobile version with Lighthouse, Google’s own website test. Nothing is installed or changed on your website.",
-  "t": "Google公式のウェブサイト診断ツールLighthouseで、モバイル版を検査します。お客様のウェブサイトに何かをインストールしたり、変更したりすることはありません。"
- },
- "d475b5ee0e77ea2a": {
-  "en": "Scanning <b class=\"scan-host\" translate=\"no\"></b>. This takes about 30 seconds.",
-  "t": "<b class=\"scan-host\" translate=\"no\"></b>を診断中です。約30秒かかります。"
- },
- "1fb04d3b42744de2": {
-  "en": "Results for <span class=\"scan-host\" translate=\"no\"></span>",
-  "t": "<span class=\"scan-host\" translate=\"no\"></span>の診断結果"
- },
- "6dc331e5783411fe": {
-  "en": "Speed",
-  "t": "表示速度"
- },
- "2536968a71b96d41": {
-  "en": "Accessibility",
-  "t": "アクセシビリティ"
- },
- "8178a30ad09687dc": {
-  "en": "Technical health",
-  "t": "技術面の健全性"
- },
- "eacf70e328fb36c2": {
-  "en": "SEO basics",
-  "t": "SEOの基本"
- },
- "6acc1ebceb756a35": {
-  "en": "90–100 good",
-  "t": "90–100 良好"
- },
- "335824fcff1c494b": {
-  "en": "50–89 needs work",
-  "t": "50–89 要改善"
- },
- "776bc2cb3376d434": {
-  "en": "0–49 poor",
-  "t": "0–49 不良"
- },
- "c90ff2d44c0cc98a": {
-  "en": "What holds your website back most",
-  "t": "ウェブサイトの足を引っ張っている最大の要因"
- },
- "2eec911adf8f9945": {
-  "en": "Get the full report, with what to fix first",
-  "t": "優先して改善すべき点がわかる詳細レポートを受け取る"
- },
- "14e50f76860e8773": {
-  "en": "The scan is busy right now. Leave your email and we’ll send you the report.",
-  "t": "現在、診断が混み合っています。メールアドレスをご入力いただければ、レポートをお送りします。"
- },
- "ddb58a72bc3a8511": {
-  "en": "A person from our team goes through your results and emails you a short, clear report. Free, with no obligation.",
-  "t": "当社のスタッフが結果を確認し、簡潔でわかりやすいレポートをメールでお送りします。無料で、ご契約の義務はありません。"
- },
- "7c65642d7a176e87": {
-  "en": "Send me the full report <span class=\"arr\" aria-hidden=\"true\">→</span>",
-  "t": "詳細レポートを受け取る <span class=\"arr\" aria-hidden=\"true\">→</span>"
- },
- "ba635a2640d0c6a8": {
-  "en": "Please enter a website address, for example www.your-business.com.",
-  "t": "ウェブサイトのURLを入力してください（例：www.example.com）。"
- },
- "c1063279af00c2b7": {
-  "en": "We could not scan this address. Check that the website is online and try again.",
-  "t": "このアドレスは診断できませんでした。ウェブサイトが公開されているかご確認のうえ、もう一度お試しください。"
- },
- "c28b1ce14123c352": {
-  "en": "Free website scan | DRP BuildLab",
-  "t": "無料ウェブサイト診断 | DRP BuildLab"
- },
- "ce762a4db9ead82d": {
-  "en": "Test your website for free: speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
-  "t": "ウェブサイトを無料で診断：表示速度、スマートフォンでの使いやすさ、アクセシビリティ、Googleでの見つけやすさをチェック。結果は約30秒で表示されます。"
  }
 }

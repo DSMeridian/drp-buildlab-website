@@ -5015,49 +5015,13 @@
   "en": "<b>Black Friday:</b> a free extra page, worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, until Monday 30 November.",
   "t": "<b>Black Friday:</b> ’n gratis ekstra bladsy, ter waarde van <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, tot Maandag 30 November."
  },
- "3d20d6ecf4a59756": {
-  "en": "Free website scan",
-  "t": "Gratis webwerfskandering"
- },
  "6195bd7100ae82e3": {
   "en": "Please choose one of the options to continue.",
   "t": "Kies asseblief een van die opsies om voort te gaan."
  },
- "8ff053114ba8741c": {
-  "en": "Thank you. We will email you the full report within one working day.",
-  "t": "Dankie. Ons e-pos vir jou die volledige verslag binne een werksdag."
- },
  "7782c7cf814aff6d": {
   "en": "Get a free quote",
   "t": "Kry ’n gratis kwotasie"
- },
- "0a217503d63347dc": {
-  "en": "Before you go: how does <em>your website</em> score?",
-  "t": "Voor jy gaan: hoe vaar <em>jou webwerf</em>?"
- },
- "42ab92972d9ddaf8": {
-  "en": "Speed, use on phones and the basics Google looks at, tested in about 30 seconds. Free, and you do not need to leave your email.",
-  "t": "Spoed, gebruik op selfone en die basiese dinge waarna Google kyk, getoets in sowat 30 sekondes. Gratis, en jy hoef nie jou e-posadres te gee nie."
- },
- "26a68e397d99e70a": {
-  "en": "Scan my website",
-  "t": "Skandeer my webwerf"
- },
- "a0818b6afba49e1d": {
-  "en": "No thanks",
-  "t": "Nee dankie"
- },
- "462e1f87399018fc": {
-  "en": "Close",
-  "t": "Maak toe"
- },
- "3c37e5c02b890869": {
-  "en": "Your website address",
-  "t": "Jou webwerfadres"
- },
- "58734f0025244a30": {
-  "en": "www.your-business.com",
-  "t": "www.jou-besigheid.co.za"
  },
  "138f1528250349e4": {
   "en": "Get your free quote",
@@ -5279,104 +5243,8 @@
   "en": "Free and without obligation. We reply within 24 hours.",
   "t": "Gratis en sonder verpligting. Ons antwoord binne 24 uur."
  },
- "b57aba218bef0736": {
-  "en": "Not ready to ask for a quote?",
-  "t": "Nog nie gereed vir ’n kwotasie nie?"
- },
- "36100859ca54da9b": {
-  "en": "Scan your current website for free: speed, phones and Google, in about 30 seconds.",
-  "t": "Skandeer jou huidige webwerf gratis: spoed, selfone en Google, in sowat 30 sekondes."
- },
- "cc1f36f2349f796f": {
-  "en": "Scan my website <span class=\"arr\" aria-hidden=\"true\">→</span>",
-  "t": "Skandeer my webwerf <span class=\"arr\" aria-hidden=\"true\">→</span>"
- },
  "40548849b73f09a5": {
   "en": "www.example.com",
   "t": "www.voorbeeld.co.za"
- },
- "31566e98c71c2456": {
-  "en": "How good is <em>your website?</em>",
-  "t": "Hoe goed is <em>jou webwerf?</em>"
- },
- "496e4e7a9c80ba09": {
-  "en": "A free scan of your website’s speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
-  "t": "’n Gratis skandering van jou webwerf se spoed, gebruik op selfone, toeganklikheid en hoe maklik dit op Google te vind is. Resultate in sowat 30 sekondes."
- },
- "f1499d03f64ebd4b": {
-  "en": "We test the mobile version with Lighthouse, Google’s own website test. Nothing is installed or changed on your website.",
-  "t": "Ons toets die mobiele weergawe met Lighthouse, Google se eie webwerftoets. Niks word op jou webwerf geïnstalleer of verander nie."
- },
- "d475b5ee0e77ea2a": {
-  "en": "Scanning <b class=\"scan-host\" translate=\"no\"></b>. This takes about 30 seconds.",
-  "t": "Ons skandeer <b class=\"scan-host\" translate=\"no\"></b>. Dit neem sowat 30 sekondes."
- },
- "1fb04d3b42744de2": {
-  "en": "Results for <span class=\"scan-host\" translate=\"no\"></span>",
-  "t": "Resultate vir <span class=\"scan-host\" translate=\"no\"></span>"
- },
- "6dc331e5783411fe": {
-  "en": "Speed",
-  "t": "Spoed"
- },
- "2536968a71b96d41": {
-  "en": "Accessibility",
-  "t": "Toeganklikheid"
- },
- "8178a30ad09687dc": {
-  "en": "Technical health",
-  "t": "Tegniese toestand"
- },
- "eacf70e328fb36c2": {
-  "en": "SEO basics",
-  "t": "SEO-grondbeginsels"
- },
- "6acc1ebceb756a35": {
-  "en": "90–100 good",
-  "t": "90–100 goed"
- },
- "335824fcff1c494b": {
-  "en": "50–89 needs work",
-  "t": "50–89 kan beter"
- },
- "776bc2cb3376d434": {
-  "en": "0–49 poor",
-  "t": "0–49 swak"
- },
- "c90ff2d44c0cc98a": {
-  "en": "What holds your website back most",
-  "t": "Wat jou webwerf die meeste terughou"
- },
- "2eec911adf8f9945": {
-  "en": "Get the full report, with what to fix first",
-  "t": "Kry die volledige verslag, met wat jy eerste moet regmaak"
- },
- "14e50f76860e8773": {
-  "en": "The scan is busy right now. Leave your email and we’ll send you the report.",
-  "t": "Die skandering is tans besig. Los jou e-posadres en ons stuur vir jou die verslag."
- },
- "ddb58a72bc3a8511": {
-  "en": "A person from our team goes through your results and emails you a short, clear report. Free, with no obligation.",
-  "t": "Iemand van ons span gaan deur jou resultate en e-pos vir jou ’n kort, duidelike verslag. Gratis en sonder verpligting."
- },
- "7c65642d7a176e87": {
-  "en": "Send me the full report <span class=\"arr\" aria-hidden=\"true\">→</span>",
-  "t": "Stuur vir my die volledige verslag <span class=\"arr\" aria-hidden=\"true\">→</span>"
- },
- "ba635a2640d0c6a8": {
-  "en": "Please enter a website address, for example www.your-business.com.",
-  "t": "Voer asseblief ’n webwerfadres in, byvoorbeeld www.jou-besigheid.co.za."
- },
- "c1063279af00c2b7": {
-  "en": "We could not scan this address. Check that the website is online and try again.",
-  "t": "Ons kon nie hierdie adres skandeer nie. Kyk of die webwerf aanlyn is en probeer weer."
- },
- "c28b1ce14123c352": {
-  "en": "Free website scan | DRP BuildLab",
-  "t": "Gratis webwerfskandering | DRP BuildLab"
- },
- "ce762a4db9ead82d": {
-  "en": "Test your website for free: speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
-  "t": "Toets jou webwerf gratis: spoed, gebruik op selfone, toeganklikheid en hoe maklik dit op Google te vind is. Resultate in sowat 30 sekondes."
  }
 }

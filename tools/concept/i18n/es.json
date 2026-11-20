@@ -5015,49 +5015,13 @@
   "en": "<b>Black Friday:</b> a free extra page, worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, until Monday 30 November.",
   "t": "<b>Black Friday:</b> una página extra gratis, valorada en <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, hasta el lunes 30 de noviembre."
  },
- "3d20d6ecf4a59756": {
-  "en": "Free website scan",
-  "t": "Análisis gratuito de su página web"
- },
  "6195bd7100ae82e3": {
   "en": "Please choose one of the options to continue.",
   "t": "Elija una de las opciones para continuar."
  },
- "8ff053114ba8741c": {
-  "en": "Thank you. We will email you the full report within one working day.",
-  "t": "Gracias. Le enviaremos el informe completo por correo electrónico en el plazo de un día laborable."
- },
  "7782c7cf814aff6d": {
   "en": "Get a free quote",
   "t": "Solicite un presupuesto gratuito"
- },
- "0a217503d63347dc": {
-  "en": "Before you go: how does <em>your website</em> score?",
-  "t": "Antes de irse: ¿qué puntuación obtiene <em>su página web</em>?"
- },
- "42ab92972d9ddaf8": {
-  "en": "Speed, use on phones and the basics Google looks at, tested in about 30 seconds. Free, and you do not need to leave your email.",
-  "t": "Velocidad, uso en el móvil y los aspectos básicos que Google tiene en cuenta, analizados en unos 30 segundos. Gratis y sin necesidad de dejar su correo electrónico."
- },
- "26a68e397d99e70a": {
-  "en": "Scan my website",
-  "t": "Analizar mi página web"
- },
- "a0818b6afba49e1d": {
-  "en": "No thanks",
-  "t": "No, gracias"
- },
- "462e1f87399018fc": {
-  "en": "Close",
-  "t": "Cerrar"
- },
- "3c37e5c02b890869": {
-  "en": "Your website address",
-  "t": "Dirección de su página web"
- },
- "58734f0025244a30": {
-  "en": "www.your-business.com",
-  "t": "www.su-empresa.com"
  },
  "138f1528250349e4": {
   "en": "Get your free quote",
@@ -5279,104 +5243,8 @@
   "en": "Free and without obligation. We reply within 24 hours.",
   "t": "Gratis y sin compromiso. Le respondemos en un plazo de 24 horas."
  },
- "b57aba218bef0736": {
-  "en": "Not ready to ask for a quote?",
-  "t": "¿Aún no es el momento de pedir presupuesto?"
- },
- "36100859ca54da9b": {
-  "en": "Scan your current website for free: speed, phones and Google, in about 30 seconds.",
-  "t": "Analice gratis su página web actual: velocidad, móviles y Google, en unos 30 segundos."
- },
- "cc1f36f2349f796f": {
-  "en": "Scan my website <span class=\"arr\" aria-hidden=\"true\">→</span>",
-  "t": "Analizar mi página web <span class=\"arr\" aria-hidden=\"true\">→</span>"
- },
  "40548849b73f09a5": {
   "en": "www.example.com",
   "t": "www.ejemplo.com"
- },
- "31566e98c71c2456": {
-  "en": "How good is <em>your website?</em>",
-  "t": "¿Qué tal funciona <em>su página web?</em>"
- },
- "496e4e7a9c80ba09": {
-  "en": "A free scan of your website’s speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
-  "t": "Un análisis gratuito de la velocidad de su página web, su uso en el móvil, su accesibilidad y lo fácil que es encontrarla en Google. Resultados en unos 30 segundos."
- },
- "f1499d03f64ebd4b": {
-  "en": "We test the mobile version with Lighthouse, Google’s own website test. Nothing is installed or changed on your website.",
-  "t": "Analizamos la versión móvil con Lighthouse, la herramienta de Google para evaluar páginas web. No se instala ni se modifica nada en su página web."
- },
- "d475b5ee0e77ea2a": {
-  "en": "Scanning <b class=\"scan-host\" translate=\"no\"></b>. This takes about 30 seconds.",
-  "t": "Analizando <b class=\"scan-host\" translate=\"no\"></b>. Tarda unos 30 segundos."
- },
- "1fb04d3b42744de2": {
-  "en": "Results for <span class=\"scan-host\" translate=\"no\"></span>",
-  "t": "Resultados de <span class=\"scan-host\" translate=\"no\"></span>"
- },
- "6dc331e5783411fe": {
-  "en": "Speed",
-  "t": "Velocidad"
- },
- "2536968a71b96d41": {
-  "en": "Accessibility",
-  "t": "Accesibilidad"
- },
- "8178a30ad09687dc": {
-  "en": "Technical health",
-  "t": "Estado técnico"
- },
- "eacf70e328fb36c2": {
-  "en": "SEO basics",
-  "t": "SEO básico"
- },
- "6acc1ebceb756a35": {
-  "en": "90–100 good",
-  "t": "90–100 bueno"
- },
- "335824fcff1c494b": {
-  "en": "50–89 needs work",
-  "t": "50–89 mejorable"
- },
- "776bc2cb3376d434": {
-  "en": "0–49 poor",
-  "t": "0–49 deficiente"
- },
- "c90ff2d44c0cc98a": {
-  "en": "What holds your website back most",
-  "t": "Lo que más frena su página web"
- },
- "2eec911adf8f9945": {
-  "en": "Get the full report, with what to fix first",
-  "t": "Reciba el informe completo, con lo que debe corregir primero"
- },
- "14e50f76860e8773": {
-  "en": "The scan is busy right now. Leave your email and we’ll send you the report.",
-  "t": "En este momento el análisis está saturado. Déjenos su correo electrónico y le enviaremos el informe."
- },
- "ddb58a72bc3a8511": {
-  "en": "A person from our team goes through your results and emails you a short, clear report. Free, with no obligation.",
-  "t": "Una persona de nuestro equipo revisa sus resultados y le envía por correo electrónico un informe breve y claro. Gratis y sin compromiso."
- },
- "7c65642d7a176e87": {
-  "en": "Send me the full report <span class=\"arr\" aria-hidden=\"true\">→</span>",
-  "t": "Envíenme el informe completo <span class=\"arr\" aria-hidden=\"true\">→</span>"
- },
- "ba635a2640d0c6a8": {
-  "en": "Please enter a website address, for example www.your-business.com.",
-  "t": "Introduzca la dirección de una página web, por ejemplo www.su-empresa.com."
- },
- "c1063279af00c2b7": {
-  "en": "We could not scan this address. Check that the website is online and try again.",
-  "t": "No hemos podido analizar esta dirección. Compruebe que la página web está online e inténtelo de nuevo."
- },
- "c28b1ce14123c352": {
-  "en": "Free website scan | DRP BuildLab",
-  "t": "Análisis gratuito de su página web | DRP BuildLab"
- },
- "ce762a4db9ead82d": {
-  "en": "Test your website for free: speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
-  "t": "Analice gratis su página web: velocidad, uso en el móvil, accesibilidad y facilidad para encontrarla en Google. Resultados en unos 30 segundos."
  }
 }

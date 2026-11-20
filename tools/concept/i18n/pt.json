@@ -5015,49 +5015,13 @@
   "en": "<b>Black Friday:</b> a free extra page, worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, until Monday 30 November.",
   "t": "<b>Black Friday:</b> uma página extra grátis, no valor de <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, até segunda-feira, 30 de novembro."
  },
- "3d20d6ecf4a59756": {
-  "en": "Free website scan",
-  "t": "Análise gratuita de site"
- },
  "6195bd7100ae82e3": {
   "en": "Please choose one of the options to continue.",
   "t": "Escolha uma das opções para continuar."
  },
- "8ff053114ba8741c": {
-  "en": "Thank you. We will email you the full report within one working day.",
-  "t": "Obrigado. Enviaremos o relatório completo por e-mail em até um dia útil."
- },
  "7782c7cf814aff6d": {
   "en": "Get a free quote",
   "t": "Peça um orçamento gratuito"
- },
- "0a217503d63347dc": {
-  "en": "Before you go: how does <em>your website</em> score?",
-  "t": "Antes de sair: qual é a nota do <em>seu site</em>?"
- },
- "42ab92972d9ddaf8": {
-  "en": "Speed, use on phones and the basics Google looks at, tested in about 30 seconds. Free, and you do not need to leave your email.",
-  "t": "Velocidade, uso no celular e os pontos básicos que o Google avalia, testados em cerca de 30 segundos. Grátis, e você não precisa deixar seu e-mail."
- },
- "26a68e397d99e70a": {
-  "en": "Scan my website",
-  "t": "Analisar meu site"
- },
- "a0818b6afba49e1d": {
-  "en": "No thanks",
-  "t": "Não, obrigado"
- },
- "462e1f87399018fc": {
-  "en": "Close",
-  "t": "Fechar"
- },
- "3c37e5c02b890869": {
-  "en": "Your website address",
-  "t": "Endereço do seu site"
- },
- "58734f0025244a30": {
-  "en": "www.your-business.com",
-  "t": "www.sua-empresa.com"
  },
  "138f1528250349e4": {
   "en": "Get your free quote",
@@ -5279,104 +5243,8 @@
   "en": "Free and without obligation. We reply within 24 hours.",
   "t": "Grátis e sem compromisso. Respondemos em até 24 horas."
  },
- "b57aba218bef0736": {
-  "en": "Not ready to ask for a quote?",
-  "t": "Ainda não é hora de pedir um orçamento?"
- },
- "36100859ca54da9b": {
-  "en": "Scan your current website for free: speed, phones and Google, in about 30 seconds.",
-  "t": "Analise seu site atual gratuitamente: velocidade, celulares e Google, em cerca de 30 segundos."
- },
- "cc1f36f2349f796f": {
-  "en": "Scan my website <span class=\"arr\" aria-hidden=\"true\">→</span>",
-  "t": "Analisar meu site <span class=\"arr\" aria-hidden=\"true\">→</span>"
- },
  "40548849b73f09a5": {
   "en": "www.example.com",
   "t": "www.exemplo.com"
- },
- "31566e98c71c2456": {
-  "en": "How good is <em>your website?</em>",
-  "t": "Quão bom é <em>o seu site?</em>"
- },
- "496e4e7a9c80ba09": {
-  "en": "A free scan of your website’s speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
-  "t": "Uma análise gratuita da velocidade do seu site, do uso no celular, da acessibilidade e da facilidade de encontrá-lo no Google. Resultados em cerca de 30 segundos."
- },
- "f1499d03f64ebd4b": {
-  "en": "We test the mobile version with Lighthouse, Google’s own website test. Nothing is installed or changed on your website.",
-  "t": "Testamos a versão para celular com o Lighthouse, a ferramenta do próprio Google para testar sites. Nada é instalado ou alterado no seu site."
- },
- "d475b5ee0e77ea2a": {
-  "en": "Scanning <b class=\"scan-host\" translate=\"no\"></b>. This takes about 30 seconds.",
-  "t": "Analisando <b class=\"scan-host\" translate=\"no\"></b>. Isso leva cerca de 30 segundos."
- },
- "1fb04d3b42744de2": {
-  "en": "Results for <span class=\"scan-host\" translate=\"no\"></span>",
-  "t": "Resultados de <span class=\"scan-host\" translate=\"no\"></span>"
- },
- "6dc331e5783411fe": {
-  "en": "Speed",
-  "t": "Velocidade"
- },
- "2536968a71b96d41": {
-  "en": "Accessibility",
-  "t": "Acessibilidade"
- },
- "8178a30ad09687dc": {
-  "en": "Technical health",
-  "t": "Saúde técnica"
- },
- "eacf70e328fb36c2": {
-  "en": "SEO basics",
-  "t": "SEO básico"
- },
- "6acc1ebceb756a35": {
-  "en": "90–100 good",
-  "t": "90–100 bom"
- },
- "335824fcff1c494b": {
-  "en": "50–89 needs work",
-  "t": "50–89 precisa melhorar"
- },
- "776bc2cb3376d434": {
-  "en": "0–49 poor",
-  "t": "0–49 fraco"
- },
- "c90ff2d44c0cc98a": {
-  "en": "What holds your website back most",
-  "t": "O que mais atrapalha seu site"
- },
- "2eec911adf8f9945": {
-  "en": "Get the full report, with what to fix first",
-  "t": "Receba o relatório completo, com o que corrigir primeiro"
- },
- "14e50f76860e8773": {
-  "en": "The scan is busy right now. Leave your email and we’ll send you the report.",
-  "t": "A análise está sobrecarregada no momento. Deixe seu e-mail e enviaremos o relatório para você."
- },
- "ddb58a72bc3a8511": {
-  "en": "A person from our team goes through your results and emails you a short, clear report. Free, with no obligation.",
-  "t": "Uma pessoa da nossa equipe analisa seus resultados e envia para você um relatório curto e claro por e-mail. Grátis e sem compromisso."
- },
- "7c65642d7a176e87": {
-  "en": "Send me the full report <span class=\"arr\" aria-hidden=\"true\">→</span>",
-  "t": "Quero o relatório completo <span class=\"arr\" aria-hidden=\"true\">→</span>"
- },
- "ba635a2640d0c6a8": {
-  "en": "Please enter a website address, for example www.your-business.com.",
-  "t": "Digite o endereço de um site, por exemplo www.sua-empresa.com."
- },
- "c1063279af00c2b7": {
-  "en": "We could not scan this address. Check that the website is online and try again.",
-  "t": "Não conseguimos analisar este endereço. Verifique se o site está no ar e tente novamente."
- },
- "c28b1ce14123c352": {
-  "en": "Free website scan | DRP BuildLab",
-  "t": "Análise gratuita de site | DRP BuildLab"
- },
- "ce762a4db9ead82d": {
-  "en": "Test your website for free: speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
-  "t": "Teste seu site gratuitamente: velocidade, uso no celular, acessibilidade e facilidade de ser encontrado no Google. Resultados em cerca de 30 segundos."
  }
 }

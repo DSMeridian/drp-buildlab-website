@@ -31,18 +31,6 @@ const arr = '<span class="arr" aria-hidden="true">→</span>';
    then; take these and their uses out after the deal. */
 const DEAL_END = '2026-12-01T00:00:00+01:00';
 const dealBar = () => `<div class="deal-bar" data-deal data-deal-end="${DEAL_END}"><div class="wrap deal-bar-in"><p><b>Black Friday:</b> a free extra page with every €499 starter package, plus 10% off all extra services. Until Monday 30 November.</p><a href="${B}/#deal">Claim the deal</a></div></div>`;
-/* Exit offer (desktop): when the pointer leaves through the top of the window,
-   site.js opens this once per visitor and sends the address to the free scan. */
-const exitDialog = () => `<div class="exit" id="exit" role="dialog" aria-modal="true" aria-labelledby="exit-h" hidden>
-  <div class="exit-box">
-    <button class="exit-x" type="button" aria-label="Close">×</button>
-    <p class="exit-tag">Free website scan</p>
-    <h2 class="h3" id="exit-h">Before you go: how does <em>your website</em> score?</h2>
-    <p>Speed, use on phones and the basics Google looks at, tested in about 30 seconds. Free, and you do not need to leave your email.</p>
-    <form class="scan-row" action="${B}/website-scan/" method="get"><input name="url" aria-label="Your website address" inputmode="url" autocomplete="url" spellcheck="false" maxlength="200" placeholder="www.your-business.com" required><button class="btn" type="submit">Scan my website</button></form>
-    <button class="exit-no" type="button">No thanks</button>
-  </div>
-</div>`;
 const dealNote = '<p class="deal-note" data-deal><b>Black Friday deal:</b> a free extra page and 10% off extra services, added to your quote.</p>';
 const dealSection = () => `
 <section class="sec deal" id="deal" data-deal aria-labelledby="deal-h"><div class="wrap deal-in">
@@ -304,7 +292,7 @@ const footer = () => `<footer class="ftr"><div class="wrap">
   </div>
   <div class="ft-cols">
     <nav aria-label="Footer menu"><h2>Site</h2><ul>${NAV.map(([, t, h]) => `<li><a href="${B}${h}">${t}</a></li>`).join('')}</ul></nav>
-    <div><h2>Services</h2><ul>${SERVICES.map(s => `<li><a href="${B}/diensten/${s.slug}/">${s.name}</a></li>`).join('')}<li><a href="${B}/tinrate/" translate="no">Tinrate Concierge</a></li><li><a href="${B}/website-scan/">Free website scan</a></li></ul></div>
+    <div><h2>Services</h2><ul>${SERVICES.map(s => `<li><a href="${B}/diensten/${s.slug}/">${s.name}</a></li>`).join('')}<li><a href="${B}/tinrate/" translate="no">Tinrate Concierge</a></li></ul></div>
     <div><h2>Studio</h2><address><span translate="no">Honingstraat 1D<br>2220 Hallaar,</span> Belgium</address><p>Monday to Friday, 9:00 to 18:00</p><p><a href="tel:+32473744431" translate="no">+32 473 74 44 31</a></p><h2 class="ft-pay-h">We accept</h2><ul class="ft-pay">${PAY.map(([n, svg, cls]) => `<li title="${n}"${cls ? ` class="${cls}"` : ''}${n === 'Bank transfer' ? '' : ' translate="no"'}>${svg}</li>`).join('')}</ul></div>
     <div><h2>Follow</h2><ul class="ft-social" translate="no">${[['instagram', 'Instagram', '@drp_buildlab', 'https://www.instagram.com/drp_buildlab/'], ['facebook', 'Facebook', 'DRP BuildLab', 'https://www.facebook.com/share/1Hz1mJG22E/'], ['tiktok', 'TikTok', '@drpbuildlab', 'https://www.tiktok.com/@drpbuildlab'], ['linkedin', 'LinkedIn', 'DRP BuildLab', 'https://www.linkedin.com/company/drpbuildlab/']].map(([k, n, h, u]) => `<li><a href="${u}" target="_blank" rel="noopener"><span class="ico">${ICON[k]}</span><span><b>${n}</b><small>${h}</small></span></a></li>`).join('')}</ul></div>
   </div>
@@ -346,9 +334,8 @@ ${body}
 </main>
 ${footer()}
 ${cursor ? '<div class="cur" id="cur" aria-hidden="true">View</div>' : ''}
-<div id="ui" hidden><span data-k="play">Play</span><span data-k="pause">Pause</span><span data-k="email">Please enter a valid email address so we can reach you.</span><span data-k="tick">Please tick the box so we may contact you about this request.</span><span data-k="fill">Please fill in this field:</span><span data-k="sent">Thank you, your request has been received. We will contact you within 24 hours.</span><span data-k="psent">Thank you, your application has been received. We review it personally and send your link within a few working days.</span><span data-k="tsent">Thank you, your order has been received. We will contact you within 24 hours to set up ${TC} on your website.</span><span data-k="failed">Sending failed. Please try again, or email us at info@drpbuildlab.com.</span><span data-k="nlsent">Almost done. We have sent you an email: click the link in it to confirm your subscription.</span><span data-k="nlfail">Subscribing did not work. Please try again in a moment.</span><span data-k="pick">Please choose one of the options to continue.</span><span data-k="scansent">Thank you. We will email you the full report within one working day.</span></div>
+<div id="ui" hidden><span data-k="play">Play</span><span data-k="pause">Pause</span><span data-k="email">Please enter a valid email address so we can reach you.</span><span data-k="tick">Please tick the box so we may contact you about this request.</span><span data-k="fill">Please fill in this field:</span><span data-k="sent">Thank you, your request has been received. We will contact you within 24 hours.</span><span data-k="psent">Thank you, your application has been received. We review it personally and send your link within a few working days.</span><span data-k="tsent">Thank you, your order has been received. We will contact you within 24 hours to set up ${TC} on your website.</span><span data-k="failed">Sending failed. Please try again, or email us at info@drpbuildlab.com.</span><span data-k="nlsent">Almost done. We have sent you an email: click the link in it to confirm your subscription.</span><span data-k="nlfail">Subscribing did not work. Please try again in a moment.</span><span data-k="pick">Please choose one of the options to continue.</span></div>
 ${nav === 'contact' ? '' : `<a class="stick-cta" id="stickCta" href="${B}/contact/" tabindex="-1" aria-hidden="true">Get a free quote</a>`}
-${nav === 'contact' || nav === 'scan' ? '' : exitDialog()}
 <a href="https://wa.me/32473744431" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp us"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.782 6.86L2 30l7.347-1.758A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.25-4.36 1.043 1.072-4.25-.276-.436A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.66c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.232.348-.898 1.132-1.1 1.364-.202.232-.404.26-.752.086-.348-.174-1.468-.54-2.796-1.724-1.034-.92-1.73-2.056-1.934-2.404-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.434-.028-.608-.086-.174-.78-1.882-1.07-2.576-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.608.086-.926.434-.318.348-1.216 1.188-1.216 2.896s1.244 3.356 1.418 3.588c.174.232 2.448 3.736 5.932 5.238.83.358 1.478.572 1.982.732.832.264 1.59.226 2.188.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.204-1.656-.086-.144-.318-.232-.666-.406z"/></svg></a>
 </body>
 </html>
@@ -1030,62 +1017,7 @@ pages['contact'] = page({
     <p class="ok" role="status" aria-live="polite"></p>
     <small>Free and without obligation. We reply within 24 hours.</small>
   </form>
-</div></section>
-<section class="sec fog tight"><div class="wrap cta-band">
-  <div><h2 class="h3">Not ready to ask for a quote?</h2><p class="muted" style="margin-top:10px">Scan your current website for free: speed, phones and Google, in about 30 seconds.</p></div>
-  <a class="btn dark" href="${B}/website-scan/">Scan my website ${arr}</a>
-</div></section>`
-});
-
-/* Free website scan: /api/scan (netlify/edge-functions/scan.js) runs Google's
-   PageSpeed Insights on the visitor's address; site.js shows the scores and
-   offers the full report through the usual quote form, with the address and
-   the scores written into "bericht". Without PAGESPEED_API_KEY the scan
-   answers "busy" and the page asks for the email instead. */
-pages['website-scan'] = page({
-  title: 'Free website scan | DRP BuildLab', desc: 'Test your website for free: speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.', nav: 'scan',
-  body: `${phero({ h1: 'How good is <em>your website?</em>', lede: 'A free scan of your website’s speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.' })}
-<section class="sec light scan-sec" style="padding-top:clamp(40px,5vw,72px)"><div class="wrap">
-  <form class="scan-form" id="scan" novalidate>
-    <label for="scan-url">Your website address</label>
-    <div class="scan-row"><input id="scan-url" inputmode="url" autocomplete="url" spellcheck="false" maxlength="200" placeholder="www.your-business.com" required><button class="btn" type="submit">Scan my website ${arr}</button></div>
-    <p class="scan-note">We test the mobile version with Lighthouse, Google’s own website test. Nothing is installed or changed on your website.</p>
-    <p class="scan-msg" role="status" aria-live="polite"></p>
-  </form>
-  <div class="scan-wait" id="scan-wait" hidden><span class="scan-spin" aria-hidden="true"></span><p>Scanning <b class="scan-host" translate="no"></b>. This takes about 30 seconds.</p></div>
-  <div class="scan-out" id="scan-out" hidden>
-    <h2 class="h3">Results for <span class="scan-host" translate="no"></span></h2>
-    <ul class="scan-scores">
-      <li data-cat="performance"><span class="ring"><b>–</b></span><span>Speed</span></li>
-      <li data-cat="accessibility"><span class="ring"><b>–</b></span><span>Accessibility</span></li>
-      <li data-cat="best-practices"><span class="ring"><b>–</b></span><span>Technical health</span></li>
-      <li data-cat="seo"><span class="ring"><b>–</b></span><span>SEO basics</span></li>
-    </ul>
-    <p class="scan-legend"><span class="g">90–100 good</span><span class="o">50–89 needs work</span><span class="p">0–49 poor</span></p>
-    <div class="scan-issues" hidden><h3>What holds your website back most</h3><ul></ul></div>
-  </div>
-  <form class="form scan-lead" id="scan-lead" name="offerte-aanvraag" method="POST" novalidate data-event="demo_request" data-sent="scansent" hidden>
-    <input type="hidden" name="form-name" value="offerte-aanvraag">
-    <input type="hidden" name="subject" value="Nieuwe aanvraag website-scan — DRP BuildLab">
-    <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-    <input type="hidden" name="dienst" value="Gratis website-scan: volledig rapport" data-slug="scan">
-    <input type="hidden" name="website" value="">
-    <input type="hidden" name="bericht" value="">
-    <input type="hidden" name="ref" value="">
-    <h3 class="scan-lead-h">Get the full report, with what to fix first</h3>
-    <h3 class="scan-busy-h" hidden>The scan is busy right now. Leave your email and we’ll send you the report.</h3>
-    <p class="fnote">A person from our team goes through your results and emails you a short, clear report. Free, with no obligation.</p>
-    <div class="frow">
-      <div class="fld"><label for="sl-name">Your name</label><input id="sl-name" name="voornaam" autocomplete="name" required></div>
-      <div class="fld"><label for="sl-email">Email</label><input id="sl-email" name="email" type="email" autocomplete="email" required></div>
-    </div>
-    <label class="check" for="sl-consent"><input type="checkbox" id="sl-consent" name="toestemming" value="ja" required><span>I agree that DRP BuildLab uses the details in this form to contact me about this request. <a href="${B}/privacy/">Privacy policy</a></span></label>
-    <button class="btn dark" type="submit">Send me the full report ${arr}</button>
-    <p class="ok" role="status" aria-live="polite"></p>
-  </form>
-  <div id="scan-ui" hidden><span data-k="bad">Please enter a website address, for example www.your-business.com.</span><span data-k="fail">We could not scan this address. Check that the website is online and try again.</span></div>
-</div></section>
-${ctaBand()}`
+</div></section></div></section>`
 });
 
 pages['partner-worden'] = page({
