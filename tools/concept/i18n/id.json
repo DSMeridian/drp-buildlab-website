@@ -439,10 +439,6 @@
   "en": "Privacy",
   "t": "Privasi"
  },
- "87b9827c6933b30d": {
-  "en": "Back to top ↑",
-  "t": "Kembali ke atas ↑"
- },
  "4fefc8d27ecb898a": {
   "en": "View",
   "t": "Lihat"
@@ -631,10 +627,6 @@
   "en": "Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.",
   "t": "Menulis semua konten Anda dari awal. Kami akan menggunakan teks yang Anda sediakan, kecuali jika disepakati lain."
  },
- "bd132b69d6569457": {
-  "en": "Let’s build <em style=\"color:var(--ink)\">your website.</em>",
-  "t": "Ayo kita buat <em style=\"color:var(--ink)\">situs web Anda.</em>"
- },
  "18371a5f81c2bb8a": {
   "en": "Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.",
   "t": "Ceritakan kepada kami tentang bisnis Anda. Kami akan menghubungi Anda untuk memberikan demo gratis mengenai situs web baru Anda, tanpa kewajiban apa pun."
@@ -778,10 +770,6 @@
  "5b2c04f8cb5f6ec2": {
   "en": "Redesign <em>&amp; refresh</em>",
   "t": "Perancangan ulang <em>&amp; penyegaran</em>"
- },
- "240616e343d7115c": {
-  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.",
-  "t": "Situs web Anda memang sudah ada, tetapi tampilannya sudah ketinggalan zaman, lambat saat diakses melalui ponsel, atau tidak mendatangkan permintaan informasi. Kami mempertahankan hal-hal yang sudah berjalan baik — konten Anda, merek Anda, peringkat Google Anda — dan memperbaiki sisanya."
  },
  "24004f92a8256f49": {
   "en": "Priced on demand: tell us what you need and we confirm the price in a written quote.",
@@ -1883,10 +1871,6 @@
   "en": "Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.",
   "t": "Petra Vanhandenhoven membantu para wirausahawan mengambil langkah yang tepat dalam menjalankan bisnis mereka, melalui e-book, lokakarya, dan bimbingan pribadi. Ia membutuhkan satu platform yang dapat menyatukan semua hal tersebut, sekaligus memberikan nuansa yang sama personalnya seperti sesi pembimbingannya."
  },
- "62a5dde8c21e7f5f": {
-  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.",
-  "t": "Kami merancang dan membangun situs ini dengan mengedepankan sosok Petra sendiri: judul editorial yang menonjol, potret dirinya, serta jalur yang jelas menuju setiap penawaran — e-book, lokakarya, bimbingan, dan Dreamteam-nya."
- },
  "e821531d25f5cd95": {
   "en": "It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.",
   "t": "Aplikasi ini berfungsi dengan baik baik di ponsel maupun di komputer desktop. Kami masih mengelolanya, sehingga pembaruan dan penawaran baru dapat langsung ditayangkan tanpa Petra perlu mengutak-atik kode apa pun."
@@ -1925,7 +1909,7 @@
  },
  "491eeec344c65d11": {
   "en": "We designed the site for the people who read it: large type, plain words and a calm layout. It explains the three phases, before, during and after the move, and makes a free phone call with no obligation the next step.",
-  "t": "Kami merancang situs ini khusus untuk para pengunjungnya: huruf besar, bahasa yang sederhana, dan tata letak yang tenang. Situs ini menjelaskan tiga tahap—sebelum, selama, dan setelah pindah—serta menawarkan panggilan telepon gratis tanpa kewajiban apa pun sebagai langkah selanjutnya."
+  "t": "Kami merancang situs ini khusus untuk para pengunjungnya: huruf besar, bahasa yang sederhana, dan tata letak yang tenang. Situs ini menjelaskan tiga tahap (sebelum, selama, dan setelah pindah) serta menawarkan panggilan telepon gratis tanpa kewajiban apa pun sebagai langkah selanjutnya."
  },
  "5c9ac8594c7cc0d1": {
   "en": "Easy to read",
@@ -2973,7 +2957,7 @@
  },
  "ccb5e5c01980273e": {
   "en": "His colleague Sanne (also made up, also recognisable) is the opposite. She is awake at six, three tasks in by eight and done by two. Then she goes to play padel, where, in her own words, she gets the best ideas of the week. Mostly against a wall.",
-  "t": "Rekan kerjanya, Sanne (juga fiktif, tapi tetap mudah dikenali), justru kebalikannya. Dia sudah bangun pukul enam, menyelesaikan tiga tugas sebelum pukul delapan, dan sudah selesai bekerja pukul dua. Setelah itu, dia pergi bermain padel, di mana—menurut pengakuannya sendiri—dia mendapatkan ide-ide terbaik sepanjang minggu. Biasanya saat bermain melawan dinding."
+  "t": "Rekan kerjanya, Sanne (juga fiktif, tapi tetap mudah dikenali), justru kebalikannya. Dia sudah bangun pukul enam, menyelesaikan tiga tugas sebelum pukul delapan, dan sudah selesai bekerja pukul dua. Setelah itu, dia pergi bermain padel, di mana (menurut pengakuannya sendiri) dia mendapatkan ide-ide terbaik sepanjang minggu. Biasanya saat bermain melawan dinding."
  },
  "83ee5d105965d650": {
   "en": "A time clock forces the two to work together in the middle: both half-hearted, both from nine o'clock. We let them work when they are good, and we ask one thing: that it is finished, that it is right, and that the client knows where they stand.",
@@ -3633,7 +3617,7 @@
  },
  "8410d802b61e95f4": {
   "en": "Els doesn't exist. Her flooded bathroom does, for someone, right now.",
-  "t": "Els itu tidak ada. Kamar mandinya yang tergenang air itu memang ada—bagi seseorang, saat ini juga."
+  "t": "Els itu tidak ada. Kamar mandinya yang tergenang air itu memang ada, bagi seseorang, saat ini juga."
  },
  "e71294b44bc5048b": {
   "en": "How readable is your site for machines?",
@@ -5246,5 +5230,17 @@
  "40548849b73f09a5": {
   "en": "www.example.com",
   "t": "www.contoh.com"
+ },
+ "a09f924fa3a73b71": {
+  "en": "Back to top",
+  "t": "Kembali ke atas"
+ },
+ "2175865ce005bfbd": {
+  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works (your content, your brand, your Google ranking) and fix the rest.",
+  "t": "Situs web Anda memang sudah ada, tetapi tampilannya sudah ketinggalan zaman, lambat saat diakses melalui ponsel, atau tidak mendatangkan permintaan informasi. Kami mempertahankan hal-hal yang sudah berjalan baik (konten Anda, merek Anda, peringkat Google Anda) dan memperbaiki sisanya."
+ },
+ "b6fd3bd4fe735bbc": {
+  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
+  "t": "Kami merancang dan membangun situs ini dengan mengedepankan sosok Petra sendiri: judul editorial yang menonjol, potret dirinya, serta jalur yang jelas menuju setiap penawaran (e-book, lokakarya, bimbingan, dan Dreamteam-nya)."
  }
 }

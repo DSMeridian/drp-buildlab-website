@@ -439,10 +439,6 @@
   "en": "Privacy",
   "t": "Confidentialité"
  },
- "87b9827c6933b30d": {
-  "en": "Back to top ↑",
-  "t": "Retour en haut de la page ↑"
- },
  "4fefc8d27ecb898a": {
   "en": "View",
   "t": "Afficher"
@@ -631,10 +627,6 @@
   "en": "Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.",
   "t": "Rédaction de l&#x27;intégralité de votre contenu à partir de zéro. Nous travaillons à partir des textes que vous nous fournissez, sauf accord contraire."
  },
- "bd132b69d6569457": {
-  "en": "Let’s build <em style=\"color:var(--ink)\">your website.</em>",
-  "t": "Créons <em style=\"color:var(--ink)\">votre site web.</em>"
- },
  "18371a5f81c2bb8a": {
   "en": "Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.",
   "t": "Parlez-nous de votre entreprise. Nous vous contacterons pour vous proposer une démonstration gratuite de votre nouveau site web, sans aucun engagement."
@@ -778,10 +770,6 @@
  "5b2c04f8cb5f6ec2": {
   "en": "Redesign <em>&amp; refresh</em>",
   "t": "Refonte <em>et modernisation</em>"
- },
- "240616e343d7115c": {
-  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.",
-  "t": "Votre site web existe déjà, mais son design semble dépassé, il est lent sur les téléphones ou ne génère pas de demandes de renseignements. Nous conservons ce qui fonctionne — votre contenu, votre marque, votre référencement sur Google — et nous améliorons le reste."
  },
  "24004f92a8256f49": {
   "en": "Priced on demand: tell us what you need and we confirm the price in a written quote.",
@@ -1882,10 +1870,6 @@
  "f0477ff0aab460f5": {
   "en": "Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.",
   "t": "Petra Vanhandenhoven aide les entrepreneurs à prendre les bonnes décisions pour leur entreprise, grâce à des livres numériques, des ateliers et un accompagnement individuel. Elle avait besoin d’un espace unique où tout cela soit regroupé, et qui soit aussi personnalisé que son coaching."
- },
- "62a5dde8c21e7f5f": {
-  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.",
-  "t": "Nous avons conçu et développé le site autour de Petra elle-même : un titre éditorial percutant, son portrait et un parcours clair vers chacune de ses offres — livres numériques, ateliers, accompagnement et son « Dreamteam »."
  },
  "e821531d25f5cd95": {
   "en": "It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.",
@@ -5246,5 +5230,17 @@
  "40548849b73f09a5": {
   "en": "www.example.com",
   "t": "www.exemple.com"
+ },
+ "a09f924fa3a73b71": {
+  "en": "Back to top",
+  "t": "Retour en haut de la page"
+ },
+ "2175865ce005bfbd": {
+  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works (your content, your brand, your Google ranking) and fix the rest.",
+  "t": "Votre site web existe déjà, mais son design semble dépassé, il est lent sur les téléphones ou ne génère pas de demandes de renseignements. Nous conservons ce qui fonctionne (votre contenu, votre marque, votre référencement sur Google) et nous améliorons le reste."
+ },
+ "b6fd3bd4fe735bbc": {
+  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
+  "t": "Nous avons conçu et développé le site autour de Petra elle-même : un titre éditorial percutant, son portrait et un parcours clair vers chacune de ses offres (livres numériques, ateliers, accompagnement et son « Dreamteam »)."
  }
 }

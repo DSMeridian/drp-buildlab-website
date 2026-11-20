@@ -439,10 +439,6 @@
   "en": "Privacy",
   "t": "Datenschutz"
  },
- "87b9827c6933b30d": {
-  "en": "Back to top ↑",
-  "t": "Zurück zum Anfang ↑"
- },
  "4fefc8d27ecb898a": {
   "en": "View",
   "t": "Anzeigen"
@@ -631,10 +627,6 @@
   "en": "Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.",
   "t": "Wir verfassen alle Ihre Inhalte von Grund auf neu. Sofern nichts anderes vereinbart wurde, arbeiten wir mit den von Ihnen bereitgestellten Texten."
  },
- "bd132b69d6569457": {
-  "en": "Let’s build <em style=\"color:var(--ink)\">your website.</em>",
-  "t": "Lassen Sie uns <em style=\"color:var(--ink)\">Ihre Website</em> erstellen<em style=\"color:var(--ink)\">.</em>"
- },
  "18371a5f81c2bb8a": {
   "en": "Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.",
   "t": "Erzählen Sie uns etwas über Ihr Unternehmen. Wir rufen Sie an und bieten Ihnen eine kostenlose, unverbindliche Demo Ihrer neuen Website an."
@@ -778,10 +770,6 @@
  "5b2c04f8cb5f6ec2": {
   "en": "Redesign <em>&amp; refresh</em>",
   "t": "Neugestaltung <em>und Aktualisierung</em>"
- },
- "240616e343d7115c": {
-  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.",
-  "t": "Ihre Website existiert bereits, wirkt jedoch veraltet, lädt auf Smartphones nur langsam oder generiert keine Anfragen. Wir behalten bei, was funktioniert – Ihre Inhalte, Ihre Marke, Ihr Google-Ranking – und optimieren den Rest."
  },
  "24004f92a8256f49": {
   "en": "Priced on demand: tell us what you need and we confirm the price in a written quote.",
@@ -1882,10 +1870,6 @@
  "f0477ff0aab460f5": {
   "en": "Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.",
   "t": "Petra Vanhandenhoven unterstützt Unternehmer dabei, die richtigen Schritte für ihr Unternehmen zu unternehmen – mithilfe von E-Books, Workshops und individueller Beratung. Sie benötigte einen Ort, an dem all dies zusammenkommt und der sich genauso persönlich anfühlt wie ihr Coaching."
- },
- "62a5dde8c21e7f5f": {
-  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.",
-  "t": "Wir haben die Website ganz auf Petra selbst ausgerichtet: eine aussagekräftige redaktionelle Überschrift, ihr Porträt und ein klarer Weg zu jedem Angebot – E-Books, Workshops, Beratung und ihr Dreamteam."
  },
  "e821531d25f5cd95": {
   "en": "It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.",
@@ -5246,5 +5230,17 @@
  "40548849b73f09a5": {
   "en": "www.example.com",
   "t": "www.beispiel.de"
+ },
+ "a09f924fa3a73b71": {
+  "en": "Back to top",
+  "t": "Zurück zum Anfang"
+ },
+ "2175865ce005bfbd": {
+  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works (your content, your brand, your Google ranking) and fix the rest.",
+  "t": "Ihre Website existiert bereits, wirkt jedoch veraltet, lädt auf Smartphones nur langsam oder generiert keine Anfragen. Wir behalten bei, was funktioniert (Ihre Inhalte, Ihre Marke, Ihr Google-Ranking) und optimieren den Rest."
+ },
+ "b6fd3bd4fe735bbc": {
+  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
+  "t": "Wir haben die Website ganz auf Petra selbst ausgerichtet: eine aussagekräftige redaktionelle Überschrift, ihr Porträt und ein klarer Weg zu jedem Angebot (E-Books, Workshops, Beratung und ihr Dreamteam)."
  }
 }

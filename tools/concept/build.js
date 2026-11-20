@@ -75,7 +75,7 @@ const CASES_RAW = [
     tags: ['Design', 'Development', 'Responsive', 'Maintenance'], kinds: 'Website',
     short: 'A website for Petra Vanhandenhoven’s coaching practice for entrepreneurs, with her e-books, workshops and one-to-one guidance in one place. We designed and built it, and we still maintain it.',
     brief: ['Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.'],
-    did: ['We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.', 'It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.'],
+    did: ['We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).', 'It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.'],
     quote: 'Ideas deserve a strong online foundation.', hDesk: 3943, hMob: 3600, phoneImg: 'stb-mob'
   },
   {
@@ -182,7 +182,7 @@ const SERVICES = [
   {
     slug: 'redesign', name: 'Redesign & refresh', em: 'Redesign <em>& refresh</em>', from: 'On demand',
     short: 'Your current site, modernised. We keep your content and brand and fix what holds it back.',
-    intro: 'Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.',
+    intro: 'Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works (your content, your brand, your Google ranking) and fix the rest.',
     incl: ['A review of what works and what does not', 'A modern design in your own brand', 'Faster loading on phones', 'Your content and URLs kept', 'Contact forms that work and stop spam', 'A preview before anything goes live'],
     opts: [['aanpassing-bestaand', 'Update existing website', 'Changes within your current layout and brand.'], ['vernieuwing-bestaand', 'Website or webshop refresh', 'A fresh, modern look that keeps your offer and brand.'], ['audit', 'Website audit', 'A check of structure, speed, mobile use and how easy you are to find.'], ['content-uitbreiding', 'Content expansion', 'Extra pages or information in the existing look and feel.'], ['contactform-herstel', 'Contact form repair', 'A working contact form, protected against spam and bots.']],
     caseSlug: null,
@@ -232,7 +232,7 @@ const OTHER = { href: '/contact/', name: 'Other services', short: 'Logo design, 
    one-pager and the €29 plan (PUBLIC_PRICES). Tinrate bills the client. */
 const TC = N('Concierge'), TTC = N('Tinrate Concierge');
 const TINRATE = { href: '/tinrate/', name: TTC, short: 'An AI assistant on your website that answers visitors in seconds and turns conversations into leads. We are an official Tinrate reseller.', from: 'Free 14-day trial' };
-const svcRow = s => `<li><a href="${B}${s.href || `/diensten/${s.slug}/`}"><h3>${s.name}</h3><p>${s.short}</p><span class="price"><span>${s.from}</span> <span class="ar" aria-hidden="true">→</span></span></a></li>`;
+const svcRow = s => `<li><a href="${B}${s.href || `/diensten/${s.slug}/`}"><h3>${s.name}</h3><p>${s.short}</p><span class="price"><span>${s.from}</span></span></a></li>`;
 
 const NOT_DONE = ['Printed matter such as business cards, flyers and brochures. We design the logo itself.', 'Mobile apps. We build websites and webshops only.', 'Day-to-day management of ad campaigns. We set up your first Google Ads campaign.', 'Accounting, legal or financial advice.', 'Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.'];
 
@@ -301,7 +301,7 @@ const footer = () => `<footer class="ftr"><div class="wrap">
     <p>© 2026 DRP BuildLab · VAT BE 1033.313.383</p>
     <p class="ft-legal"><a href="${B}/algemene-voorwaarden/">Terms</a><a href="${B}/privacy/">Privacy</a></p>
     <!--MARKETS-->
-    <a class="ft-top-link" href="#main">Back to top ↑</a>
+    <a class="ft-top-link" href="#main">Back to top</a>
   </div>
 </div></footer>`;
 
@@ -344,7 +344,7 @@ ${nav === 'contact' ? '' : `<a class="stick-cta" id="stickCta" href="${B}/contac
 
 const ctaBand = (h = 'Let’s build <em>your website.</em>', sub = 'Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.') => `
 <section class="sec blue tight"><div class="wrap cta-band">
-  <div><h2 class="h2 cta">${h.replace('<em>', '<em style="color:var(--ink)">')}</h2><p class="lede" style="color:#fff;margin-top:20px">${sub}</p></div>
+  <div><h2 class="h2 cta">${h}</h2><p class="lede" style="color:#fff;margin-top:20px">${sub}</p></div>
   <a class="btn dark" href="${B}/contact/">Request your free demo website ${arr}</a>
 </div></section>`;
 

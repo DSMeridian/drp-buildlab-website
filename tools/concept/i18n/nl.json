@@ -311,10 +311,6 @@
   "en": "© 2026 DRP BuildLab · VAT BE 1033.313.383",
   "t": "© 2026 DRP BuildLab · BTW-nummer BE 1033.313.383"
  },
- "87b9827c6933b30d": {
-  "en": "Back to top ↑",
-  "t": "Terug naar boven ↑"
- },
  "4fefc8d27ecb898a": {
   "en": "View",
   "t": "Bekijken"
@@ -514,10 +510,6 @@
  "5b2c04f8cb5f6ec2": {
   "en": "Redesign <em>&amp; refresh</em>",
   "t": "Herontwerp <em>en vernieuwing</em>"
- },
- "240616e343d7115c": {
-  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.",
-  "t": "Uw website bestaat al, maar ziet er verouderd uit, laadt traag op mobiele telefoons of levert geen aanvragen op. Wij behouden wat goed werkt — uw inhoud, uw merk, uw Google-positie — en brengen de rest in orde."
  },
  "24004f92a8256f49": {
   "en": "Priced on demand: tell us what you need and we confirm the price in a written quote.",
@@ -1314,10 +1306,6 @@
  "f0477ff0aab460f5": {
   "en": "Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.",
   "t": "Petra Vanhandenhoven helpt ondernemers de juiste stappen te zetten met hun bedrijf, door middel van e-books, workshops en individuele begeleiding. Zij had behoefte aan één plek waar al deze elementen samenkomen en die net zo persoonlijk aanvoelt als haar coaching."
- },
- "62a5dde8c21e7f5f": {
-  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.",
-  "t": "Wij hebben de website ontworpen en gebouwd met Petra zelf als middelpunt: een krachtige redactionele kop, haar portret en een duidelijke wegwijzer naar elk aanbod — e-books, workshops, begeleiding en haar Dreamteam."
  },
  "e821531d25f5cd95": {
   "en": "It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.",
@@ -2338,10 +2326,6 @@
  "2b4580fec4957c42": {
   "en": "Let’s build <em>your website.</em>",
   "t": "Laten we <em>uw website</em> bouwen<em>.</em>"
- },
- "bd132b69d6569457": {
-  "en": "Let’s build <em style=\"color:var(--ink)\">your website.</em>",
-  "t": "Laten we <em style=\"color:var(--ink)\">uw website</em> bouwen<em style=\"color:var(--ink)\">.</em>"
  },
  "02c9ed4a04cb925f": {
   "en": "Maintenance <em>plans</em>",
@@ -5246,5 +5230,17 @@
  "40548849b73f09a5": {
   "en": "www.example.com",
   "t": "www.voorbeeld.be"
+ },
+ "a09f924fa3a73b71": {
+  "en": "Back to top",
+  "t": "Terug naar boven"
+ },
+ "2175865ce005bfbd": {
+  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works (your content, your brand, your Google ranking) and fix the rest.",
+  "t": "Uw website bestaat al, maar ziet er verouderd uit, laadt traag op mobiele telefoons of levert geen aanvragen op. Wij behouden wat goed werkt (uw inhoud, uw merk, uw Google-positie) en brengen de rest in orde."
+ },
+ "b6fd3bd4fe735bbc": {
+  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
+  "t": "Wij hebben de website ontworpen en gebouwd met Petra zelf als middelpunt: een krachtige redactionele kop, haar portret en een duidelijke wegwijzer naar elk aanbod (e-books, workshops, begeleiding en haar Dreamteam)."
  }
 }

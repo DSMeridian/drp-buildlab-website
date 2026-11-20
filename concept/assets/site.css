@@ -102,8 +102,11 @@ button,input,select,textarea{font:inherit;color:inherit}
 .h1 .ln{display:block;overflow:hidden;padding-bottom:.04em;padding-top:.2em;margin-top:-.2em}
 .h1 .ln>span{display:block;animation:rise 1.1s var(--ease) both}
 .h1 .ln:nth-child(2)>span{animation-delay:.09s}.h1 .ln:nth-child(3)>span{animation-delay:.18s}
-.h1 em,.h2 em{font-style:italic;font-weight:900;color:var(--electric-hi)}
-.light .h2 em,.fog .h2 em,.light .h1 em{color:var(--electric)}
+/* Emphasis inside headings reads as plain text (antislop audit 001, #1 #4): the italic
+   blue end-word was on 33 headings, and translation split its <em> into odd places
+   ("bouwen<em>.</em>", "<em>Met</em> wie wij…"). The <em> stays in the markup so no
+   translation key changes. */
+:is(.h1,.h2,.h3,h1,h2,h3,.slot .big,.terms dd) em{font-style:normal;font-weight:inherit;color:inherit}
 @keyframes rise{from{transform:translateY(105%)}to{transform:none}}
 .h2{font-family:var(--display);font-weight:800;font-stretch:74%;font-size:clamp(42px,6.6vw,104px);line-height:.9;letter-spacing:-.025em;text-transform:uppercase;margin:0;text-wrap:balance}
 .h3{font-family:var(--display);font-weight:700;font-stretch:88%;font-size:clamp(24px,2.3vw,32px);line-height:1.08;letter-spacing:-.01em;margin:0}
@@ -124,8 +127,6 @@ button,input,select,textarea{font:inherit;color:inherit}
 .blue{background:var(--electric);color:#fff}
 .sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-bottom:clamp(44px,6vw,84px)}
 @media (max-width:860px){.sec-head{grid-template-columns:minmax(0,1fr)}}
-.js .rv{transform:translateY(34px);transition:transform 1.1s var(--ease)}
-.js .rv.in{transform:none}
 
 /* inner page hero */
 .phero{position:relative;padding-block:clamp(48px,8vw,120px) clamp(56px,8vw,110px);overflow:clip}
@@ -139,11 +140,9 @@ button,input,select,textarea{font:inherit;color:inherit}
 /* home hero */
 .hero{position:relative;padding-block:clamp(24px,4vh,56px);overflow:clip}
 .hero .phero-row{margin-top:clamp(20px,3.5vh,40px)}
-.hero::before{content:"";position:absolute;right:-18%;top:-30%;width:70vw;height:70vw;max-width:1100px;max-height:1100px;background:radial-gradient(closest-side,rgba(31,94,255,.26),rgba(31,94,255,0));pointer-events:none}
 /* every hero fills the first screen (below the 72px header) and stacks like the phone layout: title, lede, buttons */
 .hero,.phero{min-height:calc(100svh - 72px - env(safe-area-inset-top,0px));display:flex;flex-direction:column;justify-content:center}
 .hero>.wrap,.phero>.wrap{width:100%}
-.phero::before{content:"";position:absolute;right:-18%;top:-30%;width:70vw;height:70vw;max-width:1100px;max-height:1100px;background:radial-gradient(closest-side,rgba(31,94,255,.2),rgba(31,94,255,0));pointer-events:none}
 .hero .phero-row,.phero .phero-row{grid-template-columns:minmax(0,1fr);justify-items:start;align-items:start}
 .hero .phero-row .acts,.phero .phero-row .acts{justify-content:flex-start}
 .hero .lede,.phero .lede{max-width:52ch}
@@ -192,7 +191,6 @@ button,input,select,textarea{font:inherit;color:inherit}
 .slot{display:grid;place-items:center;aspect-ratio:16/10.6;border:1.5px dashed rgba(255,255,255,.25);border-radius:14px;text-align:center;padding:24px;text-decoration:none;transition:border-color .4s,background .4s}
 .slot:hover{border-color:var(--electric-hi);background:rgba(31,94,255,.08)}
 .slot .big{font-family:var(--display);font-weight:800;font-stretch:72%;font-size:clamp(40px,6vw,96px);line-height:.9;text-transform:uppercase;letter-spacing:-.02em}
-.slot .big em{color:var(--electric-hi);font-weight:900}
 @media (max-width:900px){.case,.case.flip{grid-template-columns:minmax(0,1fr)}.case.flip .case-media{order:0}}
 
 /* work grid */
@@ -233,8 +231,6 @@ button,input,select,textarea{font:inherit;color:inherit}
 .svc p{margin:0;color:var(--mute-l);max-width:46ch;transition:color .4s}
 .svc a:hover p{color:#c9cad1}
 .price{font-size:15px;white-space:nowrap;display:flex;gap:16px;align-items:center;font-variant-numeric:tabular-nums}
-.price .ar{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid currentColor;transition:transform .5s var(--ease),background .3s,border-color .3s}
-.svc a:hover .ar{transform:rotate(-45deg);background:var(--electric);border-color:var(--electric)}
 @media (max-width:860px){.svc a{grid-template-columns:minmax(0,1fr) auto}.svc p{grid-column:1/-1;grid-row:2}}
 
 /* promises: rows, not cards */
@@ -282,7 +278,6 @@ a.prt-card:hover .img img{transform:scale(1.05)}
 .prt-card .q{font-style:italic;color:var(--ink);margin-top:6px}
 .prt-cta{background:var(--ink);color:#fff;padding:clamp(26px,3vw,40px);justify-content:space-between;gap:24px}
 .prt-cta h3{font-family:var(--display);font-weight:800;font-stretch:76%;font-size:clamp(32px,2.4vw,40px);line-height:.92;text-transform:uppercase;letter-spacing:-.02em}
-.prt-cta h3 em{color:var(--electric-hi);font-weight:900}
 .prt-cta p{color:var(--mute-d)}
 @media (max-width:1180px){.prt{grid-template-columns:repeat(2,minmax(0,1fr))}.prt-cta h3{font-size:clamp(38px,4.2vw,60px)}}
 @media (max-width:560px){.prt{grid-template-columns:minmax(0,1fr)}}
@@ -296,20 +291,17 @@ a.prt-card:hover .img img{transform:scale(1.05)}
 .prt-feat .img:hover img{transform:scale(1.04)}
 .prt-feat .body{padding:clamp(28px,4.4vw,72px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:20px}
 .prt-feat h3{font-family:var(--display);font-weight:800;font-stretch:76%;font-size:clamp(36px,4.6vw,76px);line-height:.92;letter-spacing:-.02em;text-transform:uppercase;margin:0;text-wrap:balance}
-.prt-feat h3 em{color:var(--tin-hi);font-weight:900}
 .prt-feat p{margin:0;color:#cdc9e3;max-width:54ch;font-size:17px}
 .prt-feat .acts{align-items:center;gap:14px 24px;margin-top:6px}
 .prt-feat .btn,.tr-hero .btn:not(.ghost){--b:var(--tin)}
 .prt-feat .tlink:hover{color:var(--tin-hi)}
-.tr-badge{display:inline-flex;align-items:center;gap:10px;margin:0;padding:7px 14px;border-radius:99px;font-size:14px;font-weight:500;background:rgba(108,77,255,.18);color:#d4cbff;box-shadow:inset 0 0 0 1px rgba(108,77,255,.55)}
-.tr-badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--tin);box-shadow:0 0 0 4px rgba(108,77,255,.25)}
+/* a plain line of text, not a pill (antislop audit 001, #5): the reseller status is real information */
+.tr-badge{margin:0;font-size:15.5px;font-weight:600;color:var(--tin-hi)}
 @media (max-width:760px){.prt-feat{grid-template-columns:minmax(0,1fr)}.prt-feat .img{aspect-ratio:5/4}}
 
-.tr-hero::before{background:radial-gradient(closest-side,rgba(108,77,255,.28),rgba(108,77,255,0))}
 .tr-hero-in{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:44px 72px;align-items:center}
 .tr-hero .tr-badge{margin-bottom:28px}
 .tr-hero .h1{font-size:clamp(48px,7vw,124px)}
-.tr-hero .h1 em{color:var(--tin-hi)}
 .tr-hero .lede{margin-top:32px;max-width:52ch}
 .tr-hero .acts{margin-top:32px}
 .tr-visual{margin:0;border-radius:22px;overflow:hidden;aspect-ratio:5/6;box-shadow:0 40px 90px -40px rgba(108,77,255,.65)}
@@ -342,7 +334,6 @@ a.prt-card:hover .img img{transform:scale(1.05)}
 /* call to action */
 .cta-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px 72px;align-items:start}
 .cta .h2{font-size:clamp(56px,9vw,150px)}
-.cta .h2 em{color:var(--ink)}
 .steps{list-style:none;margin:40px 0 0;padding:0;counter-reset:s}
 .steps li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:4px 12px;padding:16px 0;border-top:1px solid rgba(255,255,255,.3)}
 .steps li::before{counter-increment:s;content:counter(s);font-weight:600;grid-row:span 2;font-variant-numeric:tabular-nums}
@@ -458,7 +449,6 @@ a.prt-card:hover .img img{transform:scale(1.05)}
 .terms div:not(:nth-child(3n+1)){padding-left:24px;border-left:1px solid var(--line-d)}
 .terms dt{color:var(--mute-d);font-size:15px;margin-bottom:8px}
 .terms dd{margin:0;font-family:var(--display);font-weight:800;font-stretch:80%;font-size:clamp(26px,2.6vw,38px);line-height:1;text-transform:uppercase}
-.terms dd em{font-style:italic;color:var(--electric-hi)}
 @media (max-width:760px){.terms{grid-template-columns:repeat(2,minmax(0,1fr))}.terms div{padding-left:0!important;border-left:0!important}}
 .big-num{font-family:var(--display);font-weight:900;font-style:italic;font-stretch:70%;font-size:clamp(110px,18vw,300px);line-height:.8;letter-spacing:-.04em;color:var(--electric-hi)}
 
@@ -526,7 +516,6 @@ html:has([id^="tinrate-embed-wrap-"]) .ftr{padding-bottom:96px}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-  .js .rv{transform:none}
   .stage-in{transform:none!important}
   @view-transition{navigation:none}
 }
@@ -684,7 +673,7 @@ a[href^="tel:"],a[href^="mailto:"],a[href*="wa.me"],.url,.money,.clist a,.clist 
 /* Japanese and Arabic: their own typefaces, no slanted or capitalised display type */
 :root[lang="ja"]{--display:"Noto Sans JP","Archivo",sans-serif;--body:"Noto Sans JP","Geist",sans-serif}
 :root[lang="ar"]{--display:"Noto Sans Arabic","Archivo",sans-serif;--body:"Noto Sans Arabic","Geist",sans-serif}
-:root:is([lang="ja"],[lang="ar"]) :is(em,.h1 em,.h2 em,.bc-drp,.logo .l1,.statement){font-style:normal}
+:root:is([lang="ja"],[lang="ar"]) :is(em,.bc-drp,.logo .l1,.statement){font-style:normal}
 :root:is([lang="ja"],[lang="ar"]) :is(.h1,.h2,.svc h3,.case h3,.row h3,.vgrid h3,.wtile h2,.two h2,.plan h2,.care h2,.tm-text h3,.tm-list .tm-n,.terms dd,.prt-cta h3,.slot .big){text-transform:none;letter-spacing:0;line-height:1.15}
 :root[lang="ja"] :is(.h1,.h2){line-height:1.2;word-break:keep-all;overflow-wrap:anywhere}
 /* the home hero headline is three short lines in English; longer translations get a smaller size
@@ -847,7 +836,6 @@ a[href^="tel:"],a[href^="mailto:"],a[href*="wa.me"],.url,.money,.clist a,.clist 
 .nl-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(20px,3vw,48px);align-items:center;margin:clamp(48px,6vw,88px) 0 0;padding:clamp(24px,3.4vw,44px);background:var(--fog);color:var(--ink);border-radius:22px}
 .post-page .nl-box{margin-top:clamp(28px,3.4vw,40px)}
 .nl-box h2{font-family:var(--display);font-weight:800;font-stretch:84%;font-size:clamp(26px,2.6vw,38px);line-height:1.02;letter-spacing:-.01em;margin:0 0 10px;text-wrap:balance}
-.nl-box h2 em{font-style:normal;color:var(--electric)}
 .nl-box .nl-text p{margin:0;color:var(--mute-l);max-width:46ch}
 .nl-form{display:grid;gap:12px;min-width:0}
 .nl-form [hidden]{display:none!important}
@@ -884,8 +872,8 @@ a[href^="tel:"],a[href^="mailto:"],a[href*="wa.me"],.url,.money,.clist a,.clist 
 :root:has(.deal-bar) .hero{min-height:calc(100svh - 72px - 42px - env(safe-area-inset-top,0px))}
 .deal{border-top:1px solid var(--line-d);padding-block:clamp(64px,8vw,120px)}
 .deal-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:44px 72px;align-items:center}
-.deal-tag{display:inline-flex;align-items:center;gap:10px;margin:0 0 24px;padding:8px 15px;border-radius:99px;background:rgba(31,94,255,.18);color:var(--electric-hi);font-family:var(--mono);font-size:13px;letter-spacing:.05em;text-transform:uppercase}
-.deal-tag::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--electric-hi)}
+/* the deal's deadline as a plain line, not an eyebrow pill (antislop audit 001, #5) */
+.deal-tag{margin:0 0 20px;font-size:17px;font-weight:600;color:var(--electric-hi)}
 .deal .h2,.deal h3{hyphens:manual}
 .deal .h2{font-size:clamp(40px,5.6vw,92px)}
 .deal .lede{margin-top:24px;max-width:44ch}
@@ -899,7 +887,7 @@ a[href^="tel:"],a[href^="mailto:"],a[href*="wa.me"],.url,.money,.clist a,.clist 
 .deal-offers p{margin:0;color:var(--mute-d);font-size:15.5px;line-height:1.5}
 .deal-offers li:first-child p{color:#dfe6ff}
 .deal-small{margin:16px 0 0;color:var(--mute-d);font-size:13.5px}
-.deal-note{margin:0;padding:12px 16px;border-radius:12px;background:#eef3ff;border-inline-start:3px solid var(--electric);color:var(--ink);font-size:14.5px;line-height:1.45}
+.deal-note{margin:0;padding:12px 16px;border-radius:12px;background:#eef3ff;color:var(--ink);font-size:14.5px;line-height:1.45}
 .deal-note b{font-weight:700}
 @media (max-width:960px){.deal-in{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:600px){
@@ -907,7 +895,6 @@ a[href^="tel:"],a[href^="mailto:"],a[href*="wa.me"],.url,.money,.clist a,.clist 
   .deal-bar-in{display:block;padding-block:8px}
   .deal-bar p{display:inline}
   .deal-bar a{margin-inline-start:6px}
-  .deal-tag{font-size:11.5px;letter-spacing:.02em;padding:7px 12px}
   :root:has(.deal-bar) .hero{min-height:calc(100svh - 72px - 70px - env(safe-area-inset-top,0px))}
   .deal-offers{grid-template-columns:minmax(0,1fr)}
 }

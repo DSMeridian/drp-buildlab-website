@@ -439,10 +439,6 @@
   "en": "Privacy",
   "t": "Privacidade"
  },
- "87b9827c6933b30d": {
-  "en": "Back to top ↑",
-  "t": "Voltar ao topo ↑"
- },
  "4fefc8d27ecb898a": {
   "en": "View",
   "t": "Visualizar"
@@ -631,10 +627,6 @@
   "en": "Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.",
   "t": "Redigir todo o seu conteúdo do zero. Trabalhamos com os textos que o senhor nos fornecer, salvo acordo em contrário."
  },
- "bd132b69d6569457": {
-  "en": "Let’s build <em style=\"color:var(--ink)\">your website.</em>",
-  "t": "Vamos criar <em style=\"color:var(--ink)\">o seu site.</em>"
- },
  "18371a5f81c2bb8a": {
   "en": "Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.",
   "t": "Conte-nos sobre a sua empresa. Entraremos em contato com você para oferecer uma demonstração gratuita do seu novo site, sem compromisso."
@@ -778,10 +770,6 @@
  "5b2c04f8cb5f6ec2": {
   "en": "Redesign <em>&amp; refresh</em>",
   "t": "Reestruturação <em>e atualização</em>"
- },
- "240616e343d7115c": {
-  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.",
-  "t": "Seu site já existe, mas parece ultrapassado, é lento em celulares ou não gera consultas. Mantemos o que funciona — seu conteúdo, sua marca, sua classificação no Google — e corrigimos o restante."
  },
  "24004f92a8256f49": {
   "en": "Priced on demand: tell us what you need and we confirm the price in a written quote.",
@@ -1883,10 +1871,6 @@
   "en": "Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.",
   "t": "Petra Vanhandenhoven ajuda empreendedores a darem os passos certos em seus negócios, por meio de e-books, workshops e orientação individual. Ela precisava de um espaço onde tudo isso se reunisse e que transmitisse a mesma sensação de personalização que seu coaching oferece."
  },
- "62a5dde8c21e7f5f": {
-  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.",
-  "t": "Projetamos e criamos o site tendo a própria Petra como foco: um título editorial impactante, seu retrato e um caminho claro para cada oferta — e-books, workshops, orientação e sua equipe de sonho."
- },
  "e821531d25f5cd95": {
   "en": "It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.",
   "t": "Funciona tão bem no celular quanto no computador. Ainda fazemos a manutenção do sistema, de modo que as atualizações e novas ofertas são publicadas sem que a Petra precise mexer em nenhum código."
@@ -1925,7 +1909,7 @@
  },
  "491eeec344c65d11": {
   "en": "We designed the site for the people who read it: large type, plain words and a calm layout. It explains the three phases, before, during and after the move, and makes a free phone call with no obligation the next step.",
-  "t": "Projetamos o site pensando nas pessoas que o acessam: letras grandes, linguagem simples e um layout tranquilo. Ele explica as três fases — antes, durante e depois da mudança — e indica como próximo passo uma ligação gratuita e sem compromisso."
+  "t": "Projetamos o site pensando nas pessoas que o acessam: letras grandes, linguagem simples e um layout tranquilo. Ele explica as três fases (antes, durante e depois da mudança) e indica como próximo passo uma ligação gratuita e sem compromisso."
  },
  "5c9ac8594c7cc0d1": {
   "en": "Easy to read",
@@ -5246,5 +5230,17 @@
  "40548849b73f09a5": {
   "en": "www.example.com",
   "t": "www.exemplo.com"
+ },
+ "a09f924fa3a73b71": {
+  "en": "Back to top",
+  "t": "Voltar ao topo"
+ },
+ "2175865ce005bfbd": {
+  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works (your content, your brand, your Google ranking) and fix the rest.",
+  "t": "Seu site já existe, mas parece ultrapassado, é lento em celulares ou não gera consultas. Mantemos o que funciona (seu conteúdo, sua marca, sua classificação no Google) e corrigimos o restante."
+ },
+ "b6fd3bd4fe735bbc": {
+  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
+  "t": "Projetamos e criamos o site tendo a própria Petra como foco: um título editorial impactante, seu retrato e um caminho claro para cada oferta (e-books, workshops, orientação e sua equipe de sonho)."
  }
 }

@@ -439,10 +439,6 @@
   "en": "Privacy",
   "t": "Privaatheid"
  },
- "87b9827c6933b30d": {
-  "en": "Back to top ↑",
-  "t": "Terug na bo ↑"
- },
  "4fefc8d27ecb898a": {
   "en": "View",
   "t": "Kyk"
@@ -631,10 +627,6 @@
   "en": "Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.",
   "t": "Ons skryf al jou inhoud van nuuts af. Ons werk met die tekste wat jy verskaf, tensy anders ooreengekom is."
  },
- "bd132b69d6569457": {
-  "en": "Let’s build <em style=\"color:var(--ink)\">your website.</em>",
-  "t": "Kom ons bou <em style=\"color:var(--ink)\">jou webwerf.</em>"
- },
  "18371a5f81c2bb8a": {
   "en": "Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.",
   "t": "Vertel ons van jou besigheid. Ons sal jou bel met &#x27;n gratis demonstrasie van jou nuwe webwerf, sonder verpligting."
@@ -778,10 +770,6 @@
  "5b2c04f8cb5f6ec2": {
   "en": "Redesign <em>&amp; refresh</em>",
   "t": "Herdesign <em>en verfris</em>"
- },
- "240616e343d7115c": {
-  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.",
-  "t": "Jou webwerf bestaan reeds, maar dit lyk verouderd, is stadig op selfone of genereer nie navrae nie. Ons behou wat werk — jou inhoud, jou handelsmerk, jou Google-ranglys — en herstel die res."
  },
  "24004f92a8256f49": {
   "en": "Priced on demand: tell us what you need and we confirm the price in a written quote.",
@@ -1882,10 +1870,6 @@
  "f0477ff0aab460f5": {
   "en": "Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.",
   "t": "Petra Vanhandenhoven help entrepreneurs om die regte stappe met hul besigheid te neem deur e-boeke, werkswinkels en een-tot-eenbegeleiding. Sy het &#x27;n plek nodig gehad waar dit alles bymekaarkom en wat so persoonlik voel soos haar afrigting."
- },
- "62a5dde8c21e7f5f": {
-  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.",
-  "t": "Ons het die webwerf rondom Petra self ontwerp en gebou: &#x27;n sterk redaksionele opskrif, haar portret en &#x27;n duidelike roete na elke aanbod — e-boeke, werkswinkels, leiding en haar Dreamteam."
  },
  "e821531d25f5cd95": {
   "en": "It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.",
@@ -5246,5 +5230,17 @@
  "40548849b73f09a5": {
   "en": "www.example.com",
   "t": "www.voorbeeld.co.za"
+ },
+ "a09f924fa3a73b71": {
+  "en": "Back to top",
+  "t": "Terug na bo"
+ },
+ "2175865ce005bfbd": {
+  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works (your content, your brand, your Google ranking) and fix the rest.",
+  "t": "Jou webwerf bestaan reeds, maar dit lyk verouderd, is stadig op selfone of genereer nie navrae nie. Ons behou wat werk (jou inhoud, jou handelsmerk, jou Google-ranglys) en herstel die res."
+ },
+ "b6fd3bd4fe735bbc": {
+  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
+  "t": "Ons het die webwerf rondom Petra self ontwerp en gebou: &#x27;n sterk redaksionele opskrif, haar portret en &#x27;n duidelike roete na elke aanbod (e-boeke, werkswinkels, leiding en haar Dreamteam)."
  }
 }

@@ -439,10 +439,6 @@
   "en": "Privacy",
   "t": "الخصوصية"
  },
- "87b9827c6933b30d": {
-  "en": "Back to top ↑",
-  "t": "العودة إلى الأعلى ↑"
- },
  "4fefc8d27ecb898a": {
   "en": "View",
   "t": "عرض"
@@ -631,10 +627,6 @@
   "en": "Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.",
   "t": "كتابة جميع محتوياتك من الصفر. نحن نعمل على النصوص التي تزودنا بها، ما لم يتم الاتفاق على خلاف ذلك."
  },
- "bd132b69d6569457": {
-  "en": "Let’s build <em style=\"color:var(--ink)\">your website.</em>",
-  "t": "دعونا نبني <em style=\"color:var(--ink)\">موقعك الإلكتروني.</em>"
- },
  "18371a5f81c2bb8a": {
   "en": "Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.",
   "t": "أخبرنا عن نشاطك التجاري. وسنتصل بك لتقديم عرض توضيحي مجاني لموقعك الإلكتروني الجديد، دون أي التزام من جانبك."
@@ -778,10 +770,6 @@
  "5b2c04f8cb5f6ec2": {
   "en": "Redesign <em>&amp; refresh</em>",
   "t": "إعادة التصميم <em>والتحديث</em>"
- },
- "240616e343d7115c": {
-  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.",
-  "t": "موقعك الإلكتروني موجود بالفعل، لكنه يبدو قديمًا، أو بطيئًا عند تصفحه عبر الهواتف، أو لا يجذب أي استفسارات. نحن نحتفظ بما يعمل بشكل جيد — المحتوى الخاص بك، وعلامتك التجارية، وترتيبك في نتائج بحث جوجل — ونقوم بإصلاح الباقي."
  },
  "24004f92a8256f49": {
   "en": "Priced on demand: tell us what you need and we confirm the price in a written quote.",
@@ -1882,10 +1870,6 @@
  "f0477ff0aab460f5": {
   "en": "Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.",
   "t": "تساعد بيترا فانهاندنهوفن رواد الأعمال على اتخاذ الخطوات الصحيحة في أعمالهم، من خلال الكتب الإلكترونية وورش العمل والتوجيه الفردي. وكانت بحاجة إلى مكان واحد يجمع كل ذلك معًا، ويمنحها إحساسًا بالشخصية يضاهي ما تقدمه من تدريب."
- },
- "62a5dde8c21e7f5f": {
-  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.",
-  "t": "لقد صممنا الموقع وأعددناه بحيث يكون محور التركيز فيه هو «بترا» نفسها: عنوان تحريري قوي، وصورتها الشخصية، ومسار واضح للوصول إلى كل عرض من عروضها — الكتب الإلكترونية، وورش العمل، والإرشادات، وفريق أحلامها."
  },
  "e821531d25f5cd95": {
   "en": "It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.",
@@ -5246,5 +5230,17 @@
  "40548849b73f09a5": {
   "en": "www.example.com",
   "t": "www.example.com"
+ },
+ "a09f924fa3a73b71": {
+  "en": "Back to top",
+  "t": "العودة إلى الأعلى"
+ },
+ "2175865ce005bfbd": {
+  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works (your content, your brand, your Google ranking) and fix the rest.",
+  "t": "موقعك الإلكتروني موجود بالفعل، لكنه يبدو قديمًا، أو بطيئًا عند تصفحه عبر الهواتف، أو لا يجذب أي استفسارات. نحن نحتفظ بما يعمل بشكل جيد (المحتوى الخاص بك، وعلامتك التجارية، وترتيبك في نتائج بحث جوجل) ونقوم بإصلاح الباقي."
+ },
+ "b6fd3bd4fe735bbc": {
+  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
+  "t": "لقد صممنا الموقع وأعددناه بحيث يكون محور التركيز فيه هو «بترا» نفسها: عنوان تحريري قوي، وصورتها الشخصية، ومسار واضح للوصول إلى كل عرض من عروضها (الكتب الإلكترونية، وورش العمل، والإرشادات، وفريق أحلامها)."
  }
 }

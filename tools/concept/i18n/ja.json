@@ -439,10 +439,6 @@
   "en": "Privacy",
   "t": "プライバシー"
  },
- "87b9827c6933b30d": {
-  "en": "Back to top ↑",
-  "t": "トップへ戻る ↑"
- },
  "4fefc8d27ecb898a": {
   "en": "View",
   "t": "表示"
@@ -631,10 +627,6 @@
   "en": "Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.",
   "t": "すべてのコンテンツを一から作成いたします。特に別段の取り決めがない限り、お客様からご提供いただいた原稿をもとに作業を行います。"
  },
- "bd132b69d6569457": {
-  "en": "Let’s build <em style=\"color:var(--ink)\">your website.</em>",
-  "t": "さあ、<em style=\"color:var(--ink)\">あなたのウェブサイト</em>を作りましょう<em style=\"color:var(--ink)\">。</em>"
- },
  "18371a5f81c2bb8a": {
   "en": "Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.",
   "t": "貴社の事業についてお聞かせください。新しいウェブサイトの無料デモについて、お電話でご案内させていただきます。ご契約の義務は一切ございません。"
@@ -778,10 +770,6 @@
  "5b2c04f8cb5f6ec2": {
   "en": "Redesign <em>&amp; refresh</em>",
   "t": "再設計<em>と刷新</em>"
- },
- "240616e343d7115c": {
-  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.",
-  "t": "すでにウェブサイトをお持ちですが、デザインが時代遅れだったり、スマートフォンでの表示が遅かったり、お問い合わせが得られなかったりしていませんか。弊社では、コンテンツ、ブランド、Googleでの検索順位など、うまく機能している部分はそのまま活かし、それ以外の部分を改善いたします。"
  },
  "24004f92a8256f49": {
   "en": "Priced on demand: tell us what you need and we confirm the price in a written quote.",
@@ -1882,10 +1870,6 @@
  "f0477ff0aab460f5": {
   "en": "Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.",
   "t": "ペトラ・ヴァンハンデンホーヴェンさんは、電子書籍やワークショップ、マンツーマンの指導を通じて、起業家がビジネスにおいて正しい一歩を踏み出せるようサポートしています。彼女には、これらすべてを一つにまとめ、自身のコーチングと同じくらい親しみやすい雰囲気を感じられる場所が必要でした。"
- },
- "62a5dde8c21e7f5f": {
-  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.",
-  "t": "このサイトは、ペトラさん自身を中心にデザイン・構築いたしました。インパクトのある見出し、彼女のポートレート、そして電子書籍、ワークショップ、ガイダンス、そして彼女の「ドリームチーム」といった各サービスへと続く明確な導線を設けています。"
  },
  "e821531d25f5cd95": {
   "en": "It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.",
@@ -5246,5 +5230,17 @@
  "40548849b73f09a5": {
   "en": "www.example.com",
   "t": "www.example.com"
+ },
+ "a09f924fa3a73b71": {
+  "en": "Back to top",
+  "t": "トップへ戻る"
+ },
+ "2175865ce005bfbd": {
+  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works (your content, your brand, your Google ranking) and fix the rest.",
+  "t": "すでにウェブサイトをお持ちですが、デザインが時代遅れだったり、スマートフォンでの表示が遅かったり、お問い合わせが得られなかったりしていませんか。弊社では、コンテンツ、ブランド、Googleでの検索順位など、うまく機能している部分はそのまま活かし、それ以外の部分を改善いたします。"
+ },
+ "b6fd3bd4fe735bbc": {
+  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
+  "t": "このサイトは、ペトラさん自身を中心にデザイン・構築いたしました。インパクトのある見出し、彼女のポートレート、そして電子書籍、ワークショップ、ガイダンス、そして彼女の「ドリームチーム」といった各サービスへと続く明確な導線を設けています。"
  }
 }

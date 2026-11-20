@@ -439,10 +439,6 @@
   "en": "Privacy",
   "t": "Privacidad"
  },
- "87b9827c6933b30d": {
-  "en": "Back to top ↑",
-  "t": "Volver al inicio ↑"
- },
  "4fefc8d27ecb898a": {
   "en": "View",
   "t": "Ver"
@@ -631,10 +627,6 @@
   "en": "Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.",
   "t": "Redactamos todo su contenido desde cero. Trabajamos con los textos que usted nos facilite, salvo que se acuerde lo contrario."
  },
- "bd132b69d6569457": {
-  "en": "Let’s build <em style=\"color:var(--ink)\">your website.</em>",
-  "t": "Creemos <em style=\"color:var(--ink)\">su página web.</em>"
- },
  "18371a5f81c2bb8a": {
   "en": "Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.",
   "t": "Cuéntenos sobre su empresa. Nos pondremos en contacto con usted para ofrecerle una demostración gratuita de su nueva página web, sin compromiso alguno."
@@ -778,10 +770,6 @@
  "5b2c04f8cb5f6ec2": {
   "en": "Redesign <em>&amp; refresh</em>",
   "t": "Rediseño <em>y actualización</em>"
- },
- "240616e343d7115c": {
-  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.",
-  "t": "Su página web ya existe, pero tiene un aspecto anticuado, funciona con lentitud en los móviles o no genera consultas. Conservamos lo que funciona —su contenido, su marca, su posicionamiento en Google— y solucionamos el resto."
  },
  "24004f92a8256f49": {
   "en": "Priced on demand: tell us what you need and we confirm the price in a written quote.",
@@ -1883,10 +1871,6 @@
   "en": "Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.",
   "t": "Petra Vanhandenhoven ayuda a los emprendedores a dar los pasos adecuados en sus negocios mediante libros electrónicos, talleres y asesoramiento personalizado. Necesitaba un lugar en el que todo ello se reuniera y que resultara tan personal como su servicio de coaching."
  },
- "62a5dde8c21e7f5f": {
-  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.",
-  "t": "Hemos diseñado y creado la página web en torno a la propia Petra: un titular editorial impactante, su retrato y una ruta clara hacia cada una de sus ofertas: libros electrónicos, talleres, asesoramiento y su «Dreamteam»."
- },
  "e821531d25f5cd95": {
   "en": "It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.",
   "t": "Funciona igual de bien en el móvil que en el ordenador. Seguimos encargándonos de su mantenimiento, por lo que las actualizaciones y las nuevas ofertas se publican sin que Petra tenga que modificar el código."
@@ -1925,7 +1909,7 @@
  },
  "491eeec344c65d11": {
   "en": "We designed the site for the people who read it: large type, plain words and a calm layout. It explains the three phases, before, during and after the move, and makes a free phone call with no obligation the next step.",
-  "t": "Hemos diseñado la página web pensando en quienes la leen: letra grande, lenguaje sencillo y un diseño tranquilo. En ella se explican las tres fases —antes, durante y después de la mudanza— y se propone como siguiente paso una llamada telefónica gratuita y sin compromiso."
+  "t": "Hemos diseñado la página web pensando en quienes la leen: letra grande, lenguaje sencillo y un diseño tranquilo. En ella se explican las tres fases (antes, durante y después de la mudanza) y se propone como siguiente paso una llamada telefónica gratuita y sin compromiso."
  },
  "5c9ac8594c7cc0d1": {
   "en": "Easy to read",
@@ -3497,7 +3481,7 @@
  },
  "99155a1c3e7f957e": {
   "en": "More and more people let an AI assistant, such as ChatGPT, Perplexity, Gemini or Claude, look up the answer instead of browsing themselves. Such an assistant reads websites, pulls out the facts and summarises them. The clearer your facts, the easier it is for it to use them.",
-  "t": "Cada vez son más las personas que recurren a un asistente de inteligencia artificial —como ChatGPT, Perplexity, Gemini o Claude— para que busque la respuesta, en lugar de buscarla ellas mismas. Este tipo de asistente lee las páginas web, extrae la información y la resume. Cuanto más clara sea la información, más fácil le resultará utilizarla."
+  "t": "Cada vez son más las personas que recurren a un asistente de inteligencia artificial (como ChatGPT, Perplexity, Gemini o Claude) para que busque la respuesta, en lugar de buscarla ellas mismas. Este tipo de asistente lee las páginas web, extrae la información y la resume. Cuanto más clara sea la información, más fácil le resultará utilizarla."
  },
  "255204c3f6698871": {
   "en": "Nobody can promise that an AI will mention you. But a site that a machine understands is also understood faster by people. And a photo of your van tells a machine nothing. A sentence under that photo does.",
@@ -5246,5 +5230,17 @@
  "40548849b73f09a5": {
   "en": "www.example.com",
   "t": "www.ejemplo.com"
+ },
+ "a09f924fa3a73b71": {
+  "en": "Back to top",
+  "t": "Volver al inicio"
+ },
+ "2175865ce005bfbd": {
+  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works (your content, your brand, your Google ranking) and fix the rest.",
+  "t": "Su página web ya existe, pero tiene un aspecto anticuado, funciona con lentitud en los móviles o no genera consultas. Conservamos lo que funciona (su contenido, su marca, su posicionamiento en Google) y solucionamos el resto."
+ },
+ "b6fd3bd4fe735bbc": {
+  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
+  "t": "Hemos diseñado y creado la página web en torno a la propia Petra: un titular editorial impactante, su retrato y una ruta clara hacia cada una de sus ofertas (libros electrónicos, talleres, asesoramiento y su «Dreamteam»)."
  }
 }
