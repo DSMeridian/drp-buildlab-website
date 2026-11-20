@@ -121,11 +121,80 @@ function track(f) {
     const ch = $('select[name="kanaal"]', f), reach = $('select[name="bereik"]', f);
     ev = { event: 'partner_request', partner_channel: PARTNER_CHANNEL[ch ? ch.selectedIndex : -1] || 'unknown', partner_reach: reach && reach.selectedIndex > 0 ? reach.selectedIndex : 0, ...base };
   } else {
-    const sel = $('select[name="dienst"]', f), chip = $('input[name="dienst"]:checked', f);
+    const sel = $('select[name="dienst"]', f), chip = $('input[name="dienst"]:checked', f) || $('input[type="hidden"][name="dienst"]', f);
     ev = { event: 'demo_request', demo_service: sel ? (DEMO_SERVICE[sel.selectedIndex] || 'unknown') : (chip ? chip.dataset.slug : 'unknown'), demo_form: f.id, demo_offer: dealOn && f.dataset.sent === 'sent' ? 'black_friday' : '', ...base };
   }
   window.dataLayer = window.dataLayer || []; window.dataLayer.push(ev);
 }
+const push = ev => { window.dataLayer = window.dataLayer || []; window.dataLayer.push(ev); };
+
+/* Quote builder on /contact/ (#quote): four steps, one at a time. Without
+   JavaScript the form shows every step at once and still posts. The answers
+   that have no field of their own (features, timing, free text) are written
+   into the hidden "bericht" in Dutch, for the team, just before the shared
+   submit handler below sends the form; this listener is added first so it
+   runs first. */
+(() => {
+  const f = $('#quote');
+  if (!f || !$('.wz-step', f)) return;
+  const steps = $$('.wz-step', f), msg = $('.ok', f);
+  const back = $('.wz-back', f), next = $('.wz-next', f), send = $('.wz-send', f);
+  let at = 0;
+  f.classList.add('wz');
+  const choice = () => $('input[name="dienst"]:checked', f);
+  /* step 2 shows only what fits the answer to step 1; hidden answers are disabled, so never sent */
+  const syncOpts = () => {
+    const k = (choice() || { dataset: {} }).dataset.kind || '';
+    $$('.wz-opt', f).forEach(o => {
+      const on = o.dataset.for.split(' ').includes(k);
+      o.hidden = !on;
+      $$('input,textarea', o).forEach(i => { i.disabled = !on; });
+    });
+  };
+  const show = i => {
+    at = i;
+    steps.forEach((s, k) => { s.hidden = k !== i; });
+    back.hidden = i === 0; next.hidden = i === steps.length - 1; send.hidden = i !== steps.length - 1;
+    $('.wz-n', f).textContent = i + 1;
+    $('.wz-bar i', f).style.width = ((i + 1) / steps.length * 100) + '%';
+    msg.classList.remove('show');
+  };
+  const go = d => {
+    if (d > 0 && at === 0 && !choice()) {
+      msg.textContent = ui('pick'); msg.classList.add('show'); $('input[name="dienst"]', f).focus(); return;
+    }
+    show(Math.max(0, Math.min(steps.length - 1, at + d)));
+    const s = steps[at];
+    s.tabIndex = -1; s.focus({ preventScroll: true });
+    if (f.getBoundingClientRect().top < 0) f.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    push({ event: 'quote_step', quote_step: at + 1, demo_service: (choice() || { dataset: {} }).dataset.slug || '' });
+  };
+  $$('input[name="dienst"]', f).forEach(r => r.addEventListener('change', syncOpts));
+  /* a click on a card moves on by itself; arrow keys only select, so keyboard users are not thrown forward */
+  $$('.wz-cards label', f).forEach(l => l.addEventListener('click', e => { if (e.detail) setTimeout(() => go(1), 220); }));
+  next.addEventListener('click', () => go(1));
+  back.addEventListener('click', () => go(-1));
+  f.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && e.target.tagName === 'INPUT' && at < steps.length - 1) { e.preventDefault(); go(1); }
+  });
+  f.addEventListener('submit', e => {
+    if (at < steps.length - 1) { e.preventDefault(); e.stopImmediatePropagation(); go(1); return; }
+    const on = sel => $$(sel, f).filter(i => !i.disabled && i.checked);
+    const lines = [];
+    const prod = on('input[name="producten"]')[0], when = on('input[name="timing"]')[0];
+    const picked = on('.wz-opt input[type="checkbox"]').map(i => i.value);
+    if (prod) lines.push('Aantal producten: ' + prod.value);
+    if (picked.length) lines.push('Gekozen: ' + picked.join(', '));
+    if (when) lines.push('Timing: ' + when.value);
+    const about = $('#q-about', f);
+    if (about && !about.disabled && about.value.trim()) lines.push('Over het bedrijf:\n' + about.value.trim());
+    const free = $('#q-msg', f).value.trim();
+    if (free) lines.push('Bericht:\n' + free);
+    $('input[type="hidden"][name="bericht"]', f).value = lines.join('\n\n');
+  });
+  syncOpts(); show(0);
+})();
+
 $$('form[data-event]').forEach(f => f.addEventListener('submit', e => {
   e.preventDefault();
   const msg = $('.ok', f), btn = $('button[type="submit"]', f);
@@ -472,3 +541,142 @@ if (tm) {
     });
   });
 }
+
+/* Free website scan (/website-scan/): asks /api/scan for Google's Lighthouse
+   scores, shows them, and offers the full report through the quote form
+   (#scan-lead) with the address and the scores in "bericht". When the scan
+   is busy (no API key, Google's limit, a timeout) the form still appears,
+   so the visitor can leave an email and the team runs the scan by hand.
+   ?url= starts a scan straight away: the exit offer sends visitors here. */
+(() => {
+  const form = $('#scan');
+  if (!form) return;
+  const input = $('#scan-url'), note = $('.scan-msg', form), wait = $('#scan-wait'), out = $('#scan-out'), lead = $('#scan-lead');
+  const t = k => ($(`#scan-ui [data-k="${k}"]`) || {}).textContent || '';
+  const clean = raw => {
+    let s = String(raw || '').trim();
+    if (!s) return null;
+    if (!/^https?:\/\//i.test(s)) s = 'https://' + s;
+    try { const u = new URL(s); return /^[a-z0-9.-]+\.[a-z]{2,}$/i.test(u.hostname) ? u : null; } catch (_) { return null; }
+  };
+  const NL = { performance: 'Snelheid', accessibility: 'Toegankelijkheid', 'best-practices': 'Technische gezondheid', seo: 'SEO-basis' };
+  let running = false;
+  async function run(raw) {
+    const u = clean(raw);
+    if (!u) { note.textContent = t('bad'); note.classList.add('show'); input.focus(); return; }
+    if (running) return;
+    running = true;
+    note.classList.remove('show');
+    const host = u.hostname.replace(/^www\./, '');
+    $$('.scan-host').forEach(e => { e.textContent = host; });
+    wait.hidden = false; out.hidden = true; lead.hidden = true;
+    $('input[name="website"]', lead).value = u.href;
+    push({ event: 'scan_start' });
+    let d = null;
+    try {
+      const r = await fetch('/api/scan?' + new URLSearchParams({ url: u.href, lang: document.documentElement.lang || 'en' }));
+      d = await r.json();
+    } catch (_) { d = { busy: true }; }
+    running = false; wait.hidden = true;
+    if (d && d.error) { note.textContent = t('fail'); note.classList.add('show'); push({ event: 'scan_failed' }); return; }
+    const has = d && d.scores;
+    if (has) {
+      $$('.scan-scores li', out).forEach(li => {
+        const v = d.scores[li.dataset.cat], ring = $('.ring', li);
+        $('b', ring).textContent = v == null ? '–' : v;
+        ring.style.setProperty('--v', v || 0);
+        ring.className = 'ring' + (v == null ? '' : v >= 90 ? ' g' : v >= 50 ? ' o' : ' p');
+      });
+      const box = $('.scan-issues', out), ul = $('ul', box);
+      ul.textContent = '';
+      (d.issues || []).forEach(i => { const li = document.createElement('li'); li.textContent = i.title; ul.append(li); });
+      box.hidden = !ul.children.length;
+      out.hidden = false;
+      push({ event: 'scan_done', scan_performance: d.scores.performance, scan_seo: d.scores.seo });
+    } else {
+      push({ event: 'scan_busy' });
+    }
+    $('.scan-lead-h', lead).hidden = !has;
+    $('.scan-busy-h', lead).hidden = !!has;
+    $('input[name="bericht"]', lead).value = has
+      ? [`Website-scan (mobiel) van ${u.href}`,
+         Object.keys(NL).map(k => `${NL[k]}: ${d.scores[k] == null ? '–' : d.scores[k]}`).join(' · '),
+         (d.issues || []).length ? 'Grootste problemen:\n' + d.issues.map(i => '- ' + i.title).join('\n') : ''].filter(Boolean).join('\n\n')
+      : `Website-scan gevraagd voor ${u.href}. De automatische scan was niet beschikbaar: graag manueel uitvoeren.`;
+    lead.hidden = false;
+    (has ? out : lead).scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  }
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const v = input.value.trim();
+    if (clean(v)) history.replaceState(null, '', location.pathname + '?url=' + encodeURIComponent(v));
+    run(v);
+  });
+  const q = new URLSearchParams(location.search).get('url');
+  if (q) { input.value = q; run(q); }
+})();
+
+/* Exit offer, desktop only: when the pointer leaves through the top of the
+   window, once per visitor, and never while someone is busy (a form being
+   filled in, the menu, the chat or the cookie choice open, or in the first
+   ten seconds). */
+(() => {
+  const dlg = $('#exit');
+  if (!dlg || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  const KEY = 'drp_exit_seen';
+  let seen = false;
+  try { seen = !!localStorage.getItem(KEY); } catch (_) {}
+  const t0 = Date.now();
+  let back = null;
+  const busy = () => Date.now() - t0 < 10000 || $('.ccb') || document.body.classList.contains('menu-open') || document.body.classList.contains('chat-panel-open')
+    || (document.activeElement && document.activeElement.matches('input,textarea,select'))
+    || $$('form[data-event] input:not([type=hidden]):not([type=radio]):not([type=checkbox]), form[data-event] textarea').some(i => i.value.trim());
+  const open = () => {
+    seen = true;
+    try { localStorage.setItem(KEY, String(Date.now())); } catch (_) {}
+    back = document.activeElement;
+    dlg.hidden = false; document.body.classList.add('exit-open');
+    $('input', dlg).focus();
+    push({ event: 'exit_offer_open' });
+  };
+  const close = () => { dlg.hidden = true; document.body.classList.remove('exit-open'); if (back && back.focus) back.focus(); };
+  document.addEventListener('mouseout', e => {
+    if (seen || e.relatedTarget || e.clientY > 8 || busy()) return;
+    open();
+  });
+  $('.exit-x', dlg).addEventListener('click', close);
+  $('.exit-no', dlg).addEventListener('click', close);
+  dlg.addEventListener('click', e => { if (e.target === dlg) close(); });
+  dlg.addEventListener('keydown', e => {
+    if (e.key === 'Escape') close();
+    if (e.key !== 'Tab') return;
+    const f = $$('button,input,a[href]', dlg), first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+  $('form', dlg).addEventListener('submit', () => push({ event: 'exit_offer_scan' }));
+})();
+
+/* Sticky "Get a free quote": shown while the header is hidden (reading down
+   the page), so there is always one way to ask for a quote, and out of the
+   way while a quote form is on screen. The bottom corners belong to
+   WhatsApp, the chat and the Tinrate assistant. */
+(() => {
+  const pill = $('#stickCta');
+  if (!pill) return;
+  let formInView = false;
+  const sync = () => {
+    const on = hdr.classList.contains('hide') && !formInView && !document.body.classList.contains('menu-open');
+    pill.classList.toggle('on', on);
+    pill.tabIndex = on ? 0 : -1;
+    if (on) pill.removeAttribute('aria-hidden'); else pill.setAttribute('aria-hidden', 'true');
+  };
+  new MutationObserver(sync).observe(hdr, { attributes: true, attributeFilter: ['class'] });
+  if ('IntersectionObserver' in window) {
+    const seen = new Set();
+    const io = new IntersectionObserver(es => { es.forEach(x => { if (x.isIntersecting) seen.add(x.target); else seen.delete(x.target); }); formInView = seen.size > 0; sync(); });
+    $$('form[data-event]').forEach(f => io.observe(f));
+  }
+  pill.addEventListener('click', () => push({ event: 'sticky_cta' }));
+  sync();
+})();

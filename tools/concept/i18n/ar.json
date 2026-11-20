@@ -591,37 +591,9 @@
   "en": "Company or VAT number <small>(optional)</small>",
   "t": "رقم الشركة أو رقم ضريبة القيمة المضافة <small>(اختياري)</small>"
  },
- "1da557513e3c8e31": {
-  "en": "Which service do you have in mind?",
-  "t": "ما هي الخدمة التي تفكر فيها؟"
- },
- "47842fe8c86e5981": {
-  "en": "Choose a service",
-  "t": "اختر خدمة"
- },
- "415e43f376f985ea": {
-  "en": "Made to measure, quote",
-  "t": "مصنوع حسب الطلب، عرض أسعار"
- },
- "2f214b2d9b1bd13c": {
-  "en": "Update an existing website",
-  "t": "تحديث موقع إلكتروني موجود بالفعل"
- },
- "d0d3c2cfbf0d3795": {
-  "en": "Extra services only (logo, SEO, …)",
-  "t": "الخدمات الإضافية فقط (الشعار، تحسين محركات البحث، ...)"
- },
- "19b5fdb4eb526430": {
-  "en": "I don’t know yet",
-  "t": "لا أعرف حتى الآن"
- },
  "0933578323c0f2da": {
   "en": "Partner code <small>(optional)</small>",
   "t": "رمز الشريك <small>(اختياري)</small>"
- },
- "5274b4354c018aa0": {
-  "en": "Message <small>(optional)</small>",
-  "t": "رسالة <small>(اختياري)</small>"
  },
  "d9cd398dd6c8cd6b": {
   "en": "Five services, each with its own page, what is included and a starting price. Every price is confirmed in a written quote.",
@@ -2434,10 +2406,6 @@
  "4388e34194cd5e8f": {
   "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
   "t": "يتم تصميم كل موقع إلكتروني حسب الطلب، لذا يعتمد السعر على حجم العمل المطلوب. بالنسبة للشركات الجديدة، أو تلك التي ترغب في تحديث موقعها الحالي، تبدأ أسعار باقتنا المبدئية من <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. أما باقي الخدمات، فيتم تحديد أسعارها حسب الطلب، من خلال عرض أسعار مخصص لكل حالة على حدة. الصيانة اختيارية: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> شهريًّا."
- },
- "77f6952ee45c3cad": {
-  "en": "Starter package (one-page website)",
-  "t": "الباقة المبدئية (موقع إلكتروني من صفحة واحدة)"
  },
  "7ca4618712abfd02": {
   "en": "Price quotes via WhatsApp",
@@ -5046,5 +5014,369 @@
  "c00d8b960f07e69c": {
   "en": "<b>Black Friday:</b> a free extra page, worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, until Monday 30 November.",
   "t": "<b>الجمعة البيضاء:</b> صفحة إضافية مجانًا بقيمة <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>، حتى يوم الاثنين 30 نوفمبر."
+ },
+ "3d20d6ecf4a59756": {
+  "en": "Free website scan",
+  "t": "فحص مجاني لموقعك الإلكتروني"
+ },
+ "6195bd7100ae82e3": {
+  "en": "Please choose one of the options to continue.",
+  "t": "يُرجى اختيار أحد الخيارات للمتابعة."
+ },
+ "8ff053114ba8741c": {
+  "en": "Thank you. We will email you the full report within one working day.",
+  "t": "شكرًا لك. سنرسل إليك التقرير الكامل عبر البريد الإلكتروني في غضون يوم عمل واحد."
+ },
+ "7782c7cf814aff6d": {
+  "en": "Get a free quote",
+  "t": "احصل على عرض أسعار مجاني"
+ },
+ "0a217503d63347dc": {
+  "en": "Before you go: how does <em>your website</em> score?",
+  "t": "قبل أن تغادر: ما تقييم <em>موقعك الإلكتروني</em>؟"
+ },
+ "42ab92972d9ddaf8": {
+  "en": "Speed, use on phones and the basics Google looks at, tested in about 30 seconds. Free, and you do not need to leave your email.",
+  "t": "السرعة، وسهولة الاستخدام على الهواتف، والأساسيات التي يراعيها Google، نختبرها في نحو 30 ثانية. مجانًا، ودون الحاجة إلى ترك بريدك الإلكتروني."
+ },
+ "26a68e397d99e70a": {
+  "en": "Scan my website",
+  "t": "افحص موقعي"
+ },
+ "a0818b6afba49e1d": {
+  "en": "No thanks",
+  "t": "لا، شكرًا"
+ },
+ "462e1f87399018fc": {
+  "en": "Close",
+  "t": "إغلاق"
+ },
+ "3c37e5c02b890869": {
+  "en": "Your website address",
+  "t": "عنوان موقعك الإلكتروني"
+ },
+ "58734f0025244a30": {
+  "en": "www.your-business.com",
+  "t": "www.example.com"
+ },
+ "138f1528250349e4": {
+  "en": "Get your free quote",
+  "t": "احصل على عرض أسعار مجاني"
+ },
+ "7db183a9c85347b5": {
+  "en": "What are we building?",
+  "t": "ماذا سنبني لك؟"
+ },
+ "730e4f0ef74f4589": {
+  "en": "A one-page website",
+  "t": "موقع إلكتروني من صفحة واحدة"
+ },
+ "3bc10996a64c4b4a": {
+  "en": "Starter package, from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
+  "t": "الباقة المبدئية، ابتداءً من <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>"
+ },
+ "56cd5d0714994d80": {
+  "en": "A website with several pages",
+  "t": "موقع إلكتروني متعدد الصفحات"
+ },
+ "b4bedb6e7632f7ee": {
+  "en": "A webshop",
+  "t": "متجر إلكتروني"
+ },
+ "4daa6d18ee6c74d3": {
+  "en": "Sell online",
+  "t": "للبيع عبر الإنترنت"
+ },
+ "db6b9130757243cd": {
+  "en": "A new look for my website",
+  "t": "مظهر جديد لموقعي"
+ },
+ "28376792a8b15821": {
+  "en": "Redesign or refresh",
+  "t": "إعادة التصميم أو التحديث"
+ },
+ "a7bf84569df07903": {
+  "en": "Extra services only",
+  "t": "الخدمات الإضافية فقط"
+ },
+ "95e654cf4043a19b": {
+  "en": "Logo, SEO, Google Ads…",
+  "t": "الشعار، SEO، Google Ads…"
+ },
+ "32e6a2e06b26d911": {
+  "en": "I’m not sure yet",
+  "t": "لست متأكدًا بعد"
+ },
+ "0be6a66600027972": {
+  "en": "We’ll help you choose",
+  "t": "سنساعدك على الاختيار"
+ },
+ "0d92c4481fd0b1c0": {
+  "en": "What should it do?",
+  "t": "ما الوظائف التي تحتاجها؟"
+ },
+ "99b3fe64c22240fd": {
+  "en": "Pick what applies. You can skip this step.",
+  "t": "اختر ما ينطبق عليك. يمكنك تخطي هذه الخطوة."
+ },
+ "52055c424d0a667e": {
+  "en": "Features",
+  "t": "الميزات"
+ },
+ "90f0dd1af9d3d47d": {
+  "en": "Contact form",
+  "t": "نموذج اتصال"
+ },
+ "949d5ea5e56dbcfb": {
+  "en": "Online bookings",
+  "t": "الحجز عبر الإنترنت"
+ },
+ "70657e8fd5cddff7": {
+  "en": "Several languages",
+  "t": "لغات متعددة"
+ },
+ "a8fd786a4a431594": {
+  "en": "Blog or news",
+  "t": "مدونة أو أخبار"
+ },
+ "b266dd90983cb656": {
+  "en": "Portfolio or photo gallery",
+  "t": "معرض أعمال أو صور"
+ },
+ "6ff36921f19c7c83": {
+  "en": "Online payments",
+  "t": "الدفع عبر الإنترنت"
+ },
+ "3d8301ea8aa6d2ed": {
+  "en": "Google reviews on the site",
+  "t": "تقييمات Google على الموقع"
+ },
+ "52f914a725a5e69d": {
+  "en": "How many products?",
+  "t": "كم عدد المنتجات؟"
+ },
+ "8fcd3f705673fda7": {
+  "en": "Fewer than 50",
+  "t": "أقل من 50"
+ },
+ "662786d5159d0081": {
+  "en": "50 to 500",
+  "t": "من 50 إلى 500"
+ },
+ "6cc0c3ff61dc06f9": {
+  "en": "More than 500",
+  "t": "أكثر من 500"
+ },
+ "8b2057c5165abcd9": {
+  "en": "On Shopify",
+  "t": "على Shopify"
+ },
+ "9b97416e08a599e4": {
+  "en": "Shipping and invoicing",
+  "t": "الشحن والفوترة"
+ },
+ "170f985f80f6e1d6": {
+  "en": "B2B prices and login",
+  "t": "أسعار B2B وتسجيل الدخول"
+ },
+ "6b4295ff98336b11": {
+  "en": "Subscriptions",
+  "t": "الاشتراكات"
+ },
+ "b45aa4d2c1f1073d": {
+  "en": "Your current website <small>(optional)</small>",
+  "t": "موقعك الحالي <small>(اختياري)</small>"
+ },
+ "c3a8294d3429df36": {
+  "en": "What bothers you about it?",
+  "t": "ما الذي لا يعجبك فيه؟"
+ },
+ "a4c754cbf768f9d1": {
+  "en": "It looks dated",
+  "t": "يبدو قديمًا"
+ },
+ "1a6ba72a697140e7": {
+  "en": "It is slow",
+  "t": "بطيء"
+ },
+ "1efc42c281c1280b": {
+  "en": "Poor on phones",
+  "t": "ضعيف على الهواتف"
+ },
+ "ce497634b53c8dee": {
+  "en": "No enquiries",
+  "t": "لا يجلب استفسارات"
+ },
+ "c33fcd072d3b3d8f": {
+  "en": "Hard to update",
+  "t": "صعب التحديث"
+ },
+ "4853ca6a2052ca7a": {
+  "en": "Extra services",
+  "t": "الخدمات الإضافية"
+ },
+ "ad0c71137f4250b0": {
+  "en": "SEO",
+  "t": "SEO"
+ },
+ "a808131e4a0eb051": {
+  "en": "Google Ads",
+  "t": "Google Ads"
+ },
+ "64e09d7aa50293b5": {
+  "en": "Photography",
+  "t": "التصوير الفوتوغرافي"
+ },
+ "82de470216b9a2ab": {
+  "en": "Maintenance plan",
+  "t": "خطة الصيانة"
+ },
+ "b4233434cfa678b2": {
+  "en": "Tell us a little about your business <small>(optional)</small>",
+  "t": "أخبرنا قليلًا عن نشاطك التجاري <small>(اختياري)</small>"
+ },
+ "fe555e61c533704a": {
+  "en": "When should it be online?",
+  "t": "متى تريد إطلاق الموقع؟"
+ },
+ "581b3ec559c48e9a": {
+  "en": "As soon as possible",
+  "t": "في أقرب وقت ممكن"
+ },
+ "9c44686de8cabae0": {
+  "en": "Within a month",
+  "t": "خلال شهر"
+ },
+ "541d17e959377431": {
+  "en": "In 1 to 3 months",
+  "t": "خلال 1 إلى 3 أشهر"
+ },
+ "57d0088e4456b8ea": {
+  "en": "Just looking around",
+  "t": "أستكشف الخيارات فقط"
+ },
+ "5d2c6ab18fbef02b": {
+  "en": "Anything else we should know? <small>(optional)</small>",
+  "t": "هل هناك أي شيء آخر ينبغي أن نعرفه؟ <small>(اختياري)</small>"
+ },
+ "708aed56a716e4c8": {
+  "en": "Where do we send your quote?",
+  "t": "إلى أين نرسل عرض السعر؟"
+ },
+ "2334d7c50c981ee4": {
+  "en": "Back",
+  "t": "رجوع"
+ },
+ "872321992f1108dd": {
+  "en": "Next step",
+  "t": "الخطوة التالية"
+ },
+ "70844d492b1959f6": {
+  "en": "Send my quote request <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "أرسل طلب عرض السعر <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "6eb0e69a4a5b4432": {
+  "en": "Free and without obligation. We reply within 24 hours.",
+  "t": "مجاني ودون أي التزام. نرد عليك في غضون 24 ساعة."
+ },
+ "b57aba218bef0736": {
+  "en": "Not ready to ask for a quote?",
+  "t": "لست مستعدًا لطلب عرض أسعار بعد؟"
+ },
+ "36100859ca54da9b": {
+  "en": "Scan your current website for free: speed, phones and Google, in about 30 seconds.",
+  "t": "افحص موقعك الحالي مجانًا: السرعة، والأداء على الهواتف، والظهور على Google، في نحو 30 ثانية."
+ },
+ "cc1f36f2349f796f": {
+  "en": "Scan my website <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "افحص موقعي <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "40548849b73f09a5": {
+  "en": "www.example.com",
+  "t": "www.example.com"
+ },
+ "31566e98c71c2456": {
+  "en": "How good is <em>your website?</em>",
+  "t": "ما مدى جودة <em>موقعك الإلكتروني؟</em>"
+ },
+ "496e4e7a9c80ba09": {
+  "en": "A free scan of your website’s speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
+  "t": "فحص مجاني لسرعة موقعك الإلكتروني، وسهولة استخدامه على الهواتف، وإمكانية الوصول إليه، ومدى سهولة العثور عليه في Google. النتائج في نحو 30 ثانية."
+ },
+ "f1499d03f64ebd4b": {
+  "en": "We test the mobile version with Lighthouse, Google’s own website test. Nothing is installed or changed on your website.",
+  "t": "نختبر نسخة الهاتف المحمول باستخدام Lighthouse، أداة Google الخاصة لاختبار المواقع. لا نثبّت أي شيء على موقعك ولا نغيّر فيه شيئًا."
+ },
+ "d475b5ee0e77ea2a": {
+  "en": "Scanning <b class=\"scan-host\" translate=\"no\"></b>. This takes about 30 seconds.",
+  "t": "جارٍ فحص <b class=\"scan-host\" translate=\"no\"></b>. يستغرق ذلك نحو 30 ثانية."
+ },
+ "1fb04d3b42744de2": {
+  "en": "Results for <span class=\"scan-host\" translate=\"no\"></span>",
+  "t": "نتائج <span class=\"scan-host\" translate=\"no\"></span>"
+ },
+ "6dc331e5783411fe": {
+  "en": "Speed",
+  "t": "السرعة"
+ },
+ "2536968a71b96d41": {
+  "en": "Accessibility",
+  "t": "إمكانية الوصول"
+ },
+ "8178a30ad09687dc": {
+  "en": "Technical health",
+  "t": "السلامة التقنية"
+ },
+ "eacf70e328fb36c2": {
+  "en": "SEO basics",
+  "t": "أساسيات SEO"
+ },
+ "6acc1ebceb756a35": {
+  "en": "90–100 good",
+  "t": "90–100 جيد"
+ },
+ "335824fcff1c494b": {
+  "en": "50–89 needs work",
+  "t": "50–89 يحتاج إلى تحسين"
+ },
+ "776bc2cb3376d434": {
+  "en": "0–49 poor",
+  "t": "0–49 ضعيف"
+ },
+ "c90ff2d44c0cc98a": {
+  "en": "What holds your website back most",
+  "t": "أكثر ما يعيق موقعك الإلكتروني"
+ },
+ "2eec911adf8f9945": {
+  "en": "Get the full report, with what to fix first",
+  "t": "احصل على التقرير الكامل، مع ما يجب إصلاحه أولًا"
+ },
+ "14e50f76860e8773": {
+  "en": "The scan is busy right now. Leave your email and we’ll send you the report.",
+  "t": "الفحص مشغول حاليًا. اترك بريدك الإلكتروني وسنرسل إليك التقرير."
+ },
+ "ddb58a72bc3a8511": {
+  "en": "A person from our team goes through your results and emails you a short, clear report. Free, with no obligation.",
+  "t": "يراجع أحد أعضاء فريقنا نتائجك ويرسل إليك تقريرًا قصيرًا وواضحًا عبر البريد الإلكتروني. مجانًا ودون أي التزام."
+ },
+ "7c65642d7a176e87": {
+  "en": "Send me the full report <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "أرسل لي التقرير الكامل <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "ba635a2640d0c6a8": {
+  "en": "Please enter a website address, for example www.your-business.com.",
+  "t": "يُرجى إدخال عنوان موقع إلكتروني، مثل www.example.com."
+ },
+ "c1063279af00c2b7": {
+  "en": "We could not scan this address. Check that the website is online and try again.",
+  "t": "تعذّر علينا فحص هذا العنوان. تأكد من أن الموقع متاح على الإنترنت، ثم حاول مرة أخرى."
+ },
+ "c28b1ce14123c352": {
+  "en": "Free website scan | DRP BuildLab",
+  "t": "فحص مجاني لموقعك الإلكتروني | DRP BuildLab"
+ },
+ "ce762a4db9ead82d": {
+  "en": "Test your website for free: speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
+  "t": "اختبر موقعك الإلكتروني مجانًا: السرعة، وسهولة الاستخدام على الهواتف، وإمكانية الوصول، ومدى سهولة العثور عليه في Google. النتائج في نحو 30 ثانية."
  }
 }

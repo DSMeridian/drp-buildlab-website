@@ -591,37 +591,9 @@
   "en": "Company or VAT number <small>(optional)</small>",
   "t": "会社名またはVAT番号<small>（任意）</small>"
  },
- "1da557513e3c8e31": {
-  "en": "Which service do you have in mind?",
-  "t": "どのようなサービスをお考えですか？"
- },
- "47842fe8c86e5981": {
-  "en": "Choose a service",
-  "t": "サービスをお選びください"
- },
- "415e43f376f985ea": {
-  "en": "Made to measure, quote",
-  "t": "オーダーメイド、お見積もり"
- },
- "2f214b2d9b1bd13c": {
-  "en": "Update an existing website",
-  "t": "既存のウェブサイトを更新する"
- },
- "d0d3c2cfbf0d3795": {
-  "en": "Extra services only (logo, SEO, …)",
-  "t": "追加サービスのみ（ロゴ、SEOなど）"
- },
- "19b5fdb4eb526430": {
-  "en": "I don’t know yet",
-  "t": "まだわかりません"
- },
  "0933578323c0f2da": {
   "en": "Partner code <small>(optional)</small>",
   "t": "パートナーコード<small>（任意）</small>"
- },
- "5274b4354c018aa0": {
-  "en": "Message <small>(optional)</small>",
-  "t": "メッセージ<small>（任意）</small>"
  },
  "d9cd398dd6c8cd6b": {
   "en": "Five services, each with its own page, what is included and a starting price. Every price is confirmed in a written quote.",
@@ -2434,10 +2406,6 @@
  "4388e34194cd5e8f": {
   "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
   "t": "すべてのウェブサイトはオーダーメイドで制作されるため、価格は制作にかかる作業量によって異なります。新規事業や既存サイトの更新をご検討中の場合、当社のスターターパッケージは<span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>からご利用いただけます。それ以外のご依頼については、ご要望に応じて個別に作成するお見積もりに基づき、価格を決定いたします。メンテナンスはオプションで、月額<span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span>です。"
- },
- "77f6952ee45c3cad": {
-  "en": "Starter package (one-page website)",
-  "t": "スターターパッケージ（1ページのウェブサイト）"
  },
  "7ca4618712abfd02": {
   "en": "Price quotes via WhatsApp",
@@ -5046,5 +5014,369 @@
  "c00d8b960f07e69c": {
   "en": "<b>Black Friday:</b> a free extra page, worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, until Monday 30 November.",
   "t": "<b>ブラックフライデー：</b>追加ページ1ページ（<span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>相当）を無料で。11月30日（月）まで。"
+ },
+ "3d20d6ecf4a59756": {
+  "en": "Free website scan",
+  "t": "無料ウェブサイト診断"
+ },
+ "6195bd7100ae82e3": {
+  "en": "Please choose one of the options to continue.",
+  "t": "続行するには、いずれかの項目を選択してください。"
+ },
+ "8ff053114ba8741c": {
+  "en": "Thank you. We will email you the full report within one working day.",
+  "t": "ありがとうございます。1営業日以内に詳細レポートをメールでお送りします。"
+ },
+ "7782c7cf814aff6d": {
+  "en": "Get a free quote",
+  "t": "無料でお見積もり"
+ },
+ "0a217503d63347dc": {
+  "en": "Before you go: how does <em>your website</em> score?",
+  "t": "お帰りの前に：<em>あなたのウェブサイト</em>の評価は？"
+ },
+ "42ab92972d9ddaf8": {
+  "en": "Speed, use on phones and the basics Google looks at, tested in about 30 seconds. Free, and you do not need to leave your email.",
+  "t": "表示速度、スマートフォンでの使いやすさ、Googleが重視する基本項目を約30秒でチェックします。無料で、メールアドレスの入力も不要です。"
+ },
+ "26a68e397d99e70a": {
+  "en": "Scan my website",
+  "t": "サイトを診断する"
+ },
+ "a0818b6afba49e1d": {
+  "en": "No thanks",
+  "t": "結構です"
+ },
+ "462e1f87399018fc": {
+  "en": "Close",
+  "t": "閉じる"
+ },
+ "3c37e5c02b890869": {
+  "en": "Your website address",
+  "t": "ウェブサイトのURL"
+ },
+ "58734f0025244a30": {
+  "en": "www.your-business.com",
+  "t": "www.example.com"
+ },
+ "138f1528250349e4": {
+  "en": "Get your free quote",
+  "t": "無料でお見積もりを依頼"
+ },
+ "7db183a9c85347b5": {
+  "en": "What are we building?",
+  "t": "何を制作しますか？"
+ },
+ "730e4f0ef74f4589": {
+  "en": "A one-page website",
+  "t": "1ページのウェブサイト"
+ },
+ "3bc10996a64c4b4a": {
+  "en": "Starter package, from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
+  "t": "スターターパッケージ、<span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>から"
+ },
+ "56cd5d0714994d80": {
+  "en": "A website with several pages",
+  "t": "複数ページのウェブサイト"
+ },
+ "b4bedb6e7632f7ee": {
+  "en": "A webshop",
+  "t": "オンラインショップ"
+ },
+ "4daa6d18ee6c74d3": {
+  "en": "Sell online",
+  "t": "オンラインで販売"
+ },
+ "db6b9130757243cd": {
+  "en": "A new look for my website",
+  "t": "ウェブサイトを一新したい"
+ },
+ "28376792a8b15821": {
+  "en": "Redesign or refresh",
+  "t": "リデザイン・リニューアル"
+ },
+ "a7bf84569df07903": {
+  "en": "Extra services only",
+  "t": "追加サービスのみ"
+ },
+ "95e654cf4043a19b": {
+  "en": "Logo, SEO, Google Ads…",
+  "t": "ロゴ、SEO、Google Ads…"
+ },
+ "32e6a2e06b26d911": {
+  "en": "I’m not sure yet",
+  "t": "まだ決めていません"
+ },
+ "0be6a66600027972": {
+  "en": "We’ll help you choose",
+  "t": "一緒にお選びします"
+ },
+ "0d92c4481fd0b1c0": {
+  "en": "What should it do?",
+  "t": "どんな機能が必要ですか？"
+ },
+ "99b3fe64c22240fd": {
+  "en": "Pick what applies. You can skip this step.",
+  "t": "該当するものを選んでください。このステップは省略できます。"
+ },
+ "52055c424d0a667e": {
+  "en": "Features",
+  "t": "機能"
+ },
+ "90f0dd1af9d3d47d": {
+  "en": "Contact form",
+  "t": "お問い合わせフォーム"
+ },
+ "949d5ea5e56dbcfb": {
+  "en": "Online bookings",
+  "t": "オンライン予約"
+ },
+ "70657e8fd5cddff7": {
+  "en": "Several languages",
+  "t": "多言語対応"
+ },
+ "a8fd786a4a431594": {
+  "en": "Blog or news",
+  "t": "ブログ・ニュース"
+ },
+ "b266dd90983cb656": {
+  "en": "Portfolio or photo gallery",
+  "t": "実績紹介・フォトギャラリー"
+ },
+ "6ff36921f19c7c83": {
+  "en": "Online payments",
+  "t": "オンライン決済"
+ },
+ "3d8301ea8aa6d2ed": {
+  "en": "Google reviews on the site",
+  "t": "Googleレビューの掲載"
+ },
+ "52f914a725a5e69d": {
+  "en": "How many products?",
+  "t": "商品数はどのくらいですか？"
+ },
+ "8fcd3f705673fda7": {
+  "en": "Fewer than 50",
+  "t": "50点未満"
+ },
+ "662786d5159d0081": {
+  "en": "50 to 500",
+  "t": "50〜500点"
+ },
+ "6cc0c3ff61dc06f9": {
+  "en": "More than 500",
+  "t": "500点超"
+ },
+ "8b2057c5165abcd9": {
+  "en": "On Shopify",
+  "t": "Shopifyで構築"
+ },
+ "9b97416e08a599e4": {
+  "en": "Shipping and invoicing",
+  "t": "配送・請求書発行"
+ },
+ "170f985f80f6e1d6": {
+  "en": "B2B prices and login",
+  "t": "B2B価格とログイン"
+ },
+ "6b4295ff98336b11": {
+  "en": "Subscriptions",
+  "t": "サブスクリプション"
+ },
+ "b45aa4d2c1f1073d": {
+  "en": "Your current website <small>(optional)</small>",
+  "t": "現在のウェブサイト <small>(任意)</small>"
+ },
+ "c3a8294d3429df36": {
+  "en": "What bothers you about it?",
+  "t": "どんな点にご不満ですか？"
+ },
+ "a4c754cbf768f9d1": {
+  "en": "It looks dated",
+  "t": "デザインが古い"
+ },
+ "1a6ba72a697140e7": {
+  "en": "It is slow",
+  "t": "表示が遅い"
+ },
+ "1efc42c281c1280b": {
+  "en": "Poor on phones",
+  "t": "スマホで見づらい"
+ },
+ "ce497634b53c8dee": {
+  "en": "No enquiries",
+  "t": "問い合わせが来ない"
+ },
+ "c33fcd072d3b3d8f": {
+  "en": "Hard to update",
+  "t": "更新しにくい"
+ },
+ "4853ca6a2052ca7a": {
+  "en": "Extra services",
+  "t": "追加サービス"
+ },
+ "ad0c71137f4250b0": {
+  "en": "SEO",
+  "t": "SEO"
+ },
+ "a808131e4a0eb051": {
+  "en": "Google Ads",
+  "t": "Google Ads"
+ },
+ "64e09d7aa50293b5": {
+  "en": "Photography",
+  "t": "写真撮影"
+ },
+ "82de470216b9a2ab": {
+  "en": "Maintenance plan",
+  "t": "メンテナンスプラン"
+ },
+ "b4233434cfa678b2": {
+  "en": "Tell us a little about your business <small>(optional)</small>",
+  "t": "事業内容について簡単にお聞かせください <small>(任意)</small>"
+ },
+ "fe555e61c533704a": {
+  "en": "When should it be online?",
+  "t": "公開希望時期はいつですか？"
+ },
+ "581b3ec559c48e9a": {
+  "en": "As soon as possible",
+  "t": "できるだけ早く"
+ },
+ "9c44686de8cabae0": {
+  "en": "Within a month",
+  "t": "1か月以内"
+ },
+ "541d17e959377431": {
+  "en": "In 1 to 3 months",
+  "t": "1〜3か月以内"
+ },
+ "57d0088e4456b8ea": {
+  "en": "Just looking around",
+  "t": "情報収集中"
+ },
+ "5d2c6ab18fbef02b": {
+  "en": "Anything else we should know? <small>(optional)</small>",
+  "t": "その他、お伝えいただきたいことはありますか？ <small>(任意)</small>"
+ },
+ "708aed56a716e4c8": {
+  "en": "Where do we send your quote?",
+  "t": "お見積もりの送付先を教えてください"
+ },
+ "2334d7c50c981ee4": {
+  "en": "Back",
+  "t": "戻る"
+ },
+ "872321992f1108dd": {
+  "en": "Next step",
+  "t": "次へ"
+ },
+ "70844d492b1959f6": {
+  "en": "Send my quote request <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "お見積もりを依頼する <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "6eb0e69a4a5b4432": {
+  "en": "Free and without obligation. We reply within 24 hours.",
+  "t": "無料で、ご契約の義務はありません。24時間以内にご返信いたします。"
+ },
+ "b57aba218bef0736": {
+  "en": "Not ready to ask for a quote?",
+  "t": "お見積もりはまだ早いとお考えですか？"
+ },
+ "36100859ca54da9b": {
+  "en": "Scan your current website for free: speed, phones and Google, in about 30 seconds.",
+  "t": "現在のウェブサイトを無料で診断：表示速度、スマホ対応、Google対策を約30秒でチェックします。"
+ },
+ "cc1f36f2349f796f": {
+  "en": "Scan my website <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "サイトを診断する <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "40548849b73f09a5": {
+  "en": "www.example.com",
+  "t": "www.example.com"
+ },
+ "31566e98c71c2456": {
+  "en": "How good is <em>your website?</em>",
+  "t": "<em>あなたのウェブサイト</em>の実力は？"
+ },
+ "496e4e7a9c80ba09": {
+  "en": "A free scan of your website’s speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
+  "t": "ウェブサイトの表示速度、スマートフォンでの使いやすさ、アクセシビリティ、Googleでの見つけやすさを無料で診断します。結果は約30秒で表示されます。"
+ },
+ "f1499d03f64ebd4b": {
+  "en": "We test the mobile version with Lighthouse, Google’s own website test. Nothing is installed or changed on your website.",
+  "t": "Google公式のウェブサイト診断ツールLighthouseで、モバイル版を検査します。お客様のウェブサイトに何かをインストールしたり、変更したりすることはありません。"
+ },
+ "d475b5ee0e77ea2a": {
+  "en": "Scanning <b class=\"scan-host\" translate=\"no\"></b>. This takes about 30 seconds.",
+  "t": "<b class=\"scan-host\" translate=\"no\"></b>を診断中です。約30秒かかります。"
+ },
+ "1fb04d3b42744de2": {
+  "en": "Results for <span class=\"scan-host\" translate=\"no\"></span>",
+  "t": "<span class=\"scan-host\" translate=\"no\"></span>の診断結果"
+ },
+ "6dc331e5783411fe": {
+  "en": "Speed",
+  "t": "表示速度"
+ },
+ "2536968a71b96d41": {
+  "en": "Accessibility",
+  "t": "アクセシビリティ"
+ },
+ "8178a30ad09687dc": {
+  "en": "Technical health",
+  "t": "技術面の健全性"
+ },
+ "eacf70e328fb36c2": {
+  "en": "SEO basics",
+  "t": "SEOの基本"
+ },
+ "6acc1ebceb756a35": {
+  "en": "90–100 good",
+  "t": "90–100 良好"
+ },
+ "335824fcff1c494b": {
+  "en": "50–89 needs work",
+  "t": "50–89 要改善"
+ },
+ "776bc2cb3376d434": {
+  "en": "0–49 poor",
+  "t": "0–49 不良"
+ },
+ "c90ff2d44c0cc98a": {
+  "en": "What holds your website back most",
+  "t": "ウェブサイトの足を引っ張っている最大の要因"
+ },
+ "2eec911adf8f9945": {
+  "en": "Get the full report, with what to fix first",
+  "t": "優先して改善すべき点がわかる詳細レポートを受け取る"
+ },
+ "14e50f76860e8773": {
+  "en": "The scan is busy right now. Leave your email and we’ll send you the report.",
+  "t": "現在、診断が混み合っています。メールアドレスをご入力いただければ、レポートをお送りします。"
+ },
+ "ddb58a72bc3a8511": {
+  "en": "A person from our team goes through your results and emails you a short, clear report. Free, with no obligation.",
+  "t": "当社のスタッフが結果を確認し、簡潔でわかりやすいレポートをメールでお送りします。無料で、ご契約の義務はありません。"
+ },
+ "7c65642d7a176e87": {
+  "en": "Send me the full report <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "詳細レポートを受け取る <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "ba635a2640d0c6a8": {
+  "en": "Please enter a website address, for example www.your-business.com.",
+  "t": "ウェブサイトのURLを入力してください（例：www.example.com）。"
+ },
+ "c1063279af00c2b7": {
+  "en": "We could not scan this address. Check that the website is online and try again.",
+  "t": "このアドレスは診断できませんでした。ウェブサイトが公開されているかご確認のうえ、もう一度お試しください。"
+ },
+ "c28b1ce14123c352": {
+  "en": "Free website scan | DRP BuildLab",
+  "t": "無料ウェブサイト診断 | DRP BuildLab"
+ },
+ "ce762a4db9ead82d": {
+  "en": "Test your website for free: speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
+  "t": "ウェブサイトを無料で診断：表示速度、スマートフォンでの使いやすさ、アクセシビリティ、Googleでの見つけやすさをチェック。結果は約30秒で表示されます。"
  }
 }

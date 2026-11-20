@@ -59,13 +59,13 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&amp;family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=mwp1tjpm">
-<script defer="" src="/assets/site.js?v=mwp1tjpm"></script>
-<link rel="stylesheet" href="/assets/chat.css?v=mwp1tjpm">
-<script defer="" src="/assets/chat.js?v=mwp1tjpm"></script>
-<link rel="stylesheet" href="/assets/consent.css?v=mwp1tjpm">
-<script defer="" src="/assets/referral.js?v=mwp1tjpm"></script>
-<script defer="" src="/assets/consent.js?v=mwp1tjpm"></script>
+<link rel="stylesheet" href="/assets/site.css?v=mwp2e2i4">
+<script defer="" src="/assets/site.js?v=mwp2e2i4"></script>
+<link rel="stylesheet" href="/assets/chat.css?v=mwp2e2i4">
+<script defer="" src="/assets/chat.js?v=mwp2e2i4"></script>
+<link rel="stylesheet" href="/assets/consent.css?v=mwp2e2i4">
+<script defer="" src="/assets/referral.js?v=mwp2e2i4"></script>
+<script defer="" src="/assets/consent.js?v=mwp2e2i4"></script>
 </head>
 <body>
 <a class="skip" href="#main">Ir direto para o conteúdo</a>
@@ -112,8 +112,76 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
     <input type="hidden" name="form-name" value="offerte-aanvraag">
   <input type="hidden" name="subject" value="Nieuwe offerteaanvraag — DRP BuildLab">
   <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-    <h3>Solicite seu site de demonstração gratuito</h3>
+    <h3>Receba seu orçamento gratuito</h3>
     <p class="deal-note" data-deal=""><b>Oferta de Black Friday:</b> uma página extra grátis e 10% de desconto em serviços adicionais, incluídos no seu orçamento.</p>
+    <!-- Quote builder (site.js): one step at a time with JavaScript, the whole
+         form at once without. Answers without a name (features, timing, the
+         free text) are written into the hidden "bericht" in Dutch on submit,
+         so Netlify, /api/form and the client zone need no new fields. -->
+    <input type="hidden" name="bericht" value="">
+    <div class="wz-prog" aria-hidden="true"><span class="wz-bar"><i></i></span><span class="wz-count"><span class="wz-n">1</span> / 4</span></div>
+    <fieldset class="wz-step" data-step="1"><legend class="wz-q">O que vamos criar?</legend>
+      <div class="wz-cards">
+        <input type="radio" name="dienst" id="q-s1" value="Startpakket (website van één pagina)" data-slug="starter" data-kind="site" required=""><label for="q-s1"><b>Um site de uma página</b><small>Pacote inicial, a partir de <span class="money" data-eur="499" translate="no">€499</span></small></label>
+        <input type="radio" name="dienst" id="q-s2" value="Website met meerdere pagina’s" data-slug="custom" data-kind="site"><label for="q-s2"><b>Um site com várias páginas</b><small>Feito sob medida</small></label>
+        <input type="radio" name="dienst" id="q-s3" value="Webshop" data-slug="webshop" data-kind="shop"><label for="q-s3"><b>Uma loja virtual</b><small>Vender online</small></label>
+        <input type="radio" name="dienst" id="q-s4" value="Een bestaande website bijwerken" data-slug="update" data-kind="redo"><label for="q-s4"><b>Um novo visual para o meu site</b><small>Reestruturação ou atualização</small></label>
+        <input type="radio" name="dienst" id="q-s5" value="Alleen extra diensten (logo, SEO, …)" data-slug="extras" data-kind="extra"><label for="q-s5"><b>Apenas serviços adicionais</b><small>Logotipo, SEO, Google Ads…</small></label>
+        <input type="radio" name="dienst" id="q-s6" value="Dat weet ik nog niet" data-slug="undecided" data-kind="unsure"><label for="q-s6"><b>Ainda não sei</b><small>Ajudamos você a escolher</small></label>
+      </div>
+    </fieldset>
+    <fieldset class="wz-step" data-step="2"><legend class="wz-q">De quais recursos você precisa?</legend>
+      <p class="wz-hint">Escolha o que se aplica. Você pode pular esta etapa.</p>
+      <div class="chips wz-opt" data-for="site redo"><span class="wz-sub">Recursos</span>
+        <input type="checkbox" id="q-f1" value="Contactformulier"><label for="q-f1">Formulário de contato</label>
+        <input type="checkbox" id="q-f2" value="Online afspraken of reservaties"><label for="q-f2">Reservas online</label>
+        <input type="checkbox" id="q-f3" value="Meertalig"><label for="q-f3">Vários idiomas</label>
+        <input type="checkbox" id="q-f4" value="Blog of nieuws"><label for="q-f4">Blog ou notícias</label>
+        <input type="checkbox" id="q-f5" value="Portfolio of fotogalerij"><label for="q-f5">Portfólio ou galeria de fotos</label>
+        <input type="checkbox" id="q-f6" value="Online betalen"><label for="q-f6">Pagamentos online</label>
+        <input type="checkbox" id="q-f7" value="Google-reviews op de site"><label for="q-f7">Avaliações do Google no site</label>
+      </div>
+      <div class="chips wz-opt" data-for="shop"><span class="wz-sub">Quantos produtos?</span>
+        <input type="radio" name="producten" id="q-p1" value="Minder dan 50 producten"><label for="q-p1">Menos de 50</label>
+        <input type="radio" name="producten" id="q-p2" value="50 tot 500 producten"><label for="q-p2">De 50 a 500</label>
+        <input type="radio" name="producten" id="q-p3" value="Meer dan 500 producten"><label for="q-p3">Mais de 500</label>
+      </div>
+      <div class="chips wz-opt" data-for="shop"><span class="wz-sub">Recursos</span>
+        <input type="checkbox" id="q-w1" value="Shopify"><label for="q-w1">No Shopify</label>
+        <input type="checkbox" id="q-w2" value="Verzending en facturatie gekoppeld"><label for="q-w2">Frete e faturamento</label>
+        <input type="checkbox" id="q-w3" value="Voorraadbeheer"><label for="q-w3">Gestão de estoque</label>
+        <input type="checkbox" id="q-w4" value="B2B-portaal met eigen prijzen"><label for="q-w4">Preços B2B e área do cliente</label>
+        <input type="checkbox" id="q-w5" value="Meertalige webshop"><label for="q-w5">Vários idiomas</label>
+        <input type="checkbox" id="q-w6" value="Abonnementen"><label for="q-w6">Assinaturas</label>
+      </div>
+      <div class="fld wz-opt" data-for="redo"><label for="q-site">Seu site atual <small>(opcional)</small></label><input id="q-site" name="website" inputmode="url" autocomplete="url" spellcheck="false" maxlength="200" placeholder="www.exemplo.com"></div>
+      <div class="chips wz-opt" data-for="redo"><span class="wz-sub">O que incomoda você?</span>
+        <input type="checkbox" id="q-r1" value="Ziet er verouderd uit"><label for="q-r1">Parece ultrapassado</label>
+        <input type="checkbox" id="q-r2" value="Traag"><label for="q-r2">É lento</label>
+        <input type="checkbox" id="q-r3" value="Werkt slecht op gsm"><label for="q-r3">Ruim no celular</label>
+        <input type="checkbox" id="q-r4" value="Levert geen aanvragen op"><label for="q-r4">Não gera contatos</label>
+        <input type="checkbox" id="q-r5" value="Moeilijk zelf aan te passen"><label for="q-r5">Difícil de atualizar</label>
+      </div>
+      <div class="chips wz-opt" data-for="extra site shop redo"><span class="wz-sub">Serviços adicionais</span>
+        <input type="checkbox" id="q-x1" value="Logo"><label for="q-x1">Design de logotipo</label>
+        <input type="checkbox" id="q-x2" value="SEO"><label for="q-x2">SEO</label>
+        <input type="checkbox" id="q-x3" value="Google Ads"><label for="q-x3">Google Ads</label>
+        <input type="checkbox" id="q-x4" value="Fotografie"><label for="q-x4">Fotografia</label>
+        <input type="checkbox" id="q-x5" value="Koppelingen (boekhouding, reservaties…)"><label for="q-x5">Integrações</label>
+        <input type="checkbox" id="q-x6" value="Onderhoudsabonnement"><label for="q-x6">Plano de manutenção</label>
+      </div>
+      <div class="fld wz-opt" data-for="unsure"><label for="q-about">Conte um pouco sobre o seu negócio <small>(opcional)</small></label><textarea id="q-about" rows="4" maxlength="2000"></textarea></div>
+    </fieldset>
+    <fieldset class="wz-step" data-step="3"><legend class="wz-q">Quando deve estar no ar?</legend>
+      <div class="chips">
+        <input type="radio" name="timing" id="q-n1" value="Zo snel mogelijk"><label for="q-n1">O quanto antes</label>
+        <input type="radio" name="timing" id="q-n2" value="Binnen een maand"><label for="q-n2">Em até um mês</label>
+        <input type="radio" name="timing" id="q-n3" value="Binnen 1 tot 3 maanden"><label for="q-n3">Em 1 a 3 meses</label>
+        <input type="radio" name="timing" id="q-n4" value="Nog aan het oriënteren"><label for="q-n4">Só estou pesquisando</label>
+      </div>
+      <div class="fld"><label for="q-msg">Algo mais que devemos saber? <small>(opcional)</small></label><textarea id="q-msg" rows="4" maxlength="2000"></textarea></div>
+    </fieldset>
+    <fieldset class="wz-step" data-step="4"><legend class="wz-q">Para onde enviamos seu orçamento?</legend>
     <div class="frow">
       <div class="fld"><label for="q-first">Nome</label><input id="q-first" name="voornaam" autocomplete="given-name" required=""></div>
       <div class="fld"><label for="q-last">Sobrenome</label><input id="q-last" name="achternaam" autocomplete="family-name"></div>
@@ -130,13 +198,21 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
       <div class="fld"><label for="q-phone">Telefone</label><input id="q-phone" name="telefoon" type="tel" autocomplete="tel" required=""></div>
       <div class="fld"><label for="q-email">E-mail</label><input id="q-email" name="email" type="email" autocomplete="email" required=""></div>
     </div>
-    <div class="fld"><label for="q-service">Qual serviço o(a) senhor(a) tem em mente?</label><select id="q-service" name="dienst" required=""><option value="">Escolha um serviço</option><option value="Startpakket (website van één pagina)">Pacote inicial (site de uma página)</option><option value="Op maat gemaakt, offerte">Feito sob medida, orçamento</option><option value="Een bestaande website bijwerken">Atualizar um site já existente</option><option value="Alleen extra diensten (logo, SEO, …)">Apenas serviços adicionais (logotipo, SEO, …)</option><option value="Dat weet ik nog niet">Ainda não sei</option></select></div>
     <div class="fld"><label for="q-ref">Código de parceiro <small>(opcional)</small></label><input id="q-ref" name="ref" spellcheck="false" maxlength="32"></div>
-    <div class="fld"><label for="q-msg">Mensagem <small>(opcional)</small></label><textarea id="q-msg" name="bericht"></textarea></div>
     <label class="check" for="q-consent"><input type="checkbox" id="q-consent" name="toestemming" value="ja" required=""><span>Concordo que a DRP BuildLab utilize os dados contidos neste formulário para entrar em contato comigo a respeito desta solicitação. <a href="/br/privacy/">Política de privacidade</a></span></label>
-    <button class="btn dark" type="submit">Solicite minha demonstração gratuita <span class="arr" aria-hidden="true">→</span></button>
+    </fieldset>
+    <div class="wz-nav">
+      <button class="btn line wz-back" type="button">Voltar</button>
+      <button class="btn dark wz-next" type="button">Próxima etapa</button>
+      <button class="btn dark wz-send" type="submit">Enviar meu pedido de orçamento <span class="arr" aria-hidden="true">→</span></button>
+    </div>
     <p class="ok" role="status" aria-live="polite"></p>
+    <small>Grátis e sem compromisso. Respondemos em até 24 horas.</small>
   </form>
+</div></section>
+<section class="sec fog tight"><div class="wrap cta-band">
+  <div><h2 class="h3">Ainda não é hora de pedir um orçamento?</h2><p class="muted" style="margin-top:10px">Analise seu site atual gratuitamente: velocidade, celulares e Google, em cerca de 30 segundos.</p></div>
+  <a class="btn dark" href="/br/website-scan/">Analisar meu site <span class="arr" aria-hidden="true">→</span></a>
 </div></section>
 </main>
 <footer class="ftr"><div class="wrap">
@@ -152,7 +228,7 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
   </div>
   <div class="ft-cols">
     <nav aria-label="Menu de rodapé"><h2>Site</h2><ul><li><a href="/br/werk/">Trabalho</a></li><li><a href="/br/diensten/">Serviços</a></li><li><a href="/br/over-ons/">Sobre nós</a></li><li><a href="/br/prijzen/">Preços</a></li><li><a href="/br/partner-worden/">Parceiros</a></li><li><a href="/br/blog/">Blog</a></li><li><a href="/br/contact/">Contato</a></li></ul></nav>
-    <div><h2>Serviços</h2><ul><li><a href="/br/diensten/websites-op-maat/">Sites personalizados</a></li><li><a href="/br/diensten/webshops-shopify/">Lojas virtuais e Shopify</a></li><li><a href="/br/diensten/redesign/">Reestruturação e atualização</a></li><li><a href="/br/diensten/onderhoud/">Planos de manutenção</a></li><li><a href="/br/diensten/uitbreidingen/">Complementos para o crescimento</a></li><li><a href="/br/tinrate/" translate="no">Tinrate Concierge</a></li></ul></div>
+    <div><h2>Serviços</h2><ul><li><a href="/br/diensten/websites-op-maat/">Sites personalizados</a></li><li><a href="/br/diensten/webshops-shopify/">Lojas virtuais e Shopify</a></li><li><a href="/br/diensten/redesign/">Reestruturação e atualização</a></li><li><a href="/br/diensten/onderhoud/">Planos de manutenção</a></li><li><a href="/br/diensten/uitbreidingen/">Complementos para o crescimento</a></li><li><a href="/br/tinrate/" translate="no">Tinrate Concierge</a></li><li><a href="/br/website-scan/">Análise gratuita de site</a></li></ul></div>
     <div><h2>Estúdio</h2><address><span translate="no">Honingstraat 1D<br>2220 Hallaar,</span> Bélgica</address><p>De segunda a sexta-feira, das 9h às 18h</p><p><a href="tel:+32473744431" translate="no">+32 473 74 44 31</a></p><h2 class="ft-pay-h">Aceitamos</h2><ul class="ft-pay"><li title="Bancontact" translate="no"><svg viewBox="0 0 92 24" role="img" aria-label="Bancontact"><path fill="#005498" d="M6 6h14l-5 6H1z"></path><path fill="#FFD800" d="M17 12h14l-5 6H12z"></path><text x="34" y="15.5" font-family="Arial,Helvetica,sans-serif" font-size="9.5" font-weight="700" fill="#1e3764">Bancontact</text></svg></li><li title="Visa" translate="no"><svg viewBox="0 0 48 24" role="img" aria-label="Visa"><text x="24" y="17" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="13" font-weight="900" font-style="italic" fill="#1A1F71" letter-spacing=".5">VISA</text></svg></li><li title="Mastercard" translate="no"><svg viewBox="0 0 40 24" role="img" aria-label="Mastercard"><circle cx="15" cy="12" r="8" fill="#EB001B"></circle><circle cx="25" cy="12" r="8" fill="#F79E1B"></circle><path fill="#FF5F00" d="M20 5.75a8 8 0 0 1 0 12.5 8 8 0 0 1 0-12.5z"></path></svg></li><li title="Klarna" class="klarna" translate="no"><svg viewBox="0 0 52 24" role="img" aria-label="Klarna"><text x="26" y="16.5" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-size="13" font-weight="900" fill="#0b051d" letter-spacing="-.3">Klarna.</text></svg></li><li title="Transferência bancária"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#1a1f36" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"></path><path d="M5 10v8M9.7 10v8M14.3 10v8M19 10v8"></path><path d="M3 20h18"></path></svg><span>Transferência bancária</span></li></ul></div>
     <div><h2>Siga</h2><ul class="ft-social" translate="no"><li><a href="https://www.instagram.com/drp_buildlab/" target="_blank" rel="noopener"><span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></span><span><b>Instagram</b><small>@drp_buildlab</small></span></a></li><li><a href="https://www.facebook.com/share/1Hz1mJG22E/" target="_blank" rel="noopener"><span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></span><span><b>Facebook</b><small>DRP BuildLab</small></span></a></li><li><a href="https://www.tiktok.com/@drpbuildlab" target="_blank" rel="noopener"><span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 14.5V2a5 5 0 0 0 5 5"></path><circle cx="11.5" cy="14.5" r="4.5"></circle></svg></span><span><b>TikTok</b><small>@drpbuildlab</small></span></a></li><li><a href="https://www.linkedin.com/company/drpbuildlab/" target="_blank" rel="noopener"><span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></span><span><b>LinkedIn</b><small>DRP BuildLab</small></span></a></li></ul></div>
   </div>
@@ -165,7 +241,9 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
   </div>
 </div></footer>
 
-<div id="ui" hidden=""><span data-k="play">Reproduzir</span><span data-k="pause">Pausa</span><span data-k="email">Por favor, insira um endereço de e-mail válido para que possamos entrar em contato com o(a) senhor(a).</span><span data-k="tick">Por favor, marque a caixa para que possamos entrar em contato com o(a) senhor(a) a respeito desta solicitação.</span><span data-k="fill">Por favor, preencha este campo:</span><span data-k="sent">Agradecemos. Sua solicitação foi recebida. Entraremos em contato com o(a) senhor(a) em até 24 horas.</span><span data-k="psent">Agradecemos; sua inscrição foi recebida. Nós a analisamos pessoalmente e enviaremos seu link dentro de alguns dias úteis.</span><span data-k="tsent">Obrigado, seu pedido foi recebido. Entraremos em contato com você em até 24 horas para configurar o <span translate="no">Concierge</span> no seu site.</span><span data-k="failed">O envio falhou. Por favor, tente novamente ou envie-nos um e-mail para info@drpbuildlab.com.</span><span data-k="nlsent">Está quase pronto. Enviamos um e-mail para você: clique no link que consta nele para confirmar sua inscrição.</span><span data-k="nlfail">A inscrição não foi bem-sucedida. Por favor, tente novamente daqui a pouco.</span></div>
+<div id="ui" hidden=""><span data-k="play">Reproduzir</span><span data-k="pause">Pausa</span><span data-k="email">Por favor, insira um endereço de e-mail válido para que possamos entrar em contato com o(a) senhor(a).</span><span data-k="tick">Por favor, marque a caixa para que possamos entrar em contato com o(a) senhor(a) a respeito desta solicitação.</span><span data-k="fill">Por favor, preencha este campo:</span><span data-k="sent">Agradecemos. Sua solicitação foi recebida. Entraremos em contato com o(a) senhor(a) em até 24 horas.</span><span data-k="psent">Agradecemos; sua inscrição foi recebida. Nós a analisamos pessoalmente e enviaremos seu link dentro de alguns dias úteis.</span><span data-k="tsent">Obrigado, seu pedido foi recebido. Entraremos em contato com você em até 24 horas para configurar o <span translate="no">Concierge</span> no seu site.</span><span data-k="failed">O envio falhou. Por favor, tente novamente ou envie-nos um e-mail para info@drpbuildlab.com.</span><span data-k="nlsent">Está quase pronto. Enviamos um e-mail para você: clique no link que consta nele para confirmar sua inscrição.</span><span data-k="nlfail">A inscrição não foi bem-sucedida. Por favor, tente novamente daqui a pouco.</span><span data-k="pick">Escolha uma das opções para continuar.</span><span data-k="scansent">Obrigado. Enviaremos o relatório completo por e-mail em até um dia útil.</span></div>
+
+
 <a href="https://wa.me/32473744431" class="wa-float" target="_blank" rel="noopener" aria-label="Entre em contato conosco pelo WhatsApp"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.782 6.86L2 30l7.347-1.758A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.25-4.36 1.043 1.072-4.25-.276-.436A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.66c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.232.348-.898 1.132-1.1 1.364-.202.232-.404.26-.752.086-.348-.174-1.468-.54-2.796-1.724-1.034-.92-1.73-2.056-1.934-2.404-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.434-.028-.608-.086-.174-.78-1.882-1.07-2.576-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.608.086-.926.434-.318.348-1.216 1.188-1.216 2.896s1.244 3.356 1.418 3.588c.174.232 2.448 3.736 5.932 5.238.83.358 1.478.572 1.982.732.832.264 1.59.226 2.188.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.204-1.656-.086-.144-.318-.232-.666-.406z"></path></svg></a>
 
 

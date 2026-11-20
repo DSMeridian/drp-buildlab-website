@@ -591,37 +591,9 @@
   "en": "Company or VAT number <small>(optional)</small>",
   "t": "Número de identificación fiscal o de IVA <small>(opcional)</small>"
  },
- "1da557513e3c8e31": {
-  "en": "Which service do you have in mind?",
-  "t": "¿A qué servicio se refiere?"
- },
- "47842fe8c86e5981": {
-  "en": "Choose a service",
-  "t": "Elija un servicio"
- },
- "415e43f376f985ea": {
-  "en": "Made to measure, quote",
-  "t": "A medida, presupuesto"
- },
- "2f214b2d9b1bd13c": {
-  "en": "Update an existing website",
-  "t": "Actualizar una página web ya existente"
- },
- "d0d3c2cfbf0d3795": {
-  "en": "Extra services only (logo, SEO, …)",
-  "t": "Solo servicios adicionales (logotipo, SEO, …)"
- },
- "19b5fdb4eb526430": {
-  "en": "I don’t know yet",
-  "t": "Aún no lo sé"
- },
  "0933578323c0f2da": {
   "en": "Partner code <small>(optional)</small>",
   "t": "Código de socio <small>(opcional)</small>"
- },
- "5274b4354c018aa0": {
-  "en": "Message <small>(optional)</small>",
-  "t": "Mensaje <small>(opcional)</small>"
  },
  "d9cd398dd6c8cd6b": {
   "en": "Five services, each with its own page, what is included and a starting price. Every price is confirmed in a written quote.",
@@ -2434,10 +2406,6 @@
  "4388e34194cd5e8f": {
   "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
   "t": "Cada página web se diseña a medida, por lo que el precio depende del trabajo que requiera. Para empresas de nueva creación o aquellas que deseen actualizar una página web ya existente, nuestro paquete básico tiene un precio a partir de <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. El resto de servicios se cotizan bajo demanda, mediante un presupuesto personalizado. El mantenimiento es opcional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> al mes."
- },
- "77f6952ee45c3cad": {
-  "en": "Starter package (one-page website)",
-  "t": "Paquete básico (página web de una sola página)"
  },
  "7ca4618712abfd02": {
   "en": "Price quotes via WhatsApp",
@@ -5046,5 +5014,369 @@
  "c00d8b960f07e69c": {
   "en": "<b>Black Friday:</b> a free extra page, worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, until Monday 30 November.",
   "t": "<b>Black Friday:</b> una página extra gratis, valorada en <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, hasta el lunes 30 de noviembre."
+ },
+ "3d20d6ecf4a59756": {
+  "en": "Free website scan",
+  "t": "Análisis gratuito de su página web"
+ },
+ "6195bd7100ae82e3": {
+  "en": "Please choose one of the options to continue.",
+  "t": "Elija una de las opciones para continuar."
+ },
+ "8ff053114ba8741c": {
+  "en": "Thank you. We will email you the full report within one working day.",
+  "t": "Gracias. Le enviaremos el informe completo por correo electrónico en el plazo de un día laborable."
+ },
+ "7782c7cf814aff6d": {
+  "en": "Get a free quote",
+  "t": "Solicite un presupuesto gratuito"
+ },
+ "0a217503d63347dc": {
+  "en": "Before you go: how does <em>your website</em> score?",
+  "t": "Antes de irse: ¿qué puntuación obtiene <em>su página web</em>?"
+ },
+ "42ab92972d9ddaf8": {
+  "en": "Speed, use on phones and the basics Google looks at, tested in about 30 seconds. Free, and you do not need to leave your email.",
+  "t": "Velocidad, uso en el móvil y los aspectos básicos que Google tiene en cuenta, analizados en unos 30 segundos. Gratis y sin necesidad de dejar su correo electrónico."
+ },
+ "26a68e397d99e70a": {
+  "en": "Scan my website",
+  "t": "Analizar mi página web"
+ },
+ "a0818b6afba49e1d": {
+  "en": "No thanks",
+  "t": "No, gracias"
+ },
+ "462e1f87399018fc": {
+  "en": "Close",
+  "t": "Cerrar"
+ },
+ "3c37e5c02b890869": {
+  "en": "Your website address",
+  "t": "Dirección de su página web"
+ },
+ "58734f0025244a30": {
+  "en": "www.your-business.com",
+  "t": "www.su-empresa.com"
+ },
+ "138f1528250349e4": {
+  "en": "Get your free quote",
+  "t": "Obtenga su presupuesto gratuito"
+ },
+ "7db183a9c85347b5": {
+  "en": "What are we building?",
+  "t": "¿Qué vamos a crear?"
+ },
+ "730e4f0ef74f4589": {
+  "en": "A one-page website",
+  "t": "Una web de una sola página"
+ },
+ "3bc10996a64c4b4a": {
+  "en": "Starter package, from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
+  "t": "Paquete de inicio, a partir de <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>"
+ },
+ "56cd5d0714994d80": {
+  "en": "A website with several pages",
+  "t": "Una web de varias páginas"
+ },
+ "b4bedb6e7632f7ee": {
+  "en": "A webshop",
+  "t": "Una tienda online"
+ },
+ "4daa6d18ee6c74d3": {
+  "en": "Sell online",
+  "t": "Vender online"
+ },
+ "db6b9130757243cd": {
+  "en": "A new look for my website",
+  "t": "Un nuevo diseño para mi web"
+ },
+ "28376792a8b15821": {
+  "en": "Redesign or refresh",
+  "t": "Rediseño o actualización"
+ },
+ "a7bf84569df07903": {
+  "en": "Extra services only",
+  "t": "Solo servicios adicionales"
+ },
+ "95e654cf4043a19b": {
+  "en": "Logo, SEO, Google Ads…",
+  "t": "Logotipo, SEO, Google Ads…"
+ },
+ "32e6a2e06b26d911": {
+  "en": "I’m not sure yet",
+  "t": "Aún no lo sé"
+ },
+ "0be6a66600027972": {
+  "en": "We’ll help you choose",
+  "t": "Le ayudamos a elegir"
+ },
+ "0d92c4481fd0b1c0": {
+  "en": "What should it do?",
+  "t": "¿Qué funciones necesita?"
+ },
+ "99b3fe64c22240fd": {
+  "en": "Pick what applies. You can skip this step.",
+  "t": "Elija lo que corresponda. Puede saltarse este paso."
+ },
+ "52055c424d0a667e": {
+  "en": "Features",
+  "t": "Funciones"
+ },
+ "90f0dd1af9d3d47d": {
+  "en": "Contact form",
+  "t": "Formulario de contacto"
+ },
+ "949d5ea5e56dbcfb": {
+  "en": "Online bookings",
+  "t": "Reservas online"
+ },
+ "70657e8fd5cddff7": {
+  "en": "Several languages",
+  "t": "Varios idiomas"
+ },
+ "a8fd786a4a431594": {
+  "en": "Blog or news",
+  "t": "Blog o noticias"
+ },
+ "b266dd90983cb656": {
+  "en": "Portfolio or photo gallery",
+  "t": "Portafolio o galería de fotos"
+ },
+ "6ff36921f19c7c83": {
+  "en": "Online payments",
+  "t": "Pagos online"
+ },
+ "3d8301ea8aa6d2ed": {
+  "en": "Google reviews on the site",
+  "t": "Reseñas de Google en la web"
+ },
+ "52f914a725a5e69d": {
+  "en": "How many products?",
+  "t": "¿Cuántos productos?"
+ },
+ "8fcd3f705673fda7": {
+  "en": "Fewer than 50",
+  "t": "Menos de 50"
+ },
+ "662786d5159d0081": {
+  "en": "50 to 500",
+  "t": "De 50 a 500"
+ },
+ "6cc0c3ff61dc06f9": {
+  "en": "More than 500",
+  "t": "Más de 500"
+ },
+ "8b2057c5165abcd9": {
+  "en": "On Shopify",
+  "t": "En Shopify"
+ },
+ "9b97416e08a599e4": {
+  "en": "Shipping and invoicing",
+  "t": "Envíos y facturación"
+ },
+ "170f985f80f6e1d6": {
+  "en": "B2B prices and login",
+  "t": "Precios B2B y área de clientes"
+ },
+ "6b4295ff98336b11": {
+  "en": "Subscriptions",
+  "t": "Suscripciones"
+ },
+ "b45aa4d2c1f1073d": {
+  "en": "Your current website <small>(optional)</small>",
+  "t": "Su página web actual <small>(opcional)</small>"
+ },
+ "c3a8294d3429df36": {
+  "en": "What bothers you about it?",
+  "t": "¿Qué no le convence?"
+ },
+ "a4c754cbf768f9d1": {
+  "en": "It looks dated",
+  "t": "Parece anticuada"
+ },
+ "1a6ba72a697140e7": {
+  "en": "It is slow",
+  "t": "Es lenta"
+ },
+ "1efc42c281c1280b": {
+  "en": "Poor on phones",
+  "t": "Funciona mal en el móvil"
+ },
+ "ce497634b53c8dee": {
+  "en": "No enquiries",
+  "t": "No recibo consultas"
+ },
+ "c33fcd072d3b3d8f": {
+  "en": "Hard to update",
+  "t": "Difícil de actualizar"
+ },
+ "4853ca6a2052ca7a": {
+  "en": "Extra services",
+  "t": "Servicios adicionales"
+ },
+ "ad0c71137f4250b0": {
+  "en": "SEO",
+  "t": "SEO"
+ },
+ "a808131e4a0eb051": {
+  "en": "Google Ads",
+  "t": "Google Ads"
+ },
+ "64e09d7aa50293b5": {
+  "en": "Photography",
+  "t": "Fotografía"
+ },
+ "82de470216b9a2ab": {
+  "en": "Maintenance plan",
+  "t": "Plan de mantenimiento"
+ },
+ "b4233434cfa678b2": {
+  "en": "Tell us a little about your business <small>(optional)</small>",
+  "t": "Cuéntenos un poco sobre su negocio <small>(opcional)</small>"
+ },
+ "fe555e61c533704a": {
+  "en": "When should it be online?",
+  "t": "¿Cuándo debe estar online?"
+ },
+ "581b3ec559c48e9a": {
+  "en": "As soon as possible",
+  "t": "Lo antes posible"
+ },
+ "9c44686de8cabae0": {
+  "en": "Within a month",
+  "t": "En un mes"
+ },
+ "541d17e959377431": {
+  "en": "In 1 to 3 months",
+  "t": "Dentro de 1 a 3 meses"
+ },
+ "57d0088e4456b8ea": {
+  "en": "Just looking around",
+  "t": "Solo estoy mirando"
+ },
+ "5d2c6ab18fbef02b": {
+  "en": "Anything else we should know? <small>(optional)</small>",
+  "t": "¿Algo más que debamos saber? <small>(opcional)</small>"
+ },
+ "708aed56a716e4c8": {
+  "en": "Where do we send your quote?",
+  "t": "¿Adónde le enviamos el presupuesto?"
+ },
+ "2334d7c50c981ee4": {
+  "en": "Back",
+  "t": "Atrás"
+ },
+ "872321992f1108dd": {
+  "en": "Next step",
+  "t": "Siguiente paso"
+ },
+ "70844d492b1959f6": {
+  "en": "Send my quote request <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "Enviar mi solicitud de presupuesto <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "6eb0e69a4a5b4432": {
+  "en": "Free and without obligation. We reply within 24 hours.",
+  "t": "Gratis y sin compromiso. Le respondemos en un plazo de 24 horas."
+ },
+ "b57aba218bef0736": {
+  "en": "Not ready to ask for a quote?",
+  "t": "¿Aún no es el momento de pedir presupuesto?"
+ },
+ "36100859ca54da9b": {
+  "en": "Scan your current website for free: speed, phones and Google, in about 30 seconds.",
+  "t": "Analice gratis su página web actual: velocidad, móviles y Google, en unos 30 segundos."
+ },
+ "cc1f36f2349f796f": {
+  "en": "Scan my website <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "Analizar mi página web <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "40548849b73f09a5": {
+  "en": "www.example.com",
+  "t": "www.ejemplo.com"
+ },
+ "31566e98c71c2456": {
+  "en": "How good is <em>your website?</em>",
+  "t": "¿Qué tal funciona <em>su página web?</em>"
+ },
+ "496e4e7a9c80ba09": {
+  "en": "A free scan of your website’s speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
+  "t": "Un análisis gratuito de la velocidad de su página web, su uso en el móvil, su accesibilidad y lo fácil que es encontrarla en Google. Resultados en unos 30 segundos."
+ },
+ "f1499d03f64ebd4b": {
+  "en": "We test the mobile version with Lighthouse, Google’s own website test. Nothing is installed or changed on your website.",
+  "t": "Analizamos la versión móvil con Lighthouse, la herramienta de Google para evaluar páginas web. No se instala ni se modifica nada en su página web."
+ },
+ "d475b5ee0e77ea2a": {
+  "en": "Scanning <b class=\"scan-host\" translate=\"no\"></b>. This takes about 30 seconds.",
+  "t": "Analizando <b class=\"scan-host\" translate=\"no\"></b>. Tarda unos 30 segundos."
+ },
+ "1fb04d3b42744de2": {
+  "en": "Results for <span class=\"scan-host\" translate=\"no\"></span>",
+  "t": "Resultados de <span class=\"scan-host\" translate=\"no\"></span>"
+ },
+ "6dc331e5783411fe": {
+  "en": "Speed",
+  "t": "Velocidad"
+ },
+ "2536968a71b96d41": {
+  "en": "Accessibility",
+  "t": "Accesibilidad"
+ },
+ "8178a30ad09687dc": {
+  "en": "Technical health",
+  "t": "Estado técnico"
+ },
+ "eacf70e328fb36c2": {
+  "en": "SEO basics",
+  "t": "SEO básico"
+ },
+ "6acc1ebceb756a35": {
+  "en": "90–100 good",
+  "t": "90–100 bueno"
+ },
+ "335824fcff1c494b": {
+  "en": "50–89 needs work",
+  "t": "50–89 mejorable"
+ },
+ "776bc2cb3376d434": {
+  "en": "0–49 poor",
+  "t": "0–49 deficiente"
+ },
+ "c90ff2d44c0cc98a": {
+  "en": "What holds your website back most",
+  "t": "Lo que más frena su página web"
+ },
+ "2eec911adf8f9945": {
+  "en": "Get the full report, with what to fix first",
+  "t": "Reciba el informe completo, con lo que debe corregir primero"
+ },
+ "14e50f76860e8773": {
+  "en": "The scan is busy right now. Leave your email and we’ll send you the report.",
+  "t": "En este momento el análisis está saturado. Déjenos su correo electrónico y le enviaremos el informe."
+ },
+ "ddb58a72bc3a8511": {
+  "en": "A person from our team goes through your results and emails you a short, clear report. Free, with no obligation.",
+  "t": "Una persona de nuestro equipo revisa sus resultados y le envía por correo electrónico un informe breve y claro. Gratis y sin compromiso."
+ },
+ "7c65642d7a176e87": {
+  "en": "Send me the full report <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "Envíenme el informe completo <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "ba635a2640d0c6a8": {
+  "en": "Please enter a website address, for example www.your-business.com.",
+  "t": "Introduzca la dirección de una página web, por ejemplo www.su-empresa.com."
+ },
+ "c1063279af00c2b7": {
+  "en": "We could not scan this address. Check that the website is online and try again.",
+  "t": "No hemos podido analizar esta dirección. Compruebe que la página web está online e inténtelo de nuevo."
+ },
+ "c28b1ce14123c352": {
+  "en": "Free website scan | DRP BuildLab",
+  "t": "Análisis gratuito de su página web | DRP BuildLab"
+ },
+ "ce762a4db9ead82d": {
+  "en": "Test your website for free: speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.",
+  "t": "Analice gratis su página web: velocidad, uso en el móvil, accesibilidad y facilidad para encontrarla en Google. Resultados en unos 30 segundos."
  }
 }

@@ -912,3 +912,80 @@ a[href^="tel:"],a[href^="mailto:"],a[href*="wa.me"],.url,.money,.clist a,.clist 
   .deal-offers{grid-template-columns:minmax(0,1fr)}
 }
 [dir="rtl"] .deal-big[dir="ltr"]{text-align:right}
+
+/* Quote builder (#quote on /contact/). Without .wz (no JavaScript) every step shows and only the send button. */
+.wz-prog,.wz-back,.wz-next{display:none}
+.wz .wz-prog{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:13px;color:var(--mute-l)}
+.wz-bar{flex:1;height:4px;border-radius:4px;background:var(--fog);overflow:hidden}
+.wz-bar i{display:block;height:100%;width:25%;background:var(--electric);border-radius:inherit;transition:width .45s var(--ease)}
+.wz .wz-back,.wz .wz-next{display:inline-flex}
+.wz-step{border:0;margin:0;padding:0;display:grid;gap:16px;min-width:0}
+.wz-step:focus{outline:none}
+.wz-q{padding:0;margin:0 0 4px;font-family:var(--display);font-weight:700;font-stretch:88%;font-size:22px;line-height:1.15;hyphens:manual}
+.wz-hint{margin:-8px 0 0;font-size:14px;color:var(--mute-l)}
+.wz-sub{flex-basis:100%;font-size:14px;font-weight:500;margin:4px 0 2px}
+.wz-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.wz-cards input{position:absolute;opacity:0;pointer-events:none}
+.wz-cards label{display:grid;gap:3px;padding:16px 18px;border:1px solid #c9ccd6;border-radius:14px;cursor:pointer;transition:border-color .2s,background .2s,box-shadow .2s;min-height:76px;align-content:center}
+.wz-cards label b{font-weight:600;font-size:15.5px;line-height:1.25}
+.wz-cards label small{color:var(--mute-l);font-size:13.5px}
+.wz-cards label:hover{border-color:var(--ink)}
+.wz-cards input:checked+label{border-color:var(--electric);background:#eef3ff;box-shadow:inset 0 0 0 1px var(--electric)}
+.wz-cards input:focus-visible+label{outline:2px solid var(--electric);outline-offset:2px}
+.wz-nav{display:flex;gap:10px}
+.form .wz-nav .btn{width:auto;flex:1;justify-content:center}
+.form .wz-nav .wz-back{flex:0 0 auto;padding-inline:22px}
+.form .wz-nav .wz-send{justify-content:space-between}
+.wz-nav [hidden]{display:none!important}
+@media (max-width:520px){.wz-cards{grid-template-columns:minmax(0,1fr)}.wz-cards label{min-height:0}}
+
+/* Free website scan (/website-scan/) */
+.scan-form{display:grid;gap:10px;max-width:820px}
+.scan-form label{font-weight:600}
+.scan-row{display:flex;gap:10px;flex-wrap:wrap}
+.scan-row input{flex:1 1 260px;min-width:0;border:1px solid #c9ccd6;border-radius:99px;padding:15px 22px;font-size:16px;background:#fff;color:var(--ink)}
+.scan-row input:focus{outline:none;border-color:var(--electric);box-shadow:0 0 0 3px rgba(31,94,255,.18)}
+.scan-note{margin:0;font-size:14px;color:var(--mute-l)}
+.scan-msg{display:none;margin:0;padding:12px 16px;border-radius:12px;background:#fff1f0;color:#8a1c12;font-size:14.5px}
+.scan-msg.show{display:block}
+.scan-wait{display:flex;align-items:center;gap:14px;margin-top:40px;color:var(--mute-l)}
+.scan-wait p{margin:0}
+.scan-wait b{color:var(--ink)}
+.scan-spin{width:22px;height:22px;border-radius:50%;border:3px solid var(--fog);border-top-color:var(--electric);animation:scanspin .9s linear infinite;flex:none}
+@keyframes scanspin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.scan-spin{animation-duration:3s}}
+.scan-out{margin-top:clamp(40px,5vw,64px);scroll-margin-top:90px}
+.scan-scores{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.scan-scores li{display:grid;justify-items:center;gap:12px;text-align:center;padding:24px 12px;border-radius:18px;background:var(--fog);font-weight:500}
+.ring{--v:0;--c:#c9ccd6;width:96px;height:96px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(closest-side,var(--fog) 79%,transparent 80%),conic-gradient(var(--c) calc(var(--v)*1%),#dfe1e8 0)}
+.ring b{font-family:var(--display);font-weight:800;font-size:32px}
+.ring.g{--c:#0c8a43}.ring.o{--c:#c76a00}.ring.p{--c:#d93025}
+.ring.g b{color:#0c8a43}.ring.o b{color:#a35700}.ring.p b{color:#c5221f}
+.scan-legend{display:flex;flex-wrap:wrap;gap:6px 20px;margin:14px 0 0;font-size:13.5px;color:var(--mute-l)}
+.scan-legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-inline-end:7px;vertical-align:-1px}
+.scan-legend .g::before{background:#0c8a43}.scan-legend .o::before{background:#c76a00}.scan-legend .p::before{background:#d93025}
+.scan-issues{margin-top:36px}
+.scan-issues h3{font-size:19px;margin:0 0 12px}
+.scan-issues ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--line-l)}
+.scan-issues li{padding:13px 0 13px 28px;border-bottom:1px solid var(--line-l);position:relative}
+.scan-issues li::before{content:"";position:absolute;inset-inline-start:4px;top:21px;width:9px;height:9px;border-radius:50%;background:#d93025}
+.scan-lead{max-width:820px;margin-top:clamp(40px,5vw,64px);box-shadow:0 0 0 1px var(--line-l);scroll-margin-top:90px}
+@media (max-width:760px){.scan-scores{grid-template-columns:repeat(2,minmax(0,1fr))}.ring{width:84px;height:84px}}
+
+/* Exit offer (desktop) */
+.exit:not([hidden]){position:fixed;inset:0;z-index:900;display:grid;place-items:center;padding:24px;background:rgba(11,11,12,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.exit-box{position:relative;width:min(560px,100%);background:var(--paper);color:var(--ink);border-radius:22px;padding:clamp(28px,4vw,44px);display:grid;gap:14px;box-shadow:0 40px 100px -30px rgba(0,0,0,.5)}
+.exit-box p{margin:0;color:var(--mute-l)}
+.exit-box .h3 em{color:var(--electric)}
+.exit-box .exit-tag{font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--electric)}
+.exit-box .scan-row{margin-top:6px}
+.exit-x{position:absolute;top:14px;inset-inline-end:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line-l);background:none;font-size:22px;line-height:1;cursor:pointer;color:var(--ink)}
+.exit-no{justify-self:start;background:none;border:0;padding:4px 0;color:var(--mute-l);text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:14.5px}
+body.exit-open{overflow:hidden}
+
+/* Sticky "Get a free quote": top corner, while the header is hidden */
+.stick-cta{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);inset-inline-end:var(--gut);z-index:60;display:inline-flex;align-items:center;padding:11px 18px;border-radius:99px;background:var(--electric);color:#fff;font-weight:600;font-size:14.5px;text-decoration:none;box-shadow:0 10px 30px -10px rgba(31,94,255,.7);transform:translateY(-140%);opacity:0;transition:transform .45s var(--ease),opacity .3s;pointer-events:none}
+.stick-cta.on{transform:none;opacity:1;pointer-events:auto}
+.stick-cta:hover{background:var(--ink)}
+@media (prefers-reduced-motion:reduce){.stick-cta{transition:opacity .2s}}
+.scan-wait[hidden],.scan-out[hidden],.scan-lead[hidden],.scan-issues[hidden]{display:none}

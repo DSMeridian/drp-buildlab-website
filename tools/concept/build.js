@@ -31,6 +31,18 @@ const arr = '<span class="arr" aria-hidden="true">→</span>';
    then; take these and their uses out after the deal. */
 const DEAL_END = '2026-12-01T00:00:00+01:00';
 const dealBar = () => `<div class="deal-bar" data-deal data-deal-end="${DEAL_END}"><div class="wrap deal-bar-in"><p><b>Black Friday:</b> a free extra page with every €499 starter package, plus 10% off all extra services. Until Monday 30 November.</p><a href="${B}/#deal">Claim the deal</a></div></div>`;
+/* Exit offer (desktop): when the pointer leaves through the top of the window,
+   site.js opens this once per visitor and sends the address to the free scan. */
+const exitDialog = () => `<div class="exit" id="exit" role="dialog" aria-modal="true" aria-labelledby="exit-h" hidden>
+  <div class="exit-box">
+    <button class="exit-x" type="button" aria-label="Close">×</button>
+    <p class="exit-tag">Free website scan</p>
+    <h2 class="h3" id="exit-h">Before you go: how does <em>your website</em> score?</h2>
+    <p>Speed, use on phones and the basics Google looks at, tested in about 30 seconds. Free, and you do not need to leave your email.</p>
+    <form class="scan-row" action="${B}/website-scan/" method="get"><input name="url" aria-label="Your website address" inputmode="url" autocomplete="url" spellcheck="false" maxlength="200" placeholder="www.your-business.com" required><button class="btn" type="submit">Scan my website</button></form>
+    <button class="exit-no" type="button">No thanks</button>
+  </div>
+</div>`;
 const dealNote = '<p class="deal-note" data-deal><b>Black Friday deal:</b> a free extra page and 10% off extra services, added to your quote.</p>';
 const dealSection = () => `
 <section class="sec deal" id="deal" data-deal aria-labelledby="deal-h"><div class="wrap deal-in">
@@ -292,7 +304,7 @@ const footer = () => `<footer class="ftr"><div class="wrap">
   </div>
   <div class="ft-cols">
     <nav aria-label="Footer menu"><h2>Site</h2><ul>${NAV.map(([, t, h]) => `<li><a href="${B}${h}">${t}</a></li>`).join('')}</ul></nav>
-    <div><h2>Services</h2><ul>${SERVICES.map(s => `<li><a href="${B}/diensten/${s.slug}/">${s.name}</a></li>`).join('')}<li><a href="${B}/tinrate/" translate="no">Tinrate Concierge</a></li></ul></div>
+    <div><h2>Services</h2><ul>${SERVICES.map(s => `<li><a href="${B}/diensten/${s.slug}/">${s.name}</a></li>`).join('')}<li><a href="${B}/tinrate/" translate="no">Tinrate Concierge</a></li><li><a href="${B}/website-scan/">Free website scan</a></li></ul></div>
     <div><h2>Studio</h2><address><span translate="no">Honingstraat 1D<br>2220 Hallaar,</span> Belgium</address><p>Monday to Friday, 9:00 to 18:00</p><p><a href="tel:+32473744431" translate="no">+32 473 74 44 31</a></p><h2 class="ft-pay-h">We accept</h2><ul class="ft-pay">${PAY.map(([n, svg, cls]) => `<li title="${n}"${cls ? ` class="${cls}"` : ''}${n === 'Bank transfer' ? '' : ' translate="no"'}>${svg}</li>`).join('')}</ul></div>
     <div><h2>Follow</h2><ul class="ft-social" translate="no">${[['instagram', 'Instagram', '@drp_buildlab', 'https://www.instagram.com/drp_buildlab/'], ['facebook', 'Facebook', 'DRP BuildLab', 'https://www.facebook.com/share/1Hz1mJG22E/'], ['tiktok', 'TikTok', '@drpbuildlab', 'https://www.tiktok.com/@drpbuildlab'], ['linkedin', 'LinkedIn', 'DRP BuildLab', 'https://www.linkedin.com/company/drpbuildlab/']].map(([k, n, h, u]) => `<li><a href="${u}" target="_blank" rel="noopener"><span class="ico">${ICON[k]}</span><span><b>${n}</b><small>${h}</small></span></a></li>`).join('')}</ul></div>
   </div>
@@ -334,7 +346,9 @@ ${body}
 </main>
 ${footer()}
 ${cursor ? '<div class="cur" id="cur" aria-hidden="true">View</div>' : ''}
-<div id="ui" hidden><span data-k="play">Play</span><span data-k="pause">Pause</span><span data-k="email">Please enter a valid email address so we can reach you.</span><span data-k="tick">Please tick the box so we may contact you about this request.</span><span data-k="fill">Please fill in this field:</span><span data-k="sent">Thank you, your request has been received. We will contact you within 24 hours.</span><span data-k="psent">Thank you, your application has been received. We review it personally and send your link within a few working days.</span><span data-k="tsent">Thank you, your order has been received. We will contact you within 24 hours to set up ${TC} on your website.</span><span data-k="failed">Sending failed. Please try again, or email us at info@drpbuildlab.com.</span><span data-k="nlsent">Almost done. We have sent you an email: click the link in it to confirm your subscription.</span><span data-k="nlfail">Subscribing did not work. Please try again in a moment.</span></div>
+<div id="ui" hidden><span data-k="play">Play</span><span data-k="pause">Pause</span><span data-k="email">Please enter a valid email address so we can reach you.</span><span data-k="tick">Please tick the box so we may contact you about this request.</span><span data-k="fill">Please fill in this field:</span><span data-k="sent">Thank you, your request has been received. We will contact you within 24 hours.</span><span data-k="psent">Thank you, your application has been received. We review it personally and send your link within a few working days.</span><span data-k="tsent">Thank you, your order has been received. We will contact you within 24 hours to set up ${TC} on your website.</span><span data-k="failed">Sending failed. Please try again, or email us at info@drpbuildlab.com.</span><span data-k="nlsent">Almost done. We have sent you an email: click the link in it to confirm your subscription.</span><span data-k="nlfail">Subscribing did not work. Please try again in a moment.</span><span data-k="pick">Please choose one of the options to continue.</span><span data-k="scansent">Thank you. We will email you the full report within one working day.</span></div>
+${nav === 'contact' ? '' : `<a class="stick-cta" id="stickCta" href="${B}/contact/" tabindex="-1" aria-hidden="true">Get a free quote</a>`}
+${nav === 'contact' || nav === 'scan' ? '' : exitDialog()}
 <a href="https://wa.me/32473744431" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp us"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.782 6.86L2 30l7.347-1.758A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.25-4.36 1.043 1.072-4.25-.276-.436A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.66c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.232.348-.898 1.132-1.1 1.364-.202.232-.404.26-.752.086-.348-.174-1.468-.54-2.796-1.724-1.034-.92-1.73-2.056-1.934-2.404-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.434-.028-.608-.086-.174-.78-1.882-1.07-2.576-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.608.086-.926.434-.318.348-1.216 1.188-1.216 2.896s1.244 3.356 1.418 3.588c.174.232 2.448 3.736 5.932 5.238.83.358 1.478.572 1.982.732.832.264 1.59.226 2.188.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.204-1.656-.086-.144-.318-.232-.666-.406z"/></svg></a>
 </body>
 </html>
@@ -919,8 +933,76 @@ pages['contact'] = page({
     <input type="hidden" name="form-name" value="offerte-aanvraag">
   <input type="hidden" name="subject" value="Nieuwe offerteaanvraag — DRP BuildLab">
   <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-    <h3>Request your free demo website</h3>
+    <h3>Get your free quote</h3>
     ${dealNote}
+    <!-- Quote builder (site.js): one step at a time with JavaScript, the whole
+         form at once without. Answers without a name (features, timing, the
+         free text) are written into the hidden "bericht" in Dutch on submit,
+         so Netlify, /api/form and the client zone need no new fields. -->
+    <input type="hidden" name="bericht" value="">
+    <div class="wz-prog" aria-hidden="true"><span class="wz-bar"><i></i></span><span class="wz-count"><span class="wz-n">1</span> / 4</span></div>
+    <fieldset class="wz-step" data-step="1"><legend class="wz-q">What are we building?</legend>
+      <div class="wz-cards">
+        <input type="radio" name="dienst" id="q-s1" value="Startpakket (website van één pagina)" data-slug="starter" data-kind="site" required><label for="q-s1"><b>A one-page website</b><small>Starter package, from €499</small></label>
+        <input type="radio" name="dienst" id="q-s2" value="Website met meerdere pagina’s" data-slug="custom" data-kind="site"><label for="q-s2"><b>A website with several pages</b><small>Made to measure</small></label>
+        <input type="radio" name="dienst" id="q-s3" value="Webshop" data-slug="webshop" data-kind="shop"><label for="q-s3"><b>A webshop</b><small>Sell online</small></label>
+        <input type="radio" name="dienst" id="q-s4" value="Een bestaande website bijwerken" data-slug="update" data-kind="redo"><label for="q-s4"><b>A new look for my website</b><small>Redesign or refresh</small></label>
+        <input type="radio" name="dienst" id="q-s5" value="Alleen extra diensten (logo, SEO, …)" data-slug="extras" data-kind="extra"><label for="q-s5"><b>Extra services only</b><small>Logo, SEO, Google Ads…</small></label>
+        <input type="radio" name="dienst" id="q-s6" value="Dat weet ik nog niet" data-slug="undecided" data-kind="unsure"><label for="q-s6"><b>I’m not sure yet</b><small>We’ll help you choose</small></label>
+      </div>
+    </fieldset>
+    <fieldset class="wz-step" data-step="2"><legend class="wz-q">What should it do?</legend>
+      <p class="wz-hint">Pick what applies. You can skip this step.</p>
+      <div class="chips wz-opt" data-for="site redo"><span class="wz-sub">Features</span>
+        <input type="checkbox" id="q-f1" value="Contactformulier"><label for="q-f1">Contact form</label>
+        <input type="checkbox" id="q-f2" value="Online afspraken of reservaties"><label for="q-f2">Online bookings</label>
+        <input type="checkbox" id="q-f3" value="Meertalig"><label for="q-f3">Several languages</label>
+        <input type="checkbox" id="q-f4" value="Blog of nieuws"><label for="q-f4">Blog or news</label>
+        <input type="checkbox" id="q-f5" value="Portfolio of fotogalerij"><label for="q-f5">Portfolio or photo gallery</label>
+        <input type="checkbox" id="q-f6" value="Online betalen"><label for="q-f6">Online payments</label>
+        <input type="checkbox" id="q-f7" value="Google-reviews op de site"><label for="q-f7">Google reviews on the site</label>
+      </div>
+      <div class="chips wz-opt" data-for="shop"><span class="wz-sub">How many products?</span>
+        <input type="radio" name="producten" id="q-p1" value="Minder dan 50 producten"><label for="q-p1">Fewer than 50</label>
+        <input type="radio" name="producten" id="q-p2" value="50 tot 500 producten"><label for="q-p2">50 to 500</label>
+        <input type="radio" name="producten" id="q-p3" value="Meer dan 500 producten"><label for="q-p3">More than 500</label>
+      </div>
+      <div class="chips wz-opt" data-for="shop"><span class="wz-sub">Features</span>
+        <input type="checkbox" id="q-w1" value="Shopify"><label for="q-w1">On Shopify</label>
+        <input type="checkbox" id="q-w2" value="Verzending en facturatie gekoppeld"><label for="q-w2">Shipping and invoicing</label>
+        <input type="checkbox" id="q-w3" value="Voorraadbeheer"><label for="q-w3">Stock management</label>
+        <input type="checkbox" id="q-w4" value="B2B-portaal met eigen prijzen"><label for="q-w4">B2B prices and login</label>
+        <input type="checkbox" id="q-w5" value="Meertalige webshop"><label for="q-w5">Several languages</label>
+        <input type="checkbox" id="q-w6" value="Abonnementen"><label for="q-w6">Subscriptions</label>
+      </div>
+      <div class="fld wz-opt" data-for="redo"><label for="q-site">Your current website <small>(optional)</small></label><input id="q-site" name="website" inputmode="url" autocomplete="url" spellcheck="false" maxlength="200" placeholder="www.example.com"></div>
+      <div class="chips wz-opt" data-for="redo"><span class="wz-sub">What bothers you about it?</span>
+        <input type="checkbox" id="q-r1" value="Ziet er verouderd uit"><label for="q-r1">It looks dated</label>
+        <input type="checkbox" id="q-r2" value="Traag"><label for="q-r2">It is slow</label>
+        <input type="checkbox" id="q-r3" value="Werkt slecht op gsm"><label for="q-r3">Poor on phones</label>
+        <input type="checkbox" id="q-r4" value="Levert geen aanvragen op"><label for="q-r4">No enquiries</label>
+        <input type="checkbox" id="q-r5" value="Moeilijk zelf aan te passen"><label for="q-r5">Hard to update</label>
+      </div>
+      <div class="chips wz-opt" data-for="extra site shop redo"><span class="wz-sub">Extra services</span>
+        <input type="checkbox" id="q-x1" value="Logo"><label for="q-x1">Logo design</label>
+        <input type="checkbox" id="q-x2" value="SEO"><label for="q-x2">SEO</label>
+        <input type="checkbox" id="q-x3" value="Google Ads"><label for="q-x3">Google Ads</label>
+        <input type="checkbox" id="q-x4" value="Fotografie"><label for="q-x4">Photography</label>
+        <input type="checkbox" id="q-x5" value="Koppelingen (boekhouding, reservaties…)"><label for="q-x5">Integrations</label>
+        <input type="checkbox" id="q-x6" value="Onderhoudsabonnement"><label for="q-x6">Maintenance plan</label>
+      </div>
+      <div class="fld wz-opt" data-for="unsure"><label for="q-about">Tell us a little about your business <small>(optional)</small></label><textarea id="q-about" rows="4" maxlength="2000"></textarea></div>
+    </fieldset>
+    <fieldset class="wz-step" data-step="3"><legend class="wz-q">When should it be online?</legend>
+      <div class="chips">
+        <input type="radio" name="timing" id="q-n1" value="Zo snel mogelijk"><label for="q-n1">As soon as possible</label>
+        <input type="radio" name="timing" id="q-n2" value="Binnen een maand"><label for="q-n2">Within a month</label>
+        <input type="radio" name="timing" id="q-n3" value="Binnen 1 tot 3 maanden"><label for="q-n3">In 1 to 3 months</label>
+        <input type="radio" name="timing" id="q-n4" value="Nog aan het oriënteren"><label for="q-n4">Just looking around</label>
+      </div>
+      <div class="fld"><label for="q-msg">Anything else we should know? <small>(optional)</small></label><textarea id="q-msg" rows="4" maxlength="2000"></textarea></div>
+    </fieldset>
+    <fieldset class="wz-step" data-step="4"><legend class="wz-q">Where do we send your quote?</legend>
     <div class="frow">
       <div class="fld"><label for="q-first">First name</label><input id="q-first" name="voornaam" autocomplete="given-name" required></div>
       <div class="fld"><label for="q-last">Last name</label><input id="q-last" name="achternaam" autocomplete="family-name"></div>
@@ -937,14 +1019,73 @@ pages['contact'] = page({
       <div class="fld"><label for="q-phone">Phone</label><input id="q-phone" name="telefoon" type="tel" autocomplete="tel" required></div>
       <div class="fld"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required></div>
     </div>
-    <div class="fld"><label for="q-service">Which service do you have in mind?</label><select id="q-service" name="dienst" required><option value="">Choose a service</option><option value="Startpakket (website van één pagina)">Starter package (one-page website)</option><option value="Op maat gemaakt, offerte">Made to measure, quote</option><option value="Een bestaande website bijwerken">Update an existing website</option><option value="Alleen extra diensten (logo, SEO, …)">Extra services only (logo, SEO, …)</option><option value="Dat weet ik nog niet">I don’t know yet</option></select></div>
     <div class="fld"><label for="q-ref">Partner code <small>(optional)</small></label><input id="q-ref" name="ref" spellcheck="false" maxlength="32"></div>
-    <div class="fld"><label for="q-msg">Message <small>(optional)</small></label><textarea id="q-msg" name="bericht"></textarea></div>
     <label class="check" for="q-consent"><input type="checkbox" id="q-consent" name="toestemming" value="ja" required><span>I agree that DRP BuildLab uses the details in this form to contact me about this request. <a href="${B}/privacy/">Privacy policy</a></span></label>
-    <button class="btn dark" type="submit">Request my free demo ${arr}</button>
+    </fieldset>
+    <div class="wz-nav">
+      <button class="btn line wz-back" type="button">Back</button>
+      <button class="btn dark wz-next" type="button">Next step</button>
+      <button class="btn dark wz-send" type="submit">Send my quote request ${arr}</button>
+    </div>
+    <p class="ok" role="status" aria-live="polite"></p>
+    <small>Free and without obligation. We reply within 24 hours.</small>
+  </form>
+</div></section>
+<section class="sec fog tight"><div class="wrap cta-band">
+  <div><h2 class="h3">Not ready to ask for a quote?</h2><p class="muted" style="margin-top:10px">Scan your current website for free: speed, phones and Google, in about 30 seconds.</p></div>
+  <a class="btn dark" href="${B}/website-scan/">Scan my website ${arr}</a>
+</div></section>`
+});
+
+/* Free website scan: /api/scan (netlify/edge-functions/scan.js) runs Google's
+   PageSpeed Insights on the visitor's address; site.js shows the scores and
+   offers the full report through the usual quote form, with the address and
+   the scores written into "bericht". Without PAGESPEED_API_KEY the scan
+   answers "busy" and the page asks for the email instead. */
+pages['website-scan'] = page({
+  title: 'Free website scan | DRP BuildLab', desc: 'Test your website for free: speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.', nav: 'scan',
+  body: `${phero({ h1: 'How good is <em>your website?</em>', lede: 'A free scan of your website’s speed, use on phones, accessibility and how easy it is to find on Google. Results in about 30 seconds.' })}
+<section class="sec light scan-sec" style="padding-top:clamp(40px,5vw,72px)"><div class="wrap">
+  <form class="scan-form" id="scan" novalidate>
+    <label for="scan-url">Your website address</label>
+    <div class="scan-row"><input id="scan-url" inputmode="url" autocomplete="url" spellcheck="false" maxlength="200" placeholder="www.your-business.com" required><button class="btn" type="submit">Scan my website ${arr}</button></div>
+    <p class="scan-note">We test the mobile version with Lighthouse, Google’s own website test. Nothing is installed or changed on your website.</p>
+    <p class="scan-msg" role="status" aria-live="polite"></p>
+  </form>
+  <div class="scan-wait" id="scan-wait" hidden><span class="scan-spin" aria-hidden="true"></span><p>Scanning <b class="scan-host" translate="no"></b>. This takes about 30 seconds.</p></div>
+  <div class="scan-out" id="scan-out" hidden>
+    <h2 class="h3">Results for <span class="scan-host" translate="no"></span></h2>
+    <ul class="scan-scores">
+      <li data-cat="performance"><span class="ring"><b>–</b></span><span>Speed</span></li>
+      <li data-cat="accessibility"><span class="ring"><b>–</b></span><span>Accessibility</span></li>
+      <li data-cat="best-practices"><span class="ring"><b>–</b></span><span>Technical health</span></li>
+      <li data-cat="seo"><span class="ring"><b>–</b></span><span>SEO basics</span></li>
+    </ul>
+    <p class="scan-legend"><span class="g">90–100 good</span><span class="o">50–89 needs work</span><span class="p">0–49 poor</span></p>
+    <div class="scan-issues" hidden><h3>What holds your website back most</h3><ul></ul></div>
+  </div>
+  <form class="form scan-lead" id="scan-lead" name="offerte-aanvraag" method="POST" novalidate data-event="demo_request" data-sent="scansent" hidden>
+    <input type="hidden" name="form-name" value="offerte-aanvraag">
+    <input type="hidden" name="subject" value="Nieuwe aanvraag website-scan — DRP BuildLab">
+    <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <input type="hidden" name="dienst" value="Gratis website-scan: volledig rapport" data-slug="scan">
+    <input type="hidden" name="website" value="">
+    <input type="hidden" name="bericht" value="">
+    <input type="hidden" name="ref" value="">
+    <h3 class="scan-lead-h">Get the full report, with what to fix first</h3>
+    <h3 class="scan-busy-h" hidden>The scan is busy right now. Leave your email and we’ll send you the report.</h3>
+    <p class="fnote">A person from our team goes through your results and emails you a short, clear report. Free, with no obligation.</p>
+    <div class="frow">
+      <div class="fld"><label for="sl-name">Your name</label><input id="sl-name" name="voornaam" autocomplete="name" required></div>
+      <div class="fld"><label for="sl-email">Email</label><input id="sl-email" name="email" type="email" autocomplete="email" required></div>
+    </div>
+    <label class="check" for="sl-consent"><input type="checkbox" id="sl-consent" name="toestemming" value="ja" required><span>I agree that DRP BuildLab uses the details in this form to contact me about this request. <a href="${B}/privacy/">Privacy policy</a></span></label>
+    <button class="btn dark" type="submit">Send me the full report ${arr}</button>
     <p class="ok" role="status" aria-live="polite"></p>
   </form>
-</div></section>`
+  <div id="scan-ui" hidden><span data-k="bad">Please enter a website address, for example www.your-business.com.</span><span data-k="fail">We could not scan this address. Check that the website is online and try again.</span></div>
+</div></section>
+${ctaBand()}`
 });
 
 pages['partner-worden'] = page({
