@@ -439,10 +439,6 @@
   "en": "Privacy",
   "t": "الخصوصية"
  },
- "87b9827c6933b30d": {
-  "en": "Back to top ↑",
-  "t": "العودة إلى الأعلى ↑"
- },
  "4fefc8d27ecb898a": {
   "en": "View",
   "t": "عرض"
@@ -591,37 +587,9 @@
   "en": "Company or VAT number <small>(optional)</small>",
   "t": "رقم الشركة أو رقم ضريبة القيمة المضافة <small>(اختياري)</small>"
  },
- "1da557513e3c8e31": {
-  "en": "Which service do you have in mind?",
-  "t": "ما هي الخدمة التي تفكر فيها؟"
- },
- "47842fe8c86e5981": {
-  "en": "Choose a service",
-  "t": "اختر خدمة"
- },
- "415e43f376f985ea": {
-  "en": "Made to measure, quote",
-  "t": "مصنوع حسب الطلب، عرض أسعار"
- },
- "2f214b2d9b1bd13c": {
-  "en": "Update an existing website",
-  "t": "تحديث موقع إلكتروني موجود بالفعل"
- },
- "d0d3c2cfbf0d3795": {
-  "en": "Extra services only (logo, SEO, …)",
-  "t": "الخدمات الإضافية فقط (الشعار، تحسين محركات البحث، ...)"
- },
- "19b5fdb4eb526430": {
-  "en": "I don’t know yet",
-  "t": "لا أعرف حتى الآن"
- },
  "0933578323c0f2da": {
   "en": "Partner code <small>(optional)</small>",
   "t": "رمز الشريك <small>(اختياري)</small>"
- },
- "5274b4354c018aa0": {
-  "en": "Message <small>(optional)</small>",
-  "t": "رسالة <small>(اختياري)</small>"
  },
  "d9cd398dd6c8cd6b": {
   "en": "Five services, each with its own page, what is included and a starting price. Every price is confirmed in a written quote.",
@@ -658,10 +626,6 @@
  "456ee7b37fe88da5": {
   "en": "Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.",
   "t": "كتابة جميع محتوياتك من الصفر. نحن نعمل على النصوص التي تزودنا بها، ما لم يتم الاتفاق على خلاف ذلك."
- },
- "bd132b69d6569457": {
-  "en": "Let’s build <em style=\"color:var(--ink)\">your website.</em>",
-  "t": "دعونا نبني <em style=\"color:var(--ink)\">موقعك الإلكتروني.</em>"
  },
  "18371a5f81c2bb8a": {
   "en": "Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.",
@@ -806,10 +770,6 @@
  "5b2c04f8cb5f6ec2": {
   "en": "Redesign <em>&amp; refresh</em>",
   "t": "إعادة التصميم <em>والتحديث</em>"
- },
- "240616e343d7115c": {
-  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.",
-  "t": "موقعك الإلكتروني موجود بالفعل، لكنه يبدو قديمًا، أو بطيئًا عند تصفحه عبر الهواتف، أو لا يجذب أي استفسارات. نحن نحتفظ بما يعمل بشكل جيد — المحتوى الخاص بك، وعلامتك التجارية، وترتيبك في نتائج بحث جوجل — ونقوم بإصلاح الباقي."
  },
  "24004f92a8256f49": {
   "en": "Priced on demand: tell us what you need and we confirm the price in a written quote.",
@@ -1911,10 +1871,6 @@
   "en": "Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.",
   "t": "تساعد بيترا فانهاندنهوفن رواد الأعمال على اتخاذ الخطوات الصحيحة في أعمالهم، من خلال الكتب الإلكترونية وورش العمل والتوجيه الفردي. وكانت بحاجة إلى مكان واحد يجمع كل ذلك معًا، ويمنحها إحساسًا بالشخصية يضاهي ما تقدمه من تدريب."
  },
- "62a5dde8c21e7f5f": {
-  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.",
-  "t": "لقد صممنا الموقع وأعددناه بحيث يكون محور التركيز فيه هو «بترا» نفسها: عنوان تحريري قوي، وصورتها الشخصية، ومسار واضح للوصول إلى كل عرض من عروضها — الكتب الإلكترونية، وورش العمل، والإرشادات، وفريق أحلامها."
- },
  "e821531d25f5cd95": {
   "en": "It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.",
   "t": "يعمل هذا التطبيق على الهاتف بنفس كفاءة عمله على الكمبيوتر المكتبي. وما زلنا نضطلع بصيانته، لذا يتم نشر التحديثات والعروض الجديدة دون أن تضطر «بيترا» إلى تعديل أي شفرة برمجية."
@@ -2434,10 +2390,6 @@
  "4388e34194cd5e8f": {
   "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
   "t": "يتم تصميم كل موقع إلكتروني حسب الطلب، لذا يعتمد السعر على حجم العمل المطلوب. بالنسبة للشركات الجديدة، أو تلك التي ترغب في تحديث موقعها الحالي، تبدأ أسعار باقتنا المبدئية من <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. أما باقي الخدمات، فيتم تحديد أسعارها حسب الطلب، من خلال عرض أسعار مخصص لكل حالة على حدة. الصيانة اختيارية: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> شهريًّا."
- },
- "77f6952ee45c3cad": {
-  "en": "Starter package (one-page website)",
-  "t": "الباقة المبدئية (موقع إلكتروني من صفحة واحدة)"
  },
  "7ca4618712abfd02": {
   "en": "Price quotes via WhatsApp",
@@ -4986,5 +4938,309 @@
  "1370b96b2378e362": {
   "en": "Order Tinrate Concierge through DRP BuildLab, an official Tinrate reseller. An AI assistant that answers your visitors in seconds. We set it up on your website, and you try it free for 14 days.",
   "t": "اطلب Tinrate Concierge عن طريق DRP BuildLab، وهي موزّع رسمي لـ Tinrate. مساعد ذكاء اصطناعي يجيب زوارك في ثوانٍ. نتولى إعداده على موقعك الإلكتروني، وتجرّبه مجانًا لمدة 14 يومًا."
+ },
+ "0e203dd283dc4f23": {
+  "en": "<b>Black Friday:</b> a free extra page with every <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> starter package, plus 10% off all extra services. Until Monday 30 November.",
+  "t": "<b>الجمعة البيضاء:</b> صفحة إضافية مجانًا مع كل باقة مبدئية بسعر <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>، بالإضافة إلى خصم 10% على جميع الخدمات الإضافية. حتى يوم الاثنين 30 نوفمبر."
+ },
+ "1f01e8ad9d815676": {
+  "en": "Claim the deal",
+  "t": "احصل على العرض"
+ },
+ "8a90c37cebcd6f5e": {
+  "en": "Black Friday · until Monday 30 November",
+  "t": "الجمعة البيضاء · حتى يوم الاثنين 30 نوفمبر"
+ },
+ "3440d22e7918a9b0": {
+  "en": "More website, <em>same price.</em>",
+  "t": "موقع أكبر، <em>بالسعر نفسه.</em>"
+ },
+ "19196e34c3d0dcb8": {
+  "en": "Order your website before the deal ends and get more for the same budget. We write the deal into your quote.",
+  "t": "اطلب موقعك قبل انتهاء العرض واحصل على المزيد بالميزانية نفسها. نُدرج العرض في عرض السعر الخاص بك."
+ },
+ "0c7f4e48920aa645": {
+  "en": "Claim the Black Friday deal <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "احصل على عرض الجمعة البيضاء <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "0766d2635330638a": {
+  "en": "Ask us on WhatsApp",
+  "t": "اسألنا عبر واتساب"
+ },
+ "38e5432df5157e1a": {
+  "en": "Free",
+  "t": "مجانًا"
+ },
+ "4884c440fea83ecd": {
+  "en": "An extra page",
+  "t": "صفحة إضافية"
+ },
+ "68f85c212cd078fb": {
+  "en": "Worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>. With every <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> starter package we add a second page, for your services, prices or portfolio.",
+  "t": "بقيمة <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>. مع كل باقة مبدئية بسعر <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> نضيف صفحة ثانية لخدماتك أو أسعارك أو أعمالك."
+ },
+ "cd9128160a3e2fbd": {
+  "en": "On all extra services",
+  "t": "على جميع الخدمات الإضافية"
+ },
+ "fa0097435de114df": {
+  "en": "SEO, a logo, a multilingual site or a booking integration: 10% off every extra service you order.",
+  "t": "تحسين محركات البحث، أو شعار، أو موقع متعدد اللغات، أو ربط نظام حجوزات: خصم 10% على كل خدمة إضافية تطلبها."
+ },
+ "bdedc6b08ebf115b": {
+  "en": "Request your quote by Monday 30 November, 23:59 (Brussels time).",
+  "t": "اطلب عرض السعر حتى يوم الاثنين 30 نوفمبر الساعة 23:59 (بتوقيت بروكسل)."
+ },
+ "ff8eb09e8c67b9f0": {
+  "en": "<b>Black Friday deal:</b> a free extra page and 10% off extra services, added to your quote.",
+  "t": "<b>عرض الجمعة البيضاء:</b> صفحة إضافية مجانًا وخصم 10% على الخدمات الإضافية، يُدرجان في عرض السعر الخاص بك."
+ },
+ "c00d8b960f07e69c": {
+  "en": "<b>Black Friday:</b> a free extra page, worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, until Monday 30 November.",
+  "t": "<b>الجمعة البيضاء:</b> صفحة إضافية مجانًا بقيمة <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>، حتى يوم الاثنين 30 نوفمبر."
+ },
+ "6195bd7100ae82e3": {
+  "en": "Please choose one of the options to continue.",
+  "t": "يُرجى اختيار أحد الخيارات للمتابعة."
+ },
+ "7782c7cf814aff6d": {
+  "en": "Get a free quote",
+  "t": "احصل على عرض أسعار مجاني"
+ },
+ "138f1528250349e4": {
+  "en": "Get your free quote",
+  "t": "احصل على عرض أسعار مجاني"
+ },
+ "7db183a9c85347b5": {
+  "en": "What are we building?",
+  "t": "ماذا سنبني لك؟"
+ },
+ "730e4f0ef74f4589": {
+  "en": "A one-page website",
+  "t": "موقع إلكتروني من صفحة واحدة"
+ },
+ "3bc10996a64c4b4a": {
+  "en": "Starter package, from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
+  "t": "الباقة المبدئية، ابتداءً من <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>"
+ },
+ "56cd5d0714994d80": {
+  "en": "A website with several pages",
+  "t": "موقع إلكتروني متعدد الصفحات"
+ },
+ "b4bedb6e7632f7ee": {
+  "en": "A webshop",
+  "t": "متجر إلكتروني"
+ },
+ "4daa6d18ee6c74d3": {
+  "en": "Sell online",
+  "t": "للبيع عبر الإنترنت"
+ },
+ "db6b9130757243cd": {
+  "en": "A new look for my website",
+  "t": "مظهر جديد لموقعي"
+ },
+ "28376792a8b15821": {
+  "en": "Redesign or refresh",
+  "t": "إعادة التصميم أو التحديث"
+ },
+ "a7bf84569df07903": {
+  "en": "Extra services only",
+  "t": "الخدمات الإضافية فقط"
+ },
+ "95e654cf4043a19b": {
+  "en": "Logo, SEO, Google Ads…",
+  "t": "الشعار، SEO، Google Ads…"
+ },
+ "32e6a2e06b26d911": {
+  "en": "I’m not sure yet",
+  "t": "لست متأكدًا بعد"
+ },
+ "0be6a66600027972": {
+  "en": "We’ll help you choose",
+  "t": "سنساعدك على الاختيار"
+ },
+ "0d92c4481fd0b1c0": {
+  "en": "What should it do?",
+  "t": "ما الوظائف التي تحتاجها؟"
+ },
+ "99b3fe64c22240fd": {
+  "en": "Pick what applies. You can skip this step.",
+  "t": "اختر ما ينطبق عليك. يمكنك تخطي هذه الخطوة."
+ },
+ "52055c424d0a667e": {
+  "en": "Features",
+  "t": "الميزات"
+ },
+ "90f0dd1af9d3d47d": {
+  "en": "Contact form",
+  "t": "نموذج اتصال"
+ },
+ "949d5ea5e56dbcfb": {
+  "en": "Online bookings",
+  "t": "الحجز عبر الإنترنت"
+ },
+ "70657e8fd5cddff7": {
+  "en": "Several languages",
+  "t": "لغات متعددة"
+ },
+ "a8fd786a4a431594": {
+  "en": "Blog or news",
+  "t": "مدونة أو أخبار"
+ },
+ "b266dd90983cb656": {
+  "en": "Portfolio or photo gallery",
+  "t": "معرض أعمال أو صور"
+ },
+ "6ff36921f19c7c83": {
+  "en": "Online payments",
+  "t": "الدفع عبر الإنترنت"
+ },
+ "3d8301ea8aa6d2ed": {
+  "en": "Google reviews on the site",
+  "t": "تقييمات Google على الموقع"
+ },
+ "52f914a725a5e69d": {
+  "en": "How many products?",
+  "t": "كم عدد المنتجات؟"
+ },
+ "8fcd3f705673fda7": {
+  "en": "Fewer than 50",
+  "t": "أقل من 50"
+ },
+ "662786d5159d0081": {
+  "en": "50 to 500",
+  "t": "من 50 إلى 500"
+ },
+ "6cc0c3ff61dc06f9": {
+  "en": "More than 500",
+  "t": "أكثر من 500"
+ },
+ "8b2057c5165abcd9": {
+  "en": "On Shopify",
+  "t": "على Shopify"
+ },
+ "9b97416e08a599e4": {
+  "en": "Shipping and invoicing",
+  "t": "الشحن والفوترة"
+ },
+ "170f985f80f6e1d6": {
+  "en": "B2B prices and login",
+  "t": "أسعار B2B وتسجيل الدخول"
+ },
+ "6b4295ff98336b11": {
+  "en": "Subscriptions",
+  "t": "الاشتراكات"
+ },
+ "b45aa4d2c1f1073d": {
+  "en": "Your current website <small>(optional)</small>",
+  "t": "موقعك الحالي <small>(اختياري)</small>"
+ },
+ "c3a8294d3429df36": {
+  "en": "What bothers you about it?",
+  "t": "ما الذي لا يعجبك فيه؟"
+ },
+ "a4c754cbf768f9d1": {
+  "en": "It looks dated",
+  "t": "يبدو قديمًا"
+ },
+ "1a6ba72a697140e7": {
+  "en": "It is slow",
+  "t": "بطيء"
+ },
+ "1efc42c281c1280b": {
+  "en": "Poor on phones",
+  "t": "ضعيف على الهواتف"
+ },
+ "ce497634b53c8dee": {
+  "en": "No enquiries",
+  "t": "لا يجلب استفسارات"
+ },
+ "c33fcd072d3b3d8f": {
+  "en": "Hard to update",
+  "t": "صعب التحديث"
+ },
+ "4853ca6a2052ca7a": {
+  "en": "Extra services",
+  "t": "الخدمات الإضافية"
+ },
+ "ad0c71137f4250b0": {
+  "en": "SEO",
+  "t": "SEO"
+ },
+ "a808131e4a0eb051": {
+  "en": "Google Ads",
+  "t": "Google Ads"
+ },
+ "64e09d7aa50293b5": {
+  "en": "Photography",
+  "t": "التصوير الفوتوغرافي"
+ },
+ "82de470216b9a2ab": {
+  "en": "Maintenance plan",
+  "t": "خطة الصيانة"
+ },
+ "b4233434cfa678b2": {
+  "en": "Tell us a little about your business <small>(optional)</small>",
+  "t": "أخبرنا قليلًا عن نشاطك التجاري <small>(اختياري)</small>"
+ },
+ "fe555e61c533704a": {
+  "en": "When should it be online?",
+  "t": "متى تريد إطلاق الموقع؟"
+ },
+ "581b3ec559c48e9a": {
+  "en": "As soon as possible",
+  "t": "في أقرب وقت ممكن"
+ },
+ "9c44686de8cabae0": {
+  "en": "Within a month",
+  "t": "خلال شهر"
+ },
+ "541d17e959377431": {
+  "en": "In 1 to 3 months",
+  "t": "خلال 1 إلى 3 أشهر"
+ },
+ "57d0088e4456b8ea": {
+  "en": "Just looking around",
+  "t": "أستكشف الخيارات فقط"
+ },
+ "5d2c6ab18fbef02b": {
+  "en": "Anything else we should know? <small>(optional)</small>",
+  "t": "هل هناك أي شيء آخر ينبغي أن نعرفه؟ <small>(اختياري)</small>"
+ },
+ "708aed56a716e4c8": {
+  "en": "Where do we send your quote?",
+  "t": "إلى أين نرسل عرض السعر؟"
+ },
+ "2334d7c50c981ee4": {
+  "en": "Back",
+  "t": "رجوع"
+ },
+ "872321992f1108dd": {
+  "en": "Next step",
+  "t": "الخطوة التالية"
+ },
+ "70844d492b1959f6": {
+  "en": "Send my quote request <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "أرسل طلب عرض السعر <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "6eb0e69a4a5b4432": {
+  "en": "Free and without obligation. We reply within 24 hours.",
+  "t": "مجاني ودون أي التزام. نرد عليك في غضون 24 ساعة."
+ },
+ "40548849b73f09a5": {
+  "en": "www.example.com",
+  "t": "www.example.com"
+ },
+ "a09f924fa3a73b71": {
+  "en": "Back to top",
+  "t": "العودة إلى الأعلى"
+ },
+ "2175865ce005bfbd": {
+  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works (your content, your brand, your Google ranking) and fix the rest.",
+  "t": "موقعك الإلكتروني موجود بالفعل، لكنه يبدو قديمًا، أو بطيئًا عند تصفحه عبر الهواتف، أو لا يجذب أي استفسارات. نحن نحتفظ بما يعمل بشكل جيد (المحتوى الخاص بك، وعلامتك التجارية، وترتيبك في نتائج بحث جوجل) ونقوم بإصلاح الباقي."
+ },
+ "b6fd3bd4fe735bbc": {
+  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
+  "t": "لقد صممنا الموقع وأعددناه بحيث يكون محور التركيز فيه هو «بترا» نفسها: عنوان تحريري قوي، وصورتها الشخصية، ومسار واضح للوصول إلى كل عرض من عروضها (الكتب الإلكترونية، وورش العمل، والإرشادات، وفريق أحلامها)."
  }
 }

@@ -24,6 +24,31 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const eur = n => '€' + n.toLocaleString('en-GB', { minimumFractionDigits: Number.isInteger(n) ? 0 : 2 });
 const arr = '<span class="arr" aria-hidden="true">→</span>';
 
+/* Black Friday 2026: a free extra page (the catalogue's €79 "extra-pagina")
+   with every €499 starter package, and 10% off all extra services, until
+   Monday 30 November, Brussels time. site.js removes everything marked
+   data-deal once DEAL_END has passed, and tags quote requests sent before
+   then; take these and their uses out after the deal. */
+const DEAL_END = '2026-12-01T00:00:00+01:00';
+const dealBar = () => `<div class="deal-bar" data-deal data-deal-end="${DEAL_END}"><div class="wrap deal-bar-in"><p><b>Black Friday:</b> a free extra page with every €499 starter package, plus 10% off all extra services. Until Monday 30 November.</p><a href="${B}/#deal">Claim the deal</a></div></div>`;
+const dealNote = '<p class="deal-note" data-deal><b>Black Friday deal:</b> a free extra page and 10% off extra services, added to your quote.</p>';
+const dealSection = () => `
+<section class="sec deal" id="deal" data-deal aria-labelledby="deal-h"><div class="wrap deal-in">
+  <div>
+    <p class="deal-tag">Black Friday · until Monday 30 November</p>
+    <h2 class="h2" id="deal-h">More website, <em>same price.</em></h2>
+    <p class="lede">Order your website before the deal ends and get more for the same budget. We write the deal into your quote.</p>
+    <div class="acts"><a class="btn" href="#demo">Claim the Black Friday deal ${arr}</a><a class="btn ghost" href="https://wa.me/32473744431" target="_blank" rel="noopener">Ask us on WhatsApp</a></div>
+  </div>
+  <div>
+    <ul class="deal-offers">
+      <li><span class="deal-big">Free</span><h3>An extra page</h3><p>Worth €79. With every €499 starter package we add a second page, for your services, prices or portfolio.</p></li>
+      <li><span class="deal-big" dir="ltr">−10%</span><h3>On all extra services</h3><p>SEO, a logo, a multilingual site or a booking integration: 10% off every extra service you order.</p></li>
+    </ul>
+    <p class="deal-small">Request your quote by Monday 30 November, 23:59 (Brussels time).</p>
+  </div>
+</div></section>`;
+
 /* blog articles from content/blog/ (see tools/concept/blog.js); throws on a malformed file */
 const blog = require('./blog');
 const POSTS = blog.loadPosts();
@@ -50,7 +75,7 @@ const CASES_RAW = [
     tags: ['Design', 'Development', 'Responsive', 'Maintenance'], kinds: 'Website',
     short: 'A website for Petra Vanhandenhoven’s coaching practice for entrepreneurs, with her e-books, workshops and one-to-one guidance in one place. We designed and built it, and we still maintain it.',
     brief: ['Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.'],
-    did: ['We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.', 'It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.'],
+    did: ['We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).', 'It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.'],
     quote: 'Ideas deserve a strong online foundation.', hDesk: 3943, hMob: 3600, phoneImg: 'stb-mob'
   },
   {
@@ -157,7 +182,7 @@ const SERVICES = [
   {
     slug: 'redesign', name: 'Redesign & refresh', em: 'Redesign <em>& refresh</em>', from: 'On demand',
     short: 'Your current site, modernised. We keep your content and brand and fix what holds it back.',
-    intro: 'Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.',
+    intro: 'Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works (your content, your brand, your Google ranking) and fix the rest.',
     incl: ['A review of what works and what does not', 'A modern design in your own brand', 'Faster loading on phones', 'Your content and URLs kept', 'Contact forms that work and stop spam', 'A preview before anything goes live'],
     opts: [['aanpassing-bestaand', 'Update existing website', 'Changes within your current layout and brand.'], ['vernieuwing-bestaand', 'Website or webshop refresh', 'A fresh, modern look that keeps your offer and brand.'], ['audit', 'Website audit', 'A check of structure, speed, mobile use and how easy you are to find.'], ['content-uitbreiding', 'Content expansion', 'Extra pages or information in the existing look and feel.'], ['contactform-herstel', 'Contact form repair', 'A working contact form, protected against spam and bots.']],
     caseSlug: null,
@@ -207,7 +232,7 @@ const OTHER = { href: '/contact/', name: 'Other services', short: 'Logo design, 
    one-pager and the €29 plan (PUBLIC_PRICES). Tinrate bills the client. */
 const TC = N('Concierge'), TTC = N('Tinrate Concierge');
 const TINRATE = { href: '/tinrate/', name: TTC, short: 'An AI assistant on your website that answers visitors in seconds and turns conversations into leads. We are an official Tinrate reseller.', from: 'Free 14-day trial' };
-const svcRow = s => `<li><a href="${B}${s.href || `/diensten/${s.slug}/`}"><h3>${s.name}</h3><p>${s.short}</p><span class="price"><span>${s.from}</span> <span class="ar" aria-hidden="true">→</span></span></a></li>`;
+const svcRow = s => `<li><a href="${B}${s.href || `/diensten/${s.slug}/`}"><h3>${s.name}</h3><p>${s.short}</p><span class="price"><span>${s.from}</span></span></a></li>`;
 
 const NOT_DONE = ['Printed matter such as business cards, flyers and brochures. We design the logo itself.', 'Mobile apps. We build websites and webshops only.', 'Day-to-day management of ad campaigns. We set up your first Google Ads campaign.', 'Accounting, legal or financial advice.', 'Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.'];
 
@@ -239,6 +264,7 @@ const logo = (label = 'DRP BuildLab home') => `<a class="logo" href="${B}/" aria
 function header(cur) {
   const links = NAV.map(([k, t, h]) => `<a href="${B}${h}"${k === cur ? ' aria-current="page"' : ''}>${t}</a>`).join('');
   return `<a class="skip" href="#main">Skip to content</a>
+${dealBar()}
 <header class="hdr" id="hdr"><div class="wrap hdr-in">
   ${logo()}
   <nav class="nav" aria-label="Main menu">${links}</nav>
@@ -275,7 +301,7 @@ const footer = () => `<footer class="ftr"><div class="wrap">
     <p>© 2026 DRP BuildLab · VAT BE 1033.313.383</p>
     <p class="ft-legal"><a href="${B}/algemene-voorwaarden/">Terms</a><a href="${B}/privacy/">Privacy</a></p>
     <!--MARKETS-->
-    <a class="ft-top-link" href="#main">Back to top ↑</a>
+    <a class="ft-top-link" href="#main">Back to top</a>
   </div>
 </div></footer>`;
 
@@ -308,7 +334,8 @@ ${body}
 </main>
 ${footer()}
 ${cursor ? '<div class="cur" id="cur" aria-hidden="true">View</div>' : ''}
-<div id="ui" hidden><span data-k="play">Play</span><span data-k="pause">Pause</span><span data-k="email">Please enter a valid email address so we can reach you.</span><span data-k="tick">Please tick the box so we may contact you about this request.</span><span data-k="fill">Please fill in this field:</span><span data-k="sent">Thank you, your request has been received. We will contact you within 24 hours.</span><span data-k="psent">Thank you, your application has been received. We review it personally and send your link within a few working days.</span><span data-k="tsent">Thank you, your order has been received. We will contact you within 24 hours to set up ${TC} on your website.</span><span data-k="failed">Sending failed. Please try again, or email us at info@drpbuildlab.com.</span><span data-k="nlsent">Almost done. We have sent you an email: click the link in it to confirm your subscription.</span><span data-k="nlfail">Subscribing did not work. Please try again in a moment.</span></div>
+<div id="ui" hidden><span data-k="play">Play</span><span data-k="pause">Pause</span><span data-k="email">Please enter a valid email address so we can reach you.</span><span data-k="tick">Please tick the box so we may contact you about this request.</span><span data-k="fill">Please fill in this field:</span><span data-k="sent">Thank you, your request has been received. We will contact you within 24 hours.</span><span data-k="psent">Thank you, your application has been received. We review it personally and send your link within a few working days.</span><span data-k="tsent">Thank you, your order has been received. We will contact you within 24 hours to set up ${TC} on your website.</span><span data-k="failed">Sending failed. Please try again, or email us at info@drpbuildlab.com.</span><span data-k="nlsent">Almost done. We have sent you an email: click the link in it to confirm your subscription.</span><span data-k="nlfail">Subscribing did not work. Please try again in a moment.</span><span data-k="pick">Please choose one of the options to continue.</span></div>
+${nav === 'contact' ? '' : `<a class="stick-cta" id="stickCta" href="${B}/contact/" tabindex="-1" aria-hidden="true">Get a free quote</a>`}
 <a href="https://wa.me/32473744431" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp us"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.782 6.86L2 30l7.347-1.758A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.25-4.36 1.043 1.072-4.25-.276-.436A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.66c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.232.348-.898 1.132-1.1 1.364-.202.232-.404.26-.752.086-.348-.174-1.468-.54-2.796-1.724-1.034-.92-1.73-2.056-1.934-2.404-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.434-.028-.608-.086-.174-.78-1.882-1.07-2.576-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.608.086-.926.434-.318.348-1.216 1.188-1.216 2.896s1.244 3.356 1.418 3.588c.174.232 2.448 3.736 5.932 5.238.83.358 1.478.572 1.982.732.832.264 1.59.226 2.188.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.204-1.656-.086-.144-.318-.232-.666-.406z"/></svg></a>
 </body>
 </html>
@@ -317,7 +344,7 @@ ${cursor ? '<div class="cur" id="cur" aria-hidden="true">View</div>' : ''}
 
 const ctaBand = (h = 'Let’s build <em>your website.</em>', sub = 'Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.') => `
 <section class="sec blue tight"><div class="wrap cta-band">
-  <div><h2 class="h2 cta">${h.replace('<em>', '<em style="color:var(--ink)">')}</h2><p class="lede" style="color:#fff;margin-top:20px">${sub}</p></div>
+  <div><h2 class="h2 cta">${h}</h2><p class="lede" style="color:#fff;margin-top:20px">${sub}</p></div>
   <a class="btn dark" href="${B}/contact/">Request your free demo website ${arr}</a>
 </div></section>`;
 
@@ -366,6 +393,7 @@ const demoForm = (id, title = 'Request your free demo website') => `<form class=
   <input type="hidden" name="subject" value="Nieuwe offerteaanvraag — DRP BuildLab">
   <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
   <h3>${title}</h3>
+  ${dealNote}
   <div class="frow">
     <div class="fld"><label for="${id}-name">Your name</label><input id="${id}-name" name="voornaam" autocomplete="name" required></div>
     <div class="fld"><label for="${id}-tel">Phone</label><input id="${id}-tel" name="telefoon" type="tel" autocomplete="tel" required></div>
@@ -429,6 +457,7 @@ pages[''] = page({
   </div>
   <ul class="facts"><li>Custom built, no templates</li><li>Websites from €499</li><li>Maintenance plans at €29 a month</li><li>One point of contact</li></ul>
 </div></section>
+${dealSection()}
 
 <section class="reel-sec" id="reel" aria-label="Showreel">
   <div class="reel" id="reelBox">
@@ -835,7 +864,7 @@ pages['prijzen'] = page({
   body: `${phero({ h1: 'Fair prices, <em>no surprises</em>', lede: 'A one-page website with contact form from €499. Everything else is priced on demand, in a quote made to measure. Maintenance is optional at €29 a month.', acts: `<a class="btn" href="${B}/contact/">Request your free demo website ${arr}</a>` })}
 <section class="sec fog"><div class="wrap">
   <div class="plans">
-    <div class="plan rv"><p class="for">For new and small businesses</p><h2>Starter package</h2><p class="amount">€499<small>one-off</small></p><p class="note">A one-page website with a contact form, made for your business. For businesses that have just started, or want their current site turned into a modern, professional one.</p>
+    <div class="plan rv"><p class="for">For new and small businesses</p><h2>Starter package</h2><p class="amount">€499<small>one-off</small></p><p class="deal-note" data-deal><b>Black Friday:</b> a free extra page, worth €79, until Monday 30 November.</p><p class="note">A one-page website with a contact form, made for your business. For businesses that have just started, or want their current site turned into a modern, professional one.</p>
       <ul><li>A website fully made for your business</li><li>Works on every phone and tablet</li><li>Contact form and WhatsApp button</li><li>Google Maps and basic SEO</li><li>Personal guidance from start to launch</li></ul>
       <a class="btn dark" href="${B}/contact/">Request a free quote ${arr}</a></div>
     <div class="plan dark rv"><p class="for">For bigger or more complex projects</p><h2>Made to measure</h2><p class="amount" style="font-size:clamp(48px,5vw,76px)">On demand</p><p class="note">Webshops, booking systems, multilingual sites, integrations or features nobody else has. We price it on the scope of your project.</p>
@@ -891,7 +920,76 @@ pages['contact'] = page({
     <input type="hidden" name="form-name" value="offerte-aanvraag">
   <input type="hidden" name="subject" value="Nieuwe offerteaanvraag — DRP BuildLab">
   <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-    <h3>Request your free demo website</h3>
+    <h3>Get your free quote</h3>
+    ${dealNote}
+    <!-- Quote builder (site.js): one step at a time with JavaScript, the whole
+         form at once without. Answers without a name (features, timing, the
+         free text) are written into the hidden "bericht" in Dutch on submit,
+         so Netlify, /api/form and the client zone need no new fields. -->
+    <input type="hidden" name="bericht" value="">
+    <div class="wz-prog" aria-hidden="true"><span class="wz-bar"><i></i></span><span class="wz-count"><span class="wz-n">1</span> / 4</span></div>
+    <fieldset class="wz-step" data-step="1"><legend class="wz-q">What are we building?</legend>
+      <div class="wz-cards">
+        <input type="radio" name="dienst" id="q-s1" value="Startpakket (website van één pagina)" data-slug="starter" data-kind="site" required><label for="q-s1"><b>A one-page website</b><small>Starter package, from €499</small></label>
+        <input type="radio" name="dienst" id="q-s2" value="Website met meerdere pagina’s" data-slug="custom" data-kind="site"><label for="q-s2"><b>A website with several pages</b><small>Made to measure</small></label>
+        <input type="radio" name="dienst" id="q-s3" value="Webshop" data-slug="webshop" data-kind="shop"><label for="q-s3"><b>A webshop</b><small>Sell online</small></label>
+        <input type="radio" name="dienst" id="q-s4" value="Een bestaande website bijwerken" data-slug="update" data-kind="redo"><label for="q-s4"><b>A new look for my website</b><small>Redesign or refresh</small></label>
+        <input type="radio" name="dienst" id="q-s5" value="Alleen extra diensten (logo, SEO, …)" data-slug="extras" data-kind="extra"><label for="q-s5"><b>Extra services only</b><small>Logo, SEO, Google Ads…</small></label>
+        <input type="radio" name="dienst" id="q-s6" value="Dat weet ik nog niet" data-slug="undecided" data-kind="unsure"><label for="q-s6"><b>I’m not sure yet</b><small>We’ll help you choose</small></label>
+      </div>
+    </fieldset>
+    <fieldset class="wz-step" data-step="2"><legend class="wz-q">What should it do?</legend>
+      <p class="wz-hint">Pick what applies. You can skip this step.</p>
+      <div class="chips wz-opt" data-for="site redo"><span class="wz-sub">Features</span>
+        <input type="checkbox" id="q-f1" value="Contactformulier"><label for="q-f1">Contact form</label>
+        <input type="checkbox" id="q-f2" value="Online afspraken of reservaties"><label for="q-f2">Online bookings</label>
+        <input type="checkbox" id="q-f3" value="Meertalig"><label for="q-f3">Several languages</label>
+        <input type="checkbox" id="q-f4" value="Blog of nieuws"><label for="q-f4">Blog or news</label>
+        <input type="checkbox" id="q-f5" value="Portfolio of fotogalerij"><label for="q-f5">Portfolio or photo gallery</label>
+        <input type="checkbox" id="q-f6" value="Online betalen"><label for="q-f6">Online payments</label>
+        <input type="checkbox" id="q-f7" value="Google-reviews op de site"><label for="q-f7">Google reviews on the site</label>
+      </div>
+      <div class="chips wz-opt" data-for="shop"><span class="wz-sub">How many products?</span>
+        <input type="radio" name="producten" id="q-p1" value="Minder dan 50 producten"><label for="q-p1">Fewer than 50</label>
+        <input type="radio" name="producten" id="q-p2" value="50 tot 500 producten"><label for="q-p2">50 to 500</label>
+        <input type="radio" name="producten" id="q-p3" value="Meer dan 500 producten"><label for="q-p3">More than 500</label>
+      </div>
+      <div class="chips wz-opt" data-for="shop"><span class="wz-sub">Features</span>
+        <input type="checkbox" id="q-w1" value="Shopify"><label for="q-w1">On Shopify</label>
+        <input type="checkbox" id="q-w2" value="Verzending en facturatie gekoppeld"><label for="q-w2">Shipping and invoicing</label>
+        <input type="checkbox" id="q-w3" value="Voorraadbeheer"><label for="q-w3">Stock management</label>
+        <input type="checkbox" id="q-w4" value="B2B-portaal met eigen prijzen"><label for="q-w4">B2B prices and login</label>
+        <input type="checkbox" id="q-w5" value="Meertalige webshop"><label for="q-w5">Several languages</label>
+        <input type="checkbox" id="q-w6" value="Abonnementen"><label for="q-w6">Subscriptions</label>
+      </div>
+      <div class="fld wz-opt" data-for="redo"><label for="q-site">Your current website <small>(optional)</small></label><input id="q-site" name="website" inputmode="url" autocomplete="url" spellcheck="false" maxlength="200" placeholder="www.example.com"></div>
+      <div class="chips wz-opt" data-for="redo"><span class="wz-sub">What bothers you about it?</span>
+        <input type="checkbox" id="q-r1" value="Ziet er verouderd uit"><label for="q-r1">It looks dated</label>
+        <input type="checkbox" id="q-r2" value="Traag"><label for="q-r2">It is slow</label>
+        <input type="checkbox" id="q-r3" value="Werkt slecht op gsm"><label for="q-r3">Poor on phones</label>
+        <input type="checkbox" id="q-r4" value="Levert geen aanvragen op"><label for="q-r4">No enquiries</label>
+        <input type="checkbox" id="q-r5" value="Moeilijk zelf aan te passen"><label for="q-r5">Hard to update</label>
+      </div>
+      <div class="chips wz-opt" data-for="extra site shop redo"><span class="wz-sub">Extra services</span>
+        <input type="checkbox" id="q-x1" value="Logo"><label for="q-x1">Logo design</label>
+        <input type="checkbox" id="q-x2" value="SEO"><label for="q-x2">SEO</label>
+        <input type="checkbox" id="q-x3" value="Google Ads"><label for="q-x3">Google Ads</label>
+        <input type="checkbox" id="q-x4" value="Fotografie"><label for="q-x4">Photography</label>
+        <input type="checkbox" id="q-x5" value="Koppelingen (boekhouding, reservaties…)"><label for="q-x5">Integrations</label>
+        <input type="checkbox" id="q-x6" value="Onderhoudsabonnement"><label for="q-x6">Maintenance plan</label>
+      </div>
+      <div class="fld wz-opt" data-for="unsure"><label for="q-about">Tell us a little about your business <small>(optional)</small></label><textarea id="q-about" rows="4" maxlength="2000"></textarea></div>
+    </fieldset>
+    <fieldset class="wz-step" data-step="3"><legend class="wz-q">When should it be online?</legend>
+      <div class="chips">
+        <input type="radio" name="timing" id="q-n1" value="Zo snel mogelijk"><label for="q-n1">As soon as possible</label>
+        <input type="radio" name="timing" id="q-n2" value="Binnen een maand"><label for="q-n2">Within a month</label>
+        <input type="radio" name="timing" id="q-n3" value="Binnen 1 tot 3 maanden"><label for="q-n3">In 1 to 3 months</label>
+        <input type="radio" name="timing" id="q-n4" value="Nog aan het oriënteren"><label for="q-n4">Just looking around</label>
+      </div>
+      <div class="fld"><label for="q-msg">Anything else we should know? <small>(optional)</small></label><textarea id="q-msg" rows="4" maxlength="2000"></textarea></div>
+    </fieldset>
+    <fieldset class="wz-step" data-step="4"><legend class="wz-q">Where do we send your quote?</legend>
     <div class="frow">
       <div class="fld"><label for="q-first">First name</label><input id="q-first" name="voornaam" autocomplete="given-name" required></div>
       <div class="fld"><label for="q-last">Last name</label><input id="q-last" name="achternaam" autocomplete="family-name"></div>
@@ -908,14 +1006,18 @@ pages['contact'] = page({
       <div class="fld"><label for="q-phone">Phone</label><input id="q-phone" name="telefoon" type="tel" autocomplete="tel" required></div>
       <div class="fld"><label for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" required></div>
     </div>
-    <div class="fld"><label for="q-service">Which service do you have in mind?</label><select id="q-service" name="dienst" required><option value="">Choose a service</option><option value="Startpakket (website van één pagina)">Starter package (one-page website)</option><option value="Op maat gemaakt, offerte">Made to measure, quote</option><option value="Een bestaande website bijwerken">Update an existing website</option><option value="Alleen extra diensten (logo, SEO, …)">Extra services only (logo, SEO, …)</option><option value="Dat weet ik nog niet">I don’t know yet</option></select></div>
     <div class="fld"><label for="q-ref">Partner code <small>(optional)</small></label><input id="q-ref" name="ref" spellcheck="false" maxlength="32"></div>
-    <div class="fld"><label for="q-msg">Message <small>(optional)</small></label><textarea id="q-msg" name="bericht"></textarea></div>
     <label class="check" for="q-consent"><input type="checkbox" id="q-consent" name="toestemming" value="ja" required><span>I agree that DRP BuildLab uses the details in this form to contact me about this request. <a href="${B}/privacy/">Privacy policy</a></span></label>
-    <button class="btn dark" type="submit">Request my free demo ${arr}</button>
+    </fieldset>
+    <div class="wz-nav">
+      <button class="btn line wz-back" type="button">Back</button>
+      <button class="btn dark wz-next" type="button">Next step</button>
+      <button class="btn dark wz-send" type="submit">Send my quote request ${arr}</button>
+    </div>
     <p class="ok" role="status" aria-live="polite"></p>
+    <small>Free and without obligation. We reply within 24 hours.</small>
   </form>
-</div></section>`
+</div></section></div></section>`
 });
 
 pages['partner-worden'] = page({

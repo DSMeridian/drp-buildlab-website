@@ -59,16 +59,17 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&amp;family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=mwmcf0d5">
-<script defer="" src="/assets/site.js?v=mwmcf0d5"></script>
-<link rel="stylesheet" href="/assets/chat.css?v=mwmcf0d5">
-<script defer="" src="/assets/chat.js?v=mwmcf0d5"></script>
-<link rel="stylesheet" href="/assets/consent.css?v=mwmcf0d5">
-<script defer="" src="/assets/referral.js?v=mwmcf0d5"></script>
-<script defer="" src="/assets/consent.js?v=mwmcf0d5"></script>
+<link rel="stylesheet" href="/assets/site.css?v=mwpabo3a">
+<script defer="" src="/assets/site.js?v=mwpabo3a"></script>
+<link rel="stylesheet" href="/assets/chat.css?v=mwpabo3a">
+<script defer="" src="/assets/chat.js?v=mwpabo3a"></script>
+<link rel="stylesheet" href="/assets/consent.css?v=mwpabo3a">
+<script defer="" src="/assets/referral.js?v=mwpabo3a"></script>
+<script defer="" src="/assets/consent.js?v=mwpabo3a"></script>
 </head>
 <body>
 <a class="skip" href="#main">Direkt zum Inhalt springen</a>
+<div class="deal-bar" data-deal="" data-deal-end="2026-12-01T00:00:00+01:00"><div class="wrap deal-bar-in"><p><b>Black Friday:</b> eine zusätzliche Seite gratis zu jedem Einsteigerpaket für <span class="money" data-eur="499" translate="no">€499</span>, dazu 10 % Rabatt auf alle Zusatzleistungen. Bis Montag, 30. November.</p><a href="/de/#deal">Aktion sichern</a></div></div>
 <header class="hdr" id="hdr"><div class="wrap hdr-in">
   <a class="logo" href="/de/" aria-label="DRP BuildLab home" translate="no"><span class="l1">DRP</span><span class="l2">BUILDLAB</span></a>
   <nav class="nav" aria-label="Hauptmenü"><a href="/de/werk/">Arbeit</a><a href="/de/diensten/">Dienstleistungen</a><a href="/de/over-ons/">Über uns</a><a href="/de/prijzen/">Preise</a><a href="/de/partner-worden/">Partner</a><a href="/de/blog/">Blog</a><a href="/de/contact/" aria-current="page">Kontakt</a></nav>
@@ -111,7 +112,76 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
     <input type="hidden" name="form-name" value="offerte-aanvraag">
   <input type="hidden" name="subject" value="Nieuwe offerteaanvraag — DRP BuildLab">
   <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-    <h3>Fordern Sie Ihre kostenlose Demo-Website an</h3>
+    <h3>Fordern Sie Ihr kostenloses Angebot an</h3>
+    <p class="deal-note" data-deal=""><b>Black-Friday-Aktion:</b> eine zusätzliche Seite gratis und 10 % Rabatt auf Zusatzleistungen, direkt in Ihrem Angebot.</p>
+    <!-- Quote builder (site.js): one step at a time with JavaScript, the whole
+         form at once without. Answers without a name (features, timing, the
+         free text) are written into the hidden "bericht" in Dutch on submit,
+         so Netlify, /api/form and the client zone need no new fields. -->
+    <input type="hidden" name="bericht" value="">
+    <div class="wz-prog" aria-hidden="true"><span class="wz-bar"><i></i></span><span class="wz-count"><span class="wz-n">1</span> / 4</span></div>
+    <fieldset class="wz-step" data-step="1"><legend class="wz-q">Was sollen wir bauen?</legend>
+      <div class="wz-cards">
+        <input type="radio" name="dienst" id="q-s1" value="Startpakket (website van één pagina)" data-slug="starter" data-kind="site" required=""><label for="q-s1"><b>Eine einseitige Website</b><small>Einsteigerpaket, ab <span class="money" data-eur="499" translate="no">€499</span></small></label>
+        <input type="radio" name="dienst" id="q-s2" value="Website met meerdere pagina’s" data-slug="custom" data-kind="site"><label for="q-s2"><b>Eine Website mit mehreren Seiten</b><small>Maßgefertigt</small></label>
+        <input type="radio" name="dienst" id="q-s3" value="Webshop" data-slug="webshop" data-kind="shop"><label for="q-s3"><b>Ein Online-Shop</b><small>Online verkaufen</small></label>
+        <input type="radio" name="dienst" id="q-s4" value="Een bestaande website bijwerken" data-slug="update" data-kind="redo"><label for="q-s4"><b>Ein neues Design für meine Website</b><small>Neugestaltung oder Auffrischung</small></label>
+        <input type="radio" name="dienst" id="q-s5" value="Alleen extra diensten (logo, SEO, …)" data-slug="extras" data-kind="extra"><label for="q-s5"><b>Nur Zusatzleistungen</b><small>Logo, SEO, Google Ads…</small></label>
+        <input type="radio" name="dienst" id="q-s6" value="Dat weet ik nog niet" data-slug="undecided" data-kind="unsure"><label for="q-s6"><b>Ich bin mir noch nicht sicher</b><small>Wir helfen Ihnen bei der Wahl</small></label>
+      </div>
+    </fieldset>
+    <fieldset class="wz-step" data-step="2"><legend class="wz-q">Was soll die Website können?</legend>
+      <p class="wz-hint">Wählen Sie aus, was zutrifft. Sie können diesen Schritt überspringen.</p>
+      <div class="chips wz-opt" data-for="site redo"><span class="wz-sub">Funktionen</span>
+        <input type="checkbox" id="q-f1" value="Contactformulier"><label for="q-f1">Kontaktformular</label>
+        <input type="checkbox" id="q-f2" value="Online afspraken of reservaties"><label for="q-f2">Online-Buchungen</label>
+        <input type="checkbox" id="q-f3" value="Meertalig"><label for="q-f3">Mehrere Sprachen</label>
+        <input type="checkbox" id="q-f4" value="Blog of nieuws"><label for="q-f4">Blog oder News</label>
+        <input type="checkbox" id="q-f5" value="Portfolio of fotogalerij"><label for="q-f5">Portfolio oder Fotogalerie</label>
+        <input type="checkbox" id="q-f6" value="Online betalen"><label for="q-f6">Online-Zahlungen</label>
+        <input type="checkbox" id="q-f7" value="Google-reviews op de site"><label for="q-f7">Google-Bewertungen auf der Website</label>
+      </div>
+      <div class="chips wz-opt" data-for="shop"><span class="wz-sub">Wie viele Produkte?</span>
+        <input type="radio" name="producten" id="q-p1" value="Minder dan 50 producten"><label for="q-p1">Weniger als 50</label>
+        <input type="radio" name="producten" id="q-p2" value="50 tot 500 producten"><label for="q-p2">50 bis 500</label>
+        <input type="radio" name="producten" id="q-p3" value="Meer dan 500 producten"><label for="q-p3">Mehr als 500</label>
+      </div>
+      <div class="chips wz-opt" data-for="shop"><span class="wz-sub">Funktionen</span>
+        <input type="checkbox" id="q-w1" value="Shopify"><label for="q-w1">Mit Shopify</label>
+        <input type="checkbox" id="q-w2" value="Verzending en facturatie gekoppeld"><label for="q-w2">Versand und Rechnungsstellung</label>
+        <input type="checkbox" id="q-w3" value="Voorraadbeheer"><label for="q-w3">Bestandsverwaltung</label>
+        <input type="checkbox" id="q-w4" value="B2B-portaal met eigen prijzen"><label for="q-w4">B2B-Preise und Kunden-Login</label>
+        <input type="checkbox" id="q-w5" value="Meertalige webshop"><label for="q-w5">Mehrere Sprachen</label>
+        <input type="checkbox" id="q-w6" value="Abonnementen"><label for="q-w6">Abonnements</label>
+      </div>
+      <div class="fld wz-opt" data-for="redo"><label for="q-site">Ihre aktuelle Website <small>(optional)</small></label><input id="q-site" name="website" inputmode="url" autocomplete="url" spellcheck="false" maxlength="200" placeholder="www.beispiel.de"></div>
+      <div class="chips wz-opt" data-for="redo"><span class="wz-sub">Was stört Sie daran?</span>
+        <input type="checkbox" id="q-r1" value="Ziet er verouderd uit"><label for="q-r1">Wirkt veraltet</label>
+        <input type="checkbox" id="q-r2" value="Traag"><label for="q-r2">Ist langsam</label>
+        <input type="checkbox" id="q-r3" value="Werkt slecht op gsm"><label for="q-r3">Schlecht auf dem Smartphone</label>
+        <input type="checkbox" id="q-r4" value="Levert geen aanvragen op"><label for="q-r4">Keine Anfragen</label>
+        <input type="checkbox" id="q-r5" value="Moeilijk zelf aan te passen"><label for="q-r5">Schwer zu aktualisieren</label>
+      </div>
+      <div class="chips wz-opt" data-for="extra site shop redo"><span class="wz-sub">Zusatzleistungen</span>
+        <input type="checkbox" id="q-x1" value="Logo"><label for="q-x1">Logo-Gestaltung</label>
+        <input type="checkbox" id="q-x2" value="SEO"><label for="q-x2">SEO</label>
+        <input type="checkbox" id="q-x3" value="Google Ads"><label for="q-x3">Google Ads</label>
+        <input type="checkbox" id="q-x4" value="Fotografie"><label for="q-x4">Fotografie</label>
+        <input type="checkbox" id="q-x5" value="Koppelingen (boekhouding, reservaties…)"><label for="q-x5">Integrationen</label>
+        <input type="checkbox" id="q-x6" value="Onderhoudsabonnement"><label for="q-x6">Wartungsplan</label>
+      </div>
+      <div class="fld wz-opt" data-for="unsure"><label for="q-about">Erzählen Sie uns kurz von Ihrem Unternehmen <small>(optional)</small></label><textarea id="q-about" rows="4" maxlength="2000"></textarea></div>
+    </fieldset>
+    <fieldset class="wz-step" data-step="3"><legend class="wz-q">Wann soll die Website online gehen?</legend>
+      <div class="chips">
+        <input type="radio" name="timing" id="q-n1" value="Zo snel mogelijk"><label for="q-n1">So schnell wie möglich</label>
+        <input type="radio" name="timing" id="q-n2" value="Binnen een maand"><label for="q-n2">Innerhalb eines Monats</label>
+        <input type="radio" name="timing" id="q-n3" value="Binnen 1 tot 3 maanden"><label for="q-n3">In 1 bis 3 Monaten</label>
+        <input type="radio" name="timing" id="q-n4" value="Nog aan het oriënteren"><label for="q-n4">Ich schaue mich nur um</label>
+      </div>
+      <div class="fld"><label for="q-msg">Gibt es noch etwas, das wir wissen sollten? <small>(optional)</small></label><textarea id="q-msg" rows="4" maxlength="2000"></textarea></div>
+    </fieldset>
+    <fieldset class="wz-step" data-step="4"><legend class="wz-q">Wohin dürfen wir Ihr Angebot senden?</legend>
     <div class="frow">
       <div class="fld"><label for="q-first">Vorname</label><input id="q-first" name="voornaam" autocomplete="given-name" required=""></div>
       <div class="fld"><label for="q-last">Nachname</label><input id="q-last" name="achternaam" autocomplete="family-name"></div>
@@ -128,12 +198,16 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
       <div class="fld"><label for="q-phone">Telefon</label><input id="q-phone" name="telefoon" type="tel" autocomplete="tel" required=""></div>
       <div class="fld"><label for="q-email">E-Mail</label><input id="q-email" name="email" type="email" autocomplete="email" required=""></div>
     </div>
-    <div class="fld"><label for="q-service">An welche Dienstleistung denken Sie?</label><select id="q-service" name="dienst" required=""><option value="">Wählen Sie einen Dienst aus</option><option value="Startpakket (website van één pagina)">Einsteigerpaket (einseitige Website)</option><option value="Op maat gemaakt, offerte">Maßanfertigung, Kostenvoranschlag</option><option value="Een bestaande website bijwerken">Eine bestehende Website aktualisieren</option><option value="Alleen extra diensten (logo, SEO, …)">Nur Zusatzleistungen (Logo, SEO, …)</option><option value="Dat weet ik nog niet">Das weiß ich noch nicht</option></select></div>
     <div class="fld"><label for="q-ref">Partnercode <small>(optional)</small></label><input id="q-ref" name="ref" spellcheck="false" maxlength="32"></div>
-    <div class="fld"><label for="q-msg">Nachricht <small>(optional)</small></label><textarea id="q-msg" name="bericht"></textarea></div>
     <label class="check" for="q-consent"><input type="checkbox" id="q-consent" name="toestemming" value="ja" required=""><span>Ich stimme zu, dass DRP BuildLab die Angaben in diesem Formular verwendet, um mich bezüglich dieser Anfrage zu kontaktieren. <a href="/de/privacy/">Datenschutzerklärung</a></span></label>
-    <button class="btn dark" type="submit">Fordern Sie meine kostenlose Demo an <span class="arr" aria-hidden="true">→</span></button>
+    </fieldset>
+    <div class="wz-nav">
+      <button class="btn line wz-back" type="button">Zurück</button>
+      <button class="btn dark wz-next" type="button">Nächster Schritt</button>
+      <button class="btn dark wz-send" type="submit">Angebotsanfrage senden <span class="arr" aria-hidden="true">→</span></button>
+    </div>
     <p class="ok" role="status" aria-live="polite"></p>
+    <small>Kostenlos und unverbindlich. Wir antworten innerhalb von 24 Stunden.</small>
   </form>
 </div></section>
 </main>
@@ -159,11 +233,12 @@ try{var c=JSON.parse(localStorage.getItem('drp-consent')||'null');if(c&&c.v===1)
     <p>© 2026 DRP BuildLab · Umsatzsteuer-Identifikationsnummer BE 1033.313.383</p>
     <p class="ft-legal"><a href="/de/algemene-voorwaarden/">Begriffe</a><a href="/de/privacy/">Datenschutz</a></p>
     <details class="ft-market"><summary translate="no">Deutschland · Deutsch</summary><div class="mk-list" translate="no"><h3>Europe</h3><a href="/be/contact/" hreflang="nl-BE">België · Nederlands</a><a href="/be/fr/contact/" hreflang="fr-BE">Belgique · Français</a><a href="/nl/contact/" hreflang="nl-NL">Nederland · Nederlands</a><a href="/fr/contact/" hreflang="fr-FR">France · Français</a><a href="/lu/contact/" hreflang="fr-LU">Luxembourg · Français</a><a href="/lu/de/contact/" hreflang="de-LU">Luxemburg · Deutsch</a><a href="/ch/contact/" hreflang="fr-CH">Suisse · Français</a><a href="/ch/de/contact/" hreflang="de-CH">Schweiz · Deutsch</a><a href="/ch/it/contact/" hreflang="it-CH">Svizzera · Italiano</a><a href="/de/contact/" hreflang="de-DE" aria-current="true">Deutschland · Deutsch</a><a href="/at/contact/" hreflang="de-AT">Österreich · Deutsch</a><a href="/es/contact/" hreflang="es-ES">España · Español</a><a href="/gb/contact/" hreflang="en-GB">United Kingdom · English</a><a href="/ie/contact/" hreflang="en-IE">Ireland · English</a><a href="/it/contact/" hreflang="it-IT">Italia · Italiano</a><a href="/pl/contact/" hreflang="pl-PL">Polska · Polski</a><h3>Americas</h3><a href="/us/contact/" hreflang="en-US">United States · English</a><a href="/ca/contact/" hreflang="en-CA">Canada · English</a><a href="/ca/fr/contact/" hreflang="fr-CA">Canada · Français</a><a href="/mx/contact/" hreflang="es-MX">México · Español</a><a href="/cl/contact/" hreflang="es-CL">Chile · Español</a><a href="/br/contact/" hreflang="pt-BR">Brasil · Português</a><h3>Asia Pacific</h3><a href="/id/contact/" hreflang="id-ID">Indonesia · Bahasa Indonesia</a><a href="/jp/contact/" hreflang="ja-JP">日本 · 日本語</a><a href="/sg/contact/" hreflang="en-SG">Singapore · English</a><a href="/au/contact/" hreflang="en-AU">Australia · English</a><h3>Middle East</h3><a href="/ae/contact/" hreflang="ar-AE">الإمارات · العربية</a><a href="/ae/en/contact/" hreflang="en-AE">United Arab Emirates · English</a><a href="/sa/contact/" hreflang="ar-SA">السعودية · العربية</a><a href="/sa/en/contact/" hreflang="en-SA">Saudi Arabia · English</a><a href="/qa/contact/" hreflang="ar-QA">قطر · العربية</a><a href="/qa/en/contact/" hreflang="en-QA">Qatar · English</a><h3>Africa</h3><a href="/za/contact/" hreflang="en-ZA">South Africa · English</a><a href="/za/af/contact/" hreflang="af-ZA">Suid-Afrika · Afrikaans</a></div></details>
-    <a class="ft-top-link" href="#main">Zurück zum Anfang ↑</a>
+    <a class="ft-top-link" href="#main">Zurück zum Anfang</a>
   </div>
 </div></footer>
 
-<div id="ui" hidden=""><span data-k="play">Abspielen</span><span data-k="pause">Pause</span><span data-k="email">Bitte geben Sie eine gültige E-Mail-Adresse ein, damit wir Sie erreichen können.</span><span data-k="tick">Bitte kreuzen Sie das Kästchen an, damit wir Sie bezüglich dieser Anfrage kontaktieren können.</span><span data-k="fill">Bitte füllen Sie dieses Feld aus:</span><span data-k="sent">Vielen Dank, Ihre Anfrage ist bei uns eingegangen. Wir werden uns innerhalb von 24 Stunden mit Ihnen in Verbindung setzen.</span><span data-k="psent">Vielen Dank, Ihre Bewerbung ist bei uns eingegangen. Wir prüfen sie persönlich und senden Ihnen Ihren Link innerhalb weniger Werktage zu.</span><span data-k="tsent">Vielen Dank, Ihre Bestellung ist bei uns eingegangen. Wir melden uns innerhalb von 24 Stunden bei Ihnen, um <span translate="no">Concierge</span> auf Ihrer Website einzurichten.</span><span data-k="failed">Der Versand ist fehlgeschlagen. Bitte versuchen Sie es erneut oder senden Sie uns eine E-Mail an info@drpbuildlab.com.</span><span data-k="nlsent">Fast fertig. Wir haben Ihnen eine E-Mail gesendet: Klicken Sie auf den darin enthaltenen Link, um Ihr Abonnement zu bestätigen.</span><span data-k="nlfail">Das Abonnieren ist fehlgeschlagen. Bitte versuchen Sie es in Kürze erneut.</span></div>
+<div id="ui" hidden=""><span data-k="play">Abspielen</span><span data-k="pause">Pause</span><span data-k="email">Bitte geben Sie eine gültige E-Mail-Adresse ein, damit wir Sie erreichen können.</span><span data-k="tick">Bitte kreuzen Sie das Kästchen an, damit wir Sie bezüglich dieser Anfrage kontaktieren können.</span><span data-k="fill">Bitte füllen Sie dieses Feld aus:</span><span data-k="sent">Vielen Dank, Ihre Anfrage ist bei uns eingegangen. Wir werden uns innerhalb von 24 Stunden mit Ihnen in Verbindung setzen.</span><span data-k="psent">Vielen Dank, Ihre Bewerbung ist bei uns eingegangen. Wir prüfen sie persönlich und senden Ihnen Ihren Link innerhalb weniger Werktage zu.</span><span data-k="tsent">Vielen Dank, Ihre Bestellung ist bei uns eingegangen. Wir melden uns innerhalb von 24 Stunden bei Ihnen, um <span translate="no">Concierge</span> auf Ihrer Website einzurichten.</span><span data-k="failed">Der Versand ist fehlgeschlagen. Bitte versuchen Sie es erneut oder senden Sie uns eine E-Mail an info@drpbuildlab.com.</span><span data-k="nlsent">Fast fertig. Wir haben Ihnen eine E-Mail gesendet: Klicken Sie auf den darin enthaltenen Link, um Ihr Abonnement zu bestätigen.</span><span data-k="nlfail">Das Abonnieren ist fehlgeschlagen. Bitte versuchen Sie es in Kürze erneut.</span><span data-k="pick">Bitte wählen Sie eine der Optionen, um fortzufahren.</span></div>
+
 <a href="https://wa.me/32473744431" class="wa-float" target="_blank" rel="noopener" aria-label="Schreiben Sie uns eine WhatsApp-Nachricht"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.782 6.86L2 30l7.347-1.758A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.89-1.608l-.422-.25-4.36 1.043 1.072-4.25-.276-.436A11.56 11.56 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.66c-.348-.174-2.06-1.016-2.38-1.132-.318-.116-.55-.174-.78.174-.232.348-.898 1.132-1.1 1.364-.202.232-.404.26-.752.086-.348-.174-1.468-.54-2.796-1.724-1.034-.92-1.73-2.056-1.934-2.404-.202-.348-.022-.536.152-.71.156-.154.348-.404.522-.606.174-.202.232-.348.348-.58.116-.232.058-.434-.028-.608-.086-.174-.78-1.882-1.07-2.576-.282-.676-.568-.584-.78-.594l-.664-.012c-.232 0-.608.086-.926.434-.318.348-1.216 1.188-1.216 2.896s1.244 3.356 1.418 3.588c.174.232 2.448 3.736 5.932 5.238.83.358 1.478.572 1.982.732.832.264 1.59.226 2.188.138.668-.1 2.06-.842 2.35-1.656.29-.814.29-1.512.204-1.656-.086-.144-.318-.232-.666-.406z"></path></svg></a>
 
 

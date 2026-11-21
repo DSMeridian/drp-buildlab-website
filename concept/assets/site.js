@@ -86,6 +86,14 @@ if (cur && matchMedia('(hover:hover)').matches && !reduce) {
 /* strings the scripts show, translated with the page (#ui in every page) */
 const ui = k => ($(`#ui [data-k="${k}"]`) || {}).textContent || '';
 
+/* Black Friday 2026 (DEAL_END in tools/concept/build.js): the deal bar,
+   section and notes go once the deal has ended. While it runs, every quote
+   request says so in its message, for the team and the client zone. */
+const dealEnd = Date.parse(($('[data-deal-end]') || { dataset: {} }).dataset.dealEnd);
+const dealOn = dealEnd > Date.now();
+if (!dealOn) $$('[data-deal]').forEach(el => el.remove());
+const DEAL_TAG = 'Black Friday-actie: gratis extra pagina bij het startpakket + 10% korting op extra diensten';
+
 /* quote form: company fields only for a business, and disabled otherwise so
    a company typed before switching to "private" is not submitted */
 (() => {
@@ -113,11 +121,80 @@ function track(f) {
     const ch = $('select[name="kanaal"]', f), reach = $('select[name="bereik"]', f);
     ev = { event: 'partner_request', partner_channel: PARTNER_CHANNEL[ch ? ch.selectedIndex : -1] || 'unknown', partner_reach: reach && reach.selectedIndex > 0 ? reach.selectedIndex : 0, ...base };
   } else {
-    const sel = $('select[name="dienst"]', f), chip = $('input[name="dienst"]:checked', f);
-    ev = { event: 'demo_request', demo_service: sel ? (DEMO_SERVICE[sel.selectedIndex] || 'unknown') : (chip ? chip.dataset.slug : 'unknown'), demo_form: f.id, ...base };
+    const sel = $('select[name="dienst"]', f), chip = $('input[name="dienst"]:checked', f) || $('input[type="hidden"][name="dienst"]', f);
+    ev = { event: 'demo_request', demo_service: sel ? (DEMO_SERVICE[sel.selectedIndex] || 'unknown') : (chip ? chip.dataset.slug : 'unknown'), demo_form: f.id, demo_offer: dealOn && f.dataset.sent === 'sent' ? 'black_friday' : '', ...base };
   }
   window.dataLayer = window.dataLayer || []; window.dataLayer.push(ev);
 }
+const push = ev => { window.dataLayer = window.dataLayer || []; window.dataLayer.push(ev); };
+
+/* Quote builder on /contact/ (#quote): four steps, one at a time. Without
+   JavaScript the form shows every step at once and still posts. The answers
+   that have no field of their own (features, timing, free text) are written
+   into the hidden "bericht" in Dutch, for the team, just before the shared
+   submit handler below sends the form; this listener is added first so it
+   runs first. */
+(() => {
+  const f = $('#quote');
+  if (!f || !$('.wz-step', f)) return;
+  const steps = $$('.wz-step', f), msg = $('.ok', f);
+  const back = $('.wz-back', f), next = $('.wz-next', f), send = $('.wz-send', f);
+  let at = 0;
+  f.classList.add('wz');
+  const choice = () => $('input[name="dienst"]:checked', f);
+  /* step 2 shows only what fits the answer to step 1; hidden answers are disabled, so never sent */
+  const syncOpts = () => {
+    const k = (choice() || { dataset: {} }).dataset.kind || '';
+    $$('.wz-opt', f).forEach(o => {
+      const on = o.dataset.for.split(' ').includes(k);
+      o.hidden = !on;
+      $$('input,textarea', o).forEach(i => { i.disabled = !on; });
+    });
+  };
+  const show = i => {
+    at = i;
+    steps.forEach((s, k) => { s.hidden = k !== i; });
+    back.hidden = i === 0; next.hidden = i === steps.length - 1; send.hidden = i !== steps.length - 1;
+    $('.wz-n', f).textContent = i + 1;
+    $('.wz-bar i', f).style.width = ((i + 1) / steps.length * 100) + '%';
+    msg.classList.remove('show');
+  };
+  const go = d => {
+    if (d > 0 && at === 0 && !choice()) {
+      msg.textContent = ui('pick'); msg.classList.add('show'); $('input[name="dienst"]', f).focus(); return;
+    }
+    show(Math.max(0, Math.min(steps.length - 1, at + d)));
+    const s = steps[at];
+    s.tabIndex = -1; s.focus({ preventScroll: true });
+    if (f.getBoundingClientRect().top < 0) f.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    push({ event: 'quote_step', quote_step: at + 1, demo_service: (choice() || { dataset: {} }).dataset.slug || '' });
+  };
+  $$('input[name="dienst"]', f).forEach(r => r.addEventListener('change', syncOpts));
+  /* a click on a card moves on by itself; arrow keys only select, so keyboard users are not thrown forward */
+  $$('.wz-cards label', f).forEach(l => l.addEventListener('click', e => { if (e.detail) setTimeout(() => go(1), 220); }));
+  next.addEventListener('click', () => go(1));
+  back.addEventListener('click', () => go(-1));
+  f.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && e.target.tagName === 'INPUT' && at < steps.length - 1) { e.preventDefault(); go(1); }
+  });
+  f.addEventListener('submit', e => {
+    if (at < steps.length - 1) { e.preventDefault(); e.stopImmediatePropagation(); go(1); return; }
+    const on = sel => $$(sel, f).filter(i => !i.disabled && i.checked);
+    const lines = [];
+    const prod = on('input[name="producten"]')[0], when = on('input[name="timing"]')[0];
+    const picked = on('.wz-opt input[type="checkbox"]').map(i => i.value);
+    if (prod) lines.push('Aantal producten: ' + prod.value);
+    if (picked.length) lines.push('Gekozen: ' + picked.join(', '));
+    if (when) lines.push('Timing: ' + when.value);
+    const about = $('#q-about', f);
+    if (about && !about.disabled && about.value.trim()) lines.push('Over het bedrijf:\n' + about.value.trim());
+    const free = $('#q-msg', f).value.trim();
+    if (free) lines.push('Bericht:\n' + free);
+    $('input[type="hidden"][name="bericht"]', f).value = lines.join('\n\n');
+  });
+  syncOpts(); show(0);
+})();
+
 $$('form[data-event]').forEach(f => f.addEventListener('submit', e => {
   e.preventDefault();
   const msg = $('.ok', f), btn = $('button[type="submit"]', f);
@@ -136,6 +213,7 @@ $$('form[data-event]').forEach(f => f.addEventListener('submit', e => {
      makes one lead of the two deliveries. */
   f.dataset.sid = f.dataset.sid || (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2));
   const body = new URLSearchParams(new FormData(f)); body.set('submission-id', f.dataset.sid);
+  if (dealOn && f.dataset.event === 'demo_request' && f.dataset.sent === 'sent') body.set('bericht', [DEAL_TAG, body.get('bericht')].filter(Boolean).join('\n\n'));
   const post = (url, b) => fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: b.toString() })
     .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); });
   Promise.any([post(location.pathname, body), post('/api/form', body)])
@@ -463,3 +541,27 @@ if (tm) {
     });
   });
 }
+
+/* Sticky "Get a free quote": shown while the header is hidden (reading down
+   the page), so there is always one way to ask for a quote, and out of the
+   way while a quote form is on screen. The bottom corners belong to
+   WhatsApp, the chat and the Tinrate assistant. */
+(() => {
+  const pill = $('#stickCta');
+  if (!pill) return;
+  let formInView = false;
+  const sync = () => {
+    const on = hdr.classList.contains('hide') && !formInView && !document.body.classList.contains('menu-open');
+    pill.classList.toggle('on', on);
+    pill.tabIndex = on ? 0 : -1;
+    if (on) pill.removeAttribute('aria-hidden'); else pill.setAttribute('aria-hidden', 'true');
+  };
+  new MutationObserver(sync).observe(hdr, { attributes: true, attributeFilter: ['class'] });
+  if ('IntersectionObserver' in window) {
+    const seen = new Set();
+    const io = new IntersectionObserver(es => { es.forEach(x => { if (x.isIntersecting) seen.add(x.target); else seen.delete(x.target); }); formInView = seen.size > 0; sync(); });
+    $$('form[data-event]').forEach(f => io.observe(f));
+  }
+  pill.addEventListener('click', () => push({ event: 'sticky_cta' }));
+  sync();
+})();

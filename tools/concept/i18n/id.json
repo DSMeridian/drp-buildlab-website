@@ -439,10 +439,6 @@
   "en": "Privacy",
   "t": "Privasi"
  },
- "87b9827c6933b30d": {
-  "en": "Back to top ↑",
-  "t": "Kembali ke atas ↑"
- },
  "4fefc8d27ecb898a": {
   "en": "View",
   "t": "Lihat"
@@ -591,37 +587,9 @@
   "en": "Company or VAT number <small>(optional)</small>",
   "t": "Nomor perusahaan atau nomor NPWP <small>(opsional)</small>"
  },
- "1da557513e3c8e31": {
-  "en": "Which service do you have in mind?",
-  "t": "Layanan mana yang Anda maksud?"
- },
- "47842fe8c86e5981": {
-  "en": "Choose a service",
-  "t": "Pilih layanan"
- },
- "415e43f376f985ea": {
-  "en": "Made to measure, quote",
-  "t": "Dibuat sesuai pesanan, penawaran harga"
- },
- "2f214b2d9b1bd13c": {
-  "en": "Update an existing website",
-  "t": "Memperbarui situs web yang sudah ada"
- },
- "d0d3c2cfbf0d3795": {
-  "en": "Extra services only (logo, SEO, …)",
-  "t": "Hanya layanan tambahan (logo, SEO, …)"
- },
- "19b5fdb4eb526430": {
-  "en": "I don’t know yet",
-  "t": "Saya belum tahu"
- },
  "0933578323c0f2da": {
   "en": "Partner code <small>(optional)</small>",
   "t": "Kode mitra <small>(opsional)</small>"
- },
- "5274b4354c018aa0": {
-  "en": "Message <small>(optional)</small>",
-  "t": "Pesan <small>(opsional)</small>"
  },
  "d9cd398dd6c8cd6b": {
   "en": "Five services, each with its own page, what is included and a starting price. Every price is confirmed in a written quote.",
@@ -658,10 +626,6 @@
  "456ee7b37fe88da5": {
   "en": "Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.",
   "t": "Menulis semua konten Anda dari awal. Kami akan menggunakan teks yang Anda sediakan, kecuali jika disepakati lain."
- },
- "bd132b69d6569457": {
-  "en": "Let’s build <em style=\"color:var(--ink)\">your website.</em>",
-  "t": "Ayo kita buat <em style=\"color:var(--ink)\">situs web Anda.</em>"
  },
  "18371a5f81c2bb8a": {
   "en": "Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.",
@@ -806,10 +770,6 @@
  "5b2c04f8cb5f6ec2": {
   "en": "Redesign <em>&amp; refresh</em>",
   "t": "Perancangan ulang <em>&amp; penyegaran</em>"
- },
- "240616e343d7115c": {
-  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.",
-  "t": "Situs web Anda memang sudah ada, tetapi tampilannya sudah ketinggalan zaman, lambat saat diakses melalui ponsel, atau tidak mendatangkan permintaan informasi. Kami mempertahankan hal-hal yang sudah berjalan baik — konten Anda, merek Anda, peringkat Google Anda — dan memperbaiki sisanya."
  },
  "24004f92a8256f49": {
   "en": "Priced on demand: tell us what you need and we confirm the price in a written quote.",
@@ -1911,10 +1871,6 @@
   "en": "Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.",
   "t": "Petra Vanhandenhoven membantu para wirausahawan mengambil langkah yang tepat dalam menjalankan bisnis mereka, melalui e-book, lokakarya, dan bimbingan pribadi. Ia membutuhkan satu platform yang dapat menyatukan semua hal tersebut, sekaligus memberikan nuansa yang sama personalnya seperti sesi pembimbingannya."
  },
- "62a5dde8c21e7f5f": {
-  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.",
-  "t": "Kami merancang dan membangun situs ini dengan mengedepankan sosok Petra sendiri: judul editorial yang menonjol, potret dirinya, serta jalur yang jelas menuju setiap penawaran — e-book, lokakarya, bimbingan, dan Dreamteam-nya."
- },
  "e821531d25f5cd95": {
   "en": "It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.",
   "t": "Aplikasi ini berfungsi dengan baik baik di ponsel maupun di komputer desktop. Kami masih mengelolanya, sehingga pembaruan dan penawaran baru dapat langsung ditayangkan tanpa Petra perlu mengutak-atik kode apa pun."
@@ -1953,7 +1909,7 @@
  },
  "491eeec344c65d11": {
   "en": "We designed the site for the people who read it: large type, plain words and a calm layout. It explains the three phases, before, during and after the move, and makes a free phone call with no obligation the next step.",
-  "t": "Kami merancang situs ini khusus untuk para pengunjungnya: huruf besar, bahasa yang sederhana, dan tata letak yang tenang. Situs ini menjelaskan tiga tahap—sebelum, selama, dan setelah pindah—serta menawarkan panggilan telepon gratis tanpa kewajiban apa pun sebagai langkah selanjutnya."
+  "t": "Kami merancang situs ini khusus untuk para pengunjungnya: huruf besar, bahasa yang sederhana, dan tata letak yang tenang. Situs ini menjelaskan tiga tahap (sebelum, selama, dan setelah pindah) serta menawarkan panggilan telepon gratis tanpa kewajiban apa pun sebagai langkah selanjutnya."
  },
  "5c9ac8594c7cc0d1": {
   "en": "Easy to read",
@@ -2434,10 +2390,6 @@
  "4388e34194cd5e8f": {
   "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
   "t": "Setiap situs web dibuat sesuai kebutuhan, sehingga harganya bergantung pada volume pekerjaan yang diperlukan. Bagi bisnis baru, atau yang ingin memperbarui situs yang sudah ada, paket awal kami mulai dari <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Untuk layanan lainnya, harga ditentukan berdasarkan permintaan, melalui penawaran harga yang disesuaikan dengan kebutuhan. Layanan pemeliharaan bersifat opsional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> per bulan."
- },
- "77f6952ee45c3cad": {
-  "en": "Starter package (one-page website)",
-  "t": "Paket pemula (situs web satu halaman)"
  },
  "7ca4618712abfd02": {
   "en": "Price quotes via WhatsApp",
@@ -3005,7 +2957,7 @@
  },
  "ccb5e5c01980273e": {
   "en": "His colleague Sanne (also made up, also recognisable) is the opposite. She is awake at six, three tasks in by eight and done by two. Then she goes to play padel, where, in her own words, she gets the best ideas of the week. Mostly against a wall.",
-  "t": "Rekan kerjanya, Sanne (juga fiktif, tapi tetap mudah dikenali), justru kebalikannya. Dia sudah bangun pukul enam, menyelesaikan tiga tugas sebelum pukul delapan, dan sudah selesai bekerja pukul dua. Setelah itu, dia pergi bermain padel, di mana—menurut pengakuannya sendiri—dia mendapatkan ide-ide terbaik sepanjang minggu. Biasanya saat bermain melawan dinding."
+  "t": "Rekan kerjanya, Sanne (juga fiktif, tapi tetap mudah dikenali), justru kebalikannya. Dia sudah bangun pukul enam, menyelesaikan tiga tugas sebelum pukul delapan, dan sudah selesai bekerja pukul dua. Setelah itu, dia pergi bermain padel, di mana (menurut pengakuannya sendiri) dia mendapatkan ide-ide terbaik sepanjang minggu. Biasanya saat bermain melawan dinding."
  },
  "83ee5d105965d650": {
   "en": "A time clock forces the two to work together in the middle: both half-hearted, both from nine o'clock. We let them work when they are good, and we ask one thing: that it is finished, that it is right, and that the client knows where they stand.",
@@ -3665,7 +3617,7 @@
  },
  "8410d802b61e95f4": {
   "en": "Els doesn't exist. Her flooded bathroom does, for someone, right now.",
-  "t": "Els itu tidak ada. Kamar mandinya yang tergenang air itu memang ada—bagi seseorang, saat ini juga."
+  "t": "Els itu tidak ada. Kamar mandinya yang tergenang air itu memang ada, bagi seseorang, saat ini juga."
  },
  "e71294b44bc5048b": {
   "en": "How readable is your site for machines?",
@@ -4986,5 +4938,309 @@
  "1370b96b2378e362": {
   "en": "Order Tinrate Concierge through DRP BuildLab, an official Tinrate reseller. An AI assistant that answers your visitors in seconds. We set it up on your website, and you try it free for 14 days.",
   "t": "Pesan Tinrate Concierge melalui DRP BuildLab, reseller resmi Tinrate. Asisten AI yang menjawab pengunjung Anda dalam hitungan detik. Kami memasangnya di situs web Anda, dan Anda mencobanya gratis selama 14 hari."
+ },
+ "0e203dd283dc4f23": {
+  "en": "<b>Black Friday:</b> a free extra page with every <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> starter package, plus 10% off all extra services. Until Monday 30 November.",
+  "t": "<b>Black Friday:</b> gratis satu halaman tambahan untuk setiap paket awal <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, plus diskon 10% untuk semua layanan tambahan. Hingga Senin, 30 November."
+ },
+ "1f01e8ad9d815676": {
+  "en": "Claim the deal",
+  "t": "Ambil promonya"
+ },
+ "8a90c37cebcd6f5e": {
+  "en": "Black Friday · until Monday 30 November",
+  "t": "Black Friday · hingga Senin, 30 November"
+ },
+ "3440d22e7918a9b0": {
+  "en": "More website, <em>same price.</em>",
+  "t": "Situs lebih lengkap, <em>harga sama.</em>"
+ },
+ "19196e34c3d0dcb8": {
+  "en": "Order your website before the deal ends and get more for the same budget. We write the deal into your quote.",
+  "t": "Pesan situs web Anda sebelum promo berakhir dan dapatkan lebih banyak dengan anggaran yang sama. Promo ini kami cantumkan dalam penawaran harga Anda."
+ },
+ "0c7f4e48920aa645": {
+  "en": "Claim the Black Friday deal <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "Ambil promo Black Friday <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "0766d2635330638a": {
+  "en": "Ask us on WhatsApp",
+  "t": "Tanya kami lewat WhatsApp"
+ },
+ "38e5432df5157e1a": {
+  "en": "Free",
+  "t": "Gratis"
+ },
+ "4884c440fea83ecd": {
+  "en": "An extra page",
+  "t": "Satu halaman tambahan"
+ },
+ "68f85c212cd078fb": {
+  "en": "Worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>. With every <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> starter package we add a second page, for your services, prices or portfolio.",
+  "t": "Senilai <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>. Untuk setiap paket awal <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, kami menambahkan halaman kedua untuk layanan, harga, atau portofolio Anda."
+ },
+ "cd9128160a3e2fbd": {
+  "en": "On all extra services",
+  "t": "Untuk semua layanan tambahan"
+ },
+ "fa0097435de114df": {
+  "en": "SEO, a logo, a multilingual site or a booking integration: 10% off every extra service you order.",
+  "t": "SEO, logo, situs multibahasa, atau integrasi sistem pemesanan: diskon 10% untuk setiap layanan tambahan yang Anda pesan."
+ },
+ "bdedc6b08ebf115b": {
+  "en": "Request your quote by Monday 30 November, 23:59 (Brussels time).",
+  "t": "Ajukan permintaan penawaran harga paling lambat Senin, 30 November, pukul 23.59 (waktu Brussel)."
+ },
+ "ff8eb09e8c67b9f0": {
+  "en": "<b>Black Friday deal:</b> a free extra page and 10% off extra services, added to your quote.",
+  "t": "<b>Promo Black Friday:</b> gratis satu halaman tambahan dan diskon 10% untuk layanan tambahan, langsung dicantumkan dalam penawaran harga Anda."
+ },
+ "c00d8b960f07e69c": {
+  "en": "<b>Black Friday:</b> a free extra page, worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, until Monday 30 November.",
+  "t": "<b>Black Friday:</b> gratis satu halaman tambahan senilai <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, hingga Senin, 30 November."
+ },
+ "6195bd7100ae82e3": {
+  "en": "Please choose one of the options to continue.",
+  "t": "Silakan pilih salah satu opsi untuk melanjutkan."
+ },
+ "7782c7cf814aff6d": {
+  "en": "Get a free quote",
+  "t": "Dapatkan penawaran harga gratis"
+ },
+ "138f1528250349e4": {
+  "en": "Get your free quote",
+  "t": "Minta penawaran harga gratis"
+ },
+ "7db183a9c85347b5": {
+  "en": "What are we building?",
+  "t": "Apa yang akan kita bangun?"
+ },
+ "730e4f0ef74f4589": {
+  "en": "A one-page website",
+  "t": "Situs web satu halaman"
+ },
+ "3bc10996a64c4b4a": {
+  "en": "Starter package, from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
+  "t": "Paket awal, mulai dari <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>"
+ },
+ "56cd5d0714994d80": {
+  "en": "A website with several pages",
+  "t": "Situs web dengan beberapa halaman"
+ },
+ "b4bedb6e7632f7ee": {
+  "en": "A webshop",
+  "t": "Toko online"
+ },
+ "4daa6d18ee6c74d3": {
+  "en": "Sell online",
+  "t": "Berjualan secara online"
+ },
+ "db6b9130757243cd": {
+  "en": "A new look for my website",
+  "t": "Tampilan baru untuk situs web saya"
+ },
+ "28376792a8b15821": {
+  "en": "Redesign or refresh",
+  "t": "Perancangan ulang atau penyegaran"
+ },
+ "a7bf84569df07903": {
+  "en": "Extra services only",
+  "t": "Hanya layanan tambahan"
+ },
+ "95e654cf4043a19b": {
+  "en": "Logo, SEO, Google Ads…",
+  "t": "Logo, SEO, Google Ads…"
+ },
+ "32e6a2e06b26d911": {
+  "en": "I’m not sure yet",
+  "t": "Saya belum yakin"
+ },
+ "0be6a66600027972": {
+  "en": "We’ll help you choose",
+  "t": "Kami bantu Anda memilih"
+ },
+ "0d92c4481fd0b1c0": {
+  "en": "What should it do?",
+  "t": "Apa saja yang perlu bisa dilakukan?"
+ },
+ "99b3fe64c22240fd": {
+  "en": "Pick what applies. You can skip this step.",
+  "t": "Pilih yang sesuai. Anda dapat melewati langkah ini."
+ },
+ "52055c424d0a667e": {
+  "en": "Features",
+  "t": "Fitur"
+ },
+ "90f0dd1af9d3d47d": {
+  "en": "Contact form",
+  "t": "Formulir kontak"
+ },
+ "949d5ea5e56dbcfb": {
+  "en": "Online bookings",
+  "t": "Reservasi online"
+ },
+ "70657e8fd5cddff7": {
+  "en": "Several languages",
+  "t": "Multibahasa"
+ },
+ "a8fd786a4a431594": {
+  "en": "Blog or news",
+  "t": "Blog atau berita"
+ },
+ "b266dd90983cb656": {
+  "en": "Portfolio or photo gallery",
+  "t": "Portofolio atau galeri foto"
+ },
+ "6ff36921f19c7c83": {
+  "en": "Online payments",
+  "t": "Pembayaran online"
+ },
+ "3d8301ea8aa6d2ed": {
+  "en": "Google reviews on the site",
+  "t": "Ulasan Google di situs"
+ },
+ "52f914a725a5e69d": {
+  "en": "How many products?",
+  "t": "Berapa banyak produk?"
+ },
+ "8fcd3f705673fda7": {
+  "en": "Fewer than 50",
+  "t": "Kurang dari 50"
+ },
+ "662786d5159d0081": {
+  "en": "50 to 500",
+  "t": "50 hingga 500"
+ },
+ "6cc0c3ff61dc06f9": {
+  "en": "More than 500",
+  "t": "Lebih dari 500"
+ },
+ "8b2057c5165abcd9": {
+  "en": "On Shopify",
+  "t": "Di Shopify"
+ },
+ "9b97416e08a599e4": {
+  "en": "Shipping and invoicing",
+  "t": "Pengiriman dan penagihan"
+ },
+ "170f985f80f6e1d6": {
+  "en": "B2B prices and login",
+  "t": "Harga dan login B2B"
+ },
+ "6b4295ff98336b11": {
+  "en": "Subscriptions",
+  "t": "Langganan"
+ },
+ "b45aa4d2c1f1073d": {
+  "en": "Your current website <small>(optional)</small>",
+  "t": "Situs web Anda saat ini <small>(opsional)</small>"
+ },
+ "c3a8294d3429df36": {
+  "en": "What bothers you about it?",
+  "t": "Apa yang kurang Anda sukai?"
+ },
+ "a4c754cbf768f9d1": {
+  "en": "It looks dated",
+  "t": "Tampilannya ketinggalan zaman"
+ },
+ "1a6ba72a697140e7": {
+  "en": "It is slow",
+  "t": "Lambat"
+ },
+ "1efc42c281c1280b": {
+  "en": "Poor on phones",
+  "t": "Kurang baik di ponsel"
+ },
+ "ce497634b53c8dee": {
+  "en": "No enquiries",
+  "t": "Tidak ada permintaan masuk"
+ },
+ "c33fcd072d3b3d8f": {
+  "en": "Hard to update",
+  "t": "Sulit diperbarui"
+ },
+ "4853ca6a2052ca7a": {
+  "en": "Extra services",
+  "t": "Layanan tambahan"
+ },
+ "ad0c71137f4250b0": {
+  "en": "SEO",
+  "t": "SEO"
+ },
+ "a808131e4a0eb051": {
+  "en": "Google Ads",
+  "t": "Google Ads"
+ },
+ "64e09d7aa50293b5": {
+  "en": "Photography",
+  "t": "Fotografi"
+ },
+ "82de470216b9a2ab": {
+  "en": "Maintenance plan",
+  "t": "Paket pemeliharaan"
+ },
+ "b4233434cfa678b2": {
+  "en": "Tell us a little about your business <small>(optional)</small>",
+  "t": "Ceritakan sedikit tentang bisnis Anda <small>(opsional)</small>"
+ },
+ "fe555e61c533704a": {
+  "en": "When should it be online?",
+  "t": "Kapan situs harus sudah online?"
+ },
+ "581b3ec559c48e9a": {
+  "en": "As soon as possible",
+  "t": "Secepatnya"
+ },
+ "9c44686de8cabae0": {
+  "en": "Within a month",
+  "t": "Dalam sebulan"
+ },
+ "541d17e959377431": {
+  "en": "In 1 to 3 months",
+  "t": "Dalam 1 hingga 3 bulan"
+ },
+ "57d0088e4456b8ea": {
+  "en": "Just looking around",
+  "t": "Hanya melihat-lihat"
+ },
+ "5d2c6ab18fbef02b": {
+  "en": "Anything else we should know? <small>(optional)</small>",
+  "t": "Ada hal lain yang perlu kami ketahui? <small>(opsional)</small>"
+ },
+ "708aed56a716e4c8": {
+  "en": "Where do we send your quote?",
+  "t": "Ke mana kami kirimkan penawaran harga Anda?"
+ },
+ "2334d7c50c981ee4": {
+  "en": "Back",
+  "t": "Kembali"
+ },
+ "872321992f1108dd": {
+  "en": "Next step",
+  "t": "Langkah berikutnya"
+ },
+ "70844d492b1959f6": {
+  "en": "Send my quote request <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "Kirim permintaan penawaran harga <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "6eb0e69a4a5b4432": {
+  "en": "Free and without obligation. We reply within 24 hours.",
+  "t": "Gratis dan tanpa kewajiban apa pun. Kami membalas dalam waktu 24 jam."
+ },
+ "40548849b73f09a5": {
+  "en": "www.example.com",
+  "t": "www.contoh.com"
+ },
+ "a09f924fa3a73b71": {
+  "en": "Back to top",
+  "t": "Kembali ke atas"
+ },
+ "2175865ce005bfbd": {
+  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works (your content, your brand, your Google ranking) and fix the rest.",
+  "t": "Situs web Anda memang sudah ada, tetapi tampilannya sudah ketinggalan zaman, lambat saat diakses melalui ponsel, atau tidak mendatangkan permintaan informasi. Kami mempertahankan hal-hal yang sudah berjalan baik (konten Anda, merek Anda, peringkat Google Anda) dan memperbaiki sisanya."
+ },
+ "b6fd3bd4fe735bbc": {
+  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
+  "t": "Kami merancang dan membangun situs ini dengan mengedepankan sosok Petra sendiri: judul editorial yang menonjol, potret dirinya, serta jalur yang jelas menuju setiap penawaran (e-book, lokakarya, bimbingan, dan Dreamteam-nya)."
  }
 }

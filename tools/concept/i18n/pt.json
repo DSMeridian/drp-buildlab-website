@@ -439,10 +439,6 @@
   "en": "Privacy",
   "t": "Privacidade"
  },
- "87b9827c6933b30d": {
-  "en": "Back to top ↑",
-  "t": "Voltar ao topo ↑"
- },
  "4fefc8d27ecb898a": {
   "en": "View",
   "t": "Visualizar"
@@ -591,37 +587,9 @@
   "en": "Company or VAT number <small>(optional)</small>",
   "t": "Número da empresa ou de IVA <small>(opcional)</small>"
  },
- "1da557513e3c8e31": {
-  "en": "Which service do you have in mind?",
-  "t": "Qual serviço o(a) senhor(a) tem em mente?"
- },
- "47842fe8c86e5981": {
-  "en": "Choose a service",
-  "t": "Escolha um serviço"
- },
- "415e43f376f985ea": {
-  "en": "Made to measure, quote",
-  "t": "Feito sob medida, orçamento"
- },
- "2f214b2d9b1bd13c": {
-  "en": "Update an existing website",
-  "t": "Atualizar um site já existente"
- },
- "d0d3c2cfbf0d3795": {
-  "en": "Extra services only (logo, SEO, …)",
-  "t": "Apenas serviços adicionais (logotipo, SEO, …)"
- },
- "19b5fdb4eb526430": {
-  "en": "I don’t know yet",
-  "t": "Ainda não sei"
- },
  "0933578323c0f2da": {
   "en": "Partner code <small>(optional)</small>",
   "t": "Código de parceiro <small>(opcional)</small>"
- },
- "5274b4354c018aa0": {
-  "en": "Message <small>(optional)</small>",
-  "t": "Mensagem <small>(opcional)</small>"
  },
  "d9cd398dd6c8cd6b": {
   "en": "Five services, each with its own page, what is included and a starting price. Every price is confirmed in a written quote.",
@@ -658,10 +626,6 @@
  "456ee7b37fe88da5": {
   "en": "Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.",
   "t": "Redigir todo o seu conteúdo do zero. Trabalhamos com os textos que o senhor nos fornecer, salvo acordo em contrário."
- },
- "bd132b69d6569457": {
-  "en": "Let’s build <em style=\"color:var(--ink)\">your website.</em>",
-  "t": "Vamos criar <em style=\"color:var(--ink)\">o seu site.</em>"
  },
  "18371a5f81c2bb8a": {
   "en": "Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.",
@@ -806,10 +770,6 @@
  "5b2c04f8cb5f6ec2": {
   "en": "Redesign <em>&amp; refresh</em>",
   "t": "Reestruturação <em>e atualização</em>"
- },
- "240616e343d7115c": {
-  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.",
-  "t": "Seu site já existe, mas parece ultrapassado, é lento em celulares ou não gera consultas. Mantemos o que funciona — seu conteúdo, sua marca, sua classificação no Google — e corrigimos o restante."
  },
  "24004f92a8256f49": {
   "en": "Priced on demand: tell us what you need and we confirm the price in a written quote.",
@@ -1911,10 +1871,6 @@
   "en": "Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.",
   "t": "Petra Vanhandenhoven ajuda empreendedores a darem os passos certos em seus negócios, por meio de e-books, workshops e orientação individual. Ela precisava de um espaço onde tudo isso se reunisse e que transmitisse a mesma sensação de personalização que seu coaching oferece."
  },
- "62a5dde8c21e7f5f": {
-  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.",
-  "t": "Projetamos e criamos o site tendo a própria Petra como foco: um título editorial impactante, seu retrato e um caminho claro para cada oferta — e-books, workshops, orientação e sua equipe de sonho."
- },
  "e821531d25f5cd95": {
   "en": "It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.",
   "t": "Funciona tão bem no celular quanto no computador. Ainda fazemos a manutenção do sistema, de modo que as atualizações e novas ofertas são publicadas sem que a Petra precise mexer em nenhum código."
@@ -1953,7 +1909,7 @@
  },
  "491eeec344c65d11": {
   "en": "We designed the site for the people who read it: large type, plain words and a calm layout. It explains the three phases, before, during and after the move, and makes a free phone call with no obligation the next step.",
-  "t": "Projetamos o site pensando nas pessoas que o acessam: letras grandes, linguagem simples e um layout tranquilo. Ele explica as três fases — antes, durante e depois da mudança — e indica como próximo passo uma ligação gratuita e sem compromisso."
+  "t": "Projetamos o site pensando nas pessoas que o acessam: letras grandes, linguagem simples e um layout tranquilo. Ele explica as três fases (antes, durante e depois da mudança) e indica como próximo passo uma ligação gratuita e sem compromisso."
  },
  "5c9ac8594c7cc0d1": {
   "en": "Easy to read",
@@ -2434,10 +2390,6 @@
  "4388e34194cd5e8f": {
   "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
   "t": "Cada site é feito sob medida, portanto, o preço depende do trabalho envolvido. Para novas empresas ou para quem deseja atualizar um site já existente, nosso pacote inicial custa a partir de <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Todos os demais serviços têm preços definidos mediante solicitação, por meio de um orçamento personalizado. A manutenção é opcional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> por mês."
- },
- "77f6952ee45c3cad": {
-  "en": "Starter package (one-page website)",
-  "t": "Pacote inicial (site de uma página)"
  },
  "7ca4618712abfd02": {
   "en": "Price quotes via WhatsApp",
@@ -4986,5 +4938,309 @@
  "1370b96b2378e362": {
   "en": "Order Tinrate Concierge through DRP BuildLab, an official Tinrate reseller. An AI assistant that answers your visitors in seconds. We set it up on your website, and you try it free for 14 days.",
   "t": "Contrate o Tinrate Concierge pela DRP BuildLab, revendedor oficial da Tinrate. Um assistente de IA que responde aos seus visitantes em segundos. Nós o configuramos no seu site, e você o testa grátis por 14 dias."
+ },
+ "0e203dd283dc4f23": {
+  "en": "<b>Black Friday:</b> a free extra page with every <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> starter package, plus 10% off all extra services. Until Monday 30 November.",
+  "t": "<b>Black Friday:</b> uma página extra grátis em todo pacote inicial de <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, além de 10% de desconto em todos os serviços adicionais. Até segunda-feira, 30 de novembro."
+ },
+ "1f01e8ad9d815676": {
+  "en": "Claim the deal",
+  "t": "Aproveite a oferta"
+ },
+ "8a90c37cebcd6f5e": {
+  "en": "Black Friday · until Monday 30 November",
+  "t": "Black Friday · até segunda-feira, 30 de novembro"
+ },
+ "3440d22e7918a9b0": {
+  "en": "More website, <em>same price.</em>",
+  "t": "Mais site, <em>mesmo preço.</em>"
+ },
+ "19196e34c3d0dcb8": {
+  "en": "Order your website before the deal ends and get more for the same budget. We write the deal into your quote.",
+  "t": "Encomende seu site antes do fim da oferta e receba mais pelo mesmo valor. Incluímos a oferta no seu orçamento."
+ },
+ "0c7f4e48920aa645": {
+  "en": "Claim the Black Friday deal <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "Aproveite a oferta de Black Friday <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "0766d2635330638a": {
+  "en": "Ask us on WhatsApp",
+  "t": "Fale com a gente no WhatsApp"
+ },
+ "38e5432df5157e1a": {
+  "en": "Free",
+  "t": "Grátis"
+ },
+ "4884c440fea83ecd": {
+  "en": "An extra page",
+  "t": "Uma página extra"
+ },
+ "68f85c212cd078fb": {
+  "en": "Worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>. With every <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> starter package we add a second page, for your services, prices or portfolio.",
+  "t": "No valor de <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>. Em todo pacote inicial de <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>, adicionamos uma segunda página para seus serviços, preços ou portfólio."
+ },
+ "cd9128160a3e2fbd": {
+  "en": "On all extra services",
+  "t": "Em todos os serviços adicionais"
+ },
+ "fa0097435de114df": {
+  "en": "SEO, a logo, a multilingual site or a booking integration: 10% off every extra service you order.",
+  "t": "SEO, um logotipo, um site multilíngue ou a integração com um sistema de reservas: 10% de desconto em cada serviço adicional que você contratar."
+ },
+ "bdedc6b08ebf115b": {
+  "en": "Request your quote by Monday 30 November, 23:59 (Brussels time).",
+  "t": "Solicite seu orçamento até segunda-feira, 30 de novembro, às 23h59 (horário de Bruxelas)."
+ },
+ "ff8eb09e8c67b9f0": {
+  "en": "<b>Black Friday deal:</b> a free extra page and 10% off extra services, added to your quote.",
+  "t": "<b>Oferta de Black Friday:</b> uma página extra grátis e 10% de desconto em serviços adicionais, incluídos no seu orçamento."
+ },
+ "c00d8b960f07e69c": {
+  "en": "<b>Black Friday:</b> a free extra page, worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, until Monday 30 November.",
+  "t": "<b>Black Friday:</b> uma página extra grátis, no valor de <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, até segunda-feira, 30 de novembro."
+ },
+ "6195bd7100ae82e3": {
+  "en": "Please choose one of the options to continue.",
+  "t": "Escolha uma das opções para continuar."
+ },
+ "7782c7cf814aff6d": {
+  "en": "Get a free quote",
+  "t": "Peça um orçamento gratuito"
+ },
+ "138f1528250349e4": {
+  "en": "Get your free quote",
+  "t": "Receba seu orçamento gratuito"
+ },
+ "7db183a9c85347b5": {
+  "en": "What are we building?",
+  "t": "O que vamos criar?"
+ },
+ "730e4f0ef74f4589": {
+  "en": "A one-page website",
+  "t": "Um site de uma página"
+ },
+ "3bc10996a64c4b4a": {
+  "en": "Starter package, from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
+  "t": "Pacote inicial, a partir de <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>"
+ },
+ "56cd5d0714994d80": {
+  "en": "A website with several pages",
+  "t": "Um site com várias páginas"
+ },
+ "b4bedb6e7632f7ee": {
+  "en": "A webshop",
+  "t": "Uma loja virtual"
+ },
+ "4daa6d18ee6c74d3": {
+  "en": "Sell online",
+  "t": "Vender online"
+ },
+ "db6b9130757243cd": {
+  "en": "A new look for my website",
+  "t": "Um novo visual para o meu site"
+ },
+ "28376792a8b15821": {
+  "en": "Redesign or refresh",
+  "t": "Reestruturação ou atualização"
+ },
+ "a7bf84569df07903": {
+  "en": "Extra services only",
+  "t": "Apenas serviços adicionais"
+ },
+ "95e654cf4043a19b": {
+  "en": "Logo, SEO, Google Ads…",
+  "t": "Logotipo, SEO, Google Ads…"
+ },
+ "32e6a2e06b26d911": {
+  "en": "I’m not sure yet",
+  "t": "Ainda não sei"
+ },
+ "0be6a66600027972": {
+  "en": "We’ll help you choose",
+  "t": "Ajudamos você a escolher"
+ },
+ "0d92c4481fd0b1c0": {
+  "en": "What should it do?",
+  "t": "De quais recursos você precisa?"
+ },
+ "99b3fe64c22240fd": {
+  "en": "Pick what applies. You can skip this step.",
+  "t": "Escolha o que se aplica. Você pode pular esta etapa."
+ },
+ "52055c424d0a667e": {
+  "en": "Features",
+  "t": "Recursos"
+ },
+ "90f0dd1af9d3d47d": {
+  "en": "Contact form",
+  "t": "Formulário de contato"
+ },
+ "949d5ea5e56dbcfb": {
+  "en": "Online bookings",
+  "t": "Reservas online"
+ },
+ "70657e8fd5cddff7": {
+  "en": "Several languages",
+  "t": "Vários idiomas"
+ },
+ "a8fd786a4a431594": {
+  "en": "Blog or news",
+  "t": "Blog ou notícias"
+ },
+ "b266dd90983cb656": {
+  "en": "Portfolio or photo gallery",
+  "t": "Portfólio ou galeria de fotos"
+ },
+ "6ff36921f19c7c83": {
+  "en": "Online payments",
+  "t": "Pagamentos online"
+ },
+ "3d8301ea8aa6d2ed": {
+  "en": "Google reviews on the site",
+  "t": "Avaliações do Google no site"
+ },
+ "52f914a725a5e69d": {
+  "en": "How many products?",
+  "t": "Quantos produtos?"
+ },
+ "8fcd3f705673fda7": {
+  "en": "Fewer than 50",
+  "t": "Menos de 50"
+ },
+ "662786d5159d0081": {
+  "en": "50 to 500",
+  "t": "De 50 a 500"
+ },
+ "6cc0c3ff61dc06f9": {
+  "en": "More than 500",
+  "t": "Mais de 500"
+ },
+ "8b2057c5165abcd9": {
+  "en": "On Shopify",
+  "t": "No Shopify"
+ },
+ "9b97416e08a599e4": {
+  "en": "Shipping and invoicing",
+  "t": "Frete e faturamento"
+ },
+ "170f985f80f6e1d6": {
+  "en": "B2B prices and login",
+  "t": "Preços B2B e área do cliente"
+ },
+ "6b4295ff98336b11": {
+  "en": "Subscriptions",
+  "t": "Assinaturas"
+ },
+ "b45aa4d2c1f1073d": {
+  "en": "Your current website <small>(optional)</small>",
+  "t": "Seu site atual <small>(opcional)</small>"
+ },
+ "c3a8294d3429df36": {
+  "en": "What bothers you about it?",
+  "t": "O que incomoda você?"
+ },
+ "a4c754cbf768f9d1": {
+  "en": "It looks dated",
+  "t": "Parece ultrapassado"
+ },
+ "1a6ba72a697140e7": {
+  "en": "It is slow",
+  "t": "É lento"
+ },
+ "1efc42c281c1280b": {
+  "en": "Poor on phones",
+  "t": "Ruim no celular"
+ },
+ "ce497634b53c8dee": {
+  "en": "No enquiries",
+  "t": "Não gera contatos"
+ },
+ "c33fcd072d3b3d8f": {
+  "en": "Hard to update",
+  "t": "Difícil de atualizar"
+ },
+ "4853ca6a2052ca7a": {
+  "en": "Extra services",
+  "t": "Serviços adicionais"
+ },
+ "ad0c71137f4250b0": {
+  "en": "SEO",
+  "t": "SEO"
+ },
+ "a808131e4a0eb051": {
+  "en": "Google Ads",
+  "t": "Google Ads"
+ },
+ "64e09d7aa50293b5": {
+  "en": "Photography",
+  "t": "Fotografia"
+ },
+ "82de470216b9a2ab": {
+  "en": "Maintenance plan",
+  "t": "Plano de manutenção"
+ },
+ "b4233434cfa678b2": {
+  "en": "Tell us a little about your business <small>(optional)</small>",
+  "t": "Conte um pouco sobre o seu negócio <small>(opcional)</small>"
+ },
+ "fe555e61c533704a": {
+  "en": "When should it be online?",
+  "t": "Quando deve estar no ar?"
+ },
+ "581b3ec559c48e9a": {
+  "en": "As soon as possible",
+  "t": "O quanto antes"
+ },
+ "9c44686de8cabae0": {
+  "en": "Within a month",
+  "t": "Em até um mês"
+ },
+ "541d17e959377431": {
+  "en": "In 1 to 3 months",
+  "t": "Em 1 a 3 meses"
+ },
+ "57d0088e4456b8ea": {
+  "en": "Just looking around",
+  "t": "Só estou pesquisando"
+ },
+ "5d2c6ab18fbef02b": {
+  "en": "Anything else we should know? <small>(optional)</small>",
+  "t": "Algo mais que devemos saber? <small>(opcional)</small>"
+ },
+ "708aed56a716e4c8": {
+  "en": "Where do we send your quote?",
+  "t": "Para onde enviamos seu orçamento?"
+ },
+ "2334d7c50c981ee4": {
+  "en": "Back",
+  "t": "Voltar"
+ },
+ "872321992f1108dd": {
+  "en": "Next step",
+  "t": "Próxima etapa"
+ },
+ "70844d492b1959f6": {
+  "en": "Send my quote request <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "Enviar meu pedido de orçamento <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "6eb0e69a4a5b4432": {
+  "en": "Free and without obligation. We reply within 24 hours.",
+  "t": "Grátis e sem compromisso. Respondemos em até 24 horas."
+ },
+ "40548849b73f09a5": {
+  "en": "www.example.com",
+  "t": "www.exemplo.com"
+ },
+ "a09f924fa3a73b71": {
+  "en": "Back to top",
+  "t": "Voltar ao topo"
+ },
+ "2175865ce005bfbd": {
+  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works (your content, your brand, your Google ranking) and fix the rest.",
+  "t": "Seu site já existe, mas parece ultrapassado, é lento em celulares ou não gera consultas. Mantemos o que funciona (seu conteúdo, sua marca, sua classificação no Google) e corrigimos o restante."
+ },
+ "b6fd3bd4fe735bbc": {
+  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
+  "t": "Projetamos e criamos o site tendo a própria Petra como foco: um título editorial impactante, seu retrato e um caminho claro para cada oferta (e-books, workshops, orientação e sua equipe de sonho)."
  }
 }

@@ -439,10 +439,6 @@
   "en": "Privacy",
   "t": "プライバシー"
  },
- "87b9827c6933b30d": {
-  "en": "Back to top ↑",
-  "t": "トップへ戻る ↑"
- },
  "4fefc8d27ecb898a": {
   "en": "View",
   "t": "表示"
@@ -591,37 +587,9 @@
   "en": "Company or VAT number <small>(optional)</small>",
   "t": "会社名またはVAT番号<small>（任意）</small>"
  },
- "1da557513e3c8e31": {
-  "en": "Which service do you have in mind?",
-  "t": "どのようなサービスをお考えですか？"
- },
- "47842fe8c86e5981": {
-  "en": "Choose a service",
-  "t": "サービスをお選びください"
- },
- "415e43f376f985ea": {
-  "en": "Made to measure, quote",
-  "t": "オーダーメイド、お見積もり"
- },
- "2f214b2d9b1bd13c": {
-  "en": "Update an existing website",
-  "t": "既存のウェブサイトを更新する"
- },
- "d0d3c2cfbf0d3795": {
-  "en": "Extra services only (logo, SEO, …)",
-  "t": "追加サービスのみ（ロゴ、SEOなど）"
- },
- "19b5fdb4eb526430": {
-  "en": "I don’t know yet",
-  "t": "まだわかりません"
- },
  "0933578323c0f2da": {
   "en": "Partner code <small>(optional)</small>",
   "t": "パートナーコード<small>（任意）</small>"
- },
- "5274b4354c018aa0": {
-  "en": "Message <small>(optional)</small>",
-  "t": "メッセージ<small>（任意）</small>"
  },
  "d9cd398dd6c8cd6b": {
   "en": "Five services, each with its own page, what is included and a starting price. Every price is confirmed in a written quote.",
@@ -658,10 +626,6 @@
  "456ee7b37fe88da5": {
   "en": "Writing all your content from scratch. We work with the texts you provide, unless agreed otherwise.",
   "t": "すべてのコンテンツを一から作成いたします。特に別段の取り決めがない限り、お客様からご提供いただいた原稿をもとに作業を行います。"
- },
- "bd132b69d6569457": {
-  "en": "Let’s build <em style=\"color:var(--ink)\">your website.</em>",
-  "t": "さあ、<em style=\"color:var(--ink)\">あなたのウェブサイト</em>を作りましょう<em style=\"color:var(--ink)\">。</em>"
  },
  "18371a5f81c2bb8a": {
   "en": "Tell us about your business. We’ll call you with a free demo of your new website, with no obligation.",
@@ -806,10 +770,6 @@
  "5b2c04f8cb5f6ec2": {
   "en": "Redesign <em>&amp; refresh</em>",
   "t": "再設計<em>と刷新</em>"
- },
- "240616e343d7115c": {
-  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works — your content, your brand, your Google ranking — and fix the rest.",
-  "t": "すでにウェブサイトをお持ちですが、デザインが時代遅れだったり、スマートフォンでの表示が遅かったり、お問い合わせが得られなかったりしていませんか。弊社では、コンテンツ、ブランド、Googleでの検索順位など、うまく機能している部分はそのまま活かし、それ以外の部分を改善いたします。"
  },
  "24004f92a8256f49": {
   "en": "Priced on demand: tell us what you need and we confirm the price in a written quote.",
@@ -1911,10 +1871,6 @@
   "en": "Petra Vanhandenhoven helps entrepreneurs take the right steps with their business, through e-books, workshops and one-to-one guidance. She needed one place where all of that comes together, and that feels as personal as her coaching.",
   "t": "ペトラ・ヴァンハンデンホーヴェンさんは、電子書籍やワークショップ、マンツーマンの指導を通じて、起業家がビジネスにおいて正しい一歩を踏み出せるようサポートしています。彼女には、これらすべてを一つにまとめ、自身のコーチングと同じくらい親しみやすい雰囲気を感じられる場所が必要でした。"
  },
- "62a5dde8c21e7f5f": {
-  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each offer — e-books, workshops, guidance and her Dreamteam.",
-  "t": "このサイトは、ペトラさん自身を中心にデザイン・構築いたしました。インパクトのある見出し、彼女のポートレート、そして電子書籍、ワークショップ、ガイダンス、そして彼女の「ドリームチーム」といった各サービスへと続く明確な導線を設けています。"
- },
  "e821531d25f5cd95": {
   "en": "It works as well on a phone as on a desktop. We still maintain it, so updates and new offers go live without Petra having to touch any code.",
   "t": "スマートフォンでもデスクトップでも同様に動作します。現在もメンテナンスを継続しているため、ペトラさんがコードを一切触らなくても、アップデートや新しいオファーを公開することができます。"
@@ -2434,10 +2390,6 @@
  "4388e34194cd5e8f": {
   "en": "Every website is made to measure, so the price depends on the work that goes into it. For new businesses, or those updating an existing site, our starter package begins at <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>. Everything else is priced on demand, in a quote made to measure. Maintenance is optional: <span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span> a month.",
   "t": "すべてのウェブサイトはオーダーメイドで制作されるため、価格は制作にかかる作業量によって異なります。新規事業や既存サイトの更新をご検討中の場合、当社のスターターパッケージは<span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>からご利用いただけます。それ以外のご依頼については、ご要望に応じて個別に作成するお見積もりに基づき、価格を決定いたします。メンテナンスはオプションで、月額<span class=\"money\" data-eur=\"29\" translate=\"no\">€29</span>です。"
- },
- "77f6952ee45c3cad": {
-  "en": "Starter package (one-page website)",
-  "t": "スターターパッケージ（1ページのウェブサイト）"
  },
  "7ca4618712abfd02": {
   "en": "Price quotes via WhatsApp",
@@ -4986,5 +4938,309 @@
  "1370b96b2378e362": {
   "en": "Order Tinrate Concierge through DRP BuildLab, an official Tinrate reseller. An AI assistant that answers your visitors in seconds. We set it up on your website, and you try it free for 14 days.",
   "t": "Tinrateの正規販売代理店であるDRP BuildLabを通じて、Tinrate Conciergeをご注文いただけます。訪問者に数秒で回答するAIアシスタントです。当社がお客様のウェブサイトに設置し、14日間無料でお試しいただけます。"
+ },
+ "0e203dd283dc4f23": {
+  "en": "<b>Black Friday:</b> a free extra page with every <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> starter package, plus 10% off all extra services. Until Monday 30 November.",
+  "t": "<b>ブラックフライデー：</b><span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>のスターターパッケージに追加ページを1ページ無料でお付けし、さらにすべての追加サービスが10%オフ。11月30日（月）まで。"
+ },
+ "1f01e8ad9d815676": {
+  "en": "Claim the deal",
+  "t": "特典を受け取る"
+ },
+ "8a90c37cebcd6f5e": {
+  "en": "Black Friday · until Monday 30 November",
+  "t": "ブラックフライデー · 11月30日（月）まで"
+ },
+ "3440d22e7918a9b0": {
+  "en": "More website, <em>same price.</em>",
+  "t": "ページは多く、<em>価格はそのまま。</em>"
+ },
+ "19196e34c3d0dcb8": {
+  "en": "Order your website before the deal ends and get more for the same budget. We write the deal into your quote.",
+  "t": "キャンペーン終了前にウェブサイトをご注文いただくと、同じご予算でより多くを手に入れられます。特典はお見積もりに明記いたします。"
+ },
+ "0c7f4e48920aa645": {
+  "en": "Claim the Black Friday deal <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "ブラックフライデー特典を受け取る <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "0766d2635330638a": {
+  "en": "Ask us on WhatsApp",
+  "t": "WhatsAppでお問い合わせ"
+ },
+ "38e5432df5157e1a": {
+  "en": "Free",
+  "t": "無料"
+ },
+ "4884c440fea83ecd": {
+  "en": "An extra page",
+  "t": "追加ページ1ページ"
+ },
+ "68f85c212cd078fb": {
+  "en": "Worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>. With every <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span> starter package we add a second page, for your services, prices or portfolio.",
+  "t": "通常<span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>相当。<span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>のスターターパッケージごとに、サービス紹介、料金表、ポートフォリオなどに使える2ページ目を追加します。"
+ },
+ "cd9128160a3e2fbd": {
+  "en": "On all extra services",
+  "t": "すべての追加サービスが対象"
+ },
+ "fa0097435de114df": {
+  "en": "SEO, a logo, a multilingual site or a booking integration: 10% off every extra service you order.",
+  "t": "SEO、ロゴ、多言語サイト、予約システムの連携など、ご注文いただくすべての追加サービスが10%オフになります。"
+ },
+ "bdedc6b08ebf115b": {
+  "en": "Request your quote by Monday 30 November, 23:59 (Brussels time).",
+  "t": "11月30日（月）23:59（ブリュッセル時間）までにお見積もりをご依頼ください。"
+ },
+ "ff8eb09e8c67b9f0": {
+  "en": "<b>Black Friday deal:</b> a free extra page and 10% off extra services, added to your quote.",
+  "t": "<b>ブラックフライデー特典：</b>追加ページ1ページ無料と追加サービス10%オフを、お見積もりに反映いたします。"
+ },
+ "c00d8b960f07e69c": {
+  "en": "<b>Black Friday:</b> a free extra page, worth <span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>, until Monday 30 November.",
+  "t": "<b>ブラックフライデー：</b>追加ページ1ページ（<span class=\"money\" data-eur=\"79\" translate=\"no\">€79</span>相当）を無料で。11月30日（月）まで。"
+ },
+ "6195bd7100ae82e3": {
+  "en": "Please choose one of the options to continue.",
+  "t": "続行するには、いずれかの項目を選択してください。"
+ },
+ "7782c7cf814aff6d": {
+  "en": "Get a free quote",
+  "t": "無料でお見積もり"
+ },
+ "138f1528250349e4": {
+  "en": "Get your free quote",
+  "t": "無料でお見積もりを依頼"
+ },
+ "7db183a9c85347b5": {
+  "en": "What are we building?",
+  "t": "何を制作しますか？"
+ },
+ "730e4f0ef74f4589": {
+  "en": "A one-page website",
+  "t": "1ページのウェブサイト"
+ },
+ "3bc10996a64c4b4a": {
+  "en": "Starter package, from <span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>",
+  "t": "スターターパッケージ、<span class=\"money\" data-eur=\"499\" translate=\"no\">€499</span>から"
+ },
+ "56cd5d0714994d80": {
+  "en": "A website with several pages",
+  "t": "複数ページのウェブサイト"
+ },
+ "b4bedb6e7632f7ee": {
+  "en": "A webshop",
+  "t": "オンラインショップ"
+ },
+ "4daa6d18ee6c74d3": {
+  "en": "Sell online",
+  "t": "オンラインで販売"
+ },
+ "db6b9130757243cd": {
+  "en": "A new look for my website",
+  "t": "ウェブサイトを一新したい"
+ },
+ "28376792a8b15821": {
+  "en": "Redesign or refresh",
+  "t": "リデザイン・リニューアル"
+ },
+ "a7bf84569df07903": {
+  "en": "Extra services only",
+  "t": "追加サービスのみ"
+ },
+ "95e654cf4043a19b": {
+  "en": "Logo, SEO, Google Ads…",
+  "t": "ロゴ、SEO、Google Ads…"
+ },
+ "32e6a2e06b26d911": {
+  "en": "I’m not sure yet",
+  "t": "まだ決めていません"
+ },
+ "0be6a66600027972": {
+  "en": "We’ll help you choose",
+  "t": "一緒にお選びします"
+ },
+ "0d92c4481fd0b1c0": {
+  "en": "What should it do?",
+  "t": "どんな機能が必要ですか？"
+ },
+ "99b3fe64c22240fd": {
+  "en": "Pick what applies. You can skip this step.",
+  "t": "該当するものを選んでください。このステップは省略できます。"
+ },
+ "52055c424d0a667e": {
+  "en": "Features",
+  "t": "機能"
+ },
+ "90f0dd1af9d3d47d": {
+  "en": "Contact form",
+  "t": "お問い合わせフォーム"
+ },
+ "949d5ea5e56dbcfb": {
+  "en": "Online bookings",
+  "t": "オンライン予約"
+ },
+ "70657e8fd5cddff7": {
+  "en": "Several languages",
+  "t": "多言語対応"
+ },
+ "a8fd786a4a431594": {
+  "en": "Blog or news",
+  "t": "ブログ・ニュース"
+ },
+ "b266dd90983cb656": {
+  "en": "Portfolio or photo gallery",
+  "t": "実績紹介・フォトギャラリー"
+ },
+ "6ff36921f19c7c83": {
+  "en": "Online payments",
+  "t": "オンライン決済"
+ },
+ "3d8301ea8aa6d2ed": {
+  "en": "Google reviews on the site",
+  "t": "Googleレビューの掲載"
+ },
+ "52f914a725a5e69d": {
+  "en": "How many products?",
+  "t": "商品数はどのくらいですか？"
+ },
+ "8fcd3f705673fda7": {
+  "en": "Fewer than 50",
+  "t": "50点未満"
+ },
+ "662786d5159d0081": {
+  "en": "50 to 500",
+  "t": "50〜500点"
+ },
+ "6cc0c3ff61dc06f9": {
+  "en": "More than 500",
+  "t": "500点超"
+ },
+ "8b2057c5165abcd9": {
+  "en": "On Shopify",
+  "t": "Shopifyで構築"
+ },
+ "9b97416e08a599e4": {
+  "en": "Shipping and invoicing",
+  "t": "配送・請求書発行"
+ },
+ "170f985f80f6e1d6": {
+  "en": "B2B prices and login",
+  "t": "B2B価格とログイン"
+ },
+ "6b4295ff98336b11": {
+  "en": "Subscriptions",
+  "t": "サブスクリプション"
+ },
+ "b45aa4d2c1f1073d": {
+  "en": "Your current website <small>(optional)</small>",
+  "t": "現在のウェブサイト <small>(任意)</small>"
+ },
+ "c3a8294d3429df36": {
+  "en": "What bothers you about it?",
+  "t": "どんな点にご不満ですか？"
+ },
+ "a4c754cbf768f9d1": {
+  "en": "It looks dated",
+  "t": "デザインが古い"
+ },
+ "1a6ba72a697140e7": {
+  "en": "It is slow",
+  "t": "表示が遅い"
+ },
+ "1efc42c281c1280b": {
+  "en": "Poor on phones",
+  "t": "スマホで見づらい"
+ },
+ "ce497634b53c8dee": {
+  "en": "No enquiries",
+  "t": "問い合わせが来ない"
+ },
+ "c33fcd072d3b3d8f": {
+  "en": "Hard to update",
+  "t": "更新しにくい"
+ },
+ "4853ca6a2052ca7a": {
+  "en": "Extra services",
+  "t": "追加サービス"
+ },
+ "ad0c71137f4250b0": {
+  "en": "SEO",
+  "t": "SEO"
+ },
+ "a808131e4a0eb051": {
+  "en": "Google Ads",
+  "t": "Google Ads"
+ },
+ "64e09d7aa50293b5": {
+  "en": "Photography",
+  "t": "写真撮影"
+ },
+ "82de470216b9a2ab": {
+  "en": "Maintenance plan",
+  "t": "メンテナンスプラン"
+ },
+ "b4233434cfa678b2": {
+  "en": "Tell us a little about your business <small>(optional)</small>",
+  "t": "事業内容について簡単にお聞かせください <small>(任意)</small>"
+ },
+ "fe555e61c533704a": {
+  "en": "When should it be online?",
+  "t": "公開希望時期はいつですか？"
+ },
+ "581b3ec559c48e9a": {
+  "en": "As soon as possible",
+  "t": "できるだけ早く"
+ },
+ "9c44686de8cabae0": {
+  "en": "Within a month",
+  "t": "1か月以内"
+ },
+ "541d17e959377431": {
+  "en": "In 1 to 3 months",
+  "t": "1〜3か月以内"
+ },
+ "57d0088e4456b8ea": {
+  "en": "Just looking around",
+  "t": "情報収集中"
+ },
+ "5d2c6ab18fbef02b": {
+  "en": "Anything else we should know? <small>(optional)</small>",
+  "t": "その他、お伝えいただきたいことはありますか？ <small>(任意)</small>"
+ },
+ "708aed56a716e4c8": {
+  "en": "Where do we send your quote?",
+  "t": "お見積もりの送付先を教えてください"
+ },
+ "2334d7c50c981ee4": {
+  "en": "Back",
+  "t": "戻る"
+ },
+ "872321992f1108dd": {
+  "en": "Next step",
+  "t": "次へ"
+ },
+ "70844d492b1959f6": {
+  "en": "Send my quote request <span class=\"arr\" aria-hidden=\"true\">→</span>",
+  "t": "お見積もりを依頼する <span class=\"arr\" aria-hidden=\"true\">→</span>"
+ },
+ "6eb0e69a4a5b4432": {
+  "en": "Free and without obligation. We reply within 24 hours.",
+  "t": "無料で、ご契約の義務はありません。24時間以内にご返信いたします。"
+ },
+ "40548849b73f09a5": {
+  "en": "www.example.com",
+  "t": "www.example.com"
+ },
+ "a09f924fa3a73b71": {
+  "en": "Back to top",
+  "t": "トップへ戻る"
+ },
+ "2175865ce005bfbd": {
+  "en": "Your website already exists, but it looks dated, is slow on phones or does not bring in enquiries. We keep what works (your content, your brand, your Google ranking) and fix the rest.",
+  "t": "すでにウェブサイトをお持ちですが、デザインが時代遅れだったり、スマートフォンでの表示が遅かったり、お問い合わせが得られなかったりしていませんか。弊社では、コンテンツ、ブランド、Googleでの検索順位など、うまく機能している部分はそのまま活かし、それ以外の部分を改善いたします。"
+ },
+ "b6fd3bd4fe735bbc": {
+  "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
+  "t": "このサイトは、ペトラさん自身を中心にデザイン・構築いたしました。インパクトのある見出し、彼女のポートレート、そして電子書籍、ワークショップ、ガイダンス、そして彼女の「ドリームチーム」といった各サービスへと続く明確な導線を設けています。"
  }
 }
