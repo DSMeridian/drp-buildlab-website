@@ -5242,5 +5242,185 @@
  "b6fd3bd4fe735bbc": {
   "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
   "t": "لقد صممنا الموقع وأعددناه بحيث يكون محور التركيز فيه هو «بترا» نفسها: عنوان تحريري قوي، وصورتها الشخصية، ومسار واضح للوصول إلى كل عرض من عروضها (الكتب الإلكترونية، وورش العمل، والإرشادات، وفريق أحلامها)."
+ },
+ "28aec0ad94152415": {
+  "en": "Your website has visitors. They just aren't doing anything.",
+  "t": "موقعك الإلكتروني يستقبل زوارًا. لكنهم لا يقومون بأي شيء."
+ },
+ "44ca5d90aeb41524": {
+  "en": "Plenty of visitors, hardly any quote requests? Here is what a conversion rate is, seven things that really help, how an AI concierge fits in, and a five-second test you can do today.",
+  "t": "عدد كبير من الزوار، لكن طلبات عروض الأسعار شبه معدومة؟ إليك شرح لمفهوم «معدل التحويل»، وسبعة أمور مفيدة حقًّا، وكيف يمكن أن يساهم «الكونسيرج المدعوم بالذكاء الاصطناعي» في ذلك، بالإضافة إلى اختبار مدته خمس ثوانٍ يمكنك إجراؤه اليوم."
+ },
+ "e00f1fa71e0874ad": {
+  "en": "Picture a shop. People walk in, stare at the shelves for a few seconds, and walk out again without saying a word. Nobody buys, nobody asks a question, nobody even takes a sweet from the bowl.",
+  "t": "تخيل متجرًا. يدخل الناس إليه، وينظرون إلى الرفوف لبضع ثوانٍ، ثم يخرجون مرة أخرى دون أن ينبسوا بكلمة. لا أحد يشتري، ولا أحد يسأل سؤالاً، ولا أحد حتى يأخذ حلوى من الوعاء."
+ },
+ "0a2dfcf403f72ee3": {
+  "en": "That is a website with a low conversion rate. The traffic is there. The results are not.",
+  "t": "هذا موقع إلكتروني يعاني من انخفاض معدل التحويل. هناك عدد زوار، لكن النتائج غير موجودة."
+ },
+ "1d6d05ca593c51a1": {
+  "en": "First, what is a conversion rate?",
+  "t": "أولاً، ما هو معدل التحويل؟"
+ },
+ "0980bd7131b1f129": {
+  "en": "It is the share of visitors who do the thing you want them to do. Ask for a quote. Call you. Book a slot. Buy. Divide the number of people who did it by the number of people who visited, and you have your rate.",
+  "t": "وهي النسبة المئوية للزوار الذين يقومون بما تريدهم أن يفعلوه. طلب عرض أسعار. الاتصال بك. حجز موعد. الشراء. اقسم عدد الأشخاص الذين قاموا بذلك على عدد الزوار، وستحصل على النسبة المئوية."
+ },
+ "cbf9ac59535fcfb0": {
+  "en": "A made-up example: 200 people visit your site this month and 4 request a quote. That is 2%. Not good or bad on its own, but now you have a number to beat.",
+  "t": "مثال افتراضي: يزور موقعك هذا الشهر 200 شخص، ويطلب 4 منهم عرض أسعار. وهذا يمثل نسبة 2%. هذه النسبة ليست جيدة ولا سيئة في حد ذاتها، لكن أصبح لديك الآن رقمًا يجب عليك تجاوزه."
+ },
+ "f0efd039291d8d84": {
+  "en": "What actually helps",
+  "t": "ما الذي يساعد فعلاً"
+ },
+ "546f1a479cfa54fd": {
+  "en": "No magic, no growth hacks. Mostly it is about making things easy.",
+  "t": "لا سحر، ولا حيل للنمو. الأمر يتعلق في الغالب بتبسيط الأمور."
+ },
+ "2c1dbb80d6cc95c8": {
+  "en": "<strong>One goal per page.</strong> If your page asks the visitor to call, mail, follow, subscribe and read the blog, they will do none of those. Pick one main button.",
+  "t": "<strong>هدف واحد لكل صفحة.</strong> إذا كانت صفحتك تطلب من الزائر الاتصال أو إرسال بريد إلكتروني أو المتابعة أو الاشتراك أو قراءة المدونة، فلن يقوم بأي من هذه الأمور. اختر زرًا رئيسيًّا واحدًا."
+ },
+ "c421994aa0485859": {
+  "en": "<strong>A headline that says what you do.</strong> \"Welcome to our website\" is a shop sign that says \"Shop\". Say what you do, for whom, in five seconds.",
+  "t": "<strong>عنوان يوضح ما تفعله. عبارة</strong> «مرحبًا بكم في موقعنا الإلكتروني» هي بمثابة لافتة متجر مكتوب عليها «متجر». اشرح ما تفعله، ولمن، في خمس ثوانٍ."
+ },
+ "9683705eb1506e20": {
+  "en": "<strong>Speed on a phone.</strong> Most visitors arrive on one. If your page takes forever to load, they never see how good it is.",
+  "t": "<strong>سرعة التحميل على الهاتف.</strong> فمعظم الزوار يصلون إلى موقعك عبر<strong> الهاتف</strong>. وإذا استغرقت صفحتك وقتًا طويلاً في التحميل، فلن يتمكنوا أبدًا من رؤية مدى جودتها."
+ },
+ "9e38eb3680d1d2ca": {
+  "en": "<strong>A small next step.</strong> A form with twelve fields feels like a tax return. Ask for the name, an email and one question. You can ask the rest later.",
+  "t": "<strong>خطوة صغيرة تالية.</strong> النموذج الذي يحتوي على اثني عشر حقلًا يبدو وكأنه إقرار ضريبي. اطلب الاسم وعنوان البريد الإلكتروني وسؤالًا واحدًا. يمكنك طرح بقية الأسئلة لاحقًا."
+ },
+ "78f8183b11152237": {
+  "en": "<strong>Proof that you exist.</strong> Real photos, real examples, real reviews, a name and a face. People buy from people they can picture.",
+  "t": "<strong>دليل على وجودك.</strong> صور حقيقية، أمثلة حقيقية، تقييمات حقيقية، اسم ووجه. فالناس يشترون من أشخاص يمكنهم تصورهم."
+ },
+ "0466abe3d5f88ef6": {
+  "en": "<strong>Contact details you cannot miss.</strong> If someone wants to reach you, do not make them hunt for it.",
+  "t": "<strong>بيانات الاتصال التي لا يمكنك تجاهلها.</strong> إذا أراد أحدهم التواصل معك، فلا تجعله يبحث عنها."
+ },
+ "09723336c693ab0d": {
+  "en": "<strong>No surprises.</strong> If you can, show a price or a range. Visitors who guess the worst usually leave.",
+  "t": "<strong>لا مفاجآت.</strong> إذا أمكنك ذلك، فاذكر سعرًا أو نطاقًا سعريًّا. فعادةً ما يغادر الزوار الذين يتوقعون الأسوأ."
+ },
+ "3ca26e67bbec85e2": {
+  "en": "What does not help",
+  "t": "ما الذي لا يساعد"
+ },
+ "dd87b08eb7cd078b": {
+  "en": "A pop-up that appears before anyone has read a single word.",
+  "t": "نافذة منبثقة تظهر قبل أن يقرأ أي شخص كلمة واحدة."
+ },
+ "c20862fc17d93996": {
+  "en": "A carousel that slides away just as you start to read it.",
+  "t": "دوامة تنزلق بعيدًا بمجرد أن تبدأ في قراءتها."
+ },
+ "71dc4b69db97a982": {
+  "en": "A menu with fourteen items, each as important as the others.",
+  "t": "قائمة تضم أربعة عشر صنفًا، كل منها لا يقل أهمية عن البقية."
+ },
+ "93d111e371801c0c": {
+  "en": "Stock photos of people shaking hands in a very clean office.",
+  "t": "صور جاهزة لأشخاص يتصافحون في مكتب نظيف للغاية."
+ },
+ "e4991eeac2598b67": {
+  "en": "A visitor with a question at 10 p.m.",
+  "t": "زائر لديه سؤال في الساعة 10 مساءً."
+ },
+ "a89f98431a8bdca6": {
+  "en": "A lot of visitors do not leave because they dislike you. They leave because nobody answered their question: at night, at the weekend, at the very moment they were ready to ask. That is where an AI assistant on your website can help.",
+  "t": "الكثير من الزوار لا يغادرون الموقع لأنهم لا يحبونك. بل يغادرون لأن أحداً لم يرد على سؤالهم: في الليل، أو في عطلة نهاية الأسبوع، أو في اللحظة بالذات التي كانوا مستعدين فيها لطرح السؤال. وهنا يمكن لمساعد الذكاء الاصطناعي على موقعك الإلكتروني أن يقدم المساعدة."
+ },
+ "cc29b87653f2147c": {
+  "en": "We have become a partner of <a href=\"https://tinrate.com/\" target=\"_blank\" rel=\"noopener\">Tinrate</a>, an AI startup from Ghent, and we are running its <strong>Concierge</strong> on our own website first. It lives on your site and:",
+  "t": "لقد أصبحنا شريكًا <a href=\"https://tinrate.com/\" target=\"_blank\" rel=\"noopener\">لشركة Tinrate</a>، وهي شركة ناشئة متخصصة في الذكاء الاصطناعي من مدينة غنت، ونقوم حاليًا بتشغيل <strong>خدمة Concierge</strong> الخاصة بها على موقعنا الإلكتروني أولاً. تعمل هذه الخدمة على موقعك وتقوم بما يلي:"
+ },
+ "edacb5ce0297d692": {
+  "en": "<strong>answers visitors on the spot</strong>, from your own knowledge;",
+  "t": "<strong>تجيب على أسئلة الزوار على الفور،</strong> بناءً على معرفتك الخاصة؛"
+ },
+ "2cf30d67c6af9bd4": {
+  "en": "<strong>finds out what they need</strong> and sends the request to the right person;",
+  "t": "<strong>يحدد احتياجاتهم</strong> ويرسل الطلب إلى الشخص المعني؛"
+ },
+ "e9aa33a54d22e048": {
+  "en": "<strong>books a call</strong> when a conversation needs one, so \"we will get back to you\" becomes a date in the calendar;",
+  "t": "<strong>تحدد موعدًا للمكالمة</strong> عندما تتطلب المحادثة ذلك، بحيث تصبح عبارة «سنتصل بك لاحقًا» موعدًا محددًا في التقويم؛"
+ },
+ "e4243dad9dc58e18": {
+  "en": "<strong>connects with your CRM</strong>, so nothing gets lost in an inbox.",
+  "t": "<strong>يتكامل مع نظام إدارة علاقات العملاء (CRM) الخاص بك</strong>، بحيث لا يضيع أي شيء في صندوق الوارد."
+ },
+ "ec1b1e03d1dd9cb0": {
+  "en": "As a bonus you see what your visitors actually ask, which is a free lesson in what your page does not explain yet. And yes, we think you should tell people they are talking to an AI. Say it openly.",
+  "t": "كميزة إضافية، ستتمكن من معرفة الأسئلة التي يطرحها زوار موقعك فعليًّا، وهو ما يُعد درسًا مجانيًّا حول النقاط التي لم تشرحها صفحتك بعد. ونعم، نعتقد أنه يجب عليك إخبار الناس بأنهم يتحدثون إلى ذكاء اصطناعي. قل ذلك صراحةً."
+ },
+ "3d9467ee62661d76": {
+  "en": "The five-second test",
+  "t": "اختبار الخمس ثوانٍ"
+ },
+ "af0dc378d9c7c304": {
+  "en": "Show your homepage to a friend for five seconds, then close the laptop. Ask three questions: What does this company do? Who is it for? What should I do next? If your friend hesitates on any of them, you just found your first improvement.",
+  "t": "أظهر صفحتك الرئيسية لصديق لمدة خمس ثوانٍ، ثم أغلق الكمبيوتر المحمول. اطرح عليه ثلاثة أسئلة: ماذا تفعل هذه الشركة؟ لمن تُقدَّم خدماتها؟ ماذا عليّ أن أفعل بعد ذلك؟ إذا تردد صديقك في الإجابة عن أي من هذه الأسئلة، فهذا يعني أنك قد عثرت للتو على أول نقطة تحتاج إلى تحسين."
+ },
+ "c4108733be050e51": {
+  "en": "And then: measure it",
+  "t": "ثم: قم بقياسه"
+ },
+ "d5794b0045c041cd": {
+  "en": "You cannot improve what you never count. Make sure your site tracks the one action that matters, like a quote request, and not just the number of visits. Check it once a month. Test your own form on a phone while you are at it. You would be surprised how often it quietly stopped working.",
+  "t": "لا يمكنك تحسين ما لا تقوم بإحصائه. تأكد من أن موقعك يتتبع الإجراء الوحيد المهم، مثل طلب عرض أسعار، وليس مجرد عدد الزيارات. تحقق من ذلك مرة كل شهر. واغتنم الفرصة لتجربة النموذج الخاص بك على الهاتف. ستندهش من عدد المرات التي يتوقف فيها عن العمل دون أن يلاحظ أحد."
+ },
+ "d37343a1a3645abb": {
+  "en": "How we approach it at DRP BuildLab",
+  "t": "كيف نتعامل مع الأمر في DRP BuildLab"
+ },
+ "fe4e50ecee072ab6": {
+  "en": "We build websites with one clear next step, a fast load on a phone and a contact path that works. You get one fixed contact person from the first conversation until launch, and we explain things in plain language. If you can see what your website does for your business, we did our job.",
+  "t": "نقوم بإنشاء مواقع إلكترونية تتميز بخطوة تالية واضحة، وسرعة التحميل على الهاتف، وطريقة اتصال فعالة. سيكون لديك شخص واحد محدد للتواصل معه منذ المحادثة الأولى وحتى إطلاق الموقع، ونشرح الأمور بلغة بسيطة ومفهومة. إذا تمكنت من إدراك الفائدة التي يجلبها موقعك الإلكتروني لعملك، فهذا يعني أننا أتممنا مهمتنا."
+ },
+ "435c72d3c2ab5c6f": {
+  "en": "Wondering why your visitors do not turn into customers? <a href=\"https://drpbuildlab.com/be/contact/\">Request a free quote</a> and we will take a look at your site together.",
+  "t": "هل تتساءل عن سبب عدم تحول زوار موقعك إلى عملاء؟ <a href=\"https://drpbuildlab.com/be/contact/\">اطلب عرض أسعار مجاني</a> وسنقوم معًا بمراجعة موقعك."
+ },
+ "0607ebe02f16d346": {
+  "en": "conversion",
+  "t": "التحويل"
+ },
+ "2f1d4a75319950bc": {
+  "en": "website",
+  "t": "موقع إلكتروني"
+ },
+ "ff1e8a0649f459ef": {
+  "en": "small business",
+  "t": "الأعمال الصغيرة"
+ },
+ "8d813378c294d9c4": {
+  "en": "ai",
+  "t": "ai"
+ },
+ "426a86b727d10bff": {
+  "en": "tinrate",
+  "t": "tinrate"
+ },
+ "0ed631bf3462ab9e": {
+  "en": "lead generation",
+  "t": "توليد العملاء المحتملين"
+ },
+ "8b27655f88788912": {
+  "en": "Conversion from website.",
+  "t": "تحويل من الموقع الإلكتروني."
+ },
+ "383e7f468bb80e54": {
+  "en": "Your website has visitors. They just aren't doing anything. | Blog | DRP BuildLab",
+  "t": "موقعك الإلكتروني يستقبل زوارًا. لكنهم لا يقومون بأي شيء. | المدونة | DRP BuildLab"
+ },
+ "e813ea824d50b181": {
+  "en": "Plenty of visitors, hardly any quote requests? Here is what a conversion rate is, seven things that really help, how an AI concierge fits in, and a five-second test you can do today.",
+  "t": "عدد كبير من الزوار، لكن طلبات عروض الأسعار شبه معدومة؟ إليك شرح لمفهوم «معدل التحويل»، وسبعة أمور مفيدة حقًّا، وكيف يمكن أن يساهم «الكونسيرج المدعوم بالذكاء الاصطناعي» في ذلك، بالإضافة إلى اختبار مدته خمس ثوانٍ يمكنك إجراؤه اليوم."
  }
 }

@@ -5242,5 +5242,185 @@
  "b6fd3bd4fe735bbc": {
   "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
   "t": "このサイトは、ペトラさん自身を中心にデザイン・構築いたしました。インパクトのある見出し、彼女のポートレート、そして電子書籍、ワークショップ、ガイダンス、そして彼女の「ドリームチーム」といった各サービスへと続く明確な導線を設けています。"
+ },
+ "28aec0ad94152415": {
+  "en": "Your website has visitors. They just aren't doing anything.",
+  "t": "あなたのウェブサイトには訪問者がいます。ただ、彼らは何もしていないだけです。"
+ },
+ "44ca5d90aeb41524": {
+  "en": "Plenty of visitors, hardly any quote requests? Here is what a conversion rate is, seven things that really help, how an AI concierge fits in, and a five-second test you can do today.",
+  "t": "訪問者はたくさんいるのに、見積もりの依頼がほとんどない？　ここでは、コンバージョン率とは何か、実際に役立つ7つのポイント、AIコンシェルジュの活用方法、そして今日からすぐに試せる5秒テストについてご紹介します。"
+ },
+ "e00f1fa71e0874ad": {
+  "en": "Picture a shop. People walk in, stare at the shelves for a few seconds, and walk out again without saying a word. Nobody buys, nobody asks a question, nobody even takes a sweet from the bowl.",
+  "t": "あるお店を想像してみてください。人々が店に入ってきて、数秒間棚をじっと見つめた後、一言も発せずにまた出て行ってしまいます。誰も何も買わず、誰も質問せず、ボウルに入っているお菓子を一つ取る人さえいません。"
+ },
+ "0a2dfcf403f72ee3": {
+  "en": "That is a website with a low conversion rate. The traffic is there. The results are not.",
+  "t": "それはコンバージョン率が低いウェブサイトです。アクセス数はあるのですが、成果が出ていません。"
+ },
+ "1d6d05ca593c51a1": {
+  "en": "First, what is a conversion rate?",
+  "t": "まず、コンバージョン率とは何でしょうか？"
+ },
+ "0980bd7131b1f129": {
+  "en": "It is the share of visitors who do the thing you want them to do. Ask for a quote. Call you. Book a slot. Buy. Divide the number of people who did it by the number of people who visited, and you have your rate.",
+  "t": "これは、訪問者のうち、あなたが望む行動をとった人の割合を指します。見積もりの依頼、電話連絡、予約、購入などです。その行動をとった人の数を訪問者数で割ると、その割合が算出されます。"
+ },
+ "cbf9ac59535fcfb0": {
+  "en": "A made-up example: 200 people visit your site this month and 4 request a quote. That is 2%. Not good or bad on its own, but now you have a number to beat.",
+  "t": "架空の例を挙げましょう。今月、200人があなたのサイトを訪問し、そのうち4人が見積もりを依頼しました。これは2％に相当します。それ自体が良いとも悪いとも言えませんが、これで目指すべき数値が明確になりました。"
+ },
+ "f0efd039291d8d84": {
+  "en": "What actually helps",
+  "t": "実際に役立つのは"
+ },
+ "546f1a479cfa54fd": {
+  "en": "No magic, no growth hacks. Mostly it is about making things easy.",
+  "t": "魔法も、成長の秘訣もありません。何よりも大切なのは、物事を簡単にすることです。"
+ },
+ "2c1dbb80d6cc95c8": {
+  "en": "<strong>One goal per page.</strong> If your page asks the visitor to call, mail, follow, subscribe and read the blog, they will do none of those. Pick one main button.",
+  "t": "<strong>1ページにつき1つの目標にしましょう。</strong>もしページ上で、訪問者に「電話をかける」「メールを送る」「フォローする」「購読する」「ブログを読む」といったことをすべて求めてしまうと、結局どれ一つとして実行してもらえなくなります。メインのボタンを1つだけ選びましょう。"
+ },
+ "c421994aa0485859": {
+  "en": "<strong>A headline that says what you do.</strong> \"Welcome to our website\" is a shop sign that says \"Shop\". Say what you do, for whom, in five seconds.",
+  "t": "<strong>自社の事業内容を伝える見出し。</strong>「当サイトへようこそ」<strong>というのは</strong>、まるで「お店」と書かれた看板のようなものです。5秒以内に、どのような事業を、誰を対象に行っているのかを伝えましょう。"
+ },
+ "9683705eb1506e20": {
+  "en": "<strong>Speed on a phone.</strong> Most visitors arrive on one. If your page takes forever to load, they never see how good it is.",
+  "t": "<strong>スマホでの表示速度。</strong>訪問者のほとんどはスマホからアクセスしています。ページの読み込みに時間がかかりすぎると、そのページがどれほど優れているか、訪問者に伝えることすらできません。"
+ },
+ "9e38eb3680d1d2ca": {
+  "en": "<strong>A small next step.</strong> A form with twelve fields feels like a tax return. Ask for the name, an email and one question. You can ask the rest later.",
+  "t": "<strong>小さな次のステップです。</strong>12個の入力欄があるフォームは、まるで確定申告書のようです。名前とメールアドレス、そして質問を1つだけ尋ねてください。残りのことは後で聞けばいいのです。"
+ },
+ "78f8183b11152237": {
+  "en": "<strong>Proof that you exist.</strong> Real photos, real examples, real reviews, a name and a face. People buy from people they can picture.",
+  "t": "<strong>あなたが実在しているという証拠です。</strong>実際の写真、実際の事例、実際の口コミ、そして名前と顔。人は、イメージできる相手から商品を購入するものです。"
+ },
+ "0466abe3d5f88ef6": {
+  "en": "<strong>Contact details you cannot miss.</strong> If someone wants to reach you, do not make them hunt for it.",
+  "t": "<strong>見逃せない連絡先情報です。</strong>誰かがあなたに連絡を取りたいと思ったとき、その情報を探す手間をかけさせないようにしましょう。"
+ },
+ "09723336c693ab0d": {
+  "en": "<strong>No surprises.</strong> If you can, show a price or a range. Visitors who guess the worst usually leave.",
+  "t": "<strong>驚くことではありません。</strong>可能であれば、価格や価格帯を明示してください。最悪のケースを想定してしまう訪問者は、たいていその場を離れてしまいます。"
+ },
+ "3ca26e67bbec85e2": {
+  "en": "What does not help",
+  "t": "役に立たないもの"
+ },
+ "dd87b08eb7cd078b": {
+  "en": "A pop-up that appears before anyone has read a single word.",
+  "t": "誰一人として一語も読む前に表示されるポップアップです。"
+ },
+ "c20862fc17d93996": {
+  "en": "A carousel that slides away just as you start to read it.",
+  "t": "読み始めるとすぐにスライドして消えてしまうカルーセルです。"
+ },
+ "71dc4b69db97a982": {
+  "en": "A menu with fourteen items, each as important as the others.",
+  "t": "14品からなるメニューで、どの品も他と同じくらい重要です。"
+ },
+ "93d111e371801c0c": {
+  "en": "Stock photos of people shaking hands in a very clean office.",
+  "t": "とても清潔なオフィスで、人々が握手しているストック写真です。"
+ },
+ "e4991eeac2598b67": {
+  "en": "A visitor with a question at 10 p.m.",
+  "t": "午後10時に質問がある来訪者"
+ },
+ "a89f98431a8bdca6": {
+  "en": "A lot of visitors do not leave because they dislike you. They leave because nobody answered their question: at night, at the weekend, at the very moment they were ready to ask. That is where an AI assistant on your website can help.",
+  "t": "多くの訪問者がサイトを離れてしまうのは、あなたを嫌っているからではありません。彼らが離れてしまうのは、質問に対して誰も答えてくれなかったからです。夜でも、週末でも、質問しようとしたまさにその瞬間に、誰にも応答してもらえなかったからです。そこで、ウェブサイトにAIアシスタントを導入することが役立ちます。"
+ },
+ "cc29b87653f2147c": {
+  "en": "We have become a partner of <a href=\"https://tinrate.com/\" target=\"_blank\" rel=\"noopener\">Tinrate</a>, an AI startup from Ghent, and we are running its <strong>Concierge</strong> on our own website first. It lives on your site and:",
+  "t": "弊社は、ゲント発のAIスタートアップ企業<a href=\"https://tinrate.com/\" target=\"_blank\" rel=\"noopener\">「Tinrate」</a>のパートナーとなり、まずは自社のウェブサイト上で同社の<strong>「Concierge」</strong>を導入しております。このサービスはお客様のサイト上に設置され、以下の機能を備えております："
+ },
+ "edacb5ce0297d692": {
+  "en": "<strong>answers visitors on the spot</strong>, from your own knowledge;",
+  "t": "ご自身の知識をもとに、<strong>その場で来訪者にご回答いたします</strong>；"
+ },
+ "2cf30d67c6af9bd4": {
+  "en": "<strong>finds out what they need</strong> and sends the request to the right person;",
+  "t": "<strong>必要な情報を把握し</strong>、その依頼を適切な担当者に伝えます；"
+ },
+ "e9aa33a54d22e048": {
+  "en": "<strong>books a call</strong> when a conversation needs one, so \"we will get back to you\" becomes a date in the calendar;",
+  "t": "会話の中で<strong>電話</strong>の約束が必要な場合は、<strong>その場で日程を決めます</strong>。そうすることで、「折り返しご連絡いたします」という言葉が、カレンダー上の具体的な予定となるのです；"
+ },
+ "e4243dad9dc58e18": {
+  "en": "<strong>connects with your CRM</strong>, so nothing gets lost in an inbox.",
+  "t": "<strong>CRMと連携しているため</strong>、受信トレイで情報が紛失することはありません。"
+ },
+ "ec1b1e03d1dd9cb0": {
+  "en": "As a bonus you see what your visitors actually ask, which is a free lesson in what your page does not explain yet. And yes, we think you should tell people they are talking to an AI. Say it openly.",
+  "t": "おまけとして、訪問者が実際に何を尋ねているのかが分かります。これは、あなたのページでまだ説明されていない点について、無料で学べる良い機会となります。そして、はい、訪問者には「AIと会話している」ことを伝えるべきだと私たちは考えています。率直に伝えてください。"
+ },
+ "3d9467ee62661d76": {
+  "en": "The five-second test",
+  "t": "5秒テスト"
+ },
+ "af0dc378d9c7c304": {
+  "en": "Show your homepage to a friend for five seconds, then close the laptop. Ask three questions: What does this company do? Who is it for? What should I do next? If your friend hesitates on any of them, you just found your first improvement.",
+  "t": "友人にホームページを5秒間見せてから、ノートパソコンを閉じてください。そして、次の3つの質問をしてみてください。「この会社はどんな事業をしているのですか？」「誰を対象としているのですか？」「次に何をすればよいですか？」もし友人がこれらの質問のいずれかに答えに詰まるようなら、そこが改善すべき最初のポイントだと言えます。"
+ },
+ "c4108733be050e51": {
+  "en": "And then: measure it",
+  "t": "そして、それを測ってください"
+ },
+ "d5794b0045c041cd": {
+  "en": "You cannot improve what you never count. Make sure your site tracks the one action that matters, like a quote request, and not just the number of visits. Check it once a month. Test your own form on a phone while you are at it. You would be surprised how often it quietly stopped working.",
+  "t": "計測していないものは改善できません。サイトでは、単なる訪問数だけでなく、見積もり依頼など、重要なアクションを確実に追跡するようにしてください。月に一度は確認しましょう。その際、スマートフォンで自社のフォームも試してみてください。知らず知らずのうちに動作しなくなっていることが、意外と多いものです。"
+ },
+ "d37343a1a3645abb": {
+  "en": "How we approach it at DRP BuildLab",
+  "t": "DRP BuildLabでの取り組み方"
+ },
+ "fe4e50ecee072ab6": {
+  "en": "We build websites with one clear next step, a fast load on a phone and a contact path that works. You get one fixed contact person from the first conversation until launch, and we explain things in plain language. If you can see what your website does for your business, we did our job.",
+  "t": "弊社では、明確な次のステップ、スマートフォンでの高速表示、そして確実に機能する問い合わせ経路を備えたウェブサイトを制作いたします。最初の打ち合わせから公開まで、一貫して同じ担当者が対応し、分かりやすい言葉で説明いたします。ウェブサイトがお客様のビジネスにどのような効果をもたらすのかがお分かりいただければ、私たちの役目は果たせたことになります。"
+ },
+ "435c72d3c2ab5c6f": {
+  "en": "Wondering why your visitors do not turn into customers? <a href=\"https://drpbuildlab.com/be/contact/\">Request a free quote</a> and we will take a look at your site together.",
+  "t": "なぜサイト訪問者が顧客につながらないのか、お悩みではありませんか？<a href=\"https://drpbuildlab.com/be/contact/\">無料のお見積もりをご依頼いただければ</a>、弊社がお客様のサイトを一緒に確認させていただきます。"
+ },
+ "0607ebe02f16d346": {
+  "en": "conversion",
+  "t": "変換"
+ },
+ "2f1d4a75319950bc": {
+  "en": "website",
+  "t": "ウェブサイト"
+ },
+ "ff1e8a0649f459ef": {
+  "en": "small business",
+  "t": "中小企業"
+ },
+ "8d813378c294d9c4": {
+  "en": "ai",
+  "t": "ai"
+ },
+ "426a86b727d10bff": {
+  "en": "tinrate",
+  "t": "tinrate"
+ },
+ "0ed631bf3462ab9e": {
+  "en": "lead generation",
+  "t": "見込み客の獲得"
+ },
+ "8b27655f88788912": {
+  "en": "Conversion from website.",
+  "t": "ウェブサイトからのコンバージョンです。"
+ },
+ "383e7f468bb80e54": {
+  "en": "Your website has visitors. They just aren't doing anything. | Blog | DRP BuildLab",
+  "t": "あなたのウェブサイトには訪問者がいます。ただ、彼らは何もしていないだけです。 | ブログ | DRP BuildLab"
+ },
+ "e813ea824d50b181": {
+  "en": "Plenty of visitors, hardly any quote requests? Here is what a conversion rate is, seven things that really help, how an AI concierge fits in, and a five-second test you can do today.",
+  "t": "訪問者はたくさんいるのに、見積もりの依頼がほとんどない？　ここでは、コンバージョン率とは何か、実際に役立つ7つのポイント、AIコンシェルジュの活用方法、そして今日からすぐに試せる5秒テストについてご紹介します。"
  }
 }

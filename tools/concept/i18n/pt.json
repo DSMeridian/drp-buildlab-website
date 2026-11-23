@@ -5242,5 +5242,185 @@
  "b6fd3bd4fe735bbc": {
   "en": "We designed and built the site around Petra herself: a strong editorial headline, her portrait, and a clear route to each of her offers (e-books, workshops, guidance and her Dreamteam).",
   "t": "Projetamos e criamos o site tendo a própria Petra como foco: um título editorial impactante, seu retrato e um caminho claro para cada oferta (e-books, workshops, orientação e sua equipe de sonho)."
+ },
+ "28aec0ad94152415": {
+  "en": "Your website has visitors. They just aren't doing anything.",
+  "t": "Seu site tem visitantes. Só que eles não estão fazendo nada."
+ },
+ "44ca5d90aeb41524": {
+  "en": "Plenty of visitors, hardly any quote requests? Here is what a conversion rate is, seven things that really help, how an AI concierge fits in, and a five-second test you can do today.",
+  "t": "Muitos visitantes, mas quase nenhum pedido de orçamento? Veja aqui o que é a taxa de conversão, sete dicas que realmente ajudam, como um concierge de IA pode contribuir e um teste de cinco segundos que você pode fazer hoje mesmo."
+ },
+ "e00f1fa71e0874ad": {
+  "en": "Picture a shop. People walk in, stare at the shelves for a few seconds, and walk out again without saying a word. Nobody buys, nobody asks a question, nobody even takes a sweet from the bowl.",
+  "t": "Imagine uma loja. As pessoas entram, ficam olhando para as prateleiras por alguns segundos e saem sem dizer uma palavra. Ninguém compra, ninguém faz perguntas, ninguém sequer pega um doce da tigela."
+ },
+ "0a2dfcf403f72ee3": {
+  "en": "That is a website with a low conversion rate. The traffic is there. The results are not.",
+  "t": "Esse é um site com baixa taxa de conversão. O tráfego existe. Os resultados, porém, não."
+ },
+ "1d6d05ca593c51a1": {
+  "en": "First, what is a conversion rate?",
+  "t": "Em primeiro lugar, o que é uma taxa de conversão?"
+ },
+ "0980bd7131b1f129": {
+  "en": "It is the share of visitors who do the thing you want them to do. Ask for a quote. Call you. Book a slot. Buy. Divide the number of people who did it by the number of people who visited, and you have your rate.",
+  "t": "É a porcentagem de visitantes que realizam a ação que o senhor deseja que eles realizem. Solicitar um orçamento. Entrar em contato por telefone. Agendar um horário. Comprar. Divida o número de pessoas que realizaram essa ação pelo número de visitantes, e o senhor terá sua taxa."
+ },
+ "cbf9ac59535fcfb0": {
+  "en": "A made-up example: 200 people visit your site this month and 4 request a quote. That is 2%. Not good or bad on its own, but now you have a number to beat.",
+  "t": "Um exemplo hipotético: 200 pessoas visitam seu site neste mês e 4 solicitam um orçamento. Isso representa 2%. Por si só, não é nem bom nem ruim, mas agora o senhor tem um número a ser superado."
+ },
+ "f0efd039291d8d84": {
+  "en": "What actually helps",
+  "t": "O que realmente ajuda"
+ },
+ "546f1a479cfa54fd": {
+  "en": "No magic, no growth hacks. Mostly it is about making things easy.",
+  "t": "Sem mágica, sem truques para impulsionar o crescimento. Trata-se, principalmente, de facilitar as coisas."
+ },
+ "2c1dbb80d6cc95c8": {
+  "en": "<strong>One goal per page.</strong> If your page asks the visitor to call, mail, follow, subscribe and read the blog, they will do none of those. Pick one main button.",
+  "t": "<strong>Um objetivo por página.</strong> Se a sua página solicitar que o visitante ligue, envie um e-mail, siga, se inscreva e leia o blog, ele não fará nada disso. Escolha um botão principal."
+ },
+ "c421994aa0485859": {
+  "en": "<strong>A headline that says what you do.</strong> \"Welcome to our website\" is a shop sign that says \"Shop\". Say what you do, for whom, in five seconds.",
+  "t": "<strong>Um título que explique o que a senhora faz.</strong> “Bem-vindo ao nosso site” é como uma placa de loja que diz “Loja”. Explique o que a senhora faz e para quem, em cinco segundos."
+ },
+ "9683705eb1506e20": {
+  "en": "<strong>Speed on a phone.</strong> Most visitors arrive on one. If your page takes forever to load, they never see how good it is.",
+  "t": "<strong>Velocidade no celular.</strong> A maioria dos visitantes acessa o site por meio de um celular. Se sua página demorar uma eternidade para carregar, eles nunca verão como ela é boa."
+ },
+ "9e38eb3680d1d2ca": {
+  "en": "<strong>A small next step.</strong> A form with twelve fields feels like a tax return. Ask for the name, an email and one question. You can ask the rest later.",
+  "t": "<strong>Um pequeno passo a seguir.</strong> Um formulário com doze campos parece uma declaração de imposto de renda. Peça o nome, um e-mail e faça uma pergunta. O restante, você pode perguntar mais tarde."
+ },
+ "78f8183b11152237": {
+  "en": "<strong>Proof that you exist.</strong> Real photos, real examples, real reviews, a name and a face. People buy from people they can picture.",
+  "t": "<strong>A prova de que o(a) senhor(a) existe.</strong> Fotos reais, exemplos reais, avaliações reais, um nome e um rosto. As pessoas compram de pessoas que conseguem imaginar."
+ },
+ "0466abe3d5f88ef6": {
+  "en": "<strong>Contact details you cannot miss.</strong> If someone wants to reach you, do not make them hunt for it.",
+  "t": "<strong>Informações de contato que você não pode deixar de incluir.</strong> Se alguém quiser entrar em contato com você, não faça com que tenha que procurar por elas."
+ },
+ "09723336c693ab0d": {
+  "en": "<strong>No surprises.</strong> If you can, show a price or a range. Visitors who guess the worst usually leave.",
+  "t": "<strong>Sem surpresas.</strong> Se possível, indique um preço ou uma faixa de preço. Os visitantes que imaginam o pior geralmente vão embora."
+ },
+ "3ca26e67bbec85e2": {
+  "en": "What does not help",
+  "t": "O que não ajuda"
+ },
+ "dd87b08eb7cd078b": {
+  "en": "A pop-up that appears before anyone has read a single word.",
+  "t": "Uma janela pop-up que aparece antes mesmo de alguém ter lido uma única palavra."
+ },
+ "c20862fc17d93996": {
+  "en": "A carousel that slides away just as you start to read it.",
+  "t": "Um carrossel que se afasta assim que o senhor começa a lê-lo."
+ },
+ "71dc4b69db97a982": {
+  "en": "A menu with fourteen items, each as important as the others.",
+  "t": "Um cardápio com quatorze itens, todos igualmente importantes."
+ },
+ "93d111e371801c0c": {
+  "en": "Stock photos of people shaking hands in a very clean office.",
+  "t": "Fotos de banco de imagens de pessoas apertando as mãos em um escritório muito limpo."
+ },
+ "e4991eeac2598b67": {
+  "en": "A visitor with a question at 10 p.m.",
+  "t": "Um visitante com uma dúvida às 22h."
+ },
+ "a89f98431a8bdca6": {
+  "en": "A lot of visitors do not leave because they dislike you. They leave because nobody answered their question: at night, at the weekend, at the very moment they were ready to ask. That is where an AI assistant on your website can help.",
+  "t": "Muitos visitantes não saem do site porque não gostam de você. Eles saem porque ninguém respondeu à pergunta deles: à noite, no fim de semana, exatamente no momento em que estavam prontos para perguntar. É aí que um assistente de IA no seu site pode ajudar."
+ },
+ "cc29b87653f2147c": {
+  "en": "We have become a partner of <a href=\"https://tinrate.com/\" target=\"_blank\" rel=\"noopener\">Tinrate</a>, an AI startup from Ghent, and we are running its <strong>Concierge</strong> on our own website first. It lives on your site and:",
+  "t": "Tornamo-nos parceiros da <a href=\"https://tinrate.com/\" target=\"_blank\" rel=\"noopener\">Tinrate</a>, uma startup de IA de Ghent, e estamos implementando seu <strong>Concierge,</strong> em primeiro lugar, em nosso próprio site. Ele fica hospedado no seu site e:"
+ },
+ "edacb5ce0297d692": {
+  "en": "<strong>answers visitors on the spot</strong>, from your own knowledge;",
+  "t": "<strong>responde aos visitantes na hora</strong>, com base em seus próprios conhecimentos;"
+ },
+ "2cf30d67c6af9bd4": {
+  "en": "<strong>finds out what they need</strong> and sends the request to the right person;",
+  "t": "<strong>descobre o que eles precisam</strong> e encaminha a solicitação à pessoa responsável;"
+ },
+ "e9aa33a54d22e048": {
+  "en": "<strong>books a call</strong> when a conversation needs one, so \"we will get back to you\" becomes a date in the calendar;",
+  "t": "<strong>agenda uma ligação</strong> quando uma conversa assim o exige, de modo que a frase “entraremos em contato com você” se transforma em um compromisso marcado no calendário;"
+ },
+ "e4243dad9dc58e18": {
+  "en": "<strong>connects with your CRM</strong>, so nothing gets lost in an inbox.",
+  "t": "<strong>integra-se ao seu CRM</strong>, para que nada se perca na caixa de entrada."
+ },
+ "ec1b1e03d1dd9cb0": {
+  "en": "As a bonus you see what your visitors actually ask, which is a free lesson in what your page does not explain yet. And yes, we think you should tell people they are talking to an AI. Say it openly.",
+  "t": "Como bônus, o senhor pode ver o que seus visitantes realmente perguntam, o que constitui uma lição gratuita sobre o que sua página ainda não explica. E sim, achamos que o senhor deveria informar às pessoas que elas estão conversando com uma IA. Diga isso abertamente."
+ },
+ "3d9467ee62661d76": {
+  "en": "The five-second test",
+  "t": "O teste dos cinco segundos"
+ },
+ "af0dc378d9c7c304": {
+  "en": "Show your homepage to a friend for five seconds, then close the laptop. Ask three questions: What does this company do? Who is it for? What should I do next? If your friend hesitates on any of them, you just found your first improvement.",
+  "t": "Mostre sua página inicial a um amigo por cinco segundos e, em seguida, feche o laptop. Faça três perguntas: O que essa empresa faz? Para quem é destinada? O que devo fazer a seguir? Se o seu amigo hesitar em responder a qualquer uma delas, você acaba de identificar seu primeiro ponto a ser melhorado."
+ },
+ "c4108733be050e51": {
+  "en": "And then: measure it",
+  "t": "E então: meça-o"
+ },
+ "d5794b0045c041cd": {
+  "en": "You cannot improve what you never count. Make sure your site tracks the one action that matters, like a quote request, and not just the number of visits. Check it once a month. Test your own form on a phone while you are at it. You would be surprised how often it quietly stopped working.",
+  "t": "Não é possível melhorar o que nunca se mede. Certifique-se de que seu site monitore a ação que realmente importa, como uma solicitação de orçamento, e não apenas o número de visitas. Verifique isso uma vez por mês. Aproveite para testar seu próprio formulário em um celular. Você ficaria surpreso com a frequência com que ele simplesmente deixa de funcionar sem que ninguém perceba."
+ },
+ "d37343a1a3645abb": {
+  "en": "How we approach it at DRP BuildLab",
+  "t": "Como abordamos isso na DRP BuildLab"
+ },
+ "fe4e50ecee072ab6": {
+  "en": "We build websites with one clear next step, a fast load on a phone and a contact path that works. You get one fixed contact person from the first conversation until launch, and we explain things in plain language. If you can see what your website does for your business, we did our job.",
+  "t": "Criamos sites com um próximo passo bem definido, carregamento rápido no celular e um canal de contato que funciona. Você terá uma única pessoa de contato desde a primeira conversa até o lançamento, e explicamos tudo em linguagem simples. Se você conseguir perceber o que o seu site faz pelo seu negócio, significa que cumprimos nossa missão."
+ },
+ "435c72d3c2ab5c6f": {
+  "en": "Wondering why your visitors do not turn into customers? <a href=\"https://drpbuildlab.com/be/contact/\">Request a free quote</a> and we will take a look at your site together.",
+  "t": "Está se perguntando por que seus visitantes não se transformam em clientes? <a href=\"https://drpbuildlab.com/be/contact/\">Solicite um orçamento gratuito</a> e analisaremos seu site juntos."
+ },
+ "0607ebe02f16d346": {
+  "en": "conversion",
+  "t": "conversão"
+ },
+ "2f1d4a75319950bc": {
+  "en": "website",
+  "t": "site"
+ },
+ "ff1e8a0649f459ef": {
+  "en": "small business",
+  "t": "pequena empresa"
+ },
+ "8d813378c294d9c4": {
+  "en": "ai",
+  "t": "ai"
+ },
+ "426a86b727d10bff": {
+  "en": "tinrate",
+  "t": "taxa de latão"
+ },
+ "0ed631bf3462ab9e": {
+  "en": "lead generation",
+  "t": "geração de leads"
+ },
+ "8b27655f88788912": {
+  "en": "Conversion from website.",
+  "t": "Conversão proveniente do site."
+ },
+ "383e7f468bb80e54": {
+  "en": "Your website has visitors. They just aren't doing anything. | Blog | DRP BuildLab",
+  "t": "Seu site tem visitantes. Só que eles não estão fazendo nada. | Blog | DRP BuildLab"
+ },
+ "e813ea824d50b181": {
+  "en": "Plenty of visitors, hardly any quote requests? Here is what a conversion rate is, seven things that really help, how an AI concierge fits in, and a five-second test you can do today.",
+  "t": "Muitos visitantes, mas quase nenhum pedido de orçamento? Veja aqui o que é a taxa de conversão, sete dicas que realmente ajudam, como um concierge de IA pode contribuir e um teste de cinco segundos que você pode fazer hoje mesmo."
  }
 }
